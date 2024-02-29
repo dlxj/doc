@@ -12384,6 +12384,8 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
   cd template_video
   
+  gradio cc install
+  
   gradio cc dev
   
   gradio cc build
@@ -12408,6 +12410,48 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   pnpm i
   
   
+  # vscode 设置 -> 搜:
+  allowBreakpointsEverywhere
+  
+  vscdoe 插件
+  	JavaScript Debugger
+  	Svelte for VS Code
+  
+  .vscode/launch.json  
+  {
+      "version": "0.2.0",
+      "configurations": [
+          {
+              "type": "chrome",
+              "request": "launch",
+              "name": "Launch Chrome against localhost",
+              "url": "http://localhost:5174",
+              "webRoot": "${workspaceFolder}"
+          }
+      ]
+  }
+  	# 正常进断点需要这个
+  
+  pnpm create vite vite-svelte -- --template svelte
+  cd vite-svelte
+  pnpm install
+  pnpm run dev
+      # vite 有几个选项，选 svelte ，选 javascript
+  	# vsocde 里 F5 能正常在 Counter.svelte 单步断下
+  
+  
+  gradio cc create ivideo --template Video
+  	# 自定义gradio 的 video 组件
+  	#　把 frontend 下　node_modules shared　这两个文件夹复到 vite_gradio_video 目录下，能正常引用，并运行
+          # 把 dependencies 下的包复制过来， pnpm i 就可以了 
+  
+  
+  App.svelte
+  <script>
+    import Counter from './lib/Counter.svelte'
+    import Player from '../shared/Player.svelte';
+  	# 这样引用组件
+  	
   
   
   gradio cc create RichTextbox --template SimpleTextbox --install
