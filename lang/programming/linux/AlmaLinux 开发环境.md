@@ -692,6 +692,18 @@ google-chrome &
 	useradd i
 	passwd i
 		# 密码设置成和 root 一样
+		
+
+vi /usr/bin/google-chrome
+
+最后一行加：
+--user-data-dir --test-type --no-sandbox
+
+改完后：
+
+exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
+
+	# root 成功运行 chrome
 
 ```
 
