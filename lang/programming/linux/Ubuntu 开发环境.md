@@ -330,6 +330,7 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 ```
 apt install xfce4 xfce4-goodies -y && \
 apt install xrdp -y && \
+systemctl enable xrdp && \
 systemctl status xrdp
  
 ufw disable

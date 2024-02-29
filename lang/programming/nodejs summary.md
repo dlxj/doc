@@ -23670,6 +23670,7 @@ zipp==3.15.0
 
 - [openai chat](https://js.langchain.com/docs/getting-started/guide-chat)
 - [QA Embeddings](https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa)
+- [rag_with_graph_db](https://cookbook.openai.com/examples/rag_with_graph_db)
 
 ```
 npm i langchain && \
