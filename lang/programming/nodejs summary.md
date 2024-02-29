@@ -23671,7 +23671,6 @@ zipp==3.15.0
 - [openai chat](https://js.langchain.com/docs/getting-started/guide-chat)
 - [QA Embeddings](https://js.langchain.com/docs/modules/chains/index_related_chains/retrieval_qa)
 - [rag_with_graph_db](https://cookbook.openai.com/examples/rag_with_graph_db)
-  - [Seq2Seq+前缀树：检索任务新范式（以KgCLUE为例）](https://kexue.fm/archives/8802)
 
 ```
 npm i langchain && \
