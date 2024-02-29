@@ -472,6 +472,7 @@ Custom linker flags may require --with-openssl-rpath=auto
 VERSION=3.8.3 && \
 VERSION=3.10.9 && \
 VERSION=3.11.3 && \
+VERSION=3.10.13 && \
 wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && \
 tar -xf Python-${VERSION}.tgz && \
 cd Python-${VERSION} && \
@@ -12360,14 +12361,54 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   
   conda env remove -n space2
   
-  pip install gradio==4.16.0
+  pip install gradio==4.19.2
+  	# pip install gradio==4.16.0
   	# 当前稳定使用的是 4.14.0
+  
   
   iwr https://get.pnpm.io/install.ps1 -useb | iex
   	# powershell 执行
   
   curl -fsSL https://get.pnpm.io/install.sh | sh -
   	# linux
+  
+  
+  https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component
+  
+  see Python3 Summary.md -> Gradio -> svelte -> vite
+  
+  pip install gradio==4.19.2
+  
+  gradio cc create template_video --template Video --install
+      # power shell 运行不了出错
+  
+  cd template_video
+  
+  gradio cc dev
+  
+  gradio cc build
+  	# 安装 python3.10
+  	# pip3 install gradio==4.19.2
+  	# pip3 install twine==5.0.0
+                  # apt update && apt install python3.10-venv
+  		# yum install python3-virtualenv
+  	# /usr/bin/python -m build /root/template_video
+  	    # 成功编译前端后有一个子命令，这是编译后端
+  	    # ERROR Failed to create venv. Maybe try installing virtualenv.  报错
+  	
+  	# 成功编译！ ubuntu20.04 almalinux 9 都 ok
+  
+  	almalinux 9 本机能成功运行 gradio cc dev  template_video
+  	    # 好像是 windows 的浏览器不行？
+  
+  	解决方案：
+  		vscode 连过去 almalinux 9，运行 demo/app.py
+  		almalinux 9 打开前端，它能正常运行，调试是在本机调试
+  
+  pnpm i
+  
+  
+  
   
   gradio cc create RichTextbox --template SimpleTextbox --install
   	# 新组件必须是在基础组件上改的
