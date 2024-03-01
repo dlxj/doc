@@ -13057,7 +13057,15 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 
 - see echodict\svelte\requestVideoFrameCallback
 
+- see gradio_video\frontend\shared\VideoTimeline.svelte
 
+  - ```
+    videoDuration = videoElement.duration;
+    videoElement.currentTime = newTimeLeft;
+    
+    ```
+
+    
 
 ```
 # # vite工程 App.svelte，语法正确，运行正常。成功播放视频
