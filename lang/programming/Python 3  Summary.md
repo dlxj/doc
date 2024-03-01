@@ -13049,6 +13049,169 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 
 
 
+
+
+### 成功引用 Gradio 前端组件 
+
+
+
+```
+# # vite工程 App.svelte，语法正确，运行正常。成功播放视频
+<script lang="ts">
+  	import svelteLogo from './assets/svelte.svg'
+ 	import viteLogo from '/vite.svg'
+  	import Counter from './lib/Counter.svelte'
+
+
+  	import Video from "../shared/Video.svelte"
+  	import { playable } from "../shared/utils"
+
+  	let url = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
+  
+	let type: "gallery" | "table";
+	let selected = false;
+	let value: string;
+	let samples_dir: string;
+	let video: HTMLVideoElement;
+
+	async function init(): Promise<void> {
+		video.muted = true;
+		video.playsInline = true;
+		video.controls = true;
+		video.setAttribute("muted", "");
+
+		var playPromise = video.play();
+		if (playPromise !== undefined) {
+    		playPromise.then(_ => {
+      			// Automatic playback started!
+      			// Show playing UI.
+      			// We can now safely pause video...
+      			video.pause();
+    		})
+    		.catch(error => {
+      			// Auto-play was prevented
+      			// Show paused UI.
+    		});
+		}
+	}
+</script>
+
+{#if playable()}
+	<div
+		class="container"
+		class:table={type === "table"}
+		class:gallery={type === "gallery"}
+		class:selected
+	>
+		<Video
+			muted
+			playsinline
+			bind:node={video}
+			on:loadeddata={init}
+			on:mouseover={video.play.bind(video)}
+			on:mouseout={video.pause.bind(video)}
+			src={url}
+		/>
+	</div>
+{:else}
+	<div>{value}</div>
+{/if}
+
+<style>
+	.container {
+		flex: none;
+		max-width: none;
+	}
+	.container :global(video) {
+		width: var(--size-full);
+		height: var(--size-full);
+		object-fit: cover;
+	}
+
+	.container:hover,
+	.container.selected {
+		border-color: var(--border-color-accent);
+	}
+	.container.table {
+		margin: 0 auto;
+		border: 2px solid var(--border-color-primary);
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		width: var(--size-20);
+		height: var(--size-20);
+		object-fit: cover;
+	}
+
+	.container.gallery {
+		height: var(--size-20);
+		max-height: var(--size-20);
+		object-fit: cover;
+	}
+</style>
+```
+
+
+
+
+
+```
+# vite工程 App.svelte，语法正确，运行出错
+<script lang="ts">
+
+	import type { Gradio, ShareData } from "@gradio/utils";
+	import type { FileData } from "@gradio/client";
+	import Video from "../shared/InteractiveVideo.svelte";
+
+	export let label: string;
+	export let sources:
+		| ["webcam"]
+		| ["upload"]
+		| ["webcam", "upload"]
+		| ["upload", "webcam"];
+	export let root: string;
+	export let show_label: boolean;
+	export let autoplay = false;
+	export let gradio: Gradio<{
+		change: never;
+		clear: never;
+		play: never;
+		pause: never;
+		upload: never;
+		stop: never;
+		end: never;
+		start_recording: never;
+		stop_recording: never;
+		share: ShareData;
+		error: string;
+		warning: string;
+	}>;
+	export let mirror_webcam: boolean;
+	export let include_audio: boolean;
+
+	let _video: FileData | null = null;
+	let _subtitle: FileData | null = null;
+	let active_source: "webcam" | "upload";
+</script>
+
+<Video
+	value={_video}
+	subtitle={_subtitle}
+	{label}
+	{show_label}
+	{sources}
+	{active_source}
+	{mirror_webcam}
+	{include_audio}
+	{autoplay}
+	{root}
+	i18n={gradio.i18n}
+></Video>
+```
+
+
+
+
+
 ### excel
 
 [excel](https://github.com/ticruz38/svelte-sheets)
