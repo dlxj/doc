@@ -13053,6 +13053,8 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 
 ### 成功引用 Gradio 前端组件 
 
+[视频播放回调](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback) 看它前端实现
+
 
 
 ```
