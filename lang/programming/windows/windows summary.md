@@ -1227,12 +1227,13 @@ function Copy-FileSafer {
 
 
 
-# 查看端口点用
+# 查看端占用
 
 
 
 ```
 netstat -aon | findstr "8080"
+netstat -ano | findstr :6006
 ```
 
 
