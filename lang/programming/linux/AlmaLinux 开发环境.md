@@ -715,11 +715,27 @@ exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
 
 
 
+```
+vi /usr/bin/code
+
+CAN_LAUNCH_AS_ROOT=1
+	# 报错的前一句加这行
+	
+ELECTRON_RUN_AS_NODE=1 "$ELECTRON" "$CLI" "$@" --user-data-dir --no-sandbox
+	# 最后一行改成这样
+
+```
+
+
+
+
+
 # Install .Net SDK
 
 
 
 ```
+
 https://download.visualstudio.microsoft.com/download/pr/1cac4d08-3025-4c00-972d-5c7ea446d1d7/a83bc5cbedf8b90495802ccfedaeb2e6/dotnet-sdk-6.0.417-linux-x64.tar.gz
 
 mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-6.0.417-linux-x64.tar.gz  -C $HOME/dotnet
