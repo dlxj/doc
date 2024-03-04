@@ -13224,10 +13224,10 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 
 
 
-### SimpleTextbox
+### bbcode
 
 ```
-gradio cc create MyComponent --template SimpleTextbox --install
+gradio cc create bbcode --template SimpleTextbox --install
 
 
 ```
