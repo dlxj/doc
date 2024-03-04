@@ -13224,6 +13224,18 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 
 
 
+### SimpleTextbox
+
+```
+gradio cc create MyComponent --template SimpleTextbox --install
+
+
+```
+
+
+
+
+
 ### excel
 
 [excel](https://github.com/ticruz38/svelte-sheets)
