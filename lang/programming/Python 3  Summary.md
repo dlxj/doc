@@ -13230,6 +13230,8 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 gradio cc create bbcode --template SimpleTextbox --install
 
 
+demo.launch(debug=True, show_api=False, server_name="0.0.0.0", server_port=6006, inbrowser=True)
+
 ```
 
 
