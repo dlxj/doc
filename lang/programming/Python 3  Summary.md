@@ -12560,6 +12560,14 @@ see https://github.com/R3gm/SoniTranslate 视频语音翻译
 ## compile
 
 ```
+
+
+apt install pollen 
+
+bash scripts/install_gradio.sh && \
+bash scripts/build_frontend.sh && \
+bash scripts/install_test_requirements.sh
+
 # gradio/package.json
 "scripts": {
 	"test": "pnpm --filter @gradio/client build && vitest dev --config .config/vitest.config.ts",
