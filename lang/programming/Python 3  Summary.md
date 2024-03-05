@@ -12329,10 +12329,12 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
 
 - ```
   apt install pollen
+  
+.queue().launch()
   ```
 
   
-
+  
 - ```
   
   # vscode 设置 -> 搜:
