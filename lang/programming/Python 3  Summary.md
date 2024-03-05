@@ -12720,6 +12720,16 @@ demo.launch(share=True)
 
 
 
+## dataframe
+
+https://github.com/gradio-app/gradio/issues/7601
+
+
+
+
+
+
+
 
 
 ## backup db

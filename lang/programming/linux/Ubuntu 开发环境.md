@@ -1,5 +1,34 @@
 
 
+# ISO
+
+https://ftp.riken.jp/Linux/ubuntu-releases/20.04/
+
+
+
+
+
+# 设置代理
+
+```
+# see nodejs summary.md -> 抱抱脸
+
+vi ~/.bashrc
+alias setproxy="export ALL_PROXY=socks5h://172.16.6.185:1080"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+	# curl 正常
+
+source ~/.bashrc
+	
+unsetproxy && \
+pip install pysocks && \
+setproxy && \
+ip
+```
+
+
+
 
 
 # 安装时ACPI错误
