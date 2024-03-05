@@ -4280,6 +4280,20 @@ else:
 
 
 
+
+
+## ssh 端口映射
+
+```
+ssh -CNg -L 6006:127.0.0.1:6006 root@connect.bjb1.seetacloud.com -p 53862
+http://localhost:6006
+	# 成功访问 gradio
+```
+
+
+
+
+
 ##　异地组网
 
 https://github.com/omniedgeio/omniedge
