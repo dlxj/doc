@@ -3764,6 +3764,10 @@ pip install pysocks && \
 setproxy && \
 ip
 
+ssh -CNg -L 6006:127.0.0.1:6006 root@connect.bjb1.seetacloud.com -p 53862
+http://localhost:6006
+	# 成功访问 gradio
+
 
 git config --global user.name "dlxjj" && \
 git config --global user.email "12345@qq.com"
