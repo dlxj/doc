@@ -168,6 +168,9 @@ apt autoremove && \
 apt autoclean && \
 apt install python3-apt
 	# 出错运行这个
+	
+ls ~/miniconda3/lib/python3.10/
+/usr/lib/python3/
 
 apt update && apt upgrade -y && \
 add-apt-repository ppa:ubuntuhandbook1/ffmpeg6 && \
