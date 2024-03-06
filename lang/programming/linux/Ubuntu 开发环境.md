@@ -171,6 +171,8 @@ apt install python3-apt
 	
 ls ~/miniconda3/lib/python3.10/
 /usr/lib/python3/
+ln -s /root/miniconda3/lib/python3.10/ /usr/lib/python3/
+	# 这样？
 
 apt update && apt upgrade -y && \
 add-apt-repository ppa:ubuntuhandbook1/ffmpeg6 && \
