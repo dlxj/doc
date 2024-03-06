@@ -12323,6 +12323,8 @@ see https://github.com/lazarusking/gradio-ffmpeg 视频转换
 
 see https://github.com/kkroening/ffmpeg-python/tree/master/examples  **视频混剪** 
 
+see https://juejin.cn/post/7201506099342082105  **关键帧信息** **必看**
+
 see https://github.com/gradio-app/gradio/issues/2894 嵌入 youbu 视频
 
 - https://www.gradio.app/changelog   **最新 api**
@@ -13004,6 +13006,7 @@ if __name__ == '__main__':
 
 ```bash
 # ffmpeg 从mp4 的第10帧开始提取 30 帧图片
+# https://juejin.cn/post/7201506099342082105 必看
 
 ​```bash
 ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14)+eq(n\,15)+eq(n\,16)+eq(n\,17)+eq(n\,18)+eq(n\,19)+eq(n\,20)+eq(n\,21)+eq(n\,22)+eq(n\,23)+eq(n\,24)+eq(n\,25)+eq(n\,26)+eq(n\,27)+eq(n\,28)+eq(n\,29)+eq(n\,30)+eq(n\,31)+eq(n\,32)+eq(n\,33)+eq(n\,34)+eq(n\,35)+eq(n\,36)+eq(n\,37)+eq(n\,38)+eq(n\,39)" -vsync 0 output_%02d.png
