@@ -12321,6 +12321,8 @@ see https://huggingface.co/spaces/Accel/media-converter **视频转换** [1](htt
 
 see https://github.com/lazarusking/gradio-ffmpeg 视频转换
 
+see https://github.com/kkroening/ffmpeg-python/tree/master/examples  **视频混剪** 
+
 see https://github.com/gradio-app/gradio/issues/2894 嵌入 youbu 视频
 
 - https://www.gradio.app/changelog   **最新 api**
