@@ -2460,6 +2460,13 @@ stream {
 
 [Nginx实现ChatGPT API代理](https://blog.csdn.net/sinat_34104446/article/details/130527167)
 
+```
+vercel -A route.json --prod
+直接在 route.json 里配置路由去反代，不要服务器，只要域名就 ok
+```
+
+
+
 
 
 ### cloudflare ssh反代
