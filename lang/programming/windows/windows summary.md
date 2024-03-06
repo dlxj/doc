@@ -205,6 +205,11 @@ see nodejs summary.md -> InternLM
 wsl --list
 	# 已安装
 
+1. 控制面版卸载 ubuntu wsl
+2. wsl --unregister Ubuntu-20.04
+C:\Users\i\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu18.04onWindows_79rhkp1fndgsc\LocalState\rootfs
+	# 删文件
+
 wsl --unregister Ubuntu-20.04
 	# 这新重装后它才不错
 
