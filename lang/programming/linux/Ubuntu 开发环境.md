@@ -163,7 +163,13 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 python3.10 get-pip.py
 	# python3.10 的pip 需要另外安装
 
-
+apt update && apt upgrade -y && \
+add-apt-repository ppa:ubuntuhandbook1/ffmpeg6 && \
+apt update && \
+apt install ffmpeg && \
+ffmpeg --version
+	# apt install ppa-purge && sudo ppa-purge ppa:ubuntuhandbook1/ffmpeg6  
+	# remove
 
 
 
