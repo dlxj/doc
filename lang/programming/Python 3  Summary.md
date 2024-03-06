@@ -9266,6 +9266,10 @@ ffmpeg -skip_frame nokey -i 1.mp4 -r 1000 -vsync 0 -frame_pts true tmp/out%d.png
 	# 只要关键帧，数字代表的时间是毫秒数（1/1000秒）
 skip_frame tells the decoder to process only keyframes. -vsync 0 (in this command) preserves timestamps. -frame_pts sets the numeral portion of the output image filename to represent the timestamp. The interpretation of the number requires you to know the framerate e.g. if the framerate is 30 then an image name of out75 corresponds to a timestamp of 75/30 = 2.50 seconds. You can add -r 1000 if you want numbers to represent milliseconds.
 """
+
+ffmpeg -ss 00:22:30 -i Mononoke.Hime.mkv -ss 00:00:30 -frames:v 1 out3.jpg
+	#在这个视频文件的22分钟30秒处，再向后30秒的位置，截取一帧画面，输出为名为 "out3.jpg" 的图片文件
+
 ```
 
 
