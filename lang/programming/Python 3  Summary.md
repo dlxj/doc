@@ -12330,6 +12330,8 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
 - ```
   apt install pollen
   
+  ```
+
 .queue().launch()
   ```
 
@@ -12901,6 +12903,59 @@ if success:
     # 更新视频组件
     iface.inputs[0].update(value=bytestr)
 ```
+
+
+
+```python
+# https://github.com/gradio-app/gradio/issues/1637
+# 实时视频处理
+
+import gradio as gr
+import cv2
+
+def process_video(input_video):
+    cap = cv2.VideoCapture(input_video)
+
+    output_path = "output.mp4"
+
+    fps = int(cap.get(cv2.CAP_PROP_FPS))
+    width  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+    video = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (width, height))
+
+    iterating, frame = cap.read()
+    while iterating:
+
+        # flip frame vertically
+        frame = cv2.flip(frame, 0)
+        display_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+        video.write(frame)
+        yield display_frame, None
+
+        iterating, frame = cap.read()
+
+    video.release()
+    yield display_frame, output_path
+
+with gr.Blocks() as demo:
+    with gr.Row():
+        input_video = gr.Video(label="input")
+        processed_frames = gr.Image(label="last frame")
+        output_video = gr.Video(label="output")
+
+    with gr.Row():
+        examples = gr.Examples(["parrot.mp4"], inputs=input_video)
+        process_video_btn = gr.Button("process video")
+
+    process_video_btn.click(process_video, input_video, [processed_frames, output_video])
+
+demo.queue()
+demo.launch()
+```
+
+
 
 
 
