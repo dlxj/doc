@@ -12317,6 +12317,8 @@ see https://github.com/gradio-app/gradio/issues/6851 Gallery
 
 see https://www.gradio.app/docs/video  视频组件文档
 
+see https://huggingface.co/spaces/Accel/media-converter **视频转换** [1](https://github.com/gradio-app/gradio/pull/2003)
+
 see https://github.com/lazarusking/gradio-ffmpeg 视频转换
 
 see https://github.com/gradio-app/gradio/issues/2894 嵌入 youbu 视频
