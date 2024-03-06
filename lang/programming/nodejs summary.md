@@ -2456,6 +2456,12 @@ stream {
 
 
 
+### 正向代理 Chatgpt
+
+[Nginx实现ChatGPT API代理](https://blog.csdn.net/sinat_34104446/article/details/130527167)
+
+
+
 ### cloudflare ssh反代
 
 [cloudflare ssh反代](https://github.com/tsl0922/ttyd)
