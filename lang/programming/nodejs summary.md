@@ -1962,6 +1962,8 @@ Bad owner or permissions on C:\\Users\\i/.ssh/config
 
 ## vscode genie
 
+[double](https://docs.double.bot/introduction)
+
 [chatgpt-vscode](https://github.com/ai-genie/chatgpt-vscode)
 
 [CopilotForXcode](https://github.com/intitni/CopilotForXcode)
