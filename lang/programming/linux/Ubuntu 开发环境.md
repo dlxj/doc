@@ -177,7 +177,8 @@ apt update && apt upgrade -y && \
 add-apt-repository ppa:ubuntuhandbook1/ffmpeg6 && \
 apt update && \
 apt install ffmpeg && \
-ffmpeg --version
+ffmpeg -version && \
+ffprobe -version
 	# apt install ppa-purge && sudo ppa-purge ppa:ubuntuhandbook1/ffmpeg6  
 	# remove
 
