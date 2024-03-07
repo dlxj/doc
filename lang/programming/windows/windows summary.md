@@ -194,6 +194,10 @@ free -h
 
 see nodejs summary.md -> InternLM
 
+ssh -CNg -L 6006:127.0.0.1:6006 root@connect.bjb1.seetacloud.com -p 53862
+http://localhost:6006
+	# 成功访问 gradio
+
 ```
 
 

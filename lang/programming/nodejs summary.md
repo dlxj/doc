@@ -2853,6 +2853,9 @@ grep AllowTcpForwarding /etc/ssh/sshd_config
 sed -i 's/#\?AllowTcpForwarding.*/AllowTcpForwarding yes/' /etc/ssh/sshd_config
 	# ssh 服务端 修改AllowTcpForwarding 为 YES
 	
+ssh -CNg -L 6006:127.0.0.1:6006 root@connect.bjb1.seetacloud.com -p 53862
+http://localhost:6006
+	# 成功访问 gradio
 ```
 
 http://httpbin.org/ip
@@ -3735,8 +3738,12 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   	proxy = https://127.0.0.1:57882
   	# 实测有效，必须不能指定 huggingface，全部走代理才行 	
   	
+  ssh -CNg -L 6006:127.0.0.1:6006 root@connect.bjb1.seetacloud.com -p 53862
+http://localhost:6006
+  	# 成功访问 gradio
+  
   ```
-
+  
   
 
 ```
