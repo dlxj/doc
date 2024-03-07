@@ -169,10 +169,9 @@ apt autoclean && \
 apt install python3-apt
 	# 出错运行这个
 	
-ls ~/miniconda3/lib/python3.10/
-/usr/lib/python3/
-ln -s /root/miniconda3/lib/python3.10/ /usr/lib/python3/
-	# 这样？
+20.04 的 python3.8 是不能删的
+ln -s /root/mini/bin/python3.10 /usr/bin/python
+	# 这样，pip 也这样 就可以了
 
 apt update && apt upgrade -y && \
 add-apt-repository ppa:ubuntuhandbook1/ffmpeg6 && \
