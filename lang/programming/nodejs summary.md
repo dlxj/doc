@@ -1962,6 +1962,8 @@ Bad owner or permissions on C:\\Users\\i/.ssh/config
 
 ## vscode genie
 
+[chat.lmsys.org  claude VS gpt4](https://chat.lmsys.org/)
+
 [double](https://docs.double.bot/introduction)
 
 [chatgpt-vscode](https://github.com/ai-genie/chatgpt-vscode)
