@@ -1715,6 +1715,19 @@ print(type(img_bytes))
 
 
 
+### tempfile
+
+```python
+# see https://github.com/gradio-app/gradio/issues/1972
+out_file = tempfile.NamedTemporaryFile(suffix="out.mp4", delete=False)
+subprocess.run(f"ffmpeg -y -loglevel quiet -stats -i {output_fname} -c:v libx264 {out_file.name}".split())
+return out_file.name
+```
+
+
+
+
+
 ## pickle 序列化存储
 
 支持任何类型
@@ -12394,6 +12407,9 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   bash scripts/install_test_requirements.sh
   	# 可以在 bash 后加 proxychain4 , 成功安装
   	# .bashrc 里的代理，开了也不得行
+  
+  ln -s /root/miniconda3/bin/gradio /usr/bin/gradio
+  gradio cc install
   
   
   gr.HTML() 只用于显示，不能够交互
