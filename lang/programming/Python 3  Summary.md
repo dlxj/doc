@@ -5794,6 +5794,13 @@ sys.stdout.write("\rIteration: {} and {}".format(i + 1, j + 1))
 import subprocess
 out_bytes = subprocess.check_output([r"C:\Program Files\R\R-4.0.3\bin\x64\Rscript.exe", r"C:\Program Files\R\R-4.0.3\bin\x64\op.R"])
 out_text = out_bytes.decode('utf-8')
+
+
+see  huggingface gradio/issues/1637/run.py
+    cmd = f"ffprobe -i {input_video} -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1"
+    out_bytes = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT)
+    total_time = float( out_bytes.decode('utf-8').strip() )
+
 ```
 
 ```R
