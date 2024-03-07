@@ -12372,7 +12372,7 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   	https://github.com/snehankekre/streamlit-video-subtitles-poc/raw/main/streamlit-1.28.0-py2.py3-none-any.whl
   	
   packages.txt
-  	# 这里加一行 ffmpeg ?
+  	ffmpeg
   
   ```
 
