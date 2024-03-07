@@ -19304,6 +19304,8 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 # Godot
 
+[suyu switch模拟器](https://gitlab.com/suyu-emu/suyu)
+
 
 
 ## 文档
