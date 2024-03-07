@@ -12998,37 +12998,146 @@ demo.launch()
 
 ```python
 # 提取关键帧
-# You can change 'I' to 'P' if you need to extract P-frames.
-import os
-import cv2
-import subprocess
+# see huggingface gradio/issues/1637/run.py
+# opencv-python
+# https://juejin.cn/post/7201506099342082105 必看
+# https://forums.developer.nvidia.com/t/python-what-is-the-four-characters-fourcc-code-for-mp4-encoding-on-tx2/57701
+import gradio as gr
+import cv2, subprocess, math
 
-filename = '/home/andriy/Downloads/video.mp4'
+def process_video(input_video):
+    cap = cv2.VideoCapture(input_video)
 
-def get_frame_types(video_fn):
-    command = 'ffprobe -v error -show_entries frame=pict_type -of default=noprint_wrappers=1'.split()
-    out = subprocess.check_output(command + [video_fn]).decode()
-    frame_types = out.replace('pict_type=','').split()
-    return zip(range(len(frame_types)), frame_types)
+    output_path = "/root/gradio/issues/1637/output.mp4"
+    
+    cmd = f"ffprobe -i {input_video} -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1"
+    out_bytes = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT)
+    total_time = float( out_bytes.decode('utf-8').strip() )
+    
+    cmd2 = f"ffprobe -i {input_video} -loglevel error -print_format csv -select_streams v:0 -show_entries frame=pict_type"
+    out_bytes = subprocess.check_output(cmd2, shell=True, stderr=subprocess.STDOUT)
+    frame_info = out_bytes.decode('utf-8').strip().split('\n')
+    
+    total_frame = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    fps = int(cap.get(cv2.CAP_PROP_FPS))
+    width  = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    
+    total_frame2 = math.floor(total_time * fps)
+    
+    assert total_frame == total_frame2
 
-def save_i_keyframes(video_fn):
-    frame_types = get_frame_types(video_fn)
-    i_frames = [x[0] for x in frame_types if x[1]=='I']
-    if i_frames:
-        basename = os.path.splitext(os.path.basename(video_fn))[0]
-        cap = cv2.VideoCapture(video_fn)
-        for frame_no in i_frames:
-            cap.set(cv2.CAP_PROP_POS_FRAMES, frame_no)
-            ret, frame = cap.read()
-            outname = basename+'_i_frame_'+str(frame_no)+'.jpg'
-            cv2.imwrite(outname, frame)
-            print ('Saved: '+outname)
-        cap.release()
-    else:
-        print ('No I-frames in '+video_fn)
+    video = cv2.VideoWriter(output_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (width, height))
 
-if __name__ == '__main__':
-    save_i_keyframes(filename)
+    """
+    获取当前帧
+    视频的首帧索引通常是0，所以最后一帧的索引会是总帧数减1
+    ffprobe -i parrot.mp4 -v  quiet -select_streams v -show_entries frame=pkt_pts_time,pict_type
+    得到的输出前后2个pkt_pts_time的差值即关键帧的间隔时间(单位为秒)，不过需要注意pict_type=I时，才表示是关键帧，类型还有P（前向预测帧）和B（双向预测帧）
+    
+    
+    ffprobe -i parrot.mp4 -loglevel error -print_format csv -select_streams v:0 -show_entries frame=pict_type
+        # 只显示帧类型
+    
+    ffprobe -loglevel error -print_format csv -select_streams v:0  -show_frames parrot.mp4
+    frame,video,0,1,5940,0.066000,5940,0.066000,5940,0.066000,3000,0.033333,48,4020,854,480,yuv420p,1280:1281,I,0,0,0,0,0,unknown,unknown,unknown,unknown,left
+    frame,video,0,0,8940,0.099333,8940,0.099333,8940,0.099333,3000,0.033333,4845,180,854,480,yuv420p,1280:1281,B,2,0,0,0,0,unknown,unknown,unknown,unknown,left
+    frame,video,0,0,11940,0.132667,11940,0.132667,11940,0.132667,3000,0.033333,5037,215,854,480,yuv420p,1280:1281,B,3,0,0,0,0,unknown,unknown,unknown,unknown,left
+    frame,video,0,0,14940,0.166000,14940,0.166000,14940,0.166000,3000,0.033333,4097,742,854,480,yuv420p,1280:1281,P,1,0,0,0,0,unknown,unknown,unknown,unknown,left
+    frame,video,0,0,17940,0.199333,17940,0.199333,17940,0.199333,3000,0.033333,6413,270,854,480,yuv420p,1280:1281,B,5,0,0,0,0,unknown,unknown,unknown,unknown,left
+    frame,video,0,0,20940,0.232667,20940,0.232667,20940,0.232667,3000,0.033333,5258,1143,854,480,yuv420p,1280:1281,P,4,0,0,0,0,unknown,unknown,unknown,unknown,left
+       # https://juejin.cn/post/7201506099342082105
+
+    从左到右依次为
+frame 代表一个frame
+media_type 媒体类型 video audio
+stream_index stream 索引
+key_frame 是否为关键帧
+pkt_pts 展示时间戳，按time_base计算，time_base为时间基，代表1s有多少份，这里是90000
+pkt_pts_time 展示时间戳，按秒为单位
+pkt_dts  编码时间戳，按time_base计算
+pkt_dts_time 编码时间戳，按秒为单位
+best_effort_timestamp
+best_effort_timestamp_time
+pkt_duration  packet持续时长，按time_base计算
+pkt_duration_time  packet持续时长，，按秒为单位
+pkt_pos  packet文件位置
+pkt_size  packet大小
+width 帧的宽
+height 帧的高
+pix_fmt 图片的像素格式
+sample_aspect_ratio  像素的宽高比例
+pict_type 帧的类型 I/B/P
+coded_picture_number 压缩的帧序号
+display_picture_number 展示图片的序号
+interlaced_frame 图像的扫描方式：隔行 逐行   
+
+
+用中文解释命令：ffprobe -i parrot.mp4 -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1
+
+这是一个使用ffprobe的命令，主要用来检查multimedia streams（例如视频、音频等）的关键信息。其中各部分的中文解释如下：
+
+- `ffprobe`: FFmpeg项目的一部分，一个专门用于检查multimedia流的工具。
+
+- `-i parrot.mp4`: `-i`是指定输入文件的参数，这里指定的输入文件是"parrot.mp4"。
+
+- `-v error`： `-v`用于设置ffprobe的日志等级，这里设定只输出错误信息。
+
+- `-show_entries format=duration`: `show_entries`指定了需要输出的信息，这里要求输出文件的时间长度。
+
+- `-of default=noprint_wrappers=1:nokey=1`: `-of`指的是输出格式的参数，`default=noprint_wrappers=1:nokey=1`的设定是为了让输出信息更加简洁，不会显示每条信息的=key的标签，只输出对应的值。
+
+总的来说，这个命令是用ffprobe去检测"parrot.mp4"这个文件，并只输出视频的长度（duration）信息。
+ 
+ 
+ out_file = tempfile.NamedTemporaryFile(suffix="out.mp4", delete=False)
+subprocess.run(f"ffmpeg -y -loglevel quiet -stats -i {output_fname} -c:v libx264 {out_file.name}".split())
+return out_file.name
+ 
+    """
+    curr_frame1 = cap.get(cv2.CAP_PROP_POS_FRAMES)
+
+    # 设置从第10帧开始读取
+    # cap.set(cv2.CAP_PROP_POS_FRAMES, 10)
+
+    # curr_frame2 = cap.get(cv2.CAP_PROP_POS_FRAMES)
+
+    curr_idx = 0
+    iterating, frame = cap.read()
+    while iterating:
+
+        # flip frame vertically
+        frame = cv2.flip(frame, 0)
+        display_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+        video.write(frame)
+        
+        iterating, frame = cap.read()
+        
+        info = frame_info[curr_idx]
+        curr_idx += 1
+        if "I" in info: # 关键帧
+            yield display_frame, None
+        
+    cap.release()
+    cv2.destroyAllWindows()
+    video.release()
+    yield display_frame, output_path
+
+with gr.Blocks() as demo:
+    with gr.Row():
+        input_video = gr.Video(label="input")
+        processed_frames = gr.Image(label="last frame")
+        output_video = gr.Video(label="output")
+
+    with gr.Row():
+        examples = gr.Examples(["/root/gradio/issues/1637/parrot.mp4"], inputs=input_video)
+        process_video_btn = gr.Button("process video")
+
+    process_video_btn.click(process_video, input_video, [processed_frames, output_video])
+
+demo.queue()
+demo.launch(debug=True, show_api=False, server_name="0.0.0.0", server_port=6006, inbrowser=True)
 ```
 
 
