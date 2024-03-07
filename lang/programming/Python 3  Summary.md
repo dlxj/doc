@@ -12366,6 +12366,11 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   http://localhost:6006
   	# 成功访问 gradio
   
+  requirements.txt
+  pre-requirements.txt
+  packages.txt
+  	# 这里加一行 ffmpeg ?
+  
   ```
 
 .queue().launch()
