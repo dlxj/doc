@@ -12335,7 +12335,9 @@ see https://github.com/gradio-app/gradio/pull/7192 网络图片
 
 see https://github.com/gradio-app/gradio/issues/6851 Gallery
 
-see https://www.gradio.app/docs/video  视频组件文档
+see https://www.gradio.app/main/docs/js/video  **js引用视频组件的方法**
+
+- see Lib\site-packages\gradio\processing_utils.py **音视频处理**
 
 see https://huggingface.co/spaces/Accel/media-converter **视频转换** [1](https://github.com/gradio-app/gradio/pull/2003)
 
