@@ -2602,6 +2602,17 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 source ~/.bashrc
 
 
+# https://maplege.github.io/2017/09/04/socksTOhttp/
+	# socks转为http代理
+	apt update && apt-get install privoxy
+	vi /etc/privoxy/config
+	forward-socks5   /               172.16.6.253:1080 .
+	listen-address 0.0.0.0:1080
+    service privoxy restart
+    http_proxy=http://127.0.0.1:1080 curl google.com
+    	# 成功访问 google
+    
+
 export PATH=/usr/local/cuda-11.8/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 
