@@ -692,6 +692,22 @@ vi /etc/hosts #编辑配置文件
 
 
 
+# socks5 转 http
+
+```
+# https://maplege.github.io/2017/09/04/socksTOhttp/
+	# socks转为http代理
+	apt update && apt-get install privoxy
+	vi /etc/privoxy/config
+	forward-socks5   /               172.16.6.253:1080 .
+	listen-address 0.0.0.0:1080
+    service privoxy restart
+    http_proxy=http://127.0.0.1:1080 curl google.com
+    	# 成功访问 google
+```
+
+
+
 
 
 # 远程桌面
