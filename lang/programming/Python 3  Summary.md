@@ -12645,7 +12645,9 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 ## compoment
 
 ```
-
+pip install gradio==4.21.0
+	# 这版 video 组件正常运行
+	
 gradio cc create mysimpleTextbox --template SimpleTextbox && \
 cd mysimpleTextbox && \
 gradio cc install && \
@@ -12657,6 +12659,14 @@ gradio cc dev
 mysimpletextbox/frontend/Index.svelte
 e.key === "Enter" && e.shiftKey
 	# 改成这样，它要在 textbox 获得焦点的时侯按 sift + enter ，才能成功触发
+
+
+
+
+gradio cc create myvideo --template Video && \
+cd myvideo && \
+gradio cc install && \
+gradio cc dev
 
 	
 ```
