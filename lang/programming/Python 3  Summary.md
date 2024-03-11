@@ -12642,6 +12642,29 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 
 
 
+## compoment
+
+```
+
+gradio cc create mysimpleTextbox --template SimpleTextbox && \
+cd mysimpleTextbox && \
+gradio cc install && \
+gradio cc dev
+	# 成功运行，点　Frontend Server (Go here): http://localhost:7861/ 
+	# 打开浏览器
+	# 注意：只有自已编译的完整 gradio 目录下，才可以用vscode 直接运行demo下的app.py，此时它是没有前端地址的，浏览器直接打开那个地址就可以了
+
+mysimpletextbox/frontend/Index.svelte
+e.key === "Enter" && e.shiftKey
+	# 改成这样，它要在 textbox 获得焦点的时侯按 sift + enter ，才能成功触发
+
+	
+```
+
+
+
+
+
 
 
 ## change
