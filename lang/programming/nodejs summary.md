@@ -3906,6 +3906,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create vite_gradio_video --type dataset
 	# huggingface-cli repo create gradio_video --type dataset
 	# huggingface-cli repo create gradio_bbcode --type dataset
+	# huggingface-cli repo create myvideo --type dataset
+	
 	
 	
 	
