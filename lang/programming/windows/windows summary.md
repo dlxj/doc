@@ -332,6 +332,55 @@ ssh root@localhost
 
 
 
+# choco
+
+```
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+	# 安装 chco
+
+choco
+	# 成功执行
+
+choco install docker-desktop --upgrade --force
+	# 强制更新 docker
+```
+
+
+
+
+
+# Docker+Windows 2022
+
+```
+# windows server 2022
+
+cd "C:\Program Files\Docker\Docker\"
+
+& '.\Docker Desktop Installer.exe'
+	# 启动失败
+	empty package
+   at Docker.Installer.InstallWorkflow.<DoProcessAsync>d__23.MoveNext()
+
+"HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control"
+ServicesPipeTimeout=dword:0000ea60
+
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+	# 安装 chco
+
+choco
+	# 成功执行
+
+choco install docker-desktop --upgrade --force
+	# 强制更新 docker
+```
+
+
+
+
+
+
+
 # 定时任务
 
 ```
