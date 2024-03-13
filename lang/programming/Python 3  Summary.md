@@ -12668,7 +12668,8 @@ cd myvideo && \
 gradio cc install && \
 gradio cc dev
 
-	
+ssh -CNg -L 7861:127.0.0.1:7861 root@172.16.6.253 -p 22
+
 ```
 
 
