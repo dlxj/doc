@@ -332,7 +332,7 @@ RUN set -x; dnf makecache --refresh && \
 dnf update -y && dnf upgrade -y && \
 dnf install -y epel-release && \
 dnf update -y && \
-dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel && \
+dnf install -y tar p7zip libsodium net-tools cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel && \
 dnf install epel-release -y && \
 dnf config-manager --set-enabled crb && \
 dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm -y && \
