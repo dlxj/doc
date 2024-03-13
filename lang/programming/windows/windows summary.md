@@ -343,6 +343,7 @@ choco
 
 choco install docker-desktop --upgrade --force
 	# 强制更新 docker
+
 ```
 
 
@@ -373,6 +374,8 @@ choco
 
 choco install docker-desktop --upgrade --force
 	# 强制更新 docker
+	# 重启系统，运行前面的命令虽然还弹错，但是可以启动不闪退了
+	
 ```
 
 
