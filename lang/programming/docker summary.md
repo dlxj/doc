@@ -320,6 +320,25 @@ choco install docker-desktop --upgrade --force
 docker image rm almalinux:9.3
 docker pull almalinux:9.3
 
+$networks = docker network ls
+if ($networks -notmatch 'customnetwork') {
+    Write-Host 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    Write-Host 'customnetwork create success'
+}
+
+[System.Text.Encoding]::UTF8.GetBytes("FROM almalinux:9.3
+RUN set -x; dnf makecache --refresh && \
+dnf update -y && \
+dnf install -y epel-release && \
+dnf update -y && \
+dnf --enablerepo=powertools install perl-IPC-Run -y && \
+dnf install -y python39 && \
+pip3 install conan && \
+dnf install -y passwd openssh-server tar p7zip libsodium curl net-tools firewalld cronie lsof git wget yum-utils make gcc gcc-c++ openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel boost-devel systemd-devel ntfsprogs ntfs-3g nginx cronie && \
+pwd ") | Set-Content Dockerfile -Encoding Byte
+
+
 
 
 ```
