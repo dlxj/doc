@@ -4341,8 +4341,16 @@ else:
 forward-socks5   /               127.0.0.1:1080 .
 listen-address localhost:8118
     service privoxy restart
-    http_proxy=http://127.0.0.1:1080 curl google.com
+    http_proxy=http://127.0.0.1:8118 curl google.com
     	# 成功访问 google
+    	
+    	
+vi ~/.bashrc
+alias setproxy="export ALL_PROXY=http://127.0.0.1:8118"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+	# curl 正常    	
+    	
 ```
 
 
