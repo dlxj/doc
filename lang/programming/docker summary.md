@@ -38,7 +38,7 @@ docker start centos7
 
 
 
-### 移除镜像
+# 移除镜像
 
 docker images
 
@@ -46,7 +46,7 @@ docker rmi xxx
 
 
 
-### 移除容器
+# 移除容器
 
 docker stop 17b3d18c1428
 
@@ -101,9 +101,8 @@ https://plutoacharon.github.io/2020/02/23/Docker%E5%AE%B9%E5%99%A8%E5%87%BA%E7%8
 
 
 
-### 
 
-### 如果需要更多的端口映射
+# 如果需要更多的端口映射
 
 ```
 # https://blog.opensvc.net/yun-xing-zhong-de-dockerrong-qi/
@@ -145,7 +144,7 @@ root@localhost /]# docker run --name mytomcat -d -p 8888:8080 tomcat
 
 
 
-### Docker 中的postgreql
+# Docker 中的postgreql
 
 
 
@@ -196,7 +195,7 @@ psql -h 127.0.0.1 -p 54322 -U postgres # 注意端口
 
 
 
-### docker 退出方法
+# docker 退出方法
 
 ```
 docker 退出方法
@@ -217,7 +216,7 @@ yum update --allowerasing
 
 
 
-### docker-compose
+# docker-compose
 
 see nodejs summary.md  -> 范畴论 -> Python Monads
 
@@ -230,14 +229,32 @@ see nodejs summary.md  -> 范畴论 -> Python Monads
 
 
 
-
-
-
-## AlmaLinux9
+# Docker 走代理
 
 ```
-docker image rm almalinux:9.3-minimal
-docker pull almalinux:9.3-minimal
+mkdir ~/.docker && \
+touch ~/.docker/config.json
+
+vi ~/.docker/config.json
+{
+        "auths": {},
+        "HttpHeaders": {
+                "User-Agent": "Docker-Client/19.03.2 (linux)"
+        },
+
+                "proxies":
+                {
+                        "default":
+                        {
+                        "httpProxy": "http://127.0.0.1:8118",
+                        "httpsProxy": "http://127.0.0.1:8118"
+                        }
+                }
+}
+
+systemctl restart docker && \
+systemctl status docker
+
 
 
 ```
@@ -247,7 +264,22 @@ docker pull almalinux:9.3-minimal
 
 
 
-### AlmaLinux8
+# AlmaLinux9
+
+```
+docker image rm almalinux:9.3
+docker pull almalinux:9.3
+
+
+
+```
+
+
+
+
+
+
+# AlmaLinux8
 
 
 
@@ -588,13 +620,13 @@ systemctl stop firewalld
 
 
 
-#### Docker 更改已存在的端口和共享目录
+## Docker 更改已存在的端口和共享目录
 
 [更改已存在的端口和共享目录](https://blog.csdn.net/bf96163/article/details/108405502)
 
 
 
-#### redis
+## redis
 
 ```
 wget https://download.redis.io/redis-stable.tar.gz && \
