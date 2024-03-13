@@ -3763,6 +3763,15 @@ http://localhost:6006
 
 ```
 
+# git-lfs
+apt/deb repos: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+
+yum/rpm repos: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | sudo bash
+
+yum install git-lfs
+	# apt-get install git-lfs
+
+
 
 git lfs clone https://huggingface.co/datasets/dlxjj/gradio
 
@@ -4327,6 +4336,7 @@ else:
 # https://maplege.github.io/2017/09/04/socksTOhttp/
 	# socks转为http代理
 	apt update && apt-get install privoxy
+	dnf update && dnf install privoxy
 	vi /etc/privoxy/config
 	forward-socks5   /               172.16.6.253:1080 .
 	listen-address 0.0.0.0:1080
