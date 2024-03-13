@@ -4338,8 +4338,8 @@ else:
 	apt update && apt-get install privoxy
 	dnf update && dnf install privoxy
 	vi /etc/privoxy/config
-	forward-socks5   /               172.16.6.253:1080 .
-	listen-address 0.0.0.0:1080
+forward-socks5   /               127.0.0.1:1080 .
+listen-address localhost:8118
     service privoxy restart
     http_proxy=http://127.0.0.1:1080 curl google.com
     	# 成功访问 google
