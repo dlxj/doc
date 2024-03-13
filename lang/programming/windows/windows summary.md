@@ -228,7 +228,7 @@ http://localhost:6006
 关键：
 windows server 2022 先安装所有更新
 再： wsl --update
-
+	# 后面装 Ubuntu-20.04 就正常了
 
 
 wsl --list
