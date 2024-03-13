@@ -232,6 +232,12 @@ see nodejs summary.md  -> 范畴论 -> Python Monads
 # Docker 走代理
 
 ```
+
+https://note.qidong.name/2020/05/docker-proxy/
+
+
+
+
 mkdir ~/.docker && \
 touch ~/.docker/config.json
 
