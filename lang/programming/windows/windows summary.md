@@ -225,6 +225,11 @@ http://localhost:6006
 ## Install wsl2
 
 ```
+关键：
+windows server 2022 先安装所有更新
+再： wsl --update
+
+
 
 wsl --list
 	# 已安装
