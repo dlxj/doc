@@ -329,7 +329,7 @@ if ($networks -notmatch 'customnetwork') {
 
 [System.Text.Encoding]::UTF8.GetBytes('FROM almalinux:9.3
 RUN set -x; dnf makecache --refresh && \
-dnf update -y && \
+dnf update -y && dnf upgrade -y && \
 dnf install -y epel-release && \
 dnf update -y && \
 dnf install -y tar p7zip libsodium curl net-tools cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel && \
