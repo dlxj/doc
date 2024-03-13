@@ -231,10 +231,22 @@ see nodejs summary.md  -> 范畴论 -> Python Monads
 
 # Docker 走代理
 
-```
-
 https://note.qidong.name/2020/05/docker-proxy/
 
+```
+
+在执行docker pull时，是由守护进程dockerd来执行。 因此，代理需要配在dockerd的环境中。 而这个环境，则是受systemd所管控，因此实际是systemd的配置。
+
+mkdir -p /etc/systemd/system/docker.service.d && \
+touch /etc/systemd/system/docker.service.d/proxy.conf
+
+在这个proxy.conf文件（可以是任意*.conf的形式）中，添加以下内容：
+
+vi /etc/systemd/system/docker.service.d/proxy.conf
+[Service]
+Environment="HTTP_PROXY=http://127.0.0.1:8118/"
+Environment="HTTPS_PROXY=http://127.0.0.1:8118/"
+Environment="NO_PROXY=localhost,127.0.0.1,.example.com"
 
 
 
