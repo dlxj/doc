@@ -309,6 +309,38 @@ choco install docker-desktop --upgrade --force
 
 
 
+# Ubuntu 20.04
+
+```
+docker image rm ubuntu:20.04
+docker pull ubuntu:20.04
+
+docker stop ubuntu_server_6006
+docker rm ubuntu_server_6006
+docker network rm customnetwork
+
+$networks = docker network ls
+if ($networks -notmatch 'customnetwork') {
+    Write-Host 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    Write-Host 'customnetwork create success'
+}
+
+[System.Text.Encoding]::UTF8.GetBytes('FROM ubuntu:20.04
+RUN set -x; apt-get update && \
+apt-get install -y build-essential && \
+apt-get install -y p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \
+apt-get install -y dialog apt-utils && \
+apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev && \
+pwd ') | Set-Content Dockerfile -Encoding Byte
+
+docker build -t ubuntu_server_6006 .
+
+
+```
+
+
+
 
 
 
@@ -410,7 +442,13 @@ systemctl restart ssh
 
 docker exec -it almalinux9_server_6006 bash -c '/bin/bash'
 
-docker exec -it almalinux9_server_6006 bash -c 'firewall-cmd'
+
+docker exec -it almalinux9_server_6006 bash -c 'dnf install firewalld -y && 
+systemctl start firewalld &&
+firewall-cmd --state &&
+systemctl stop firewalld &&
+systemctl disable firewalld
+'
 
 docker exec -it almalinux9_server_6006 bash -c 'systemctl stop firewalld'
 docker exec -it almalinux9_server_6006 bash -c 'dnf install firewalld && 

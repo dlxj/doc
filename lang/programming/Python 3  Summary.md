@@ -12406,8 +12406,16 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
       ]
   }
   	# 正常进断点需要这个
-  	
   
+
+vi ~/.bashrc
+alias setproxy="export ALL_PROXY=http://172.16.6.253:8118"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+	# http 代理, 用 privoxy 转 shocks5, see nodejs summary.md -> 抱抱脸
+	# curl 正常  
+  	
+  	
   git lfs clone https://huggingface.co/datasets/dlxjj/gradio
   
   git-lfs 3.4.0         
