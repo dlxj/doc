@@ -335,6 +335,14 @@ apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev l
 pwd ') | Set-Content Dockerfile -Encoding Byte
 
 docker build -t ubuntu_server_6006 .
+docker run -tid --name ubuntu_server_6006 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 6006:6006 -p 7860:7860 -p 7861:7861 -p 5432:5432 -p 6379:6379 -p 8880:8880 -p 8080:8080 --privileged=true ubuntu_server_6006 /bin/bash
+
+
+ufw disable && \
+apt install openssh-server -y && \
+systemctl enable --now ssh && \
+systemctl status ssh
+
 
 
 ```
