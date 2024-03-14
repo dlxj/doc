@@ -337,7 +337,7 @@ pwd ') | Set-Content Dockerfile -Encoding Byte
 
 
 docker build -t almalinux9_server_6006 .
-docker run -tid --name almalinux9_server_6006 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 6006:6006 -p 5432:5432 -p 6379:6379 -p 8880:8880 -p 8080:8080 --privileged=true almalinux9_server_6006 /sbin/init
+docker run -tid --name almalinux9_server_6006 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 6006:6006 -p 7860:7860 -p 7861:7861 -p 5432:5432 -p 6379:6379 -p 8880:8880 -p 8080:8080 --privileged=true almalinux9_server_6006 /sbin/init
 
 docker exec -it almalinux9_server_6006 bash -c "systemctl start sshd &&
 systemctl enable sshd &&
@@ -382,15 +382,18 @@ git config --global credential.helper store &&
 huggingface-cli login'
 
 
-pip install gradio==4.21.0 &&
-gradio cc create myvideo --template Video && \
-cd myvideo && \
-gradio cc install && \
-gradio cc dev
+docker exec -it almalinux9_server_6006 bash -c 'pip install gradio==4.21.0 &&
+gradio cc create myvideo --template Video && 
+cd myvideo && 
+gradio cc install && 
+gradio cc dev'
 
-
+docker exec -it almalinux9_server_6006 bash -c 'mkdir huggingface &&
+cd huggingface &&
 git clone https://huggingface.co/datasets/dlxjj/myvideo &&
-cd myvideo && \
+cd myvideo && 
+gradio cc install && 
+gradio cc dev'
 
 
 ```
