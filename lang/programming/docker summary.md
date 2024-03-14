@@ -400,6 +400,9 @@ gradio cc install &&
 gradio cc dev'
 
 
+ssh -CNg -L 7861:127.0.0.1:7861 root@172.20.0.2 -p 22
+	# 手动端口映射
+
 ```
 
 
