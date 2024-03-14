@@ -404,6 +404,10 @@ nmap 172.20.0.2 -p22'
 
 ssh root@172.20.0.2 -p22
 
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+
+systemctl restart ssh
+
 docker exec -it almalinux9_server_6006 bash -c '/bin/bash'
 
 docker exec -it almalinux9_server_6006 bash -c 'firewall-cmd'
