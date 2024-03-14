@@ -320,6 +320,10 @@ choco install docker-desktop --upgrade --force
 docker image rm almalinux:9.3
 docker pull almalinux:9.3
 
+docker stop almalinux9_server_6006
+docker rm almalinux9_server_6006
+docker network rm customnetwork
+
 $networks = docker network ls
 if ($networks -notmatch 'customnetwork') {
     Write-Host 'customnetwork not found, create'
