@@ -373,7 +373,12 @@ node --version &&
 python --version && 
 pip --version'
 
+docker exec -it ubuntu_server_6006 bash -c 'pip install gradio==4.21.0'
 
+docker exec -it ubuntu_server_6006 bash -c 'gradio cc create myvideo --template Video && 
+cd myvideo && 
+gradio cc install && 
+gradio cc dev'
 
 
 
