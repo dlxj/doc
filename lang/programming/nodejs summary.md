@@ -10569,6 +10569,41 @@ child_process.exec('ipconfig', { encoding: binaryEncoding }, function(err, stdou
 
 
 
+
+
+## 优先读取环境变量
+
+```javascript
+/**加载配置文件 */
+function loadConfig() {
+
+  let config = ''
+
+  // 优先读取环境变量
+  if (process.env.CONFIG_ENV) {
+
+    config = JSON.parse( process.env.CONFIG_ENV )
+
+  } else {
+    const path = `${startPath}/config.js`;
+    config = require(path);
+  }
+
+  Object.defineProperty(global, "conf", {
+    get: function () {
+      return config
+    }
+  });
+  Object.defineProperty(global, "config", {
+    get() {
+      return global.conf.dataSet;
+    }
+  });
+}
+```
+
+
+
 # interop
 
 ## python

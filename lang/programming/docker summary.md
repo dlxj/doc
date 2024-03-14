@@ -382,6 +382,16 @@ git config --global credential.helper store &&
 huggingface-cli login'
 
 
+pip install gradio==4.21.0 &&
+gradio cc create myvideo --template Video && \
+cd myvideo && \
+gradio cc install && \
+gradio cc dev
+
+
+git clone https://huggingface.co/datasets/dlxjj/myvideo &&
+cd myvideo && \
+
 
 ```
 
