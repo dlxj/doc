@@ -402,6 +402,8 @@ gradio cc dev'
 docker exec -it almalinux9_server_6006 bash -c 'dnf install -y nmap &&
 nmap 172.20.0.2 -p22'
 
+docker exec -it almalinux9_server_6006 bash -c 'firewall-cmd'
+
 docker exec -it almalinux9_server_6006 bash -c 'systemctl stop firewalld'
 docker exec -it almalinux9_server_6006 bash -c 'dnf install firewalld && 
 systemctl stop firewalld
