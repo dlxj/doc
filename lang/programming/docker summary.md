@@ -317,6 +317,12 @@ https://www.ssldragon.com/how-to/remove-ssl-certificates-windows-10/
 
 - **ping 不通 Docker**
 
+  ```
+  2022 自带容器功能，不要安装 Docker destop   https://www.cnblogs.com/shanyou/p/16413929.html
+  ```
+
+  
+
 ```
 docker image rm ubuntu:20.04
 docker pull ubuntu:20.04
