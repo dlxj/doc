@@ -352,6 +352,19 @@ choco install docker-desktop --upgrade --force
 
 # Docker+Windows 2022
 
+https://www.cnblogs.com/shanyou/p/16413929.html
+
+```
+2022 自带容器功能，不要安装 Docker destop
+
+
+
+```
+
+
+
+
+
 ```
 # windows server 2022
 
