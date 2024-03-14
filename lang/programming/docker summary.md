@@ -329,20 +329,27 @@ if ($networks -notmatch 'customnetwork') {
 
 [System.Text.Encoding]::UTF8.GetBytes('FROM almalinux:9.3
 RUN set -x; dnf makecache --refresh && \
-dnf update -y && dnf upgrade -y && \
+dnf update -y && \
 dnf install -y epel-release && \
 dnf update -y && \
-dnf install -y tar p7zip libsodium net-tools cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel && \
-dnf install epel-release -y && \
-dnf config-manager --set-enabled crb && \
-dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm -y && \
-dnf install --nogpgcheck https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm -y && \
-dnf install ffmpeg ffmpeg-devel -y && \
+dnf install -y passwd openssh-server tar p7zip libsodium net-tools cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel  && \
 pwd ') | Set-Content Dockerfile -Encoding Byte
 
 
 docker build -t almalinux9_server_6006 .
 docker run -tid --name almalinux9_server_6006 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 -p 6379:6379 -p 8880:8880 -p 8080:8080 --privileged=true almalinux9_server_6006 /sbin/init
+
+docker exec -it almalinux9_server_6006 bash -c "dnf install -y passwd openssh-server"
+
+docker exec -it almalinux9_server_6006 bash -c "systemctl start sshd &&
+systemctl enable sshd &&
+systemctl status sshd"
+
+docker exec -it almalinux9_server_6006 bash -c 'chpasswd <<<"root:u"'
+
+docker exec -it almalinux9_server_6006 bash -c "curl -fsSL https://get.pnpm.io/install.sh | sh - &&
+source /root/.bashrc"
+
 
 
 ```
