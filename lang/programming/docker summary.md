@@ -318,6 +318,8 @@ https://www.ssldragon.com/how-to/remove-ssl-certificates-windows-10/
 - **ping 不通 Docker**
 
   ```
+  Test-NetConnection 127.0.0.1 -p 3306
+  可以改用 host模式部署 --net=host
   2022 自带容器功能，不要安装 Docker destop   https://www.cnblogs.com/shanyou/p/16413929.html
   ```
 
@@ -345,7 +347,7 @@ apt-get install -y p7zip-full unzip vim curl lsof git iputils-ping ufw wget poll
 pwd ') | Set-Content Dockerfile -Encoding Byte
 
 docker build -t ubuntu_server_6006 .
-docker run -tid --name ubuntu_server_6006 -p 222:22 -p 6006:6006 -p 7860:7860 -p 7861:7861 -p 5432:5432 -p 6379:6379 -p 8880:8880 -p 8080:8080 --privileged=true ubuntu_server_6006 /bin/bash
+docker run -tid --name ubuntu_server_6006 --net=host -p 222:22 -p 6006:6006 -p 7860:7860 -p 7861:7861 -p 5432:5432 -p 6379:6379 -p 8880:8880 -p 8080:8080 --privileged=true ubuntu_server_6006 /bin/bash
 
 docker exec -it ubuntu_server_6006 bash -c 'ifconfig'
 

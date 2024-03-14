@@ -352,6 +352,8 @@ choco install docker-desktop --upgrade --force
 
 # Docker+Windows 2022
 
+https://blog.csdn.net/huanglu0314/article/details/129685114
+
 https://www.cnblogs.com/shanyou/p/16413929.html
 
 https://www.dell.com/support/kbdoc/en-us/000201261/docker-containers-on-windows-server-2022-101
