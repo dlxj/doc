@@ -3754,7 +3754,7 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   	# 实测有效，必须不能指定 huggingface，全部走代理才行 	
   	
   ssh -CNg -L 6006:127.0.0.1:6006 root@connect.bjb1.seetacloud.com -p 53862
-http://localhost:6006
+  http://localhost:6006
   	# 成功访问 gradio
   
   ```
@@ -3916,7 +3916,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create gradio_video --type dataset
 	# huggingface-cli repo create gradio_bbcode --type dataset
 	# huggingface-cli repo create myvideo --type dataset
-	
+	# huggingface-cli repo create fakename --type dataset
 	
 	
 	
