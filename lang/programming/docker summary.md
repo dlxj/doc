@@ -336,7 +336,7 @@ RUN set -x; dnf makecache --refresh && \
 dnf update -y && \
 dnf install -y epel-release && \
 dnf update -y && \
-dnf install -y passwd openssh-server tar p7zip libsodium net-tools cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel  && \
+dnf install -y passwd openssh-server tar p7zip libsodium net-tools nmap cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel  && \
 pwd ') | Set-Content Dockerfile -Encoding Byte
 
 
@@ -399,6 +399,13 @@ cd myvideo &&
 gradio cc install && 
 gradio cc dev'
 
+docker exec -it almalinux9_server_6006 bash -c 'dnf install -y nmap &&
+nmap 172.20.0.2 -p22'
+
+docker exec -it almalinux9_server_6006 bash -c 'systemctl stop firewalld'
+docker exec -it almalinux9_server_6006 bash -c 'dnf install firewalld && 
+systemctl stop firewalld
+systemctl disable firewalld'
 
 ssh -CNg -L 7861:127.0.0.1:7861 root@172.20.0.2 -p 22
 	# 手动端口映射
