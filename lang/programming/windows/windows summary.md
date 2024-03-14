@@ -354,6 +354,8 @@ choco install docker-desktop --upgrade --force
 
 https://www.cnblogs.com/shanyou/p/16413929.html
 
+https://www.dell.com/support/kbdoc/en-us/000201261/docker-containers-on-windows-server-2022-101
+
 ```
 2022 自带容器功能，不要安装 Docker destop
 
