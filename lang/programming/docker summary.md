@@ -337,8 +337,7 @@ pwd ') | Set-Content Dockerfile -Encoding Byte
 
 
 docker build -t almalinux9_server_6006 .
-docker run -tid --name almalinux9_server_6006 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 5432:5432 -p 6379:6379 -p 8880:8880 -p 8080:8080 --privileged=true almalinux9_server_6006 /sbin/init
-
+docker run -tid --name almalinux9_server_6006 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 6006:6006 -p 5432:5432 -p 6379:6379 -p 8880:8880 -p 8080:8080 --privileged=true almalinux9_server_6006 /sbin/init
 
 docker exec -it almalinux9_server_6006 bash -c "systemctl start sshd &&
 systemctl enable sshd &&
