@@ -313,6 +313,8 @@ choco install docker-desktop --upgrade --force
 
 https://stackoverflow.com/questions/76810738/how-do-i-access-docker-service-in-the-host-windows-server-2022-from-a-hyper-v
 
+https://www.ssldragon.com/how-to/remove-ssl-certificates-windows-10/
+
 - **ping 不通 Docker**
 
 ```
