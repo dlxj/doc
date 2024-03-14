@@ -337,8 +337,41 @@ docker run -tid --name ubuntu_server_6006 --net=customnetwork --ip=172.20.0.2 -p
 
 docker exec -it ubuntu_server_6006 bash -c 'ufw disable'
 
-docker exec -it ubuntu_server_6006 bash -c "curl -fsSL https://get.pnpm.io/install.sh | sh - &&
+docker exec -it ubuntu_server_6006 bash -c "curl -fsSL https://get.pnpm.io/install.sh | bash - &&
 source /root/.bashrc"
+
+docker exec -it ubuntu_server_6006 bash -c 'version=v20.11.1 && 
+wget https://nodejs.org/download/release/$version/node-$version-linux-x64.tar.gz && 
+tar xvf node-$version-linux-x64.tar.gz && 
+cd node-$version-linux-x64/bin && 
+chmod +x node npm npx && 
+cd ../.. && 
+mv node-$version-linux-x64 /usr/local && 
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node && 
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && 
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx'
+
+docker exec -it ubuntu_server_6006 bash -c 'VERSION=3.10.13 && 
+wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && 
+tar -xf Python-${VERSION}.tgz && 
+cd Python-${VERSION} && 
+./configure --with-openssl="/usr" && 
+make clean && 
+make -j 8 && 
+make altinstall &&
+ln -s /usr/local/bin/pip3.10 /usr/bin/pip &&
+ln -s /usr/local/bin/python3.10 /usr/bin/python'
+
+
+
+
+
+
+
+
+
+	# | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
+
 
 
 ```
