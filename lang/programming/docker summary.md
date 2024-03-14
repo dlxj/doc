@@ -341,7 +341,9 @@ apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev l
 docker exec -it ubuntu_server_6006 bash -c 'ufw disable'
 
 docker exec -it ubuntu_server_6006 bash -c "curl -fsSL https://get.pnpm.io/install.sh | bash - &&
-source /root/.bashrc"
+source /root/.bashrc && 
+ln -s /root/.local/share/pnpm/pnpm /usr/bin/pnpm
+"
 
 docker exec -it ubuntu_server_6006 bash -c 'version=v20.11.1 && 
 wget https://nodejs.org/download/release/$version/node-$version-linux-x64.tar.gz && 
@@ -366,7 +368,10 @@ ln -s /usr/local/bin/pip3.10 /usr/bin/pip &&
 ln -s /usr/local/bin/python3.10 /usr/bin/python'
 
 
-
+docker exec -it ubuntu_server_6006 bash -c 'pnpm --version && 
+node --version && 
+python --version && 
+pip --version'
 
 
 
