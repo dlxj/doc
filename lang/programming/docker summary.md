@@ -356,9 +356,8 @@ cd Python-${VERSION} &&
 ./configure --with-openssl="/usr" && 
 make clean && 
 make -j 8 && 
-make altinstall'
-
-docker exec -it almalinux9_server_6006 bash -c 'ln -s /usr/local/bin/pip3.10 /usr/bin/pip && 
+make altinstall &&
+ln -s /usr/local/bin/pip3.10 /usr/bin/pip &&
 ln -s /usr/local/bin/python3.10 /usr/bin/python'
 
 docker exec -it almalinux9_server_6006 bash -c 'version=v20.11.1 && 
@@ -372,6 +371,16 @@ ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node &&
 ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && 
 ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx'
 
+docker exec -it almalinux9_server_6006 bash -c 'curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | bash &&
+yum install -y git-lfs'
+
+docker exec -it almalinux9_server_6006 bash -c 'git config --global user.name "dlxjj" && 
+git config --global user.email "12345@qq.com" &&
+git config --global push.default matching'
+
+docker exec -it almalinux9_server_6006 bash -c 'pip install huggingface_hub && 
+git config --global credential.helper store && 
+huggingface-cli login'
 
 
 
