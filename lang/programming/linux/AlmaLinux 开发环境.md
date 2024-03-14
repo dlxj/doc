@@ -815,7 +815,9 @@ export PATH=$PATH:$HOME/dotnet
 
 
 
+# CUDA
 
+https://medium.com/@kiena/almalinux-9-2-installing-nvidia-driver-5d67d19bb27d
 
 
 
