@@ -594,6 +594,19 @@ curl http://ip-api.com/json/?lang=zh-CN'
 # 全部要执行的命令都在这里编辑和执行
 docker exec -it almalinux9_server_6006 bash -c 'export ALL_PROXY=http://172.16.6.253:8118 &&
 
+VERSION=3.10.13 && 
+wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && 
+tar -xf Python-${VERSION}.tgz && 
+cd Python-${VERSION} && 
+./configure --with-openssl="/usr" && 
+make clean && 
+make -j 8 && 
+make altinstall &&
+ln -s /usr/local/bin/pip3.10 /usr/bin/pip &&
+ln -s /usr/local/bin/python3.10 /usr/bin/python &&
+
+
+
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | bash &&
 yum install -y git-lfs &&
 
