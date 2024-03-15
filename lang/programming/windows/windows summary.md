@@ -352,6 +352,10 @@ choco install docker-desktop --upgrade --force
 
 # Docker+Windows 2022
 
+https://community.microfocus.com/cyberres/fortify/f/discussions/524702/docker-install-on-windows-server-2019
+
+- 这才是正确安装方法
+
 https://blog.csdn.net/huanglu0314/article/details/129685114
 
 https://www.cnblogs.com/shanyou/p/16413929.html
@@ -360,6 +364,35 @@ https://www.dell.com/support/kbdoc/en-us/000201261/docker-containers-on-windows-
 
 ```
 2022 自带容器功能，不要安装 Docker destop
+
+1. 添加角色和功能 ->必需从上往下一步步的点下去(默认下一步就可以) -> feature -> Contaner -> 安装它
+
+2. Powershell 执行
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Install-PackageProvider -Name NuGet
+Install-Module DockerMsftProvider -Force
+Install-Package Docker -ProviderName DockerMsftProvider -Force
+	# 出错，因为　Docker 要付费了
+	
+	
+It is because Docker is now paid .. to install Docker community edition you can try the following in PowerShell as Administrator -
+
+
+Install-WindowsFeature -Name Containers
+
+Enable-WindowsOptionalFeature -Online -FeatureName containers -All
+
+Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+
+Invoke-WebRequest -UseBasicParsing "https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1" -o install-docker-ce.ps1
+
+.\install-docker-ce.ps1
+
+
+Invoke-WebRequest -UseBasicParsing "https://github.com/docker/compose/releases/latest/download/docker-compose-darwin-x86_64" -OutFile $env:SystemDirectory\docker-compose.exe
+
+Restart-Computer
 
 
 
