@@ -12676,6 +12676,12 @@ cd myvideo && \
 gradio cc install && \
 gradio cc dev
 
+
+Python311\Lib\site-packages\gradio\networking.py
+	LOCALHOST_NAME = os.getenv("GRADIO_SERVER_NAME", "127.0.0.1")
+		# 默认它会取环境变量
+		
+
 ssh -CNg -L 7861:127.0.0.1:7861 root@172.16.6.253 -p 22
 
 ```
@@ -13402,6 +13408,7 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
     
 
 ```
+# see huggingface vite_gradio_video\src\App.svelte
 # # vite工程 App.svelte，语法正确，运行正常。成功播放视频
 <script lang="ts">
   	import svelteLogo from './assets/svelte.svg'
@@ -13561,6 +13568,8 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 #### video.play 事件
 
 ```
+# see huggingface vite_gradio_video\src\App.svelte
+
 let video: HTMLVideoElement;
 
 			on:mouseover={video.play.bind(video)}
@@ -13570,8 +13579,6 @@ let video: HTMLVideoElement;
 			}}
 
 ```
-
-
 
 
 
