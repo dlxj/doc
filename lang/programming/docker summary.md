@@ -673,6 +673,22 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 
 
 
+### node server
+
+```javascript
+const http = require('node:http');
+const hostname = '0.0.0.0';
+const port = 6116;
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
 
 
 
