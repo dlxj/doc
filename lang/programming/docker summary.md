@@ -38,6 +38,16 @@ docker start centos7
 
 
 
+
+
+# Install Docker
+
+
+
+
+
+
+
 # 移除镜像
 
 docker images
@@ -504,6 +514,19 @@ ssh -CNg -L 7861:127.0.0.1:7861 root@172.20.0.2 -p 22
 	# 手动端口映射
 
 ```
+
+
+
+
+
+```
+see echodict/docker部署.txt
+
+docker image ls | grep almalinux
+
+```
+
+
 
 
 
