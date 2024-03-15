@@ -247,6 +247,9 @@ https://note.qidong.name/2020/05/docker-proxy/
 
 在执行docker pull时，是由守护进程dockerd来执行。 因此，代理需要配在dockerd的环境中。 而这个环境，则是受systemd所管控，因此实际是systemd的配置。
 
+
+1. docker 命令本身的代理
+
 mkdir -p /etc/systemd/system/docker.service.d && \
 touch /etc/systemd/system/docker.service.d/proxy.conf
 
@@ -258,7 +261,22 @@ Environment="ALL_PROXY=http://127.0.0.1:8118/"
 
 systemctl restart docker && \
 systemctl status docker
+	# 成功
 
+2. 运行中的容器的代理
+
+vi ~/.docker/config.json
+{
+ "proxies":
+ {
+   "default":
+   {
+     "httpProxy": "http://172.16.6.253:8118/",
+     "httpsProxy": "http://172.16.6.253:8118/",
+     "noProxy": "localhost,127.0.0.1,.example.com"
+   }
+ }
+}
 
 
 ```
@@ -401,6 +419,9 @@ gradio cc dev'
 # AlmaLinux9
 
 ```
+
+# power shell 执行
+
 docker image rm almalinux:9.3
 docker pull almalinux:9.3
 
@@ -499,8 +520,7 @@ docker exec -it almalinux9_server_6006 bash -c 'dnf install firewalld -y &&
 systemctl start firewalld &&
 firewall-cmd --state &&
 systemctl stop firewalld &&
-systemctl disable firewalld
-'
+systemctl disable firewalld'
 
 docker exec -it almalinux9_server_6006 bash -c 'systemctl stop firewalld'
 docker exec -it almalinux9_server_6006 bash -c 'dnf install firewalld && 
@@ -519,6 +539,14 @@ ssh -CNg -L 7861:127.0.0.1:7861 root@172.20.0.2 -p 22
 ```
 see echodict/docker部署.txt
 
+# bash 执行
+
+docker stop almalinux9_server_6006
+docker rm almalinux9_server_6006
+docker image remove almalinux9_server_6006
+docker network rm customnetwork
+
+
 docker image ls | grep almalinux
 
 mkdir almalinux9_server_6006 && \
@@ -531,7 +559,23 @@ dnf install -y epel-release && \\
 dnf update -y && \\
 dnf install -y passwd openssh-server tar p7zip libsodium net-tools nmap cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel  && \\
 pwd " > Dockerfile && \
-docker build -t centos7_server_6006 . 
+docker build -t almalinux9_server_6006 . 
+
+docker run -tid --name almalinux9_server_6006 --net=customnetwork --ip=172.20.0.2 -p 222:22 -p 6006:6006 -p 7860:7860 -p 7861:7861 -p 5432:5432 -p 8880:8880 -p 8080:8080 --privileged=true almalinux9_server_6006 /sbin/init
+
+
+docker exec -it almalinux9_server_6006 bash -c 'export ALL_PROXY=http://172.16.6.253:8118 &&
+curl http://ip-api.com/json/?lang=zh-CN'
+
+&& 
+curl -fsSL https://get.pnpm.io/install.sh | sh - &&
+source /root/.bashrc'
+
+
+alias setproxy="export ALL_PROXY=http://127.0.0.1:8118"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+
 
 ```
 
