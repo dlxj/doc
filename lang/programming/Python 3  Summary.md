@@ -13558,6 +13558,23 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 
 
 
+#### video.play 事件
+
+```
+let video: HTMLVideoElement;
+
+			on:mouseover={video.play.bind(video)}
+
+			on:mouseover={ () => {
+				video.play().then(()=>{}).catch((e)=>{})
+			}}
+
+```
+
+
+
+
+
 ### bbcode
 
 ```
