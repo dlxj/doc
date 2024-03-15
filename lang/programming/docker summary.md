@@ -279,6 +279,29 @@ vi ~/.docker/config.json
 }
 
 
+socks5 转 http
+	see nodejs summray.md -> 抱抱脸 
+
+# https://maplege.github.io/2017/09/04/socksTOhttp/
+	# socks转为http代理
+	apt update && apt-get install privoxy
+	dnf update && dnf install privoxy
+	vi /etc/privoxy/config
+forward-socks5   /               127.0.0.1:1080 .
+listen-address 172.16.6.253:8118
+	# 注意：直接写 ip 可以, 写 0.0.0.0 不可以！！！
+    service privoxy restart
+    http_proxy=http://127.0.0.1:8118 curl google.com
+    	# 成功访问 google
+    	
+    	
+vi ~/.bashrc
+alias setproxy="export ALL_PROXY=http://127.0.0.1:8118"
+alias unsetproxy="unset ALL_PROXY"
+alias ip="curl http://ip-api.com/json/?lang=zh-CN"
+	# curl 正常    
+
+
 ```
 
 
