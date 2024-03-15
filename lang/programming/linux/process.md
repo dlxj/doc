@@ -67,6 +67,17 @@ kill -9 pid
 
 
 
+# kill 端口号
+
+```
+nohup node xx.js >outlog &
+
+#!/bin/bash
+kill -9 $(lsof outlog | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7860 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7861 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+```
+
 
 
 

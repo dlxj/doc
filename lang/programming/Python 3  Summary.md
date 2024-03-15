@@ -12676,6 +12676,18 @@ cd myvideo && \
 gradio cc install && \
 gradio cc dev
 
+"http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
+
+# kill 端口号
+
+​```
+nohup node xx.js >outlog &
+
+#!/bin/bash
+kill -9 $(lsof outlog | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7860 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7861 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+​```
 
 Python311\Lib\site-packages\gradio\networking.py
 	LOCALHOST_NAME = os.getenv("GRADIO_SERVER_NAME", "127.0.0.1")
