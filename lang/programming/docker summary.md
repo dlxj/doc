@@ -254,31 +254,7 @@ touch /etc/systemd/system/docker.service.d/proxy.conf
 
 vi /etc/systemd/system/docker.service.d/proxy.conf
 [Service]
-Environment="HTTP_PROXY=http://127.0.0.1:8118/"
-Environment="HTTPS_PROXY=http://127.0.0.1:8118/"
-Environment="NO_PROXY=localhost,127.0.0.1,.example.com"
-
-
-
-mkdir ~/.docker && \
-touch ~/.docker/config.json
-
-vi ~/.docker/config.json
-{
-        "auths": {},
-        "HttpHeaders": {
-                "User-Agent": "Docker-Client/19.03.2 (linux)"
-        },
-
-                "proxies":
-                {
-                        "default":
-                        {
-                        "httpProxy": "http://127.0.0.1:8118",
-                        "httpsProxy": "http://127.0.0.1:8118"
-                        }
-                }
-}
+Environment="ALL_PROXY=http://127.0.0.1:8118/"
 
 systemctl restart docker && \
 systemctl status docker
@@ -544,6 +520,18 @@ ssh -CNg -L 7861:127.0.0.1:7861 root@172.20.0.2 -p 22
 see echodict/docker部署.txt
 
 docker image ls | grep almalinux
+
+mkdir almalinux9_server_6006 && \
+cd almalinux9_server_6006 && \
+touch Dockerfile && \
+echo "FROM almalinux:9.3 
+RUN set -x; dnf makecache --refresh && \\
+dnf update -y && \\
+dnf install -y epel-release && \\
+dnf update -y && \\
+dnf install -y passwd openssh-server tar p7zip libsodium net-tools nmap cronie lsof git wget yum-utils make gcc g++ clang openssl-devel bzip2-devel libffi-devel zlib-devel libpng-devel systemd-devel  && \\
+pwd " > Dockerfile && \
+docker build -t centos7_server_6006 . 
 
 ```
 
