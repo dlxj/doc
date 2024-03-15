@@ -592,15 +592,24 @@ docker run -tid --name almalinux9_server_6006 --net=customnetwork --ip=172.20.0.
 docker exec -it almalinux9_server_6006 bash -c 'export ALL_PROXY=http://172.16.6.253:8118 &&
 curl http://ip-api.com/json/?lang=zh-CN'
 
+# 实际运行 gradio 不能开代理
+docker exec -it almalinux9_server_6006 bash -c 'cd ~ && 
+cd myvideo && 
+gradio cc dev'
+
 
 # 全部要执行的命令都在这里编辑和执行
 docker exec -it almalinux9_server_6006 bash -c 'export ALL_PROXY=http://172.16.6.253:8118 && cd ~ && 
+
+cd myvideo && 
+gradio cc dev && 
+
 
 pip install gradio==4.21.0 &&
 gradio cc create myvideo --template Video && 
 cd myvideo && 
 gradio cc install && 
-gradio cc dev && 
+
 
 
 curl -fsSL https://get.pnpm.io/install.sh | sh - && 
