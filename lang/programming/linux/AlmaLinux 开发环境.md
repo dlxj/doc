@@ -115,6 +115,12 @@ source "$HOME/.cargo/env"
 
 
 
+## wifi
+
+https://access.redhat.com/documentation/zh-cn/red_hat_enterprise_linux/9/html/configuring_and_managing_networking/proc_connecting-to-a-wifi-network-by-using-nmcli_assembly_managing-wifi-connections
+
+
+
 ## 安装 postgresql
 
 ```
