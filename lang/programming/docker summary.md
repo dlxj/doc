@@ -285,9 +285,9 @@ socks5 转 http
 # https://maplege.github.io/2017/09/04/socksTOhttp/
 	# socks转为http代理
 	apt update && apt-get install privoxy
-	dnf update && dnf install privoxy
+	dnf update && dnf install -y privoxy
 	vi /etc/privoxy/config
-forward-socks5   /               127.0.0.1:1080 .
+forward-socks5   /               172.16.6.253:1080 .
 listen-address 172.16.6.253:8118
 	# 注意：直接写 ip 可以, 写 0.0.0.0 不可以！！！
     service privoxy restart
@@ -296,7 +296,7 @@ listen-address 172.16.6.253:8118
     	
     	
 vi ~/.bashrc
-alias setproxy="export ALL_PROXY=http://127.0.0.1:8118"
+alias setproxy="export ALL_PROXY=http://172.16.6.253:8118"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 	# curl 正常    
@@ -590,9 +590,23 @@ docker run -tid --name almalinux9_server_6006 --net=customnetwork --ip=172.20.0.
 docker exec -it almalinux9_server_6006 bash -c 'export ALL_PROXY=http://172.16.6.253:8118 &&
 curl http://ip-api.com/json/?lang=zh-CN'
 
-&& 
+
+# 全部要执行的命令都在这里编辑和执行
+docker exec -it almalinux9_server_6006 bash -c 'export ALL_PROXY=http://172.16.6.253:8118 &&
+
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | bash &&
+yum install -y git-lfs &&
+
+
 curl -fsSL https://get.pnpm.io/install.sh | sh - &&
-source /root/.bashrc'
+ln -s /root/.local/share/pnpm /usr/bin/pnpm && 
+source /root/.bashrc && 
+
+'
+
+
+
+
 
 
 alias setproxy="export ALL_PROXY=http://127.0.0.1:8118"
