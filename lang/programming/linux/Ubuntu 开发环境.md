@@ -107,9 +107,17 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 
 ```
 
+https://itsfoss.com/ubuntu-login-root/
+
 vi /etc/gdm3/custom.conf
 
 AllowRoot=true
+	# add this line
+
+vi /etc/pam.d/gdm-password
+
+auth   required        pam_succeed_if.so user != root quiet_success
+	# comment this line
 
 
 ```
