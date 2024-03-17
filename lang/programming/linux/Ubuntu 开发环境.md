@@ -973,6 +973,23 @@ App.svelte
 ```
 
 
+# Input pinyin
+
+```
+
+apt-get install -y fcitx im-config
+im-config ## choose fcitx
+
+apt-get install fcitx-googlepinyin
+
+## choose fcitx keyboard icon, choose "Text Entry Setting"
+## in the opned windows, click "+" icon
+## search "pinyin" and Google Pinin" will come out
+
+## if cannot not be used immediately, log out once
+
+```
+
 
 
 # mecab

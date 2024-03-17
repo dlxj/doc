@@ -12758,6 +12758,39 @@ if __name__ == "__main__":
     
 ```
 
+### change
+
+```python
+
+<script>
+	let user = {
+		ageRange: 0
+	}
+	
+	let onChangeAgeRange = 0
+	
+	const onChange = () => {
+		onChangeAgeRange = user.ageRange
+	}
+</script>
+
+<!-- Swap the bind:value and on:change attributes to break. -->
+<select bind:value={user.ageRange} on:change={onChange}>
+	<option value={0}>13-16</option>
+	<option value={1}>17-19</option>
+	<option value={2}>20-22</option>
+	<option value={3}>22+</option>
+</select>
+
+<p>
+	Reactive value {user.ageRange}
+</p>
+
+<p>
+	On change age range {onChangeAgeRange}
+</p>
+
+```
 
 
 ## timer
