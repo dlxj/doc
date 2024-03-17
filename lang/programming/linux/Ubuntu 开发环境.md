@@ -103,7 +103,16 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 ```
 
 
+# root gui
 
+```
+
+vi /etc/gdm3/custom.conf
+
+AllowRoot=true
+
+
+```
 
 
 # 安装开发环境
