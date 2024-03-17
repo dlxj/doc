@@ -890,7 +890,88 @@ google-chrome &
 	passwd i
 		# 密码设置成和 root 一样
 
+vi /usr/bin/google-chrome
+
+最后一行加：
+--user-data-dir --test-type --no-sandbox
+
+改完后：
+
+exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
+
+	# root 成功运行 chrome
+
 ```
+
+
+
+# Install vscode
+
+[how-to-install-visual-studio-code-on-almalinux](https://www.linuxcapable.com/how-to-install-visual-studio-code-on-almalinux/)
+
+
+
+```
+vi /usr/bin/code
+
+CAN_LAUNCH_AS_ROOT=1
+	# 报错的前一句加这行
+	
+ELECTRON_RUN_AS_NODE=1 "$ELECTRON" "$CLI" "$@" --user-data-dir --no-sandbox
+	# 最后一行改成这样
+
+
+
+see python summary -> Gradio -> svelte -> vite
+
+# vscode 设置 -> 搜:
+allowBreakpointsEverywhere
+
+vscdoe 插件
+	JavaScript Debugger
+	Svelte for VS Code
+
+.vscode/launch.json  
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:5174",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+	# 正常进断点需要这个
+
+pnpm create vite vite-svelte -- --template svelte
+cd vite-svelte
+pnpm install
+pnpm run dev
+    # vite 有几个选项，选 svelte ，选 javascript
+	# vsocde 里 F5 能正常在 Counter.svelte 单步断下
+
+
+gradio cc create ivideo --template Video
+	# 自定义gradio 的 video 组件
+	#　把 frontend 下　node_modules shared　这两个文件夹复到 vite_gradio_video 目录下，能正常引用，并运行
+        # 把 dependencies 下的包复制过来， pnpm i 就可以了 
+
+
+App.svelte
+<script>
+  import Counter from './lib/Counter.svelte'
+  import Player from '../shared/Player.svelte';
+	# 这样引用组件
+
+
+
+
+
+```
+
 
 
 
