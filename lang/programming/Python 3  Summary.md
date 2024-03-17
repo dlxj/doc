@@ -12420,6 +12420,9 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
   
   git-lfs 3.4.0         
   	# 这个片本正常
+
+  curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
+  apt-get install git-lfs
   	
   wget https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-linux-amd64-v3.4.0.tar.gz
   	# 这样装才行
