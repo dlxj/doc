@@ -12414,6 +12414,14 @@ python --version &&
 pip --version
   
   
+pip uninstall -y markupsafe && 
+pip install markupsafe==2.0.1 &&
+
+pip uninstall -y jinja2 && 
+pip install jinja2==3.1.2
+
+
+  
 - ```
   
   # vscode 设置 -> 搜:
