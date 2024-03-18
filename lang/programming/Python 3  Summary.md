@@ -12381,6 +12381,37 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
 .queue().launch()
   ```
 
+  curl -fsSL https://get.pnpm.io/install.sh | sh -
+  	# linux
+  	ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
+  
+  version=v20.11.1 && 
+wget https://nodejs.org/download/release/$version/node-$version-linux-x64.tar.gz && 
+tar xvf node-$version-linux-x64.tar.gz && 
+cd node-$version-linux-x64/bin && 
+chmod +x node npm npx && 
+cd ../.. && 
+mv node-$version-linux-x64 /usr/local && 
+ln -s /usr/local/node-$version-linux-x64/bin/node /usr/local/bin/node && 
+ln -s /usr/local/node-$version-linux-x64/bin/npm /usr/local/bin/npm && 
+ln -s /usr/local/node-$version-linux-x64/bin/npx /usr/local/bin/npx
+	# see docker summary.md -> ubuntu 20.04
+	
+VERSION=3.10.13 && 
+wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz && 
+tar -xf Python-${VERSION}.tgz && 
+cd Python-${VERSION} && 
+./configure --with-openssl="/usr" && 
+make clean && 
+make -j 8 && 
+make altinstall &&
+ln -s /usr/local/bin/pip3.10 /usr/bin/pip &&
+ln -s /usr/local/bin/python3.10 /usr/bin/python  
+  
+pnpm --version && 
+node --version && 
+python --version && 
+pip --version
   
   
 - ```
@@ -12460,7 +12491,7 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
   curl -fsSL https://get.pnpm.io/install.sh | sh -
   	# linux
   	ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
-  
+
   
   https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component
   
