@@ -12459,6 +12459,7 @@ alias ip="curl http://ip-api.com/json/?lang=zh-CN"
   
   curl -fsSL https://get.pnpm.io/install.sh | sh -
   	# linux
+  	ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
   
   
   https://github.com/gradio-app/gradio/wiki/%F0%9F%8E%A8-How-to-Make-a-Gradio-Custom-Component
