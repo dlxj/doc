@@ -13446,6 +13446,67 @@ svelete的响应式是由赋值触发的
 
 
 
+### props
+
+```
+# 属性展开
+const info = { name: 'Klaus', age: 23, ... }
+<Info name={info.name} age={info.age} gender={info.gender} location={info.location}/>
+<!-- 等价于 展开props和ES6中的展开运算符 -->
+<Info {...info} />
+
+# 在子组中表示父组件传过来的所有属性
+$$props
+
+
+```
+
+
+
+### await
+
+```
+<script>
+  // getRandomNumber是一个异步请求，返回的是一个promise
+  let getNumberPromise = getRandomNumber();
+</script>
+
+<!-- number是一个异步操作返回的promise -->
+{#await getNumberPromise}
+    <!-- 状态为pending时候进行的操作  -->
+    <p>loading ...</p>
+{:then number}
+    <!-- 状态为resolve时候进行的操作，后面的number是成功后返回的结果 -->
+    <p>{number}</p>
+{:catch error}
+    <!-- 状态为reject时候进行的操作, error是返回的错误对象 -->
+    <p>{error.message}</p>
+{/await}
+
+
+<!--
+    很多情况下，我们可能并不需要处理状态为pending或reject的情况
+    所以此时可以对await块进行简写操作
+-->
+
+<!-- 省略状态为pending时候的操作 -->
+{#await getNumberPromise then number}
+    <p>{number}</p>
+{:catch error}
+    <p>{error.message}</p>
+{/await}
+
+<!-- 同时省略状态为pending和reject的时候对promise结果的处理 -->
+{#await getNumberPromise then number}
+    <p>{number}</p>
+{/await}
+
+
+
+```
+
+
+
 
 
 ### vite
