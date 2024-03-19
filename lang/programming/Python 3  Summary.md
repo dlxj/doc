@@ -13407,6 +13407,40 @@ svelte中的组件名由以下特点:
 
 {@debug xxx}
 	# chrome 运行到这里会中断？
+	
+	
+响应式声明
+  // 当依赖的状态count发生改变的时候，svlete会自动计算并更新doubled的值
+  /*
+	注意：
+            1. 响应式声明只能定义在顶层, 在其余部分定义是会报错的
+            2. 定义响应式声明的变量的时候，不需要加var|let|const (此时svelte会自动为该变量进行定义和赋值)
+	*/
+  $: doubled = count * 2;
+  
+
+// 和vue不同的时候，svlete的响应式声明即可以是变量，也可以是语句
+
+// 语句
+$: console.log(`the count is ${count}`);
+
+// 代码块
+$: {
+    console.log(`the count is ${count}`);
+    alert(`I SAID THE COUNT IS ${count}`);
+}
+
+// 逻辑语句
+$: if (count >= 10) {
+    alert(`count is dangerously high!`);
+    count = 9;
+}
+
+svelete的响应式是由赋值触发的
+
+所以诸如 push、splice 等数组方法， 虽然更新了状态，但是因为没有赋值操作，所以不会引起UI(界面)的自动更新。
+
+
 
 ```
 
