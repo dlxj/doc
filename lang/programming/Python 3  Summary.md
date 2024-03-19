@@ -13397,6 +13397,18 @@ vscdoe 插件
 
 
 
+```
+# https://juejin.cn/post/6984045221352849416
+svelte中的组件名由以下特点:
+		1. 组件名的首字母要大写 --- 区分于一般的HTML标签
+		2. 组件如果使用单标签的话 --- 必须以/闭合
+<Child />
+```
+
+
+
+
+
 ### vite
 
 [Vite + Svelte + Tailwindcss](https://juejin.cn/post/7096482075590524936)
