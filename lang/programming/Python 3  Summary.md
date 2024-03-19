@@ -13684,7 +13684,7 @@ demo.launch(debug=True, show_api=False, server_name="0.0.0.0", server_port=6006,
 
 ### slot
 
-[slot](https://juejin.cn/post/6987632912900292622)
+[slot](https://juejin.cn/post/6987632912900292622)  在他blog搜 svelte
 
 
 
