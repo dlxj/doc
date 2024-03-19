@@ -13507,6 +13507,53 @@ $$props
 
 
 
+### style
+
+```
+<script>
+    let num = 0;
+    let opacity = 1
+	
+    function addNumber() {
+	opacity = 0
+		
+        // 淡出后。修改num的值，并执行淡入效果
+	setTimeout(() => {
+            num = num + 2
+            opacity = 1
+	}, 500)
+    }
+</script>
+
+<!-- 使用transition 实现在切换num值的时候的 淡出和淡入效果 -->
+<p style="transition: opacity 0.5s ease; opacity: {opacity};">{ num }</p>
+<button on:click="{addNumber}">+2</button>
+
+
+
+<!--
+    如果按照上述例子的写法，显然是比较繁琐的
+    为此，svlete将一些简单的动画进行了封装
+-->
+<script>
+    import { fade } from 'svelte/transition';
+    let num = 0;
+</script>
+
+<!-- 
+    fade只有在创建元素的时候才会生效，所以此时需要为p元素包裹key块，不包裹的时候是不会产生渐入渐出效果
+    key块的作用和each块中key的作用是一致，当num发生改变的时候，svelte会自动销毁并重新创建p标签
+-->
+{#key num}
+    <p in:fade>{ num }</p>
+{/key}
+<button on:click="{() => num += 2}">+2</button>
+
+
+```
+
+
+
 
 
 ### vite
