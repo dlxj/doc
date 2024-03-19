@@ -13507,7 +13507,7 @@ $$props
 
 
 
-### style
+### animate
 
 ```
 <script>
