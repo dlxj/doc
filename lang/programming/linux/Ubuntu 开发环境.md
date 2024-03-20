@@ -399,6 +399,36 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 # Ubuntu22.04远程桌面
 
 ```
+
+sudo /etc/init.d/xrdp start
+	# 这样启动
+	
+apt install xfce4 xfce4-goodies -y && 
+apt install xrdp -y 
+
+选 lightdm
+
+dpkg-reconfigure lightdm
+	# 装完以后可以用这个再选一次 lightdm
+
+vi /etc/xrdp/xrdp.ini
+port=3390
+	# 端口改成 3390 防止和 windows 冲突
+
+cd ~ && 
+echo "xfce4-session" | tee .xsession 
+
+/etc/init.d/xrdp start
+	# WSL2 里面不能用 systemd, 所以需要手动启动
+
+win10 远程桌面用这个连接：
+
+localhost:3390
+	# 成功连接！
+	
+
+
+
 apt install xfce4 xfce4-goodies -y && \
 apt install xrdp -y && \
 systemctl enable xrdp && \
@@ -876,6 +906,15 @@ reboot
 # Install Chrome
 
 ```
+
+apt install fonts-liberation libu2f-udev && 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
+dpkg -i google-chrome-stable_current_amd64.deb
+
+ snap remove chromium
+ 	# 卸载
+
+
 
 git config --global core.autocrlf false
 
