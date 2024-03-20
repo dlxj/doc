@@ -332,6 +332,43 @@ ssh root@localhost
 
 
 
+## 远程桌面
+
+https://zhuanlan.zhihu.com/p/149501381
+
+
+
+```
+sudo /etc/init.d/xrdp start
+	# 这样启动
+	
+apt install xfce4 xfce4-goodies -y && 
+apt install xrdp -y 
+
+选 lightdm
+
+vi /etc/xrdp/xrdp.ini
+port=3390
+	# 端口改成 3390 防止和 windows 冲突
+
+cd ~ && 
+echo "xfce4-session" | tee .xsession 
+
+/etc/init.d/xrdp start
+	# WSL2 里面不能用 systemd, 所以需要手动启动
+
+win10 远程桌面用这个连接：
+
+localhost:3390
+
+
+	
+```
+
+
+
+
+
 # choco
 
 ```
