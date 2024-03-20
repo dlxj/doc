@@ -13463,6 +13463,32 @@ $$props
 
 
 
+### event
+
+https://juejin.cn/post/6985541622641459231
+
+
+
+#### 事件分发器（dispatcher）
+
+
+
+
+
+#### 中间组件必须转发事件
+
+- > 与DOM事件不同，组件事件不会 冒泡
+  >
+  > 如果要在某个深层嵌套的组件上监听事件，则中间组件必须 转发 该事件
+
+
+
+
+
+
+
+
+
 ### await
 
 ```
@@ -13553,6 +13579,10 @@ $$props
 ```
 
 
+
+### compile
+
+[compile](https://sveltejs-cn.github.io/svelte-cn/api-compile-time/svelte.compile.html)
 
 
 
