@@ -13512,6 +13512,8 @@ https://juejin.cn/post/6985541622641459231
 
 ### store 
 
+[1](https://juejin.cn/post/6986642702964097037)
+
 ```
 Store 是 Svelte 中的一种特殊的可写状态对象，它允许我们在组件之间共享状态
 
@@ -13529,6 +13531,21 @@ export const count = writable(0);
 </script>
 
 ```
+
+
+
+```
+Svelte 假定所有以 `$` 开头的任何标识符都表示引用某个 store 值，而 `$` 实际上是一个保留字符，
+Svelte 会禁止你使用 `$` 作为你声明的变量的前缀。
+
+<script>
+  import { count } from './stores.js';
+</script>
+
+<h1>count 当前的值是：{$count}</h1>
+```
+
+
 
 
 
