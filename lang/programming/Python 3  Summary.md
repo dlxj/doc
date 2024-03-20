@@ -13377,6 +13377,8 @@ FastAPI.setup = FastAPI.orig_setup
 
 [Debug vscode](https://subscription.packtpub.com/book/web-development/9781839213625/2/ch02lvl1sec11/debugging-svelte-applications)
 
+see https://sveltejs-cn.github.io/svelte-cn/chapter1/script.html
+
 see https://github.com/fikryfahrezy/svelte-player  正常播放的 **纯 svelte 播放器**
 
 see https://github.com/dandiws/svelte-audio-player  **音频播放器**
@@ -13508,7 +13510,25 @@ https://juejin.cn/post/6985541622641459231
 
 
 
+### store 
 
+```
+Store 是 Svelte 中的一种特殊的可写状态对象，它允许我们在组件之间共享状态
+
+// store.js
+import { writable } from 'svelte/store';
+export const count = writable(0);
+
+<!-- Component.svelte -->
+<script>
+  import { count } from './store.js';
+
+  function increment() {
+    $count += 1;
+  }
+</script>
+
+```
 
 
 
