@@ -916,7 +916,7 @@ dpkg -i google-chrome-stable_current_amd64.deb
 
 
 
-git config --global core.autocrlf false
+git config --global core.autocrlf ture
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
 wget https://dl.google.com/linux/linux_signing_key.pub && \

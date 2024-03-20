@@ -370,6 +370,47 @@ localhost:3390
 
 
 
+## Install chrome
+
+```
+apt install fonts-liberation libu2f-udev && 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
+dpkg -i google-chrome-stable_current_amd64.deb
+
+ snap remove chromium
+ 	# 卸载
+
+
+
+git config --global core.autocrlf ture
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
+wget https://dl.google.com/linux/linux_signing_key.pub && \
+rpm --import linux_signing_key.pub && \
+dnf install -y google-chrome-stable_current_x86_64.rpm
+
+google-chrome &
+	# 注意：chrome 需要非 root 账号运行
+	useradd i
+	passwd i
+		# 密码设置成和 root 一样
+
+vi /usr/bin/google-chrome
+
+最后一行加：
+--user-data-dir --test-type --no-sandbox
+
+改完后：
+
+exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
+
+	# root 成功运行 chrome
+```
+
+
+
+
+
 
 
 # choco
