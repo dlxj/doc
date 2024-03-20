@@ -13446,6 +13446,31 @@ svelete的响应式是由赋值触发的
 
 
 
+### $
+
+- 响应式变量
+
+  ```
+  # 依赖更新时它也自动更新
+  <script>
+    let count = 0;
+    $: doubled = count * 2;
+  </script>
+  ```
+
+  
+
+- 响应式语句
+
+  ```
+  # 依赖更新时整个语句自动重算
+  $: console.log(`Count is now ${count}`)
+  ```
+
+  
+
+​     
+
 ### props
 
 ```
