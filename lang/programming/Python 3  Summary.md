@@ -12743,6 +12743,17 @@ ssh -CNg -L 7861:127.0.0.1:7861 root@172.16.6.253 -p 22
 
 
 
+### kill
+
+```
+# kill.sh
+kill -9 $(lsof -i:7860 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7861 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7862 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7863 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+
+```
+
 
 
 
@@ -13548,6 +13559,21 @@ Svelte 会禁止你使用 `$` 作为你声明的变量的前缀。
 ```
 
 
+
+### timer
+
+```
+<script>
+  let text = '';
+
+  setInterval(() => {
+    text = new Date().toLocaleTimeString();
+  }, 2000);
+</script>
+
+<input type="text" bind:value={text} />
+
+```
 
 
 
