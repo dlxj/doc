@@ -13478,8 +13478,12 @@ svelete的响应式是由赋值触发的
   ```
   # 依赖更新时整个语句自动重算
   $: console.log(`Count is now ${count}`)
+  
+$: t, console.log(t)
+  	# 状态改变时 执行后面的语句
+  	
   ```
-
+  
   
 
 ​     
