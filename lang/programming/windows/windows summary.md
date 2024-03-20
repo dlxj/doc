@@ -347,6 +347,9 @@ apt install xrdp -y
 
 选 lightdm
 
+dpkg-reconfigure lightdm
+	# 装完以后可以用这个再选一次 lightdm
+
 vi /etc/xrdp/xrdp.ini
 port=3390
 	# 端口改成 3390 防止和 windows 冲突
@@ -360,7 +363,7 @@ echo "xfce4-session" | tee .xsession
 win10 远程桌面用这个连接：
 
 localhost:3390
-
+	# 成功连接！
 
 	
 ```
