@@ -12699,7 +12699,7 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 pip install gradio==4.21.0
 	# 这版 video 组件正常运行
 
-pip install "urllib3<=1.24"
+pip install --upgrade requests
 	# 运行出警告的话装这个
 	
 gradio cc create mysimpleTextbox --template SimpleTextbox && \
