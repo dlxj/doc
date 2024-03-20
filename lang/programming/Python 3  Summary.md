@@ -13531,17 +13531,25 @@ https://juejin.cn/post/6985541622641459231
 Store 是 Svelte 中的一种特殊的可写状态对象，它允许我们在组件之间共享状态
 
 // store.js
-import { writable } from 'svelte/store';
-export const count = writable(0);
+import { writable } from 'svelte/store'
+export const time = writable(0)
 
 <!-- Component.svelte -->
-<script>
-  import { count } from './store.js';
-
-  function increment() {
-    $count += 1;
-  }
-</script>
+	import { onMount, onDestroy } from 'svelte'
+	import { time } from "./store.js";
+	let t = 0
+	let timerID:number
+	onMount(() => {
+		timerID = setInterval(() => {
+			t += 1;
+			$time = t;
+		}, 1000)
+	})
+	onDestroy(() => {
+		clearInterval(timerID)
+	})
+	
+	<input type="text" readonly={true} bind:value={$time} />
 
 ```
 
