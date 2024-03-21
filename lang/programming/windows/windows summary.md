@@ -370,6 +370,17 @@ localhost:3390
 
 
 
+## 关闭
+
+```
+wsl --shutdown
+wsl.exe --terminate <发行版名称>
+```
+
+
+
+
+
 ## Install chrome
 
 ```
