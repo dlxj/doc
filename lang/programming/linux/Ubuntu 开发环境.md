@@ -915,6 +915,9 @@ apt --fix-broken install
  snap remove chromium
  	# 卸载
 
+cd /usr/share/applications/ &&
+cp google-chrome.desktop ~/Desktop/
+	# 手动添加快捷方式 ？
 
 
 git config --global core.autocrlf ture
