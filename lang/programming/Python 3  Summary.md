@@ -12704,8 +12704,12 @@ curl -fsSL https://get.pnpm.io/install.sh | sh - &&
 ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
 	# 用康达稳一点？同名的两个定定义组件好像也会互相影响
 
-conda deactivate && \
-conda env remove -n sapce
+conda deactivate && 
+rm -rf /root/miniforge3/envs/space
+	# conda env remove -n sapce
+	# 这个删不掉
+
+wsl --shutdown
 
 
 pip install gradio==4.21.0
