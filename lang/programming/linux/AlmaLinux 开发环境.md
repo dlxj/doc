@@ -1,3 +1,7 @@
+# ISO
+
+[ISO](https://ftp.riken.jp/Linux/almalinux/9.3/isos/x86_64/)
+
 
 
 # 允许 root ssh
