@@ -12704,6 +12704,9 @@ curl -fsSL https://get.pnpm.io/install.sh | sh - &&
 ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
 	# 用康达稳一点？同名的两个定定义组件好像也会互相影响
 
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
+apt-get install git-lfs
+
 conda deactivate && 
 rm -rf /root/miniforge3/envs/space
 	# conda env remove -n sapce
