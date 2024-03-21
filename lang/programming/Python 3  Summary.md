@@ -12707,6 +12707,10 @@ ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
 apt-get install git-lfs
 
+source ~/miniforge3/etc/profile.d/conda.sh
+vi ~/bashrc
+	# 加进去
+
 conda deactivate && 
 rm -rf /root/miniforge3/envs/space
 	# conda env remove -n sapce
