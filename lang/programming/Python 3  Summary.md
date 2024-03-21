@@ -12697,14 +12697,21 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 ## compoment
 
 ```
+
+conda create -n space pip python=3.10 && 
+conda activate space && 
+curl -fsSL https://get.pnpm.io/install.sh | sh - &&
+ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
+
+
 pip install gradio==4.21.0
 	# 这版 video 组件正常运行
 
 pip install --upgrade requests
 	# 运行出警告的话装这个
 	
-gradio cc create mysimpleTextbox --template SimpleTextbox && \
-cd mysimpleTextbox && \
+gradio cc create mysimpletextbox --template SimpleTextbox && \
+cd mysimpletextbox && \
 gradio cc install && \
 gradio cc dev
 	# 成功运行，点　Frontend Server (Go here): http://localhost:7861/ 
