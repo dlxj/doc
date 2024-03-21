@@ -168,7 +168,8 @@ add-apt-repository ppa:deadsnakes/ppa && \
 apt install python3.10 -y && \
 apt install python3.10-distutils -y && \
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-python3.10 get-pip.py
+python3.10 get-pip.py && \
+pip install --upgrade requests
 
 ```
 
