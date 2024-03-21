@@ -181,7 +181,8 @@ add-apt-repository ppa:deadsnakes/ppa && \
 apt install python3.10 && \
 apt install python3.10-distutils && \
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-python3.10 get-pip.py
+python3.10 get-pip.py && \
+pip install --upgrade requests
 	# python3.10 的pip 需要另外安装
 
 apt remove python3-apt && \
