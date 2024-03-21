@@ -12702,6 +12702,10 @@ conda create -n space pip python=3.10 &&
 conda activate space && 
 curl -fsSL https://get.pnpm.io/install.sh | sh - &&
 ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
+	# 用康达稳一点？同名的两个定定义组件好像也会互相影响
+
+conda deactivate && \
+conda env remove -n sapce
 
 
 pip install gradio==4.21.0
