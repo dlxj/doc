@@ -230,6 +230,12 @@ windows server 2022 先安装所有更新
 再： wsl --update
 	# 后面装 Ubuntu-20.04 就正常了
 
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+去 BIOS 开启虚拟化
+
 
 wsl --list
 	# 已安装
