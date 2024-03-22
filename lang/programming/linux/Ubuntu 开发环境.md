@@ -181,7 +181,8 @@ add-apt-repository ppa:deadsnakes/ppa && \
 apt install python3.10 && \
 apt install python3.10-distutils && \
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-python3.10 get-pip.py
+python3.10 get-pip.py && \
+pip install --upgrade requests
 	# python3.10 的pip 需要另外安装
 
 apt remove python3-apt && \
@@ -399,6 +400,36 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 # Ubuntu22.04远程桌面
 
 ```
+
+sudo /etc/init.d/xrdp start
+	# 这样启动
+	
+apt install xfce4 xfce4-goodies -y && 
+apt install xrdp -y 
+
+选 lightdm
+
+dpkg-reconfigure lightdm
+	# 装完以后可以用这个再选一次 lightdm
+
+vi /etc/xrdp/xrdp.ini
+port=3390
+	# 端口改成 3390 防止和 windows 冲突
+
+cd ~ && 
+echo "xfce4-session" | tee .xsession 
+
+/etc/init.d/xrdp start
+	# WSL2 里面不能用 systemd, 所以需要手动启动
+
+win10 远程桌面用这个连接：
+
+localhost:3390
+	# 成功连接！
+	
+
+
+
 apt install xfce4 xfce4-goodies -y && \
 apt install xrdp -y && \
 systemctl enable xrdp && \
@@ -877,7 +908,20 @@ reboot
 
 ```
 
-git config --global core.autocrlf false
+apt install fonts-liberation libu2f-udev && 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
+dpkg -i google-chrome-stable_current_amd64.deb &&
+apt --fix-broken install
+
+ snap remove chromium
+ 	# 卸载
+
+cd /usr/share/applications/ &&
+cp google-chrome.desktop ~/Desktop/
+	# 手动添加快捷方式 ？
+
+
+git config --global core.autocrlf ture
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
 wget https://dl.google.com/linux/linux_signing_key.pub && \

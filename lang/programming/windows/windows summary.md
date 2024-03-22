@@ -230,6 +230,12 @@ windows server 2022 先安装所有更新
 再： wsl --update
 	# 后面装 Ubuntu-20.04 就正常了
 
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+去 BIOS 开启虚拟化
+
 
 wsl --list
 	# 已安装
@@ -329,6 +335,102 @@ ssh root@localhost
 ## WSL2 网络终极方案　
 
 [WSL2 网络的最终解决方案](https://zhuanlan.zhihu.com/p/593263088)
+
+
+
+## 远程桌面
+
+https://zhuanlan.zhihu.com/p/149501381
+
+
+
+```
+sudo /etc/init.d/xrdp start
+	# 这样启动
+	
+apt install xfce4 xfce4-goodies -y && 
+apt install xrdp -y 
+
+选 lightdm
+
+dpkg-reconfigure lightdm
+	# 装完以后可以用这个再选一次 lightdm
+
+vi /etc/xrdp/xrdp.ini
+port=3390
+	# 端口改成 3390 防止和 windows 冲突
+
+cd ~ && 
+echo "xfce4-session" | tee .xsession 
+
+/etc/init.d/xrdp start
+	# WSL2 里面不能用 systemd, 所以需要手动启动
+
+win10 远程桌面用这个连接：
+
+localhost:3390
+	# 成功连接！
+
+	
+```
+
+
+
+## 关闭
+
+```
+wsl --shutdown
+wsl.exe --terminate <发行版名称>
+```
+
+
+
+
+
+## Install chrome
+
+```
+apt install fonts-liberation libu2f-udev && 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
+dpkg -i google-chrome-stable_current_amd64.deb && 
+apt --fix-broken install
+
+ snap remove chromium
+ 	# 卸载
+
+cd /usr/share/applications/ &&
+cp google-chrome.desktop ~/Desktop/
+	# 手动添加快捷方式 ？
+
+
+git config --global core.autocrlf ture
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
+wget https://dl.google.com/linux/linux_signing_key.pub && \
+rpm --import linux_signing_key.pub && \
+dnf install -y google-chrome-stable_current_x86_64.rpm
+
+google-chrome &
+	# 注意：chrome 需要非 root 账号运行
+	useradd i
+	passwd i
+		# 密码设置成和 root 一样
+
+vi /usr/bin/google-chrome
+
+最后一行加：
+--user-data-dir --test-type --no-sandbox
+
+改完后：
+
+exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
+
+	# root 成功运行 chrome
+```
+
+
+
+
 
 
 
@@ -670,6 +772,14 @@ Chinese Simplified 64-bit	953F9ECD3307A92FB5DAF12E3FE05603FE63181F6ABC0B08B42E63
 [ventoy](https://www.ventoy.net/cn/index.html)
 
 [Rufus](https://github.com/pbatard/rufus/releases)
+
+
+
+# 超级管理员
+
+```
+net user administrator /active:yes
+```
 
 
 

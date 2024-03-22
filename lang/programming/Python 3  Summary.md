@@ -65,6 +65,27 @@ apt install python3-pip
 
 
 
+```
+临时使用
+可以在使用pip的时候加参数-i https://pypi.tuna.tsinghua.edu.cn/simple
+ 例如：pip install -i https://pypi.tuna.tsinghua.edu.cn/simple gevent，这样就会从清华这边的镜像去安装gevent库。
+
+永久修改
+Linux下，修改 ~/.pip/pip.conf (没有就创建一个)， 修改 index-url至tuna，内容如下：
+
+ [global]
+ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+复制
+windows下，直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，新建文件pip.ini，内容如下
+
+ [global]
+ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+
+
+
+
 ### pip 一开代理就出错
 
 - https://myblog.quantumcloud.top/2022/07/08/833fc93abede/  **必看**
@@ -168,7 +189,8 @@ add-apt-repository ppa:deadsnakes/ppa && \
 apt install python3.10 -y && \
 apt install python3.10-distutils -y && \
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-python3.10 get-pip.py
+python3.10 get-pip.py && \
+pip install --upgrade requests
 
 ```
 
@@ -12376,6 +12398,12 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   packages.txt
   	ffmpeg
   
+  -i https://pypi.tuna.tsinghua.edu.cn/simple
+  
+  vi ~/.pip/pip.conf
+  [global]
+  index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+  
   ```
 
 .queue().launch()
@@ -12696,11 +12724,36 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 ## compoment
 
 ```
+
+conda create -n space pip python=3.10 && 
+conda activate space && 
+curl -fsSL https://get.pnpm.io/install.sh | sh - &&
+ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
+	# 用康达稳一点？同名的两个定定义组件好像也会互相影响
+
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
+apt-get install git-lfs
+
+source ~/miniforge3/etc/profile.d/conda.sh
+vi ~/bashrc
+	# 加进去
+
+conda deactivate && 
+rm -rf /root/miniforge3/envs/space
+	# conda env remove -n sapce
+	# 这个删不掉
+
+wsl --shutdown
+
+
 pip install gradio==4.21.0
 	# 这版 video 组件正常运行
+
+pip install --upgrade requests
+	# 运行出警告的话装这个
 	
-gradio cc create mysimpleTextbox --template SimpleTextbox && \
-cd mysimpleTextbox && \
+gradio cc create mysimpletextbox --template SimpleTextbox && \
+cd mysimpletextbox && \
 gradio cc install && \
 gradio cc dev
 	# 成功运行，点　Frontend Server (Go here): http://localhost:7861/ 
@@ -12742,6 +12795,17 @@ ssh -CNg -L 7861:127.0.0.1:7861 root@172.16.6.253 -p 22
 ```
 
 
+
+### kill
+
+```
+# kill.sh
+kill -9 $(lsof -i:7860 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7861 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7862 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7863 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+
+```
 
 
 
@@ -13395,6 +13459,8 @@ FastAPI.setup = FastAPI.orig_setup
 
 [Debug vscode](https://subscription.packtpub.com/book/web-development/9781839213625/2/ch02lvl1sec11/debugging-svelte-applications)
 
+see https://sveltejs-cn.github.io/svelte-cn/chapter1/script.html
+
 see https://github.com/fikryfahrezy/svelte-player  正常播放的 **纯 svelte 播放器**
 
 see https://github.com/dandiws/svelte-audio-player  **音频播放器**
@@ -13412,6 +13478,286 @@ vscdoe 插件
 	Svelte for VS Code
 
 ```
+
+
+
+```
+# https://juejin.cn/post/6984045221352849416
+# https://juejin.cn/column/6984045100888227876
+svelte中的组件名由以下特点:
+		1. 组件名的首字母要大写 --- 区分于一般的HTML标签
+		2. 组件如果使用单标签的话 --- 必须以/闭合
+<Child />
+
+{@debug xxx}
+	# chrome 运行到这里会中断？
+	
+	
+响应式声明
+  // 当依赖的状态count发生改变的时候，svlete会自动计算并更新doubled的值
+  /*
+	注意：
+            1. 响应式声明只能定义在顶层, 在其余部分定义是会报错的
+            2. 定义响应式声明的变量的时候，不需要加var|let|const (此时svelte会自动为该变量进行定义和赋值)
+	*/
+  $: doubled = count * 2;
+  
+
+// 和vue不同的时候，svlete的响应式声明即可以是变量，也可以是语句
+
+// 语句
+$: console.log(`the count is ${count}`);
+
+// 代码块
+$: {
+    console.log(`the count is ${count}`);
+    alert(`I SAID THE COUNT IS ${count}`);
+}
+
+// 逻辑语句
+$: if (count >= 10) {
+    alert(`count is dangerously high!`);
+    count = 9;
+}
+
+svelete的响应式是由赋值触发的
+
+所以诸如 push、splice 等数组方法， 虽然更新了状态，但是因为没有赋值操作，所以不会引起UI(界面)的自动更新。
+
+
+
+```
+
+
+
+### $
+
+- 响应式变量
+
+  ```
+  # 依赖更新时它也自动更新
+  <script>
+    let count = 0;
+    $: doubled = count * 2;
+  </script>
+  ```
+
+  
+
+- 响应式语句
+
+  ```
+  # 依赖更新时整个语句自动重算
+  $: console.log(`Count is now ${count}`)
+  
+  ```
+
+$: t, console.log(t)
+  \# 状态改变时 执行后面的语句
+
+  ```
+  
+  
+
+​     
+
+### props
+
+  ```
+## 属性展开
+const info = { name: 'Klaus', age: 23, ... }
+<Info name={info.name} age={info.age} gender={info.gender} location={info.location}/>
+<!-- 等价于 展开props和ES6中的展开运算符 -->
+<Info {...info} />
+
+## 在子组中表示父组件传过来的所有属性
+$$props
+
+
+```
+
+
+
+### event
+
+https://juejin.cn/post/6985541622641459231
+
+
+
+#### 事件分发器（dispatcher）
+
+
+
+
+
+#### 中间组件必须转发事件
+
+- > 与DOM事件不同，组件事件不会 冒泡
+  >
+  > 如果要在某个深层嵌套的组件上监听事件，则中间组件必须 转发 该事件
+
+
+
+### store 
+
+[1](https://juejin.cn/post/6986642702964097037)
+
+组件的顶层申明Store，并且不可以包含在if代码块中
+
+```
+Store 是 Svelte 中的一种特殊的可写状态对象，它允许我们在组件之间共享状态
+
+// store.js
+import { writable } from 'svelte/store'
+export const time = writable(0)
+
+<!-- Component.svelte -->
+	import { onMount, onDestroy } from 'svelte'
+	import { time } from "./store.js";
+	let t = 0
+	let timerID:number
+	onMount(() => {
+		timerID = setInterval(() => {
+			t += 1;
+			$time = t;
+		}, 1000)
+	})
+	onDestroy(() => {
+		clearInterval(timerID)
+	})
+	
+	<input type="text" readonly={true} bind:value={$time} />
+
+```
+
+
+
+```
+Svelte 假定所有以 `$` 开头的任何标识符都表示引用某个 store 值，而 `$` 实际上是一个保留字符，
+Svelte 会禁止你使用 `$` 作为你声明的变量的前缀。
+
+<script>
+  import { count } from './stores.js';
+</script>
+
+<h1>count 当前的值是：{$count}</h1>
+```
+
+
+
+### timer
+
+```
+<script>
+  let text = '';
+
+  setInterval(() => {
+    text = new Date().toLocaleTimeString();
+  }, 2000);
+</script>
+
+<input type="text" bind:value={text} />
+
+```
+
+
+
+
+
+### await
+
+```
+<script>
+  // getRandomNumber是一个异步请求，返回的是一个promise
+  let getNumberPromise = getRandomNumber();
+</script>
+
+<!-- number是一个异步操作返回的promise -->
+{#await getNumberPromise}
+    <!-- 状态为pending时候进行的操作  -->
+    <p>loading ...</p>
+{:then number}
+    <!-- 状态为resolve时候进行的操作，后面的number是成功后返回的结果 -->
+    <p>{number}</p>
+{:catch error}
+    <!-- 状态为reject时候进行的操作, error是返回的错误对象 -->
+    <p>{error.message}</p>
+{/await}
+
+
+<!--
+    很多情况下，我们可能并不需要处理状态为pending或reject的情况
+    所以此时可以对await块进行简写操作
+-->
+
+<!-- 省略状态为pending时候的操作 -->
+{#await getNumberPromise then number}
+    <p>{number}</p>
+{:catch error}
+    <p>{error.message}</p>
+{/await}
+
+<!-- 同时省略状态为pending和reject的时候对promise结果的处理 -->
+{#await getNumberPromise then number}
+    <p>{number}</p>
+{/await}
+
+
+
+```
+
+
+
+### animate
+
+```
+<script>
+    let num = 0;
+    let opacity = 1
+
+    function addNumber() {
+    opacity = 0
+    	
+        // 淡出后。修改num的值，并执行淡入效果
+    setTimeout(() => {
+            num = num + 2
+            opacity = 1
+    }, 500)
+    }
+</script>
+
+<!-- 使用transition 实现在切换num值的时候的 淡出和淡入效果 -->
+<p style="transition: opacity 0.5s ease; opacity: {opacity};">{ num }</p>
+<button on:click="{addNumber}">+2</button>
+
+
+
+<!--
+    如果按照上述例子的写法，显然是比较繁琐的
+    为此，svlete将一些简单的动画进行了封装
+-->
+<script>
+    import { fade } from 'svelte/transition';
+    let num = 0;
+</script>
+
+<!-- 
+    fade只有在创建元素的时候才会生效，所以此时需要为p元素包裹key块，不包裹的时候是不会产生渐入渐出效果
+    key块的作用和each块中key的作用是一致，当num发生改变的时候，svelte会自动销毁并重新创建p标签
+-->
+{#key num}
+    <p in:fade>{ num }</p>
+{/key}
+<button on:click="{() => num += 2}">+2</button>
+
+
+```
+
+
+
+### compile
+
+[compile](https://sveltejs-cn.github.io/svelte-cn/api-compile-time/svelte.compile.html)
 
 
 
@@ -13509,9 +13855,9 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
     videoDuration = videoElement.duration;
     videoElement.currentTime = newTimeLeft;
     
-    ```
+```
 
-    
+​    
 
 ```
 # see huggingface vite_gradio_video\src\App.svelte
@@ -13699,6 +14045,10 @@ demo.launch(debug=True, show_api=False, server_name="0.0.0.0", server_port=6006,
 ```
 
 
+
+### slot
+
+[slot](https://juejin.cn/post/6987632912900292622)  在他blog搜 svelte
 
 
 
