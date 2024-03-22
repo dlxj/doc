@@ -12800,7 +12800,25 @@ if __name__ == "__main__":
 
 ### change
 
-```python
+```
+
+Inner:
+    export let value;
+
+outter:
+    <Inner bind:value={value} />
+
+
+<Inner value={value} />  
+<!--如果不加bind，那么子组件修改的只是内部的value变量，父组件的value变量是不会被修改的-->
+
+<Inner bind:value={value} />
+<!--加了bind，那么子组件修改了value变量，父组件的value变量也会跟着被修改-->
+
+
+```
+
+```javascript
 
 <script>
 	let user = {
