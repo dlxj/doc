@@ -111,6 +111,7 @@ https://itsfoss.com/ubuntu-login-root/
 
 vi /etc/gdm3/custom.conf
 
+[daemon]
 AllowRoot=true
 	# add this line
 
@@ -400,6 +401,9 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 # Ubuntu22.04远程桌面
 
 ```
+
+vi /etc/xrdp/startwm.sh
+
 
 sudo /etc/init.d/xrdp start
 	# 这样启动
