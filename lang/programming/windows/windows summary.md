@@ -673,6 +673,14 @@ Chinese Simplified 64-bit	953F9ECD3307A92FB5DAF12E3FE05603FE63181F6ABC0B08B42E63
 
 
 
+# 超级管理员
+
+```
+net user administrator /active:yes
+```
+
+
+
 # 开启大小写敏感
 
 ```
