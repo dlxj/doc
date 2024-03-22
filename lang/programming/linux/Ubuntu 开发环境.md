@@ -103,7 +103,24 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 ```
 
 
+# root gui
 
+```
+
+https://itsfoss.com/ubuntu-login-root/
+
+vi /etc/gdm3/custom.conf
+
+AllowRoot=true
+	# add this line
+
+vi /etc/pam.d/gdm-password
+
+auth   required        pam_succeed_if.so user != root quiet_success
+	# comment this line
+
+
+```
 
 
 # 安装开发环境
@@ -164,7 +181,8 @@ add-apt-repository ppa:deadsnakes/ppa && \
 apt install python3.10 && \
 apt install python3.10-distutils && \
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-python3.10 get-pip.py
+python3.10 get-pip.py && \
+pip install --upgrade requests
 	# python3.10 的pip 需要另外安装
 
 apt remove python3-apt && \
@@ -382,6 +400,36 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 # Ubuntu22.04远程桌面
 
 ```
+
+sudo /etc/init.d/xrdp start
+	# 这样启动
+	
+apt install xfce4 xfce4-goodies -y && 
+apt install xrdp -y 
+
+选 lightdm
+
+dpkg-reconfigure lightdm
+	# 装完以后可以用这个再选一次 lightdm
+
+vi /etc/xrdp/xrdp.ini
+port=3390
+	# 端口改成 3390 防止和 windows 冲突
+
+cd ~ && 
+echo "xfce4-session" | tee .xsession 
+
+/etc/init.d/xrdp start
+	# WSL2 里面不能用 systemd, 所以需要手动启动
+
+win10 远程桌面用这个连接：
+
+localhost:3390
+	# 成功连接！
+	
+
+
+
 apt install xfce4 xfce4-goodies -y && \
 apt install xrdp -y && \
 systemctl enable xrdp && \
@@ -860,7 +908,20 @@ reboot
 
 ```
 
-git config --global core.autocrlf false
+apt install fonts-liberation libu2f-udev && 
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
+dpkg -i google-chrome-stable_current_amd64.deb &&
+apt --fix-broken install
+
+ snap remove chromium
+ 	# 卸载
+
+cd /usr/share/applications/ &&
+cp google-chrome.desktop ~/Desktop/
+	# 手动添加快捷方式 ？
+
+
+git config --global core.autocrlf ture
 
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm && \
 wget https://dl.google.com/linux/linux_signing_key.pub && \
@@ -872,6 +933,104 @@ google-chrome &
 	useradd i
 	passwd i
 		# 密码设置成和 root 一样
+
+vi /usr/bin/google-chrome
+
+最后一行加：
+--user-data-dir --test-type --no-sandbox
+
+改完后：
+
+exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
+
+	# root 成功运行 chrome
+
+```
+
+
+
+# Install vscode
+
+[how-to-install-visual-studio-code-on-almalinux](https://www.linuxcapable.com/how-to-install-visual-studio-code-on-almalinux/)
+
+
+
+```
+vi /usr/bin/code
+
+CAN_LAUNCH_AS_ROOT=1
+	# 报错的前一句加这行
+	
+ELECTRON_RUN_AS_NODE=1 "$ELECTRON" "$CLI" "$@" --user-data-dir --no-sandbox
+	# 最后一行改成这样
+
+
+
+see python summary -> Gradio -> svelte -> vite
+
+# vscode 设置 -> 搜:
+allowBreakpointsEverywhere
+
+vscdoe 插件
+	JavaScript Debugger
+	Svelte for VS Code
+
+.vscode/launch.json  
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:5174",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+	# 正常进断点需要这个
+
+pnpm create vite vite-svelte -- --template svelte
+cd vite-svelte
+pnpm install
+pnpm run dev
+    # vite 有几个选项，选 svelte ，选 javascript
+	# vsocde 里 F5 能正常在 Counter.svelte 单步断下
+
+
+gradio cc create ivideo --template Video
+	# 自定义gradio 的 video 组件
+	#　把 frontend 下　node_modules shared　这两个文件夹复到 vite_gradio_video 目录下，能正常引用，并运行
+        # 把 dependencies 下的包复制过来， pnpm i 就可以了 
+
+
+App.svelte
+<script>
+  import Counter from './lib/Counter.svelte'
+  import Player from '../shared/Player.svelte';
+	# 这样引用组件
+
+
+
+
+
+```
+
+
+# Input pinyin
+
+```
+
+apt-get install -y fcitx im-config
+im-config ## choose fcitx
+
+apt-get install fcitx-googlepinyin
+
+## choose fcitx keyboard icon, choose "Text Entry Setting"
+## in the opned windows, click "+" icon
+## search "pinyin" and Google Pinin" will come out
+
+## if cannot not be used immediately, log out once
 
 ```
 
