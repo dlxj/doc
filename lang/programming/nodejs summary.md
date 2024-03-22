@@ -2808,7 +2808,7 @@ https://sites.ipaddress.com/github.com/
 
 ```
 
-zerotier
+zerotier tailscale 
 
 
 我找到了解决方案，重点在小火箭的配置文件。下面把总流程说一下：
