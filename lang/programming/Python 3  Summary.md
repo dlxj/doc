@@ -13505,9 +13505,11 @@ svelete的响应式是由赋值触发的
   # 依赖更新时整个语句自动重算
   $: console.log(`Count is now ${count}`)
   
+  ```
+
 $: t, console.log(t)
-  	# 状态改变时 执行后面的语句
-  	
+  \# 状态改变时 执行后面的语句
+
   ```
   
   
@@ -13516,14 +13518,14 @@ $: t, console.log(t)
 
 ### props
 
-```
-# 属性展开
+  ```
+## 属性展开
 const info = { name: 'Klaus', age: 23, ... }
 <Info name={info.name} age={info.age} gender={info.gender} location={info.location}/>
 <!-- 等价于 展开props和ES6中的展开运算符 -->
 <Info {...info} />
 
-# 在子组中表示父组件传过来的所有属性
+## 在子组中表示父组件传过来的所有属性
 $$props
 
 
@@ -13667,15 +13669,15 @@ Svelte 会禁止你使用 `$` 作为你声明的变量的前缀。
 <script>
     let num = 0;
     let opacity = 1
-	
+
     function addNumber() {
-	opacity = 0
-		
+    opacity = 0
+    	
         // 淡出后。修改num的值，并执行淡入效果
-	setTimeout(() => {
+    setTimeout(() => {
             num = num + 2
             opacity = 1
-	}, 500)
+    }, 500)
     }
 </script>
 
@@ -13808,9 +13810,9 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
     videoDuration = videoElement.duration;
     videoElement.currentTime = newTimeLeft;
     
-    ```
+```
 
-    
+​    
 
 ```
 # see huggingface vite_gradio_video\src\App.svelte
