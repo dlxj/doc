@@ -354,6 +354,7 @@ https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps  先装驱动
 sudo apt update && sudo apt -y upgrade && 
 sudo apt -y install xfce4 && 
 sudo apt-get install xrdp 
+	# 如果出现选项，选 gdm3
 
 sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak  && 
 sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini  && 
@@ -361,6 +362,26 @@ sudo sed -i 's/max_bpp=32/#max_bpp=32\nmax_bpp=128/g' /etc/xrdp/xrdp.ini &&
 sudo sed -i 's/xserverbpp=24/#xserverbpp=24\nxserverbpp=128/g' /etc/xrdp/xrdp.ini && 
 echo xfce4-session > ~/.xsession
 
+vi /etc/xrdp/startwm.sh
+
+# コメントアウト # test -x /etc/X11/Xsession && exec /etc/X11/Xsession
+# コメントアウト # exec /bin/sh /etc/X11/Xsession
+
+# xfce
+startxfce4
+
+	# 最后几行改成这样
+
+sudo /etc/init.d/xrdp start
+
+
+wsl --shutdown
+
+ /etc/init.d/xrdp start
+
+localhost:3390
+	# 连这个
+	# 用户名 i 连接成功！
 
 
 ```
