@@ -340,9 +340,11 @@ ssh root@localhost
 
 ## 远程桌面
 
+https://qiita.com/atomyah/items/887a5185ec9a8206c7c4  **必看**
+
 https://zhuanlan.zhihu.com/p/149501381
 
-https://zhuanlan.zhihu.com/p/657904628 WSL2的图形化支持 必看
+https://zhuanlan.zhihu.com/p/657904628 WSL2的图形化支持 **必看**
 
 https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps  先装驱动
 
