@@ -446,6 +446,22 @@ wsl.exe --terminate <发行版名称>
 
 
 
+## 备份
+
+```
+wsl --shutdown
+wsl -l -v
+wsl --export Ubuntu-20.04 F:\WSL2_backup\wsl2_Ubuntu-20.04.tar
+	# 备份
+
+wsl --import Ubuntu F:\WSL2_backup\wsl2_Ubuntu-20.04.tar
+	# 还原
+
+
+```
+
+
+
 
 
 ## Install chrome
