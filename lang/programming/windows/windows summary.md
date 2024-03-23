@@ -392,6 +392,12 @@ apt install screenfetch &&
 screenfetch
 	# 显示当前桌面环境
 
+xfce4-settings-manager
+	# 命令行下面打这个，直接出图片界面！
+	
+apt install xfce4-terminal
+	# 装这个以后，在远程桌面可以搜 xfce4 ，正常打开命令行窗口
+
 
 ```
 
