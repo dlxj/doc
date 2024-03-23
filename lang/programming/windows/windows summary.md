@@ -382,6 +382,8 @@ wsl --shutdown
 localhost:3390
 	# 连这个
 	# 用户名 i 连接成功！
+	# 但是 root 连，闪退！
+
 
 
 ```
