@@ -342,7 +342,9 @@ ssh root@localhost
 
 https://zhuanlan.zhihu.com/p/149501381
 
+https://zhuanlan.zhihu.com/p/657904628 WSL2的图形化支持 必看
 
+https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps  先装驱动
 
 ```
 sudo /etc/init.d/xrdp start
