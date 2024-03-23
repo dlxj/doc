@@ -380,10 +380,15 @@ wsl --shutdown
  /etc/init.d/xrdp start
 
 localhost:3390
-	# 连这个
+	# win11 远程桌面连这个
 	# 用户名 i 连接成功！
 	# 但是 root 连，闪退！
+	# 装完 chrome 正常打开，但是 terminal 打不开
 
+
+apt install screenfetch && 
+screenfetch
+	# 显示当前桌面环境
 
 
 ```
@@ -439,7 +444,7 @@ wsl.exe --terminate <发行版名称>
 
 ```
 apt install fonts-liberation libu2f-udev && 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && 
 dpkg -i google-chrome-stable_current_amd64.deb && 
 apt --fix-broken install
 
