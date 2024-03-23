@@ -1083,6 +1083,10 @@ print(m.parse("彼女はペンパイナッポーアッポーペンと恋ダン�
 # 乱码
 
 ```
+sudo apt-get install language-pack-zh-hans
+
+
+
 dnf install langpacks-en glibc-all-langpacks -y && \
 localectl set-locale LANG=en_US.UTF-8 && \
 localectl
