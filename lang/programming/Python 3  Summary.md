@@ -13400,6 +13400,29 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 
 
+### infer
+
+```python
+import gradio as gr
+
+video_path_or_url = Textbox()
+video_subtitle_path_or_url = Textbox()
+video_with_subtitle = gr.Video()
+
+def set_video(file_path, subtitle_path):
+     return {
+        video_with_subtitle: gr.update(value=file_path, subtitle=subtitle_path)
+    }
+
+demo = gr.Interface(
+    fn=set_video,
+    inputs=[video_path_or_url, video_subtitle_path_or_url],
+    outputs=video_with_subtitle
+)
+
+demo.launch() 
+```
+
 
 
 ## fastapi+gradio
