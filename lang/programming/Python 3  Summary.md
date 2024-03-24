@@ -12723,7 +12723,7 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 
 ## compoment
 
-```
+````
 
 conda create -n space pip python=3.10 && 
 conda activate space && 
@@ -12776,14 +12776,14 @@ gradio cc dev
 
 # kill 端口号
 
-​```
+```
 nohup node xx.js >outlog &
 
 #!/bin/bash
 kill -9 $(lsof outlog | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
 kill -9 $(lsof -i:7860 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
 kill -9 $(lsof -i:7861 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
-​```
+```
 
 Python311\Lib\site-packages\gradio\networking.py
 	LOCALHOST_NAME = os.getenv("GRADIO_SERVER_NAME", "127.0.0.1")
@@ -12792,7 +12792,7 @@ Python311\Lib\site-packages\gradio\networking.py
 
 ssh -CNg -L 7861:127.0.0.1:7861 root@172.16.6.253 -p 22
 
-```
+````
 
 
 
