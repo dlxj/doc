@@ -12746,7 +12746,7 @@ rm -rf /root/miniforge3/envs/space
 wsl --shutdown
 
 
-pip install gradio==4.21.0
+pip install gradio==4.22.0
 	# 这版 video 组件正常运行
 
 pip install --upgrade requests
