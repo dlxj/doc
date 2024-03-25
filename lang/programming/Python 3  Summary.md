@@ -12980,6 +12980,30 @@ outter:
 
 
 
+```python
+# https://github.com/gradio-app/gradio/issues/7432
+import gradio as gr
+
+
+def on_file_change(file_path):
+    print(f"File path changed to {file_path}")
+
+
+# Set up the Gradio interface
+with gr.Blocks(
+    title="File explorer value change test"
+) as demo:
+    file_explorer = gr.FileExplorer(root=".", file_count="single")
+    file_explorer.change(fn=on_file_change, inputs=[file_explorer], outputs=[])
+
+
+demo.launch()
+```
+
+
+
+
+
 ## yield
 
 ```python
