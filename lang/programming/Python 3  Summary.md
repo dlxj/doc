@@ -12998,6 +12998,39 @@ with gr.Blocks(
 
 
 demo.launch()
+
+
+
+	export let gradio: Gradio<{
+		change: never;
+	}>;
+        
+    $: if (JSON.stringify(value) !== JSON.stringify(old_value)) {
+		old_value = value;
+		gradio.dispatch("change");
+	}
+
+        
+    on:change={() => gradio.dispatch("change")}
+
+        
+    
+    export let server: {
+		ls: (path: string[]) => Promise<FileNode[]>;
+	};
+    	{#key rerender_key}
+		<DirectoryExplorer
+			bind:value
+			{file_count}
+			{interactive}
+			ls_fn={server.ls}
+		/>
+	{/key}
+        
+        
+       
+
+
 ```
 
 
