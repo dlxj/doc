@@ -12851,6 +12851,8 @@ if __name__ == "__main__":
 
 ## enven
 
+[Custom events](https://www.gradio.app/guides/documenting-custom-components)
+
 
 
 ```python
