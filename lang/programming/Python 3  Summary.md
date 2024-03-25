@@ -12873,6 +12873,29 @@ demo.launch()
 
 
 
+```python
+# https://github.com/gradio-app/gradio/pull/7425
+
+import gradio as gr
+import time
+
+def f(x, k: gr.KeyUpData):
+    time.sleep(1)
+    return gr.update(choices=[f"{k.input_value} {i}" for i in range(int(5))])    
+
+
+with gr.Blocks() as demo:
+    t = gr.Dropdown(interactive=True, allow_custom_value=True)
+    t.key_up(f, t, t, show_progress="hidden", trigger_mode="always_last")
+    
+demo.launch()
+
+```
+
+
+
+
+
 [event-listeners](https://www.gradio.app/guides/blocks-and-event-listeners#gathering-event-data)
 
 ```python
