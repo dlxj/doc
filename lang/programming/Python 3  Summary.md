@@ -12849,9 +12849,26 @@ if __name__ == "__main__":
 
 
 
-## enven
+## envets
 
-[Custom events](https://www.gradio.app/guides/documenting-custom-components)
+[Custom events](https://www.gradio.app/guides/documenting-custom-components) 
+
+- ```python
+  from gradio.events import Events, EventListener
+  
+  class ParamViewer(Component):
+    ...
+  
+    EVENTS = [
+      Events.change,
+      EventListener(
+          "bingbong",
+          doc="This listener is triggered when the user does a bingbong."
+        )
+    ]
+  ```
+
+  
 
 
 
