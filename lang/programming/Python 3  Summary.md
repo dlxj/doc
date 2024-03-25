@@ -12979,6 +12979,40 @@ outter:
 ```
 
 
+
+## yield
+
+```python
+# https://github.com/gradio-app/gradio/issues/7615
+
+import gradio as gr
+import time
+
+def loop_method(input_number, atb, atb2):
+    for i in range(1, 111):
+        yield {additional_text_box: i}
+        time.sleep(0.5)
+        #lets assume some more code here
+        yield {additional_text_box2: i*10}
+        time.sleep(0.5)
+
+block = gr.Blocks().queue()
+with block:
+    input_box = gr.Textbox(label="Enter a number (1 to 100):")
+    output_box = gr.Textbox(label="Output:", interactive=False)
+    loop_button = gr.Button("Run Loop")
+    additional_text_box = gr.Textbox(label="Additional Text Box:", interactive=False)
+    additional_text_box2 = gr.Textbox(label="Additional Text 2 Box:", interactive=False)
+
+    loop_button.click(fn=loop_method, inputs=[input_box, additional_text_box, additional_text_box2], outputs=[additional_text_box, additional_text_box2])
+
+block.launch()
+```
+
+
+
+
+
 ## timer
 
 ```python
