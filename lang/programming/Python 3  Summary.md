@@ -12851,6 +12851,28 @@ if __name__ == "__main__":
 
 ## enven
 
+
+
+```python
+# https://github.com/gradio-app/gradio/issues/7380
+
+import gradio as gr
+
+def test(evt: gr.EventData):
+    return str(evt.target)
+    
+
+with gr.Blocks() as demo:
+    b = gr.Button()
+    t = gr.Textbox()
+    
+    b.click(test, None, t)
+    
+demo.launch()
+```
+
+
+
 [event-listeners](https://www.gradio.app/guides/blocks-and-event-listeners#gathering-event-data)
 
 ```python
