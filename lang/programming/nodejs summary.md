@@ -2620,6 +2620,9 @@ proxy_servers:
 ssl_verify: false
 	# 康达设置代理
 
+conda clean -a
+	# 代理是OK 的，出错执行这个就可以了
+	
 
 export PATH=/usr/local/cuda-11.8/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH

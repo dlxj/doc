@@ -298,6 +298,17 @@ ln -s ~/miniforge3/bin/activate /usr/local/bin && \
 ln -s ~/miniforge3/bin/deactivate /usr/local/bin && \
 source ~/miniforge3/etc/profile.d/conda.sh
 
+vi ~/.condarc
+proxy_servers:
+  http: http://172.16.6.253:8118
+  https: http://172.16.6.253:8118
+ssl_verify: false
+	# 康达设置代理
+
+conda clean -a
+	# 代理是OK 的，出错执行这个就可以了
+
+
 # autodl
 ~/miniconda3/bin/conda init && \
 ln -s ~/miniconda3/bin/conda /usr/local/bin && \
