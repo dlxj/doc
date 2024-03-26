@@ -12928,7 +12928,7 @@ demo.launch()
 
 ### change
 
-```
+```python
 
 Inner:
     export let value;
