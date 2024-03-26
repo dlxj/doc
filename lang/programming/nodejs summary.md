@@ -2614,8 +2614,11 @@ source ~/.bashrc
    
 conda config --set proxy_servers.http http://172.16.6.253:8118 && 
 conda config --set proxy_servers.https http://172.16.6.253:8118 
+
+conda config --set proxy_servers.http socks5h://172.16.6.253:1080 && 
+conda config --set proxy_servers.https socks5h://172.16.6.253:1080
 	# 康达设置代理
- 
+
 
 export PATH=/usr/local/cuda-11.8/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
