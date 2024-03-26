@@ -2612,11 +2612,12 @@ source ~/.bashrc
     http_proxy=http://127.0.0.1:1080 curl google.com
     	# 成功访问 google
    
-conda config --set proxy_servers.http http://172.16.6.253:8118 && 
-conda config --set proxy_servers.https http://172.16.6.253:8118 
 
-conda config --set proxy_servers.http socks5h://172.16.6.253:1080 && 
-conda config --set proxy_servers.https socks5h://172.16.6.253:1080
+vi ~/.condarc
+proxy_servers:
+  http: http://172.16.6.253:8118
+  https: http://172.16.6.253:8118
+ssl_verify: false
 	# 康达设置代理
 
 
