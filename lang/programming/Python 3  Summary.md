@@ -12731,6 +12731,11 @@ curl -fsSL https://get.pnpm.io/install.sh | sh - &&
 ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
 	# 用康达稳一点？同名的两个定定义组件好像也会互相影响
 
+conda create -n rwkv pip python=3.10 && 
+conda activate rwkv
+	# 组件制作好了以后给 rwkv 用 
+	
+
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
 apt-get install git-lfs
 
