@@ -3938,9 +3938,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create gradio_video --type dataset
 	# huggingface-cli repo create gradio_bbcode --type dataset
 	# huggingface-cli repo create myvideo --type dataset
-	# huggingface-cli repo create fakename --type dataset
 	# huggingface-cli repo create mysimpletextbox --type dataset
-	
+	# huggingface-cli repo create release --type dataset
 	
 
 git config --global core.safecrlf true
