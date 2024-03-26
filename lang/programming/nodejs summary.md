@@ -2611,7 +2611,11 @@ source ~/.bashrc
     service privoxy restart
     http_proxy=http://127.0.0.1:1080 curl google.com
     	# 成功访问 google
-    
+   
+conda config --set proxy_servers.http http://172.16.6.253:8118 && 
+conda config --set proxy_servers.https http://172.16.6.253:8118 
+	# 康达设置代理
+ 
 
 export PATH=/usr/local/cuda-11.8/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
