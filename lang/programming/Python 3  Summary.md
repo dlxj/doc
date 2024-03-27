@@ -13653,6 +13653,15 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 
 
+```
+$  yt-dlp -g "https://host/folder/file.m3u8"  # the -g flag tells youtube-dl to just return the media url[s]
+...
+https://media.clip.host/..../media.mp4
+$ aria2c "https://media.clip.host/..../media.mp4"
+```
+
+
+
 ### infer
 
 ```python
