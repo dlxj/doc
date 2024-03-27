@@ -13647,6 +13647,8 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 [ffpmeg 下载m3u8](https://gist.github.com/tzmartin/fb1f4a8e95ef5fb79596bd4719671b5d)
 
+[xgplayer 纯 js 播放 iptv](https://github.com/bytedance/xgplayer)
+
 [IPTV to HTTP live streaming](https://gist.github.com/drzax/99c468b0c695491784109a4cf21c1c1b)
 
 [ZyPlayer 支持 iptv](https://github.com/Hiram-Wong/ZyPlayer)
