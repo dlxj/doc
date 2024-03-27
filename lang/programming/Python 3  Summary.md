@@ -13694,6 +13694,14 @@ done
 
 
 
+```
+ffmpeg -protocol_whitelist "concat,file,subfile,http,https,tls,rtp,tcp,udp,crypto" -i "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs19" -vcodec copy -acodec copy -absf aac_adtstoasc out.mp4
+	# 成功读到流，但是因为是直播，它没有写入文件？
+
+```
+
+
+
 
 
 ### infer
