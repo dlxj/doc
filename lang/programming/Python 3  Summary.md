@@ -13327,6 +13327,51 @@ demo.launch()
 
 
 
+### stream
+
+
+
+```python
+import gradio as gr
+import numpy as np
+import wave
+
+def response():
+    def streaming():
+        f = wave.open("sound.wav", 'rb')
+        buffer = f.readframes(f.getnframes())
+        data = np.frombuffer(buffer, dtype=f'int{f.getsampwidth()*8}')
+        chunks = []
+        for idx in range(0,data.shape[0],20000):
+            chunks.append( data[idx:idx+20000] )
+        return chunks
+    chunks = streaming()
+    for i, chunk in enumerate(chunks):
+        if i == 0:
+            assert chunk.shape[-1] > 5000
+        # print("stream chunk:",i, chunk.shape)
+
+        wav = chunk.astype(np.float)
+        wav_norm = wav * float(32767 / max(0.01, np.max(np.abs(wav))))
+        wav_norm = wav_norm.astype(np.int16)
+        yield (44000, wav_norm)
+
+with gr.Blocks() as demo:
+    audio_out = gr.Audio(autoplay=True,
+                         show_download_button=False,
+                         show_share_button=False,
+                         editable=False,
+                         interactive=False,
+                         streaming=True,
+                         label="Stream audio out")
+    button = gr.Button("Test streaming audio out")
+    button.click(response, [], audio_out) \
+
+demo.launch(share=True)
+```
+
+
+
 
 
 ## video
