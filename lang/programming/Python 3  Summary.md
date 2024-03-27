@@ -13647,6 +13647,8 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 [m3u8 下载 GO实现](https://github.com/orestonce/m3u8d) **实测可用**
 
+[m3u8 nodejs 实现](https://github.com/reason211/m3u8-downloader)
+
 [ffpmeg 下载m3u8](https://gist.github.com/tzmartin/fb1f4a8e95ef5fb79596bd4719671b5d)
 
 [xgplayer 纯 js 播放 iptv](https://github.com/bytedance/xgplayer)
