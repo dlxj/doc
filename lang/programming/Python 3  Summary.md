@@ -13647,6 +13647,8 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 [ffpmeg 下载m3u8](https://gist.github.com/tzmartin/fb1f4a8e95ef5fb79596bd4719671b5d)
 
+[IPTV to HTTP live streaming](https://gist.github.com/drzax/99c468b0c695491784109a4cf21c1c1b)
+
 [m3u8 python解析](https://github.com/globocom/m3u8)
 
 [有原理](https://github.com/Momo707577045/m3u8-downloader)
@@ -13657,11 +13659,38 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 # https://www.1tv.ru
 # https://github.com/yt-dlp/yt-dlp/issues/9521
 
-$  yt-dlp -g "https://host/folder/file.m3u8"  # the -g flag tells youtube-dl to just return the media url[s]
+$  yt-dlp -g "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs19"  # the -g flag tells youtube-dl to just return the media url[s]
 ...
 https://media.clip.host/..../media.mp4
 $ aria2c "https://media.clip.host/..../media.mp4"
 ```
+
+
+
+```bash
+iptv-to-hls.sh
+#!/bin/bash
+
+while true; do
+	currTime=`date +%Y%m%d%H%M`
+	if [ "$currTime" -ge 201507081658 -a "$currTime" -le 201507082300 ]; then
+		echo "$currTime: Stream should be on. Start ffmpeg if the process does not exist"
+		if [ "$(pidof ffmpeg)" ]; then
+			echo "$currTime: ffmpeg already running."
+			sleep 10
+		else
+			echo "$currTime: ffmpeg not running. Start it"
+			ffmpeg -i 'udp://239.193.4.70:5000' -vcodec libx264 -profile:v high -level:v 4.1 -crf 23 -preset veryfast -vf "yadif" -s 640x320 -maxrate 800k -bufsize 1600k -hls_wrap 16 -acodec libmp3lame -ac 2 -b:a 128k -strict experimental "ftp://iptv1:8gm2taXx@69.163.202.29/tv.elvery.net/hls.m3u8" &
+		fi
+	else
+		echo "$currTime: Stream should be off. Kill ffmpeg if the process exists"
+		killall ffmpeg
+		sleep 10
+	fi
+done
+```
+
+
 
 
 
