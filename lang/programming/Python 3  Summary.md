@@ -13643,7 +13643,9 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 
 
-### m38u
+### m3u8
+
+[ffpmeg 下载m3u8](https://gist.github.com/tzmartin/fb1f4a8e95ef5fb79596bd4719671b5d)
 
 [m3u8 python解析](https://github.com/globocom/m3u8)
 
