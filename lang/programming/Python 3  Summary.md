@@ -13649,6 +13649,8 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 [IPTV to HTTP live streaming](https://gist.github.com/drzax/99c468b0c695491784109a4cf21c1c1b)
 
+[ZyPlayer 支持 iptv](https://github.com/Hiram-Wong/ZyPlayer)
+
 [m3u8 python解析](https://github.com/globocom/m3u8)
 
 [有原理](https://github.com/Momo707577045/m3u8-downloader)
