@@ -13701,6 +13701,13 @@ ffmpeg -protocol_whitelist "concat,file,subfile,http,https,tls,rtp,tcp,udp,crypt
 	# 成功读到流，但是因为是直播，它没有写入文件？
 	# 仔细看它的地址，是可以下载到 .ts 文件的
 
+ffmpeg -i "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs19" -f s16le -map 0:p:0 -c copy /dev/null 2>&1 | grep 'Opening' | awk -F "'" '{print $2}'
+
+
+
+(ffmpeg -i "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs19" -f s16le -map 0:p:0 -c copy NUL 2>&1) -match "Opening '(.+)'" | ForEach-Object { $Matches[1] }
+	# powershell 实现
+
 ```
 
 
