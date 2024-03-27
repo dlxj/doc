@@ -13645,7 +13645,7 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 ### m3u8
 
-[m3u8 下载 GO实现](https://github.com/orestonce/m3u8d)
+[m3u8 下载 GO实现](https://github.com/orestonce/m3u8d) **实测可用**
 
 [ffpmeg 下载m3u8](https://gist.github.com/tzmartin/fb1f4a8e95ef5fb79596bd4719671b5d)
 
