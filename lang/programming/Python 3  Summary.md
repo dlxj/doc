@@ -13077,6 +13077,16 @@ with gr.Blocks() as demo:
 
 
 
+### directory
+
+```
+https://github.com/gradio-app/gradio/issues/2515
+```
+
+
+
+
+
 
 
 
@@ -13740,6 +13750,7 @@ curl --location 'http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?
 #EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1101759
 http://142.171.31.242:5002/cs19.m3u8?token=guoziyun&gid=cs19&channel=zhongying
 	# 返回另一个嵌套地址，嵌套最多只能一层
+
 
 
 
