@@ -13716,6 +13716,15 @@ ffmpeg -i "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs
 
 
 
+```
+./m3u8-windows-amd64.exe -u="http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs19" -ht=apiv2
+
+下载失败，m3u8 地址可能存在嵌套
+
+```
+
+
+
 
 
 ### infer
