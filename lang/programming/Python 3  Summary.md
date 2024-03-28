@@ -13079,8 +13079,20 @@ with gr.Blocks() as demo:
 
 ### directory
 
-```
-https://github.com/gradio-app/gradio/issues/2515
+```python
+# 选择文件
+import gradio as gr
+
+def on_file_change(file_path):
+    print(f"File path changed to {file_path}")
+
+with gr.Blocks(
+    title="File explorer value change test"
+) as demo:
+    file_explorer = gr.FileExplorer(root=".", file_count="multiple")
+    file_explorer.change(fn=on_file_change, inputs=[file_explorer], outputs=[])
+
+demo.launch()
 ```
 
 
