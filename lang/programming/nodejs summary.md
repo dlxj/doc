@@ -3790,6 +3790,7 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   http://localhost:6006
   	# 成功访问 gradio
   
+  GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
   
   .gitattributes
   # Set the default behavior, in case people don't have core.autocrlf set.
@@ -3799,6 +3800,10 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   # to native line endings on checkout.
   *.c text
   *.h text
+  *.py text
+  *.js text
+  *.mjs text
+  *.md text
   
   # Declare files that will always have CRLF line endings on checkout.
   *.sln text eol=crlf
@@ -3806,6 +3811,13 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   # Denote all files that are truly binary and should not be modified.
   *.png binary
   *.jpg binary
+  *.jpeg binary
+  *.gif binary
+  *.png binary
+  *.db binary
+  *.mp4 binary
+  *.mp3 binary
+  *.pth binary
   
   ```
   
