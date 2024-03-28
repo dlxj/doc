@@ -13079,6 +13079,8 @@ with gr.Blocks() as demo:
 
 ### directory
 
+[选择文件夹](https://github.com/bmaltais/kohya_ss/blob/master/dreambooth_gui.py) 必看
+
 ```python
 # 选择文件
 import gradio as gr
