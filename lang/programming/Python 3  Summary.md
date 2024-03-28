@@ -13725,6 +13725,30 @@ ffmpeg -i "http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs
 
 
 
+```
+curl --location 'http://cdns.jp-primehome.com:8000/zhongying/live/playlist.m3u8?cid=cs19' \
+--header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
+--header 'Accept-Encoding: gzip, deflate' \
+--header 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+--header 'Connection: keep-alive' \
+--header 'Host: cdns.jp-primehome.com:8000' \
+--header 'Upgrade-Insecure-Requests: 1' \
+--header 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36'
+
+
+#EXTM3U
+#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=1101759
+http://142.171.31.242:5002/cs19.m3u8?token=guoziyun&gid=cs19&channel=zhongying
+	# 返回另一个嵌套地址，嵌套最多只能一层
+
+
+
+```
+
+
+
+
+
 
 
 ### infer
