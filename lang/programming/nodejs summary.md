@@ -2590,10 +2590,9 @@ pip3 install shadowsocksr-cli -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 vi ~/.bashrc
-alias setproxy="export ALL_PROXY=socks5h://192.168.1.3:57882"
-alias setproxy="export ALL_PROXY=socks5h://192.168.1.6:2801"
 alias setproxy="export ALL_PROXY=socks5h://127.0.0.1:1080"
-alias setproxy="export ALL_PROXY=socks5h://172.16.6.185:1080"
+alias setproxy="export ALL_PROXY=socks5h://172.16.6.253:1080"
+alias setproxy="export ALL_PROXY=socks5h://192.168.1.119:1080"
 alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 
