@@ -12767,6 +12767,10 @@ pip install gradio==4.22.0
 	# 这版 video 组件正常运行
 	# pip freeze > freeze.txt
 
+unsetproxy &&
+pip install pysocks
+	# 开代理需要先装这个
+
 pip install --upgrade requests
 	# 运行出警告的话装这个
 	

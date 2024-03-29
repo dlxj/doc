@@ -196,6 +196,9 @@ python3.10 get-pip.py && \
 pip install --upgrade requests
 	# python3.10 的pip 需要另外安装
 
+pip install pysocks
+	# shocks 代理要先装这个
+
 apt remove python3-apt && \
 apt autoremove && \
 apt autoclean && \
