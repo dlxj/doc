@@ -296,7 +296,8 @@ bash Miniforge3-Linux-x86_64.sh -b && \
 ln -s ~/miniforge3/bin/conda /usr/local/bin && \
 ln -s ~/miniforge3/bin/activate /usr/local/bin && \
 ln -s ~/miniforge3/bin/deactivate /usr/local/bin && \
-source ~/miniforge3/etc/profile.d/conda.sh
+source ~/miniforge3/etc/profile.d/conda.sh && \
+conda config --set auto_activate_base false
 
 vi ~/.condarc
 proxy_servers:
