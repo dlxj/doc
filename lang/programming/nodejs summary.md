@@ -3785,7 +3785,17 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   [https]
   	proxy = https://127.0.0.1:57882
   	# 实测有效，必须不能指定 huggingface，全部走代理才行 	
-  	
+  
+  vi ~/.condarc
+  proxy_servers:
+    http: http://172.16.6.253:8118
+    https: http://172.16.6.253:8118
+  ssl_verify: false
+  	# 康达设置代理
+  
+  conda clean -a
+  	# 代理是OK 的，出错执行这个就可以了
+  
   ssh -CNg -L 6006:127.0.0.1:6006 root@connect.bjb1.seetacloud.com -p 53862
   http://localhost:6006
   	# 成功访问 gradio
@@ -4413,6 +4423,18 @@ alias unsetproxy="unset ALL_PROXY"
 alias ip="curl http://ip-api.com/json/?lang=zh-CN"
 	# curl 正常    	
     	
+    	
+vi ~/.condarc
+proxy_servers:
+  http: http://172.16.6.253:8118
+  https: http://172.16.6.253:8118
+ssl_verify: false
+	# 康达设置代理
+
+conda clean -a
+	# 代理是OK 的，出错执行这个就可以了
+	
+
 ```
 
 
