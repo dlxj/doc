@@ -166,6 +166,16 @@ pip install pysocks && \
 setproxy && \
 ip
 
+vi ~/.condarc
+proxy_servers:
+  http: http://172.16.6.253:8118
+  https: http://172.16.6.253:8118
+ssl_verify: false
+	# 康达设置代理
+
+conda clean -a
+	# 代理是OK 的，出错执行这个就可以了
+
 ssh -CNg -L 6006:127.0.0.1:6006 root@connect.bjb1.seetacloud.com -p 53862
 http://localhost:6006
 	# 成功访问 gradio

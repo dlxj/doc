@@ -292,6 +292,17 @@ systemctl restart ssh
 
 ufw allow ssh
 
+
+vi ~/.condarc
+proxy_servers:
+  http: http://172.16.6.253:8118
+  https: http://172.16.6.253:8118
+ssl_verify: false
+	# 康达设置代理
+
+conda clean -a
+	# 代理是OK 的，出错执行这个就可以了
+
 ```
 
 
