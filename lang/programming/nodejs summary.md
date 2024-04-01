@@ -3807,6 +3807,8 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   坏处：
   	proxychain-ng 签出的时侯会把 .sh 转成了 crlf，运行报错。解决方法临时改 autocrlf = false
   
+  vscode -> 左下角 -> setting -> 搜 git.autofetch -> 设成 false
+  
   
   GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
   
