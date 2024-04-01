@@ -3799,6 +3799,15 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   http://localhost:6006
   	# 成功访问 gradio
   
+  
+  # 重要, windows linux 全都这样设置
+  .gitconfig
+  	autocrlf = true
+  
+  坏处：
+  	proxychain-ng 签出的时侯会把 .sh 转成了 crlf，运行报错。解决方法临时改 autocrlf = false
+  
+  
   GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
   
   .gitattributes

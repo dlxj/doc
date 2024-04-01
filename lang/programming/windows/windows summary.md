@@ -473,6 +473,27 @@ wsl --import Ubuntu F:\WSL2_backup\wsl2_Ubuntu-20.04.tar
 
 
 
+## 删文件释放空间
+
+```
+在 PowerShell 中执行：
+
+# 关闭 WSL2 中的 linux distributions
+wsl --shutdown
+# 运行管理计算机的驱动器的 DiskPart 命令
+diskpart
+在新打开的 DiskPart 命令窗口中执行：
+
+# 选择虚拟磁盘文件
+select vdisk file="C:\Users\richa\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\ext4.vhdx"
+# 压缩文件
+compact vdisk
+# 压缩完毕后卸载磁盘
+detach vdisk
+```
+
+
+
 
 
 ## Install chrome
