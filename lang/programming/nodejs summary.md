@@ -5599,6 +5599,37 @@ let bent = require('bent')
 
 
 
+#### json
+
+```
+async function chat(content_test, content_book) {
+
+    let json = {
+        "come_from": "xxx",
+        "question": content_test,
+        "text":content_book, 
+        "model": "gpt-4-1106-preview"
+    }
+
+    return new Promise(async function (resolve, reject) {
+        console.log(`triple AiExplain: ${content_test}\n${content_book}`)
+        
+        let bent = require('bent')
+        let post = bent("https://xxx.xxx.top", 'POST', 'json', 200)
+
+        let response = await post('/all/getAnswer', JSON.stringify(json), { 'Content-Type': "application/json;chart-set:utf-8" })
+
+        if (response.answer && response.token > 0) {
+            return resolve([response.answer, ''])
+        } else {
+            return resolve([null, JSON.stringify(response)])
+        }
+    })
+}
+```
+
+
+
 
 
 #### src
