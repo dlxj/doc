@@ -1749,6 +1749,16 @@ print(type(img_bytes))
 
 
 
+### 管道
+
+```
+Langchain 通过重写类的魔法方法__or__来实现管道
+```
+
+
+
+
+
 ### tempfile
 
 ```python
