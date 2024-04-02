@@ -275,6 +275,12 @@ date_format(StartTime, "%Y-%c-%d %H:%i:%s") as StartTime
 
 date_format(user_behaviors.endtime,"%Y-%c-%d %H:%i:%s") as endtime
 
+每个用户取一条最新的测评ID
+  sql: `
+  SELECT r.userID, MAX(r.ID) AS reportID, convert_tz(Max(r.updateTime),@@session.time_zone,'+08:00') AS updateTime FROM report r WHERE r.ID IN ( SELECT DISTINCT g.ReportID FROM userexamgather g WHERE g.appID = $(appid)  ) GROUP BY r.userID ORDER BY reportID DESC;
+  
+
+
 ```
 
 
