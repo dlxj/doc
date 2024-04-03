@@ -13067,6 +13067,43 @@ demo.launch()
 
 
 
+####  动态更新组件数据
+
+```python
+    with gr.Tab("SRT"):
+      begintime = gr.Textbox(lines=1, label="", value="")
+      endtime = gr.Textbox(lines=1, label="", value="")
+      subtitle = gr.Textbox(lines=1, label="", value="")
+      
+      from lib.srt import parse
+      with open("videos/netflix/anime/japanese/Touch/Episode 1/Touch_S01E01_Episode 1.Japanese (CC).srt", "r", encoding='UTF-8') as f:
+        str = f.read()
+      subs = parse(str)
+      
+      dir_srt = os.path.join(os.path.dirname(__file__), 'videos/netflix/anime/japanese/Touch/Episode 1/')
+      file_explorer_srt = gr.FileExplorer(glob="*.srt", root_dir=dir_srt, file_count="single")
+      
+      dataset_srt = gr.Dataset(components=[begintime, endtime, subtitle], samples=subs, label="SRT", headers=["begintime", "endtime", "subtitle"])
+      dataset_srt.click(lambda x: x, [dataset_srt], [begintime, endtime, subtitle])
+      
+      def ss(evt: gr.SelectData):
+        return evt.value
+      subtitle.select(ss, None, selected)
+      
+      def on_change_srt(file_path):
+        if not file_path:
+          return dataset_srt
+        with open(file_path, "r", encoding='UTF-8') as f:
+          str = f.read()
+        subs = parse(str)
+        return gr.update(samples=subs)  
+      file_explorer_srt.change(fn=on_change_srt, inputs=[file_explorer_srt], outputs=[dataset_srt])
+```
+
+
+
+
+
 ## path
 
 ```python
