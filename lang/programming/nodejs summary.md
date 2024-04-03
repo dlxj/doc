@@ -4463,6 +4463,35 @@ http://localhost:6006
 
 
 
+## 内网转外网
+
+```
+162xxx50  162xxx50@qq.com
+vv*C*****
+
+cpolar.com
+
+OTU2NWE0YjYtOGU2YS00MTFhLWE1NjgtZmRjMzA2NzQ1ODIz
+
+cpolar authtoken OTU2NWE0YjYtOGU2YS00MTFhLWE1NjgtZmRjMzA2NzQ1ODIz
+	# Authtoken saved to configuration file: /usr/local/etc/cpolar/cpolar.yml
+
+cpolar http 506
+	# 仅对这个端口开放外网访问
+	https://11be991c.r8.cpolar.top/test
+		#  成功访问 /test 是 chatgpt_server 的测试页面
+
+wget https://www.cpolar.com/static/downloads/install-release-cpolar.sh && 
+bash install-release-cpolar.sh && 
+systemctl enable cpolar && 
+systemctl start cpolar && 
+systemctl status cpolar
+```
+
+
+
+
+
 ##　异地组网
 
 https://github.com/omniedgeio/omniedge
