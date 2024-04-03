@@ -4473,7 +4473,7 @@ cpolar.com
 
 OTU2NWE0YjxxxRjMzA2NzQ1ODIz
 
-cpolar authtoken OTU2NWE0YjYtOGUxxxmRjMzA2NzQ1ODIz
+cpolar authtoken OTU2NxxxxxxxxmRjMzA2NzQ1ODIz
 	# Authtoken saved to configuration file: /usr/local/etc/cpolar/cpolar.yml
 
 cpolar http 506
