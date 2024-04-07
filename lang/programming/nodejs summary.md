@@ -27405,6 +27405,30 @@ custom_domains = 服务器ip
 	
 
 
+
+# 服务端配置
+frps.toml
+bindPort = 7000
+vhostHTTPPort = 506
+	# 外网服务端监听 506,  访问外网 506 会被转发到内网 506
+
+./frps -c ./frps.toml
+
+
+serverAddr = "118.xxx"
+serverPort = 7000
+
+[[proxies]]
+name = "web"
+type = "http"
+localPort = 506
+customDomains = ["118.xxx"]
+
+./frpc -c ./frpc.toml
+
+
+
+
 [ssh]
 type = tcp
 local_ip = 127.0.0.1
