@@ -1636,6 +1636,8 @@ file_size = os.stat('d:/file.jpg')
 print("Size of file :", file_size.st_size, "bytes")
 ```
 
+
+
 ### 遍历
 
 ```
@@ -9143,6 +9145,15 @@ CONFIG SET protected-mode no
 [ffmpeg.wasm render video in canvas](https://www.mysourcebook.com/2023/01/decode-big-video-using-ffmpeg-wasm-to-render-use-canvas.html)
 
 [How to enable HTTPS protocol in ffmpeg.wasm?](https://www.mysourcebook.com/2023/01/how-to-enable-https-protocol-in-ffmpeg.wasm.html)
+
+
+
+```
+    # ffmpeg -i "1.mp4" -vf "select='between(t,4,6.5)+between(t,17,26)+between(t,74,91)',setpts=N/FRAME_RATE/TB" -af "aselect='between(t,4,6.5)+between(t,17,26)+between(t,74,91)',asetpts=N/SR/TB" out.mp4
+    # https://github.com/mifi/lossless-cut
+```
+
+
 
 
 
