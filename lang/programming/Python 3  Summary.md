@@ -9152,6 +9152,17 @@ CONFIG SET protected-mode no
     # ffmpeg -i "1.mp4" -vf "select='between(t,4,6.5)+between(t,17,26)+between(t,74,91)',setpts=N/FRAME_RATE/TB" -af "aselect='between(t,4,6.5)+between(t,17,26)+between(t,74,91)',asetpts=N/SR/TB" out.mp4
     # https://github.com/mifi/lossless-cut
     # https://zhuanlan.zhihu.com/p/62649633
+    
+    
+    [0:v]pad=iw*2:ih[v_wide];
+[v_wide][1:v]overlay=W/2:0[out_video];
+[0:a]volume=6dB[ao]
+
+-map [out_video]:v -c:v ...
+-map [ao]:a -c:a aac ...
+
+既然用了 filter_complex ，大多数情况下就没必要用-af -vf 了，所有效果写在一起更容易整理
+    
 ```
 
 
