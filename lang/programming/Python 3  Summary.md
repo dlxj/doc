@@ -9151,6 +9151,7 @@ CONFIG SET protected-mode no
 ```
     # ffmpeg -i "1.mp4" -vf "select='between(t,4,6.5)+between(t,17,26)+between(t,74,91)',setpts=N/FRAME_RATE/TB" -af "aselect='between(t,4,6.5)+between(t,17,26)+between(t,74,91)',asetpts=N/SR/TB" out.mp4
     # https://github.com/mifi/lossless-cut
+    # https://zhuanlan.zhihu.com/p/62649633
 ```
 
 
