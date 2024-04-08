@@ -12873,6 +12873,11 @@ gradio cc create myimage_editor --template ImageEditor
 AnnotatedImage
 ImageEditor
 
+/root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/components
+image_editor.py
+	# 报错原因：根据它的拼写规则，本来应该是这个文件名imageeditor.py，实际上是这个 image_editor.py
+	
+
 /usr/local/lib/python3.10/dist-packages/gradio/cli/commands/components/_create_utils.py
 	# if not correct_cased_template:
 	# 模板找不到的报错代码在这里 
