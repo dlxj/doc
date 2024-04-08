@@ -13448,6 +13448,14 @@ scheduler.start()
 
 
 
+## textbox
+
+https://github.com/gradio-app/gradio/issues/7950
+
+
+
+
+
 ## image
 
 ```python
