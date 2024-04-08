@@ -12881,6 +12881,16 @@ ImageEditor
 image_editor.py
 	# 报错原因：根据它的拼写规则，本来应该是这个文件名imageeditor.py，实际上是这个 image_editor.py
 	
+/usr/local/lib/python3.10/dist-packages/gradio/cli/commands/components/_create_utils.py
+    
+    if component.python_file_name == 'imageeditor.py':
+        component.python_file_name = "image_editor.py"
+        	# 解决方法，hack 一下下
+    shutil.copy(
+        str(p / module / component.python_file_name),
+        str(python_file),
+    )
+
 
 /usr/local/lib/python3.10/dist-packages/gradio/cli/commands/components/_create_utils.py
 	# if not correct_cased_template:
