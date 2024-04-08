@@ -1344,6 +1344,10 @@ from pathlib import Path
         _create_utils.delete_contents(directory)
 
     directory.mkdir(exist_ok=overwrite)
+    
+    
+source_pyi_file = p / module / component.python_file_name.replace(".py", ".pyi")
+	# 路径拼法，这东西还自义定了运算符
       
 ```
 
