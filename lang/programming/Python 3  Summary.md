@@ -3536,6 +3536,9 @@ def weights_replaceinto(ls):
 
 ```python
 'key1' in dict  # will return True or False
+
+if "cc" in {"cc", "component"}:
+
 ```
 
 
