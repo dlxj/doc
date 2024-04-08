@@ -12845,6 +12845,10 @@ gradio/components/image_editor.py
 	# Component to use as a template. Should use exact name of python class.
 
 
+/usr/local/lib/python3.10/dist-packages/gradio/cli/cli.py
+	# 入口点看这里
+
+
 
 # kill 端口号
 
