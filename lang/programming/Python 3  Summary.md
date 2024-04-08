@@ -3893,6 +3893,8 @@ print(f"{number:02d}")
 
 
 
+
+
 irt [u](https://github.com/17zuoye/pyirt/blob/master/tests/test_model_wrapper.py)
 
 ```python
@@ -3943,6 +3945,22 @@ pip3 install rich
     generated_text = Text(generated_text, style="green")
     print(Panel(generated_text, width=120, title="Reply"))
 ```
+
+
+
+#### 代码格式化
+
+```
+import textwrap
+
+# /usr/local/lib/python3.10/dist-packages/gradio/cli/commands/components/_create_utils.py
+
+ readme_contents = textwrap.dedent(
+
+
+```
+
+
 
 
 
