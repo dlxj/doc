@@ -12848,6 +12848,12 @@ gradio/components/image_editor.py
 /root/miniforge3/envs/rwkv/bin/gradio
 	# 入口点看这里
 
+    sys.argv.append( 'cc' )
+    sys.argv.append( 'create' )
+    sys.argv.append( 'myvideo' )
+    sys.argv.append( '--template' )
+    sys.argv.append( 'Video' )
+    	# 加这个单步运行看看
 
 
 # kill 端口号
