@@ -12873,7 +12873,7 @@ gradio cc dev
 "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
 
 
-gradio cc create myimage_editor --template ImageEditor
+gradio cc create myimageeditor --template ImageEditor
 AnnotatedImage
 ImageEditor
 
@@ -12881,8 +12881,9 @@ ImageEditor
 image_editor.py
 	# 报错原因：根据它的拼写规则，本来应该是这个文件名imageeditor.py，实际上是这个 image_editor.py
 	
-/usr/local/lib/python3.10/dist-packages/gradio/cli/commands/components/_create_utils.py
-    
+
+/root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/cli/commands/components/_create_utils.py
+def _create_backend(
     if component.python_file_name == 'imageeditor.py':
         component.python_file_name = "image_editor.py"
         	# 解决方法，hack 一下下
@@ -12890,6 +12891,7 @@ image_editor.py
         str(p / module / component.python_file_name),
         str(python_file),
     )
+	# 成功！
 
 
 /usr/local/lib/python3.10/dist-packages/gradio/cli/commands/components/_create_utils.py
