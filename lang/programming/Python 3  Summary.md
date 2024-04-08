@@ -13392,9 +13392,13 @@ demo.launch()
 
 ### coordinates
 
-[Get Image click coordinates from .select](https://github.com/gradio-app/gradio/pull/3786)
+[Get Image click coordinates from .select](https://github.com/gradio-app/gradio/pull/3786) 
 
+[ImageEditor](https://github.com/gradio-app/gradio/issues/7502)
 
+[AnnotatedImage](https://github.com/gradio-app/gradio/issues/6992)
+
+[gradio_image_annotator](https://github.com/SkalskiP/gradio_image_annotator) 没什么用
 
 
 
