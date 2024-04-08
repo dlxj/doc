@@ -13402,9 +13402,9 @@ demo.launch()
 
 
 
-https://github.com/gradio-app/gradio/issues/7502
+https://github.com/gradio-app/gradio/issues/7502  ImageEditor
 
-https://github.com/gradio-app/gradio/issues/6992
+https://github.com/gradio-app/gradio/issues/6992  opencv + AnnotatedImage
 
 
 
