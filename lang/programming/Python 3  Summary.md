@@ -13390,6 +13390,12 @@ demo.launch()
 
 
 
+### coordinates
+
+[Get Image click coordinates from .select](https://github.com/gradio-app/gradio/pull/3786)
+
+
+
 
 
 ## audio
