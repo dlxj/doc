@@ -1329,6 +1329,22 @@ currDir = os.path.join( os.path.dirname(os.path.abspath(__file__)), 'cache', str
 
     if not os.path.exists( currDir ):
         os.makedirs( currDir )
+        
+       
+from pathlib import Path 
+	# /usr/local/lib/python3.10/dist-packages/gradio/cli/commands/components/create.py
+ 
+    if directory.exists() and not overwrite:
+        raise ValueError(
+            f"The directory {directory.resolve()} already exists. "
+            "Please set --overwrite flag or pass in the name "
+            "of a directory that does not already exist via the --directory option."
+        )
+    elif directory.exists() and overwrite:
+        _create_utils.delete_contents(directory)
+
+    directory.mkdir(exist_ok=overwrite)
+      
 ```
 
 
