@@ -12831,6 +12831,11 @@ gradio cc dev
 
 "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
 
+
+gradio cc create myimage_editor --template Image_editor
+	# /root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/cli/commands/components/_create_utils.py:321
+	# 出错，看这里
+
 # kill 端口号
 
 ```
