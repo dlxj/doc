@@ -12836,6 +12836,13 @@ gradio cc dev
 
 
 gradio cc create myimage_editor --template ImageEditor
+AnnotatedImage
+ImageEditor
+
+/usr/local/lib/python3.10/dist-packages/gradio/cli/commands/components/_create_utils.py
+	# if not correct_cased_template:
+	# 模板找不到的报错代码在这里 
+	
 
 	# /root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/cli/commands/components/_create_utils.py:321
 	# 出错，看这里
@@ -12857,6 +12864,22 @@ gradio/components/image_editor.py
     sys.argv.append( '--template' )
     sys.argv.append( 'Video' )
     	# 加这个单步运行看看
+
+
+/usr/local/lib/python3.10/dist-packages/gradio/cli/cli.py
+	# 直接爆力修改，运行这个
+	if __name__ == '__main__':
+    
+    sys.argv[0] = '/root/miniforge3/envs/rwkv/bin/gradio'
+    sys.argv.append( 'cc' )
+    sys.argv.append( 'create' )
+    sys.argv.append( 'myvideo' )
+    sys.argv.append( '--template' )
+    sys.argv.append( 'Video' )
+    
+    #sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    
+    cli()
 
 
 # kill 端口号
