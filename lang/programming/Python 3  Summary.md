@@ -12845,7 +12845,7 @@ gradio/components/image_editor.py
 	# Component to use as a template. Should use exact name of python class.
 
 
-/usr/local/lib/python3.10/dist-packages/gradio/cli/cli.py
+/root/miniforge3/envs/rwkv/bin/gradio
 	# 入口点看这里
 
 
