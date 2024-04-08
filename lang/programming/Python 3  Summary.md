@@ -12832,9 +12832,19 @@ gradio cc dev
 "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
 
 
-gradio cc create myimage_editor --template Image_editor
+gradio cc create myimage_editor --template ImageEditor
+
 	# /root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/cli/commands/components/_create_utils.py:321
 	# 出错，看这里
+
+gradio/components/image_editor.py
+	class ImageEditor(Component):
+		# 他要 Python 里的类名
+
+/usr/local/lib/python3.10/dist-packages/gradio/cli/commands/components/create.py
+	# Component to use as a template. Should use exact name of python class.
+
+
 
 # kill 端口号
 
