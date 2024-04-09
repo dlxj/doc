@@ -2969,8 +2969,13 @@ yum update --allowerasing
 
 ### 光帆
 
+https://lightsail.aws.amazon.com/
+
+
+
 ```
-AWS Lightsail 光帆
+AWS Lightsail 光帆 3.5$ 每月
+
 ```
 
 
