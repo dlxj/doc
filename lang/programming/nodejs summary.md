@@ -4725,6 +4725,10 @@ const response = await S3.send(command)
 
 
 
+### KV存储
+
+https://fast.v2ex.com/t/969197
+
 
 
 
