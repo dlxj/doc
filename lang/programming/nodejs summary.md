@@ -4688,6 +4688,39 @@ sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
 
 ## Cloudflare
 
+
+
+### R2对象存储
+
+https://juejin.cn/post/7331584783611281444
+
+```python
+import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
+
+const S3 = new S3Client({
+  region: 'auto',
+  endpoint: `https://${ACCOUNT_ID}.r2.cloudflarestorage.com`,
+  credentials: {
+    accessKeyId: ACCESS_KEY_ID,
+    secretAccessKey: SECRET_ACCESS_KEY,
+  },
+})
+
+const input = {
+  Body: 'file content',
+  Bucket: 'web',
+  Key: '1.png',
+}
+
+const command = new PutObjectCommand(input)
+const response = await S3.send(command)
+
+```
+
+
+
+
+
 ### Warp
 
 [Warp+ Plus 24PB流量及Zero trust无限流量](https://mailberry.com.cn/2023/07/free-use-warp-plus-24pb-and-zero-trust-unlimitl/)
