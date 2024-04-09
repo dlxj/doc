@@ -2967,6 +2967,14 @@ yum update --allowerasing
 
 
 
+### 光帆
+
+```
+AWS Lightsail 光帆
+```
+
+
+
 
 
 ### 美国家宽代理
