@@ -4719,6 +4719,14 @@ const response = await S3.send(command)
 
 
 
+```
+结合 Cache API 和 Workers，可对内容进行动态缓存
+```
+
+
+
+
+
 
 
 ### Warp
