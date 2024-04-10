@@ -3558,6 +3558,7 @@ def weights_replaceinto(ls):
 'key1' in dict  # will return True or False
 
 if "cc" in {"cc", "component"}:
+    # 这个其实是集合 set
 
 ```
 
@@ -12940,12 +12941,17 @@ gradio/components/image_editor.py
 # kill 端口号
 
 ```
+
+
+```
 nohup node xx.js >outlog &
 
 #!/bin/bash
 kill -9 $(lsof outlog | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
 kill -9 $(lsof -i:7860 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
 kill -9 $(lsof -i:7861 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+```
+
 ```
 
 Python311\Lib\site-packages\gradio\networking.py
