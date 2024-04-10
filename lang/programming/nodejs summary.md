@@ -2976,6 +2976,10 @@ https://lightsail.aws.amazon.com/
 ```
 AWS Lightsail 光帆 3.5$ 每月
 
+目前靠谱的就是 hyestria+端口跳跃，Xray-vision ，有闲心也可以上 naiveproxy 。
+
+前两个可以用 mack-a 的一键脚本，谷歌一下就有。
+
 ```
 
 
