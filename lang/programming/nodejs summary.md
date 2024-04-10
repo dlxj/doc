@@ -4441,6 +4441,10 @@ https://blog.csdn.net/m0_57236802/article/details/132169445
 ```
 /C:/Users/i/AppData/Roaming/Code/User/settings.json
 
+    "http.proxy": "http://172.16.6.14:5782",
+    "https.proxy": "https://172.16.6.14:5782",
+    "http.proxyStrictSSL": false
+
 ```
 
 
