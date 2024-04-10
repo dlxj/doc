@@ -4438,6 +4438,15 @@ https://blog.csdn.net/m0_57236802/article/details/132169445
 
 
 
+```
+/C:/Users/i/AppData/Roaming/Code/User/settings.json
+
+```
+
+
+
+
+
 ### socks5 转 http
 
 ```
