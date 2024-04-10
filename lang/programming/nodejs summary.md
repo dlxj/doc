@@ -4432,6 +4432,12 @@ else:
 
 
 
+### vscode 代理
+
+https://blog.csdn.net/m0_57236802/article/details/132169445
+
+
+
 ### socks5 转 http
 
 ```
@@ -4467,6 +4473,12 @@ conda clean -a
 	
 
 ```
+
+
+
+
+
+
 
 
 
