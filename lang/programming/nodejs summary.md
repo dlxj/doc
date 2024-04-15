@@ -3812,6 +3812,14 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 [remove-credentials-from-git-windows](https://linuxhint.com/remove-credentials-from-git-windows/)
 
 - ```
+  
+  注意：windows linux .gitconfig 
+  autocrlf = true
+  	# 都设成这样，坏处是拉代码时 proxychain 要临时改 autocrlf = false ，pull 完再改回去
+  	# 否则 CRLF 的代码编译出错
+  	# linux 下 git pull rwkv5-jp-explain 代码时 vscode 里的源码控制那里刚开始会显示茫茫多的修改，等它更新一下就好了，其实并没有真被修改
+  	
+  
   win图标旁搜索 Credential Manager -> 删掉 huggingface
   
   C:\Users\Administrator\.git-credentials
