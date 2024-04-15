@@ -61,6 +61,10 @@ D:\usr\Python311\python.exe -m pip install -r .\requirements.txt
 ```
 apt update
 apt install python3-pip
+
+pip3 freeze > requirements.txt
+	# 导出所有已安装的包名
+
 ```
 
 
