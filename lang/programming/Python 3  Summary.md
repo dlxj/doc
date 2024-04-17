@@ -12885,7 +12885,13 @@ ImageEditor
 /root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/components
 image_editor.py
 	# 报错原因：根据它的拼写规则，本来应该是这个文件名imageeditor.py，实际上是这个 image_editor.py
-	
+	# 解决办法：复制一个 imageeditor.py 出来也可以
+
+gradio cc create myimageeditor --template SimpleTextbox && \
+cd mysimpletextbox && \
+gradio cc install && \
+gradio cc dev
+	# 拿它来改一下，搬运 gradio 的代码过来改
 
 /root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/cli/commands/components/_create_utils.py
 def _create_backend(
@@ -13533,6 +13539,8 @@ demo.launch()
 
 
 https://github.com/gradio-app/gradio/issues/7502  ImageEditor
+
+https://github.com/gradio-app/gradio/issues/7685  ImageEditor
 
 https://github.com/gradio-app/gradio/issues/6992  opencv + AnnotatedImage
 
