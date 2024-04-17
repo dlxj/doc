@@ -12897,6 +12897,15 @@ gradio cc dev
 	
 https://github.com/gradio-app/gradio/pull/6747
 	# 这问题已经有 PR 了，他就是不合并
+	
+gradio/gradio/cli/commands/components/_create_utils.py
+83 行开始，改成这样：
+    "HTML": ComponentFiles(template="HTML", demo_code=static_only_demo_code),
+    "ImageEditor": ComponentFiles(
+        template="ImageEditor", python_file_name="image_editor.py"
+    ),
+    "Label": ComponentFiles(template="Label", demo_code=static_only_demo_code),
+
 
 /root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/cli/commands/components/_create_utils.py
 def _create_backend(
