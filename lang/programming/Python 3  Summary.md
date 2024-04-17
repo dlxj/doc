@@ -12906,6 +12906,8 @@ gradio/gradio/cli/commands/components/_create_utils.py
     ),
     "Label": ComponentFiles(template="Label", demo_code=static_only_demo_code),
 
+	gradio cc create myimageeditor --template ImageEditor
+		# 改完可以成功安装
 
 /root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/cli/commands/components/_create_utils.py
 def _create_backend(
