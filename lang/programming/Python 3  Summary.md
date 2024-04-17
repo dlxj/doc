@@ -12886,12 +12886,17 @@ ImageEditor
 image_editor.py
 	# 报错原因：根据它的拼写规则，本来应该是这个文件名imageeditor.py，实际上是这个 image_editor.py
 	# 解决办法：复制一个 imageeditor.py 出来也可以
+	# 运行不报错，前端出不来
 
 gradio cc create myimageeditor --template SimpleTextbox && \
-cd mysimpletextbox && \
+cd myimageeditor && \
 gradio cc install && \
 gradio cc dev
 	# 拿它来改一下，搬运 gradio 的代码过来改
+	
+	
+https://github.com/gradio-app/gradio/pull/6747
+	# 这问题已经有 PR 了，他就是不合并
 
 /root/miniforge3/envs/rwkv/lib/python3.10/site-packages/gradio/cli/commands/components/_create_utils.py
 def _create_backend(
