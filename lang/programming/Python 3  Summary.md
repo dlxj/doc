@@ -12784,6 +12784,13 @@ see https://github.com/R3gm/SoniTranslate 视频语音翻译
 
 https://github.com/gradio-app/gradio/pull/7660  必看 编译 js 运行方法
 
+- ```
+  pnpm --filter @gradio/app build:lite
+  python -m http.server --directory js/lite
+  ```
+
+  
+
 ```
 
 
