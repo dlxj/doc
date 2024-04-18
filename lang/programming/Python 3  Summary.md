@@ -11982,6 +11982,43 @@ revenue.sort_values(ascending=False).index[0]
 
 
 
+# duckdb
+
+https://zhuanlan.zhihu.com/p/646788236
+
+Duckdb 提供了SQLite 的兼容层，允许之前使用 SQLite 的重新连接到 DuckDB，可见DuckDB也可以直接应用于场景的SQLite场景。
+
+```
+import duckdb
+from contextlib import suppress
+
+def ols4(x: list, y: list) -> list[float]:
+    X = sm.add_constant(np.array([[r["x1"], r["x2"]] for r in x]))
+    res = sm.OLS(y, X).fit()
+    return res.params
+
+with suppress(Exception):
+    duckdb.remove_function("ols4")
+
+duckdb.create_function("ols4", ols4)
+
+
+sql = """
+with tmp as (
+    select key, ols4(list((x1, x2)), list(y)) as coef
+    from df
+    group by all
+)
+select key, coef[1] as const, coef[2] as x1, coef[3] as x2
+from tmp
+order by all
+"""
+%timeit duckdb.sql(sql).df()
+
+```
+
+
+
 
 
 
