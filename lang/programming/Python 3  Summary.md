@@ -12837,7 +12837,8 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   	# 接收参数
   
   pnpm dev
-  	# 会启动前端，好像还能热重载 js 文件的修改？
+  	# 会启动前端，好像还能热重载 js 文件的修改？确实可以！
+  	# 前提是先 gradio run.py 启动后端，再 pnpm dev 启动前端！
   
   ```
 
