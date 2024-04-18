@@ -13265,6 +13265,36 @@ demo.launch()
 
 
 
+#### 动态显示隐藏组件
+
+```python
+see https://github.com/gradio-app/gradio/issues/6466
+see https://github.com/gradio-app/gradio/issues/4689
+import gradio as gr
+
+def _update_group_components(checkbox_values) :
+    update_info = [gr.update(visible=False)] * 4
+    for checked in checkbox_values :
+        update_info[checked] = gr.update(visible=True)
+    return update_info
+
+with gr.Blocks() as demo :
+    with gr.Group() as group_components :
+        text1 = gr.Textbox(label='Default textbox 1')
+        text2 = gr.Textbox(label='Default textbox 2')
+        text3 = gr.Textbox(label='Default textbox 3')
+        text4 = gr.Textbox(label='Default textbox 4')
+
+    options_checkbox = gr.CheckboxGroup(choices=['a', 'b', 'c', 'd'], type='index', value=['a','b','c','d'])
+    options_checkbox.input(fn=_update_group_components,
+                           inputs=options_checkbox,
+                           outputs=[text1, text2, text3, text4])
+
+demo.launch(debug=True)
+```
+
+
+
 
 
 ## path
