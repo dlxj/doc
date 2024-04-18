@@ -12826,6 +12826,12 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode 必看 热调�
 - ```
   gradio run.py # 默认它会找demo 作入口点
   gradio run.py my_demo # 自定义入口点
+  gradio run.py --name Gretel  # 这样传参
+  import argparse
+  parser = argparse.ArgumentParser()
+  parser.add_argument("--name", type=str, default="User")
+  args, unknown = parser.parse_known_args()
+  	# 接收参数
   ```
 
   
