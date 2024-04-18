@@ -12837,7 +12837,7 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   	# 接收参数
   
   pnpm dev
-  	# 会启动前端，但和后端入口显示的内容有差异，少了点东西
+  	# 会启动前端，好像还能热重载 js 文件的修改？
   
   ```
 
