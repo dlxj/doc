@@ -12824,6 +12824,13 @@ https://github.com/gradio-app/gradio/pull/7660  必看 编译 js 运行方法
 https://www.gradio.app/guides/developing-faster-with-reload-mode 必看 热调试方法
 
 - ```
+  gradio run.py # 默认它会找demo 作入口点
+  gradio run.py my_demo # 自定义入口点
+  ```
+
+  
+
+- ```
   pnpm --filter @gradio/app build:lite
   python -m http.server --directory js/lite
   
