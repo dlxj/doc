@@ -13250,6 +13250,29 @@ demo.launch()
     
 ```
 
+
+
+### onMount
+
+```
+	onMount(() => {
+		return () => {
+			$pixi?.destroy();
+			resizer.disconnect();
+			for (const k of $contexts) {
+				if (k in $reset_context) {
+					$reset_context[k]?.();
+				}
+			}
+		};
+		# onMount 好像可以返回一个析构函数？ 
+
+```
+
+
+
+
+
 ### change
 
 ```python
