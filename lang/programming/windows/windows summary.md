@@ -948,6 +948,8 @@ C:\Users\(UserName)\AppData\Roaming\あざらしそふと\アマカノ2\savegen.
 
 # 关闭病毒防护
 
+https://github.com/ionuttbara/windows-defender-remover  开源工具
+
 ```
 Remove-WindowsFeature Windows-Defender
 
