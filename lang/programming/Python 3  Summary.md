@@ -14497,6 +14497,10 @@ svelete的响应式是由赋值触发的
   # 依赖更新时整个语句自动重算
   $: console.log(`Count is now ${count}`)
   
+  $: $crop && reposition_canvas();
+  	# 当全局变量 crop 改变时执行后面的方法 reposition_canvas()
+  	# see huggingface/gradio/js/imageeditor/shared/ImageEditor.svelte
+  
   ```
 
 $: t, console.log(t)
