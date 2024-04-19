@@ -22909,6 +22909,8 @@ ffmpeg -i input.mp4 -vf "scale=-1:720" -q:v 6 -q:a 6 output.ogv
 
 # chatGPT
 
+
+
 ```
 1.新账号有并发量限制
 如果你是新账号，你会发现你有 18 刀的免费余额，但是如果你没有绑定信用卡，那么 chatgpt api 的并发量控制在每分钟 20 次请求，所以一分钟内调用 chatgpt api 超过 20 次，你问它问题只会回答你 rate limit 、要你绑定信用卡之类的消息了。
@@ -22990,6 +22992,88 @@ sply@gmail.com
 nobepay+卡段
 
 派安盈
+
+
+
+## POW工作量证明
+
+https://linux.do/t/topic/61556
+
+```
+
+# OpenAI-Sentinel-Proof-Token
+
+async _getAnswer(e)
+{
+    var t,
+        n;
+    if (!(null != e && null !== (t = e.proofofwork) && void 0 !== t && t.required))
+        return null;
+    let {seed: a, difficulty: r} = e.proofofwork;
+    return "string" == typeof a && "string" == typeof r ? "gAAAAAB" + (null !== (n = this.answers.get(a)) && void 0 !== n ? n : await this._generateAnswer(a, r)) : null
+}
+async _generateAnswer(e, t)
+{
+    let n = "e";
+    try {
+        let n = null,
+            a = this.getConfig();
+        for (let s = 0; s < this.maxAttempts; s++) {
+            (!n || 0 >= n.timeRemaining()) && (n = await new Promise(e => {
+                (window.requestIdleCallback || function(e) {
+                    return setTimeout(() => {
+                        e({
+                            timeRemaining: () => 1,
+                            didTimeout: !1
+                        })
+                    }, 0), 0
+                })(t => {
+                    e(t)
+                })
+            })),
+            a[3] = s;
+            let o = i(a);
+            if ((await (0, r.ki)(e + o)).substring(0, t.length) <= t)
+                return this.answers.set(e, o), o
+        }
+    } catch (e) {
+        n = i("" + e)
+    }
+    return "wQ8Lk5FbGpA2NcR9dShT6gYjU7VxZ4D" + n
+}
+getConfig()
+{
+    var e,
+        t,
+        n,
+        a,
+        r;
+    return [(null === (e = navigator) || void 0 === e ? void 0 : e.hardwareConcurrency) + (null === (t = screen) || void 0 === t ? void 0 : t.width) + (null === (n = screen) || void 0 === n ? void 0 : n.height), "" + new Date, null === (a = performance) || void 0 === a || null === (a = a.memory) || void 0 === a ? void 0 : a.jsHeapSizeLimit, null == Math ? void 0 : Math.random(), null === (r = navigator) || void 0 === r ? void 0 : r.userAgent]
+}
+
+function i(e) {
+	return (e = JSON.stringify(e), window.TextEncoder) ? btoa(String.fromCharCode(...new TextEncoder().encode(e))) : btoa(unescape(encodeURIComponent(e)))
+}
+
+接下来取 seed 和 difficulty 参数去碰撞。最后拿碰撞的答案 gAAAAAB + base64(answer)
+
+answer 生成在 _generateAnswer 中，简单来说就是用 getConfig() 生成字符串，大概是：
+
+[1850,"Fri Apr 19 2024 11:51:38 GMT+0800 (中国标准时间)",null,46,"<user agent>"]
+
+这种，具体看js代码。比如第一个参数就是 navigator.hardwareConcurrency+screen.width+screen.height
+
+然后拿这个字符串base64之后，在前面放seed，形成如：0.2616356464867712WzE4MDMsIkZyaSBBcHxxxx 这样的字符串。
+
+重点来了，这个js里隐藏了hash算法，跟进去也是wasm的，但其实hash算法是 SHA3-512。
+
+算出来hash截取 difficulty 的长度来跟 difficulty 比较即可。符合就返回这个 base64 的字符串，跟 gAAAAAB 拼接成最终 OpenAI-Sentinel-Proof-Token。否则就重复这个过程。
+
+最终撞不撞的到，看 getConfig() 里的 Math.random() 灵不灵了。最多撞 this.maxAttempts 也就是 10w 次。
+
+```
+
+
 
 
 
