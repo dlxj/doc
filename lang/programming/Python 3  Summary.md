@@ -14500,8 +14500,25 @@ svelete的响应式是由赋值触发的
   $: $crop && reposition_canvas();
   	# 当全局变量 crop 改变时执行后面的方法 reposition_canvas()
   	# see huggingface/gradio/js/imageeditor/shared/ImageEditor.svelte
+  	
+  function set_crop(): void {
+  		requestAnimationFrame(() => {
+  			tick().then((v) => ($active_tool = "crop"));
+  		});
+  }
+  这个函数的作用是在下一个动画帧，将$active_tool的值设置为"crop"。其主要的用途可能是在用户界面中切换到裁剪工具。
+  - requestAnimationFrame： requestAnimationFrame是一个浏览器的API，用于执行动画更新。此函数接受一个回调，要在下一个动画帧之前调用。
+  - tick： 这是Svelte框架的一个函数，它返回一个Promise，当组件的状态下一次更新时，这个Promise就会解析。
+  - $active_tool： 这个变量$active_tool可能保存当前应用中选中的或者正在使用的工具。在这个函数中，$active_tool被更新为"crop"，表明正在使用的工具变为了裁剪工具。
+  
+  因此，set_crop这个函数的看法主要就是切换应用的工具为裁剪工具，这个操作在下一个动画帧和组件状态下一次更新时发生。
+  
   
   ```
+
+
+
+
 
 $: t, console.log(t)
   \# 状态改变时 执行后面的语句
