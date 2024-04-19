@@ -13271,6 +13271,27 @@ demo.launch()
 
 
 
+### ResizeObserver
+
+```
+		const resizer = new ResizeObserver((entries) => {
+			for (const entry of entries) {
+				get_dimensions(canvas_wrap, pixi_target);
+			}
+		});
+
+		resizer.observe(canvas_wrap);
+		resizer.observe(pixi_target);
+		创建一个新的ResizeObserver对象。ResizeObserver是一个Web API，它主要用于监听并响应HTML元素的大小改变事件。
+
+创建的这个ResizeObserver对象，每当监听的元素的大小发生变化时，它都会执行定义好的回调函数。回调函数的参数entries是一个数组，里面包含了所有被观察元素的相关信息。
+
+对于每个被观察的元素，都会执行get_dimensions函数。这个函数似乎是用来获取一个元素(canvas_wrap)和另一个元素(pixi_target)的尺寸信息
+		
+```
+
+
+
 
 
 ### change
