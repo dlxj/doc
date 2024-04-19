@@ -1911,6 +1911,44 @@ int main() {
 
 
 
+## vscode + gradio
+
+```
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}
+
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//         {
+//             "name": "Python Debugger: Current File",
+//             "type": "debugpy",
+//             "request": "launch",
+//             "program": "/root/miniconda3/bin/gradio",
+//             "console": "integratedTerminal",
+//             "args": [
+//                 "${file}"
+//             ]
+
+//         }
+//     ]
+// }
+```
+
+
+
+
+
 ## vscode + jupyter 
 
 [1](https://zhuanlan.zhihu.com/p/500571676)
