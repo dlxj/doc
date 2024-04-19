@@ -12862,7 +12862,7 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   ```
 
   
-
+  
 - ```
   pnpm --filter @gradio/app build:lite
   python -m http.server --directory js/lite
@@ -12900,6 +12900,45 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 	# 单独测试一个文件
 
 
+```
+
+
+
+### vscode+gradio
+
+```
+  {
+      "version": "0.2.0",
+    "configurations": [
+          {
+              "name": "Python Debugger: Current File",
+              "type": "debugpy",
+              "request": "launch",
+              "program": "${file}",
+              "console": "integratedTerminal"
+          }
+      ]
+  }
+  # python 直接运行 run.py 就可以直接断下了
+  # 前端用 cd demo/xx && pnpm dev
+  # {interactive} 直接在页面上显示变量的值
+  
+  // {
+  //     "version": "0.2.0",
+  //     "configurations": [
+  //         {
+  //             "name": "Python Debugger: Current File",
+  //             "type": "debugpy",
+  //             "request": "launch",
+  //             "program": "/root/miniconda3/bin/gradio",
+  //             "console": "integratedTerminal",
+  //             "args": [
+  //                 "${file}"
+  //             ]
+  
+  //         }
+  //     ]
+  // }
 ```
 
 

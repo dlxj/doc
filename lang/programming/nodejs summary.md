@@ -1926,6 +1926,14 @@ int main() {
         }
     ]
 }
+# python 直接运行 run.py 就可以直接断下了
+# 前端用 cd demo/xx && pnpm dev
+# {interactive} 直接在页面上显示变量的值
+# http://localhost:9876/  用前端地址可以实时显示前端热修改的结果，用后端地址不行。
+# 因它只显示编译后的前端？
+
+
+
 
 // {
 //     "version": "0.2.0",
