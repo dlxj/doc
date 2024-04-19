@@ -12840,6 +12840,25 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   	# 会启动前端，好像还能热重载 js 文件的修改？确实可以！
   	# 前提是先 gradio run.py 启动后端，再 pnpm dev 启动前端！
   
+  pnpm build
+  	# 生成 js/app/public 和 gradio/templates/frontend
+  
+  pnpm format:check
+  	# 缩进检查
+  	
+  pnpm format:write
+  	# 修正错误的缩进
+  
+  pnpm ts:check
+  	# 类型检查
+  
+  
+  pip install -r demo/outbreak_forecast/requirements.txt
+  pnpm exec playwright install chromium
+  pnpm exec playwright install-deps chromium
+  pnpm test:browser:full
+  	# ？？？
+  
   ```
 
   
@@ -13513,7 +13532,7 @@ if __name__ == "__main__":
 
 ## theme
 
-```
+```python
 # gradio/issues/7694/run.py
 import gradio as gr
 
