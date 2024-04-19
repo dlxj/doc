@@ -13819,6 +13819,14 @@ https://github.com/gradio-app/gradio/issues/6992  opencv + AnnotatedImage
 
 ### pixi.js 
 
+``` 
+phaser 是 pixijs 的封装
+
+用 pixi 的 spine plugin 给 spine 骨骼动画 load 上来，给 spine 的各个皮肤设置 skin name，完事儿…
+不过你需要先搞清楚，scenegraph，game update 是怎么回事儿
+
+```
+
 ```
 see gradio/js/imageeditor/shared/utils/pixi.ts
 imageeditor 用到 pixi.ts 来实现绘画效果
