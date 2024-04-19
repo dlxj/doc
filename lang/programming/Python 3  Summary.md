@@ -13817,6 +13817,18 @@ https://github.com/gradio-app/gradio/issues/6992  opencv + AnnotatedImage
 
 
 
+### pixi.js 
+
+```
+see gradio/js/imageeditor/shared/utils/pixi.ts
+imageeditor 用到 pixi.ts 来实现绘画效果
+
+```
+
+
+
+
+
 ## audio
 
 ```python
