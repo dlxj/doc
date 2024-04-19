@@ -13823,6 +13823,32 @@ https://github.com/gradio-app/gradio/issues/6992  opencv + AnnotatedImage
 see gradio/js/imageeditor/shared/utils/pixi.ts
 imageeditor 用到 pixi.ts 来实现绘画效果
 
+import {
+	Application,
+	Container,
+	Graphics,
+	Sprite,
+	Rectangle,
+	RenderTexture,
+	type IRenderer,
+	type DisplayObject,
+	type ICanvas
+} from "pixi.js";
+
+const background_container = new Container() as Container & DisplayObject;
+
+在Pixi.js中，Container和DisplayObject是两个重要的类。 
+
+"Container"是Pixi.js中的一个基本构造块，可以被视为包含其他对象（如另一个容器或精灵）的一个框架或者组。你可以把它想象为一个可以容纳其他JavaScript对象的框。
+
+"DisplayObject"是Pixi.js场景中所有可见对象的基类，包括像Sprite, Graphics以及Container等。所有DisplayObject都可以通过设定x,y,rotation等属性来改变其在容器中的位置或转向。所有的显示对象都可以添加到Pixi.js的舞台上。
+
+当你看到 “Container & DisplayObject”，这意味着创建的`background_container`对象同时具有Container和DisplayObject的所有属性和方法。这种技术被称为“交叉类型”（Intersection Type），用于将多个类型合并为一个类型，因此，新对象将具有所需的所有功能。
+
+在这个代码中，background_container被赋予了Container和DisplayObject的类型，这表示它可以在Container中容纳其他元素，并且作为一个DisplayObject，同时可以被置于stage上，拥有在舞台上显示和移动的能力。
+
+请注意，有些功能由于同时是Container和DisplayObject会有冲突，但是TypeScript会处理这种情况，使用类型断言(as)来解决这个问题。
+
 ```
 
 
