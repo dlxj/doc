@@ -13274,7 +13274,10 @@ demo.launch()
 ### ResizeObserver
 
 ```
-		const resizer = new ResizeObserver((entries) => {
+	let pixi_target: HTMLDivElement;
+	let canvas_wrap: HTMLDivElement;
+	
+	const resizer = new ResizeObserver((entries) => {
 			for (const entry of entries) {
 				get_dimensions(canvas_wrap, pixi_target);
 			}
