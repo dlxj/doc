@@ -13951,6 +13951,8 @@ import { getContext, onMount, tick } from "svelte";
 
 
 gradio/js/imageeditor/shared/ImageEditor.svelte
+export interface EditorContext {
+		pixi: Writable<PixiApp | null>;
 const editor_context = setContext<EditorContext>(EDITOR_KEY, {
 		pixi,
 		current_layer: writable(null),
@@ -13998,6 +14000,23 @@ const editor_context = setContext<EditorContext>(EDITOR_KEY, {
 上下文非常适合于像主题配置、国际化信息、用户权限等全局性或需跨多层组件传递的数据。
 
 
+```
+
+
+
+### 复杂的函数声明
+
+```python
+		register_context: (
+			type: context_type,
+			{
+				reset_fn,
+				init_fn
+			}: {
+				reset_fn?: () => void;
+				init_fn?: (dimensions?: [number, number]) => void;
+			}
+		) => void;
 ```
 
 
