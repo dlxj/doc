@@ -14651,6 +14651,65 @@ svelete的响应式是由赋值触发的
 
 
 
+### vite
+
+```
+see huggingface\vite_gradio_video\readme.txt
+
+
+see https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/requestVideoFrameCallback
+    # 视频播放回调
+
+see python summary -> Gradio -> svelte -> vite
+
+# vscode 设置 -> 搜:
+allowBreakpointsEverywhere
+
+vscdoe 插件
+	JavaScript Debugger
+	Svelte for VS Code
+
+.vscode/launch.json  
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:5174",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+	# 正常进断点需要这个
+
+pnpm create vite vite-svelte -- --template svelte
+cd vite-svelte
+pnpm install
+pnpm run dev
+    # vite 有几个选项，选 svelte ，选 javascript
+	# vsocde 里 F5 能正常在 Counter.svelte 单步断下
+
+
+gradio cc create ivideo --template Video
+	# 自定义gradio 的 video 组件
+	#　把 frontend 下　node_modules shared　这两个文件夹复到 vite_gradio_video 目录下，能正常引用，并运行
+        # 把 dependencies 下的包复制过来， pnpm i 就可以了 
+
+
+App.svelte
+<script>
+  import Counter from './lib/Counter.svelte'
+  import Player from '../shared/Player.svelte';
+	# 这样引用组件
+
+```
+
+
+
+
+
 ### $
 
 - 响应式变量
@@ -14706,13 +14765,13 @@ $: t, console.log(t)
 ### props
 
   ```
-## 属性展开
+### 属性展开
 const info = { name: 'Klaus', age: 23, ... }
 <Info name={info.name} age={info.age} gender={info.gender} location={info.location}/>
 <!-- 等价于 展开props和ES6中的展开运算符 -->
 <Info {...info} />
 
-## 在子组中表示父组件传过来的所有属性
+### 在子组中表示父组件传过来的所有属性
 $$props
 
 
