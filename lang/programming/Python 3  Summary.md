@@ -14007,6 +14007,7 @@ const editor_context = setContext<EditorContext>(EDITOR_KEY, {
 ### 复杂的函数声明
 
 ```python
+export type context_type = "bg" | "layers" | "crop" | "draw" | "erase";
 		register_context: (
 			type: context_type,
 			{
