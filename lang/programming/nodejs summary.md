@@ -2017,6 +2017,22 @@ Bad owner or permissions on C:\\Users\\i/.ssh/config
 [CopilotForXcode](https://github.com/intitni/CopilotForXcode)
 
 
+### vscode 代理
+
+https://www.aahgo.com/post/328.html
+
+
+
+```
+windows 设置这两个环境变量，vscode 的　terminal 就走代理了
+HTTP_PROXY 和 HTTPS_PROXY
+http://172.16.6.253:8118
+```
+
+
+
+
+
 
 ## pm2
 
