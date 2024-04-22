@@ -14007,6 +14007,7 @@ const editor_context = setContext<EditorContext>(EDITOR_KEY, {
 ### 复杂的函数声明
 
 ```python
+gradio/js/imageeditor/shared/ImageEditor.svelte
 export type context_type = "bg" | "layers" | "crop" | "draw" | "erase";
 		register_context: (
 			type: context_type,
@@ -14018,6 +14019,18 @@ export type context_type = "bg" | "layers" | "crop" | "draw" | "erase";
 				init_fn?: (dimensions?: [number, number]) => void;
 			}
 		) => void;
+```
+
+
+
+### 画布
+
+```
+gradio/js/imageeditor/shared/ImageEditor.svelte
+	let pixi_target: HTMLDivElement;
+	let canvas_wrap: HTMLDivElement;
+	
+	
 ```
 
 
