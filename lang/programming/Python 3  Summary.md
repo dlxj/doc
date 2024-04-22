@@ -13927,6 +13927,81 @@ const background_container = new Container() as Container & DisplayObject;
 
 
 
+### getContext
+
+```python
+
+gradio/js/imageeditor/shared/tools/Brush.svelte
+export const EDITOR_KEY = Symbol("editor");
+import { getContext, onMount, tick } from "svelte";
+
+	const {
+		pixi,
+		dimensions,
+		current_layer,
+		command_manager,
+		register_context,
+		editor_box,
+		crop
+	} = getContext<EditorContext>(EDITOR_KEY);
+
+	const { active_tool, register_tool, current_color } =
+		getContext<ToolContext>(TOOL_KEY);
+	# 这里应该是子组件 EditorContext 是指定了返回值的类型 T 
+
+
+gradio/js/imageeditor/shared/ImageEditor.svelte
+const editor_context = setContext<EditorContext>(EDITOR_KEY, {
+		pixi,
+		current_layer: writable(null),
+	# 这里应该是父组件　
+
+
+`getContext` 在 Svelte 中是一个函数，用来获取由上层组件通过 `setContext` 设置的上下文值。这种机制允许你在组件树中共享数据，而不必将属性一级一级地传递下去。
+
+通常，`getContext` 会与 `setContext` 一起使用。先由某个祖先组件调用 `setContext` 方法来设置一个值，之后在组件树中的任何子孙组件里都可以通过调用 `getContext` 来检索这个值。
+
+这里有一个简单的示例，展示了如何使用 `getContext` 和 `setContext`：
+
+​```svelte
+<!-- Parent.svelte -->
+<script>
+  import { setContext } from 'svelte';
+  import Child from './Child.svelte';
+
+  // 创建一个唯一的键，以避免上下文名称冲突
+  const key = Symbol();
+
+  // 你想要共享的数据
+  const sharedValue = 'Hello from parent!';
+
+  // 设置上下文
+  setContext(key, sharedValue);
+</script>
+
+<Child />
+
+<!-- Child.svelte -->
+<script>
+  import { getContext } from 'svelte';
+
+  // 使用与父组件相同的key来获取值
+  const key = Symbol();
+  const sharedValue = getContext(key);
+</script>
+
+<p>{sharedValue}</p>
+​```
+
+在此示例中，`Parent.svelte` 组件设置了一个上下文值，然后在 `Child.svelte` 组件中我们可以通过 `getContext` 获取到这个值并显示它。注意这里 `key` 必须是匹配的，通常是在父组件和子组件间共享（往往导出为公共模块）。
+
+上下文非常适合于像主题配置、国际化信息、用户权限等全局性或需跨多层组件传递的数据。
+
+
+```
+
+
+
 
 
 ## audio
