@@ -11244,7 +11244,11 @@ character_type: CN
 
 ```
 pip3 install   --force-reinstall  paddlepaddle -i https://mirror.baidu.com/pypi/simple
-pip3 install PPOCRLabel
+pip3 install PPOCRLabel -i https://mirror.baidu.com/pypi/simple
+
+PPOCRLabel
+	# 运行
+
 ```
 
 
