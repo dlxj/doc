@@ -1317,6 +1317,24 @@ def init_gpt():
 
 ## Path
 
+
+
+```python
+import tempfile
+        self.GRADIO_CACHE = str(
+            Path(
+                os.environ.get("GRADIO_TEMP_DIR")
+                or str(Path(tempfile.gettempdir()) / "gradio")
+            ).resolve()
+        )
+	# resolve 统一 linux windows 路径的写法
+	
+```
+
+
+
+
+
 ```python
 currDir = os.getcwd() # 兼容jupyter 
 currDir = os.path.dirname(os.path.abspath(__file__)) # 不兼容jupyter
@@ -15274,6 +15292,17 @@ demo.launch(debug=True, show_api=False, server_name="0.0.0.0", server_port=6006,
 ### slot
 
 [slot](https://juejin.cn/post/6987632912900292622)  在他blog搜 svelte
+
+
+
+### token32
+
+```
+import secrets
+secrets.token_urlsafe(32)
+```
+
+
 
 
 
