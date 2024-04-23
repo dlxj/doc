@@ -14829,6 +14829,21 @@ https://juejin.cn/post/6985541622641459231
 
 
 
+```python
+import { tick } from "svelte";
+	async function handle_keypress(e: KeyboardEvent): Promise<void> {
+		await tick();
+		if (e.key === "Enter") {
+			e.preventDefault();
+			gradio.dispatch("submit");
+		}
+	}
+```
+
+
+
+
+
 #### 事件分发器（dispatcher）
 
 
