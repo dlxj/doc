@@ -13913,6 +13913,9 @@ function drawCircle(
 	graphics: Graphics,
 	# 画一个圆
 	# 实际干活是在这里
+	
+gradio/js/imageeditor/shared/tools/Tools.svelte
+	# 画刷工具的定义应该在这里
 
 gradio/js/imageeditor/shared/tools/Brush.svelte
 	# 实际绘画是在这里的
