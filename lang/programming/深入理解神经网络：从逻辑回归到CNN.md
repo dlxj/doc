@@ -11246,6 +11246,9 @@ character_type: CN
 pip3 install   --force-reinstall  paddlepaddle -i https://mirror.baidu.com/pypi/simple
 pip3 install PPOCRLabel -i https://mirror.baidu.com/pypi/simple
 
+huggingface\PaddleOCR\PPOCRLabel\PPOCRLabel.py
+	# 运行这个
+
 PPOCRLabel
 	# 运行
 
@@ -12567,12 +12570,6 @@ VAD静音检测
 ### PVE显卡直通
 
 - https://www.labradors.work/2022/05/07/PVE%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/
-
-
-
-### deepfacelab中文论坛
-
-- https://dfldata.xyz/forum.php?mod=viewthread&tid=12403&extra=page%3D1
 
 
 
