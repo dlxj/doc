@@ -13908,6 +13908,12 @@ phaser 是 pixijs 的封装
 see gradio/js/imageeditor/shared/utils/pixi.ts
 imageeditor 用到 pixi.ts 来实现绘画效果
 
+huggingface/gradio/js/imageeditor/shared/tools/brush.ts
+function drawCircle(
+	graphics: Graphics,
+	# 画一个圆
+	# 实际干活是在这里
+
 gradio/js/imageeditor/shared/tools/Brush.svelte
 	# 实际绘画是在这里的
 	function pointer_down_handler(event: FederatedPointerEvent): void {
