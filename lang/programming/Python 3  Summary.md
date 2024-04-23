@@ -14772,7 +14772,22 @@ $: t, console.log(t)
 
 ```
 
-   
+
+
+### 类型检查
+
+
+```python
+type: Literal["numpy", "pil", "filepath"] = "numpy",
+        valid_types = ["numpy", "pil", "filepath"]
+        if type not in valid_types:
+            raise ValueError(
+                f"Invalid value for parameter `type`: {type}. Please choose from one of: {valid_types}"
+            )
+```
+
+
+
 
 ### props
 
