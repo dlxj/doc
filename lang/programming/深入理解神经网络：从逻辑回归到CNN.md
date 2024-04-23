@@ -11243,6 +11243,15 @@ character_type: CN
 
 
 ```
+pip3 install   --force-reinstall  paddlepaddle -i https://mirror.baidu.com/pypi/simple
+pip3 install PPOCRLabel
+```
+
+
+
+
+
+```
 
 https://matpool.com/supports/doc-vscode-connect-matpool/
     Remote Development 安装插件
