@@ -13917,6 +13917,12 @@ function drawCircle(
 gradio/js/imageeditor/shared/tools/Tools.svelte
 	# 画刷工具的定义应该在这里
 
+gradio/js/imageeditor/shared/InteractiveImageEditor.svelte
+	import { Tools, Crop, Brush, Sources } from "./tools";
+	<ImageEditor ... >
+		<Tools {i18n}>
+		# 工具是这样引入的
+
 gradio/js/imageeditor/shared/tools/Brush.svelte
 	# 实际绘画是在这里的
 	function pointer_down_handler(event: FederatedPointerEvent): void {
