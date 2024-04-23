@@ -13844,6 +13844,18 @@ demo.launch()
 
 
 
+### vite
+
+```
+pnpm create vite vite_gradio_imageeditor -- --template svelte
+
+
+```
+
+
+
+
+
 ### coordinates
 
 [Get Image click coordinates from .select](https://github.com/gradio-app/gradio/pull/3786) 
@@ -14032,6 +14044,8 @@ gradio/js/imageeditor/shared/ImageEditor.svelte
 	
 	
 ```
+
+
 
 
 
@@ -14752,20 +14766,18 @@ App.svelte
 
 
 
-
+```
 $: t, console.log(t)
   \# 状态改变时 执行后面的语句
 
-  ```
-  
-  
+```
 
-​     
+   
 
 ### props
 
-  ```
-### 属性展开
+#### 属性展开
+```
 const info = { name: 'Klaus', age: 23, ... }
 <Info name={info.name} age={info.age} gender={info.gender} location={info.location}/>
 <!-- 等价于 展开props和ES6中的展开运算符 -->
@@ -14773,7 +14785,6 @@ const info = { name: 'Klaus', age: 23, ... }
 
 ### 在子组中表示父组件传过来的所有属性
 $$props
-
 
 ```
 
@@ -15056,9 +15067,7 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
     videoDuration = videoElement.duration;
     videoElement.currentTime = newTimeLeft;
     
-```
-
-​    
+    ```
 
 ```
 # see huggingface vite_gradio_video\src\App.svelte
@@ -15073,31 +15082,31 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
   	import { playable } from "../shared/utils"
 
   	let url = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4"
-  
+
 	let type: "gallery" | "table";
 	let selected = false;
 	let value: string;
 	let samples_dir: string;
 	let video: HTMLVideoElement;
-
+	
 	async function init(): Promise<void> {
 		video.muted = true;
 		video.playsInline = true;
 		video.controls = true;
 		video.setAttribute("muted", "");
-
+	
 		var playPromise = video.play();
 		if (playPromise !== undefined) {
-    		playPromise.then(_ => {
-      			// Automatic playback started!
-      			// Show playing UI.
-      			// We can now safely pause video...
-      			video.pause();
-    		})
-    		.catch(error => {
-      			// Auto-play was prevented
-      			// Show paused UI.
-    		});
+			playPromise.then(_ => {
+	  			// Automatic playback started!
+	  			// Show playing UI.
+	  			// We can now safely pause video...
+	  			video.pause();
+			})
+			.catch(error => {
+	  			// Auto-play was prevented
+	  			// Show paused UI.
+			});
 		}
 	}
 </script>
@@ -15147,7 +15156,7 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 		height: var(--size-20);
 		object-fit: cover;
 	}
-
+	
 	.container.gallery {
 		height: var(--size-20);
 		max-height: var(--size-20);
@@ -15167,7 +15176,7 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 	import type { Gradio, ShareData } from "@gradio/utils";
 	import type { FileData } from "@gradio/client";
 	import Video from "../shared/InteractiveVideo.svelte";
-
+	
 	export let label: string;
 	export let sources:
 		| ["webcam"]
@@ -15193,7 +15202,7 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 	}>;
 	export let mirror_webcam: boolean;
 	export let include_audio: boolean;
-
+	
 	let _video: FileData | null = null;
 	let _subtitle: FileData | null = null;
 	let active_source: "webcam" | "upload";
@@ -15218,7 +15227,7 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 
 
 
-#### video.play 事件
+### video.play 事件
 
 ```
 # see huggingface vite_gradio_video\src\App.svelte
@@ -15226,7 +15235,7 @@ dispatch<E extends keyof T>(event_name: E, data?: T[E]): void {
 let video: HTMLVideoElement;
 
 			on:mouseover={video.play.bind(video)}
-
+	
 			on:mouseover={ () => {
 				video.play().then(()=>{}).catch((e)=>{})
 			}}
@@ -15395,11 +15404,11 @@ with tab6:
         1
         00:00:03.500 --> 00:00:05.000 D:vertical A:start
         Jeder möchte das Meiste aus dem Leben herausholen
-
+    
         2
         00:00:06.000 --> 00:00:09.000 A:start
         Wie Internet-Erlebnisse, die reichhaltig <b>und</b> unterhaltsam sind
-
+    
         3
         00:00:11.000 --> 00:00:14.000 A:end
         Telefongespräche, bei denen Menschen wirklich <c.highlight>verbinden</c>
@@ -15432,9 +15441,9 @@ Your favourite TV programmes ready to watch at the touch of a button
         )
 
         st.video("sample.mp4", subtitles=srt)
-
+    
         st.write("Subtitle with label")
-
+    
         st.video("sample.mp4", subtitles={"LLM 1": srt})
 
 with tab8:
@@ -15519,22 +15528,22 @@ tab1, tab2 = st.tabs(["Raw Generation", "Tab 2"])
 with tab1:
     
     col1, col2 = st.columns(2)
-
+    
     with col1:
         prompt = st.text_area("Prompt", "<User:>ここまでやるとはな<User$>\n\n", height=150)
         token_count = st.slider("Max Tokens", 10, 1024, 1024, 10)
         temperature = st.slider("Temperature", 0.2, 2.0, 1.0, 0.1)
         top_p = st.slider("Top P", 0.0, 1.0, 0.7, 0.05)
-
+    
     with col2:
         submit_button = st.button("Submit")
         clear_button = st.button("Clear")
-
+    
         if 'output' not in st.session_state:
             st.session_state.output = ""
     
         Output = st.text_area(label="Output", value=st.session_state["output"], height=200)
-
+    
         if submit_button:
             st.session_state.output = evaluate(prompt, token_count, temperature, top_p)
     
@@ -15662,7 +15671,7 @@ if choice == 'choice1':
     st.write("""
     Choice 1: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     """)
-
+    
     st.dataframe(
         pd.DataFrame({
             'A': np.arange(1, 12),
@@ -15685,3 +15694,7 @@ else:
 
 
 
+
+```
+
+```
