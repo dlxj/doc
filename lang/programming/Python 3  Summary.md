@@ -14936,6 +14936,24 @@ import { tick } from "svelte";
 
 
 
+#### ResizeObserver
+
+```
+# gradio/js/imageeditor/shared/ImageEditor.svelte
+	let pixi_target: HTMLDivElement;
+	let canvas_wrap: HTMLDivElement;
+	const resizer = new ResizeObserver((entries) => {
+			for (const entry of entries) {
+				get_dimensions(canvas_wrap, pixi_target);
+			}
+		});
+
+		resizer.observe(canvas_wrap);
+		resizer.observe(pixi_target);
+```
+
+
+
 
 
 ### \#each
