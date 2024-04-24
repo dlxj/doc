@@ -14981,6 +14981,23 @@ init_context.update((c) => ({ ...c, [type]: init_fn }));
 - 每个键都对应类型 T 的值。
 - 不是所有的 K 键都需要出现在对象中，因为 Partial 使它们可选。
 
+		register_context: (
+			type: context_type,
+			{
+				reset_fn,
+				init_fn
+			}: {
+				reset_fn?: () => void;
+				init_fn?: (dimensions?: [number, number]) => void;
+			}
+		) => {
+			contexts.update((c) => [...c, type]);
+			init_context.update((c) => ({ ...c, [type]: init_fn }));
+			reset_context.update((c) => ({ ...c, [type]: reset_fn }));
+		}
+			# 注意看字典里函数的签名
+		
+
 Partial<T> 生成的类型会将 T 中的每个属性标记为可选
 interface MyOriginalInterface {
   property1: string;
@@ -15033,6 +15050,67 @@ Svelte 会禁止你使用 `$` 作为你声明的变量的前缀。
 
 <h1>count 当前的值是：{$count}</h1>
 ```
+
+
+
+#### 字典里的函数签名
+
+```
+Store 是 Svelte 中的一种特殊的可写状态对象，它允许我们在组件之间共享状态
+
+# see gradio/js/imageeditor/shared/ImageEditor.svelte
+const contexts: Writable<context_type[]> = writable([]);
+contexts.update((c) => [...c, type]);
+	# contexts 是数组， c 是旧值， [...c, type] 是新值
+	# ...c 是把所有元素倒出来，装新数组里面， type 加最后面，既构造了一个新数组
+	# 有点像 concat
+	
+
+type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>;
+	const init_context: Writable<
+		PartialRecord<context_type, (dimensions?: typeof $dimensions) => void>
+	> = writable({});
+init_context.update((c) => ({ ...c, [type]: init_fn })); 
+	# type 就是普通字符串，你看它作key要加方括号： [type]
+当使用 PartialRecord 类型时，可以创建一个对象，它有以下特点：
+- 对象拥有类型 K 中定义的键中的一部分或全部。
+- 每个键都对应类型 T 的值。
+- 不是所有的 K 键都需要出现在对象中，因为 Partial 使它们可选。
+
+		register_context: (
+			type: context_type,
+			{
+				reset_fn,
+				init_fn
+			}: {
+				reset_fn?: () => void;
+				init_fn?: (dimensions?: [number, number]) => void;
+			}
+		) => {
+			contexts.update((c) => [...c, type]);
+			init_context.update((c) => ({ ...c, [type]: init_fn }));
+			reset_context.update((c) => ({ ...c, [type]: reset_fn }));
+		}
+			# 注意看字典里函数的签名
+		
+
+Partial<T> 生成的类型会将 T 中的每个属性标记为可选
+interface MyOriginalInterface {
+  property1: string;
+  property2: number;
+  property3: boolean;
+}
+
+// 使用 Partial 将所有属性变为可选
+type MyPartialInterface = Partial<MyOriginalInterface>;
+// 现在 MyPartialInterface 类型的对象可以缺少任意属性
+const examplePartial: MyPartialInterface = {
+  property1: "I'm a string",
+  // 注意 property2 和 property3 并没有被定义，但是没有类型错误
+};
+```
+
+
 
 
 
