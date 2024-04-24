@@ -13981,6 +13981,14 @@ gradio/js/imageeditor/shared/tools/Brush.svelte
 		});
 
 
+gradio/js/imageeditor/shared/tools/Brush.svelte
+	line 151 
+	function pointer_move_handler(event: FederatedPointerEvent): void {
+		brush_cursor = true;
+		document.body.style.cursor = "none";
+	# 点画刷工具，鼠标移动到画布，就会显示一个圆。应该是这里
+
+
 import {
 	Application,
 	Container,
