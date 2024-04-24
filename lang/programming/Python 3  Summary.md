@@ -13923,6 +13923,14 @@ gradio/js/imageeditor/shared/InteractiveImageEditor.svelte
 		<Tools {i18n}>
 		# 工具是这样引入的
 
+gradio/js/imageeditor/shared/tools/Tools.svelte
+	line 140
+	on:click={() => tool_context.activate_subtool(meta.id, meta.cb)}
+	line 157
+	on:click={() => ($active_tool = tool)}
+	# 点画刷工具，画布上的提示文字就会消失，可以是这里作用
+	
+
 gradio/js/imageeditor/shared/tools/Brush.svelte
 	# 实际绘画是在这里的
 	function pointer_down_handler(event: FederatedPointerEvent): void {
