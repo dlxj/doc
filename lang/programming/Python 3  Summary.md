@@ -15015,6 +15015,56 @@ const examplePartial: MyPartialInterface = {
 
 
 
+	let editor_box: EditorContext["editor_box"] = writable({
+		parent_width: 0,
+		parent_height: 0,
+		parent_top: 0,
+		parent_left: 0,
+		parent_right: 0,
+		parent_bottom: 0,
+		child_width: 0,
+		child_height: 0,
+		child_top: 0,
+		child_left: 0,
+		child_right: 0,
+		child_bottom: 0
+	});
+	function get_dimensions(parent: HTMLDivElement, child: HTMLDivElement): void {
+		if (!parent || !child) return;
+		const {
+			width: parent_width,
+			height: parent_height,
+			top: parent_top,
+			left: parent_left,
+			right: parent_right,
+			bottom: parent_bottom
+		} = canvas_wrap.getBoundingClientRect();
+		const {
+			width: child_width,
+			height: child_height,
+			top: child_top,
+			left: child_left,
+			right: child_right,
+			bottom: child_bottom
+		} = child.getBoundingClientRect();
+		editor_box.set({
+			child_width,
+			child_height,
+			child_left,
+			child_right,
+			child_top,
+			child_bottom,
+
+			parent_width,
+			parent_height,
+			parent_left,
+			parent_right,
+			parent_top,
+			parent_bottom
+		});
+	}
+
+
 // store.js
 import { writable } from 'svelte/store'
 export const time = writable(0)
