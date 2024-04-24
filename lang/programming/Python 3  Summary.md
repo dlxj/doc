@@ -14962,6 +14962,7 @@ import { tick } from "svelte";
 ```
 Store 是 Svelte 中的一种特殊的可写状态对象，它允许我们在组件之间共享状态
 
+# see gradio/js/imageeditor/shared/ImageEditor.svelte
 const contexts: Writable<context_type[]> = writable([]);
 contexts.update((c) => [...c, type]);
 	# contexts 是数组， c 是旧值， [...c, type] 是新值
