@@ -14974,6 +14974,10 @@ type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>;
 	const init_context: Writable<
 		PartialRecord<context_type, (dimensions?: typeof $dimensions) => void>
 	> = writable({});
+当使用 PartialRecord 类型时，可以创建一个对象，它有以下特点：
+- 对象拥有类型 K 中定义的键中的一部分或全部。
+- 每个键都对应类型 T 的值。
+- 不是所有的 K 键都需要出现在对象中，因为 Partial 使它们可选。
 
 Partial<T> 生成的类型会将 T 中的每个属性标记为可选
 interface MyOriginalInterface {
@@ -14989,6 +14993,7 @@ const examplePartial: MyPartialInterface = {
   property1: "I'm a string",
   // 注意 property2 和 property3 并没有被定义，但是没有类型错误
 };
+
 
 
 // store.js
