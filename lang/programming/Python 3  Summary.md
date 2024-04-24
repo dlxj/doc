@@ -14962,6 +14962,13 @@ import { tick } from "svelte";
 ```
 Store 是 Svelte 中的一种特殊的可写状态对象，它允许我们在组件之间共享状态
 
+const contexts: Writable<context_type[]> = writable([]);
+contexts.update((c) => [...c, type]);
+	# contexts 是数组， c 是旧值， [...c, type] 是新值
+	# ...c 是把所有元素倒出来，装新数组里面， type 加最后面，既构造了一个新数组
+	# 有点像 concat
+	
+
 // store.js
 import { writable } from 'svelte/store'
 export const time = writable(0)
