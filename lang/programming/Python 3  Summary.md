@@ -13982,10 +13982,27 @@ gradio/js/imageeditor/shared/tools/Brush.svelte
 
 
 gradio/js/imageeditor/shared/tools/Brush.svelte
+	line 193
+		$pixi?.layer_container[on_off](
+			"pointerenter",
+			(event: FederatedPointerEvent) => {
+				if ($active_tool === mode) {
+					brush_cursor = true;
+					document.body.style.cursor = "none";
+				}
+			}
+		);
+		$pixi?.layer_container[on_off](
+			"pointerleave",
+			() => ((brush_cursor = false), (document.body.style.cursor = "auto"))
+		);
+		# 鼠标进入或刚离开的时侯
+		
 	line 151 
 	function pointer_move_handler(event: FederatedPointerEvent): void {
 		brush_cursor = true;
 		document.body.style.cursor = "none";
+		# 鼠标移动的时侯
 	# 点画刷工具，鼠标移动到画布，就会显示一个圆。应该是这里
 
 
