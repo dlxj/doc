@@ -14970,6 +14970,27 @@ contexts.update((c) => [...c, type]);
 	# 有点像 concat
 	
 
+type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>;
+	const init_context: Writable<
+		PartialRecord<context_type, (dimensions?: typeof $dimensions) => void>
+	> = writable({});
+
+Partial<T> 生成的类型会将 T 中的每个属性标记为可选
+interface MyOriginalInterface {
+  property1: string;
+  property2: number;
+  property3: boolean;
+}
+
+// 使用 Partial 将所有属性变为可选
+type MyPartialInterface = Partial<MyOriginalInterface>;
+// 现在 MyPartialInterface 类型的对象可以缺少任意属性
+const examplePartial: MyPartialInterface = {
+  property1: "I'm a string",
+  // 注意 property2 和 property3 并没有被定义，但是没有类型错误
+};
+
+
 // store.js
 import { writable } from 'svelte/store'
 export const time = writable(0)
