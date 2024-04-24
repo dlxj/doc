@@ -14018,6 +14018,7 @@ gradio/js/imageeditor/shared/tools/Brush.svelte
 	style:opacity={brush_cursor ? 1 : 0}
 />
 	# 小圆点的本体应该是这里
+	# border-radius: 50%; 边框圆角半径为50%，这将使正方形看起来像一个圆。
 
 <style>
 	span {
