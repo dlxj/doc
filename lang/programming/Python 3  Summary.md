@@ -13929,7 +13929,15 @@ gradio/js/imageeditor/shared/tools/Tools.svelte
 	line 157
 	on:click={() => ($active_tool = tool)}
 	# 点画刷工具，画布上的提示文字就会消失，可以是这里作用
-	
+
+gradio/js/imageeditor/shared/InteractiveImageEditor.svelte
+	line 168
+	{#if !bg && !history}
+		<div class="empty wrap">
+			{#if brush}
+				<div>select the draw tool to start</div>
+	# 文字在这
+
 
 gradio/js/imageeditor/shared/tools/Brush.svelte
 	# 实际绘画是在这里的
