@@ -15112,6 +15112,16 @@ const examplePartial: MyPartialInterface = {
 
 
 
+#### 奇葩的函数签名
+
+```
+	function is_not_null(o: Blob | null): o is Blob {
+		return !!o;
+	}
+```
+
+
+
 
 
 ### timer
