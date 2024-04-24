@@ -14004,6 +14004,20 @@ gradio/js/imageeditor/shared/tools/Brush.svelte
 		document.body.style.cursor = "none";
 		# 鼠标移动的时侯
 	# 点画刷工具，鼠标移动到画布，就会显示一个圆。应该是这里
+	
+<span
+	style:transform="translate({pos.x}px, {pos.y}px)"
+	style:top="{$editor_box.child_top -
+		$editor_box.parent_top -
+		brush_size / 2}px"
+	style:left="{$editor_box.child_left -
+		$editor_box.parent_left -
+		brush_size / 2}px"
+	style:width="{brush_size}px"
+	style:height="{brush_size}px"
+	style:opacity={brush_cursor ? 1 : 0}
+/>
+	# 小圆点的本体应该是这里
 
 
 import {
