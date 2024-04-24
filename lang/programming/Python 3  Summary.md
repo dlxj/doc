@@ -14019,6 +14019,11 @@ gradio/js/imageeditor/shared/tools/Brush.svelte
 />
 	# 小圆点的本体应该是这里
 
+<style>
+	span {
+		display: none;
+	# css 隐藏它，小圆点确实不见了
+
 
 import {
 	Application,
