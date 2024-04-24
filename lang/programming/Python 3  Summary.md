@@ -12941,6 +12941,29 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
   # 前端用 cd demo/xx && pnpm dev
   # {interactive} 直接在页面上显示变量的值
   
+  
+  
+  {
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:9876",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+# gradio/js/imageeditor/shared/tools/Tools.svelte
+	line 76 下断点
+	register_tool: (type: tool, meta: ToolMeta) => {
+# 前端代码可以成功断下
+# cd gradio/demo/image_editor
+# python run.py # 启动后端
+# pnpm dev # 运行前端
+# vscode 按 F5，启动浏览器
+
+  
   // {
   //     "version": "0.2.0",
   //     "configurations": [

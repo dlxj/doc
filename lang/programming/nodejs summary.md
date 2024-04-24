@@ -1933,6 +1933,19 @@ int main() {
 # 因它只显示编译后的前端？
 
 
+vscode + vite
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:9876",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+# 运行前端
 
 
 // {
