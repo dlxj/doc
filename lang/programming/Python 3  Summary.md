@@ -14829,6 +14829,17 @@ type: Literal["numpy", "pil", "filepath"] = "numpy",
 
 
 
+#### 任意类型数量的参数
+
+```
+cb: (...args: any[]) => void;
+	# 形参为任意类型，任意数量的参数？
+```
+
+
+
+
+
 
 ### props
 
@@ -14878,6 +14889,36 @@ import { tick } from "svelte";
 - > 与DOM事件不同，组件事件不会 冒泡
   >
   > 如果要在某个深层嵌套的组件上监听事件，则中间组件必须 转发 该事件
+
+
+
+#### 安全刷新
+
+```
+# gradio/js/imageeditor/shared/ImageEditor.svelte
+	function set_crop(): void {
+		requestAnimationFrame(() => {
+			tick().then((v) => ($active_tool = "crop"));
+		});
+	}
+```
+
+
+
+
+
+### \#each
+
+```
+{#each sub_menu.options as meta (meta.id)}
+{/each}
+```
+
+\- `sub_menu.options` 应该是一个数组。
+
+\- `as meta` 意味着在每次迭代中，当前的数组元素将被命名为 `meta` ，使得您可以在`each`块内部访问它。
+
+\- `(meta.id)` 是一个可选的键表达式，它用来优化列表的更新。当数据发生变化时，Svelte将使用这个键来最小化DOM的更新，因为它能够识别哪些项是新加入的，哪些项已经移除，从而只对有实际变动的项目进行DOM操作。
 
 
 

@@ -28767,6 +28767,14 @@ decode = lambda l: enc.decode(l)
 
 
 
+
+
+## RWKV speech
+
+https://github.com/theodorblackbird/lina-speech
+
+
+
 ## Chatterbox
 
 [Chatterbox](https://github.com/enze5088/Chatterbox)
