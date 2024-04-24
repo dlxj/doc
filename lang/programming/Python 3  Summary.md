@@ -14974,6 +14974,8 @@ type PartialRecord<K extends keyof any, T> = Partial<Record<K, T>>;
 	const init_context: Writable<
 		PartialRecord<context_type, (dimensions?: typeof $dimensions) => void>
 	> = writable({});
+init_context.update((c) => ({ ...c, [type]: init_fn })); 
+	# type 就是普通字符串，你看它作key要加方括号： [type]
 当使用 PartialRecord 类型时，可以创建一个对象，它有以下特点：
 - 对象拥有类型 K 中定义的键中的一部分或全部。
 - 每个键都对应类型 T 的值。
