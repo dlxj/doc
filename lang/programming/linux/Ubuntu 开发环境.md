@@ -183,9 +183,7 @@ http://localhost:6006
 
 https://blog.csdn.net/qq_20466211/article/details/128731196
 apt-get install -y dialog apt-utils && \
-apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev
-
-
+apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev && \
 apt update && apt upgrade -y && \
 apt install software-properties-common -y && \
 add-apt-repository ppa:deadsnakes/ppa && \
@@ -193,7 +191,8 @@ apt install python3.10 && \
 apt install python3.10-distutils && \
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 python3.10 get-pip.py && \
-pip install --upgrade requests
+pip install --upgrade requests && \
+pip install pysocks
 	# python3.10 的pip 需要另外安装
 
 pip install pysocks
