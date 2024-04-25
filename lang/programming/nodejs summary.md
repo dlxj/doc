@@ -31882,6 +31882,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [downkyicore bili下载 avalonia](https://github.com/yaobiao131/downkyicore/releases)
 
+[ScreenToGif](https://github.com/NickeManarin/ScreenToGif)
+
 
 
 ### UWP
