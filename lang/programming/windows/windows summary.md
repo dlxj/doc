@@ -681,6 +681,10 @@ git pull && git LFS pull
 
 
 
+# IPV6 远程桌面
+
+https://zhuanlan.zhihu.com/p/627542501
+
 
 
 # 内网穿透
