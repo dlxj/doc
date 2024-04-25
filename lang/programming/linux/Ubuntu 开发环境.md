@@ -411,6 +411,17 @@ psql -h 172.20.0.2 -p 5432 -U postgres
 
 
 
+## 测速
+
+```
+wget -qO- bench.sh | bash
+curl -Lso- bench.sh | bash
+```
+
+
+
+
+
 # Ubuntu22.04远程桌面
 
 ```
