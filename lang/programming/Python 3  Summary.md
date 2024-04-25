@@ -15657,7 +15657,9 @@ secrets.token_urlsafe(32)
 
 [excel](https://github.com/ticruz38/svelte-sheets)
 
+#### gspread 
 
+https://github.com/burnash/gspread google excel
 
 
 
