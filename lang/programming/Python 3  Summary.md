@@ -12517,6 +12517,8 @@ see https://juejin.cn/post/7201506099342082105  **关键帧信息** **必看**
 
 see https://github.com/mifi/lossless-cut js 剪视频
 
+see https://github.com/mean00/avidemux2 视频编辑
+
 see https://github.com/gradio-app/gradio/issues/2894 嵌入 youbu 视频
 
 - https://www.gradio.app/changelog   **最新 api**
