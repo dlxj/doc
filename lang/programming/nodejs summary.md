@@ -31878,7 +31878,9 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [仿QQ](https://github.com/yashuangyi/Simulation-QQ)
 
-[lossless-cut typescript视频剪辑](https://github.com/mifi/lossless-cut)
+[lossless-cut  js视频剪切](https://github.com/mifi/lossless-cut)
+
+[avidemux2  视频编辑](https://github.com/mean00/avidemux2 )
 
 [downkyicore bili下载 avalonia](https://github.com/yaobiao131/downkyicore/releases)
 
