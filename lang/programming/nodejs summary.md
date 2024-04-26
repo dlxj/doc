@@ -2911,6 +2911,12 @@ zerotier tailscale
 
 
 
+#### candy
+
+https://github.com/lanthora/candy
+
+
+
 ### vscode 代理
 
 https://blog.csdn.net/m0_57236802/article/details/132169445
