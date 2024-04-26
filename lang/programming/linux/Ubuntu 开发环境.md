@@ -785,7 +785,7 @@ https://lightsail.aws.amazon.com/ls/webapp/home/instances
 
 18.176.53.159
 
-siluplsy@gmail.com 密码同 QQ
+sixxxy@gmail.com pwd同 QQ
 
 https://test-ipv6.com/
 
