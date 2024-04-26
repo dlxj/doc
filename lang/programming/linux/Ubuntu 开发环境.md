@@ -770,6 +770,148 @@ vi /etc/hosts #编辑配置文件
 
 
 
+## aws 光帆 IPV6
+
+https://docs.aws.amazon.com/zh_cn/lightsail/latest/userguide/amazon-lightsail-configure-ipv6-on-ubuntu-16.html
+
+https://candinya.com/posts/ipv6-configure-for-buyvm/  buyvm ipv6 配置
+
+https://cyp0633.icu/post/add-ipv6-on-ubuntu-22.04/  干货
+
+
+
+```
+https://lightsail.aws.amazon.com/ls/webapp/home/instances
+
+18.176.53.159
+
+siluplsy@gmail.com 密码同 QQ
+
+https://test-ipv6.com/
+
+ip addr
+
+inet6 xxx scope link
+	# scope global 才行！
+
+ip a
+vi /etc/netplan/50-cloud-init.yaml
+network:
+    ethernets:
+        ens5:
+            dhcp4: true
+            dhcp6: true
+            match:
+                macaddress: 06:4a:41:cd:ad:ef
+            set-name: ens5
+    version: 2
+
+sudo netplan apply && 
+sudo systemctl restart systemd-networkd && 
+ping6 google.com
+	# 成功 ping 通
+
+ping -6 google.com
+	# windows 这样 ping ipv6
+
+
+.77
+	$ ip a
+    inet 209.141.34.77/24 brd 209.141.34.255 scope global dynamic eth0
+       valid_lft 2591979sec preferred_lft 2591979sec
+    inet6 fe80::216:f4ff:fee0:bcc/64 scope link 
+
+ipv4
+IP
+209.141.34.77
+Netmask
+255.255.255.0
+Gateway
+209.141.34.1
+Resolver1
+205.185.112.68
+Resolver2
+205.185.112.69
+
+
+控制面板的设置
+Ip
+2605:6400:20:105a:4914:4f4d:6555:1577
+Netmask
+48
+Gateway
+2605:6400:20::1
+
+        address 2605:6400:20:105a:4914:4f4d:6555:1577
+        netmask 48
+        gateway 2605:6400:20::1
+
+vi /etc/netplan/01-netcfg.yaml
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: true
+      dhcp6: true
+
+
+改为：
+network:
+  version: 2
+  ethernets:
+    eth0:
+      dhcp4: true
+      dhcp6: true
+	  gateway4: 209.141.34.1
+      gateway6: 2605:6400:20::1
+      addresses: [209.141.34.77/24,'2605:6400:20:105a:4914:4f4d:6555:1577/48']
+
+如果你的 Netmask 也是 255.255.255.0，那么 / 24 就不需要变动，它们的意义相同，只是一个 Netmask 和 Bitmask 的相互转换，前者是 IPv4 惯用表述，后者则是 IPv6 的表述。Netplan 统一用后者。
+
+
+sudo netplan try
+	# 检查配置
+
+sudo netplan apply
+	# 应用更改
+	
+networkctl status eth0
+	# 网卡 eth0 状态
+	# 绿色的 routable(configured) 表示一切正常
+
+ping6 google.com
+	# 成功 ping 通
+
+ping6 2605:6400:20:105a:4914:4f4d:6555:1577
+	# 光帆成功 ping 通 .77 的 ipv6
+
+ping6 2406:da14:12f1:1a00:5a6d:b685:3659:5b64
+	# .77 成功 ping 通光帆的 ipv6
+
+
+使用 networkctl status eth0 命令查看 eth0 端口情况。除了查看 Address 信息有没有错误之外，最重要的是 State。如果是绿色的 routable(configured)，那么一切正常。否则，degraded 表示可能没有连接公网，而若下方 log 中提示 No Route to Host 则可能代表 Gateway 设置错误。
+
+这之后，可以使用 ping6 google.com 测试一下 IPv6 下的网络连接。也可以用其他设备 Ping 你刚刚分配的 IPv6 地址。如果都不会提示 Network Unreachable，那么就万事大吉了
+
+
+```
+
+
+
+AWS Lightsail 光帆 3.5$ 每月
+
+目前靠谱的就是 hyestria+端口跳跃，Xray-vision ，有闲心也可以上 naiveproxy 。
+
+前两个可以用 mack-a 的一键脚本，谷歌一下就有。
+
+
+
+Hysteria科学上网
+
+https://mephisto.cc/tech/hysteria/
+
+
+
 # socks5 转 http
 
 ```
@@ -884,6 +1026,8 @@ systemctl disable firewalld
 
 
 ```
+
+
 
 
 
