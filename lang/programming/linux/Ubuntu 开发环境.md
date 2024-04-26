@@ -885,12 +885,12 @@ ping6 google.com
 ping6 2605:6400:20:105a:4914:4f4d:6555:1577
 	# 光帆成功 ping 通 .77 的 ipv6
 	# ping -6 2605:6400:20:105a:4914:4f4d:6555:1577
-		# windows 成功 ping 通 .77
+		# windows 成功 ping 通 .77 （开代理才行！）
 
 ping6 2406:da14:12f1:1a00:5a6d:b685:3659:5b64
 	# .77 成功 ping 通光帆的 ipv6
 	# ping -6 2406:da14:12f1:1a00:5a6d:b685:3659:5b64
-		# windows 成功 ping 通光帆
+		# windows 成功 ping 通光帆 （开代理才行！）
 
 
 使用 networkctl status eth0 命令查看 eth0 端口情况。除了查看 Address 信息有没有错误之外，最重要的是 State。如果是绿色的 routable(configured)，那么一切正常。否则，degraded 表示可能没有连接公网，而若下方 log 中提示 No Route to Host 则可能代表 Gateway 设置错误。
