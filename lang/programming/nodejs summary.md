@@ -4125,7 +4125,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create release --type dataset
 	# huggingface-cli repo create todo_fix_imageeditor --type dataset
 	# huggingface-cli repo create vite_gradio_imageeditor --type dataset
-	# huggingface-cli repo create PaddleOCR --type dataset 
+	# huggingface-cli repo create PaddleOCR --type dataset
+	# huggingface-cli repo create autoscreen --type dataset 
 		# 执行此命令需要设置全局代码 .gitconifg 里的不起作用
 		# setproxy 这样
 
