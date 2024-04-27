@@ -1216,6 +1216,14 @@ apt-get install fcitx-googlepinyin
 
 
 
+# install candy
+
+
+
+apt-get --fix-broken install ./candy_5.6+ubuntu22.04_amd64.deb
+
+
+
 # mecab
 
 [MeCab+NEologd](https://qiita.com/heimaru1231/items/1f4f03088bc0f6bdefc6)
