@@ -9282,6 +9282,21 @@ await ffmpeg.run( '-ss', '30', '-t', '3', '-i', 'input.bin', '-movflags',  '+fas
 
 
 
+```
+conda deactivate && \
+conda env remove -n vse
+
+conda update -y conda -n base && \
+conda install ipython pip --yes && \
+conda create -n vse python=3.10 --yes && \
+source activate vse
+
+```
+
+
+
+
+
 ```python
 """
 git clone https://github.com/YaoFANGUK/video-subtitle-extractor.git
