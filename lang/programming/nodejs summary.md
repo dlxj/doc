@@ -1481,6 +1481,14 @@ next_complex_cjk
 
 
 
+### 显示eigen变量
+
+https://github.com/fandesfyf/EigenGdb
+
+C++  线代库
+
+
+
 ## vscode + MSYS2 +  Mingw-w64 
 
 [vscode 在windows下使用gcc+mingw调试 c/c++程序](https://www.jianshu.com/p/ebc74e2d09f1)
