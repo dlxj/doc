@@ -12474,6 +12474,16 @@ if __name__=="__main__":
 
 
 
+# pyqt
+
+https://github.com/fandesfyf/JamVideoPlayer  qt 视频播放器
+
+
+
+see  huggingface\video-subtitle-extractor\readme.txt
+
+
+
 # uvicorn
 
 see https://huggingface.co/spaces/ronvolutional/ai-pokemon-card 宝可梦卡片生成
