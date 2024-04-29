@@ -2925,6 +2925,18 @@ https://github.com/lanthora/candy
 
 https://v2ex.com/t/1035681#reply73
 
+
+
+```
+dnf install spdlog openssl uriparser libconfig-devel.x86_64 poco*
+
+
+```
+
+
+
+
+
 ### vscode 代理
 
 https://blog.csdn.net/m0_57236802/article/details/132169445
