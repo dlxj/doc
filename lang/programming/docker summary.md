@@ -350,7 +350,26 @@ https://www.ssldragon.com/how-to/remove-ssl-certificates-windows-10/
   2022 自带容器功能，不要安装 Docker destop   https://www.cnblogs.com/shanyou/p/16413929.html
   ```
 
-  
+
+
+
+```
+
+curl -fsSL https://get.docker.com -o get-docker.sh 
+sudo sh get-docker.sh 
+	# 安装Docker 
+ 
+sudo apt-get install -y docker-compose
+	# 安装Docker Compose
+
+service docker start && 
+service docker status 
+
+```
+
+
+
+
 
 ```
 docker image rm ubuntu:20.04

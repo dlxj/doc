@@ -1037,6 +1037,35 @@ systemctl disable firewalld
 
 
 
+# nginx
+
+```
+see echodict/README.md -> ali 57
+
+apt install nginx && 
+/etc/init.d/nginx start
+
+ali 服务端反代 windows 3389 远程桌面
+vi /etc/nginx/nginx.conf
+stream {
+    upstream windows_33899 {
+        server 10.0.0.3:3389; 
+    }
+
+    server {
+        listen 33899;
+        proxy_pass windows_33899;
+    }
+}
+	# 加在配置的最后
+	
+nginx -t
+nginx -s reload
+/etc/init.d/nginx status
+
+win11 远程桌面，连 10.0.0.1:33899 成功
+```
+
 
 
 
