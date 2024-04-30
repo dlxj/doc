@@ -12998,6 +12998,21 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 # pnpm dev # 运行前端
 # vscode 按 F5，启动浏览器
 
+
+wslconfig  /setdefault Ubuntu-20.04
+	# 默认启动 20.04
+	# 20.04 用于修改编译 gradio, 生成 gradio-xxx-py3-none-any.whl
+
+wslconfig  /setdefault Ubuntu-22.04
+	# 默认启动 22.04
+	# 22.04 用于 使用安装 gradio-xxx-py3-none-any.whl 并测试，以及实际开发
+	
+wsl --install -d Ubuntu-22.04
+	# 再装一个 22.04
+
+ubuntu2204 config --default-user root
+	# 默认以 root 登录
+
   
   // {
   //     "version": "0.2.0",

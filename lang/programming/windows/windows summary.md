@@ -543,9 +543,60 @@ exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
 
 ## 默认系统
 
-关于WSL2迁移系统、配置默认系统&用户的补充
-
 https://zhuanlan.zhihu.com/p/643184142
+
+
+
+```
+
+see python 3 summary.md -> Gradio -> compile -> vscode+gradio
+
+
+wslconfig  /setdefault Ubuntu-20.04
+	# 默认启动 20.04
+	# 20.04 用于修改编译 gradio, 生成 gradio-xxx-py3-none-any.whl
+
+wslconfig  /setdefault Ubuntu-22.04
+	# 默认启动 22.04
+	# 22.04 用于 使用安装 gradio-xxx-py3-none-any.whl 并测试，以及实际开发
+	
+wsl --install -d Ubuntu-22.04
+	# 再装一个 22.04
+
+ubuntu2204 config --default-user root
+	# 默认以 root 登录
+	
+```
+
+
+
+##  wsl: 检测到 localhost 代理
+
+
+
+```
+C:\Users\i\.wslconfig
+
+[wsl2]
+memory=4G
+swap=2G
+processors=2
+localhostForwarding=true
+
+[experimental]
+autoMemoryReclaim=gradual  
+networkingMode=mirrored
+dnsTunneling=true
+firewall=true
+autoProxy=true
+
+```
+
+
+
+
+
+
 
 
 
