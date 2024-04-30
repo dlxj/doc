@@ -12029,6 +12029,16 @@ revenue.sort_values(ascending=False).index[0]
 
 # duckdb
 
+https://huggingface.co/docs/datasets-server/duckdb
+
+https://duckdb.org/docs/extensions/httpfs/overview.html
+
+https://duckdb.org/docs/extensions/httpfs/s3api
+
+https://www.cloudflare.com/en-gb/developer-platform/r2/   CF 支持
+
+
+
 https://zhuanlan.zhihu.com/p/646788236
 
 Duckdb 提供了SQLite 的兼容层，允许之前使用 SQLite 的重新连接到 DuckDB，可见DuckDB也可以直接应用于场景的SQLite场景。
