@@ -178,6 +178,9 @@ conda install --download-only pytorch==2.0.0
 ## Python for ubuntu20.04
 
 ```
+
+# pip freeze > freeze.txt
+
 apt update && apt upgrade -y && \
 (sleep 1; echo "Y";) | apt-get install build-essential
 apt-get install p7zip-full vim curl lsof git wget 
@@ -294,6 +297,9 @@ __pycache__/
 ## Anaconda [u](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 
 ```
+
+# pip freeze > freeze.txt
+
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
 bash Miniforge3-Linux-x86_64.sh -b && \
 ~/miniforge3/bin/conda init && \
