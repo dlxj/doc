@@ -541,6 +541,12 @@ exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
 
 
 
+## 默认系统
+
+关于WSL2迁移系统、配置默认系统&用户的补充
+
+https://zhuanlan.zhihu.com/p/643184142
+
 
 
 # choco
