@@ -314,6 +314,24 @@ conda clean -a
 ```
 Windows + R -> 输入 %UserProfile% 运行进入用户文件夹 -> 新建文件 .wslconfig，加入以下内容：
 
+C:\Users\i\.wslconfig
+
+[wsl2]
+memory=4G
+swap=2G
+processors=2
+localhostForwarding=true
+
+[experimental]
+autoMemoryReclaim=gradual  
+networkingMode=mirrored
+dnsTunneling=true
+firewall=true
+autoProxy=true
+	
+	# 实际好用的配置
+
+
 [wsl2]
 memory=1G # 限制最大使用内存
 swap=1G # 限制最大使用虚拟内存
