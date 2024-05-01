@@ -4155,6 +4155,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create PaddleOCR --type dataset
 	# huggingface-cli repo create autoscreen --type dataset 
 	# huggingface-cli repo create video-subtitle-extractor --type dataset 
+	# huggingface-cli repo create AnnasArchive --type dataset 
 		# 执行此命令需要设置全局代码 .gitconifg 里的不起作用
 		# setproxy 这样
 
