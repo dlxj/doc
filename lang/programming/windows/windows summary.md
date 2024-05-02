@@ -557,6 +557,31 @@ exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
 
 
 
+### 禁止用户下载有害文件
+
+```
+
+chrome://settings/content/insecureContent
+
+允许显示不安全内容添加[*.]com
+
+
+适用于在 Chrome 浏览器中登录受管理帐号的 Windows 用户。
+使用组策略
+在组策略管理（“计算机配置”或“用户配置”文件夹）中：
+依次点击策略 接着点按 管理模板 接着点按 Google 接着点按 Google Chrome。
+启用允许下载限制。
+设置所需的选项：
+无特殊限制
+禁止所有下载恶意软件的操作
+拦截危险下载内容
+拦截可能造成危险的下载内容
+拦截所有下载内容
+为用户部署政策。
+```
+
+
+
 
 
 ## 默认系统
