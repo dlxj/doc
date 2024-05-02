@@ -559,12 +559,16 @@ exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
 
 ### 禁止用户下载有害文件
 
+已被贵组织屏蔽
+
 ```
 
 chrome://settings/content/insecureContent
 
 允许显示不安全内容添加[*.]com
 
+破案了！我把 IDM 扩展卸载后，就能用了
+ 
 
 适用于在 Chrome 浏览器中登录受管理帐号的 Windows 用户。
 使用组策略
