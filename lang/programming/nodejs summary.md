@@ -14221,6 +14221,28 @@ const BGRAmat = RGBAmat.cvtColor(cv.COLOR_RGBA2BGRA);
 
 
 
+https://blog.csdn.net/qq_37550440/article/details/84134424  大图找小图
+
+
+
+```
+see huggingface\video-subtitle-extractor\main.py
+
+		# 大图找小图，发现评论区域时停止滚动。并划到下一题
+        gray_img = cv2.cvtColor(img_nd, cv2.COLOR_BGR2GRAY)  # 转换为灰度图
+        gray_template = cv2.cvtColor(template, cv2.COLOR_BGR2GRAY)
+        result = cv2.matchTemplate(gray_img, gray_template, cv2.TM_CCOEFF_NORMED)
+        min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
+        
+        
+        if max_val >= 0.85:
+            print('发现评论，划到下一题')
+```
+
+
+
+
+
 ## GIF
 
 

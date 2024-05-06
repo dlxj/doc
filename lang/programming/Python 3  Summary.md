@@ -1326,6 +1326,7 @@ def init_gpt():
 
 
 ```python
+from pathlib import Path
 import tempfile
         self.GRADIO_CACHE = str(
             Path(

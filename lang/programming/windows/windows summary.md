@@ -236,6 +236,8 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 去 BIOS 开启虚拟化
 
+wsl.exe --install --no-distribution
+	# 装 android模拟器搞坏以后运行这个
 
 wsl --list
 	# 已安装
