@@ -2349,6 +2349,44 @@ http {
 
 
 
+
+
+### 转发 3389 8118
+
+```
+stream {
+    upstream windows_33899 {
+        server 10.0.0.3:3389;
+    }
+
+    server {
+        listen 33899;
+        proxy_pass windows_33899;
+    }
+
+    upstream proxy_8118 {
+        server 10.0.0.2:5782;
+    }
+
+    server {
+        listen 8118;
+        proxy_pass proxy_8118;
+    }
+}
+
+ip 是 candy
+andy --mode="client" --websocket="ws://xxxx:1587" --password="xxxx" --tun="10.0.0.2/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
+
+5782 是 ftw 代理
+10.0.0.2 是 candy 局域网中负责作代理的主机
+
+
+```
+
+
+
+
+
 ### 根据域名转发
 
 ```
