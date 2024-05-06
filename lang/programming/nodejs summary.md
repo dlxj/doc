@@ -2375,7 +2375,7 @@ stream {
 }
 
 http_proxy=http://127.0.0.1:8118 curl google.com
-
+	# 成功访问
 
 ip 是 candy
 andy --mode="client" --websocket="ws://xxxx:1587" --password="xxxx" --tun="10.0.0.2/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
