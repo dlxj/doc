@@ -15098,6 +15098,21 @@ import { tick } from "svelte";
 			tick().then((v) => ($active_tool = "crop"));
 		});
 	}
+	
+	import { createEventDispatcher, getContext, onMount, tick } from "svelte";
+
+	onMount(async () => {
+		await tick();
+
+一般用于等待一段时间让Svelte去处理它的异步更新，然后再进行下一步的操作或判断。
+
+	function set_crop(): void {
+		requestAnimationFrame(() => {
+			tick().then((v) => ($active_tool = "crop"));
+		});
+	}
+		# 安全刷新全局变量
+	
 ```
 
 
@@ -15388,6 +15403,13 @@ import { createEventDispatcher, getContext, onMount, tick } from "svelte";
 		await tick();
 
 一般用于等待一段时间让Svelte去处理它的异步更新，然后再进行下一步的操作或判断。
+
+	function set_crop(): void {
+		requestAnimationFrame(() => {
+			tick().then((v) => ($active_tool = "crop"));
+		});
+	}
+		# 安全刷新全局变量
 
 ```
 
