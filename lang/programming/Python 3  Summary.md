@@ -15152,6 +15152,39 @@ import { tick } from "svelte";
 
 
 
+### filter
+
+```
+	
+		const fetch_promises = await Promise.all(
+			_layer_files.map((f) => {
+				if (!f || !f.url) return null;
+
+				return fetch(f.url);
+			})
+		);
+
+		const blobs = await Promise.all(
+			fetch_promises.map((p) => {
+				if (!p) return null;
+				return p.blob();
+			})
+		);
+		
+	function is_not_null<T>(x: T | null): x is T {
+		return x !== null;
+	}
+	
+	for (const blob of blobs.filter(is_not_null)) {
+	
+```
+
+
+
+
+
+
+
 ### store 
 
 [1](https://juejin.cn/post/6986642702964097037)
@@ -15299,6 +15332,53 @@ Svelte 会禁止你使用 `$` 作为你声明的变量的前缀。
 
 <h1>count 当前的值是：{$count}</h1>
 ```
+
+
+
+#### 统一定义全局变量
+
+```
+import type { Writable, Readable } from "svelte/store";
+import { writable } from "svelte/store";
+
+interface EditorContext {
+		pixi: Writable<PixiApp | null>;
+		current_layer: Writable<LayerScene | null>;
+		dimensions: Writable<[number, number]>;
+		editor_box: Writable<{
+			parent_width: number;
+			parent_height: number;
+			parent_left: number;
+			parent_top: number;
+			parent_right: number;
+			parent_bottom: number;
+			child_width: number;
+			child_height: number;
+			child_left: number;
+			child_top: number;
+			child_right: number;
+			child_bottom: number;
+		}>;
+}
+
+	let editor_box: EditorContext["editor_box"] = writable({
+		parent_width: 0,
+		parent_height: 0,
+		parent_top: 0,
+		parent_left: 0,
+		parent_right: 0,
+		parent_bottom: 0,
+		child_width: 0,
+		child_height: 0,
+		child_top: 0,
+		child_left: 0,
+		child_right: 0,
+		child_bottom: 0
+	});
+
+```
+
+
 
 
 
