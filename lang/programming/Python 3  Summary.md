@@ -12893,6 +12893,10 @@ see https://github.com/R3gm/SoniTranslate 视频语音翻译
 
 ```
 
+tar xvf  /mnt/f/Downloads/miniconda3.tar
+
+tar zxvf /mnt/f/Downloads/gradio.tar.gz
+
 bash scripts/install_gradio.sh
 pnpm install
 
