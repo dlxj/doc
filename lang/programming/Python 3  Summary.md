@@ -1336,6 +1336,16 @@ import tempfile
         )
 	# resolve 统一 linux windows 路径的写法
 	
+
+import pathlib
+pathlib.Path("..").resolve()
+
+
+    for entry in (pathlib.Path(root) / "js").iterdir():
+        if (
+            entry.is_dir()
+            and not str(entry.name).startswith("_")
+  
 ```
 
 
