@@ -4197,7 +4197,9 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create autoscreen --type dataset 
 	# huggingface-cli repo create video-subtitle-extractor --type dataset 
 	# huggingface-cli repo create AnnasArchive --type dataset 
-		# 执行此命令需要设置全局代码 .gitconifg 里的不起作用
+	# huggingface-cli repo create gradio_env --type dataset 
+			# miniconda3.tar gradio.tar.gz
+		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
 		# setproxy 这样
 
 git config --global core.safecrlf true
