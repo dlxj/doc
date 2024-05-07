@@ -15379,6 +15379,22 @@ const examplePartial: MyPartialInterface = {
 
 ### await
 
+
+
+```
+import { createEventDispatcher, getContext, onMount, tick } from "svelte";
+
+	onMount(async () => {
+		await tick();
+
+一般用于等待一段时间让Svelte去处理它的异步更新，然后再进行下一步的操作或判断。
+
+```
+
+
+
+
+
 ```
 <script>
   // getRandomNumber是一个异步请求，返回的是一个promise
