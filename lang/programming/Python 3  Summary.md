@@ -15485,6 +15485,19 @@ const examplePartial: MyPartialInterface = {
 
 
 
+#### append
+
+```
+type context_type = "bg" | "layers" | "crop" | "draw" | "erase";
+
+const contexts: Writable<context_type[]> = writable([]);
+
+contexts.update((c) => [...c, type]);
+
+```
+
+
+
 
 
 ### timer
