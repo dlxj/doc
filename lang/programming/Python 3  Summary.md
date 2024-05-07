@@ -15441,12 +15441,46 @@ const examplePartial: MyPartialInterface = {
 
 
 
+```
+  const reset_context: Writable<PartialRecord<context_type, () => void>> =
+		writable({});
+	const init_context: Writable<
+		PartialRecord<context_type, (dimensions?: typeof $dimensions) => void>
+	> = writable({});
+	const contexts: Writable<context_type[]> = writable([]);
+```
+
+
+
+
+
 #### 奇葩的函数签名
 
 ```
 	function is_not_null(o: Blob | null): o is Blob {
 		return !!o;
 	}
+	
+		const fetch_promises = await Promise.all(
+			_layer_files.map((f) => {
+				if (!f || !f.url) return null;
+
+				return fetch(f.url);
+			})
+		);
+
+		const blobs = await Promise.all(
+			fetch_promises.map((p) => {
+				if (!p) return null;
+				return p.blob();
+			})
+		);
+		
+	function is_not_null<T>(x: T | null): x is T {
+		return x !== null;
+	}
+	
+	for (const blob of blobs.filter(is_not_null)) {
 ```
 
 
