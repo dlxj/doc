@@ -12887,6 +12887,24 @@ see https://github.com/R3gm/SoniTranslate 视频语音翻译
 
 
 
+
+
+## 成品
+
+```
+
+bash scripts/install_gradio.sh
+pnpm install
+
+cd demo/image_editor
+python run.py
+pnpm dev
+	# 打开前端地址就可以了
+
+```
+
+
+
 ## compile
 
 https://github.com/gradio-app/gradio/pull/7660  必看 编译 js 运行方法
