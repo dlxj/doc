@@ -14692,6 +14692,8 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 [requestVideoFrameCallback](https://juejin.cn/post/7125059238195363871)
 
+[Play Videos in Html Canvas and Add Custom Controls](https://hrishikeshpathak.com/blog/play-video-html-canvas-custom-controls/)
+
 
 
 ```
