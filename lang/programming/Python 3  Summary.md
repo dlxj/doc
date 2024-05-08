@@ -14688,6 +14688,39 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 
 
+### HTMLVideoElement
+
+[requestVideoFrameCallback](https://juejin.cn/post/7125059238195363871)
+
+
+
+```
+// Convert Frame to Image
+Object.defineProperty(HTMLVideoElement.prototype, 'convertFrameToImage', {
+    value: function convertFrameToImage() {
+        // Create the Image.
+        let image = new Image();
+
+        // Create a Canvas to draw the chosen frame.
+        let canvas= document.createElement('canvas'),
+            canvasContext = metadata.getContext('2d');
+
+        // Draw the frame.
+        canvasContext.drawImage(this, 0, 0, this.offset.height, this.offset.width);
+
+        // Modify the Source of the Image to the Canvas's Data URL.
+        image.src = canvas.toDataURL();
+
+        // Return the Image.
+        return image
+    }
+})
+```
+
+
+
+
+
 ### m3u8
 
 [m3u8 下载 GO实现](https://github.com/orestonce/m3u8d) **实测可用**
