@@ -14779,6 +14779,90 @@ function videoLoop() {
 
 
 
+```
+// pixi draw to canvas
+let offScreenCanvasA = document.createElement("canvas");
+let offScreenCanvasB = document.createElement("canvas");
+let onScreenCanvas = document.createElement("canvas");
+let width = 400;
+let height = 300;
+
+
+offScreenCanvasA.width = width;
+offScreenCanvasB.width = width;
+onScreenCanvas.width = width;
+
+offScreenCanvasA.height = height;
+offScreenCanvasB.height = height;
+onScreenCanvas.height = height;
+
+document.body.appendChild(onScreenCanvas);
+
+const app = new PIXI.Application({
+  view: offScreenCanvasB,
+  transparent: true,
+  width: 400,
+  height: 300
+});
+
+
+const container = new PIXI.Container();
+const renderer = PIXI.autoDetectRenderer();
+
+app.stage.addChild(container);
+
+const texture = PIXI.Texture.from('https://picsum.photos/id/237/26/37');
+
+for (let i = 0; i < 25; i++) {
+  const bunny = new PIXI.Sprite(texture);
+  bunny.anchor.set(0.5);
+  bunny.x = (i % 5) * 40;
+  bunny.y = Math.floor(i / 5) * 40;
+  container.addChild(bunny);
+}
+
+container.x = app.screen.width / 2;
+container.y = app.screen.height / 2;
+container.pivot.x = container.width / 2;
+container.pivot.y = container.height / 2;
+
+let ticker = PIXI.Ticker.shared
+ticker.add(function(delta) {
+  container.rotation -= 0.01;
+  renderer.render(container);
+  onScreenCanvas.getContext("2d").clearRect(0, 0, width, height);
+  onScreenCanvas.getContext("2d").drawImage(offScreenCanvasA, 0, 0, width, height);
+  onScreenCanvas.getContext("2d").drawImage(offScreenCanvasB, 0, 0, width, height);
+});
+
+let image = new Image();
+image.onload = function(e) {
+  offScreenCanvasA.getContext("2d").drawImage(e.target, 0, 0, width, height);
+}
+image.src = "https://picsum.photos/id/237/400/300";
+```
+
+
+
+```
+        const videoResource = new PIXI.resources.VideoResource(video); 
+
+        videoResource.updateFPS = 30 // set video to render at 30FPS to avoid performance issues
+
+        let texture = PIXI.Texture.from(videoResource);
+
+        let videoSprite = new PIXI.Sprite(texture);
+
+        this.backgroundVideo = videoSprite
+
+        this.backgroundVideo.height = h
+        this.backgroundVideo.width = w
+
+        app.stage.addChild(this.backgroundVideo);
+```
+
+
+
 
 
 ### m3u8
