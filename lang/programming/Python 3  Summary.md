@@ -14697,6 +14697,17 @@ ffmpeg -i input.mp4 -vf "select=eq(n\,10)+eq(n\,11)+eq(n\,12)+eq(n\,13)+eq(n\,14
 
 
 ```
+<!-- svelte-ignore a11y-media-has-caption -->
+	# 去除警告
+	videoElement.textTracks
+		# 动态加 caption
+```
+
+
+
+
+
+```
 // Convert Frame to Image
 Object.defineProperty(HTMLVideoElement.prototype, 'convertFrameToImage', {
     value: function convertFrameToImage() {
@@ -14717,6 +14728,51 @@ Object.defineProperty(HTMLVideoElement.prototype, 'convertFrameToImage', {
         return image
     }
 })
+```
+
+
+
+```
+
+// Using setTimeout for this is a bad idea and should use requestAnimationFrame instead.
+
+var canvas, context, video, xStart, yStart, xEnd, yEnd;
+
+canvas = document.getElementById("canvas");
+context = canvas.getContext("2d");
+canvas.addEventListener("mousedown", mouseDown);
+canvas.addEventListener("mouseup", mouseUp);
+
+function mouseDown(e) {
+    if (video) {
+        video.pause();
+        video = null;
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    xStart = e.offsetX;
+    yStart = e.offsetY;
+}
+
+function mouseUp(e) {
+    xEnd = e.offsetX;
+    yEnd = e.offsetY;
+    if (xStart != xEnd && yStart != yEnd) {
+        video = document.createElement("video");
+        video.src = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WhatCarCanYouGetForAGrand.mp4";
+        video.addEventListener('loadeddata', function() {
+            console.log("loadeddata");
+            video.play();
+            setTimeout(videoLoop, 1000 / 30);
+        });
+    }
+}
+
+function videoLoop() {
+    if (video && !video.paused && !video.ended) {
+        context.drawImage(video, xStart, yStart, xEnd - xStart, yEnd - yStart);
+        setTimeout(videoLoop, 1000 / 30);
+    }
+}
 ```
 
 
