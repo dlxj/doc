@@ -14845,7 +14845,20 @@ image.src = "https://picsum.photos/id/237/400/300";
 
 
 ```
-        const videoResource = new PIXI.resources.VideoResource(video); 
+        let video = document.createElement('video');
+        video.preload = 'auto';
+        video.loop = true;
+        video.autoplay = false;
+        video.src = '../assets/placeholder/VIDEO FILE.mp4';
+    
+        let texture = PIXI.Texture.from(video);
+
+        let videoSprite = new PIXI.Sprite(texture);
+
+        app.stage.addChild(videoSprite);
+        
+
+		const videoResource = new PIXI.resources.VideoResource(video); 
 
         videoResource.updateFPS = 30 // set video to render at 30FPS to avoid performance issues
 
