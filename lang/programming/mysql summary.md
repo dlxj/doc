@@ -689,6 +689,12 @@ select * from Chapter where SrcID = (select Srcid from Source order by Sortid as
 
 
 
+## CONCAT
+
+```
+CONCAT(CAST(w.testID AS CHAR(20)), '/', CAST(w.childTestID AS CHAR(20))) AS '试题ID'
+```
+
 
 
 ##  Mysql Version
