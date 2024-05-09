@@ -15402,7 +15402,6 @@ import { tick } from "svelte";
 			requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
 		});
 	}	
-	
 	async function handle_change(): Promise<void> {
 		await wait_for_next_frame();
 	
