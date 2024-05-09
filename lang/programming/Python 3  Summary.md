@@ -14324,6 +14324,50 @@ function get_canvas_blob(
 
 
 
+```
+	async function get_blobs(
+		_layers: LayerScene[],
+		bounds: Rectangle,
+		[w, h]: [number, number]
+	): Promise<ImageBlobs> {
+		const background = await get_canvas_blob(
+			app.renderer,
+			background_container,
+			bounds,
+			w,
+			h
+		);
+
+		const layers = await Promise.all(
+			_layers.map((layer) =>
+				get_canvas_blob(
+					app.renderer,
+					layer.composite as DisplayObject,
+					bounds,
+					w,
+					h
+				)
+			)
+		);
+
+		const composite = await get_canvas_blob(
+			app.renderer,
+			mask_container,
+			bounds,
+			w,
+			h
+		);
+
+		return {
+			background,
+			layers,
+			composite
+		};
+	}
+```
+
+
+
 
 
 ### getContext
