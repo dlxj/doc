@@ -14193,7 +14193,16 @@ const background_container = new Container() as Container & DisplayObject;
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
 
-
+	async function set_background(): Promise<void> {
+		if (!$pixi) return;
+		if (background) {
+			const add_image = add_bg_image(
+				$pixi.background_container,
+				$pixi.renderer,
+				background,
+				$pixi.resize
+			);
+		# 设置背景图
 
 ```
 
@@ -14364,6 +14373,33 @@ function get_canvas_blob(
 			composite
 		};
 	}
+```
+
+
+
+#### blob base64 互转
+
+```
+const base64Data = "aGV5IHRoZXJl";
+const base64 = await fetch(base64Data);
+
+const base64Response = await fetch(`data:image/jpeg;base64,${base64Data}`);
+	# 图片的 base64 的转换比较特殊
+
+const blob = await base64Response.blob();
+
+
+convertBlobToBase64 = (blob) => new Promise((resolve, reject) => {
+    const reader = new FileReader;
+    reader.onerror = reject;
+    reader.onload = () => {
+        resolve(reader.result);
+    };
+    reader.readAsDataURL(blob);
+});
+
+const base64String = await convertBlobToBase64(blob);
+
 ```
 
 
