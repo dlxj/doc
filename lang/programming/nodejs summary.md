@@ -195,6 +195,10 @@ pm2 monit
 
 
 
+Prettier  ESLint  Dev Containers   CSS Var Complete
+
+
+
 ### 代理运行 node
 
 ```
@@ -4197,7 +4201,9 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create autoscreen --type dataset 
 	# huggingface-cli repo create video-subtitle-extractor --type dataset 
 	# huggingface-cli repo create AnnasArchive --type dataset 
-	# huggingface-cli repo create gradio_env --type dataset 
+	# huggingface-cli repo create gradio_env --type dataset
+    # huggingface-cli repo create gradio_4290 --type dataset
+	
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
 		# setproxy 这样
