@@ -14189,6 +14189,12 @@ const background_container = new Container() as Container & DisplayObject;
 		//set_crop();
 		# 这样就不会把刚上传的图片自动切成小图了
 	}
+	
+imageeditor/shared/tools/Sources.svelte
+	# 图片工具在这
+
+
+
 ```
 
 
@@ -15287,9 +15293,13 @@ type: Literal["numpy", "pil", "filepath"] = "numpy",
             )
             
 export let crop_size: [number, number] | `${string}:${string}` | null = null;
-        # crop_size="1:1"
-        # gradio_4290/demo/image_editor/run.py
-            
+    # crop_size="1:1"
+    # gradio_4290/demo/image_editor/run.py
+         
+let background: Blob | File | null;
+    # 背景图类型
+    # gradio_4290/js/imageeditor/shared/tools/Sources.svelte
+           
 ```
 
 
