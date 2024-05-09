@@ -14180,6 +14180,21 @@ const background_container = new Container() as Container & DisplayObject;
 
 
 
+#### gradio_4290
+
+```
+# gradio_4290/js/imageeditor/shared/ImageEditor.svelte
+	line 223
+	$: if (crop_constraint && bg && !history) {
+		//set_crop();
+		# 这样就不会把刚上传的图片自动切成小图了
+	}
+```
+
+
+
+
+
 #### 颜色
 
 ```python
