@@ -14246,6 +14246,18 @@ export type ColorSource = string | number | number[] | Float32Array | Uint8Array
 
 
 
+#### 画好的图转base64
+
+```python
+const app = new PIXI.Application(config);
+const stage = app.stage;
+const renderer = app.renderer;
+return renderer.plugins.extract.canvas(stage).toDataURL();
+
+```
+
+
+
 
 
 ### getContext
