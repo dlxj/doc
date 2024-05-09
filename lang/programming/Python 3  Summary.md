@@ -15270,6 +15270,11 @@ type: Literal["numpy", "pil", "filepath"] = "numpy",
             raise ValueError(
                 f"Invalid value for parameter `type`: {type}. Please choose from one of: {valid_types}"
             )
+            
+export let crop_size: [number, number] | `${string}:${string}` | null = null;
+        # crop_size="1:1"
+        # gradio_4290/demo/image_editor/run.py
+            
 ```
 
 
