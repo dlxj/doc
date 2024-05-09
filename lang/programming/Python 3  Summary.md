@@ -15300,6 +15300,11 @@ let background: Blob | File | null;
     # 背景图类型
     # gradio_4290/js/imageeditor/shared/tools/Sources.svelte
            
+const img = await createImageBitmap(background);
+	# 从 File 类型创建图片
+    # imageeditor/shared/tools/sources.ts
+    
+    
 ```
 
 
