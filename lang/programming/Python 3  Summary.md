@@ -15396,6 +15396,18 @@ import { tick } from "svelte";
 	}
 		# 安全刷新全局变量
 	
+	
+	function wait_for_next_frame(): Promise<void> {
+		return new Promise((resolve) => {
+			requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+		});
+	}	
+	
+	async function handle_change(): Promise<void> {
+		await wait_for_next_frame();
+	
+	
+	
 ```
 
 
