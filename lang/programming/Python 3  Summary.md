@@ -14258,6 +14258,72 @@ return renderer.plugins.extract.canvas(stage).toDataURL();
 
 
 
+```
+const img = renderer.plugins.extract.image(target);
+	# 从画布取图
+
+```
+
+
+
+```
+
+# gradio_4290/js/imageeditor/shared/utils/pixi.ts
+	line 244
+function get_canvas_blob(
+	renderer: IRenderer,
+	obj: DisplayObject,
+	bounds: Rectangle,
+	width: number,
+	height: number
+): Promise<Blob | null> {
+	return new Promise((resolve) => {
+		// for some reason pixi won't extract a cropped canvas without distorting it
+		// so we have to extract the whole canvas and crop it manually
+		const src_canvas = renderer.extract.canvas(
+			obj,
+			new Rectangle(0, 0, width, height)
+		);
+
+		// Create a new canvas for the cropped area with the appropriate size
+		let dest_canvas = document.createElement("canvas");
+		dest_canvas.width = bounds.width;
+		dest_canvas.height = bounds.height;
+		let dest_ctx = dest_canvas.getContext("2d");
+
+		if (!dest_ctx) {
+			resolve(null);
+			throw new Error("Could not create canvas context");
+		}
+
+		// Draw the cropped area onto the destination canvas
+		dest_ctx.drawImage(
+			src_canvas as HTMLCanvasElement,
+			// this is the area of the source that we want to copy (the crop box)
+			bounds.x,
+			bounds.y,
+			bounds.width,
+			bounds.height,
+			// this is where we want to draw the crop box on the destination canvas
+			0,
+			0,
+			bounds.width,
+			bounds.height
+		);
+
+		// we grab a blob here so we can upload it
+		dest_canvas.toBlob?.((blob) => {
+			if (!blob) {
+				resolve(null);
+			}
+			resolve(blob);
+		});
+	});
+}
+```
+
+
+
 
 
 ### getContext
