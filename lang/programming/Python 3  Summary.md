@@ -14189,7 +14189,12 @@ const background_container = new Container() as Container & DisplayObject;
 		//set_crop();
 		# 这样就不会把刚上传的图片自动切成小图了
 	}
-	
+
+const img = await createImageBitmap(background);
+	# 从 File 类型创建图片
+    # imageeditor/shared/tools/sources.ts
+ 
+ 
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
 
@@ -15462,6 +15467,15 @@ const img = await createImageBitmap(background);
 	# 从 File 类型创建图片
     # imageeditor/shared/tools/sources.ts
     
+export function create_pixi_app({
+	target,
+	dimensions: [width, height],
+	antialias
+}: {
+	target: HTMLElement;
+	dimensions: [number, number];
+	antialias: boolean;
+}): PixiApp {
     
 ```
 
