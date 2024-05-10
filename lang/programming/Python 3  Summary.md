@@ -1345,6 +1345,11 @@ pathlib.Path("..").resolve()
         if (
             entry.is_dir()
             and not str(entry.name).startswith("_")
+            
+       
+from pathlib import Path
+base_root = Path(__file__).parent.resolve()
+value=str(base_root / "dir1"),        
   
 ```
 
