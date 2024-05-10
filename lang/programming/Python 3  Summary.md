@@ -14225,6 +14225,11 @@ const background_container = new Container() as Container & DisplayObject;
         )
 			# python 可以在这里直接传背景图
 			
+	import numpy as np
+	imgData = np.fromfile('cheetah.jpg', dtype=np.uint8)
+	#img = cv2.imdecode(imgData, -1)
+		# 图片读取
+		
 
 const img = await createImageBitmap(background);
 	# 从 File 类型创建图片
