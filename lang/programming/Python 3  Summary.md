@@ -14043,6 +14043,15 @@ https://github.com/gradio-app/gradio/issues/6992  opencv + AnnotatedImage
 
 ### pixi.js 
 
+
+
+```
+target.appendChild(app.view as HTMLCanvasElement);
+	# 你传一个 div ，它自已有一个 Canvas , 会占满这个 div
+```
+
+
+
 ``` 
 phaser 是 pixijs 的封装
 
