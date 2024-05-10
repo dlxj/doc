@@ -14224,11 +14224,16 @@ const background_container = new Container() as Container & DisplayObject;
             crop_size="1:1",
         )
 			# python 可以在这里直接传背景图
-			
-	import numpy as np
-	imgData = np.fromfile('cheetah.jpg', dtype=np.uint8)
-	#img = cv2.imdecode(imgData, -1)
-		# 图片读取
+
+
+# gradio_4290/demo/image_editor/run.py
+import numpy as np
+from pathlib import Path
+base_root = Path(__file__).parent.resolve()
+imgPath = str(base_root / 'cheetah.jpg')
+imgData = np.fromfile(imgPath, dtype=np.uint8)
+#img = cv2.imdecode(imgData, -1)
+		# 加代码，图片读取
 		
 
 const img = await createImageBitmap(background);
