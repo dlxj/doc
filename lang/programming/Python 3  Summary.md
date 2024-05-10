@@ -14200,10 +14200,16 @@ const background_container = new Container() as Container & DisplayObject;
 	}
 	
 	# gradio_4290/js/imageeditor/shared/tools/Crop.svelte
+	line 70
 	c = crop_canvas($pixi!.renderer, $pixi!.mask_container, crop, 0.2);
 	c.start(...$dimensions, current_crop, false);
 		# 实际执行 crop 的代码在这里 
 		
+	# js/imageeditor/shared/InteractiveImageEditor.svelte
+	line 225
+    <Sources
+    	# 上传图片按钮在这
+	
 
 const img = await createImageBitmap(background);
 	# 从 File 类型创建图片
