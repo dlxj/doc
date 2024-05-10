@@ -14211,6 +14211,16 @@ const background_container = new Container() as Container & DisplayObject;
     	# 上传图片按钮在这
 	
 
+	# gradio_4290/demo/image_editor/run.py
+		#Union[np.ndarray, PIL.Image.Image, str]
+		#value: EditorValue
+        im = gr.ImageEditor(
+            type="numpy",
+            crop_size="1:1",
+        )
+			# python 可以在这里直接传背景图
+			
+
 const img = await createImageBitmap(background);
 	# 从 File 类型创建图片
     # imageeditor/shared/tools/sources.ts
