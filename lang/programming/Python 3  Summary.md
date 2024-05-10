@@ -14227,14 +14227,28 @@ const background_container = new Container() as Container & DisplayObject;
 
 
 # gradio_4290/demo/image_editor/run.py
+	# see Python 3 summay.md -> OpenCV -> PIL、cv2、bytes 图片格式互转换
 import numpy as np
 from pathlib import Path
+import cv2
+from PIL import Image
 base_root = Path(__file__).parent.resolve()
 imgPath = str(base_root / 'cheetah.jpg')
-imgData = np.fromfile(imgPath, dtype=np.uint8)
-#img = cv2.imdecode(imgData, -1)
-		# 加代码，图片读取
+# imgData = np.fromfile(imgPath, dtype=np.uint8)
+# img = cv2.imdecode(imgData, -1)
+imgData = Image.open(imgPath)
+#img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
+	# 加代码，图片读取
 		
+# gradio_4290/gradio/processing_utils.py        
+	line 215
+    bytes_data = encode_pil_to_bytes(img, format)
+    temp_dir = Path(cache_dir) / hash_bytes(bytes_data)
+    temp_dir.mkdir(exist_ok=True, parents=True)
+    filename = str((temp_dir / f"{name}.{format}").resolve())
+    (temp_dir / f"{name}.{format}").resolve().write_bytes(bytes_data)
+    	# 转成 webp ，存临时文件
+   
 
 const img = await createImageBitmap(background);
 	# 从 File 类型创建图片

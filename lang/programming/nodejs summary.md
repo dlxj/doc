@@ -14229,8 +14229,6 @@ mat.SaveImage(savePath)
 
 
 
-
-
 ```
 const cv = require('opencv4nodejs');
  
