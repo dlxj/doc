@@ -15492,6 +15492,26 @@ export function create_pixi_app({
 	antialias: boolean;
 }): PixiApp {
     
+    
+    
+export function resize_and_reposition(
+	original_width: number,
+	original_height: number,
+	anchor: "t" | "r" | "l" | "b" | "tl" | "tr" | "bl" | "br" | "c",
+	aspect_ratio: number,
+	max_width: number,
+	max_height: number
+): {
+	new_width: number;
+	new_height: number;
+	x_offset: number;
+	y_offset: number;
+    	# 这第二个括号既可以声明上面的类型，也可以声明下面的类型？
+} {
+	let new_width = original_width;
+	let new_height = original_height;    
+    
+    
 ```
 
 
