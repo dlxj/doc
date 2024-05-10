@@ -14196,7 +14196,7 @@ const background_container = new Container() as Container & DisplayObject;
 
 #### gradio_4290
 
-```
+```python
 # gradio_4290/js/imageeditor/shared/ImageEditor.svelte
 	line 223
 	$: if (crop_constraint && bg && !history) {
