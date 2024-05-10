@@ -14250,6 +14250,14 @@ imgData = Image.open(imgPath)
     	# 转成 webp ，存临时文件
    
 
+# gradio_4290/js/imageeditor/shared/tools/Crop.svelte
+	line 176
+    {#if $active_tool === "crop" && measured}
+	<Cropper
+		crop_constraint={_crop_constraint}
+    # crop 工具激活的时侯，显示拖拽框
+
+
 const img = await createImageBitmap(background);
 	# 从 File 类型创建图片
     # imageeditor/shared/tools/sources.ts
