@@ -14313,6 +14313,10 @@ def predict(im):
 im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
 	# 它是把实时合成好的图放右边输出预览
         
+# gradio_4290/js/imageeditor/Index.svelte
+  line 105
+  gradio.dispatch("change");
+  	# change 事件在这      
         
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
