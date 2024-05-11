@@ -14326,8 +14326,17 @@ im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
 		composite: null
 	};
     # python 监听 change 事件，取出 im["composite"] 既合成图，赋值给 output
-        
-        
+    
+# gradio_4290/js/imageeditor/shared/utils/pixi.ts
+	line 295
+    export interface ImageBlobs {
+		background: Blob | null;
+		layers: (Blob | null)[];
+		composite: Blob | null;
+	}
+    # composite 的定义
+	        
+    
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
 
