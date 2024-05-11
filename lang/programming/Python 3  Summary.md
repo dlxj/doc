@@ -14316,7 +14316,8 @@ im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
 # gradio_4290/js/imageeditor/Index.svelte
   line 105
   gradio.dispatch("change");
-  	# change 事件在这      
+  	# 触发 change 事件在这      
+     
         
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
