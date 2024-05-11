@@ -14335,8 +14335,22 @@ im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
 		composite: Blob | null;
 	}
     # composite 的定义
-	        
+	
     
+    line 224
+    function get_canvas_blob(   
+    ): Promise<Blob | null> {
+		return new Promise((resolve) => {   
+        	let dest_canvas = document.createElement("canvas");
+            dest_canvas.toBlob?.((blob) => {
+				if (!blob) {
+					resolve(null);
+				}
+				resolve(blob);
+			});
+    	# 如何从 canvas 里面取出 raw 数据
+            
+            
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
 
