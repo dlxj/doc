@@ -14220,8 +14220,10 @@ const background_container = new Container() as Container & DisplayObject;
 		#Union[np.ndarray, PIL.Image.Image, str]
 		#value: EditorValue
         im = gr.ImageEditor(
+            value=imgData,
             type="numpy",
-            crop_size="1:1",
+            crop_size=None, # 重点：1:1 拖出来只能是方形
+            # crop_size="1:1", 
         )
 			# python 可以在这里直接传背景图
 
@@ -15389,6 +15391,8 @@ svelete的响应式是由赋值触发的
 
 所以诸如 push、splice 等数组方法， 虽然更新了状态，但是因为没有赋值操作，所以不会引起UI(界面)的自动更新。
 
+!!crop_constraint 强转 bool
+ 	如果`crop_constraint`是一个空字符串、数字0、null或undefined，`!!crop_constraint`将返回false。对于非空字符串、非零数字、非空数组等，`!!crop_constraint`将返回true。
 
 
 ```
