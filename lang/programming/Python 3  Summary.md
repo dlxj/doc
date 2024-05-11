@@ -14306,7 +14306,14 @@ const img = await createImageBitmap(background);
     # line 112
  	cropper = crop_canvas(
     	# 这里下断好调试
-                
+
+# run.py        
+def predict(im):
+    return im["composite"]        
+im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
+	# 它是把实时合成好的图放右边输出预览
+        
+        
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
 
