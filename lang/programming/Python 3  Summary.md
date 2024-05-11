@@ -15737,6 +15737,13 @@ import { tick } from "svelte";
 ```
 {#each sub_menu.options as meta (meta.id)}
 {/each}
+
+gradio_4290/js/imageeditor/shared/tools/Cropper.svelte
+	line 295
+	{#each { length: 25 } as _}
+		<div></div>
+	{/each}
+
 ```
 
 \- `sub_menu.options` 应该是一个数组。
