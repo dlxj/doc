@@ -14318,6 +14318,15 @@ im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
   gradio.dispatch("change");
   	# 触发 change 事件在这      
      
+# gradio_4290/js/imageeditor/shared/InteractiveImageEditor.svelte
+	line 38
+    export let value: EditorData | null = {
+		background: null,
+		layers: [],
+		composite: null
+	};
+    # python 监听 change 事件，取出 im["composite"] 既合成图，赋值给 output
+        
         
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
