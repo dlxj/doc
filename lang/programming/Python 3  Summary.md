@@ -14294,6 +14294,9 @@ imgData = Image.open(imgPath)
     # 拖拽框的实体             
                 
 
+# gradio_4290/js/imageeditor/shared/tools/Handle.svelte                
+	# 拖拽过程中的实时动态效果                
+                
 const img = await createImageBitmap(background);
 	# 从 File 类型创建图片
     # imageeditor/shared/tools/sources.ts
