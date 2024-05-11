@@ -14326,6 +14326,7 @@ im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
 		composite: null
 	};
     # python 监听 change 事件，取出 im["composite"] 既合成图，赋值给 output
+        # 合成方法可以是先往 composite 绘制背景图，再绘制 layer1, ... 
     
 # gradio_4290/js/imageeditor/shared/utils/pixi.ts
 	line 295
