@@ -14302,7 +14302,11 @@ const img = await createImageBitmap(background);
 	# 从 File 类型创建图片
     # imageeditor/shared/tools/sources.ts
  
- 
+# gradio_4290/js/imageeditor/shared/tools/Crop.svelte
+    # line 112
+ 	cropper = crop_canvas(
+    	# 这里下断好调试
+                
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
 
