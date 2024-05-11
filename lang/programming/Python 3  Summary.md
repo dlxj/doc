@@ -14349,7 +14349,13 @@ im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
 				resolve(blob);
 			});
     	# 如何从 canvas 里面取出 raw 数据
+        
             
+# gradio_4290/js/imageeditor/shared/utils/pixi.ts
+    line 76
+	export function create_pixi_app({        
+    	# 仔细看这个函数，很多秘密都藏在这里 
+        
             
 imageeditor/shared/tools/Sources.svelte
 	# 图片工具在这
