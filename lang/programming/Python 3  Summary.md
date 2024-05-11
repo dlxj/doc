@@ -16159,6 +16159,29 @@ contexts.update((c) => [...c, type]);
 
 
 
+### spring
+
+string 是一种特殊的 store, 它的数值不是一步到位，而是渐近式从初值变到终值。
+
+用subscribe 订阅值的更新　　 
+
+```python
+# gradio_4290/js/imageeditor/shared/tools/crop.ts
+	import { spring } from "svelte/motion";
+	let alpha_spring = spring(current_opacity, {
+		stiffness: 0.1,
+		damping: 0.5
+	});
+	alpha_spring.subscribe((value) => {
+		if (!final_crop) return;
+		spring_value = value;
+		crop_mask(width, height, final_crop, true);
+	});
+
+```
+
+
+
 
 
 ### timer
