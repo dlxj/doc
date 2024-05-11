@@ -14259,6 +14259,40 @@ imgData = Image.open(imgPath)
 		crop_constraint={_crop_constraint}
     # crop 工具激活的时侯，显示拖拽框
 
+# gradio_4290/js/imageeditor/shared/tools/Cropper.svelte        
+		<div class="grid" class:finished on:mousedown={handle_drag_start}>
+			{#each { length: 25 } as _}
+				<div></div>
+			{/each}
+		</div>        
+        <style>
+	.grid {
+		height: 100%;
+		width: 100%;
+		display: grid;
+		grid-template-rows: 1fr 1px 1fr 1px 1fr;
+		grid-template-columns: 1fr 1px 1fr 1px 1fr;
+		overflow: hidden;
+		transition: 0.2s;
+		opacity: 1;
+		/* pointer-events: none; */
+	}
+
+	.grid.finished {
+		opacity: 0;
+	}
+
+	.grid > div {
+		width: 100%;
+		height: 100%;
+	}
+
+	.grid > div:nth-of-type(even) {
+		background: black;
+		opacity: 0.5;
+	}
+    # 拖拽框的实体             
+                
 
 const img = await createImageBitmap(background);
 	# 从 File 类型创建图片
@@ -15343,6 +15377,9 @@ allowBreakpointsEverywhere
 vscdoe 插件
 	JavaScript Debugger
 	Svelte for VS Code
+
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+	# 去除警告
 
 ```
 
