@@ -14318,6 +14318,18 @@ im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
   gradio.dispatch("change");
   	# 触发 change 事件在这      
      
+        
+# gradio_4290/js/imageeditor/shared/tools/Cropper.svelte
+  line 69
+  dispatch("crop_end", {
+  	x: l_p,
+	y: t_p,
+	width: w_p,
+	height: h_p
+  });
+  # 结束 crop ，得到最终 选框 的位置，可能是这里 ？ 
+  
+        
 # gradio_4290/js/imageeditor/shared/InteractiveImageEditor.svelte
 	line 38
     export let value: EditorData | null = {
