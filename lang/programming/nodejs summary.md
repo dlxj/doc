@@ -2652,6 +2652,33 @@ server {
 
 
 
+```
+stream {
+
+    upstream cloudsocket {
+       hash $remote_addr consistent;
+      # $binary_remote_addr;
+       server 172.16.4.201:3389 weight=5 max_fails=3 fail_timeout=30s;
+    }
+
+    upstream local {
+        hash $remote_addr consistent;
+        server 127.0.0.1:22 weight=5 max_fails=3 fail_timeout=30s;
+    }
+
+    server {
+       listen 5005; 
+       proxy_connect_timeout 10s;
+       proxy_timeout 300s;# 5分钟内没操作将自动断开。
+       proxy_pass cloudsocket;
+    }
+}
+```
+
+
+
+
+
 ### 网络压力测试
 
 [dperf 网络压测](https://github.com/baidu/dperf)
