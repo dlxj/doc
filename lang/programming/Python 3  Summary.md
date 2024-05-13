@@ -15602,7 +15602,7 @@ App.svelte
 
 - 响应式语句
 
-  ```
+  ```python
   # 依赖更新时整个语句自动重算
   $: console.log(`Count is now ${count}`)
   
@@ -15622,6 +15622,14 @@ App.svelte
   
   因此，set_crop这个函数的看法主要就是切换应用的工具为裁剪工具，这个操作在下一个动画帧和组件状态下一次更新时发生。
   
+  
+  	$: editor &&
+  		editor.set_tool &&
+  		(sources && sources.length
+  			? editor.set_tool("bg")
+  			: editor.set_tool("draw"));
+  			
+  	
   
   ```
 
