@@ -14327,8 +14327,8 @@ im.change(predict, outputs=im_preview, inputs=im, show_progress="hidden")
 	width: w_p,
 	height: h_p
   });
-  # 结束 crop ，得到最终 选框 的位置，可能是这里 ？
-  # 下断点好调试
+  # 结束 crop ，得到最终 选框 的位置
+  # 务必在这里下断点好调试
   
 # gradio_4290/js/imageeditor/shared/tools/crop.ts
   line 121	
