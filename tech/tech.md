@@ -284,7 +284,13 @@ rsa公钥直接拿github的用，不生成了
 **回滚到上一次提交**    
 
 > git reflog    
-git reset --hard  451880c        
+> git reset --hard  451880c      
+>
+> git push -f origin master 
+>
+> git push -f  origin main  # huggingface 
+>
+> ​	# 强制远程同步回退  
 
 列出所有最近两周内的提交   
 > $ git log --since=2.weeks   
