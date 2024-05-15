@@ -14321,6 +14321,18 @@ imgData = Image.open(imgPath)
 		editor_box.set({       
     # 设置 parent, child 的大小，重要！！
             
+
+# gradio_4290/js/imageeditor/shared/tools/Crop.svelte            
+	async function initial_crop(): Promise<void> {            
+    	w_p = 0.5 // new_width / $editor_box.child_width;
+		h_p = 0.5 // new_height / $editor_box.child_height;
+		l_p = x_offset / $editor_box.child_width;
+		t_p = y_offset / $editor_box.child_height;        
+        	# 破案了！这四个值决定了初始 corp 的宽高和位置
+        	# w_p 宽度是原来的 1/2, 高度是原来的 1/2, 位置是 (0,0)
+        	# 初次 F5 或刷新能看到效果
+        	# 然后激活 corp 工具 它也是框住这个小框，完美
+        
         
 # gradio_4290/js/imageeditor/shared/tools/Handle.svelte                
 	# 拖拽过程中的实时动态效果                
