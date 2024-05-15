@@ -15737,6 +15737,27 @@ export function resize_and_reposition(
 	let new_width = original_width;
 	let new_height = original_height;    
     
+ 
+	export let sources: ("upload" | "webcam" | "clipboard")[] = [
+		"upload",
+		"webcam",
+		"clipboard"
+	];
+    const sources_meta = {
+		upload: {
+			icon: ImageIcon,
+			label: "Upload",
+			order: 0,
+			id: "bg_upload",
+			cb() {
+				upload_component.open_file_upload();
+
+				$active_tool = "bg";
+			}
+		}
+    $: sources_list = sources
+		.map((src) => sources_meta[src])
+		.sort((a, b) => a.order - b.order);
     
 ```
 
