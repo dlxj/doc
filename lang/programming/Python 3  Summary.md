@@ -14293,6 +14293,25 @@ imgData = Image.open(imgPath)
 			$editor_box.child_width,
 			$editor_box.child_height
 		);
+    
+    export function resize_and_reposition(
+	if (anchor.includes("t") || anchor.includes("b") || anchor == "c") {
+		// new_width = original_height * aspect_ratio;
+	}
+	if (anchor.includes("l") || anchor.includes("r") || anchor == "c") {
+		// new_height = original_width / aspect_ratio;
+	}
+	// new_height = new_height || new_width / aspect_ratio;
+	// new_width = new_width || new_height * aspect_ratio;
+
+	if (new_width > max_width) {
+		new_width = max_width;
+		// new_height = new_width / aspect_ratio;
+	}
+	if (new_height > max_height) {
+		new_height = max_height;
+		// new_width = new_height * aspect_ratio;
+	}
         # 让它有初始 crop, 但是又不限制宽高比
         
 
