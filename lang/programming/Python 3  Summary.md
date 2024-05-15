@@ -14271,7 +14271,30 @@ imgData = Image.open(imgPath)
 		style:left="{_left}px"
 	>
     # 工具激活时拖拽框的位置和大小是由这几个参数控制的
-                    
+    
+
+# gradio_4290/js/imageeditor/shared/tools/Crop.svelte
+	$: {
+		//if (!manually_cropped && _crop_constraint && $pixi && $active_tool) {
+		if (!manually_cropped && $pixi && $active_tool) {
+			requestAnimationFrame(() => {
+				initial_crop();
+			});
+		}
+	}
+	async function initial_crop(): Promise<void> {
+		if (c || $current_history.previous) return;
+		const { new_height, new_width, x_offset, y_offset } = resize_and_reposition(
+			$editor_box.child_width,
+			$editor_box.child_height,
+			"c",
+			1,//_crop_constraint!,
+
+			$editor_box.child_width,
+			$editor_box.child_height
+		);
+        # 让它有初始 crop, 但是又不限制宽高比
+        
 
 # gradio_4290/js/imageeditor/shared/tools/Handle.svelte                
 	# 拖拽过程中的实时动态效果                
