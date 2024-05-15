@@ -14259,40 +14259,19 @@ imgData = Image.open(imgPath)
 		crop_constraint={_crop_constraint}
     # crop 工具激活的时侯，显示拖拽框
 
+
 # gradio_4290/js/imageeditor/shared/tools/Cropper.svelte        
-		<div class="grid" class:finished on:mousedown={handle_drag_start}>
-			{#each { length: 25 } as _}
-				<div></div>
-			{/each}
-		</div>        
-        <style>
-	.grid {
-		height: 100%;
-		width: 100%;
-		display: grid;
-		grid-template-rows: 1fr 1px 1fr 1px 1fr;
-		grid-template-columns: 1fr 1px 1fr 1px 1fr;
-		overflow: hidden;
-		transition: 0.2s;
-		opacity: 1;
-		/* pointer-events: none; */
-	}
-
-	.grid.finished {
-		opacity: 0;
-	}
-
-	.grid > div {
-		width: 100%;
-		height: 100%;
-	}
-
-	.grid > div:nth-of-type(even) {
-		background: black;
-		opacity: 0.5;
-	}
-    # 拖拽框的实体             
-                
+  line 277
+  <div class="wrap">
+	<div
+		class="box"
+		style:width="{_width}px"
+		style:height="{_height}px"
+		style:top="{_top}px"
+		style:left="{_left}px"
+	>
+    # 工具激活时拖拽框的位置和大小是由这几个参数控制的
+                    
 
 # gradio_4290/js/imageeditor/shared/tools/Handle.svelte                
 	# 拖拽过程中的实时动态效果                
