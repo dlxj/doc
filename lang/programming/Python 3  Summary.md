@@ -14314,7 +14314,14 @@ imgData = Image.open(imgPath)
 	}
         # 让它有初始 crop, 但是又不限制宽高比
         
-
+# gradio_4290/js/imageeditor/shared/ImageEditor.svelte
+    line 265
+	$: $position_spring && get_dimensions(canvas_wrap, pixi_target);
+        canvas_wrap.getBoundingClientRect();
+		editor_box.set({       
+    # 设置 parent, child 的大小，重要！！
+            
+        
 # gradio_4290/js/imageeditor/shared/tools/Handle.svelte                
 	# 拖拽过程中的实时动态效果                
 
