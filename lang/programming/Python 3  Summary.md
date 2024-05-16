@@ -14334,6 +14334,11 @@ imgData = Image.open(imgPath)
         	# 然后激活 corp 工具 它也是框住这个小框，完美
         		# 其实还是不太行，看看上传图片按钮，它能记得住上一次 corp 的位置，符合需求了
         	
+# gradio_4290/demo/image_editor/run.py  
+    button_change_bg = gr.Button("Change bg", variant="primary")
+    button_change_bg.click(lambda _: gr.update(value=imgData), None, im)
+        # 动态更新背景图是可以的，先前 corp 位置正常保留
+        
         
 # gradio_4290/js/imageeditor/shared/tools/Handle.svelte                
 	# 拖拽过程中的实时动态效果                
