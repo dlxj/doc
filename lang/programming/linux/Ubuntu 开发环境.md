@@ -186,7 +186,7 @@ apt-get update && \
 (sleep 1; echo "Y";) | apt-get install build-essential && \
 (sleep 1; echo "Y";) | apt-get install p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \
 apt-get install -y dialog apt-utils && \
-apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx && \
+apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx libcairo2-dev && \
 apt update && apt upgrade -y && \
 apt install software-properties-common -y && \
 add-apt-repository ppa:deadsnakes/ppa && \
