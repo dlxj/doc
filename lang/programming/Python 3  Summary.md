@@ -13136,6 +13136,7 @@ gradio cc create mysimpletextbox --template SimpleTextbox && \
 cd mysimpletextbox && \
 gradio cc install && \
 gradio cc dev
+gradio cc build # 生成 .whl 可以安装使用
 	# 成功运行，点　Frontend Server (Go here): http://localhost:7861/ 
 	# 打开浏览器
 	# 注意：只有自已编译的完整 gradio 目录下，才可以用vscode 直接运行demo下的app.py，此时它是没有前端地址的，浏览器直接打开那个地址就可以了
