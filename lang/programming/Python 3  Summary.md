@@ -12990,6 +12990,7 @@ pip install -r requirements.txt
 pnpm install
 pnpm build
 
+pip install build && 
 bash build_pypi.sh
 	# 编译整 gradio 本身
 
