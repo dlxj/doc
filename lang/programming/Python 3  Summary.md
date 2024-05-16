@@ -13104,6 +13104,7 @@ ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
 			# 真实下载地址
 			# vi install.sh 加一句  printf '%s' "${archive_url}"
 			# ./pnpm-linux-x64 setup --force # 安装 
+			# mv /root/.local/share/pnpm/pnpm-linux-x64 /root/.local/share/pnpm/pnpm
 
 conda create -n rwkv pip python=3.10 && 
 conda activate rwkv
