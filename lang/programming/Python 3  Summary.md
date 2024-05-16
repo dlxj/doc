@@ -12996,6 +12996,7 @@ bash build_pypi.sh
 bash scripts/install_gradio.sh && \
 bash scripts/build_frontend.sh && \
 bash scripts/install_test_requirements.sh
+	# 这个会装 cuda ，不要运行这个
 
 # gradio/package.json
 "scripts": {
