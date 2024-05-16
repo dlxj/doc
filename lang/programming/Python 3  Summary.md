@@ -12994,6 +12994,10 @@ pip install build &&
 bash build_pypi.sh
 	# 编译整 gradio 本身
 
+apt install python3.10-dev && 
+apt install libcairo2-dev
+	# gradio_4290 安装依赖时需要装这两个, 不然缺 python.h
+
 bash scripts/install_gradio.sh && \
 bash scripts/build_frontend.sh && \
 bash scripts/install_test_requirements.sh
