@@ -4117,7 +4117,7 @@ http://localhost:6006
 	# 成功访问 gradio
 
 
-git config --global user.name "dlxjj" && \
+git config --global user.name "dlxjj" && 
 git config --global user.email "12345@qq.com"
 
 git config --global push.default matching  
