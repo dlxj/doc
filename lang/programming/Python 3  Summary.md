@@ -13100,6 +13100,9 @@ ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
 	# pnpm root -g
 	# rm -rf /root/.local/share/pnpm
 	# 删除后重装，相当于升级
+		# https://github.com/pnpm/pnpm/releases/download/v9.1.1/pnpm-linux-x64
+			# 真实下载地址
+			# vi install.sh 加一句  printf '%s' "${archive_url}"
 
 conda create -n rwkv pip python=3.10 && 
 conda activate rwkv
