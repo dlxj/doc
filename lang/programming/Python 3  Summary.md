@@ -12986,6 +12986,10 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
 
 apt install pollen 
 
+pip install -r requirements.txt
+pnpm isntall
+pnpm build
+
 bash scripts/install_gradio.sh && \
 bash scripts/build_frontend.sh && \
 bash scripts/install_test_requirements.sh
