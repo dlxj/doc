@@ -12987,8 +12987,11 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
 apt install pollen 
 
 pip install -r requirements.txt
-pnpm isntall
+pnpm install
 pnpm build
+
+bash build_pypi.sh
+	# 编译整 gradio 本身
 
 bash scripts/install_gradio.sh && \
 bash scripts/build_frontend.sh && \
