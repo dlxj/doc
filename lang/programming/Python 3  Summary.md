@@ -13306,6 +13306,62 @@ https://huggingface.co/docs/hub/spaces-sdks-docker
 
 
 
+```
+# Dockerfile
+FROM ubuntu:22.04
+
+RUN set -x; apt-get update; apt install python3.10-dev curl -y
+
+WORKDIR /code
+
+COPY ./requirements.txt /code/requirements.txt
+
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && python3.10 get-pip.py
+
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+COPY . .
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
+
+
+# main.py
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World!"}
+
+
+# requirements.txt
+fastapi==0.74.*
+requests==2.27.*
+sentencepiece==0.1.*
+torch==1.11.*
+transformers==4.*
+uvicorn[standard]==0.17.*
+
+
+# README.md
+---
+title: Rwkv5 Jp Explain Docker
+emoji: 🦀
+colorFrom: red
+colorTo: red
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
+
+```
+
+
+
+
+
 
 
 
