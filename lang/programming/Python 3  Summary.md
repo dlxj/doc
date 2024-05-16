@@ -13300,6 +13300,14 @@ kill -9 $(lsof -i:7863 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
 
 
 
+## docker部署
+
+https://huggingface.co/docs/hub/spaces-sdks-docker
+
+
+
+
+
 
 
 ## change
