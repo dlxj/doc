@@ -2349,6 +2349,12 @@ http {
 
     include /etc/nginx/conf.d/*.conf;
 }
+
+
+location ~ /(\.user\.ini|\.ht|\.git|\.svn|\.project|LICENSE|README\.md) {
+	deny all;
+}
+
 ```
 
 
