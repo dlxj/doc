@@ -13310,7 +13310,7 @@ https://huggingface.co/docs/hub/spaces-sdks-docker
 # Dockerfile
 FROM ubuntu:22.04
 
-RUN set -x; apt-get update; apt install python3.10-dev curl -y
+RUN set -x; apt-get update; apt install python3.10-dev libcairo2-dev curl ffmpeg -y
 
 WORKDIR /code
 
@@ -13322,26 +13322,69 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY . .
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
+EXPOSE 7860
+ENV GRADIO_SERVER_NAME="0.0.0.0"
+
+CMD ["python3.10", "main.py"]
+# CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]
 
 
 # main.py
-from fastapi import FastAPI
+import gradio as gr
+from gradio import processing_utils
 
-app = FastAPI()
+shortcut_js = """
+<script>
+function shortcuts(e) {
+    var event = document.all ? window.event : e;
+    switch (e.target.tagName.toLowerCase()) {
+        case "input":
+        case "textarea":
+        case "select":
+        case "button":
+        break;
+        default:
+        if (e.code == "KeyS" && e.shiftKey) {
+            document.getElementById("btn_search_jisho").click();
+        }
+}
+}
+document.addEventListener('keyup', shortcuts, false);
+</script>
+"""
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World!"}
+title = "rwkv5-jp-explain"
+with gr.Blocks(title=title, head=shortcut_js) as demo:
+    gr.HTML(f"<div style=\"text-align: center;\">\n<h1>RWKV-5 training 50 epoch for anime and game text - {title}</h1>\n</div>")
+    
+demo.queue(max_size=10)
+demo.launch(server_name='0.0.0.0', share=False, inbrowser=True)
+# from fastapi import FastAPI
+# app = FastAPI()
+# @app.get("/")
+# def read_root():
+#     return {"Hello": "World!"}
 
 
 # requirements.txt
-fastapi==0.74.*
-requests==2.27.*
-sentencepiece==0.1.*
-torch==1.11.*
-transformers==4.*
-uvicorn[standard]==0.17.*
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==1.13.1+cpu
+numpy==1.26.4
+https://huggingface.co/datasets/dlxjj/release/resolve/main/gradio-4.29.0-py3-none-any.whl
+https://huggingface.co/datasets/dlxjj/release/resolve/main/gradio_myvideo-0.0.2-py3-none-any.whl
+opencv-python==4.9.0.80
+openai==1.12.0
+google-ai-generativelanguage==0.4.0
+google-api-core==2.18.0
+google-auth==2.29.0
+google-generativeai==0.4.1
+googleapis-common-protos==1.63.0
+gTTS==2.5.1
+fastapi
+requests
+sentencepiece
+transformers
+uvicorn[standard]
 
 
 # README.md
