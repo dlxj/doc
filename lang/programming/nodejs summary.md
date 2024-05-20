@@ -3010,6 +3010,10 @@ dnf install spdlog openssl uriparser libconfig-devel.x86_64 poco*
 
 git cmake ninja pkgconf g++ spdlog-dev openssl-dev libconfig-dev uriparser-dev poco-dev argp-standalone linux-headers
 
+
+candy --mode="client" --websocket="ws://xxx:1587" --password="xxx" --tun="10.0.0.2/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
+	# .2 固定做代理地址
+
 ```
 
 
