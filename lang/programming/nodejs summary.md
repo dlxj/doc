@@ -4240,6 +4240,8 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create AnnasArchive --type dataset 
 	# huggingface-cli repo create gradio_env --type dataset
     # huggingface-cli repo create gradio_4290 --type dataset
+    # huggingface-cli repo create paddleocr --type dataset
+	
 	
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
@@ -4651,6 +4653,16 @@ else:
     demo.launch(server_name="0.0.0.0")
 
 ```
+
+
+
+### 第三方库
+
+```
+https://iphysresearch.github.io/blog/post/programing/git/git_submodule/
+```
+
+
 
 
 
