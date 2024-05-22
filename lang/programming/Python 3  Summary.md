@@ -106,6 +106,19 @@ powershell 执行：
 
 
 
+### 无法卸载包
+
+```python
+>>> import blinker
+>>> print(blinker.__file__)
+--> /usr/lib/python3/dist-packages/blinker/__init__.py
+
+rm -rf /usr/lib/python3/dist-packages/blinker*
+
+```
+
+
+
 
 
 ## 升级pip
