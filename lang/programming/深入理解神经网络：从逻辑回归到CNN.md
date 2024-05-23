@@ -11261,6 +11261,13 @@ https://github.com/PaddlePaddle/PaddleOCR/issues/11597
   
   python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_5.jpg --rec_model_dir=output/rec_model/Student --rec_char_dict_path=train_data/keys.txt
   
+  
+  huggingface/rwkv5-jp-explain-docker/PaddleOCR_ali1k_det_rec_300epoch/ppocr/postprocess/db_postprocess.py
+  	np.int = np.int32
+  	np.float = np.float64
+  	np.bool = np.bool_
+  		# 加入。numpy 版本升级没有 np.int 了 
+  
   PaddleOCR_ali1k_det_rec_300epoch.7z
   
   ```
