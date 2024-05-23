@@ -11242,6 +11242,17 @@ character_type: CN
 
 
 
+https://github.com/PaddlePaddle/PaddleOCR/issues/11597
+
+- ```
+  Illegal instruction 错误
+  
+  It can be fixed by PR , We skip SelfAttentionFusePass on non-avx512 platform
+  
+  ```
+
+
+
 ```
 pip3 install   --force-reinstall  paddlepaddle -i https://mirror.baidu.com/pypi/simple
 pip3 install PPOCRLabel -i https://mirror.baidu.com/pypi/simple
