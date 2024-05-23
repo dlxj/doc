@@ -11266,7 +11266,53 @@ https://github.com/PaddlePaddle/PaddleOCR/issues/11597
   	np.int = np.int32
   	np.float = np.float64
   	np.bool = np.bool_
-  		# 加入。numpy 版本升级没有 np.int 了 
+  		# 加入。numpy 版本升级没有 np.int 了
+          
+   
+   font_path = args.vis_font_path
+   ./doc/fonts/simfang.ttf
+  
+  
+  # vscode F5 运行
+  rwkv5-jp-explain-docker/PaddleOCR_ali1k_det_rec_300epoch/tools/infer/predict_system.py
+   if __name__ == "__main__":
+      
+      """
+      python3 tools/infer/predict_system.py \
+      --image_dir="train_data/det/test/25.jpg" \
+      --det_algorithm="DB" \
+      --det_model_dir="output/det_model" \
+      --det_limit_side_len=960 \
+      --det_db_unclip_ratio=3.5 \
+      --rec_model_dir="output/rec_model/Student" \
+      --rec_char_dict_path="train_data/keys.txt" \
+      --use_gpu False \
+      --enable_mkldnn=True
+      
+      """
+      import sys
+      sys.argv.append( '--image_dir' )
+      # sys.argv.append( 'train_data/det/test/12.jpg' )
+      sys.argv.append( 'train_data/det/train/3.jpg' )
+      sys.argv.append( '--det_algorithm' )
+      sys.argv.append( 'DB' )
+      sys.argv.append( '--det_model_dir' )
+      sys.argv.append( 'output/det_model' )
+      sys.argv.append( '--det_limit_side_len' )
+      sys.argv.append( '960' )
+      sys.argv.append( '--det_db_unclip_ratio' )
+      sys.argv.append( '3.5' )
+      sys.argv.append( '--rec_model_dir' )
+      sys.argv.append( 'output/rec_model/Student' )
+      sys.argv.append( '--rec_char_dict_path' )
+      sys.argv.append( 'train_data/keys.txt' )
+      sys.argv.append( '--use_gpu' )
+      sys.argv.append( 'False' )
+      sys.argv.append( '--enable_mkldnn' )
+      sys.argv.append( 'True' )
+      sys.argv.append( '--vis_font_path' )
+      sys.argv.append( 'fonts/simfang.ttf' )
+   
   
   PaddleOCR_ali1k_det_rec_300epoch.7z
   
