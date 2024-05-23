@@ -3552,6 +3552,18 @@ e.params['a'] = 0.0
 mydict = {1: 'Geeks', 2: 'for', 3: 'geeks'}
 keysList = list(mydict.keys())
 print(keysList)
+
+
+Accessing dict keys like an attribute
+
+class AttributeDict(dict):
+    def __getattr__(self, attr):
+        return self[attr]
+    def __setattr__(self, attr, value):
+        self[attr] = value
+
+AttributeDict({"det_algorithm": "DB"})
+
 ```
 
 
