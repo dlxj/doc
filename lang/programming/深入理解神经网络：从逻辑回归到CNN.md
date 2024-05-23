@@ -11242,6 +11242,10 @@ character_type: CN
 
 
 
+#### PaddleOCR_ali1k_det_rec_300epoch
+
+
+
 https://github.com/PaddlePaddle/PaddleOCR/issues/11597
 
 - ```
