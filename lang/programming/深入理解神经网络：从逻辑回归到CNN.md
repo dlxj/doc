@@ -11256,6 +11256,8 @@ https://github.com/PaddlePaddle/PaddleOCR/issues/11597
   
   python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_5.jpg --rec_model_dir=output/rec_model/Student --rec_char_dict_path=train_data/keys.txt
   
+  PaddleOCR_ali1k_det_rec_300epoch
+  
   ```
 
 
