@@ -581,6 +581,19 @@ pm2 resurrect // 重启备份的所有项目
 ### 明明pip 装了某个包却找不到
 
 ```python
+
+# PaddleOCR_ali1k_det_rec_300epoch/tools/infer/predict_system.py
+
+import os, sys
+
+__dir__ = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(__dir__)
+sys.path.insert(0, os.path.abspath(os.path.join(__dir__, 'PaddleOCR_ali1k_det_rec_300epoch')))
+
+os.environ["FLAGS_allocator_strategy"] = 'auto_growth'
+
+
+
 export PYTHONPATH=/root/flask_server/server_venv/lib/python3.8/site-packages
 export PYTHONPATH=/root/anaconda3/lib/python3.8/site-packages
 
