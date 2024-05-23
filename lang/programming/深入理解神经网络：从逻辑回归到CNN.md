@@ -11253,6 +11253,7 @@ https://github.com/PaddlePaddle/PaddleOCR/issues/11597
   
   It can be fixed by PR , We skip SelfAttentionFusePass on non-avx512 platform
   
+  pip uninstall paddlepaddle
   
   pip install paddlepaddle==2.4.2
   
