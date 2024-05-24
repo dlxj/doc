@@ -10116,6 +10116,18 @@ img_bytes = img_encode.tobytes()
 
 
 
+### 4. cv2 和 numpy 互转
+
+```
+  img = cv2.cvtColor(im, cv2.COLOR_RGB2BGR) # np.asarray(img)
+    # numpy 图像默认是 RGB, cv2 是 BGR
+    # 它们其实都是 numpy 数组
+```
+
+
+
+
+
 ## simple.cs
 
 ```
