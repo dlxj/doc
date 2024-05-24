@@ -28435,6 +28435,8 @@ cd chatglm-tiny
 
 [RWKV-6 模型设计带注释](https://zhuanlan.zhihu.com/p/694593540)
 
+[MLC-LLM 支持RWKV-5](https://zhuanlan.zhihu.com/p/667573528)
+
  [RWKV6模型的Linear Attention计算](https://zhuanlan.zhihu.com/p/696054687)
 
 - [PyTorch Profiler TensorBoard 调优](https://mp.weixin.qq.com/s/dG-wlwi8oLg8YMQe_A87qQ)
