@@ -28438,6 +28438,7 @@ cd chatglm-tiny
  [RWKV6模型的Linear Attention计算](https://zhuanlan.zhihu.com/p/696054687)
 
 - [PyTorch Profiler TensorBoard 调优](https://mp.weixin.qq.com/s/dG-wlwi8oLg8YMQe_A87qQ)
+- [并行训练 Context Parallelism](https://zhuanlan.zhihu.com/p/698447429)
 
 [梳理RWKV 4，5(Eagle)，6(Finch)架构的区别](https://zhuanlan.zhihu.com/p/694348918)
 
