@@ -6723,6 +6723,12 @@ node-tick-processor xxxx-v8.log
 
 
 
+- GPT-4o in the API supports understanding video (without audio) via vision capabilities. Specifically, videos need to be converted to frames (2-4 frames per second, either sampled uniformly or via a keyframe selection algorithm) to input into the model. Check out the [Introduction to GPT-4o cookbook 2.8k](https://cookbook.openai.com/examples/gpt4o/introduction_to_gpt4o) to learn how to use vision to input video content with GPT-4o today.
+- GPT-4o in the API does not yet support audio. We hope to bring this modality to a set of trusted testers in the coming weeks.
+- GPT-4o in the API does not yet support generating images. For that, we still recommend the DALL-E 3 API.
+
+
+
 # Syntax
 
 - https://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html
