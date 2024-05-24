@@ -4252,6 +4252,12 @@ huggingface-cli repo create pandora --type dataset
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
 		# setproxy 这样
 
+echplay
+	# huggingface-cli repo create rwkv5-jp-explain-docker --type space
+		# dlxjj 的空间超了，而且 build 出错
+		# 不行，出错，space 必须在线建
+		# git clone https://huggingface.co/spaces/echoplay/rwkv5-jp-explain-docker
+
 git config --global core.safecrlf true
 	# 拒绝提交包含混合换行符的文件
 
