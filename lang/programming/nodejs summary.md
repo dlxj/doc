@@ -28443,6 +28443,8 @@ cd chatglm-tiny
 
 https://github.com/00ffcc/chunkRWKV6
 
+[Attention优化原理图解: 从Online-Softmax到FlashAttention V1/V2/V3](https://zhuanlan.zhihu.com/p/668888063)
+
 
 
 ### RWKV 4 
