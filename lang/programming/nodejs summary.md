@@ -28439,6 +28439,8 @@ cd chatglm-tiny
 
 - [PyTorch Profiler TensorBoard 调优](https://mp.weixin.qq.com/s/dG-wlwi8oLg8YMQe_A87qQ)
 
+[梳理RWKV 4，5(Eagle)，6(Finch)架构的区别](https://zhuanlan.zhihu.com/p/694348918)
+
 https://github.com/00ffcc/chunkRWKV6
 
 
