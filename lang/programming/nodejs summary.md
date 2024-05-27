@@ -14335,6 +14335,15 @@ const img = cv.matFromImageData(jimpSrc.bitmap);
 
 let ks =  Object.keys(cv).filter((key) => !key.includes("dynCall"));
 
+let rect = new cv.Rect(0, 0, 300, 300); // x, y为起始坐标，width和height为矩形的宽度和高度
+let dst = img.roi(rect); // 使用roi方法进行裁剪
+// cv.imshow("canvas", img); // 显示裁剪后的图片
+	// 它是画到 canvas ，不是浏览器不行
+
+let imgdata = img.data
+
+let width = img.cols
+let height = img.rows
 
 ```
 
