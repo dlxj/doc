@@ -14571,6 +14571,37 @@ return out_file.name
 
 
 
+## jimp
+
+```python
+import cv from "@techstark/opencv-js";
+
+import Jimp from "jimp";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const jimpSrc = await Jimp.read(path.resolve(__dirname, "0001.jpg"));
+
+jimpSrc.crop(902, 594, 1013 - 902 + 1, 683 - 594 +1 ).getBuffer(Jimp.MIME_JPEG, (err, buffer) => {
+    if(err) {
+        console.error(err)
+        return;
+    }
+
+    fs.createWriteStream(path.resolve(__dirname, "ooooooo.jpg")).write(buffer)
+
+    const base64Image = `data:${Jimp.MIME_JPEG};base64,` + buffer.toString('base64')
+    console.log(base64Image)
+})
+```
+
+
+
 
 
 ## GIF
