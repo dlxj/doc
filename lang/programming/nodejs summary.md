@@ -28560,6 +28560,8 @@ cd chatglm-tiny
 
 [RWKV-6 模型设计带注释](https://zhuanlan.zhihu.com/p/694593540)
 
+- [gist numpy实现](https://gist.github.com/mattiasarro/c925e789e0358436f3e6c12731f5a196)
+
 [MLC-LLM 支持RWKV-5](https://zhuanlan.zhihu.com/p/667573528)
 
  [RWKV6模型的Linear Attention计算](https://zhuanlan.zhihu.com/p/696054687)
