@@ -1070,6 +1070,101 @@ win11 远程桌面，连 10.0.0.1:33899 成功
 
 
 
+# NTFS
+
+```
+# 硬盘扩容
+ls /dev/disk/by-id/
+	--> ata-QEMU_DVD-ROM_QM00004  scsi-0BUYVM_SLAB_VOLUME-7514
+		# scsi-0BUYVM_SLAB_VOLUME-7514 是新增的512G
+
+fdisk -l
+	# 看到新硬盘是sda
+
+# 分区
+# https://www.daniao.org/9632.html
+fdisk /dev/sda
+
+
+
+# 格式化
+mkfs.ext4 -F /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
+
+	============   后来的方案，让linux 适应windows 的分区 =======================
+	# yum install ntfsprogs
+	# fdisk /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514
+	# 这里用fdisk 分好区
+	# mkfs.ntfs --fast -F /dev/sda1
+		# 因为windows 不知为什么不识别ext4 分区了，只能让linux 去识别ntfs 分区
+
+	# mount -t ntfs-3g /dev/sda1 /mnt
+	# df -T
+		# /dev/sda1           fuseblk  536867836  104168 536763668   1% /mnt
+	
+	# 开机自动挂
+	# echo '/dev/sda1 /mnt/ ntfs-3g defaults 0 0' | sudo tee -a /etc/fstab
+	# 注意：linux 分出来的ntfs 分区并不能被windows 识别，所以还是用windows 格式化吧，然后linux 装ntfsprogs，和ntfs-3g 挂载
+	
+ ------------->  mount 出来的ntfs分区全部是 root 权限，psql 读不了   <---------------------
+	Thanks, I solved mounting the disk on fstab with this options: UUID=XXXXXXX   /mnt/shared ntfs-3g defaults,noatime,uid=1000,gid=users,dmask=022,fmask=133  0   0 
+	
+	
+	id -u postgres  # 用户ID
+	26
+	id -g postgres  # 用户组ID
+	26
+	
+	mount -o uid=26,gid=26,dmask=077,fmask=077 -t ntfs-3g /dev/sda1 /mnt
+		# 成功挂载，而且权限是对的
+			# 设成077 以后就没错了，它要求只有自已有完全权限，其他人完全没有任何权限
+		# 更新：仅限不对导至psql 启动失败
+			# Permissions should be u=rwx (0700) or u=rwx,g=rx (0750).  他希望的权限是这个
+		https://superuser.com/questions/1271534/file-permissions-correct-ntfs-mount-option
+			fmask=133 sets files permissions to 644
+		
+		https://www.nixonli.com/22806.html
+			实际权限 = 777 - mask
+				644 = 777 - 133
+				700 = 777 - 077
+				755 = 777 - 022
+
+	
+	echo '/dev/sda1 /mnt ntfs-3g defaults,noatime,uid=26,gid=26,dmask=022,fmask=133 0 0' | sudo tee -a /etc/fstab
+	# 成功开机自动挂载
+	
+	
+	Windows and Linux have a very different user and permissions model that is incompatible. For either chmod or chown to work, the file system needs to support users and permissions in a Linux-like way. NTFS is a Windows file system and so these commands can't possibly work.
+
+One thing you can do is to mount the NTFS partition specifying a different user and mode for all of the files / directories:
+
+mount -o uid=26,gid=26,dmask=022,fmask=133 /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /mnt 
+This will mount with specified user and group giving directories mode 755 and files mode 644.
+
+
+
+    ======================================================================
+
+
+
+# 挂载
+mkdir /data
+mount -o discard,defaults /dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data
+# 开机自动挂
+echo '/dev/disk/by-id/scsi-0BUYVM_SLAB_VOLUME-7514 /data ext4 defaults,nofail,discard 0 0' | sudo tee -a /etc/fstab
+
+
+
+# chrome for windows 2012
+https://www.google.com/intl/en/chrome/?standalone=1
+# 磁盘管理
+https://hostloc.com/thread-830521-1-1.html
+	diskmgmt.msc
+```
+
+
+
+
+
 
 
 # 安装双系统
