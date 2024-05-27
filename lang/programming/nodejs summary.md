@@ -4191,6 +4191,16 @@ huggingface-cli login
 		/root/.cache/huggingface/token
 
 
+# 回滚上一次提交
+git reflog    
+git reset --hard  451880c      
+
+git push -f origin master 
+
+git push -f  origin main  # huggingface 
+	# 强制远程同步回退  
+
+
 git fetch --all && \
 git lfs fetch --all && \
 git reset --hard origin/main && \
