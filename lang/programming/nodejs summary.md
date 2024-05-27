@@ -14331,6 +14331,17 @@ const __dirname = dirname(__filename);
 
 const jimpSrc = await Jimp.read(path.resolve(__dirname, "0001.jpg"));
 
+jimpSrc.crop(0, 0, 300, 300).getBuffer(Jimp.MIME_JPEG, (err, buffer) => {
+    if(err) {
+        console.error(err)
+        return;
+    }
+    const base64Image = `data:${Jimp.MIME_JPEG};base64,` + buffer.toString('base64')
+    console.log(base64Image)
+})
+	// 直接转成 base64 jpeg
+
+
 const img = cv.matFromImageData(jimpSrc.bitmap);
 
 let ks =  Object.keys(cv).filter((key) => !key.includes("dynCall"));
