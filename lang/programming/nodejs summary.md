@@ -9934,6 +9934,29 @@ require('path').join(__dirname, 'temp.json')
 
 
 
+```
+# .mjs
+import cv from "@techstark/opencv-js";
+
+import Jimp from "jimp";
+import path from "path";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const jimpSrc = await Jimp.read(path.resolve(__dirname, "0001.jpg"));
+
+const img = cv.matFromImageData(jimpSrc.bitmap);
+
+let ks =  Object.keys(cv).filter((key) => !key.includes("dynCall"));
+```
+
+
+
+
+
 ## create dir
 
 ```
@@ -14294,11 +14317,23 @@ https://github.com/UrielCh/opencv4nodejs  新 fork
 
 ```
 https://github.com/TechStark/opencv-js
+	# npm i jimp @techstark/opencv-js
 
 import cv from "@techstark/opencv-js";
 
+import Jimp from "jimp";
+import path from "path";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const jimpSrc = await Jimp.read(path.resolve(__dirname, "0001.jpg"));
+
+const img = cv.matFromImageData(jimpSrc.bitmap);
+
 let ks =  Object.keys(cv).filter((key) => !key.includes("dynCall"));
-	// 它有 imread
 
 
 ```
