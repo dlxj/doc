@@ -86,6 +86,29 @@ Newtonsoft.Json与System.Text.Json相比，反序列化性能哪个好？耗时�
 
 
 
+```
+            DateTime lastCreate = DateTime.Parse("1971-01-01");
+
+            lock (bookIndexCreateHisotry)
+            {
+                if (!bookIndexCreateHisotry.TryGetValue(appID, out lastCreate))
+                {
+                    bookIndexCreateHisotry.Add(appID, DateTime.Now);
+                }
+            }
+
+            var ts = DateTime.Now - lastCreate;
+
+            // 有效时间8小时
+            if (ts.TotalHours >= 8760)
+```
+
+
+
+
+
+
+
 ## Grammar
 
 
