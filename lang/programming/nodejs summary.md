@@ -14288,6 +14288,29 @@ HLS  mpv 推流
 
 
 
+https://github.com/UrielCh/opencv4nodejs  新 fork
+
+
+
+```
+https://github.com/TechStark/opencv-js
+
+import cv from "@techstark/opencv-js";
+
+let ks =  Object.keys(cv).filter((key) => !key.includes("dynCall"));
+	// 它有 imread
+
+
+```
+
+
+
+
+
+
+
+
+
 ```
 const mat = cv.imdecode(Buffer.from(data, 'base64))
 mat.SaveImage(savePath)
