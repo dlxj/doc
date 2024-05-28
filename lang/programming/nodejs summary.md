@@ -4257,10 +4257,16 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create gradio_env --type dataset
     # huggingface-cli repo create gradio_4290 --type dataset
     # huggingface-cli repo create paddleocr --type dataset
+    # huggingface-cli repo create powershell --type dataset
 	# huggingface-cli repo create PaddleOCR_ali1k_det_rec_300epoch --type dataset
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
 		# setproxy 这样
+
+
+
+candy --mode="client" --websocket="ws://xxx:1587" --password="xxx" --tun="10.0.0.3/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
+
 
 echplay
 	# huggingface-cli repo create rwkv5-jp-explain-docker --type space

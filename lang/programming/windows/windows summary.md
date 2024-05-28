@@ -1145,6 +1145,18 @@ powercfg -h on
 
 
 
+# 远程唤醒
+
+https://www.jb51.net/os/win11/911788.html
+
+```
+
+```
+
+
+
+
+
 # 磁盘管理工具
 
 ```
