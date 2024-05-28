@@ -630,6 +630,12 @@ C:\Users\i\.wslconfig
 memory=4G
 swap=2G
 processors=2
+
+
+
+
+
+# 加入下面代理会有奇奇怪怪的问题
 localhostForwarding=true
 
 [experimental]
@@ -1051,6 +1057,18 @@ slmgr /ato
 C:\Users\(UserName)\AppData\Roaming\あざらしそふと\アマカノ2\savegen.dat
 
 ```
+
+
+
+# 关闭防火墙
+
+```
+Set-NetFirewallProfile -Profile Domain -Enabled False
+Set-NetFirewallProfile -Profile Private -Enabled False
+Set-NetFirewallProfile -Profile Public -Enabled False
+```
+
+
 
 
 

@@ -188,6 +188,7 @@ apt-get update && \
 apt-get install -y dialog apt-utils && \
 apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx libcairo2-dev && \
 apt update && apt upgrade -y && \
+apt install python3.10-dev -y && \ 
 apt install software-properties-common -y && \
 add-apt-repository ppa:deadsnakes/ppa && \
 apt install python3.10 && \
