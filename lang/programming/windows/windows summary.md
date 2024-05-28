@@ -1149,7 +1149,10 @@ powercfg -h on
 
 https://www.jb51.net/os/win11/911788.html
 
+https://zhuanlan.zhihu.com/p/52607752
+
 ```
+小米智能插座+BIOS设置Restore after AC Power Loss。然后在米家APP里打开就开机了，还能看用了多少度电
 
 ```
 
