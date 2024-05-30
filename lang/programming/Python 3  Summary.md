@@ -14656,6 +14656,10 @@ uvicorn app:app --reload
 
 
 
+## databases
+
+https://github.com/encode/databases 异步查 db
+
 
 
 # Gradio
