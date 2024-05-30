@@ -8,6 +8,10 @@
 
 
 
+https://imshuai.com/python-pip-install-package-offline-tensorflow  pip离线安装package
+
+
+
 ## OSError: Missing dependencies for SOCKS support.
 
 ```
