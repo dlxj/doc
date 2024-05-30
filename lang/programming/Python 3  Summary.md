@@ -12,6 +12,19 @@ https://imshuai.com/python-pip-install-package-offline-tensorflow  pip离线安�
 
 
 
+```
+>>> import blinker
+>>> blinker.__file__
+'/usr/lib/python3/dist-packages/blinker/__init__.py'
+
+rm -rf /usr/lib/python3/dist-packages/blinker*
+
+```
+
+
+
+
+
 ## OSError: Missing dependencies for SOCKS support.
 
 ```

@@ -11242,6 +11242,21 @@ character_type: CN
 
 
 
+#### 最新版
+
+```
+git clone https://github.com/PaddlePaddle/PaddleOCR 
+	# 2024.5.30 PaddleOCRv2.7.5
+	# 2024.5.30	PaddlePaddle 2.6.1
+	
+	
+
+```
+
+
+
+
+
 #### PaddleOCR_ali1k_det_rec_300epoch
 
 
