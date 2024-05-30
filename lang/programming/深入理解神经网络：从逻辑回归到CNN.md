@@ -11249,7 +11249,8 @@ git clone https://github.com/PaddlePaddle/PaddleOCR
 	# 2024.5.30 PaddleOCRv2.7.5
 	# 2024.5.30	PaddlePaddle 2.6.1
 	
-	
+python3.10 -m pip install paddlepaddle==2.6.1 -i https://mirror.baidu.com/pypi/simple
+
 
 ```
 
