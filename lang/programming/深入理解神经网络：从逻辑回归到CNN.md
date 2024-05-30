@@ -11245,6 +11245,13 @@ character_type: CN
 #### 最新版
 
 ```
+>>> import blinker
+>>> blinker.__file__
+'/usr/lib/python3/dist-packages/blinker/__init__.py'
+
+rm -rf /usr/lib/python3/dist-packages/blinker*
+
+
 git clone https://github.com/PaddlePaddle/PaddleOCR 
 	# 2024.5.30 PaddleOCRv2.7.5
 	# 2024.5.30	PaddlePaddle 2.6.1
