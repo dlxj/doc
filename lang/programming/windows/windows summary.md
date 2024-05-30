@@ -759,6 +759,28 @@ choco install docker-desktop --upgrade --force
 
 # 定时任务
 
+
+
+```
+
+# E:\huggingface\powershell\candy.ps1
+candy --mode="client" --websocket="ws://xxx:1587" --password="xxx" --tun="10.0.0.2/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
+
+
+schtasks /Create /SC MINUTE /MO 1 /TN "MyTask"  /RU SYSTEM  /TR "powershell.exe -ExecutionPolicy Bypass -File E:\huggingface\powershell\candy.ps1"
+	# 每隔 1 分钟执行一次脚本
+
+schtasks /Delete /TN "MyTask" /F
+	# 删除任务
+
+```
+
+
+
+
+
+
+
 ```
 see nodejs summary.md -> 抱抱脸
 
