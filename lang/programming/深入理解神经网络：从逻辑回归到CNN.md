@@ -11259,6 +11259,17 @@ git clone https://github.com/PaddlePaddle/PaddleOCR
 python3.10 -m pip install paddlepaddle==2.6.1 -i https://mirror.baidu.com/pypi/simple
 
 
+
+Illegal instruction
+
+	lscpu|grep -i flags
+
+Thank you for reporting this issue. It can be fixed by PR(https://github.com/PaddlePaddle/Paddle/pull/64132) , We skip SelfAttentionFusePass on non-avx512 platform
+
+	# gpu 可能就没错
+
+
+
 ```
 
 
