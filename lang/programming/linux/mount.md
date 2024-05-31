@@ -1,6 +1,31 @@
 
 
 ```
+
+vi /yxxx/script/auto_mount2.sh
+umount /yxxx/204_shared
+mount -t nfs 172.16.7.204:/home/shared /yxxx/204_shared
+if [ $? -ne 0 ]; then
+    echo "mount failed..."
+    sleep 30s; echo "try agin..."
+    umount /yxxx/204_shared
+    mount -t nfs 172.16.7.204:/home/shared /yxxx/204_shared
+else
+    echo "mount succeed!!!"
+fi
+
+@reboot  /yxxx/script/auto_mount2.sh
+	# crontab
+
+```
+
+
+
+
+
+
+
+```
 umount -f -l  /myfolder  # 失效的文件句柄
 
 -f – Force unmount (in case of an unreachable NFS system). (Requires kernel 2.1.116 or later.)
