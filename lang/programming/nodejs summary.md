@@ -4114,6 +4114,11 @@ wget https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-linux-a
 [https]
         proxy = socks5h://127.0.0.1:1080	
 	
+[http]
+        proxy = http://172.20.0.113:12798
+[https]
+        proxy = https://172.20.0.113:12798
+			# autodl
 
 vi ~/.bashrc
 alias setproxy="export ALL_PROXY=socks5h://172.16.6.185:1080"
@@ -4258,6 +4263,7 @@ huggingface-cli repo create pandora --type dataset
     # huggingface-cli repo create gradio_4290 --type dataset
     # huggingface-cli repo create paddleocr --type dataset
     # huggingface-cli repo create powershell --type dataset
+ 	# huggingface-cli repo create PaddleOCR_275 --type dataset
 	# huggingface-cli repo create PaddleOCR_ali1k_det_rec_300epoch --type dataset
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用

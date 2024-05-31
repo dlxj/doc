@@ -667,6 +667,10 @@ choco
 choco install docker-desktop --upgrade --force
 	# 强制更新 docker
 
+
+scoop update *
+
+
 ```
 
 
