@@ -11258,6 +11258,8 @@ git clone https://github.com/PaddlePaddle/PaddleOCR
 	
 python3.10 -m pip install paddlepaddle==2.6.1 -i https://mirror.baidu.com/pypi/simple
 
+pip install paddlepaddle-gpu==2.6.1
+	# gpu 可能不会出错
 
 
 Illegal instruction
