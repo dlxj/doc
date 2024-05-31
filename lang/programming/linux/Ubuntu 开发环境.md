@@ -1164,6 +1164,28 @@ https://hostloc.com/thread-830521-1-1.html
 
 
 
+# auto mount
+
+```
+vi /yxxx/script/auto_mount2.sh
+umount /yxxx/204_shared
+mount -t nfs 172.16.7.204:/home/shared /yxxx/204_shared
+if [ $? -ne 0 ]; then
+    echo "mount failed..."
+    sleep 30s; echo "try agin..."
+    umount /yxxx/204_shared
+    mount -t nfs 172.16.7.204:/home/shared /yxxx/204_shared
+else
+    echo "mount succeed!!!"
+fi
+
+@reboot  /yxxx/script/auto_mount2.sh
+	# crontab
+
+```
+
+
+
 
 
 
