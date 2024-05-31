@@ -8752,6 +8752,18 @@ The index of the first occurrence of searchString found, or -1 if not found
 
 
 ```javascript
+function removeSpace(str) {
+    return str.replace(/\s+/g, '').replace(/(&ensp;|&emsp;|&zwnj;|&zwj;|&nbsp;|&thinsp;)/g, '')
+}
+
+function removeSpecialCharacter(str) {
+    return str.replace(/[`\-℃:_.~!@#$%^&*() \+ =<>?"{}|, \/ ;' \\ [ \] ·~！@#￥%……&*（）—— \+ ={}|《》？：“”【】、；‘’，。、]/g, '')
+}
+```
+
+
+
+```javascript
 // replaceAll node v15 才有，这里自定义之
 
         String.prototype.replaceAll = function(search, replacement) {
