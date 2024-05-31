@@ -2070,6 +2070,10 @@ http://172.16.6.253:8118
 
 
 ```
+
+@reboot  pm2 resurrect && pm2 update
+	# crontab
+
 systemctl start postgresql.service  # ubuntu 18.04 
 systemctl status postgresql-13      # centos7
 systemctl enable postgresql-13 # 自启动
@@ -8400,6 +8404,7 @@ a.replace(/(?<!\n)([a-z])/g, 'O')
 a = `1\n2\n3\n`
   a.replace(/(?<=\n)\d(?=\n)/g, 'OO')  # \d 的前面和后面必须是回车，但是不吃掉回车
   --> '1\nOO\nOO\n'
+
   ```
   
    x(?!y)  否定式向后查找 x 后面不能是y
