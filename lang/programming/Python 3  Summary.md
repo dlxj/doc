@@ -368,6 +368,10 @@ conda activate xx
 ```
 
 ```bash
+
+conda create -n  PaddleOCR_275 pip python=3.10
+
+
 conda create -n tensorflow_cpu pip python=3.6
 conda activate tensorflow_cpu
 conda install pytorch-cpu==1.0.0 torchvision-cpu==0.2.1 cpuonly -c pytorch
