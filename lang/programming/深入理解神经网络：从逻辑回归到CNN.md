@@ -11326,6 +11326,9 @@ python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_0.jpg -
 ​```
 
 
+miniconda pkgs
+不论base环境还是虚拟环境都是放在pkgs文件夹下。如果虚拟环境需要安装的包与pkgs中已有的包版本完全一样，则不会再下载，而是通过硬盘链接直接找到该包，反之当一个包被多个环境使用时，从某一个环境卸载该包也不会将其从pkgs文件夹删除
+
 ```
 
 
