@@ -11292,6 +11292,35 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 
 curl --socks5 192.168.1.3:57882 google.com
 
+unset http_proxy && unset https_proxy
+
+
+# 空间不够用软链接
+ln -s /root/autodl-tmp/train_data /root/PaddleOCR/train_data
+
+cd PPOCRLabel && \
+python gen_ocr_train_val_test.py
+
+# 训练
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+
+# 继续上一次训练(epoch 接着上一次的断点开始)
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy
+
+# 微调 (epoch 从一开始)
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.pretrained_model=output/rec_ppocr_v3_distillation/best_accuracy
+
+# 导出模型
+python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/model
+
+# 推断
+python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_0.jpg --rec_model_dir=output/model/Student --rec_char_dict_path=train_data/keys.txt
+	# train_data/keys.txt 是自已生成的自定义词典，训练的时侯也要指定这个词典
+​```
+
 
 ```
 
