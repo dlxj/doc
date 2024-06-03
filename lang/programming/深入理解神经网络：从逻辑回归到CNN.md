@@ -11295,6 +11295,10 @@ curl --socks5 192.168.1.3:57882 google.com
 unset http_proxy && unset https_proxy
 
 
+ln -s /root/PaddleOCR/train_data/  /root/autodl-tmp/PaddleOCR
+	# 现在要反向 ln 了, train_data 直接在目录下，不知道配置哪里指定了 autodl-tmp
+	
+
 # 空间不够用软链接
 ln -s /root/autodl-tmp/train_data /root/PaddleOCR/train_data
 
