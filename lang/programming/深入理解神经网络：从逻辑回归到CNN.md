@@ -11271,6 +11271,27 @@ Thank you for reporting this issue. It can be fixed by PR(https://github.com/Pad
 	# gpu 可能就没错
 
 
+nvidia-smi
+nvcc -V
+
+
+vi ~/.condarc
+proxy_servers:
+  http: http://172.16.6.253:8118
+  https: http://172.16.6.253:8118
+ssl_verify: false
+	# 康达设置代理
+
+conda clean -a
+	# 代理是OK 的，出错执行这个就可以了
+	
+
+export PATH=/usr/local/cuda-11.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+
+
+curl --socks5 192.168.1.3:57882 google.com
+
 
 ```
 
