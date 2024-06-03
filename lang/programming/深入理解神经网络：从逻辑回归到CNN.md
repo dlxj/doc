@@ -11273,6 +11273,12 @@ Thank you for reporting this issue. It can be fixed by PR(https://github.com/Pad
 
 nvidia-smi
 nvcc -V
+ldconfig -p | grep cuda
+ldconfig -p | grep cudnn
+conda list | grep cudatoolkit
+	# 康达安装的
+	# autodl 默认镜像都内置了原生的CUDA和cuDNN，如果您自己安装了cudatoolkits等，那么一般会默认优先使用conda中安装的cudatoolkits
+
 
 
 vi ~/.condarc
