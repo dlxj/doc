@@ -1182,6 +1182,11 @@ fi
 @reboot  /yxxx/script/auto_mount2.sh
 	# crontab
 
+apt-get install cron
+
+
+
+
 ```
 
 

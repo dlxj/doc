@@ -4143,8 +4143,7 @@ http://localhost:6006
 
 
 git config --global user.name "dlxjj" && 
-git config --global user.email "12345@qq.com"
-
+git config --global user.email "12345@qq.com" && 
 git config --global push.default matching  
 
 git config --system --list

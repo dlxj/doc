@@ -3,6 +3,12 @@
 
 
 ```
+apt-get install cron
+```
+
+
+
+```
 backup.sh
 dir="/root/ak148_backup/$(date +'%Y-%m-%d')"
 mkdir -p $dir
