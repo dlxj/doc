@@ -11245,6 +11245,11 @@ character_type: CN
 #### 最新版
 
 ```
+
+ubuntu20.04 + Python3.8 + Cuda11.2 + 3090(24GB) + 内存160GB
+	# 成功训练的配置
+
+
 >>> import blinker
 >>> blinker.__file__
 '/usr/lib/python3/dist-packages/blinker/__init__.py'
