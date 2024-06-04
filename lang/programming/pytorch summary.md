@@ -333,6 +333,20 @@ loss_fn = F.cross_entropy
 
 
 
+## numpy
+
+
+
+numpy.array2string
+
+![image-20240604152639231](pytorch summary.assets/image-20240604152639231.png)
+
+
+
+
+
+
+
 ## 张量
 
 [一个本子工程系列张量的重点概念运算 必看](https://zhuanlan.zhihu.com/p/591344339)
