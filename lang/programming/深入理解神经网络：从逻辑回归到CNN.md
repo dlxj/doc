@@ -11258,6 +11258,13 @@ login 1234xxxxx@qq.com  xxxxCNxxxx
 put /root/miniforge3_PP_cuda117.tar
 	# .77 先装好环境
 
+mkdir -p /root/autodl-tmp/PaddleOCR
+ln -s /root/PaddleOCR/train_data/ /root/autodl-tmp/PaddleOCR
+
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+	# 4090 正常训练
+	# Python3.8 + ubuntu20.04 + Cuda11.6 + RTX 4090(24GB) 
+	
 
 >>> import blinker
 >>> blinker.__file__
