@@ -11253,6 +11253,11 @@ conda install paddlepaddle-gpu==2.3.2 cudatoolkit=11.6 -c https://mirrors.tuna.t
 	# 4090 用这个, 4090 可以用 11.3 及以上，官方说最低 11.8 ，实际上大可不必。
 	# paddlepaddle-gpu==2.3.2 不可以用 11.3 , 也不可以 11.7 ，所以只能是 11.6 了
 
+mega-cmd
+login 1234xxxxx@qq.com  xxxxCNxxxx
+put /root/miniforge3_PP_cuda117.tar
+	# .77 先装好环境
+
 
 >>> import blinker
 >>> blinker.__file__
