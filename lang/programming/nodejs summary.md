@@ -28568,6 +28568,16 @@ cd chatglm-tiny
 
 
 
+
+
+## MiniCPM-V
+
+https://github.com/OpenBMB/MiniCPM-V  清华多模态
+
+
+
+
+
 ## ChatRWKV
 
 [论文本体](https://arxiv.org/abs/2305.13048)
