@@ -28574,6 +28574,8 @@ cd chatglm-tiny
 
 https://github.com/OpenBMB/MiniCPM-V  清华多模态
 
+- https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5
+
 
 
 
