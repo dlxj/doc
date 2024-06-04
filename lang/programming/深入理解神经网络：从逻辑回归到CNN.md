@@ -11249,6 +11249,10 @@ character_type: CN
 ubuntu20.04 + Python3.8 + Cuda11.2 + 3090(24GB) + 内存160GB
 	# 成功训练的配置
 
+conda install paddlepaddle-gpu==2.3.2 cudatoolkit=11.6 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge
+	# 4090 用这个, 4090 可以用 11.3 及以上，官方说最低 11.8 ，实际上大可不必。
+	# paddlepaddle-gpu==2.3.2 不可以用 11.3 , 也不可以 11.7 ，所以只能是 11.6 了
+
 
 >>> import blinker
 >>> blinker.__file__
