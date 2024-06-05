@@ -28911,7 +28911,10 @@ Python3.10 + ubuntu22.04 + Cuda11.8 + GRTX 4090(24GB) + 内存120GB
 	# pip install setuptools==69.5.1
 	# python3.10 train.py 就可以了
 
-
+# WSL2
+	https://blog.csdn.net/VVBBBBB/article/details/134129558
+		# 试试看 
+	
 conda create -n KV5 pip python=3.10 && \
 conda activate KV5
 pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
