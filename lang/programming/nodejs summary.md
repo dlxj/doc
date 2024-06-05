@@ -28898,6 +28898,19 @@ pip install torch==1.13.1+cu116 --extra-index-url https://download.pytorch.org/w
 
 # 实测　3090 必须用 cuda11.7, 4090 可能必须用　cuda11.8
 	# 3090 能正常训练
+	# pip install torch==2.0.0 --index-url https://download.pytorch.org/whl/cu118
+
+
+
+# 实测 4090 成功训练
+Python3.10 + ubuntu22.04 + Cuda11.8 + GRTX 4090(24GB) + 内存120GB
+	# 重点：pip install deepspeed==0.12.0  否则爆显存
+	# pip install torch==2.0.0 --index-url https://download.pytorch.org/whl/cu118
+	# pip install pytorch-lightning==1.9.5 deepspeed==0.12.0 wandb ninja
+	# pip install --force-reinstall -v "fastapi==0.99.1"
+	# pip install setuptools==69.5.1
+	# python3.10 train.py 就可以了
+
 
 conda create -n KV5 pip python=3.10 && \
 conda activate KV5
