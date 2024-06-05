@@ -28904,6 +28904,7 @@ conda activate KV5
 pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
 pip3 install torch --index-url https://download.pytorch.org/whl/cu118
 	# 试试行不行, 实测 4090 可以训练, deepspeed 要装最新版
+	# deepspeed==0.14.2
 pip install pytorch-lightning==1.9.5 deepspeed==0.7.0 wandb ninja
 pip install --force-reinstall -v "fastapi==0.99.1"
 pip install setuptools==69.5.1
