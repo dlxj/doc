@@ -14651,6 +14651,8 @@ see  huggingface\video-subtitle-extractor\readme.txt
 
 see https://huggingface.co/spaces/ronvolutional/ai-pokemon-card 宝可梦卡片生成
 
+see https://github.com/pagefaultgames/pokerogue  宝可梦游戏
+
 
 
 ```
