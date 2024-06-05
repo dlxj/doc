@@ -166,3 +166,20 @@ chkdsk /f <drive>:
 其中， `<drive>` 是你要检查的驱动器的字母。例如，如果你要检查 C 驱动器，你可以运行 `chkdsk /f C:`。这个命令将会在下次重启Windows时运行，并检查并修复文件系统错误。
 ```
 
+
+
+# ln
+
+```
+# see nodejs summary.md -> rwkv5
+
+sudo sh /root/autodl-tmp/cuda_11.7.1_515.65.01_linux.run
+	# Toolkit:  Installed in /usr/local/cuda-11.7/
+update-alternatives --remove cuda /usr/local/cuda-11.8
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.7 117
+ln -sfT /usr/local/cuda-11.7 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+```
+
+
+

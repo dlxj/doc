@@ -28907,6 +28907,15 @@ pip install setuptools==69.5.1
 Exception: Installed CUDA version 11.8 does not match the version torch was compiled with 11.7, unable to compile cuda/cpp extensions without a matching cuda version.
 	# autodl 是 11.8, conda 装了 cudakit11.7 必须卸载的autodl 的11.8 装11.7
 
+
+sudo sh /root/autodl-tmp/cuda_11.7.1_515.65.01_linux.run
+	# Toolkit:  Installed in /usr/local/cuda-11.7/
+update-alternatives --remove cuda /usr/local/cuda-11.8
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.7 117
+ln -sfT /usr/local/cuda-11.7 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+
 cd RWKV-v5/
 ./demo-training-prepare.sh
 ./demo-training-run.sh
@@ -28962,6 +28971,8 @@ ldconfig -p | grep cuda
 
 必须要 cuda 11.7 ，先删除 autodl 原 cuda
 
+
+update-alternatives --remove cuda /usr/local/cuda-11.8
 
 update-alternatives --remove cuda /usr/local/cuda-11.1
 update-alternatives --remove cuda-11 /usr/local/cuda-11.1
