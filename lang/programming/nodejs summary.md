@@ -28914,6 +28914,26 @@ Python3.10 + ubuntu22.04 + Cuda11.8 + GRTX 4090(24GB) + 内存120GB
 # WSL2
 	https://blog.csdn.net/VVBBBBB/article/details/134129558
 		# 试试看 
+		
+# rwkv6
+wget https://developer.download.nvidia.com/compute/cuda/12.3.0/local_installers/cuda_12.3.0_545.23.06_linux.run
+sudo sh cuda_12.3.0_545.23.06_linux.run
+update-alternatives --remove cuda /usr/local/cuda-11.8
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-12.3 123
+ln -sfT /usr/local/cuda-12.3 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+conda create -n KV6 pip python=3.10 && 
+conda activate KV6 && 
+pip install torch==2.1.2+cu121 --extra-index-url https://download.pytorch.org/whl/cu121
+
+
+lscpu|grep -i flags
+nvidia-smi
+nvcc -V
+ldconfig -p | grep cuda
+ldconfig -p | grep cudnn
+conda list | grep cudatoolkit
+	
 	
 conda create -n KV5 pip python=3.10 && \
 conda activate KV5
