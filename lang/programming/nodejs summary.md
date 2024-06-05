@@ -28634,7 +28634,7 @@ https://github.com/00ffcc/chunkRWKV6
 
 ```python
 
-# https://gist.github.com/echoplay/7bd2953ae64647bd886468adc15b728c
+# pip install tokenizers
 
 # Taken from https://johanwind.github.io/2023/03/23/rwkv_details.html. 
 # I've added additional comments restructured it a tiny bit, which makes it clearer for me.
@@ -28771,7 +28771,7 @@ def sample_probs(probs, temperature=1.0, top_p=0.85):
 
 
 # Available at https://huggingface.co/BlinkDL/rwkv-4-pile-430m/resolve/main/RWKV-4-Pile-430M-20220808-8066.pth
-MODEL_FILE = 'data/rwkv/RWKV-4-Pile-430M-20220808-8066.pth'
+MODEL_FILE = 'RWKV-4-Pile-430M-20220808-8066.pth'
 N_LAYER = 24
 N_EMBD = 1024
 
@@ -28784,7 +28784,7 @@ for k in weights.keys():
 
 
 # Available at https://github.com/BlinkDL/ChatRWKV/blob/main/20B_tokenizer.json
-tokenizer = Tokenizer.from_file("data/rwkv/20B_tokenizer.json")
+tokenizer = Tokenizer.from_file("20B_tokenizer.json")
 
 print(f'\nPreprocessing context')
 context = "\nIn a shocking finding, scientist discovered a herd of dragons living in a remote, previously unexplored valley, in Tibet. Even more surprising to the researchers was the fact that the dragons spoke perfect Chinese."
@@ -28877,6 +28877,18 @@ v4neo 可以用v4 代码推理，**v5 用 v4 推理出错**
 
 
 ```
+pip install torch==1.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+	# ppocr 4090 只能用 cu116, 看能不能用 116，统一环境
+
+```
+
+
+
+
+
+
+
+```
 conda create -n KV5 pip python=3.10 && \
 conda activate KV5
 pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
@@ -28884,6 +28896,11 @@ pip3 install torch --index-url https://download.pytorch.org/whl/cu118
 	# 试试行不行, 实测 4090 可以训练, deepspeed 要装最新版
 pip install pytorch-lightning==1.9.5 deepspeed==0.7.0 wandb ninja
 pip install --force-reinstall -v "fastapi==0.99.1"
+pip install setuptools==69.5.1
+
+Exception: Installed CUDA version 11.8 does not match the version torch was compiled with 11.7, unable to compile cuda/cpp extensions without a matching cuda version.
+	# autodl 是 11.8, conda 装了 cudakit11.7 必须卸载的autodl 的11.8 装11.7
+
 cd RWKV-v5/
 ./demo-training-prepare.sh
 ./demo-training-run.sh
