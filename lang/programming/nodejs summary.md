@@ -28587,6 +28587,28 @@ https://github.com/OpenBMB/MiniCPM-V  清华多模态
 
 
 
+## gemini-1.5-flash
+
+```
+model = genai.GenerativeModel('gemini-1.5-flash')
+
+cookie_picture = {
+    'mime_type': 'image/png',
+    'data': pathlib.Path('cookie.png').read_bytes()
+}
+prompt = "Do these look store-bought or homemade?"
+
+response = model.generate_content(
+    model="gemini-1.5-flash",
+    content=[prompt, cookie_picture]
+)
+print(response.text)
+```
+
+
+
+
+
 ## ChatRWKV
 
 [论文本体](https://arxiv.org/abs/2305.13048)
