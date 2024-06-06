@@ -28640,6 +28640,8 @@ print(response.text)
 
 [理解RWKV模型一_大语言模型研究01](https://limoncc.com/post/7a57a5a743894a0e/)
 
+- [RWKV解读：在Transformer的时代的新RNN](https://zhuanlan.zhihu.com/p/656323242)
+
 [RWKV-6 模型设计带注释](https://zhuanlan.zhihu.com/p/694593540)
 
 - [gist numpy实现](https://gist.github.com/mattiasarro/c925e789e0358436f3e6c12731f5a196)
