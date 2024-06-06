@@ -4268,6 +4268,7 @@ huggingface-cli repo create pandora --type dataset
     # huggingface-cli repo create powershell --type dataset
  	# huggingface-cli repo create PaddleOCR_275 --type dataset
  	# huggingface-cli repo create rwkv_numpy --type dataset
+ 	# huggingface-cli repo create RWKV6 --type dataset
 	# huggingface-cli repo create PaddleOCR_ali1k_det_rec_300epoch --type dataset
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
