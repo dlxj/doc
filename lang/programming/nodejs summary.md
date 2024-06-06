@@ -28583,7 +28583,7 @@ https://github.com/OpenBMB/MiniCPM-V  清华多模态
 
 - https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5
 
-
+[MiniCPM-2B-chat transformers 部署调用  开源大模型食用指南](https://github.com/datawhalechina/self-llm/blob/master/MiniCPM/MiniCPM-2B-chat%20Lora%20&&%20Full%20%E5%BE%AE%E8%B0%83.md)
 
 
 
