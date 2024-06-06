@@ -28924,12 +28924,15 @@ ln -sfT /usr/local/cuda-12.3 /etc/alternatives/cuda
 ln -sfT /etc/alternatives/cuda /usr/local/cuda
 conda create -n KV6 pip python=3.10 && 
 conda activate KV6 && 
-pip install torch==2.1.2+cu121 --extra-index-url https://download.pytorch.org/whl/cu121
-
+pip install torch==2.1.2+cu121 --extra-index-url https://download.pytorch.org/whl/cu121 && 
+pip install "setuptools<70" && 
+pip install pytorch-lightning==1.9.5 deepspeed wandb ninja 
+	# setuptools<70 fix cannot import name 'packaging' from 'pkg_resources'
+	
 
 lscpu|grep -i flags
 nvidia-smi
-nvcc -V
+nvcc --version
 ldconfig -p | grep cuda
 ldconfig -p | grep cudnn
 conda list | grep cudatoolkit
