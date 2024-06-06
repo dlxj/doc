@@ -28640,7 +28640,11 @@ print(response.text)
 
 [理解RWKV模型一_大语言模型研究01](https://limoncc.com/post/7a57a5a743894a0e/)
 
-- [RWKV解读：在Transformer的时代的新RNN](https://zhuanlan.zhihu.com/p/656323242)
+- [RWKV解读：在Transformer的时代的新RNN](https://zhuanlan.zhihu.com/p/656323242) 
+
+  - ```
+    Attention Free Transformer (AFT) 是Apple公司提出的一种新型的神经网络模型
+    ```
 
 [RWKV-6 模型设计带注释](https://zhuanlan.zhihu.com/p/694593540)
 
