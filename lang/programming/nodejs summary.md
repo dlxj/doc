@@ -28928,6 +28928,32 @@ pip install torch==2.1.2+cu121 --extra-index-url https://download.pytorch.org/wh
 pip install "setuptools<70" && 
 pip install pytorch-lightning==1.9.5 deepspeed wandb ninja 
 	# setuptools<70 fix cannot import name 'packaging' from 'pkg_resources'
+cd ~/RWKV-LM/RWKV-v5 
+python make_data.py demo.jsonl 3 512	
+vi /root/RWKV-LM/RWKV-v5/demo-training-prepare.sh
+python train.py --wandb "" --proj_dir $PROJ_DIR \
+ --data_file "demo" --data_type "binidx" --vocab_size 65536 --my_testing $MODEL_TYPE \
+ --ctx_len 512 \
+ --ctx_len $CTX_LEN --my_pile_stage 1 --epoch_count 1 --epoch_begin 0 \
+ --epoch_save 1 --weight_decay 0 --head_size_a 64 \
+ --num_nodes 1 --micro_bsz 1 --n_layer $N_LAYER --n_embd $N_EMBD --pre_ffn 0 --head_qk 0 --my_exit_tokens 200499 --magic_prime 389 \
+ --lr_init 1e-5 --lr_final 1e-5 --warmup_steps 10 --beta1 0.9 --beta2 0.99 --adam_eps 1e-8 --my_pile_edecay 0 \
+ --accelerator gpu --devices 1 --precision bf16 --strategy deepspeed_stage_2 --grad_cp 1
+ 	# 改成这样
+./demo-training-prepare.sh
+	# 成功生成初始权重
+	# MODEL_TYPE="x060" # x060 => rwkv-6.0 
+		# 代表训练 KV6
+
+./demo-training-run.sh
+python train.py --load_model "0" --wandb "Test" --proj_dir $PROJ_DIR --my_testing $MODEL_TYPE \
+ --ctx_len $CTX_LEN --my_pile_stage 3 --epoch_count 999999 --epoch_begin 0 \
+ --data_file "demo" --my_exit_tokens 200499 --magic_prime 389 \
+ --num_nodes $N_NODE --micro_bsz $M_BSZ --n_layer $N_LAYER --n_embd $N_EMBD --pre_ffn 0 --head_qk 0 \
+ --lr_init $LR_INIT --lr_final $LR_FINAL --warmup_steps 10 --beta1 0.9 --beta2 0.99 --adam_eps 1e-8 --my_pile_edecay 0 --data_type "binidx" --vocab_size 65536 \
+ --weight_decay 0.001 --epoch_save $EPOCH_SAVE --head_size_a 64 \
+ --accelerator gpu --devices $GPU_PER_NODE --precision bf16 --strategy deepspeed_stage_2 --grad_cp $GRAD_CP --enable_progress_bar True --ds_bucket_mb $DS_BUCKET_MB
+	# 改成这样，成功训练 
 	
 
 lscpu|grep -i flags
