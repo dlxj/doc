@@ -3746,7 +3746,9 @@ import importlib
 ### OrderedDict
 
 ```python
-        return OrderedDict(image=data['image'],
+from collections import OrderedDict
+
+	return OrderedDict(image=data['image'],
                            polygons=polygons,
                            ignore_tags=ignore_tags,
                            shape=shape,
