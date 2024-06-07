@@ -28609,6 +28609,12 @@ print(response.text)
 
 
 
+## poe api
+
+https://creator.poe.com/docs/fastapi_poe-python-reference
+
+
+
 ## ChatRWKV
 
 [论文本体](https://arxiv.org/abs/2305.13048)

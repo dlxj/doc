@@ -3754,6 +3754,30 @@ from collections import OrderedDict
                            shape=shape,
                            filename=filename,
                            is_training=data['is_training'])
+
+
+# OrderedDict 和 json 互转
+import json
+import collections
+
+data =  {
+        "id" : "de",
+        "Key" : "1234567",
+        "from" : "test@test.com",
+        "expires" : "2018-04-25 18:45:48.3166159",
+        "command" : "method.exec",
+        "params" : {
+          "method" : "cmd",
+          "Key" : "default",
+          "params" : {
+            "command" : "testing 23"
+          }
+        }}
+
+data_str = json.dumps(data)
+result = json.loads(data_str, object_pairs_hook=collections.OrderedDict)
+print(result)
+
 ```
 
 
