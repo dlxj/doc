@@ -170,7 +170,17 @@ Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
 ssh i@127.0.0.1
 	# powershell 成功连上
-	# vscode 连不上？
+
+
+C:\Users\i\.ssh\config
+Host 127.0.0.1
+  HostName 127.0.0.1
+  Port 22
+  User i
+  	# vscode 成功连上 windows
+  	# 甚至能打开 C 盘根目录
+
+
 
 ```
 
