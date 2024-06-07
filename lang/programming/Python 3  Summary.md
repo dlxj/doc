@@ -10203,6 +10203,73 @@ img_bytes = img_encode.tobytes()
 
 
 
+#### gpt-4o image
+
+```python
+import openai
+import json
+import time
+import streamlit as st
+import base64
+from PIL import Image
+from io import BytesIO
+
+with open("config.json", "r", encoding='UTF-8') as f:
+    api_key = json.load(f)["api_key_gpt"]
+
+def encode_image(image_path):
+  with open(image_path, "rb") as image_file:
+    return base64.b64encode(image_file.read()).decode('utf-8')
+
+img = Image.open("./images/1.png")
+buffered = BytesIO()
+img.save(buffered, format="JPEG")
+img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
+
+def chat_gpt4(api_key, q, img_b64=None):
+    
+    prompt = """
+    识图片中的日语句子或使用用户提供的日语句子。现在你是一个生活在日本的日本人，你正在教一个中国人学日语。所有日语句子中的语汇和语法作出详细解释，请用简体中文以下面这种格式输出，并且最后以“句子翻译：...” 结束。例如，日语句子 "一応約束したからな。"，要严格案照以下格式输出并且不要漏掉符号">":
+  一応約束したからな。
+  >1. 一応（いちおう）：这是一个副词，表示"大体上，首先，暂时，总之"等。
+  >2. 約束した（やくそくした）：这是一个动词的过去形，"約束する"表示"约定，承诺"。
+  >3. からな：这是一个助词，表示原因或理由，"な"在这里增加了一些口语化和亲近感。
+  >
+  >句子翻译："毕竟我已经答应过了。
+    """
+    
+    messages = [
+        { "role": "system","content":prompt},
+        { "role": "user","content":[{ "type": "text", "text": f"{q}"}]}
+    ]
+    
+    if img_b64 != None:
+        messages[1]['content'].append( { "type":"image_url", "image_url": { "url": f"data:image/jpeg;base64,{img_b64}"} } )
+    
+    import openai
+    openai.api_key = api_key
+    stream = openai.chat.completions.create(
+        model= "gpt-4o", #"gpt-4",
+        messages = messages,
+        stream=True,
+        timeout=30
+    )
+    for chunk in stream:
+        text = chunk.choices[0].delta.content or ""
+        yield text
+
+answer = ''
+it = iter(chat_gpt4(api_key, "", img_b64=img_str))
+for text in it:
+	print(text)
+    answer += text
+
+```
+
+
+
+
+
 ### 5. cv2 和 numpy 互转
 
 ```
