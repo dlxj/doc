@@ -5119,6 +5119,13 @@ x = x_nodes[:, 0] # 行全要,列只要第0列.结果是二维变一维
 ### numpy base64 互转
 
 ```python
+see huggingface\rwkv_numpy\rwkv.py
+    x = emb_weight[token]
+    b64 = base64.b64encode(x)
+    bytes = base64.decodebytes(b64)
+    x__ = np.frombuffer(bytes, dtype=np.float32)
+
+
 # numpy base64 互转
 import base64
 import numpy as np
