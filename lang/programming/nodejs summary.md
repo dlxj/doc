@@ -28613,6 +28613,12 @@ print(response.text)
 
 https://creator.poe.com/docs/fastapi_poe-python-reference
 
+```
+Quora的CEO，他自己其实借着GPT的东风搞了POE，一个可以调用GPT，Anthropic等各家接口的ChatGPT平替
+```
+
+
+
 
 
 ## ChatRWKV
