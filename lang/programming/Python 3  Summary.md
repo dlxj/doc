@@ -10168,7 +10168,22 @@ img_bytes = img_bytes.getvalue()
 print(type(img_bytes))  
 ```
 
-### 3. cv2 与bytes 相互转化
+
+
+### 3.PIL Base64 互转
+
+```python
+import base64
+from io import BytesIO
+
+buffered = BytesIO()
+image.save(buffered, format="JPEG")
+img_str = base64.b64encode(buffered.getvalue())
+```
+
+
+
+### 4. cv2 与bytes 相互转化
 
 ```python
 import numpy as np
@@ -10188,7 +10203,7 @@ img_bytes = img_encode.tobytes()
 
 
 
-### 4. cv2 和 numpy 互转
+### 5. cv2 和 numpy 互转
 
 ```
   img = cv2.cvtColor(im, cv2.COLOR_RGB2BGR) # np.asarray(img)
