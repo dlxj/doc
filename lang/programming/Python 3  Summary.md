@@ -5116,6 +5116,24 @@ x = x_nodes[:, 0] # 行全要,列只要第0列.结果是二维变一维
 
 
 
+### numpy base64 互转
+
+```python
+# numpy base64 互转
+import base64
+import numpy as np
+
+t = np.arange(25, dtype=np.float64)
+s = base64.b64encode(t)
+r = base64.decodebytes(s)
+q = np.frombuffer(r, dtype=np.float64)
+
+print(np.allclose(q, t))
+# True
+```
+
+
+
 
 
 ### 维度不同的减法
