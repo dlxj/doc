@@ -339,12 +339,14 @@ loss_fn = F.cross_entropy
 
 ### 赋值
 
-```
+```python
 import numpy as np
 a = np.array([1, 2, 3, 4, 5])
 a[:3] = (6, 7, 8)
 
 https://jax.readthedocs.io/en/latest/_autosummary/jax.lax.slice.html#jax.lax.slice
+
+https://stackoverflow.com/questions/75043981/updating-entire-row-or-column-of-a-2d-array-in-jax
 
 ```
 
