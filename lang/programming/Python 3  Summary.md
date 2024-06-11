@@ -1889,7 +1889,10 @@ return out_file.name
 
 支持任何类型
 
+[OrderedDict](https://stackoverflow.com/questions/45860040/pickling-a-subclass-of-an-ordereddict)
+
 ```
+# pip install pickle5
 import pickle
 
 	with open(filename + ".pkl", "wb") as f:
