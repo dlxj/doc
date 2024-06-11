@@ -348,6 +348,15 @@ import jax.numpy as jnp
 a = jnp.array([1, 2, 3, 4, 5])
 a = a.at[:3].set( (6, 7, 8) )
 
+b = jnp.array([ [1, 2, 3], [4, 5, 6] ])
+b = b.at[1].set([ 7, 8, 9 ])
+
+import jax
+import jax.random as jrandom
+key1, key2, key3, key4 = jrandom.split(jrandom.PRNGKey(1999), 4)
+c = jax.random.normal(key1, shape=(2, 2, 2), dtype=jnp.float32)
+c = c.at[0, :2].set(jnp.array([ [9, 9], [9, 9]]))
+
 https://jax.readthedocs.io/en/latest/_autosummary/jax.lax.slice.html#jax.lax.slice
 
 https://stackoverflow.com/questions/75043981/updating-entire-row-or-column-of-a-2d-array-in-jax
