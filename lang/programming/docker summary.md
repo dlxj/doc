@@ -1,5 +1,9 @@
 
 
+https://github.com/mayooot/grok-docker/blob/main/Dockerfile
+
+
+
 docker exec -it centos7PG10 /bin/bash
 
 
