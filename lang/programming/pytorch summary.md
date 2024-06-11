@@ -337,6 +337,21 @@ loss_fn = F.cross_entropy
 
 
 
+### 赋值
+
+```
+import numpy as np
+a = np.array([1, 2, 3, 4, 5])
+a[:3] = (6, 7, 8)
+
+https://jax.readthedocs.io/en/latest/_autosummary/jax.lax.slice.html#jax.lax.slice
+
+```
+
+
+
+
+
 numpy.array2string
 
 ![image-20240604152639231](pytorch summary.assets/image-20240604152639231.png)
