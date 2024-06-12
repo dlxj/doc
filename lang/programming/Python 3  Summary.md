@@ -12842,6 +12842,14 @@ Pyqtdeploy
 
 
 
+## Jamscreenshot 屏幕截图
+
+https://github.com/fandesfyf/Jamscreenshot
+
+https://github.com/fandesfyf/JamVideoPlayer  视频播放器
+
+
+
 ## pyside2 视频播放器
 
 - https://gitee.com/se7enXF/pyside2
