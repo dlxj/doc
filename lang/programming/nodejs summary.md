@@ -32632,6 +32632,60 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 [monads](https://github.com/sniptt-official/monads)
 
+```javascript
+// 成功运行 vscode .ts 文件
+/*
+.vscode\launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/t.ts",
+            "runtimeExecutable": "ts-node-cwd.cmd",
+            "runtimeArgs": [
+            ]
+        }
+    ],
+}
+*/
+
+// t.ts
+// npm install @thames/monads
+// npm install -g typescript ts-node
+// ts-node t.ts
+import { Option, Some, None } from '@thames/monads';
+
+const divide = (numerator: number, denominator: number): Option<number> => {
+  if (denominator === 0) {
+    return None;
+  } else {
+    return Some(numerator / denominator);
+  }
+};
+
+const result = divide(2.0, 3.0);
+
+// Pattern match to retrieve the value
+const message = result.match({
+  some: (res) => `Result: ${res}`,
+  none: 'Cannot divide by 0',
+});
+
+console.log(message); // "Result: 0.6666666666666666"
+
+
+```
+
+
+
+
+
 ### Luckysheet 在线文档
 
 [Luckysheet](https://github.com/dream-num/Luckysheet) [vercel.app](https://luckysheet.vercel.app/)
