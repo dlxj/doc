@@ -32655,29 +32655,79 @@ assert v.pipe(fn, gn) == gn(fn(v))
 }
 */
 
-// t.ts
 // npm install @thames/monads
 // npm install -g typescript ts-node
-// ts-node t.ts
-import { Option, Some, None } from '@thames/monads';
+// ts-node app.ts
 
-const divide = (numerator: number, denominator: number): Option<number> => {
-  if (denominator === 0) {
-    return None;
-  } else {
-    return Some(numerator / denominator);
-  }
-};
+import { Option, Some, None, Result, Ok, Err, Either, Left, Right } from "@thames/monads";
 
-const result = divide(2.0, 3.0);
+import * as fs from 'fs';
 
-// Pattern match to retrieve the value
-const message = result.match({
-  some: (res) => `Result: ${res}`,
-  none: 'Cannot divide by 0',
-});
+{
+  const divide = (numerator: number, denominator: number): Option<number> => {
+    if (denominator === 0) {
+      return None;
+    } else {
+      return Some(numerator / denominator);
+    }
+  };
+  
+  const result = divide(2.0, 3.0);
+  
+  // Pattern match to retrieve the value
+  const message = result.match({
+    some: (res) => `Result: ${res}`,
+    none: "Cannot divide by 0",
+  });
+  
+  console.log(message);
+}
 
-console.log(message); // "Result: 0.6666666666666666"
+{
+  const getIndex = (
+    values: string[],
+    value: string
+  ): Result<number, string> => {
+    const index = values.indexOf(value);
+
+    switch (index) {
+      case -1:
+        return Err("Value not found");
+      default:
+        return Ok(index);
+    }
+  };
+
+  const values = ["a", "b", "c"];
+
+  getIndex(values, "b"); // Ok(1)
+  getIndex(values, "z"); // Err("Value not found")
+}
+
+当使用 Either Monad 来处理计算时，一般会遵循某些惯例：
+
+成功路径 (Happy Path): 当计算成功且没有错误时，值被包装在 Right 构造器中。
+错误处理: 当计算失败或产生错误时，错误信息被放置在 Left 构造器中。
+这种方法允许函数之间传递错误而无需抛出异常，并且可以在不影响正常控制流的情况下处理这些错误。
+
+
+-- 定义一个可能会失败的函数, 返回 Either 类型
+safeDivide :: Int -> Int -> Either String Int
+safeDivide _ 0 = Left "Cannot divide by zero."
+safeDivide x y = Right (x `div` y)
+
+-- 使用 do-notation 处理连续计算
+calculateQuotient :: Int -> Int -> Int -> Either String Int
+calculateQuotient a b c =
+  do
+    result1 <- safeDivide a b
+    result2 <- safeDivide result1 c
+    return result2
+    
+-- 调用 calculateQuotient 得到结果
+main :: IO ()
+main = print $ calculateQuotient 10 2 5 -- 将输出 Right 1
+
 
 
 ```
