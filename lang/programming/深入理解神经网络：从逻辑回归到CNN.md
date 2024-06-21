@@ -3230,9 +3230,157 @@ $$
 
 
 
+```python
+# see huggingface\rwkv_numpy\cross_entropy.py
+# https://github.com/google/flax/issues/2051
+# https://editor.mdnice.com/
+# see doc\lang\programming\深入理解神经网络：从逻辑回归到CNN.md -> 香农信息量 -> 交叉熵
+
+import jax
+from jax import nn
+import jax.numpy as np
+jnp = np
+import jax.random as rand
+import numpy as onp
+from operator import getitem
+import torch
+import torch.nn.functional as F
+import optax
+
+jax.config.update('jax_platform_name', 'cpu')
+
+key = rand.PRNGKey(42)
+
+x = rand.normal(key, (16, 10))
+y = rand.randint(key, (16,), 0, 10) # [0, 10) 的整数, 包含0 不包含 10
+    # 下一个 token 的概率分布,  总 token 数为 10
+    # x 是预测的概率分布, 16 个 token ，在总数为 10 的 token 字表里每一个 token 的概率值, 所以维度是 (16, 10)
+    # y 是真实token, 16 个整数, 代表 16 个 token,  维度是 (16, ) 的一维数组
+    # y 后面会被弄成　one hot 的形式，　维度变成　(16, 10), 其中 0 代表这个 token 的概率是　0,  1 代表百分百 
+
+x_ = torch.from_numpy(onp.asarray(x))
+y_ = torch.from_numpy(onp.asarray(y)).long()
+
+print(F.cross_entropy(x_, y_).numpy())  # PyTorch implementation: 2.888901
+
+def cross_entropy_loss(*, logits, labels):
+    n_classes = logits.shape[-1]
+    loss = optax.softmax_cross_entropy(logits, jax.nn.one_hot(labels, n_classes)).mean()
+    return loss
+    # one_hot_labels = jax.nn.one_hot(labels, num_classes=10)
+    # return -jnp.mean(jnp.sum(one_hot_labels * logits, axis=-1))
+
+print(cross_entropy_loss(logits=x, labels=y))  # Current implementation: -0.0056607425
+
+@jax.jit
+def cross_entropy_loss(logits, labels):
+    logits = nn.log_softmax(logits)
+    loss = jax.vmap(getitem)(logits, labels)
+    loss = -loss.mean()
+    return loss
+
+print(cross_entropy_loss(x, y))  # Correct implementation: 2.8889012
 
 
-**采样随机变量$X$ 的概率分布$P(X)$ 得到的所有样本信息量的均值**
+def cross_entropy_loss_naive(logits, labels):
+    """
+随机变量
+
+- 样本是随机变量$X$（一个骰子）的取值$x$，概率分布 $P$ 给出了随机变量所有取值的概率
+
+  > 随机变量是一颗筛子，随机变量的取值是筛子的点数
+
+
+
+分布列
+
+- 分布列是随机变量的取值概率函数
+
+- $\scriptsize{X} \sim P(\scriptsize{X})$ 读作随机变量$\scriptsize{X}$ 遵循分布$P$  [u](DeepLearningBook-chinese.pdf) 
+
+  > $\sim$ 读作采样，$P(X)$ 读作随机变量$X$ 的概率分布
+  > **采样随机变量$X$ 的概率分布$P(X)$ 得到样本$x$**
+  > $p(X=x)$(简写$p(x)$) 表示在特定值 $x$ 处的**密度函数值**
+
+
+
+期望
+
+- 变量以一定概率出现不同的取值，函数将给出怎样的均值？
+
+> 这个均值不是用算术平均计算的
+
+- 离散随机变量的期望可以通过求和得到：
+
+  > $E_{\scriptsize{X} \sim P}[f(x)] = \sum_x P(x) f(x)$
+  > $P$ 是关于随机变量 $X$ 的概率分布, $x$ 是随机变量 $X$ 的某个可能的取值(样本)。$P(x)$ 是样本$x$ 出现的概率。  $E$ 是函数 $f$ 在这个分布下给出的均值，既数学期望。
+
+
+
+信息量（也称为自信息）
+
+- 它是一个事件发生时所带来的不确定性的减少量，单位是比特。如果你获得了一比特的信息，那么不确定性(或着说无序性、系统的混乱程度)就减少一比特。
+
+  > $I(x) = log_2(\frac{1}{P(x)}) = - log_{2}[P(x)]$  单位比特
+  >
+  > 出现负号是因为对数的性质，$\log_b(a^c) = c \cdot \log_b(a) $, $\frac{1}{p(x)}=p(x)^{-1}$
+
+
+
+信息熵（Entropy）
+
+- 熵是分布产生的信息量的均值
+
+  > 事件的概率分布和每个事件的信息量构成了一个随机变量，这个**随机变量的均值**（即期望）就是这个分布产生的信息量的平均值（即熵）。
+  > $ H(X) = E_{\scriptsize{X} \sim P}[I(x)] = \sum_x P(x) I(x) = -\sum_x P(x) log[P(x)]$
+
+
+
+交叉熵
+
+- 计算公式和信息熵的形式是一样的，只是原来是两个真 $P$, 后一个真 $P$ 被替换成了近似分布 $Q$ (大模预测出来的分布)
+
+  > $H(X) = -\sum_x P(x) log[Q(x)]$ 
+
+- 最小化交叉熵是一种使模型预测分布 $Q$ 尽可能接近真实分布 $P$ 的方法。
+
+
+        
+    虽然信息量和信息熵都与概率和不确定性相关，但它们度量的侧重点不同，一个是具体事件的度量，另一个是总体分布的度量。
+    
+    """
+    
+    
+    n_classes = logits.shape[-1]
+    P = jax.nn.one_hot(labels, n_classes)
+    
+    Q = logits
+
+    shape = logits.shape
+    
+    def f(x, y):
+        return x * np.log2(y)
+    
+    vectorized_f = jax.vmap(f)
+    
+    result = f(P, Q) # vectorized_f(P, Q)
+
+    a = result.sum()
+        
+    # jax.vmap
+    
+    # int( np.sum( list(map(lambda p: -p * np.log2(p), lp)) ) )
+    
+    pass
+
+
+cross_entropy_loss_naive(x, y)
+
+```
+
+
+
+
 
 
 
@@ -9129,7 +9277,7 @@ jax.vmap(linear, in_axes=(1,), out_axes=(1,))(x)
 
 
 
-```
+```python
 `jax.vmap` 是 JAX 库中的一个函数，它用于对向量化操作进行自动批处理。简单来说，`vmap` 能够让你将操作应用于数组的批次，而无需显式编写循环。这在需要对多个输入并行执行相同操作时特别有用。
 
 以下是 `jax.vmap` 的一些关键点：
@@ -9162,23 +9310,6 @@ print(result)  # 输出: [ 4 10 18 ]
 ​```
 
 在这个例子中，`vmap` 自动将 `f(x, y)` 函数向量化，使其能够一次性处理整个数组而不是单个元素。
-
-### 更复杂的示例
-
-如果你的函数有更多的参数，`vmap` 也能处理。例如：
-
-​```python
-def g(a, b, c):
-    return a + b * c
-
-a = jnp.array([1, 2, 3])
-b = jnp.array([4, 5, 6])
-c = jnp.array([7, 8, 9])
-
-vectorized_g = vmap(g)
-result = vectorized_g(a, b, c)
-print(result)  # 输出: [29 42 57]
-​```
 
 `jax.vmap` 在深度学习和科学计算中非常有用，能够显著简化代码并提升性能，同时保持代码清晰和可维护。
 ```
