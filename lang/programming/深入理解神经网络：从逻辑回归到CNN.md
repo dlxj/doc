@@ -9129,6 +9129,64 @@ jax.vmap(linear, in_axes=(1,), out_axes=(1,))(x)
 
 
 
+```
+`jax.vmap` 是 JAX 库中的一个函数，它用于对向量化操作进行自动批处理。简单来说，`vmap` 能够让你将操作应用于数组的批次，而无需显式编写循环。这在需要对多个输入并行执行相同操作时特别有用。
+
+以下是 `jax.vmap` 的一些关键点：
+
+1. **并行计算**：`vmap` 可以将任何标量函数转换为能够并行处理数组的函数。
+2. **简化代码**：减少显式的循环，使代码更加简洁和易读。
+3. **提高性能**：利用 JAX 的优化，能够更高效地利用硬件资源（比如 TPU/GPU）。
+
+### 示例代码
+
+假设我们有一个函数 `f(x, y)`，它计算两个标量的点积。我们希望对一组输入数据应用该函数，使用 `vmap` 可以非常容易地实现这一目标。
+
+​```python
+import jax.numpy as jnp
+from jax import vmap
+
+# 定义标量函数
+def f(x, y):
+    return x * y
+
+# 创建输入数组
+x = jnp.array([1, 2, 3])
+y = jnp.array([4, 5, 6])
+
+# 使用 vmap 将 f 向量化
+vectorized_f = vmap(f)
+
+result = vectorized_f(x, y)
+print(result)  # 输出: [ 4 10 18 ]
+​```
+
+在这个例子中，`vmap` 自动将 `f(x, y)` 函数向量化，使其能够一次性处理整个数组而不是单个元素。
+
+### 更复杂的示例
+
+如果你的函数有更多的参数，`vmap` 也能处理。例如：
+
+​```python
+def g(a, b, c):
+    return a + b * c
+
+a = jnp.array([1, 2, 3])
+b = jnp.array([4, 5, 6])
+c = jnp.array([7, 8, 9])
+
+vectorized_g = vmap(g)
+result = vectorized_g(a, b, c)
+print(result)  # 输出: [29 42 57]
+​```
+
+`jax.vmap` 在深度学习和科学计算中非常有用，能够显著简化代码并提升性能，同时保持代码清晰和可维护。
+```
+
+
+
+
+
 ### mac m1
 
 - https://github.com/google/jax/issues/12505 eig bug in M1 mac
