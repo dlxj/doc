@@ -3231,10 +3231,13 @@ $$
 
 
 ```python
-# see huggingface\rwkv_numpy\cross_entropy.py
+
 # https://github.com/google/flax/issues/2051
 # https://editor.mdnice.com/
 # see doc\lang\programming\深入理解神经网络：从逻辑回归到CNN.md -> 香农信息量 -> 交叉熵
+# https://kezhi.tech/e295e676.html
+# https://spaces.ac.cn/archives/6620
+    # https://blog.51cto.com/u_14300986/5467002
 
 import jax
 from jax import nn
@@ -3261,7 +3264,49 @@ y = rand.randint(key, (16,), 0, 10) # [0, 10) 的整数, 包含0 不包含 10
 x_ = torch.from_numpy(onp.asarray(x))
 y_ = torch.from_numpy(onp.asarray(y)).long()
 
-print(F.cross_entropy(x_, y_).numpy())  # PyTorch implementation: 2.888901
+print(F.cross_entropy(x_, y_, reduction="none").mean().numpy())  #  print(F.cross_entropy(x_, y_).numpy())  PyTorch implementation: 2.888901
+    # 16 个预测得到的交叉熵求均值？
+
+tt = y_.view(-1,1) # 最后一维是 1, 前面的一维自适应
+
+loss_1 = -torch.log(F.softmax(x_, dim=-1).gather(1, y_.view(-1,1)))
+"""
+gather
+    在dim维度上，按照indexs所给的坐标选择元素，返回一个和indexs维度相同大小的tensor
+    这里indexs必须也是Tensor，并且维度数与input相同（len(input.shape)=len(indexs.shape)）
+
+精髓：不被选择的本就不需要参与计算 例: token 索引为 6 的拿来计算
+
+"""
+
+def cross_entropy_loss_naive(x_, y_):
+    x_ = F.softmax(x_, dim=-1) 
+        # -1 表示最后一维
+        # 最后一维这个数组做一次 softmax, 使得它的所有元素总和为 1, 也就是总概率为 100%
+        # 相当于对数据做了一次规范化
+    
+    n_classes = x_.shape[-1]
+    y_ = F.one_hot(y_, n_classes)
+        # 现在 x_  y_ 的 shape 一致了
+        # y_ 是真实概率分布 P, x_ 是模型预测的概率分布 Q
+        # one_hot 中的 0 表示这个token 的概率为0, 1 表示概率 100% 
+    
+    
+    # 现在计算 Q 的信息量
+    I_x = -torch.log(x_)
+    
+    P_x_Q_x = y_ * I_x 
+        # P(x) * I(x)
+    
+    # 沿最后一个维度数组做一次求和，结果就是 16 个交叉熵
+    H_P_Q = P_x_Q_x.sum(dim=-1)
+    
+    H_P_Q_mean = H_P_Q.mean().numpy()
+        # 16 个交叉熵的均值
+    
+    return H_P_Q_mean
+
+print( cross_entropy_loss_naive(x_, y_) )
 
 def cross_entropy_loss(*, logits, labels):
     n_classes = logits.shape[-1]
@@ -3282,96 +3327,98 @@ def cross_entropy_loss(logits, labels):
 print(cross_entropy_loss(x, y))  # Correct implementation: 2.8889012
 
 
-def cross_entropy_loss_naive(logits, labels):
-    """
-随机变量
+# def cross_entropy_loss_naive(logits, labels):
+#     """
+# 随机变量
 
-- 样本是随机变量$X$（一个骰子）的取值$x$，概率分布 $P$ 给出了随机变量所有取值的概率
+# - 样本是随机变量$X$（一个骰子）的取值$x$，概率分布 $P$ 给出了随机变量所有取值的概率
 
-  > 随机变量是一颗筛子，随机变量的取值是筛子的点数
-
-
-
-分布列
-
-- 分布列是随机变量的取值概率函数
-
-- $\scriptsize{X} \sim P(\scriptsize{X})$ 读作随机变量$\scriptsize{X}$ 遵循分布$P$  [u](DeepLearningBook-chinese.pdf) 
-
-  > $\sim$ 读作采样，$P(X)$ 读作随机变量$X$ 的概率分布
-  > **采样随机变量$X$ 的概率分布$P(X)$ 得到样本$x$**
-  > $p(X=x)$(简写$p(x)$) 表示在特定值 $x$ 处的**密度函数值**
+#   > 随机变量是一颗筛子，随机变量的取值是筛子的点数
 
 
 
-期望
+# 分布列
 
-- 变量以一定概率出现不同的取值，函数将给出怎样的均值？
+# - 分布列是随机变量的取值概率函数
 
-> 这个均值不是用算术平均计算的
+# - $\scriptsize{X} \sim P(\scriptsize{X})$ 读作随机变量$\scriptsize{X}$ 遵循分布$P$  [u](DeepLearningBook-chinese.pdf) 
 
-- 离散随机变量的期望可以通过求和得到：
-
-  > $E_{\scriptsize{X} \sim P}[f(x)] = \sum_x P(x) f(x)$
-  > $P$ 是关于随机变量 $X$ 的概率分布, $x$ 是随机变量 $X$ 的某个可能的取值(样本)。$P(x)$ 是样本$x$ 出现的概率。  $E$ 是函数 $f$ 在这个分布下给出的均值，既数学期望。
-
-
-
-信息量（也称为自信息）
-
-- 它是一个事件发生时所带来的不确定性的减少量，单位是比特。如果你获得了一比特的信息，那么不确定性(或着说无序性、系统的混乱程度)就减少一比特。
-
-  > $I(x) = log_2(\frac{1}{P(x)}) = - log_{2}[P(x)]$  单位比特
-  >
-  > 出现负号是因为对数的性质，$\log_b(a^c) = c \cdot \log_b(a) $, $\frac{1}{p(x)}=p(x)^{-1}$
+#   > $\sim$ 读作采样，$P(X)$ 读作随机变量$X$ 的概率分布
+#   > **采样随机变量$X$ 的概率分布$P(X)$ 得到样本$x$**
+#   > $p(X=x)$(简写$p(x)$) 表示在特定值 $x$ 处的**密度函数值**
 
 
 
-信息熵（Entropy）
+# 期望
 
-- 熵是分布产生的信息量的均值
+# - 变量以一定概率出现不同的取值，函数将给出怎样的均值？
 
-  > 事件的概率分布和每个事件的信息量构成了一个随机变量，这个**随机变量的均值**（即期望）就是这个分布产生的信息量的平均值（即熵）。
-  > $ H(X) = E_{\scriptsize{X} \sim P}[I(x)] = \sum_x P(x) I(x) = -\sum_x P(x) log[P(x)]$
+# > 这个均值不是用算术平均计算的
+
+# - 离散随机变量的期望可以通过求和得到：
+
+#   > $E_{\scriptsize{X} \sim P}[f(x)] = \sum_x P(x) f(x)$
+#   > $P$ 是关于随机变量 $X$ 的概率分布, $x$ 是随机变量 $X$ 的某个可能的取值(样本)。$P(x)$ 是样本$x$ 出现的概率。  $E$ 是函数 $f$ 在这个分布下给出的均值，既数学期望。
 
 
 
-交叉熵
+# 信息量（也称为自信息）
 
-- 计算公式和信息熵的形式是一样的，只是原来是两个真 $P$, 后一个真 $P$ 被替换成了近似分布 $Q$ (大模预测出来的分布)
+# - 它是一个事件发生时所带来的不确定性的减少量，单位是比特。如果你获得了一比特的信息，那么不确定性(或着说无序性、系统的混乱程度)就减少一比特。
 
-  > $H(X) = -\sum_x P(x) log[Q(x)]$ 
+#   > $I(x) = log_2(\frac{1}{P(x)}) = - log_{2}[P(x)]$  单位比特
+#   >
+#   > 出现负号是因为对数的性质，$\log_b(a^c) = c \cdot \log_b(a) $, $\frac{1}{p(x)}=p(x)^{-1}$
 
-- 最小化交叉熵是一种使模型预测分布 $Q$ 尽可能接近真实分布 $P$ 的方法。
+
+
+# 信息熵（Entropy）
+
+# - 熵是分布产生的信息量的均值
+
+#   > 事件的概率分布和每个事件的信息量构成了一个随机变量，这个**随机变量的均值**（即期望）就是这个分布产生的信息量的平均值（即熵）。
+#   > $ H(X) = E_{\scriptsize{X} \sim P}[I(x)] = \sum_x P(x) I(x) = -\sum_x P(x) log[P(x)]$
+
+
+
+# 交叉熵
+
+# - 计算公式和信息熵的形式是一样的，只是原来是两个真 $P$, 后一个真 $P$ 被替换成了近似分布 $Q$ (大模预测出来的分布)
+
+#   > $H(X) = -\sum_x P(x) log[Q(x)]$ 
+
+# - 最小化交叉熵是一种使模型预测分布 $Q$ 尽可能接近真实分布 $P$ 的方法。
 
 
         
-    虽然信息量和信息熵都与概率和不确定性相关，但它们度量的侧重点不同，一个是具体事件的度量，另一个是总体分布的度量。
+#     虽然信息量和信息熵都与概率和不确定性相关，但它们度量的侧重点不同，一个是具体事件的度量，另一个是总体分布的度量。
     
-    """
+#     """
     
+#     n_classes = logits.shape[-1]
+#     P = jax.nn.one_hot(labels, n_classes)
     
-    n_classes = logits.shape[-1]
-    P = jax.nn.one_hot(labels, n_classes)
-    
-    Q = logits
+#     Q = logits
 
-    shape = logits.shape
+#     shape = logits.shape
     
-    def f(x, y):
-        return x * np.log2(y)
+#     epsilon = 1e-12
+#     Q = np.clip(Q, epsilon, 1. - epsilon)
     
-    vectorized_f = jax.vmap(f)
+#     def f(x, y):
+#         return x * np.log(y+1e-9)
     
-    result = f(P, Q) # vectorized_f(P, Q)
+#     vectorized_f = jax.vmap(f)
+    
+#     result = f(P, Q) # vectorized_f(P, Q)
 
-    a = result.sum()
+#     a = result.mean()
         
-    # jax.vmap
+#     # jax.vmap
     
-    # int( np.sum( list(map(lambda p: -p * np.log2(p), lp)) ) )
+#     # int( np.sum( list(map(lambda p: -p * np.log2(p), lp)) ) )
     
-    pass
+#     pass
 
 
 cross_entropy_loss_naive(x, y)
