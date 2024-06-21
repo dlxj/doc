@@ -3173,12 +3173,28 @@ $$
 
 - 分布列是随机变量的取值概率函数
 
-- $\scriptsize{X} \sim P(\scriptsize{X})$ 读作随机变量$\scriptsize{X}$ 遵循分布 [u](DeepLearningBook-chinese.pdf) 
+- $\scriptsize{X} \sim P(\scriptsize{X})$ 读作随机变量$\scriptsize{X}$ 遵循分布$P$  [u](DeepLearningBook-chinese.pdf) 
   > $\sim$ 读作采样，$P(X)$ 读作随机变量$X$ 的概率分布
   > **采样随机变量$X$ 的概率分布$P(X)$ 得到样本$x$**
   > $p(X=x)$(简写$p(x)$) 表示在特定值 $x$ 处的**密度函数值**
 
 
+
+  期望
+
+- 变量以一定概率出现不同的取值，函数将给出怎样的均值？
+  
+> 这个均值不是用算术平均计算的
+  
+- 离散随机变量的期望可以通过求和得到：
+  > $E_{\scriptsize{X} \sim P}[f(x)] = \sum_x P(x) f(x)$
+  > $P$ 是关于随机变量 $X$ 的概率分布, $x$ 是随机变量 $X$ 的某个可能的取值(样本)。$E$ 是函数 $f$ 在这个分布下给出的均值，既数学期望。
+
+
+
+
+
+**采样随机变量$X$ 的概率分布$P(X)$ 得到的所有样本信息量的均值**
 
 
 
