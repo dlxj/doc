@@ -3175,7 +3175,7 @@ $$
 
 - $\scriptsize{X} \sim P(\scriptsize{X})$ 读作随机变量$\scriptsize{X}$ 遵循分布 [u](DeepLearningBook-chinese.pdf) 
   > $\sim$ 读作采样，$P(X)$ 读作随机变量$X$ 的概率分布
-  > **采样随机变量$X$ 的概率分布$P(X)$ 得到$x$**
+  > **采样随机变量$X$ 的概率分布$P(X)$ 得到样本$x$**
   > $p(X=x)$(简写$p(x)$) 表示在特定值 $x$ 处的**密度函数值**
 
 
