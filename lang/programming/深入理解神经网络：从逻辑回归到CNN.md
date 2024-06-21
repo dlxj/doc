@@ -3161,7 +3161,7 @@ $$
 
 ### 交叉熵
 
-
+[PyTorch中的CrossEntropyLoss与交叉熵计算不一致](https://kezhi.tech/e295e676.html)
 
 随机变量
 
