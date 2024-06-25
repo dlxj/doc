@@ -734,6 +734,28 @@ answers = torch.tensor(answers).float() # convert to tensor
 
 
 
+### to
+
+```
+
+i.item()
+	# 真 int
+	# 下面转完还是 tensor
+
+tensor.to(torch.float64)
+
+>>> cuda0 = torch.device('cuda:0')
+>>> tensor.to(cuda0)
+tensor([[-0.5044,  0.0005],
+        [ 0.3310, -0.0584]], device='cuda:0')
+
+>>> tensor.to(cuda0, dtype=torch.float64)
+```
+
+
+
+
+
 ### numpy 互转
 
 ```python
