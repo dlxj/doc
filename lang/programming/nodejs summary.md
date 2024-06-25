@@ -4268,6 +4268,7 @@ huggingface-cli repo create pandora --type dataset
     # huggingface-cli repo create powershell --type dataset
  	# huggingface-cli repo create PaddleOCR_275 --type dataset
  	# huggingface-cli repo create rwkv_numpy --type dataset
+ 	# huggingface-cli repo create RWKV4 --type dataset # 和上面配套起来看
  	# huggingface-cli repo create RWKV6 --type dataset
  	# huggingface-cli repo create picoGPT_chinese --type dataset
  	# huggingface-cli repo create nanoRWKV --type dataset
@@ -28657,6 +28658,8 @@ Quora的CEO，他自己其实借着GPT的东风搞了POE，一个可以调用GPT
 [RWKV_Pytorch](https://github.com/yuunnn-w/RWKV_Pytorch)  kv6 only, 香橙派
 
 [Triton rwkv](https://github.com/codekansas/rwkv) [数学必看](https://ben.bolte.cc/rwkv-model)
+
+[RWKV, Explained 详细 colab](https://fullstackdeeplearning.com/blog/posts/rwkv-explainer/)
 
 [理解RWKV模型一_大语言模型研究01](https://limoncc.com/post/7a57a5a743894a0e/)
 
