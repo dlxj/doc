@@ -1792,6 +1792,19 @@ function Copy-FileSafer {
 
 
 
+# md5
+
+```
+Get-FileHash -Path "E:\huggingface\rwkv5-jp-explain\out\rwkv-50.pth" -Algorithm MD5
+	# powershell
+
+md5sum out2__/rwkv-50.pth 
+	# ubuntu
+
+```
+
+
+
 
 
 # 查看端占用
