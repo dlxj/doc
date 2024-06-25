@@ -4269,6 +4269,7 @@ huggingface-cli repo create pandora --type dataset
  	# huggingface-cli repo create PaddleOCR_275 --type dataset
  	# huggingface-cli repo create rwkv_numpy --type dataset
  	# huggingface-cli repo create RWKV4 --type dataset # 和上面配套起来看
+ 	# huggingface-cli repo create RWKV5_rwkv5jpexplain --type dataset # 和 space 配套的
  	# huggingface-cli repo create RWKV6 --type dataset
  	# huggingface-cli repo create picoGPT_chinese --type dataset
  	# huggingface-cli repo create nanoRWKV --type dataset
@@ -25778,9 +25779,7 @@ vLLM – 伯克利推理
 
 [training](https://github.com/EleutherAI/pythia#reproducing-training)
 
-```
 
-```
 
 
 
