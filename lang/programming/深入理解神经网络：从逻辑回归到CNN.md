@@ -3036,8 +3036,6 @@ $R^2$ 表示实数对的集合
 
 
 
-信息熵是**已知信息量**
-
 ```python
 """
 “熵”不起：从熵、最大熵原理到最大熵模型（二）
@@ -3073,6 +3071,8 @@ assert( entropy([0.5, 0.5]), 1 ) # 一枚均匀的硬币信量量是1 比特
 $$
 log_2(\frac{1}{p(x)}) = - log2(p(x))
 $$
+
+> 出现负号是因为对数的性质，$\log_b(a^c) = c \cdot \log_b(a) $, $\frac{1}{p(x)}=p(x)^{-1}$
 
 
 
@@ -3143,7 +3143,7 @@ H(X) = E_{x\sim p(x)}[-log(p(x))]
 $$
 
 
-熵可以理解为依据概率分布$p(x)$ 生成的符号进行编码所需要的最小平均比特数
+熵可以理解为依据概率分布  $p(x)$ 生成的符号进行编码所需要的最小平均比特数
 
 
 
@@ -3156,6 +3156,209 @@ $$
 
 
 如昨天下雨这个已知事件，因为**已经发生，既定事实，那么它的信息量就为0**。如明天会下雨这个事件，因为未有发生，那么这个事件的信息量就大。
+
+
+
+### 交叉熵
+
+[PyTorch中的CrossEntropyLoss与交叉熵计算不一致](https://kezhi.tech/e295e676.html)
+
+随机变量
+
+- 样本是随机变量$X$（一个骰子）的取值$x$，概率分布 $P$ 给出了随机变量所有取值的概率
+  > 随机变量是一颗筛子，随机变量的取值是筛子的点数
+  
+
+
+
+分布列
+
+- 分布列是随机变量的取值概率函数
+
+- $\scriptsize{X} \sim P(\scriptsize{X})$ 读作随机变量$\scriptsize{X}$ 遵循分布$P$  [u](DeepLearningBook-chinese.pdf) 
+  > $\sim$ 读作采样，$P(X)$ 读作随机变量$X$ 的概率分布
+  > **采样随机变量$X$ 的概率分布$P(X)$ 得到样本$x$**
+  > $p(X=x)$(简写$p(x)$) 表示在特定值 $x$ 处的**密度函数值**
+
+
+
+期望
+
+- 变量以一定概率出现不同的取值，函数将给出怎样的均值？
+  
+> 这个均值不是用算术平均计算的
+
+- 离散随机变量的期望可以通过求和得到：
+  > $E_{\scriptsize{X} \sim P}[f(x)] = \sum_x P(x) f(x)$
+  > $P$ 是关于随机变量 $X$ 的概率分布, $x$ 是随机变量 $X$ 的某个可能的取值(样本)。$P(x)$ 是样本$x$ 出现的概率。  $E$ 是函数 $f$ 在这个分布下给出的均值，既数学期望。
+
+
+
+信息量（也称为自信息）
+
+- 它是一个事件发生时所带来的不确定性的减少量，单位是比特。如果你获得了一比特的信息，那么不确定性(或着说无序性、系统的混乱程度)就减少一比特。
+  
+  > $I(x) = log_2(\frac{1}{P(x)}) = - log_{2}[P(x)]$  单位比特
+  >
+  > 出现负号是因为对数的性质，$\log_b(a^c) = c \cdot \log_b(a) $, $\frac{1}{p(x)}=p(x)^{-1}$
+
+
+
+信息熵（Entropy）
+
+- 熵是分布产生的信息量的均值
+  > 事件的概率分布和每个事件的信息量构成了一个随机变量，这个**随机变量的均值**（即期望）就是这个分布产生的信息量的平均值（即熵）。
+  > $ H(X) = E_{\scriptsize{X} \sim P}[I(x)] = \sum_x P(x) I(x) = -\sum_x P(x) log[P(x)]$
+
+
+
+交叉熵
+
+- 计算公式和信息熵的形式是一样的，只是原来是两个真 $P$, 后一个真 $P$ 被替换成了近似分布 $Q$ (大模预测出来的分布)
+
+  > $H(X) = -\sum_x P(x) log[Q(x)]$ 
+
+- 最小化交叉熵是一种使模型预测分布 $Q$ 尽可能接近真实分布 $P$ 的方法。
+
+
+
+相对熵（KL散度）
+
+在机器学习中，P往往用来表示样本的真实分布，Q用来表示模型所预测的分布，那么KL散度就可以计算两个分布的差异，也就是Loss损失值。
+
+- 从KL散度公式中可以看到Q的分布越接近P（Q分布越拟合P），那么散度值越小，即损失值越小。
+
+
+
+```python
+
+# https://github.com/google/flax/issues/2051
+# https://editor.mdnice.com/
+# see doc\lang\programming\深入理解神经网络：从逻辑回归到CNN.md -> 香农信息量 -> 交叉熵
+# https://kezhi.tech/e295e676.html
+# https://spaces.ac.cn/archives/6620
+    # https://blog.51cto.com/u_14300986/5467002
+
+import jax
+from jax import nn
+import jax.numpy as np
+jnp = np
+import jax.random as rand
+import numpy as onp
+from operator import getitem
+import torch
+import torch.nn.functional as F
+import optax
+
+jax.config.update('jax_platform_name', 'cpu')
+
+key = rand.PRNGKey(42)
+
+x = rand.normal(key, (16, 10))
+y = rand.randint(key, (16,), 0, 10) # [0, 10) 的整数, 包含0 不包含 10
+    # 下一个 token 的概率分布,  总 token 数为 10
+    # x 是预测的概率分布, 16 个 token ，在总数为 10 的 token 字表里每一个 token 的概率值, 所以维度是 (16, 10)
+    # y 是真实token, 16 个整数, 代表 16 个 token,  维度是 (16, ) 的一维数组
+    # y 后面会被弄成　one hot 的形式，　维度变成　(16, 10), 其中 0 代表这个 token 的概率是　0,  1 代表百分百 
+
+x_ = torch.from_numpy(onp.asarray(x))
+y_ = torch.from_numpy(onp.asarray(y)).long()
+
+print(F.cross_entropy(x_, y_, reduction="none").mean().numpy())  #  print(F.cross_entropy(x_, y_).numpy())  PyTorch implementation: 2.888901
+    # 16 个预测得到的交叉熵求均值？
+
+tt = y_.view(-1,1) # 最后一维是 1, 前面的一维自适应
+
+loss_1 = -torch.log(F.softmax(x_, dim=-1).gather(1, y_.view(-1,1)))
+"""
+gather
+    在dim维度上，按照indexs所给的坐标选择元素，返回一个和indexs维度相同大小的tensor
+    这里indexs必须也是Tensor，并且维度数与input相同（len(input.shape)=len(indexs.shape)）
+
+精髓：不被选择的本就不需要参与计算 例: token 索引为 6 的拿来计算
+
+"""
+
+def cross_entropy_loss_naive(x_, y_):
+    x_ = F.softmax(x_, dim=-1) 
+        # -1 表示最后一维
+        # 最后一维这个数组做一次 softmax, 使得它的所有元素总和为 1, 也就是总概率为 100%
+        # 相当于对数据做了一次规范化
+    
+    n_classes = x_.shape[-1]
+    y_ = F.one_hot(y_, n_classes)
+        # 现在 x_  y_ 的 shape 一致了
+        # y_ 是真实概率分布 P, x_ 是模型预测的概率分布 Q
+        # one_hot 中的 0 表示这个token 的概率为0, 1 表示概率 100% 
+    
+    
+    # 现在计算 Q 的信息量
+    I_x = -torch.log(x_)
+    
+    P_x_Q_x = y_ * I_x 
+        # P(x) * I(x)
+    
+    # 沿最后一个维度数组做一次求和，结果就是 16 个交叉熵
+    H_P_Q = P_x_Q_x.sum(dim=-1)
+    
+    H_P_Q_mean = H_P_Q.mean().numpy()
+        # 16 个交叉熵的均值
+    
+    return H_P_Q_mean
+
+print( cross_entropy_loss_naive(x_, y_) )
+
+def cross_entropy_loss(*, logits, labels):
+    n_classes = logits.shape[-1]
+    loss = optax.softmax_cross_entropy(logits, jax.nn.one_hot(labels, n_classes)).mean()
+    return loss
+    # one_hot_labels = jax.nn.one_hot(labels, num_classes=10)
+    # return -jnp.mean(jnp.sum(one_hot_labels * logits, axis=-1))
+
+print(cross_entropy_loss(logits=x, labels=y))  # Current implementation: -0.0056607425
+
+@jax.jit
+def cross_entropy_loss(logits, labels):
+    logits = nn.log_softmax(logits)
+    loss = jax.vmap(getitem)(logits, labels)
+    loss = -loss.mean()
+    return loss
+
+print(cross_entropy_loss(x, y))  # Correct implementation: 2.8889012
+
+
+def cross_entropy_loss_naive_jax(logits, labels):
+
+    n_classes = logits.shape[-1]
+    P = jax.nn.one_hot(labels, n_classes)
+    
+    Q = logits
+    Q = jax.nn.softmax(Q, axis=-1) 
+        # -1 表示最后一维
+        # 最后一维这个数组做一次 softmax, 使得它的所有元素总和为 1, 也就是总概率为 100%
+        # 相当于对数据做了一次规范化
+
+
+    # 现在计算 Q 的信息量
+    I_x = -jax.numpy.log(Q)
+    
+    P_x_Q_x = P * I_x 
+        # P(x) * I(x)
+
+    # 沿最后一个维度数组做一次求和，结果就是 16 个交叉熵
+    H_P_Q = P_x_Q_x.sum(axis=-1)
+    
+    H_P_Q_mean = H_P_Q.mean()
+        # 16 个交叉熵的均值
+    
+    return H_P_Q_mean
+
+
+print( cross_entropy_loss_naive_jax(x, y) )
+
+```
+
+
 
 
 
@@ -3473,7 +3676,7 @@ $$
 
 
 
-样本是随机变量$X$（一个骰子）的取值$x$，概率分布 $p$ 给出了随机变量所有取值的概率
+样本是随机变量$X$（一个骰子）的取值$x$，概率分布 $P$ 给出了随机变量所有取值的概率
 
 
 
@@ -9054,6 +9257,47 @@ jax.vmap(linear, in_axes=(1,), out_axes=(1,))(x)
 
 
 
+```python
+`jax.vmap` 是 JAX 库中的一个函数，它用于对向量化操作进行自动批处理。简单来说，`vmap` 能够让你将操作应用于数组的批次，而无需显式编写循环。这在需要对多个输入并行执行相同操作时特别有用。
+
+以下是 `jax.vmap` 的一些关键点：
+
+1. **并行计算**：`vmap` 可以将任何标量函数转换为能够并行处理数组的函数。
+2. **简化代码**：减少显式的循环，使代码更加简洁和易读。
+3. **提高性能**：利用 JAX 的优化，能够更高效地利用硬件资源（比如 TPU/GPU）。
+
+### 示例代码
+
+假设我们有一个函数 `f(x, y)`，它计算两个标量的点积。我们希望对一组输入数据应用该函数，使用 `vmap` 可以非常容易地实现这一目标。
+
+​```python
+import jax.numpy as jnp
+from jax import vmap
+
+# 定义标量函数
+def f(x, y):
+    return x * y
+
+# 创建输入数组
+x = jnp.array([1, 2, 3])
+y = jnp.array([4, 5, 6])
+
+# 使用 vmap 将 f 向量化
+vectorized_f = vmap(f)
+
+result = vectorized_f(x, y)
+print(result)  # 输出: [ 4 10 18 ]
+​```
+
+在这个例子中，`vmap` 自动将 `f(x, y)` 函数向量化，使其能够一次性处理整个数组而不是单个元素。
+
+`jax.vmap` 在深度学习和科学计算中非常有用，能够显著简化代码并提升性能，同时保持代码清晰和可维护。
+```
+
+
+
+
+
 ### mac m1
 
 - https://github.com/google/jax/issues/12505 eig bug in M1 mac
@@ -11245,6 +11489,27 @@ character_type: CN
 #### 最新版
 
 ```
+
+ubuntu20.04 + Python3.8 + Cuda11.2 + 3090(24GB) + 内存160GB
+	# 成功训练的配置
+
+conda install paddlepaddle-gpu==2.3.2 cudatoolkit=11.6 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/ -c conda-forge
+	# 4090 用这个, 4090 可以用 11.3 及以上，官方说最低 11.8 ，实际上大可不必。
+	# paddlepaddle-gpu==2.3.2 不可以用 11.3 , 也不可以 11.7 ，所以只能是 11.6 了
+
+mega-cmd
+login 1234xxxxx@qq.com  xxxxCNxxxx
+put /root/miniforge3_PP_cuda117.tar
+	# .77 先装好环境
+
+mkdir -p /root/autodl-tmp/PaddleOCR
+ln -s /root/PaddleOCR/train_data/ /root/autodl-tmp/PaddleOCR
+
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+	# 4090 正常训练
+	# Python3.8 + ubuntu20.04 + Cuda11.6 + RTX 4090(24GB) 
+	
+
 >>> import blinker
 >>> blinker.__file__
 '/usr/lib/python3/dist-packages/blinker/__init__.py'
@@ -11271,6 +11536,69 @@ Thank you for reporting this issue. It can be fixed by PR(https://github.com/Pad
 	# gpu 可能就没错
 
 
+nvidia-smi
+nvcc -V
+ldconfig -p | grep cuda
+ldconfig -p | grep cudnn
+conda list | grep cudatoolkit
+	# 康达安装的
+	# autodl 默认镜像都内置了原生的CUDA和cuDNN，如果您自己安装了cudatoolkits等，那么一般会默认优先使用conda中安装的cudatoolkits
+
+
+
+vi ~/.condarc
+proxy_servers:
+  http: http://172.16.6.253:8118
+  https: http://172.16.6.253:8118
+ssl_verify: false
+	# 康达设置代理
+
+conda clean -a
+	# 代理是OK 的，出错执行这个就可以了
+	
+
+export PATH=/usr/local/cuda-11.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
+
+
+curl --socks5 192.168.1.3:57882 google.com
+
+unset http_proxy && unset https_proxy
+
+
+ln -s /root/PaddleOCR/train_data/  /root/autodl-tmp/PaddleOCR
+	# 现在要反向 ln 了, train_data 直接在目录下，不知道配置哪里指定了 autodl-tmp
+	
+
+# 空间不够用软链接
+ln -s /root/autodl-tmp/train_data /root/PaddleOCR/train_data
+
+cd PPOCRLabel && \
+python gen_ocr_train_val_test.py
+
+# 训练
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+
+# 继续上一次训练(epoch 接着上一次的断点开始)
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy
+
+# 微调 (epoch 从一开始)
+source activate PP && \
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.pretrained_model=output/rec_ppocr_v3_distillation/best_accuracy
+
+# 导出模型
+python tools/export_model.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml -o Global.checkpoints=output/rec_ppocr_v3_distillation/best_accuracy Global.save_inference_dir=output/model
+
+# 推断
+python tools/infer/predict_rec.py --image_dir=train_data/rec/test/1_crop_0.jpg --rec_model_dir=output/model/Student --rec_char_dict_path=train_data/keys.txt
+	# train_data/keys.txt 是自已生成的自定义词典，训练的时侯也要指定这个词典
+​```
+
+
+miniconda pkgs
+不论base环境还是虚拟环境都是放在pkgs文件夹下。如果虚拟环境需要安装的包与pkgs中已有的包版本完全一样，则不会再下载，而是通过硬盘链接直接找到该包，反之当一个包被多个环境使用时，从某一个环境卸载该包也不会将其从pkgs文件夹删除
 
 ```
 

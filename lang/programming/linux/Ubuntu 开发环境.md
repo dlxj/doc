@@ -921,6 +921,19 @@ https://mephisto.cc/tech/hysteria/
 
 
 
+# DNS
+
+```
+vi /etc/systemd/resolved.conf
+[Resolve]
+DNS=1.1.1.1
+
+```
+
+
+
+
+
 # socks5 转 http
 
 ```
@@ -1181,6 +1194,11 @@ fi
 
 @reboot  /yxxx/script/auto_mount2.sh
 	# crontab
+
+apt-get install cron
+
+
+
 
 ```
 

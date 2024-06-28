@@ -1,5 +1,309 @@
 
 
+## rwkv_jax
+
+```python
+
+# see huggingface/rwkv_numpy/rwkv.py
+
+# pip install tokenizers
+# pip install -U "jax[cpu]"
+
+# Taken from https://johanwind.github.io/2023/03/23/rwkv_details.html. 
+# I've added additional comments restructured it a tiny bit, which makes it clearer for me.
+
+
+""""
+probs
+    shape:
+        (50277,)
+    # RWKV 函数输出下一个 token 的概率分布,  总 token 数为 50277
+    
+"""
+
+# import numpy as np
+import jax.numpy as np
+from torch import load as torch_load  # Only for loading the model weights
+from torch import save as torch_save
+from tokenizers import Tokenizer
+import base64
+from collections import OrderedDict
+import json
+import jax
+import jax.numpy as jnp
+import jax.random as jrandom
+
+exp = np.exp
+layer_norm = lambda x, w, b : (x - np.mean(x)) / np.std(x) * w + b
+sigmoid = lambda x : 1/(1 + exp(-x))
+
+
+def RWKV(model, token, state):
+    keys = model.keys()
+    emb = [key for key in model.keys() if key.startswith('emb')]
+    blocks_0_ln0 = [key for key in model.keys() if key.startswith('blocks.0.ln0')]
+    blocks_0_att = [key for key in model.keys() if key.startswith('blocks.0.att')]
+    blocks_0_ffn = [key for key in model.keys() if key.startswith('blocks.0.ffn')]
+    ln_out = [key for key in model.keys() if key.startswith('ln_out')]
+    head = [key for key in model.keys() if key.startswith('head')]
+    
+    params = lambda prefix: [model[key] for key in model.keys() if key.startswith(prefix)]
+    
+    emb_weight = model['emb.weight']
+    
+    x = emb_weight[token]
+    
+    # b64 = base64.b64encode(x)
+    # bytes = base64.decodebytes(b64)
+    # x__ = np.frombuffer(bytes, dtype=np.float32)
+    
+    blocks_0_ln0_weight = model['blocks.0.ln0.weight']
+    blocks_0_ln0_bias = model['blocks.0.ln0.bias']
+    
+    x = layer_norm(x, blocks_0_ln0_weight, blocks_0_ln0_bias)
+
+    #x = params('emb')[0][token]
+    #x = layer_norm(x, *params('blocks.0.ln0'))
+
+    for i in range(N_LAYER):
+        blocks_i_ln1_weight = model[f'blocks.{i}.ln1.weight']
+        blocks_i_ln1_bias = model[f'blocks.{i}.ln1.bias']
+        x_ = layer_norm(x, blocks_i_ln1_weight, blocks_i_ln1_bias)
+        
+        blocks_i_att_time_decay = model[f'blocks.{i}.att.time_decay']
+        blocks_i_att_time_first = model[f'blocks.{i}.att.time_first']
+        blocks_i_att_time_mix_k = model[f'blocks.{i}.att.time_mix_k']
+        blocks_i_att_time_mix_v = model[f'blocks.{i}.att.time_mix_v']
+        blocks_i_att_time_mix_r = model[f'blocks.{i}.att.time_mix_r']
+        blocks_i_att_key_weight = model[f'blocks.{i}.att.key.weight']
+        blocks_i_att_value_weight = model[f'blocks.{i}.att.value.weight']
+        blocks_i_att_receptance_weight = model[f'blocks.{i}.att.receptance.weight']
+        blocks_i_att_output_weight = model[f'blocks.{i}.att.output.weight']
+        
+                
+        last_x, last_num, last_den = state[i][:3]
+        dx, x_num_den = time_mixing(x_, last_x, last_num, last_den, 
+                                blocks_i_att_time_decay,
+                                blocks_i_att_time_first,
+                                blocks_i_att_time_mix_k,
+                                blocks_i_att_time_mix_v,
+                                blocks_i_att_time_mix_r,
+                                blocks_i_att_key_weight,
+                                blocks_i_att_value_weight,
+                                blocks_i_att_receptance_weight,
+                                blocks_i_att_output_weight
+                            )
+
+        # state[i][:3] = x_num_den  # just for numpy
+        state = state.at[i, :3].set( x_num_den )
+
+        x = x + dx
+
+
+        blocks_i_ln2_weight = model[f'blocks.{i}.ln2.weight']
+        blocks_i_ln2_bias = model[f'blocks.{i}.ln2.bias']
+
+        blocks_i_ffn_time_mix_k = model[f'blocks.{i}.ffn.time_mix_k']
+        blocks_i_ffn_time_mix_r = model[f'blocks.{i}.ffn.time_mix_r']
+        blocks_i_ffn_key_weight = model[f'blocks.{i}.ffn.key.weight']
+        blocks_i_ffn_receptance_weight = model[f'blocks.{i}.ffn.receptance.weight']
+        blocks_i_ffn_value_weight = model[f'blocks.{i}.ffn.value.weight']
+
+
+        x_ = layer_norm(x, blocks_i_ln2_weight, blocks_i_ln2_bias)
+        dx, tmp_x = channel_mixing(x_, state[i][3], 
+                            blocks_i_ffn_time_mix_k,
+                            blocks_i_ffn_time_mix_r,
+                            blocks_i_ffn_key_weight,
+                            blocks_i_ffn_receptance_weight,
+                            blocks_i_ffn_value_weight
+                        )
+
+        # state[i][3] = tmp_x  # just for numpy
+        state = state.at[i, 3].set( tmp_x )
+
+        x = x + dx
+        
+
+    
+    ln_out_weight = model[f'ln_out.weight']
+    ln_out_bias = model[f'ln_out.bias']
+    head_weight = model[f'head.weight']
+
+    x = layer_norm(x, ln_out_weight, ln_out_bias)
+    x = head_weight @ x
+
+
+    e_x = exp(x - np.max(x))
+    probs = e_x / e_x.sum() # Softmax of x
+
+    return probs, state
+
+
+def save_model(model, pth):
+    ml = OrderedDict()
+    for k, v in model.items():
+        ml[k] = base64.b64encode(v).decode('ascii')  # bytes to asscii
+        a = 1
+    ml_str = json.dumps(ml)
+    # ml_ = json.loads(ml_str, object_pairs_hook=OrderedDict)
+    with open(pth, 'w', encoding='utf-8') as f:
+	    f.write(ml_str)
+    
+
+def time_mixing(x, last_x, last_num, last_den, decay, bonus, mix_k, mix_v, mix_r, Wk, Wv, Wr, Wout):
+    # Part of the state tensor
+    #   - last_x  - previous time step embedding (input / prev layer's emb) (1024,)
+    #   - last_num - numerator, or "weighted sum of past values" (1024,)
+    #   - last_den - denominator, "sum of weights of past values" (1024,)
+    # Learnable parameters
+    #   - decay (1024,)
+    #   - bonus (1024,)
+    #   - mix_k - mixing ratio for key (1024,)
+    #   - mix_v - mixing ratio for value (1024,)
+    #   - mix_r - mixing ratio for receptance (1024,)
+    #   - Wk - affine transformation for key (1024, 1024)
+    #   - Wv - affine transformation for value (1024, 1024)
+    #   - Wr - affine transformation for receptance (1024, 1024)
+    #   - Wout - affine transformation for output (1024, 1024)
+
+    # In a typical transformer, the “time mixing” would be done by multi head attention.
+    # However, in the RWKV model, the time mixing is done at each time step when
+    # num(erator) and den(ominator) are updated. This is similar to how RNNs work.
+
+    # Linear interpolation below between x and last_x uses element-wise mixing ratios
+    # mix_*, which are learned weights (of same size as x, last_x).
+    # W* are 1024x1024 matrices; matmul with these are most time-consuming.
+    k = Wk @ (x * mix_k + last_x * (1 - mix_k))
+    v = Wv @ (x * mix_v + last_x * (1 - mix_v))
+    r = Wr @ (x * mix_r + last_x * (1 - mix_r))
+
+    # num / den ~= Weighted average of past values
+    # wkv ~= Also weighted average of past values, 
+    #        but we are adding a "bonus" weight to the current value `v`.
+    #        Previous weights get exponentially smaller weight, which is
+    #        already captured in the last_num and last_den variables.
+    #        However the weight doesn't decay the same for each dimension,
+    #        but is determined on each time step based on the decay vector 
+    #        (see num and den updates below)
+    wkv = (
+        (last_num + exp(bonus + k) * v) /
+        (last_den + exp(bonus + k))
+    )
+    # Multiplying the wkv (weighted average of past values) with sigmoid(r) is similar
+    # to a "gate" in RNNs that controls how much of the past values to use, since
+    # sigmoid(r) is a value between 0 and 1.
+    rwkv = sigmoid(r) * wkv
+    # Final linear (affine) transformation to get the output embedding.
+    time_mixed = Wout @ rwkv
+
+    # Below we set the numerator and denominator for the next time step.
+    #   num - numerator, or "weighted sum of past values"
+    #   den - denominator, "sum of weights of past values"
+    # Can be seen as interpolate between previous step num (or den) and a new value,
+    # where element-wise decay vector determines the amount of decay per dimension.
+    num = exp(-exp(decay)) * last_num + exp(k) * v
+    den = exp(-exp(decay)) * last_den + exp(k)
+
+    return time_mixed, (x, num, den)
+
+
+def channel_mixing(x, last_x, mix_k, mix_r, Wk, Wr, Wv):
+    # Wk - (4096, 1024)
+    # Wr - (1024, 1024)
+    # Wv - (1024, 4096)
+    
+    # In a typical transformer, the “channel mixing” is done by a simple FF NN.
+    # By contrast, we use two separate fully connected layers on the input
+    # (where input linearly interpolates between the current input and 
+    # previous time step input) and then multiply them element-wise.
+
+    # Linear interpolation (below) between x and last_x uses an element-wise mixing ratio
+    # mix_k and mix_r, which are learned weights (of same size as x, last_x).
+    # Wk, Wr, Wv are 1024x1024 matrices; matmul with these are most time-consuming.
+
+    # x and last_x is linearly interpolated with mixing ratio mix_k,
+    # then passed through a FC layer with squared relu activation
+    k = Wk @ (x * mix_k + last_x * (1 - mix_k)) # @ is matrix multiplication
+    k = np.maximum(k, 0) ** 2 # squared relu activation
+
+    # x and last_x is linearly interpolated with mixing ratio mix_r,
+    # then passed through a FC layer with sigmoid activation
+    r = Wr @ (x * mix_r + last_x * (1 - mix_r))
+    r = sigmoid(r)
+
+    # K-mixed input is passed through affine transformation (without activation, 
+    # so not quite a FC layer) before being multiplied to r-mixed input element-wise.
+    vk = Wv @ k
+    channel_mixed = r * vk
+
+    return channel_mixed, x # pass x along unchanged, will be last_x in the next step
+
+
+def sample_probs(probs, temperature=1.0, top_p=0.85):
+    sorted_probs = np.sort(probs)[::-1]
+    cumulative_probs = np.cumsum(sorted_probs)
+    cutoff = sorted_probs[np.argmax(cumulative_probs > top_p)]
+    idx = probs < cutoff
+    # probs[probs < cutoff] = 0
+    probs = probs.at[idx].set(0)
+    probs = probs ** (1 / temperature)
+    # return np.random.choice(a=len(probs), p=probs / np.sum(probs))
+    key1, key2, key3, key4 = jrandom.split(jrandom.PRNGKey(1999), 4)
+    return jax.random.choice(key=key4, a=len(probs), p=probs / np.sum(probs))
+
+
+# Available at https://huggingface.co/BlinkDL/rwkv-4-pile-430m/resolve/main/RWKV-4-Pile-430M-20220808-8066.pth
+MODEL_FILE = 'RWKV-4-Pile-430M-20220808-8066.pth'
+N_LAYER = 24
+N_EMBD = 1024
+
+print(f'\nLoading {MODEL_FILE}')
+weights = torch_load(MODEL_FILE, map_location='cpu')
+for k in weights.keys():
+    if '.time_' in k:
+        weights[k] = weights[k].squeeze()
+    weights[k] = weights[k].float().numpy() # convert to f32 type
+
+
+# import pickle
+# with open("new.pkl", "wb") as f:
+#     pickle.dump(weights, f)
+
+
+emb_weight = weights['emb.weight']
+
+# weights['emb.weight'] = np.random.uniform(size=(50277, 1024))
+    # 只替换嵌入向量成随机数, 后面再自已训练？
+
+# key1, key2, key3, key4 = jrandom.split(jrandom.PRNGKey(1999), 4)
+# weights['emb.weight'] = jax.random.normal(key1, shape=(50277, 1024), dtype=jnp.float32)   
+
+# Available at https://github.com/BlinkDL/ChatRWKV/blob/main/20B_tokenizer.json
+tokenizer = Tokenizer.from_file("20B_tokenizer.json")
+
+print(f'\nPreprocessing context')
+context = "\nIn a shocking finding, scientist discovered a herd of dragons living in a remote, previously unexplored valley, in Tibet. Even more surprising to the researchers was the fact that the dragons spoke perfect Chinese."
+
+# The 4 dimensions are 
+#     [last_x, last_num, last_den] (after time mixing) - used by time mixing
+#     last_x (after channel mixing) - used by channel mixing
+state = np.zeros((N_LAYER, 4, N_EMBD), dtype=np.float32)
+for token in tokenizer.encode(context).ids:
+    probs, state = RWKV(weights, token, state)
+
+print(context, end="")
+for i in range(100):
+    token = sample_probs(probs)
+    print(tokenizer.decode([token]), end="", flush=True)
+    probs, state = RWKV(weights, token, state)
+
+```
+
+
+
+
+
 ## cuda 多版本切换
 
 ```
@@ -333,6 +637,50 @@ loss_fn = F.cross_entropy
 
 
 
+## numpy
+
+
+
+### 赋值
+
+```python
+import numpy as np
+a = np.array([1, 2, 3, 4, 5])
+a[:3] = (6, 7, 8)
+
+import jax.numpy as jnp
+a = jnp.array([1, 2, 3, 4, 5])
+a = a.at[:3].set( (6, 7, 8) )
+
+b = jnp.array([ [1, 2, 3], [4, 5, 6] ])
+b = b.at[1].set([ 7, 8, 9 ])
+
+import jax
+import jax.random as jrandom
+key1, key2, key3, key4 = jrandom.split(jrandom.PRNGKey(1999), 4)
+c = jax.random.normal(key1, shape=(2, 2, 2), dtype=jnp.float32)
+c = c.at[0, :2].set(jnp.array([ [9, 9], [9, 9]]))
+
+https://jax.readthedocs.io/en/latest/_autosummary/jax.lax.slice.html#jax.lax.slice
+
+https://stackoverflow.com/questions/75043981/updating-entire-row-or-column-of-a-2d-array-in-jax
+
+```
+
+
+
+
+
+numpy.array2string
+
+![image-20240604152639231](pytorch summary.assets/image-20240604152639231.png)
+
+
+
+
+
+
+
 ## 张量
 
 [一个本子工程系列张量的重点概念运算 必看](https://zhuanlan.zhihu.com/p/591344339)
@@ -383,6 +731,28 @@ print(a)
 ```python
 answers = torch.tensor(answers).float() # convert to tensor
 ```
+
+
+
+### to
+
+```
+
+i.item()
+	# 真 int
+	# 下面转完还是 tensor
+
+tensor.to(torch.float64)
+
+>>> cuda0 = torch.device('cuda:0')
+>>> tensor.to(cuda0)
+tensor([[-0.5044,  0.0005],
+        [ 0.3310, -0.0584]], device='cuda:0')
+
+>>> tensor.to(cuda0, dtype=torch.float64)
+```
+
+
 
 
 

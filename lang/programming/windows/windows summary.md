@@ -147,6 +147,47 @@ int main(){
 
 
 
+# vscdoe + windows ssh
+
+https://github.com/PowerShell/Win32-OpenSSH/releases/download/v9.5.0.0p1-Beta/OpenSSH-Win64-v9.5.0.0.msi
+
+- ```
+  nmap -p 22 127.0.0.1
+  	# 装完以后 windows 的 22 端口就打开了
+  	
+  ```
+
+  
+
+
+
+```
+Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'
+	# powershell 管理员执行
+
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+	# install
+
+ssh i@127.0.0.1
+	# powershell 成功连上
+
+
+C:\Users\i\.ssh\config
+Host 127.0.0.1
+  HostName 127.0.0.1
+  Port 22
+  User i
+  	# vscode 成功连上 windows
+  	# 甚至能打开 C 盘根目录
+
+
+
+```
+
+
+
+
+
 
 
 # win10 重置网络
@@ -1747,6 +1788,19 @@ function Copy-FileSafer {
  }
 
 }
+```
+
+
+
+# md5
+
+```
+Get-FileHash -Path "E:\huggingface\rwkv5-jp-explain\out\rwkv-50.pth" -Algorithm MD5
+	# powershell
+
+md5sum out2__/rwkv-50.pth 
+	# ubuntu
+
 ```
 
 

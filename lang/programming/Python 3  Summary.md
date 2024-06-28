@@ -368,6 +368,10 @@ conda activate xx
 ```
 
 ```bash
+
+conda create -n  PaddleOCR_275 pip python=3.10
+
+
 conda create -n tensorflow_cpu pip python=3.6
 conda activate tensorflow_cpu
 conda install pytorch-cpu==1.0.0 torchvision-cpu==0.2.1 cpuonly -c pytorch
@@ -1885,7 +1889,10 @@ return out_file.name
 
 支持任何类型
 
+[OrderedDict](https://stackoverflow.com/questions/45860040/pickling-a-subclass-of-an-ordereddict)
+
 ```
+# pip install pickle5
 import pickle
 
 	with open(filename + ".pkl", "wb") as f:
@@ -3742,12 +3749,38 @@ import importlib
 ### OrderedDict
 
 ```python
-        return OrderedDict(image=data['image'],
+from collections import OrderedDict
+
+	return OrderedDict(image=data['image'],
                            polygons=polygons,
                            ignore_tags=ignore_tags,
                            shape=shape,
                            filename=filename,
                            is_training=data['is_training'])
+
+
+# OrderedDict 和 json 互转
+import json
+import collections
+
+data =  {
+        "id" : "de",
+        "Key" : "1234567",
+        "from" : "test@test.com",
+        "expires" : "2018-04-25 18:45:48.3166159",
+        "command" : "method.exec",
+        "params" : {
+          "method" : "cmd",
+          "Key" : "default",
+          "params" : {
+            "command" : "testing 23"
+          }
+        }}
+
+data_str = json.dumps(data)
+result = json.loads(data_str, object_pairs_hook=collections.OrderedDict)
+print(result)
+
 ```
 
 
@@ -5108,6 +5141,31 @@ Random number with seed 10:  0.5714025946899135
 ```python
 x = x_nodes[:, 0] # 行全要,列只要第0列.结果是二维变一维
 # (11,1) -> (11,)
+```
+
+
+
+### numpy base64 互转
+
+```python
+see huggingface\rwkv_numpy\rwkv.py
+    x = emb_weight[token]
+    b64 = base64.b64encode(x)
+    bytes = base64.decodebytes(b64)
+    x__ = np.frombuffer(bytes, dtype=np.float32)
+
+
+# numpy base64 互转
+import base64
+import numpy as np
+
+t = np.arange(25, dtype=np.float64)
+s = base64.b64encode(t)
+r = base64.decodebytes(s)
+q = np.frombuffer(r, dtype=np.float64)
+
+print(np.allclose(q, t))
+# True
 ```
 
 
@@ -10113,7 +10171,22 @@ img_bytes = img_bytes.getvalue()
 print(type(img_bytes))  
 ```
 
-### 3. cv2 与bytes 相互转化
+
+
+### 3.PIL Base64 互转
+
+```python
+import base64
+from io import BytesIO
+
+buffered = BytesIO()
+image.save(buffered, format="JPEG")
+img_str = base64.b64encode(buffered.getvalue())
+```
+
+
+
+### 4. cv2 与bytes 相互转化
 
 ```python
 import numpy as np
@@ -10133,7 +10206,74 @@ img_bytes = img_encode.tobytes()
 
 
 
-### 4. cv2 和 numpy 互转
+#### gpt-4o image
+
+```python
+import openai
+import json
+import time
+import streamlit as st
+import base64
+from PIL import Image
+from io import BytesIO
+
+with open("config.json", "r", encoding='UTF-8') as f:
+    api_key = json.load(f)["api_key_gpt"]
+
+def encode_image(image_path):
+  with open(image_path, "rb") as image_file:
+    return base64.b64encode(image_file.read()).decode('utf-8')
+
+img = Image.open("./images/1.png")
+buffered = BytesIO()
+img.save(buffered, format="JPEG")
+img_str = base64.b64encode(buffered.getvalue()).decode("utf-8")
+
+def chat_gpt4(api_key, q, img_b64=None):
+    
+    prompt = """
+    识图片中的日语句子或使用用户提供的日语句子。现在你是一个生活在日本的日本人，你正在教一个中国人学日语。所有日语句子中的语汇和语法作出详细解释，请用简体中文以下面这种格式输出，并且最后以“句子翻译：...” 结束。例如，日语句子 "一応約束したからな。"，要严格案照以下格式输出并且不要漏掉符号">":
+  一応約束したからな。
+  >1. 一応（いちおう）：这是一个副词，表示"大体上，首先，暂时，总之"等。
+  >2. 約束した（やくそくした）：这是一个动词的过去形，"約束する"表示"约定，承诺"。
+  >3. からな：这是一个助词，表示原因或理由，"な"在这里增加了一些口语化和亲近感。
+  >
+  >句子翻译："毕竟我已经答应过了。
+    """
+    
+    messages = [
+        { "role": "system","content":prompt},
+        { "role": "user","content":[{ "type": "text", "text": f"{q}"}]}
+    ]
+    
+    if img_b64 != None:
+        messages[1]['content'].append( { "type":"image_url", "image_url": { "url": f"data:image/jpeg;base64,{img_b64}"} } )
+    
+    import openai
+    openai.api_key = api_key
+    stream = openai.chat.completions.create(
+        model= "gpt-4o", #"gpt-4",
+        messages = messages,
+        stream=True,
+        timeout=30
+    )
+    for chunk in stream:
+        text = chunk.choices[0].delta.content or ""
+        yield text
+
+answer = ''
+it = iter(chat_gpt4(api_key, "", img_b64=img_str))
+for text in it:
+	print(text)
+    answer += text
+
+```
+
+
+
+
+
+### 5. cv2 和 numpy 互转
 
 ```
   img = cv2.cvtColor(im, cv2.COLOR_RGB2BGR) # np.asarray(img)
@@ -12702,6 +12842,14 @@ Pyqtdeploy
 
 
 
+## Jamscreenshot 屏幕截图
+
+https://github.com/fandesfyf/Jamscreenshot
+
+https://github.com/fandesfyf/JamVideoPlayer  视频播放器
+
+
+
 ## pyside2 视频播放器
 
 - https://gitee.com/se7enXF/pyside2
@@ -14646,6 +14794,8 @@ see  huggingface\video-subtitle-extractor\readme.txt
 # uvicorn
 
 see https://huggingface.co/spaces/ronvolutional/ai-pokemon-card 宝可梦卡片生成
+
+see https://github.com/pagefaultgames/pokerogue  宝可梦游戏
 
 
 
@@ -19413,7 +19563,3 @@ else:
 
 
 
-
-```
-
-```
