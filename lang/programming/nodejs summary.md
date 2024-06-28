@@ -4007,6 +4007,8 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 
 - ```
   
+  curl -XPOST https://mikeee-reka.hf.space/hf/v1/chat/completions -H "Authorization: Bearer 316287378"  -H "Content-Type: application/json" --data "{\"model\": \"reka-core\", \"messages\": [{\"role\": \"user\", \"content\": \"Say this is a test!\"}]}"
+  
   注意：windows linux .gitconfig 
   autocrlf = true
   	# 都设成这样，坏处是拉代码时 proxychain 要临时改 autocrlf = false ，pull 完再改回去
@@ -28614,7 +28616,7 @@ https://github.com/00ffcc/chunkRWKV6
 
 [Attention优化原理图解: 从Online-Softmax到FlashAttention V1/V2/V3](https://zhuanlan.zhihu.com/p/668888063)
 
-
+[GitHub - toughdata/fine-tune-rwkv: Fine-tune RWKV with HuggingFace Transformers library](https://github.com/toughdata/fine-tune-rwkv)
 
 
 
