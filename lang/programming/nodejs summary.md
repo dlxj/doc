@@ -28616,6 +28616,8 @@ print(response.text)
 
 ## poe api
 
+https://poe.com/api_key  [docker](https://linux.do/t/topic/99973) [pandora next?](https://github.com/aurora-develop/aurora)
+
 https://creator.poe.com/docs/fastapi_poe-python-reference
 
 ```
