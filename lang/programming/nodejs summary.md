@@ -4007,8 +4007,6 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 
 - ```
   
-  curl -XPOST https://mikeee-reka.hf.space/hf/v1/chat/completions -H "Authorization: Bearer 316287378"  -H "Content-Type: application/json" --data "{\"model\": \"reka-core\", \"messages\": [{\"role\": \"user\", \"content\": \"Say this is a test!\"}]}"
-  
   注意：windows linux .gitconfig 
   autocrlf = true
   	# 都设成这样，坏处是拉代码时 proxychain 要临时改 autocrlf = false ，pull 完再改回去
@@ -4146,7 +4144,6 @@ http://localhost:6006
 
 git config --global user.name "dlxjj" && 
 git config --global user.email "12345@qq.com"
-
 git config --global push.default matching  
 
 git config --system --list
@@ -4270,6 +4267,14 @@ huggingface-cli repo create pandora --type dataset
     # huggingface-cli repo create paddleocr --type dataset
     # huggingface-cli repo create powershell --type dataset
  	# huggingface-cli repo create PaddleOCR_275 --type dataset
+ 	# huggingface-cli repo create rwkv_numpy --type dataset
+ 	# huggingface-cli repo create RWKV4 --type dataset # 和上面配套起来看
+ 	# huggingface-cli repo create RWKV5_rwkv5jpexplain --type dataset # 和 space 配套的
+ 	# huggingface-cli repo create RWKV6 --type dataset
+ 	# huggingface-cli repo create picoGPT_chinese --type dataset
+ 	# huggingface-cli repo create nanoRWKV --type dataset
+	# huggingface-cli repo create RWKV5_nlpp --type dataset
+	# huggingface-cli repo create RWKV1 --type dataset
 	# huggingface-cli repo create PaddleOCR_ali1k_det_rec_300epoch --type dataset
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
@@ -25774,9 +25779,7 @@ vLLM – 伯克利推理
 
 [training](https://github.com/EleutherAI/pythia#reproducing-training)
 
-```
 
-```
 
 
 
@@ -28651,6 +28654,20 @@ Quora的CEO，他自己其实借着GPT的东风搞了POE，一个可以调用GPT
 
 ### RWKV6
 
+[RWKV_Pytorch](https://github.com/yuunnn-w/RWKV_Pytorch)  kv6 only, 香橙派
+
+[Triton rwkv](https://github.com/codekansas/rwkv) [数学必看](https://ben.bolte.cc/rwkv-model)
+
+[RWKV, Explained 详细 colab](https://fullstackdeeplearning.com/blog/posts/rwkv-explainer/)
+
+[理解RWKV模型一_大语言模型研究01](https://limoncc.com/post/7a57a5a743894a0e/)
+
+- [RWKV解读：在Transformer的时代的新RNN](https://zhuanlan.zhihu.com/p/656323242) 
+
+  - ```
+    Attention Free Transformer (AFT) 是Apple公司提出的一种新型的神经网络模型
+    ```
+
 [RWKV-6 模型设计带注释](https://zhuanlan.zhihu.com/p/694593540)
 
 - [gist numpy实现](https://gist.github.com/mattiasarro/c925e789e0358436f3e6c12731f5a196)
@@ -28668,9 +28685,311 @@ https://github.com/00ffcc/chunkRWKV6
 
 [Attention优化原理图解: 从Online-Softmax到FlashAttention V1/V2/V3](https://zhuanlan.zhihu.com/p/668888063)
 
-[GitHub - toughdata/fine-tune-rwkv: Fine-tune RWKV with HuggingFace Transformers library](https://github.com/toughdata/fine-tune-rwkv)
 
-[pure_jax]([RWKV-LM-jax/pure_jax.ipynb at master · mrsteyk/RWKV-LM-jax · GitHub](https://github.com/mrsteyk/RWKV-LM-jax/blob/master/pure_jax.ipynb))
+
+
+
+#### rwkv_jax
+
+```python
+
+# see huggingface/rwkv_numpy/rwkv.py
+
+# pip install tokenizers
+# pip install -U "jax[cpu]"
+
+# Taken from https://johanwind.github.io/2023/03/23/rwkv_details.html. 
+# I've added additional comments restructured it a tiny bit, which makes it clearer for me.
+
+
+""""
+probs
+    shape:
+        (50277,)
+    # RWKV 函数输出下一个 token 的概率分布,  总 token 数为 50277
+    
+"""
+
+# import numpy as np
+import jax.numpy as np
+from torch import load as torch_load  # Only for loading the model weights
+from torch import save as torch_save
+from tokenizers import Tokenizer
+import base64
+from collections import OrderedDict
+import json
+import jax
+import jax.numpy as jnp
+import jax.random as jrandom
+
+exp = np.exp
+layer_norm = lambda x, w, b : (x - np.mean(x)) / np.std(x) * w + b
+sigmoid = lambda x : 1/(1 + exp(-x))
+
+
+def RWKV(model, token, state):
+    keys = model.keys()
+    emb = [key for key in model.keys() if key.startswith('emb')]
+    blocks_0_ln0 = [key for key in model.keys() if key.startswith('blocks.0.ln0')]
+    blocks_0_att = [key for key in model.keys() if key.startswith('blocks.0.att')]
+    blocks_0_ffn = [key for key in model.keys() if key.startswith('blocks.0.ffn')]
+    ln_out = [key for key in model.keys() if key.startswith('ln_out')]
+    head = [key for key in model.keys() if key.startswith('head')]
+    
+    params = lambda prefix: [model[key] for key in model.keys() if key.startswith(prefix)]
+    
+    emb_weight = model['emb.weight']
+    
+    x = emb_weight[token]
+    
+    # b64 = base64.b64encode(x)
+    # bytes = base64.decodebytes(b64)
+    # x__ = np.frombuffer(bytes, dtype=np.float32)
+    
+    blocks_0_ln0_weight = model['blocks.0.ln0.weight']
+    blocks_0_ln0_bias = model['blocks.0.ln0.bias']
+    
+    x = layer_norm(x, blocks_0_ln0_weight, blocks_0_ln0_bias)
+
+    #x = params('emb')[0][token]
+    #x = layer_norm(x, *params('blocks.0.ln0'))
+
+    for i in range(N_LAYER):
+        blocks_i_ln1_weight = model[f'blocks.{i}.ln1.weight']
+        blocks_i_ln1_bias = model[f'blocks.{i}.ln1.bias']
+        x_ = layer_norm(x, blocks_i_ln1_weight, blocks_i_ln1_bias)
+        
+        blocks_i_att_time_decay = model[f'blocks.{i}.att.time_decay']
+        blocks_i_att_time_first = model[f'blocks.{i}.att.time_first']
+        blocks_i_att_time_mix_k = model[f'blocks.{i}.att.time_mix_k']
+        blocks_i_att_time_mix_v = model[f'blocks.{i}.att.time_mix_v']
+        blocks_i_att_time_mix_r = model[f'blocks.{i}.att.time_mix_r']
+        blocks_i_att_key_weight = model[f'blocks.{i}.att.key.weight']
+        blocks_i_att_value_weight = model[f'blocks.{i}.att.value.weight']
+        blocks_i_att_receptance_weight = model[f'blocks.{i}.att.receptance.weight']
+        blocks_i_att_output_weight = model[f'blocks.{i}.att.output.weight']
+        
+                
+        last_x, last_num, last_den = state[i][:3]
+        dx, x_num_den = time_mixing(x_, last_x, last_num, last_den, 
+                                blocks_i_att_time_decay,
+                                blocks_i_att_time_first,
+                                blocks_i_att_time_mix_k,
+                                blocks_i_att_time_mix_v,
+                                blocks_i_att_time_mix_r,
+                                blocks_i_att_key_weight,
+                                blocks_i_att_value_weight,
+                                blocks_i_att_receptance_weight,
+                                blocks_i_att_output_weight
+                            )
+
+        # state[i][:3] = x_num_den  # just for numpy
+        state = state.at[i, :3].set( x_num_den )
+
+        x = x + dx
+
+
+        blocks_i_ln2_weight = model[f'blocks.{i}.ln2.weight']
+        blocks_i_ln2_bias = model[f'blocks.{i}.ln2.bias']
+
+        blocks_i_ffn_time_mix_k = model[f'blocks.{i}.ffn.time_mix_k']
+        blocks_i_ffn_time_mix_r = model[f'blocks.{i}.ffn.time_mix_r']
+        blocks_i_ffn_key_weight = model[f'blocks.{i}.ffn.key.weight']
+        blocks_i_ffn_receptance_weight = model[f'blocks.{i}.ffn.receptance.weight']
+        blocks_i_ffn_value_weight = model[f'blocks.{i}.ffn.value.weight']
+
+
+        x_ = layer_norm(x, blocks_i_ln2_weight, blocks_i_ln2_bias)
+        dx, tmp_x = channel_mixing(x_, state[i][3], 
+                            blocks_i_ffn_time_mix_k,
+                            blocks_i_ffn_time_mix_r,
+                            blocks_i_ffn_key_weight,
+                            blocks_i_ffn_receptance_weight,
+                            blocks_i_ffn_value_weight
+                        )
+
+        # state[i][3] = tmp_x  # just for numpy
+        state = state.at[i, 3].set( tmp_x )
+
+        x = x + dx
+        
+
+    
+    ln_out_weight = model[f'ln_out.weight']
+    ln_out_bias = model[f'ln_out.bias']
+    head_weight = model[f'head.weight']
+
+    x = layer_norm(x, ln_out_weight, ln_out_bias)
+    x = head_weight @ x
+
+
+    e_x = exp(x - np.max(x))
+    probs = e_x / e_x.sum() # Softmax of x
+
+    return probs, state
+
+
+def save_model(model, pth):
+    ml = OrderedDict()
+    for k, v in model.items():
+        ml[k] = base64.b64encode(v).decode('ascii')  # bytes to asscii
+        a = 1
+    ml_str = json.dumps(ml)
+    # ml_ = json.loads(ml_str, object_pairs_hook=OrderedDict)
+    with open(pth, 'w', encoding='utf-8') as f:
+	    f.write(ml_str)
+    
+
+def time_mixing(x, last_x, last_num, last_den, decay, bonus, mix_k, mix_v, mix_r, Wk, Wv, Wr, Wout):
+    # Part of the state tensor
+    #   - last_x  - previous time step embedding (input / prev layer's emb) (1024,)
+    #   - last_num - numerator, or "weighted sum of past values" (1024,)
+    #   - last_den - denominator, "sum of weights of past values" (1024,)
+    # Learnable parameters
+    #   - decay (1024,)
+    #   - bonus (1024,)
+    #   - mix_k - mixing ratio for key (1024,)
+    #   - mix_v - mixing ratio for value (1024,)
+    #   - mix_r - mixing ratio for receptance (1024,)
+    #   - Wk - affine transformation for key (1024, 1024)
+    #   - Wv - affine transformation for value (1024, 1024)
+    #   - Wr - affine transformation for receptance (1024, 1024)
+    #   - Wout - affine transformation for output (1024, 1024)
+
+    # In a typical transformer, the “time mixing” would be done by multi head attention.
+    # However, in the RWKV model, the time mixing is done at each time step when
+    # num(erator) and den(ominator) are updated. This is similar to how RNNs work.
+
+    # Linear interpolation below between x and last_x uses element-wise mixing ratios
+    # mix_*, which are learned weights (of same size as x, last_x).
+    # W* are 1024x1024 matrices; matmul with these are most time-consuming.
+    k = Wk @ (x * mix_k + last_x * (1 - mix_k))
+    v = Wv @ (x * mix_v + last_x * (1 - mix_v))
+    r = Wr @ (x * mix_r + last_x * (1 - mix_r))
+
+    # num / den ~= Weighted average of past values
+    # wkv ~= Also weighted average of past values, 
+    #        but we are adding a "bonus" weight to the current value `v`.
+    #        Previous weights get exponentially smaller weight, which is
+    #        already captured in the last_num and last_den variables.
+    #        However the weight doesn't decay the same for each dimension,
+    #        but is determined on each time step based on the decay vector 
+    #        (see num and den updates below)
+    wkv = (
+        (last_num + exp(bonus + k) * v) /
+        (last_den + exp(bonus + k))
+    )
+    # Multiplying the wkv (weighted average of past values) with sigmoid(r) is similar
+    # to a "gate" in RNNs that controls how much of the past values to use, since
+    # sigmoid(r) is a value between 0 and 1.
+    rwkv = sigmoid(r) * wkv
+    # Final linear (affine) transformation to get the output embedding.
+    time_mixed = Wout @ rwkv
+
+    # Below we set the numerator and denominator for the next time step.
+    #   num - numerator, or "weighted sum of past values"
+    #   den - denominator, "sum of weights of past values"
+    # Can be seen as interpolate between previous step num (or den) and a new value,
+    # where element-wise decay vector determines the amount of decay per dimension.
+    num = exp(-exp(decay)) * last_num + exp(k) * v
+    den = exp(-exp(decay)) * last_den + exp(k)
+
+    return time_mixed, (x, num, den)
+
+
+def channel_mixing(x, last_x, mix_k, mix_r, Wk, Wr, Wv):
+    # Wk - (4096, 1024)
+    # Wr - (1024, 1024)
+    # Wv - (1024, 4096)
+    
+    # In a typical transformer, the “channel mixing” is done by a simple FF NN.
+    # By contrast, we use two separate fully connected layers on the input
+    # (where input linearly interpolates between the current input and 
+    # previous time step input) and then multiply them element-wise.
+
+    # Linear interpolation (below) between x and last_x uses an element-wise mixing ratio
+    # mix_k and mix_r, which are learned weights (of same size as x, last_x).
+    # Wk, Wr, Wv are 1024x1024 matrices; matmul with these are most time-consuming.
+
+    # x and last_x is linearly interpolated with mixing ratio mix_k,
+    # then passed through a FC layer with squared relu activation
+    k = Wk @ (x * mix_k + last_x * (1 - mix_k)) # @ is matrix multiplication
+    k = np.maximum(k, 0) ** 2 # squared relu activation
+
+    # x and last_x is linearly interpolated with mixing ratio mix_r,
+    # then passed through a FC layer with sigmoid activation
+    r = Wr @ (x * mix_r + last_x * (1 - mix_r))
+    r = sigmoid(r)
+
+    # K-mixed input is passed through affine transformation (without activation, 
+    # so not quite a FC layer) before being multiplied to r-mixed input element-wise.
+    vk = Wv @ k
+    channel_mixed = r * vk
+
+    return channel_mixed, x # pass x along unchanged, will be last_x in the next step
+
+
+def sample_probs(probs, temperature=1.0, top_p=0.85):
+    sorted_probs = np.sort(probs)[::-1]
+    cumulative_probs = np.cumsum(sorted_probs)
+    cutoff = sorted_probs[np.argmax(cumulative_probs > top_p)]
+    idx = probs < cutoff
+    # probs[probs < cutoff] = 0
+    probs = probs.at[idx].set(0)
+    probs = probs ** (1 / temperature)
+    # return np.random.choice(a=len(probs), p=probs / np.sum(probs))
+    key1, key2, key3, key4 = jrandom.split(jrandom.PRNGKey(1999), 4)
+    return jax.random.choice(key=key4, a=len(probs), p=probs / np.sum(probs))
+
+
+# Available at https://huggingface.co/BlinkDL/rwkv-4-pile-430m/resolve/main/RWKV-4-Pile-430M-20220808-8066.pth
+MODEL_FILE = 'RWKV-4-Pile-430M-20220808-8066.pth'
+N_LAYER = 24
+N_EMBD = 1024
+
+print(f'\nLoading {MODEL_FILE}')
+weights = torch_load(MODEL_FILE, map_location='cpu')
+for k in weights.keys():
+    if '.time_' in k:
+        weights[k] = weights[k].squeeze()
+    weights[k] = weights[k].float().numpy() # convert to f32 type
+
+
+# import pickle
+# with open("new.pkl", "wb") as f:
+#     pickle.dump(weights, f)
+
+
+emb_weight = weights['emb.weight']
+
+# weights['emb.weight'] = np.random.uniform(size=(50277, 1024))
+    # 只替换嵌入向量成随机数, 后面再自已训练？
+
+# key1, key2, key3, key4 = jrandom.split(jrandom.PRNGKey(1999), 4)
+# weights['emb.weight'] = jax.random.normal(key1, shape=(50277, 1024), dtype=jnp.float32)   
+
+# Available at https://github.com/BlinkDL/ChatRWKV/blob/main/20B_tokenizer.json
+tokenizer = Tokenizer.from_file("20B_tokenizer.json")
+
+print(f'\nPreprocessing context')
+context = "\nIn a shocking finding, scientist discovered a herd of dragons living in a remote, previously unexplored valley, in Tibet. Even more surprising to the researchers was the fact that the dragons spoke perfect Chinese."
+
+# The 4 dimensions are 
+#     [last_x, last_num, last_den] (after time mixing) - used by time mixing
+#     last_x (after channel mixing) - used by channel mixing
+state = np.zeros((N_LAYER, 4, N_EMBD), dtype=np.float32)
+for token in tokenizer.encode(context).ids:
+    probs, state = RWKV(weights, token, state)
+
+print(context, end="")
+for i in range(100):
+    token = sample_probs(probs)
+    print(tokenizer.decode([token]), end="", flush=True)
+    probs, state = RWKV(weights, token, state)
+
+```
+
+
 
 
 
@@ -28678,7 +28997,7 @@ https://github.com/00ffcc/chunkRWKV6
 
 ```python
 
-# https://gist.github.com/echoplay/7bd2953ae64647bd886468adc15b728c
+# pip install tokenizers
 
 # Taken from https://johanwind.github.io/2023/03/23/rwkv_details.html. 
 # I've added additional comments restructured it a tiny bit, which makes it clearer for me.
@@ -28815,7 +29134,7 @@ def sample_probs(probs, temperature=1.0, top_p=0.85):
 
 
 # Available at https://huggingface.co/BlinkDL/rwkv-4-pile-430m/resolve/main/RWKV-4-Pile-430M-20220808-8066.pth
-MODEL_FILE = 'data/rwkv/RWKV-4-Pile-430M-20220808-8066.pth'
+MODEL_FILE = 'RWKV-4-Pile-430M-20220808-8066.pth'
 N_LAYER = 24
 N_EMBD = 1024
 
@@ -28828,7 +29147,7 @@ for k in weights.keys():
 
 
 # Available at https://github.com/BlinkDL/ChatRWKV/blob/main/20B_tokenizer.json
-tokenizer = Tokenizer.from_file("data/rwkv/20B_tokenizer.json")
+tokenizer = Tokenizer.from_file("20B_tokenizer.json")
 
 print(f'\nPreprocessing context')
 context = "\nIn a shocking finding, scientist discovered a herd of dragons living in a remote, previously unexplored valley, in Tibet. Even more surprising to the researchers was the fact that the dragons spoke perfect Chinese."
@@ -28849,6 +29168,10 @@ for i in range(100):
 ```
 
 
+
+#### VisualRWKV
+
+[VisualRWKV](https://github.com/howard-hou/VisualRWKV)
 
 
 
@@ -28921,13 +29244,114 @@ v4neo 可以用v4 代码推理，**v5 用 v4 推理出错**
 
 
 ```
+pip install torch==1.13.1+cu116 --extra-index-url https://download.pytorch.org/whl/cu116
+	# ppocr 4090 只能用 cu116, 看能不能用 116，统一环境
+
+```
+
+
+
+
+
+
+
+```
+
+# 实测　3090 必须用 cuda11.7, 4090 可能必须用　cuda11.8
+	# 3090 能正常训练
+	# pip install torch==2.0.0 --index-url https://download.pytorch.org/whl/cu118
+
+
+
+# 实测 4090 成功训练
+Python3.10 + ubuntu22.04 + Cuda11.8 + GRTX 4090(24GB) + 内存120GB
+	# 重点：pip install deepspeed==0.12.0  否则爆显存
+	# pip install torch==2.0.0 --index-url https://download.pytorch.org/whl/cu118
+	# pip install pytorch-lightning==1.9.5 deepspeed==0.12.0 wandb ninja
+	# pip install --force-reinstall -v "fastapi==0.99.1"
+	# pip install setuptools==69.5.1
+	# python3.10 train.py 就可以了
+
+# WSL2
+	https://blog.csdn.net/VVBBBBB/article/details/134129558
+		# 试试看 
+		
+# rwkv6
+wget https://developer.download.nvidia.com/compute/cuda/12.3.0/local_installers/cuda_12.3.0_545.23.06_linux.run
+sudo sh cuda_12.3.0_545.23.06_linux.run
+update-alternatives --remove cuda /usr/local/cuda-11.8
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-12.3 123
+ln -sfT /usr/local/cuda-12.3 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+conda create -n KV6 pip python=3.10 && 
+conda activate KV6 && 
+pip install torch==2.1.2+cu121 --extra-index-url https://download.pytorch.org/whl/cu121 && 
+pip install "setuptools<70" && 
+pip install pytorch-lightning==1.9.5 deepspeed wandb ninja 
+	# setuptools<70 fix cannot import name 'packaging' from 'pkg_resources'
+cd ~/RWKV-LM/RWKV-v5 
+python make_data.py demo.jsonl 3 512	
+vi /root/RWKV-LM/RWKV-v5/demo-training-prepare.sh
+python train.py --wandb "" --proj_dir $PROJ_DIR \
+ --data_file "demo" --data_type "binidx" --vocab_size 65536 --my_testing $MODEL_TYPE \
+ --ctx_len 512 \
+ --ctx_len $CTX_LEN --my_pile_stage 1 --epoch_count 1 --epoch_begin 0 \
+ --epoch_save 1 --weight_decay 0 --head_size_a 64 \
+ --num_nodes 1 --micro_bsz 1 --n_layer $N_LAYER --n_embd $N_EMBD --pre_ffn 0 --head_qk 0 --my_exit_tokens 200499 --magic_prime 389 \
+ --lr_init 1e-5 --lr_final 1e-5 --warmup_steps 10 --beta1 0.9 --beta2 0.99 --adam_eps 1e-8 --my_pile_edecay 0 \
+ --accelerator gpu --devices 1 --precision bf16 --strategy deepspeed_stage_2 --grad_cp 1
+ 	# 改成这样
+./demo-training-prepare.sh
+	# 成功生成初始权重
+	# MODEL_TYPE="x060" # x060 => rwkv-6.0 
+		# 代表训练 KV6
+
+./demo-training-run.sh
+python train.py --load_model "0" --wandb "Test" --proj_dir $PROJ_DIR --my_testing $MODEL_TYPE \
+ --ctx_len $CTX_LEN --my_pile_stage 3 --epoch_count 999999 --epoch_begin 0 \
+ --data_file "demo" --my_exit_tokens 200499 --magic_prime 389 \
+ --num_nodes $N_NODE --micro_bsz $M_BSZ --n_layer $N_LAYER --n_embd $N_EMBD --pre_ffn 0 --head_qk 0 \
+ --lr_init $LR_INIT --lr_final $LR_FINAL --warmup_steps 10 --beta1 0.9 --beta2 0.99 --adam_eps 1e-8 --my_pile_edecay 0 --data_type "binidx" --vocab_size 65536 \
+ --weight_decay 0.001 --epoch_save $EPOCH_SAVE --head_size_a 64 \
+ --accelerator gpu --devices $GPU_PER_NODE --precision bf16 --strategy deepspeed_stage_2 --grad_cp $GRAD_CP --enable_progress_bar True --ds_bucket_mb $DS_BUCKET_MB
+	# 改成这样，成功训练 
+	
+
+lscpu|grep -i flags
+nvidia-smi
+nvcc --version
+ldconfig -p | grep cuda
+ldconfig -p | grep cudnn
+conda list | grep cudatoolkit
+	
+	
 conda create -n KV5 pip python=3.10 && \
 conda activate KV5
 pip install torch==1.13.1+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
 pip3 install torch --index-url https://download.pytorch.org/whl/cu118
 	# 试试行不行, 实测 4090 可以训练, deepspeed 要装最新版
+	# deepspeed==0.14.2
 pip install pytorch-lightning==1.9.5 deepspeed==0.7.0 wandb ninja
 pip install --force-reinstall -v "fastapi==0.99.1"
+pip install setuptools==69.5.1
+
+
+Unsupported gpu architecture 'compute_89'
+	# python3.10 train.py
+	# 4090 + cuda11.7 报这个错误
+
+Exception: Installed CUDA version 11.8 does not match the version torch was compiled with 11.7, unable to compile cuda/cpp extensions without a matching cuda version.
+	# autodl 是 11.8, conda 装了 cudakit11.7 必须卸载的autodl 的11.8 装11.7
+
+
+sudo sh /root/autodl-tmp/cuda_11.7.1_515.65.01_linux.run
+	# Toolkit:  Installed in /usr/local/cuda-11.7/
+update-alternatives --remove cuda /usr/local/cuda-11.8
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.7 117
+ln -sfT /usr/local/cuda-11.7 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+
 cd RWKV-v5/
 ./demo-training-prepare.sh
 ./demo-training-run.sh
@@ -28983,6 +29407,8 @@ ldconfig -p | grep cuda
 
 必须要 cuda 11.7 ，先删除 autodl 原 cuda
 
+
+update-alternatives --remove cuda /usr/local/cuda-11.8
 
 update-alternatives --remove cuda /usr/local/cuda-11.1
 update-alternatives --remove cuda-11 /usr/local/cuda-11.1
@@ -32214,6 +32640,110 @@ assert v.pipe(fn, gn) == gn(fn(v))
 ## Nodejs Monads
 
 [monads](https://github.com/sniptt-official/monads)
+
+```javascript
+// 成功运行 vscode .ts 文件
+/*
+.vscode\launch.json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/t.ts",
+            "runtimeExecutable": "ts-node-cwd.cmd",
+            "runtimeArgs": [
+            ]
+        }
+    ],
+}
+*/
+
+// npm install @thames/monads
+// npm install -g typescript ts-node
+// ts-node app.ts
+
+import { Option, Some, None, Result, Ok, Err, Either, Left, Right } from "@thames/monads";
+
+import * as fs from 'fs';
+
+{
+  const divide = (numerator: number, denominator: number): Option<number> => {
+    if (denominator === 0) {
+      return None;
+    } else {
+      return Some(numerator / denominator);
+    }
+  };
+  
+  const result = divide(2.0, 3.0);
+  
+  // Pattern match to retrieve the value
+  const message = result.match({
+    some: (res) => `Result: ${res}`,
+    none: "Cannot divide by 0",
+  });
+  
+  console.log(message);
+}
+
+{
+  const getIndex = (
+    values: string[],
+    value: string
+  ): Result<number, string> => {
+    const index = values.indexOf(value);
+
+    switch (index) {
+      case -1:
+        return Err("Value not found");
+      default:
+        return Ok(index);
+    }
+  };
+
+  const values = ["a", "b", "c"];
+
+  getIndex(values, "b"); // Ok(1)
+  getIndex(values, "z"); // Err("Value not found")
+}
+
+当使用 Either Monad 来处理计算时，一般会遵循某些惯例：
+
+成功路径 (Happy Path): 当计算成功且没有错误时，值被包装在 Right 构造器中。
+错误处理: 当计算失败或产生错误时，错误信息被放置在 Left 构造器中。
+这种方法允许函数之间传递错误而无需抛出异常，并且可以在不影响正常控制流的情况下处理这些错误。
+
+
+-- 定义一个可能会失败的函数, 返回 Either 类型
+safeDivide :: Int -> Int -> Either String Int
+safeDivide _ 0 = Left "Cannot divide by zero."
+safeDivide x y = Right (x `div` y)
+
+-- 使用 do-notation 处理连续计算
+calculateQuotient :: Int -> Int -> Int -> Either String Int
+calculateQuotient a b c =
+  do
+    result1 <- safeDivide a b
+    result2 <- safeDivide result1 c
+    return result2
+    
+-- 调用 calculateQuotient 得到结果
+main :: IO ()
+main = print $ calculateQuotient 10 2 5 -- 将输出 Right 1
+
+
+
+```
+
+
+
+
 
 ### Luckysheet 在线文档
 
