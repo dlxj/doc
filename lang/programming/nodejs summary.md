@@ -8879,9 +8879,13 @@ let arr_litteChar_digit = Array.from(Explain.matchAll(/[a-z0-9A-Z₀₁₂₃₄
 
 
 
-### replace函数还可以有回调
+### replace的回调函数
 
 ```
+
+let nw = old.replace(/\n([a-l])\./g, (match, letter) => { return "\n" + letter.toUpperCase() + "." })
+
+
 // Escape a string for use as text in an HTML document
 String.prototype.$escape = function() {
   return this.replace(/[&<>"']/g, function(m) {
