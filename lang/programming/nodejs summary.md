@@ -28643,6 +28643,33 @@ Claude 风控比较严可以用 google vertex AI 提供的
 
 https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-sonnet?service=claude-3-sonnet.endpoints.mp-anthropic.cloud.goog&hl=zh-cn&project=sapient-climate-428313-g9&activation=true
 
+
+{
+  "anthropic_version": "vertex-2023-10-16",
+  "messages": [
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "image",
+          "source": {
+            "type": "base64",
+            "media_type": "image/png",
+            "data": "iVBORw0KGg..."
+          }
+        },
+        {
+          "type": "text",
+          "text": "What is in this image?"
+        }
+      ]
+    }
+  ],
+  "max_tokens": 256,
+  "stream": true
+}
+
+
 ```
 
 
