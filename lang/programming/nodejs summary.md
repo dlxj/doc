@@ -4275,6 +4275,7 @@ huggingface-cli repo create pandora --type dataset
  	# huggingface-cli repo create nanoRWKV --type dataset
 	# huggingface-cli repo create RWKV5_nlpp --type dataset
 	# huggingface-cli repo create RWKV1 --type dataset
+	# huggingface-cli repo create RWKV_speech --type dataset
 	# huggingface-cli repo create PaddleOCR_ali1k_det_rec_300epoch --type dataset
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
@@ -29918,11 +29919,25 @@ decode = lambda l: enc.decode(l)
 
 
 
+## RWKV CLIP
+
+https://github.com/deepglint/RWKV-CLIP
+
+
+
 
 
 ## RWKV speech
 
 https://github.com/theodorblackbird/lina-speech
+
+
+
+```
+conda create -n  rwkvspeech pip python=3.10
+```
+
+
 
 
 
