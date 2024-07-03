@@ -28641,6 +28641,8 @@ https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude?
 Claude 风控比较严可以用 google vertex AI 提供的
 
 
+https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/claude-3-sonnet?service=claude-3-sonnet.endpoints.mp-anthropic.cloud.goog&hl=zh-cn&project=sapient-climate-428313-g9&activation=true
+
 ```
 
 
