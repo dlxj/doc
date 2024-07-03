@@ -28645,6 +28645,12 @@ https://console.cloud.google.com/vertex-ai/publishers/anthropic/model-garden/cla
 
 https://github.com/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/official/generative_ai/anthropic_claude_3_intro.ipynb
 
+sapient-climate-428313-g9
+	# ProjectID
+	
+https://cloud.google.com/docs/authentication/gcloud?hl=zh-cn
+	# cli 获取授权
+
 {
   "anthropic_version": "vertex-2023-10-16",
   "messages": [
