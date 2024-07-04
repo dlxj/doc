@@ -29994,6 +29994,12 @@ conda create -n  rwkvspeech pip python=3.10
 
 
 
+## chattts
+
+https://github.com/jianchang512/ChatTTS-ui
+
+
+
 
 
 ## Chatterbox
