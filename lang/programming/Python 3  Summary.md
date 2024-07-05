@@ -7357,6 +7357,45 @@ def stream_ISO():
 
 
 ```python
+import requests
+
+# 设置API地址和密钥
+api_url = "https://api.openai.com/v1/chat/completions"
+api_key = "你的API密钥"
+
+headers = {
+    "Authorization": f"Bearer {api_key}",
+    "Content-Type": "application/json"
+}
+
+data = {
+    "model": "gpt-3.5-turbo",
+    "messages": [
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "告诉我关于streaming的更多信息。"}
+    ],
+    "stream": True  # 启用流式输出
+}
+
+response = requests.post(api_url, headers=headers, json=data, stream=True)
+
+# 检查请求是否成功
+if response.status_code == 200:
+    # 逐行读取响应内容
+    for line in response.iter_lines():
+        if line:
+            decoded_line = line.decode('utf-8')
+            print(f"Received Line: {decoded_line}")
+else:
+    print(f"请求失败: {response.status_code} - {response.text}")
+
+```
+
+
+
+
+
+```python
 d = {"book":docText}
 # d = {'book':'a'}
 ret = requests.post(url="http://192.168.0.140:666/bookmenu", json=d, headers={'Content-Type':'application/json'}).json()

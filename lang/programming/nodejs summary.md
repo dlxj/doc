@@ -2264,6 +2264,10 @@ npm uninstall -g cnpm
 
 npm install cnpm@7.1.0 -g --registry=https://registry.npm.taobao.org
 	# 配套 node14 ok
+	# npm config set strict-ssl false
+		# 证书错误试试？
+	# Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+		# 禁止运行脚本试试这个
 
 
 

@@ -1075,6 +1075,26 @@ net user administrator /active:yes
 
 
 
+# 禁上运行脚本
+
+```
+
+npm install cnpm@7.1.0 -g --registry=https://registry.npm.taobao.org
+	# 配套 node14 ok
+	# npm config set strict-ssl false
+		# 证书错误试试？
+	# Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+		# 禁止运行脚本试试这个
+
+
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+	# 安装是最新版 会有兼容问题
+```
+
+
+
+
+
 # 开启大小写敏感
 
 ```
