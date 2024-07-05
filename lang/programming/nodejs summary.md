@@ -2126,6 +2126,8 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 
 
+
+
 ### 每五秒检查一次接口，不好就重启
 
 ```
@@ -2206,7 +2208,37 @@ package.json if node < 16.14
 
 
 
-## npm 镜像
+## npm 
+
+
+
+### 证书过期
+
+
+
+```
+
+npm config set strict-ssl false
+
+npm install cnpm@7.1.0 -g --registry=https://registry.npm.taobao.org
+	# 配套 node14 ok
+	# npm config set strict-ssl false
+		# 证书错误试试？
+	# Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+		# 禁止运行脚本试试这个
+
+
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+	# 安装是最新版 会有兼容问题
+```
+
+
+
+
+
+
+
+
 
 ```
 一、修改成腾讯云镜像源
