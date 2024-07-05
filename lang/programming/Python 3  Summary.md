@@ -10077,6 +10077,32 @@ if __name__ == '__main__':
 
 
 
+```python
+# 读以 base64 写入磁盘的图片
+import cv2
+import numpy as np
+import base64
+
+if __name__ == "__main__":
+    
+    with open('./a1db998d1c6c9f9e34be9689c010849e.txt', "r", encoding='ascii') as f:
+        base64Image = f.read()
+        
+    bytesImage = base64.b64decode(base64Image)
+    
+    imgData = np.frombuffer(bytesImage, dtype=np.uint8)
+    img = cv2.imdecode(imgData, -1)
+    
+    cv2.imshow('test', img)
+    cv2.waitKey()
+```
+
+
+
+
+
+
+
 ## 自动旋转180度
 
 ```python

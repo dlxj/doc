@@ -10459,7 +10459,7 @@ function getContent(fileName) {
 
 
 
-```
+```javascript
 
 		if (!fs.existsSync(gifpath)) {
           return [null, `图片不存在${gifpath}`]
@@ -10474,6 +10474,28 @@ function getContent(fileName) {
         
         
 ```
+
+
+
+```javascript
+      let imgBuf = Buffer.from(originImgData, 'base64')
+
+      //let ext = path.parse(imgName).ext   // 扩展名
+      //imgName = path.parse(imgName).name  // 去掉扩展名
+      //let imgname = `${imgName}_${md5}${ext}`
+
+      let path_scan = path.join(ocr_img_dir, bookNO, 'xxx')
+      if ( !fs.existsSync(path_scan) ) {
+        fs.mkdirSync(path_scan, { recursive: true })
+      }
+
+      let imgpath = path.join(path_scan, imgName)
+      fs.writeFileSync(imgpath, imgBuf)
+```
+
+
+
+
 
 
 
