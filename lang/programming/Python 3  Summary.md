@@ -16440,6 +16440,8 @@ https://github.com/gradio-app/gradio/issues/7950
 
 ## image
 
+https://github.com/gradio-app/gradio/issues/8711  图片 slider 效果
+
 ```python
 import gradio as gr
 from PIL import Image, ImageDraw, ImageFont
