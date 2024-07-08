@@ -17315,7 +17315,9 @@ demo.launch(share=True)
 
 ## video
 
+https://github.com/anucvml/vidat  视频标注
 
+https://github.com/gaomingqi/Track-Anything  对象追踪
 
 ```python
 gradio cc create ivideo --template Video
