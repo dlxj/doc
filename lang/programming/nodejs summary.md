@@ -31048,6 +31048,12 @@ True
 
 
 
+## 讯飞方言
+
+https://saas.xfyun.cn/help
+
+
+
 # NLP
 
 [【SimCSE】没有标注数据也能训练文本匹配模型（附源码）](https://zhuanlan.zhihu.com/p/599230890)
