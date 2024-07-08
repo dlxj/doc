@@ -17315,6 +17315,8 @@ demo.launch(share=True)
 
 ## video
 
+https://github.com/HumanSignal/label-studio  音视频图片标注
+
 https://github.com/anucvml/vidat  视频标注
 
 https://github.com/gaomingqi/Track-Anything  对象追踪
