@@ -17318,9 +17318,14 @@ demo.launch(share=True)
 https://github.com/HumanSignal/label-studio  音视频图片标注
 
 - ```
+  conda create --name label-studio && 
+  conda activate label-studio && 
+  conda install psycopg2 && 
+  pip install label-studio
+  	# 实测正常运行
+  
   pip install label-studio && 
   label-studio
-  
   
   docker pull heartexlabs/label-studio:latest
   docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest
