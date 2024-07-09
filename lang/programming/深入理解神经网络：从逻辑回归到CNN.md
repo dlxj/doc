@@ -12100,6 +12100,12 @@ python3 -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
 
 #### PPOCRLabel
 
+- https://github.com/PFCCLab/PPOCRLabel  新版
+
+  - ```
+    see huggingface\PPOCRLabel
+    ```
+
 - https://github.com/PaddlePaddle/PaddleOCR/blob/dygraph/PPOCRLabel/README_ch.md
 
 ```
