@@ -17331,9 +17331,9 @@ https://github.com/HumanSignal/label-studio  音视频图片标注
   docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest
   ```
 
-  
-
 https://github.com/anucvml/vidat  视频标注
+
+https://github.com/open-mmlab/playground/blob/main/README_zh-CN.md#-mmocr-sam 组合工具箱
 
 https://github.com/gaomingqi/Track-Anything  对象追踪
 
