@@ -28761,6 +28761,32 @@ https://cloud.google.com/docs/authentication/gcloud?hl=zh-cn
 
 
 
+## 始皇官转 API
+
+```
+
+# see echodict/README.md
+
+http://oaipro.com
+
+https://chat.oaipro.com/
+
+https://linux.do/t/topic/125092/3
+
+​```
+sk-XXXXXXX
+
+https://api.oaipro.com/v1
+
+https://chat.oaipro.com  成功使用 gpt-4o
+
+https://linux.do/t/topic/125092/3
+
+​```
+
+
+```
+
 
 
 

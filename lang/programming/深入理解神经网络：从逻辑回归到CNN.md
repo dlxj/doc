@@ -13015,6 +13015,14 @@ VAD静音检测
 
 
 
+## CosyVoice
+
+https://github.com/FunAudioLLM/CosyVoice/issues/37
+
+
+
+
+
 # 1660TI
 
 - https://blog.csdn.net/sinat_36721621/article/details/115326307
