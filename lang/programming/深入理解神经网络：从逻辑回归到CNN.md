@@ -12105,6 +12105,12 @@ python3 -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
   - ```
     see huggingface\PPOCRLabel
     ```
+  
+- 音视频图片标注
+
+  - ```
+    # see -> python summary -> gradio -> video -> 音视频图片标注
+    ```
 
 - https://github.com/PaddlePaddle/PaddleOCR/blob/dygraph/PPOCRLabel/README_ch.md
 
