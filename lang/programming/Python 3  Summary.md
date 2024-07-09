@@ -14844,6 +14844,14 @@ if __name__=="__main__":
 
 
 
+## 滚动截屏
+
+```
+see huggingface/video-subtitle-extractor
+```
+
+
+
 
 
 # pyqt
