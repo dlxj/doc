@@ -1931,8 +1931,18 @@ int main() {
 
 ```
 # see -> python summary -> gradio -> video -> 音视频图片标注
-docker pull heartexlabs/label-studio:latest
-docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest
+
+conda create --name label-studio && 
+conda activate label-studio && 
+conda install psycopg2 && 
+pip install label-studio
+	# 实测正常运行
+	
+pm2 --name label_studio_8080 start "/root/miniforge3/envs/label-studio/bin/python /usr/local/bin/label-studio"
+	
+http://xxx.77:8080/projects/
+	# 它只支持 http
+
 ```
 
 

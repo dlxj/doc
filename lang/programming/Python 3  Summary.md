@@ -17317,12 +17317,20 @@ demo.launch(share=True)
 
 https://github.com/HumanSignal/label-studio  音视频图片标注
 
+- https://blog.csdn.net/sinat_39620217/article/details/129304751
+
 - ```
   conda create --name label-studio && 
   conda activate label-studio && 
   conda install psycopg2 && 
   pip install label-studio
   	# 实测正常运行
+  	
+  pm2 --name label_studio_8080 start "/root/miniforge3/envs/label-studio/bin/python /usr/local/bin/label-studio"
+  	
+  http://xxx.77:8080/projects/
+  	# 它只支持 http
+  	
   
   pip install label-studio && 
   label-studio
