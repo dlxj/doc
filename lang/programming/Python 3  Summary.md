@@ -17318,6 +17318,10 @@ demo.launch(share=True)
 https://github.com/HumanSignal/label-studio  音视频图片标注
 
 - ```
+  pip install label-studio && 
+  label-studio
+  
+  
   docker pull heartexlabs/label-studio:latest
   docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest
   ```
