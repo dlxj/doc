@@ -28802,6 +28802,7 @@ https://cloud.google.com/docs/authentication/gcloud?hl=zh-cn
 
 https://new.oaifree.com/
 	# https://linux.do/t/topic/122674
+		# https://linux.do/t/topic/99623/2  WIKI
 	# 反代 openai ui
 
 # see echodict/README.md
