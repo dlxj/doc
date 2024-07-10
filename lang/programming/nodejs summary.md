@@ -20508,6 +20508,11 @@ func _init() -> void:
 		# %APPDATA%\[custom_user_dir_name]
 			# 加载用户配置
 
+		
+git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
+	# 配套 godot 3.5.2 能正常运行
+	var font = preload("res://assets/fonts/Roboto-Regular.tres")
+
 ```
 
 
