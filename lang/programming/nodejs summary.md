@@ -4072,6 +4072,11 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   	# linux 下 git pull rwkv5-jp-explain 代码时 vscode 里的源码控制那里刚开始会显示茫茫多的修改，等它更新一下就好了，其实并没有真被修改
   	
   
+  .gitattributes
+  # Auto detect text files and perform LF normalization
+  * text=auto
+  	# 自动检测文本 LF 并转换
+  
   win图标旁搜索 Credential Manager -> 删掉 huggingface
   
   C:\Users\Administrator\.git-credentials
@@ -4334,6 +4339,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create RWKV5_nlpp --type dataset
 	# huggingface-cli repo create RWKV1 --type dataset
 	# huggingface-cli repo create RWKV_speech --type dataset
+	# huggingface-cli repo create Pixelorama --type dataset
 	# huggingface-cli repo create PaddleOCR_ali1k_det_rec_300epoch --type dataset
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
