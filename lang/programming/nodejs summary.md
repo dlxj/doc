@@ -20441,6 +20441,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama)
 
+- https://github.com/irmozius/meta_player  音频编缉？
+
 [material-maker才质编辑](https://github.com/RodZill4/material-maker)
 
 [Animation实现subtitle](https://github.com/1Othello/godot-speech-to-subtitles)
