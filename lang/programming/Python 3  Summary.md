@@ -14844,6 +14844,14 @@ if __name__=="__main__":
 
 
 
+## 滚动截屏
+
+```
+see huggingface/video-subtitle-extractor
+```
+
+
+
 
 
 # pyqt
@@ -16440,6 +16448,8 @@ https://github.com/gradio-app/gradio/issues/7950
 
 ## image
 
+https://github.com/gradio-app/gradio/issues/8711  图片 slider 效果
+
 ```python
 import gradio as gr
 from PIL import Image, ImageDraw, ImageFont
@@ -17313,7 +17323,35 @@ demo.launch(share=True)
 
 ## video
 
+https://github.com/HumanSignal/label-studio  音视频图片标注
 
+- https://blog.csdn.net/sinat_39620217/article/details/129304751
+
+- ```
+  conda create --name label-studio && 
+  conda activate label-studio && 
+  conda install psycopg2 && 
+  pip install label-studio
+  	# 实测正常运行
+  	
+  pm2 --name label_studio_8080 start "/root/miniforge3/envs/label-studio/bin/python /root/miniforge3/envs/label-studio/bin/label-studio"
+  	
+  http://xxx.77:8080/projects/
+  	# 它只支持 http
+  	
+  
+  pip install label-studio && 
+  label-studio
+  
+  docker pull heartexlabs/label-studio:latest
+  docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/label-studio:latest
+  ```
+
+https://github.com/anucvml/vidat  视频标注
+
+https://github.com/open-mmlab/playground/blob/main/README_zh-CN.md#-mmocr-sam 组合工具箱
+
+https://github.com/gaomingqi/Track-Anything  对象追踪
 
 ```python
 gradio cc create ivideo --template Video

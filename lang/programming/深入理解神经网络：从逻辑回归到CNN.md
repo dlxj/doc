@@ -12100,6 +12100,18 @@ python3 -m pip install paddlepaddle -i https://mirror.baidu.com/pypi/simple
 
 #### PPOCRLabel
 
+- https://github.com/PFCCLab/PPOCRLabel  新版
+
+  - ```
+    see huggingface\PPOCRLabel
+    ```
+  
+- 音视频图片标注
+
+  - ```
+    # see -> python summary -> gradio -> video -> 音视频图片标注
+    ```
+
 - https://github.com/PaddlePaddle/PaddleOCR/blob/dygraph/PPOCRLabel/README_ch.md
 
 ```
@@ -13012,6 +13024,16 @@ VAD静音检测
 ### PVE显卡直通
 
 - https://www.labradors.work/2022/05/07/PVE%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/
+
+
+
+## CosyVoice
+
+https://github.com/FunAudioLLM/CosyVoice/issues/37
+
+https://www.cnblogs.com/v3ucn/p/18288786
+
+
 
 
 

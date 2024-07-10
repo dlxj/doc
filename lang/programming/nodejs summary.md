@@ -1925,6 +1925,28 @@ int main() {
 
 ## vscode + gradio
 
+### 音视频图片标注
+
+
+
+```
+# see -> python summary -> gradio -> video -> 音视频图片标注
+
+conda create --name label-studio && 
+conda activate label-studio && 
+conda install psycopg2 && 
+pip install label-studio
+	# 实测正常运行
+	
+pm2 --name label_studio_8080 start "/root/miniforge3/envs/label-studio/bin/python /usr/local/bin/label-studio"
+	
+http://xxx.77:8080/projects/
+	# 它只支持 http
+
+```
+
+
+
 ```
 {
     "version": "0.2.0",
@@ -4050,6 +4072,11 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   	# linux 下 git pull rwkv5-jp-explain 代码时 vscode 里的源码控制那里刚开始会显示茫茫多的修改，等它更新一下就好了，其实并没有真被修改
   	
   
+  .gitattributes
+  # Auto detect text files and perform LF normalization
+  * text=auto
+  	# 自动检测文本 LF 并转换
+  
   win图标旁搜索 Credential Manager -> 删掉 huggingface
   
   C:\Users\Administrator\.git-credentials
@@ -4312,6 +4339,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create RWKV5_nlpp --type dataset
 	# huggingface-cli repo create RWKV1 --type dataset
 	# huggingface-cli repo create RWKV_speech --type dataset
+	# huggingface-cli repo create Pixelorama --type dataset
 	# huggingface-cli repo create PaddleOCR_ali1k_det_rec_300epoch --type dataset
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
@@ -20419,6 +20447,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 [Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama)
 
+- https://github.com/irmozius/meta_player  音频编缉？
+
 [material-maker才质编辑](https://github.com/RodZill4/material-maker)
 
 [Animation实现subtitle](https://github.com/1Othello/godot-speech-to-subtitles)
@@ -20465,6 +20495,33 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 #### delta 的单位是秒
 
 [delta 的单位是秒](https://docs.godotengine.org/ja/stable/tutorials/scripting/idle_and_physics_processing.html?highlight=delta)
+
+
+
+### Pixelorama
+
+```
+# res://src/Autoload/Global.gd
+extends Node
+var config_cache := ConfigFile.new()
+const CONFIG_PATH := "user://config.ini"
+func _init() -> void:
+	config_cache.load(CONFIG_PATH)  
+		# https://docs.godotengine.org/en/stable/tutorials/io/data_paths.html
+		# user:// --> 
+		# %APPDATA%\Godot\app_userdata\[project_name]  
+		# %APPDATA%\[project_name]
+		# %APPDATA%\[custom_user_dir_name]
+			# 加载用户配置
+
+		
+git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
+	# 配套 godot 3.5.2 能正常运行
+	var font = preload("res://assets/fonts/Roboto-Regular.tres")
+
+```
+
+
 
 
 
@@ -28739,6 +28796,37 @@ https://cloud.google.com/docs/authentication/gcloud?hl=zh-cn
 
 
 
+## 始皇官转 API
+
+```
+
+https://new.oaifree.com/
+	# https://linux.do/t/topic/122674
+		# https://linux.do/t/topic/99623/2  WIKI
+	# 反代 openai ui
+
+# see echodict/README.md
+
+http://oaipro.com
+
+https://chat.oaipro.com/
+
+https://linux.do/t/topic/125092/3
+
+​```
+sk-XXXXXXX
+
+https://api.oaipro.com/v1
+
+https://chat.oaipro.com  成功使用 gpt-4o
+
+https://linux.do/t/topic/125092/3
+
+​```
+
+
+```
+
 
 
 
@@ -31045,6 +31133,12 @@ True
 # TTS
 
 [tts-vue](https://github.com/LokerL/tts-vue)
+
+
+
+## 讯飞方言
+
+https://saas.xfyun.cn/help
 
 
 
