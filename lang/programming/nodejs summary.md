@@ -20492,6 +20492,28 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 
+### Pixelorama
+
+```
+# res://src/Autoload/Global.gd
+extends Node
+var config_cache := ConfigFile.new()
+const CONFIG_PATH := "user://config.ini"
+func _init() -> void:
+	config_cache.load(CONFIG_PATH)  
+		# https://docs.godotengine.org/en/stable/tutorials/io/data_paths.html
+		# user:// --> 
+		# %APPDATA%\Godot\app_userdata\[project_name]  
+		# %APPDATA%\[project_name]
+		# %APPDATA%\[custom_user_dir_name]
+			# 加载用户配置
+
+```
+
+
+
+
+
 ### 插件
 
 [llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
