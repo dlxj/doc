@@ -22554,7 +22554,11 @@ print(url) # 输出 "https://docs.godotengine.org/en/4.1/?highlight=Godot%20Engi
 
 - https://github.com/gilzoide/godot-dockable-container
 
+  - ```
+    它是在设计器里面布局的，有两个以个子控件就可以拖拖看，可以实现拆分窗体
+    ```
 
+    
 
 ### tool 关键字
 
