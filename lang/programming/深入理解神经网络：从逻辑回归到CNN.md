@@ -13027,6 +13027,16 @@ VAD静音检测
 
 
 
+
+
+## godot-whisper 
+
+https://github.com/V-Sekai/godot-whisper  语音识别
+
+see nodejs summary.md -> godot -> 必看教程
+
+
+
 ## CosyVoice
 
 https://github.com/FunAudioLLM/CosyVoice/issues/37
