@@ -20600,6 +20600,27 @@ git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
 
 
 
+##### 自动加载
+
+```
+# huggingace\pxlrm\addons\keychain\plugin.gd
+	# 甚至不需要你去项目设置里去打钩，打开项目就在那里了
+@tool
+extends EditorPlugin
+
+
+func _enter_tree() -> void:
+	add_autoload_singleton("Keychain", "res://addons/keychain/Keychain.gd")
+
+
+func _exit_tree() -> void:
+	remove_autoload_singleton("Keychain")
+```
+
+
+
+
+
 #### 入口点
 
 plugin.cfg 入口点由这个配置文件指定，配置文件必须是这个名字
