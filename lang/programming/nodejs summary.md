@@ -20618,6 +20618,10 @@ func _init() -> void:
 	splash_dialog.popup_centered()
 		# 这样显示出来
 	
+
+# \src\Autoload\Global.gd 用户配置文件
+	const CONFIG_PATH := "user://config.ini"
+	var config_cache := ConfigFile.new()
 	
 git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
 	# 配套 godot 3.5.2 能正常运行
