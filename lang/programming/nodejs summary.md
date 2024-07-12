@@ -20770,6 +20770,25 @@ func _idle(_delta):
 
 
 
+### 场景树
+
+```
+
+# huggingface\pxlrm\src\Autoload\Global.gd
+@onready var main_window := get_window()
+@onready var control := get_tree().current_scene as Control
+	# 当前场景，因为是延迟赋值，所以它永运是当前激活场景？ 可以一直变的？
+	
+
+作为最重要的类之一，SceneTree管理着场景中节点的层次结构以及场景本身。节点可以被添加、检索和删除。整个场景树可以被暂停，包括当前场景。场景可以被加载、切换和重新加载。
+
+你也可以使用 SceneTree 将你的节点组织成组，每个节点都可以被分配到你想要创建的组，例如“敌人”组。然后你可以遍历这些组，甚至可以统一对所有组成员调用方法并设置属性。
+
+SceneTree 是场景所使用的默认 MainLoop 实现，因此掌控着游戏循环。
+```
+
+
+
 
 
 
