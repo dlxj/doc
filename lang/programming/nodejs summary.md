@@ -20516,7 +20516,7 @@ ai作画 ps拆补图 spine做动画 再导入godot做游戏
 
   - https://github.com/vrm-c/UniVRM  VRM C#
 
-  - https://github.com/Doa6Vr/Doa6Vr   DOA6 VRM
+  - https://github.com/Doa6Vr/Doa6Vr   DOA6 VRM  see  github/echodict/README.md -> DOAXVV
 
     - https://github.com/DarkStarSword/3d-fixes/tree/master/DOAX-VenusVacation  doaxvv 导出
     - https://juejin.cn/post/7199659141017747514  VRoidStudio ->Blender ->fbx 导入Unity
