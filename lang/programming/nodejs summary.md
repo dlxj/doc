@@ -20576,6 +20576,14 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 ### Pixelorama
 
 ```
+
+# res://src/UI/Canvas/Rulers/VerticalRuler.gd 报错
+	var font: Font = Global.control.theme.default_font
+		# line 26
+		# Global.control @onready var control := get_tree().current_scene as Control
+		# 它是 src/Main.tscn 的实例, 选中它, theme 给它选一个 dark 主题，
+		# 给这主题选一个默认字体(加载 .ttf) 就不错了
+
 # res://src/Autoload/Global.gd
 extends Node
 var config_cache := ConfigFile.new()
