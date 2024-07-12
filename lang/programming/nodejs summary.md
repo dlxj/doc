@@ -20500,6 +20500,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 ### 必看教程 
 
+ai作画 ps拆补图 spine做动画 再导入godot做游戏
+
 [Godello绝佳示例](https://github.com/alfredbaudisch/Godello)
 
 [游戏背包](https://github.com/alfredbaudisch/GodotDynamicInventorySystem)
