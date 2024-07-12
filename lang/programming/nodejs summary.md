@@ -21279,6 +21279,10 @@ var bar: int = 2 # 静态类型，后面不能给它赋值期他的类型
 #### 判断类型
 
 ```
+
+is_instance_valid(translation) and translation is Translation
+	# huggingface/Pixelorama addons/keychain/Keychain.gd
+
 func try_edit_value(value, type, property_hint) -> bool:
 	if (
 		type != TYPE_ARRAY and type != TYPE_PACKED_STRING_ARRAY
