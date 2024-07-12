@@ -20777,7 +20777,7 @@ func _idle(_delta):
 # huggingface\pxlrm\src\Autoload\Global.gd
 @onready var main_window := get_window()
 @onready var control := get_tree().current_scene as Control
-	# 当前场景，因为是延迟赋值，所以它永运是当前激活场景？ 可以一直变的？
+	# 当前场景，因为是延迟赋值，所以它永远是当前激活场景？ 可以一直变的？
 	
 
 作为最重要的类之一，SceneTree管理着场景中节点的层次结构以及场景本身。节点可以被添加、检索和删除。整个场景树可以被暂停，包括当前场景。场景可以被加载、切换和重新加载。
