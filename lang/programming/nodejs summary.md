@@ -20513,6 +20513,9 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
   - https://github.com/Doa6Vr/Doa6Vr   DOA6 VRM
     - https://github.com/LaBottle/GodotDesktopPet  godot 桌宠
     - https://github.com/blindbandit76/virtual_pet   godot 4.2 桌宠
+    - https://github.com/jihe520/Desktop-Pet-Godot  godot 4.2 桌宠
+      - https://github.com/atadenizoktay/godot-click-through-transparent-window 透明窗口
+      - https://github.com/oceanbuilders/ChatGPT-stream-for-Godot-4 流式输出
 
 [material-maker才质编辑](https://github.com/RodZill4/material-maker)
 
