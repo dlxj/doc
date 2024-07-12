@@ -20524,6 +20524,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
       - https://github.com/atadenizoktay/godot-click-through-transparent-window 透明窗口
       - https://github.com/oceanbuilders/ChatGPT-stream-for-Godot-4 流式输出
 
+[godot-debug-menu](https://github.com/godot-extended-libraries/godot-debug-menu) 实时调试信息( CPU, GPU, FPS etc. )
+
 [material-maker才质编辑](https://github.com/RodZill4/material-maker)
 
 [Animation实现subtitle](https://github.com/1Othello/godot-speech-to-subtitles)
