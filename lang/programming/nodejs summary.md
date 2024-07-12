@@ -20521,6 +20521,7 @@ ai作画 ps拆补图 spine做动画 再导入godot做游戏
     - https://github.com/DarkStarSword/3d-fixes/tree/master/DOAX-VenusVacation  doaxvv 导出
     - https://juejin.cn/post/7199659141017747514  VRoidStudio ->Blender ->fbx 导入Unity
     - https://github.com/adroitwhiz/after-effects-to-blender-export [1](https://www.lostmarble.com/forum/viewtopic.php?t=36715)  AE to blender
+    - https://github.com/fedeberge/fb_cameratoblender  MOHO to blender
 
     - https://github.com/LaBottle/GodotDesktopPet  godot 桌宠
     - https://github.com/blindbandit76/virtual_pet   godot 4.2 桌宠
