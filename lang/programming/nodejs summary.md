@@ -20507,10 +20507,17 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 [Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama)
 
 - https://github.com/irmozius/meta_player  音频编缉？
+
 - https://github.com/V-Sekai/godot-whisper  语音识别
+
 - https://github.com/V-Sekai/godot-vrm  VRM 动画
+
   - https://github.com/vrm-c/UniVRM  VRM C#
+
   - https://github.com/Doa6Vr/Doa6Vr   DOA6 VRM
+
+    - https://github.com/DarkStarSword/3d-fixes/tree/master/DOAX-VenusVacation  doaxvv 导出
+
     - https://github.com/LaBottle/GodotDesktopPet  godot 桌宠
     - https://github.com/blindbandit76/virtual_pet   godot 4.2 桌宠
     - https://github.com/jihe520/Desktop-Pet-Godot  godot 4.2 桌宠
