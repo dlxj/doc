@@ -20609,6 +20609,7 @@ git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
 ```
 # huggingace\pxlrm\addons\keychain\plugin.gd
 	# 甚至不需要你去项目设置里去打钩，打开项目就在那里了
+	# 只有插件才可以，Global.gd 不行
 @tool
 extends EditorPlugin
 
