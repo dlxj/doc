@@ -20512,6 +20512,7 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
   - https://github.com/vrm-c/UniVRM  VRM C#
   - https://github.com/Doa6Vr/Doa6Vr   DOA6 VRM
     - https://github.com/LaBottle/GodotDesktopPet  godot 桌宠
+    - https://github.com/blindbandit76/virtual_pet   godot 4.2 桌宠
 
 [material-maker才质编辑](https://github.com/RodZill4/material-maker)
 
