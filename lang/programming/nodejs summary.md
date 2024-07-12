@@ -20600,8 +20600,17 @@ func _init() -> void:
 			# 加载用户配置
 
 # src/UI/Dialogs/SplashDialog.tscn
-	# 漂亮的启动页面在这里
-		
+	# 漂亮的启动页面在这里	
+	# src\Main.gd
+	const SPLASH_DIALOG_SCENE_PATH := "res://src/UI/Dialogs/SplashDialog.tscn"
+	var splash_dialog: AcceptDialog:
+		get:
+			if not is_instance_valid(splash_dialog):
+				splash_dialog = load(SPLASH_DIALOG_SCENE_PATH).instantiate()
+				add_child(splash_dialog)
+			return splash_dialog
+	
+	
 git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
 	# 配套 godot 3.5.2 能正常运行
 	var font = preload("res://assets/fonts/Roboto-Regular.tres")
