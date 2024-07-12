@@ -20599,6 +20599,8 @@ func _init() -> void:
 		# %APPDATA%\[custom_user_dir_name]
 			# 加载用户配置
 
+# src/UI/Dialogs/SplashDialog.tscn
+	# 漂亮的启动页面在这里
 		
 git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
 	# 配套 godot 3.5.2 能正常运行
