@@ -20508,6 +20508,7 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 - https://github.com/irmozius/meta_player  音频编缉？
 - https://github.com/V-Sekai/godot-whisper  语音识别
+- https://github.com/V-Sekai/godot-vrm  VRM 动画
 
 [material-maker才质编辑](https://github.com/RodZill4/material-maker)
 
