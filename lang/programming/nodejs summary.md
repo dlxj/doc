@@ -20838,6 +20838,31 @@ var current_version: String = ProjectSettings.get_setting("application/config/ve
 
 
 
+### dpi 缩放
+
+```
+# Pixelorama/src/Main.gd
+func _get_auto_display_scale() -> float:
+	if OS.get_name() == "macOS":
+		return DisplayServer.screen_get_max_scale()
+
+	var dpi := DisplayServer.screen_get_dpi()
+	var smallest_dimension := mini(
+		DisplayServer.screen_get_size().x, DisplayServer.screen_get_size().y
+	)
+	if dpi >= 192 && smallest_dimension >= 1400:
+		return 2.0  # hiDPI display.
+	elif smallest_dimension >= 1700:
+		return 1.5  # Likely a hiDPI display, but we aren't certain due to the returned DPI.
+	return 1.0
+	
+	
+Global.shrink = _get_auto_display_scale()
+
+```
+
+
+
 
 
 
