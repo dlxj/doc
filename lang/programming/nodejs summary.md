@@ -20822,6 +20822,20 @@ SceneTree 是场景所使用的默认 MainLoop 实现，因此掌控着游戏循
 
 
 
+### 加载项目配置
+
+```
+
+项目 -> 项目设置 -> 配置 -> 这里设置“名称”、“版本”、“图标”
+
+# src/Autoload/Global.gd
+var current_version: String = ProjectSettings.get_setting("application/config/version")
+	# 读取版本信息
+
+```
+
+
+
 
 
 
