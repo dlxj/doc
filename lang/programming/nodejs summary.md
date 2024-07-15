@@ -21507,6 +21507,17 @@ get_tree().edited_scene_root.filename.get_base_dir()
 
 
 
+#### dir
+
+```
+	if not DirAccess.dir_exists_absolute("user://backups"):
+		DirAccess.make_dir_recursive_absolute("user://backups")
+			# 目录不存在就创建
+
+```
+
+
+
 
 
 ### match
@@ -21552,6 +21563,17 @@ get_path_to
 ```
 print_debug("TTS not available!")
 ```
+
+
+
+##### tr
+
+```
+art_by_label.text = tr("Art by: %s") % artworks[chosen_artwork].artist_name
+	# 翻译
+```
+
+
 
 
 
