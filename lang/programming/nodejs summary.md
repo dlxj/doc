@@ -20832,6 +20832,8 @@ SceneTree 是场景所使用的默认 MainLoop 实现，因此掌控着游戏循
 var current_version: String = ProjectSettings.get_setting("application/config/version")
 	# 读取版本信息
 
+存储在 project.godot 中的变量也会被加载到 ProjectSettings 中，因此这个对象常用于读取自定义游戏配置选项。
+
 ```
 
 
@@ -21403,6 +21405,32 @@ var my_prop:
 	# 两函数定义在别处也是可以的，但是 setter 现在好像不支持多参数了？
 	
 ```
+
+
+
+### randi
+
+```
+chosen_artwork = randi() % artworks.size()
+	# [0, siz)
+```
+
+
+
+```
+frame = wrapi(frame + 1, 5, 10)
+	# [5, 9)
+
+result 是 -2
+var result = wrapi(-6, -5, -1)
+	# [-5, -2)
+	
+它是在一个环上取值	
+
+
+```
+
+
 
 
 
