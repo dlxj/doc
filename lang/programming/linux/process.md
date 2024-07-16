@@ -70,6 +70,17 @@ kill -9 pid
 # kill 端口号
 
 ```
+# see huggingface\myvideo\kill.sh
+# kill.sh
+kill -9 $(lsof -i:7860 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7861 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7862 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+kill -9 $(lsof -i:7863 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
+```
+
+
+
+```
 nohup node xx.js >outlog &
 
 #!/bin/bash
