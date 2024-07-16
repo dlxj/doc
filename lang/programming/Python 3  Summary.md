@@ -16099,6 +16099,29 @@ demo.launch(debug=True)
 
 
 
+## 动态UI
+
+https://github.com/gradio-app/gradio/issues/2566
+
+```
+with gr.Blocks() as demo:
+    gr.Markdown("# Music Mixer")
+    gr.Markdown("Add tracks and set their volumes. Then click 'Combine' to mix them!")
+    with gr.Row() as control_panel:
+        add_track_btn = gr.Button("Add Track")
+    with gr.Row() as control_panel:
+         track_audio = gr.Audio()
+
+    def add_track():
+        children = control_panel.children
+        return gr.Row.update(children=children.append(gr.Audio()))
+    
+     add_track_btn.click(add_track, None, control_panel)
+   ...
+```
+
+
+
 
 
 ## path
