@@ -1930,6 +1930,8 @@ int main() {
 
 
 ```
+# see huggingface/rwkv5-jp-explain-docker/app.py -> OcrVideo
+
 # see -> python summary -> gradio -> video -> 音视频图片标注
 
 conda create --name label-studio && 
