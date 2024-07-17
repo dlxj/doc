@@ -1925,6 +1925,85 @@ int main() {
 
 ## vscode + gradio
 
+
+
+```
+  {
+      "version": "0.2.0",
+    "configurations": [
+          {
+              "name": "Python Debugger: Current File",
+              "type": "debugpy",
+              "request": "launch",
+              "program": "${file}",
+              "console": "integratedTerminal"
+          }
+      ]
+  }
+  # python 直接运行 run.py 就可以直接断下了
+  # 前端用 cd demo/xx && pnpm dev
+  # {interactive} 直接在页面上显示变量的值
+  
+  
+  
+  {
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:9876",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
+# gradio/js/imageeditor/shared/tools/Tools.svelte
+	line 76 下断点
+	register_tool: (type: tool, meta: ToolMeta) => {
+# 前端代码可以成功断下
+# cd gradio/demo/image_editor
+# python run.py # 启动后端
+# pnpm dev # 运行前端
+# vscode 按 F5，启动浏览器
+
+
+wslconfig  /setdefault Ubuntu-20.04
+	# 默认启动 20.04
+	# 20.04 用于修改编译 gradio, 生成 gradio-xxx-py3-none-any.whl
+
+wslconfig  /setdefault Ubuntu-22.04
+	# 默认启动 22.04
+	# 22.04 用于 使用安装 gradio-xxx-py3-none-any.whl 并测试，以及实际开发
+	
+wsl --install -d Ubuntu-22.04
+	# 再装一个 22.04
+
+ubuntu2204 config --default-user root
+	# 默认以 root 登录
+
+  
+  // {
+  //     "version": "0.2.0",
+  //     "configurations": [
+  //         {
+  //             "name": "Python Debugger: Current File",
+  //             "type": "debugpy",
+  //             "request": "launch",
+  //             "program": "/root/miniconda3/bin/gradio",
+  //             "console": "integratedTerminal",
+  //             "args": [
+  //                 "${file}"
+  //             ]
+  
+  //         }
+  //     ]
+  // }
+```
+
+
+
+
+
 ### 音视频图片标注
 
 
