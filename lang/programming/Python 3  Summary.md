@@ -16193,6 +16193,25 @@ demo.launch(debug=True)
 
 
 
+### allowed_paths
+
+
+
+```python
+
+import gradio as gr
+
+with gr.Blocks() as demo:
+    gr.DataFrame([["<audio src='/file=cantina.wav' controls></audio>"]], datatype="markdown")
+    
+demo.launch(allowed_paths=["cantina.wav"])
+
+
+Files that you explicitly allow via the allowed_paths parameter in launch(). This parameter allows you to pass in a list of additional directories or exact filepaths you'd like to allow users to have access to. (By default, this parameter is an empty list).
+
+Static files that you explicitly set via the gr.set_static_paths function. This parameter allows you to pass in a list of directories or filenames that will be considered static. This means that they will not be copied to the cache and will be served directly from your computer. This can help save disk space and reduce the time your app takes to launch but be mindful of possible security implications.
+```
+
 
 
 
@@ -16406,6 +16425,18 @@ demo.launch(share=True)
 ## dataframe
 
 https://github.com/gradio-app/gradio/issues/7601
+
+
+
+```python
+# https://github.com/gradio-app/gradio/issues/8270
+import gradio as gr
+
+with gr.Blocks() as demo:
+    gr.DataFrame([["<audio src='/file=cantina.wav' controls></audio>"]], datatype="markdown")
+    
+demo.launch(allowed_paths=["cantina.wav"])
+```
 
 
 
