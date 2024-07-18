@@ -9669,6 +9669,18 @@ let guid = uuid.v4()
 # base64 in browser
 # see huggingface/myvideo/frontend/shared/VideoControls.svelte
 # https://gist.github.com/Jonarod/77d8e3a15c5c1bb55fa9d057d12f95bd
+
+# https://ionic.io/blog/converting-a-base64-string-to-a-blob-in-javascript
+
+	const convertBlobToBase64 = (blob) => new Promise((resolve, reject) => {
+    	const reader = new FileReader;
+    	reader.onerror = reject;
+    	reader.onload = () => {
+        	resolve(reader.result);
+    	};
+    	reader.readAsDataURL(blob);
+	});
+
 const BlobToBase64 = function(blob){
     let blobUrl = URL.createObjectURL(blob);
 
