@@ -16198,6 +16198,19 @@ demo.launch(debug=True)
 
 
 ```python
+with gr.Blocks(title=title) as demo:
+	file_explorer = gr.FileExplorer(root="/root", file_count="multiple")
+		# 前端成功显示 root 目录内容 
+		
+if __name__ == "__main__":
+    demo.launch(allowed_paths="/root")
+```
+
+
+
+
+
+```python
 
 import gradio as gr
 
@@ -16598,6 +16611,10 @@ phaser 是 pixijs 的封装
 
 用 pixi 的 spine plugin 给 spine 骨骼动画 load 上来，给 spine 的各个皮肤设置 skin name，完事儿…
 不过你需要先搞清楚，scenegraph，game update 是怎么回事儿
+
+https://github.com/pixijs/spine
+https://github.com/pixijs/animate
+	# 可以和 animate cc 配合？
 
 ```
 
