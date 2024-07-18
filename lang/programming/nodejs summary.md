@@ -9672,6 +9672,14 @@ let guid = uuid.v4()
 
 # https://ionic.io/blog/converting-a-base64-string-to-a-blob-in-javascript
 
+# https://www.cnblogs.com/panwudi/p/16901169.html
+
+var reader = new FileReader();
+reader.readAsDataURL(this.files[0]);
+reader.onload = function(){
+    console.log(reader.result); //获取到base64格式图片
+};
+
 	const convertBlobToBase64 = (blob) => new Promise((resolve, reject) => {
     	const reader = new FileReader;
     	reader.onerror = reject;
