@@ -16203,7 +16203,7 @@ with gr.Blocks(title=title) as demo:
 		# 前端成功显示 root 目录内容 
 		
 if __name__ == "__main__":
-    demo.launch(allowed_paths="/root")
+    demo.launch(allowed_paths=["/root"])
 ```
 
 
