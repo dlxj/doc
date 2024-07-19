@@ -14873,6 +14873,18 @@ see https://github.com/pagefaultgames/pokerogue  宝可梦游戏
 
 
 ```
+# 内存泄露
+gunicorn 加参数 --max-requests 1000 试试
+(每个 worker 接收到 1000 次请求后就重启一个新的)
+
+你自己测试一下 max-requests 用 500 、1000 、5000 、10000 哪个更优化。
+```
+
+
+
+
+
+```
 uvicorn.subprocess.spawn 要加上 freeze_support
 ```
 
