@@ -17396,6 +17396,8 @@ demo.launch(share=True)
 
 https://github.com/HumanSignal/label-studio  音视频图片标注
 
+- https://github.com/opendatalab/labelU  各种工具很丰富
+
 - ```
   # see huggingface/rwkv5-jp-explain-docker/app.py -> OcrVideo
   # see nodejs summary.md -> vscode + gradio
