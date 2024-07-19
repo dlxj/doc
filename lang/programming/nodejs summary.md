@@ -23536,13 +23536,15 @@ Godot's built-in animation system isn't bad for simple cut-out animations. Tween
 
 https://github.com/EsotericSoftware/spine-runtimes/tree/4.2/spine-ts
 
-https://zh.esotericsoftware.com/forum/d/26488-%E6%B8%B8%E6%88%8F%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E5%88%87%E6%8D%A2skeletondataasset/11
+
 
 ### 事件回调
 
 https://zh.esotericsoftware.com/spine-unity-events-zh
 
 - https://zh.esotericsoftware.com/forum/d/26458-callbacks-for-spinetrackentry-in-godot/2
+
+- https://zh.esotericsoftware.com/forum/d/26488-%E6%B8%B8%E6%88%8F%E8%BF%90%E8%A1%8C%E4%B8%AD%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BB%A5%E5%88%87%E6%8D%A2skeletondataasset/11
 
   ```python
   extends SpineSprite
