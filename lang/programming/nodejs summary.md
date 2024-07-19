@@ -23449,6 +23449,12 @@ Godot's built-in animation system isn't bad for simple cut-out animations. Tween
 
 
 
+### spine-pixi
+
+https://github.com/EsotericSoftware/spine-runtimes/tree/4.2/spine-ts
+
+
+
 ### 事件回调
 
 https://zh.esotericsoftware.com/spine-unity-events-zh
