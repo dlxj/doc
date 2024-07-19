@@ -23449,7 +23449,51 @@ Godot's built-in animation system isn't bad for simple cut-out animations. Tween
 
 
 
+### 事件回调
 
+https://zh.esotericsoftware.com/spine-unity-events-zh
+
+- https://zh.esotericsoftware.com/forum/d/26458-callbacks-for-spinetrackentry-in-godot/2
+
+  ```python
+  extends SpineSprite
+  
+  func _ready():
+      connect("animation_started", self, "_on_animation_started")
+      connect("animation_interrupted", self, "_on_animation_interrupted")
+      connect("animation_completed", self, "_on_animation_completed")
+      connect("animation_ended", self, "_on_animation_ended")
+      connect("animation_disposed", self, "_on_animation_disposed")
+      connect("animation_event", self, "_on_animation_event")
+  
+  func _on_animation_started(track_entry):
+      if track_entry.animation.name == "your_animation_name":
+          print("Animation started: ", track_entry.animation.name)
+  
+  func _on_animation_interrupted(track_entry):
+      if track_entry.animation.name == "your_animation_name":
+          print("Animation interrupted: ", track_entry.animation.name)
+  
+  func _on_animation_completed(track_entry):
+      if track_entry.animation.name == "your_animation_name":
+          print("Animation completed: ", track_entry.animation.name)
+  
+  func _on_animation_ended(track_entry):
+      if track_entry.animation.name == "your_animation_name":
+          print("Animation ended: ", track_entry.animation.name)
+  
+  func _on_animation_disposed(track_entry):
+      if track_entry.animation.name == "your_animation_name":
+          print("Animation disposed: ", track_entry.animation.name)
+  
+  func _on_animation_event(track_entry, event):
+      if track_entry.animation.name == "your_animation_name":
+          print("Animation event: ", event.data.name)
+  ```
+
+  
+
+  
 
 ## moho导入
 
