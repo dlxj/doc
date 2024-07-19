@@ -1928,7 +1928,13 @@ int main() {
 
 
 ```
-  {
+
+vscode 设置搜 justMyCode, 把钩去掉
+
+vscode 设置 -> 搜:  allowBreakpointsEverywhere
+	# see /root/huggingface/myvideo/readme.txt
+
+{
       "version": "0.2.0",
     "configurations": [
           {
