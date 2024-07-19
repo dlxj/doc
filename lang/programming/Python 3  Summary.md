@@ -1721,6 +1721,29 @@ file1.close()
 
 
 
+#### write bytes
+
+```
+
+# see huggingface/myvideo/demo/app.py
+	def change_ABT(evt: gr.EventData):
+        [ begintime, endtime, videoBase64UrlEndcode ] = evt._data
+        # if isDebug: print("### change_ABT hit.", evt.target, [ begintime, endtime, videoBase64UrlEndcode ])
+        # data:video/mp4;base64, 需要去掉最前面这一段 mime 它才是纯 base64
+        videoBase64 = re.compile(r'^data:.+?;base64,').sub('', videoBase64UrlEndcode)
+        videoBytes = base64.b64decode(videoBase64)
+        print('write bytes:')
+        with open(os.path.join(os.path.dirname(__file__), "trim.mp4"), "wb") as f:
+            f.write(videoBytes)
+        
+        return evt._data
+    out.change_AB_time(change_ABT, None, [])
+```
+
+
+
+
+
 #### 追加写
 
 ```
