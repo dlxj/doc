@@ -15469,7 +15469,19 @@ ubuntu2204 config --default-user root
 
 ## compoment
 
+### vsocde 附加调试 gradio
+
 ````
+
+# see huggingface/myvideo/readme.txt
+vsocde 成功附加调试 demo/app.py
+    1. vscode 打开目录 myvideo
+    2. app.py line 72 行下断点： [ begintime, endtime, videoBase64UrlEndcode ] = evt._data
+    3. myvideo 目录下运行 gradio cc dev
+    4. .vscode/launch.json 让它空着，什么都别配置, F5 -> 选附加到进程选 xxx/python -u xx/app.py 的进程
+    5. chrome 打开 http://127.0.0.1:7861, 点视频上的剪功按钮, 剪一下段然后点 A-B 按钮
+    6. app.py 成功断下
+
 
 conda create -n space pip python=3.10 && 
 conda activate space && 
