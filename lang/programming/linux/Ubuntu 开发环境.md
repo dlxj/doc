@@ -928,6 +928,15 @@ vi /etc/systemd/resolved.conf
 [Resolve]
 DNS=1.1.1.1
 
+rm -f /etc/resolv.conf
+ln -sv /run/systemd/resolve/resolv.conf /etc/resolv.conf
+
+service systemd-resolved restart
+
+ping qq.com
+
+	# 实测问题解决
+
 ```
 
 
