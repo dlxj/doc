@@ -33976,6 +33976,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### WPF
 
+[syncfusion demos](https://github.com/syncfusion/wpf-demos)
+
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)
 
 [ffmediaelement 成品播放器 ?](https://github.com/unosquare/ffmediaelement)
