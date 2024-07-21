@@ -181,10 +181,45 @@ Host 127.0.0.1
   	# 甚至能打开 C 盘根目录
 
 
-
 ```
 
 
+
+## wsl after ssh
+
+```
+[2024-07-21 03:18:52.192] Extension version: 0.88.2
+[2024-07-21 03:18:52.192] L10N bundle: undefined
+[2024-07-21 03:18:52.286] authorityHierarchy: ssh-remote+192.168.1.5 > wsl+Ubuntu-22.04
+[2024-07-21 03:18:52.286] WSL extension is activating remotely for ssh-remote+192.168.1.5
+[2024-07-21 03:19:04.504] Workspace platform is Windows
+[2024-07-21 03:19:04.523] Run: C:\Windows\System32\wsl.exe --status
+[2024-07-21 03:19:04.524] Resolving wsl+Ubuntu-22.04, resolveAttempt: 1
+[2024-07-21 03:19:04.603] WSL feature installed: true (wsl --status)
+[2024-07-21 03:19:04.603] WSL feature installed: true
+[2024-07-21 03:19:04.618] Run: C:\Windows\System32\wsl.exe --list --verbose
+[2024-07-21 03:19:04.692] 2 distros found
+[2024-07-21 03:19:04.693] Starting VS Code Server inside WSL (wsl2)
+[2024-07-21 03:19:04.693] Windows build: 22631. Multi distro support: available. WSL path support: enabled
+[2024-07-21 03:19:04.693] Probing if server is already installed: if [ -d "$HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729" ]; then printf 'install-found '; fi; if [ -f /etc/alpine-release ]; then printf alpine-; fi; uname -m
+[2024-07-21 03:19:04.693] Run: C:\Windows\System32\wsl.exe -d Ubuntu-22.04 -e sh -c if [ -d "$HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729" ]; then printf 'install-found '; fi; if [ -f /etc/alpine-release ]; then printf alpine-; fi; uname -m
+[2024-07-21 03:19:04.751] Probing result: x86_64
+[2024-07-21 03:19:04.751] VS Code CLI not found in Ubuntu-22.04, installing...
+[2024-07-21 03:19:04.751] Remove old installs from $HOME/.vscode-server/bin-cli
+[2024-07-21 03:19:04.751] Run: C:\Windows\System32\wsl.exe -d Ubuntu-22.04 -e sh -c if [ -d "$HOME/.vscode-server/bin-cli" ]; then rm -rf "$HOME/.vscode-server/bin-cli"/????????????????????????????????????????; rm -rf "$HOME/.vscode-server/bin-cli"/????????????????????????????????????????-*; fi
+[2024-07-21 03:19:04.809] Create directory $HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729-1721531944809
+[2024-07-21 03:19:04.809] Run: C:\Windows\System32\wsl.exe -d Ubuntu-22.04 -e sh -c mkdir -p "$HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729-1721531944809"
+[2024-07-21 03:19:04.875] Aquire cli: C:\Windows\System32\wsl.exe -d Ubuntu-22.04 -e sh -c tee "$HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729-1721531944809/code-cli" >/dev/null, commit: f1e16e1e6214d7c44d078b1f0607b2388f29d729, platform: linux-x64, quality: stable
+[2024-07-21 03:19:10.952] Move directory $HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729-1721531944809 to $HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729
+[2024-07-21 03:19:10.952] Run: C:\Windows\System32\wsl.exe -d Ubuntu-22.04 -e sh -c mv "$HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729-1721531944809" "$HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729" && chmod +x "$HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729/code-cli"
+[2024-07-21 03:19:11.012] Run cli: C:\Windows\System32\wsl.exe -d Ubuntu-22.04 $HOME/.vscode-server/bin-cli/f1e16e1e6214d7c44d078b1f0607b2388f29d729/code-cli
+[2024-07-21 03:19:11.018] VS Code CLI is running in WSL...
+[2024-07-21 03:19:11.018] Installing server in Ubuntu-22.04
+[2024-07-21 03:19:11.156] [nested server]: [2024-07-21 11:19:10] info Checking /root/.vscode/cli/servers/Stable-f1e16e1e6214d7c44d078b1f0607b2388f29d729/log.txt and /root/.vscode/cli/servers/Stable-f1e16e1e6214d7c44d078b1f0607b2388f29d729/pid.txt for a running server...
+[2024-07-21 03:19:11.260] [nested server]: [2024-07-21 11:19:10] debug Installing and setting up Visual Studio Code Server...
+[2024-07-21 03:19:11.260] [nested server]: [2024-07-21 11:19:10] debug [reqwest::connect] starting new connection: https://update.code.visualstudio.com/
+[2024-07-21 03:19:11.260] [nested server]: [2024-07-21 11:19:10] trace making delegated request to https://update.code.visualstudio.com/commit:f1e16e1e6214d7c44d078b1f0607b2388f29d729/server-linux-x64/stable
+```
 
 
 
