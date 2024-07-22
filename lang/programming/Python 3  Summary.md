@@ -16146,6 +16146,22 @@ demo.launch(debug=True)
 
 
 
+
+
+#### 动态绑定
+
+```python
+with gr.Blocks() as demo:
+  num1 = gr.Number()
+  num2 = gr.Number()
+  product = gr.Number(lambda a, b: a * b, inputs=[num1, num2])
+	# product 会实时更新成两数的和
+```
+
+
+
+
+
 ### AB 复读
 
 ```
