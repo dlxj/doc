@@ -16202,6 +16202,61 @@ https://github.com/gradio-app/gradio/issues/8302
 
 
 
+### success
+
+```python
+# https://github.com/gradio-app/gradio/pull/3430
+import time
+import gradio as gr
+
+def fast_event(x):
+    if not x:
+        raise gr.Error("A Protein must be selected")
+    return x
+
+def slow_event(x):
+    time.sleep(2)
+    return (x + " ")*100
+
+with gr.Blocks() as demo:
+    dropdown = gr.Dropdown(["Protein A", "Protein B", "Protein C"])
+    textbox = gr.Textbox()
+    sequence = gr.Textbox()
+    dropdown.change(fast_event, dropdown, textbox).success(slow_event, textbox, sequence)
+    textbox.submit(slow_event, textbox, sequence)
+
+demo.launch()
+```
+
+
+
+### then
+
+```python
+import time
+import gradio as gr
+
+
+def slow_event(x):
+    time.sleep(2)
+    return x
+
+with gr.Blocks() as demo:
+    textbox1 = gr.Textbox()
+    textbox2 = gr.Textbox()
+    textbox3 = gr.Textbox()
+    textbox4 = gr.Textbox()
+    btn = gr.Button("Cancel", variant="stop")
+    
+    ev1 = textbox1.submit(slow_event, textbox1, textbox2)
+    ev2 = ev1.then(slow_event, textbox2, textbox3)
+    ev3 = ev2.then(slow_event, textbox3, textbox4)
+    btn.click(None, None, None, cancels=ev2)
+    
+
+demo.queue().launch()
+```
+
 
 
 
