@@ -11429,6 +11429,12 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 https://blog.csdn.net/songhuangong123/article/details/129146123  【halcon】模板匹配和仿射变换总结
 
+```
+HALCON是德国MVtec公司开发的一套完善的标准的机器视觉算法包
+```
+
+
+
 
 
 ## PaddleOCR
