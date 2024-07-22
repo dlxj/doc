@@ -11425,6 +11425,10 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 
 
+## halcon
+
+https://blog.csdn.net/songhuangong123/article/details/129146123  【halcon】模板匹配和仿射变换总结
+
 
 
 ## PaddleOCR
