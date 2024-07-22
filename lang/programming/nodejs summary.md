@@ -33946,6 +33946,10 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### Winform
 
+[syncfusion 文档](https://help.syncfusion.com/windowsforms/overview)
+
+[syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
+
 [ff-utils-improved 抽帧](https://github.com/miifanboy/ff-utils-improved) [1](https://blog.csdn.net/Daniel_yka/article/details/109840350)
 
 [Flyleaf](https://github.com/SuRGeoNix/Flyleaf)
@@ -33978,10 +33982,15 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)
 
+[syncfusion 文档](https://help.syncfusion.com/windowsforms/overview)
+
+[syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
+
 [syncfusion demos](https://github.com/syncfusion/wpf-demos)
 
 - https://www.syncfusion.com/downloads/communityLicense 申请后等两天
   - https://communitylicense.syncfusion.com/support/tickets/613578
+  - https://blog.csdn.net/songhuangong123/article/details/131348661  离线注册方法
 - https://www.syncfusion.com/account/downloads 下载
 
 [Prism](https://github.com/PrismLibrary/Prism)
