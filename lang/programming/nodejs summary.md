@@ -8394,6 +8394,22 @@ j = ANONUM(strs)
 
 
 
+## 引用捕获组
+
+```
+s = 's123abc123def'
+s.match(/(\d)(.*?)(\1)/)
+[
+  '123abc1',
+  '1',
+  '23abc',
+  '1',
+  index: 1,
+  input: 's123abc123def',
+  groups: undefined
+]
+```
+
 
 
 
