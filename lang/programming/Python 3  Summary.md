@@ -6089,6 +6089,92 @@ sys.stdout.write("\rIteration: {} and {}".format(i + 1, j + 1))
 
 ### 子进程
 
+
+
+```python
+
+see huggingface/myvideo/readme.txt
+    /root/miniforge3/envs/gradiomyvideo/lib/python3.10/site-packages/gradio/cli/commands/components/dev.py
+    line 51 下断点
+    component_directory = component_directory.resolve()
+        # 成功断下
+
+import subprocess
+
+node = '/usr/local/node-v20.11.1-linux-x64/bin/node'
+
+gradio_node_path = '/root/miniforge3/envs/gradiomyvideo/lib/python3.10/site-packages/gradio/node/dev/files/index.js'
+
+component_directory = '/root/huggingface/myvideo'
+
+gradio_template_path = '/root/miniforge3/envs/gradiomyvideo/lib/python3.10/site-packages/gradio/templates/frontend'
+
+app = 'demo/app.py'
+
+host = 'localhost'
+
+python_path = '/root/miniforge3/envs/gradiomyvideo/bin/python3'
+
+gradio_path = '/root/miniforge3/envs/gradiomyvideo/bin/gradio'
+
+    proc = subprocess.Popen(
+        [
+            node,
+            gradio_node_path,
+            "--component-directory",
+            component_directory,
+            "--root",
+            gradio_template_path,
+            "--app",
+            str(app),
+            "--mode",
+            "dev",
+            "--host",
+            host,
+            "--python-path",
+            python_path,
+            "--gradio-path",
+            gradio_path,
+        ],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+
+    while True:
+        proc.poll()
+        text = proc.stdout.readline()  # type: ignore
+        err = None
+        if proc.stderr:
+            err = proc.stderr.readline()
+
+        text = (
+            text.decode("utf-8")
+            .replace("Changes detected in:", "[orange3]Changed detected in:[/]")
+            .replace("Watching:", "[orange3]Watching:[/]")
+            .replace("Running on local URL", "[orange3]Backend Server[/]")
+        )
+
+        if "[orange3]Watching:[/]" in text:
+            text += f"'{str(component_directory / 'frontend').strip()}',"
+        if "To create a public link" in text:
+            continue
+        print(text)
+        if err:
+            print(err.decode("utf-8"))
+
+        if proc.returncode is not None:
+            print("Backend server failed to launch. Exiting.")
+            return
+
+
+```
+
+
+
+
+
+
+
 ```python
 # https://python3-cookbook.readthedocs.io/zh_CN/latest/c13/p06_executing_external_command_and_get_its_output.html
 import subprocess
