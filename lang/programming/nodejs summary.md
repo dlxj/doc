@@ -3171,6 +3171,8 @@ https://v2ex.com/t/1035681#reply73
 
 
 ```
+# see https://huggingface.co/datasets/dlxjj/powershell
+
 dnf install spdlog openssl uriparser libconfig-devel.x86_64 poco*
 
 git cmake ninja pkgconf g++ spdlog-dev openssl-dev libconfig-dev uriparser-dev poco-dev argp-standalone linux-headers
