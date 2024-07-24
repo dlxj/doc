@@ -2234,6 +2234,26 @@ class Configurable(metaclass=StateMeta):
 
 
 
+### Annotated
+
+```python
+huggingface/myvideo/readme.txt
+	    /root/miniforge3/envs/gradiomyvideo/lib/python3.10/site-packages/gradio/cli/commands/components/dev.py
+    line 51 下断点
+    component_directory = component_directory.resolve()
+        # 成功断下
+        
+    app: Annotated[
+        Path,
+        typer.Argument(
+            help="The path to the app. By default, looks for demo/app.py in the current directory."
+        ),
+    ] = Path("demo") / "app.py"
+    
+```
+
+
+
 
 
 ## OP
