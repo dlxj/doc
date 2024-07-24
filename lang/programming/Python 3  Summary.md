@@ -15552,7 +15552,7 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
   
   
   
-  {
+{
     "configurations": [
         {
             "type": "chrome",
@@ -15563,6 +15563,12 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
         }
     ]
 }
+// cd demo/image_editor && conda activate gradio && python run.py 
+// cd demo/image_editor && conda activate gradio && pnpm dev
+    // 只有这样运行，它的前端端口才是 9876
+// vscode F5 
+
+
 # gradio/js/imageeditor/shared/tools/Tools.svelte
 	line 76 下断点
 	register_tool: (type: tool, meta: ToolMeta) => {
