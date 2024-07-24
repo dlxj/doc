@@ -3183,6 +3183,15 @@ candy --mode="client" --websocket="ws://xxx:1587" --password="xxx" --tun="10.0.0
 	
 可以用 --restart=x 参数,x 指重连的时间间隔.也可以不退出进程了
 
+candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.0.0.0/24" --password="xxx"
+	# 境内vps 专用服务端
+
+candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.1.0.0/24" --password="xxx"
+ 	# 境外vps 专用服务端
+ 	
+
+ 
+
 ```
 
 
