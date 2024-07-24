@@ -3178,6 +3178,8 @@ git cmake ninja pkgconf g++ spdlog-dev openssl-dev libconfig-dev uriparser-dev p
 
 candy --mode="client" --websocket="ws://xxx:1587" --password="xxx" --tun="10.0.0.2/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
 	# .2 固定做代理地址
+	
+可以用 --restart=x 参数,x 指重连的时间间隔.也可以不退出进程了
 
 ```
 
