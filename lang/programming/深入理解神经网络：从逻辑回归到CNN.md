@@ -10625,6 +10625,8 @@ def main():
 
 ```
 
+see python summary.md -> OpenCV -> ppcor_aliocr_convert.py
+
 wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 && \
 tar -jxvf p7zip_16.02_src_all.tar.bz2 && \
 cd p7zip_16.02 && \
@@ -11613,6 +11615,12 @@ miniconda pkgs
 ```
 
 
+
+#### ppcor_aliocr_convert.py
+
+```
+see python summary.md -> OpenCV -> ppcor_aliocr_convert.py
+```
 
 
 
