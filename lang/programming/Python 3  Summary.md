@@ -1477,6 +1477,18 @@ SRC_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
 
+### which
+
+```
+import shutil
+node = shutil.which("node")
+	# 获得 node 的绝对路径
+```
+
+
+
+
+
 ## File
 
 
