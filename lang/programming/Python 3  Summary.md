@@ -16053,7 +16053,7 @@ demo.launch()
 
 ### onMount
 
-```
+```python
 	onMount(() => {
 		return () => {
 			$pixi?.destroy();
@@ -16067,6 +16067,29 @@ demo.launch()
 		# onMount 好像可以返回一个析构函数？ 
 
 ```
+
+
+
+### load
+
+```python
+import gradio as gr
+import datetime
+
+on_load="""
+async()=>{
+    console.log("HELLO");
+}
+"""
+with gr.Blocks() as demo:
+    def get_time():
+        return datetime.datetime.now().time()
+    dt = gr.Textbox(label="Current time")
+    demo.load(get_time, inputs=None, outputs=dt, _js=on_load)
+demo.launch()
+```
+
+
 
 
 
