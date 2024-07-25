@@ -3200,6 +3200,11 @@ candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.1.0.0/24" --pas
 
 https://github.com/sazima/proxynt  WebSocket 内网穿透
 
+```
+# see huggingface\powershell\readme.txt
+pip install -U proxynt
+```
+
 
 
 
