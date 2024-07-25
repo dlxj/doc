@@ -15440,6 +15440,13 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode 必看 热调�
 https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这里
 
 - ```
+  
+  proxychains4 pip install build && 
+  proxychains4 bash ./build_pypi.sh
+  	# 生成 gradio-4.16.0-py3-none-any.whl 用于安装
+  	# 需要网络的命令全给它加上代理，比全局代理好使
+  
+  
   cd /root/huggingface/gradio/js/imageeditor
   gradio run.py # 默认它会找demo 作入口点
   gradio run.py my_demo # 自定义入口点
@@ -15467,14 +15474,14 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   	# 类型检查
   
   
-  pip install -r demo/outbreak_forecast/requirements.txt
+pip install -r demo/outbreak_forecast/requirements.txt
   pnpm exec playwright install chromium
   pnpm exec playwright install-deps chromium
   pnpm test:browser:full
   	# ？？？
   
   ```
-
+  
   
   
 - ```
