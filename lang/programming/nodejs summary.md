@@ -2245,6 +2245,28 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 
 
+### start json
+
+```
+# see huggingface\powershell\readme.txt
+# see nodejs summary.md -> 安装代理 -> 异地组网
+
+nt.json
+{
+    "apps": [
+        {
+            "name": "proxynt_server_7851",
+            "script": "python3.10",
+            "args" : "/usr/local/bin/nt_server config_s.json"
+        }
+    ]
+}
+pm2 start nt.json
+	# 成功启动
+```
+
+
+
 
 
 ### 每五秒检查一次接口，不好就重启
