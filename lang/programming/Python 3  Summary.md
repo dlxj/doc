@@ -16054,6 +16054,8 @@ demo.launch()
 ### onMount
 
 ```python
+import { onMount } from "svelte";
+
 	onMount(() => {
 		return () => {
 			$pixi?.destroy();
