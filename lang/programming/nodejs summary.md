@@ -34044,6 +34044,8 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)
 
+[FramePFX](https://github.com/AngryCarrot789/FramePFX) 视频编辑 必看
+
 [syncfusion 文档](https://help.syncfusion.com/windowsforms/overview)
 
 [syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
