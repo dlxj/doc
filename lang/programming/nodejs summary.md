@@ -29417,9 +29417,11 @@ Quora的CEO，他自己其实借着GPT的东风搞了POE，一个可以调用GPT
 
 ## claude api
 
-
+https://github.com/cg-dot/vertexai-cf-workers
 
 ```
+
+see echodict\README.md -> google api
 
 https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude?hl=zh-cn
 
