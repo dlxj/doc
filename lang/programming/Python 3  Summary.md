@@ -17699,6 +17699,32 @@ def get_image(gallery):
 
 
 
+#### 可以上传图片的Textbox 
+
+```python
+
+# https://github.com/gradio-app/gradio/issues/7768
+
+import gradio as gr
+
+def dummy(mm):
+  text = mm['text']
+  img = mm['files'][0]['path']
+  return text, img
+
+with gr.Blocks(theme=gr.themes.Default()) as demo:
+  gr.HTML('<h1><center>Multimodal Textbox</center></h1>')
+  mm_input = gr.MultimodalTextbox(interactive=True, file_types=["image"], placeholder="Enter message or upload file...", show_label=False)
+  with gr.Row():
+    ta = gr.TextArea(label='Multimodal text')
+    img = gr.Image()
+  mm_input.submit(dummy, mm_input, [ta, img])
+
+demo.launch(debug=False)
+```
+
+
+
 
 
 ## audio
