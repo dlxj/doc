@@ -34046,6 +34046,11 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [FramePFX](https://github.com/AngryCarrot789/FramePFX) 视频编辑 必看
 
+- ```
+  FramePFX.NativeEngine 项目 ->属性 -> 平台工具集  Visual Studio 2022 (v143) (未安装)
+  	# https://www.cnblogs.com/coolfan/p/15822057.html
+  ```
+
 [syncfusion 文档](https://help.syncfusion.com/windowsforms/overview)
 
 [syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
