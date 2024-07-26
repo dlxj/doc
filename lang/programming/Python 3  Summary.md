@@ -15479,6 +15479,7 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   pnpm exec playwright install chromium
   pnpm exec playwright install-deps chromium
   pnpm test:browser:full
+  
   ```
   
   
@@ -17638,6 +17639,63 @@ gradio/js/imageeditor/shared/ImageEditor.svelte
 ```
 
 
+
+### 粘贴图片
+
+https://github.com/gradio-app/gradio/issues/735
+
+```python
+
+
+import pyclip
+import numpy as np
+import cv2
+
+def rgb_to_bgr(image):
+    """gradio is turning cv2's BGR colorspace into RGB, so
+    I need to convert it again"""
+    return cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+
+
+def get_image(gallery):
+    print("Getting image from clipboard")
+    try:
+        # load from clipboard
+        pasted = pyclip.paste()
+        decoded = cv2.imdecode(np.frombuffer(pasted, np.uint8), flags=1)
+        decoded = rgb_to_bgr(decoded)
+
+        if decoded is None:
+            print("Image from clipboard was Nonetype")
+            return gallery
+
+        if gallery is None:
+            return [decoded]
+
+        if isinstance(gallery, list):
+            out = []
+            for im in gallery:
+                out.append(
+                        rgb_to_bgr(
+                            cv2.imread(
+                                im["name"],
+                                flags=1)
+                            )
+                        )
+            out += [decoded]
+
+            print("Loaded image from clipboard.")
+            return out
+
+        else:
+            print(f'gallery is not list or None but {type(gallery)}')
+            return None
+
+    except Exception as err:
+        print(f"Error: {err}")
+        return None
+
+```
 
 
 
