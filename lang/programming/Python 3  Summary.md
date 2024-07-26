@@ -15474,15 +15474,15 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   	# 类型检查
   
   
-pip install -r demo/outbreak_forecast/requirements.txt
+  ```
+  pip install -r demo/outbreak_forecast/requirements.txt
   pnpm exec playwright install chromium
   pnpm exec playwright install-deps chromium
   pnpm test:browser:full
-  	# ？？？
-  
   ```
   
   
+  ```
   
 - ```
   pnpm --filter @gradio/app build:lite
