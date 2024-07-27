@@ -1477,6 +1477,18 @@ SRC_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
 
+### which
+
+```
+import shutil
+node = shutil.which("node")
+	# 获得 node 的绝对路径
+```
+
+
+
+
+
 ## File
 
 
@@ -2230,6 +2242,26 @@ class Configurable(metaclass=StateMeta):
     def construct_class_from_config(args):
         cls = Configurable.extract_class_from_args(args)
         return cls(**args)
+```
+
+
+
+### Annotated
+
+```python
+huggingface/myvideo/readme.txt
+	    /root/miniforge3/envs/gradiomyvideo/lib/python3.10/site-packages/gradio/cli/commands/components/dev.py
+    line 51 下断点
+    component_directory = component_directory.resolve()
+        # 成功断下
+        
+    app: Annotated[
+        Path,
+        typer.Argument(
+            help="The path to the app. By default, looks for demo/app.py in the current directory."
+        ),
+    ] = Path("demo") / "app.py"
+    
 ```
 
 
@@ -6056,6 +6088,92 @@ sys.stdout.write("\rIteration: {} and {}".format(i + 1, j + 1))
 
 
 ### 子进程
+
+
+
+```python
+
+see huggingface/myvideo/readme.txt
+    /root/miniforge3/envs/gradiomyvideo/lib/python3.10/site-packages/gradio/cli/commands/components/dev.py
+    line 51 下断点
+    component_directory = component_directory.resolve()
+        # 成功断下
+
+import subprocess
+
+node = '/usr/local/node-v20.11.1-linux-x64/bin/node'
+
+gradio_node_path = '/root/miniforge3/envs/gradiomyvideo/lib/python3.10/site-packages/gradio/node/dev/files/index.js'
+
+component_directory = '/root/huggingface/myvideo'
+
+gradio_template_path = '/root/miniforge3/envs/gradiomyvideo/lib/python3.10/site-packages/gradio/templates/frontend'
+
+app = 'demo/app.py'
+
+host = 'localhost'
+
+python_path = '/root/miniforge3/envs/gradiomyvideo/bin/python3'
+
+gradio_path = '/root/miniforge3/envs/gradiomyvideo/bin/gradio'
+
+    proc = subprocess.Popen(
+        [
+            node,
+            gradio_node_path,
+            "--component-directory",
+            component_directory,
+            "--root",
+            gradio_template_path,
+            "--app",
+            str(app),
+            "--mode",
+            "dev",
+            "--host",
+            host,
+            "--python-path",
+            python_path,
+            "--gradio-path",
+            gradio_path,
+        ],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+
+    while True:
+        proc.poll()
+        text = proc.stdout.readline()  # type: ignore
+        err = None
+        if proc.stderr:
+            err = proc.stderr.readline()
+
+        text = (
+            text.decode("utf-8")
+            .replace("Changes detected in:", "[orange3]Changed detected in:[/]")
+            .replace("Watching:", "[orange3]Watching:[/]")
+            .replace("Running on local URL", "[orange3]Backend Server[/]")
+        )
+
+        if "[orange3]Watching:[/]" in text:
+            text += f"'{str(component_directory / 'frontend').strip()}',"
+        if "To create a public link" in text:
+            continue
+        print(text)
+        if err:
+            print(err.decode("utf-8"))
+
+        if proc.returncode is not None:
+            print("Backend server failed to launch. Exiting.")
+            return
+
+
+```
+
+
+
+
+
+
 
 ```python
 # https://python3-cookbook.readthedocs.io/zh_CN/latest/c13/p06_executing_external_command_and_get_its_output.html
@@ -15322,6 +15440,13 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode 必看 热调�
 https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这里
 
 - ```
+  
+  proxychains4 pip install build && 
+  proxychains4 bash ./build_pypi.sh
+  	# 生成 gradio-4.16.0-py3-none-any.whl 用于安装
+  	# 需要网络的命令全给它加上代理，比全局代理好使
+  
+  
   cd /root/huggingface/gradio/js/imageeditor
   gradio run.py # 默认它会找demo 作入口点
   gradio run.py my_demo # 自定义入口点
@@ -15349,15 +15474,16 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   	# 类型检查
   
   
+  ```
   pip install -r demo/outbreak_forecast/requirements.txt
   pnpm exec playwright install chromium
   pnpm exec playwright install-deps chromium
   pnpm test:browser:full
-  	# ？？？
   
   ```
-
   
+  
+  ```
   
 - ```
   pnpm --filter @gradio/app build:lite
@@ -15434,7 +15560,7 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
   
   
   
-  {
+{
     "configurations": [
         {
             "type": "chrome",
@@ -15445,6 +15571,12 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
         }
     ]
 }
+// cd demo/image_editor && conda activate gradio && python run.py 
+// cd demo/image_editor && conda activate gradio && pnpm dev
+    // 只有这样运行，它的前端端口才是 9876
+// vscode F5 
+
+
 # gradio/js/imageeditor/shared/tools/Tools.svelte
 	line 76 下断点
 	register_tool: (type: tool, meta: ToolMeta) => {
@@ -15929,7 +16061,9 @@ demo.launch()
 
 ### onMount
 
-```
+```python
+import { onMount } from "svelte";
+
 	onMount(() => {
 		return () => {
 			$pixi?.destroy();
@@ -15943,6 +16077,29 @@ demo.launch()
 		# onMount 好像可以返回一个析构函数？ 
 
 ```
+
+
+
+### load
+
+```python
+import gradio as gr
+import datetime
+
+on_load="""
+async()=>{
+    console.log("HELLO");
+}
+"""
+with gr.Blocks() as demo:
+    def get_time():
+        return datetime.datetime.now().time()
+    dt = gr.Textbox(label="Current time")
+    demo.load(get_time, inputs=None, outputs=dt, _js=on_load)
+demo.launch()
+```
+
+
 
 
 
@@ -16146,11 +16303,132 @@ demo.launch(debug=True)
 
 
 
+
+
+#### 动态绑定
+
+```python
+with gr.Blocks() as demo:
+  num1 = gr.Number()
+  num2 = gr.Number()
+  product = gr.Number(lambda a, b: a * b, inputs=[num1, num2])
+	# product 会实时更新成两数的和
+```
+
+
+
+
+
+### AB 复读
+
+```
+	// huggingface/myvideo/frontend/shared/VideoControls.svelte
+	const handle_change_AB_time__ = (): void => {
+		// 获取AB复读起止时间
+		processingVideo = true;
+		trimVideo(ffmpeg, dragStart, dragEnd, videoElement)
+			.then( async (videoBlob) => {
+
+				// to base64 
+				// var reader = new FileReader();
+				// reader.readAsDataURL(videoBlob);
+				// reader.onload = function() {
+				// 	processingVideo = false;
+				// 	toggleTrimmingMode()
+				// 	handle_change_AB_time([dragStart, dragEnd, reader.result])
+				// };
+				var blob = new Uint8Array(await videoBlob.arrayBuffer())
+				handle_change_AB_time([dragStart, dragEnd, blob])
+			});
+	};
+
+
+	# huggingface/myvideo/demo/app.py
+	def change_ABT(evt: gr.EventData):
+        global mp4
+        [ begintime, endtime, videoBase64UrlEndcode ] = evt._data
+        # if isDebug: print("### change_ABT hit.", evt.target, [ begintime, endtime, videoBase64UrlEndcode ])
+        # data:video/mp4;base64, 需要去掉最前面这一段 mime 它才是纯 base64
+        # videoBase64 = re.compile(r'^data:.+?;base64,').sub('', videoBase64UrlEndcode)
+        # videoBytes = base64.b64decode(videoBase64)
+        videoBytes = bytes(list(videoBase64UrlEndcode.values())) # 改成不传 base64 了; 它返回的是字典
+        trim_dir = os.path.join( os.path.dirname(mp4), f'{Path(mp4).stem}[trim]' )
+        trim_name = f'{Path(mp4).stem}[{begintime}][{endtime}].mp4' # whitout ext
+        if not os.path.exists(trim_dir):
+            os.makedirs(trim_dir)
+            print("Directory '%s' created" % trim_dir)
+        print('write bytes:')
+        with open(os.path.join(trim_dir, trim_name), "wb") as f:
+            f.write(videoBytes)
+        
+        return evt._data
+    out.change_AB_time(change_ABT, None, [])
+```
+
+
+
+
+
 ### streaming
 
 https://github.com/gradio-app/gradio/issues/8302
 
 
+
+### success
+
+```python
+# https://github.com/gradio-app/gradio/pull/3430
+import time
+import gradio as gr
+
+def fast_event(x):
+    if not x:
+        raise gr.Error("A Protein must be selected")
+    return x
+
+def slow_event(x):
+    time.sleep(2)
+    return (x + " ")*100
+
+with gr.Blocks() as demo:
+    dropdown = gr.Dropdown(["Protein A", "Protein B", "Protein C"])
+    textbox = gr.Textbox()
+    sequence = gr.Textbox()
+    dropdown.change(fast_event, dropdown, textbox).success(slow_event, textbox, sequence)
+    textbox.submit(slow_event, textbox, sequence)
+
+demo.launch()
+```
+
+
+
+### then
+
+```python
+import time
+import gradio as gr
+
+
+def slow_event(x):
+    time.sleep(2)
+    return x
+
+with gr.Blocks() as demo:
+    textbox1 = gr.Textbox()
+    textbox2 = gr.Textbox()
+    textbox3 = gr.Textbox()
+    textbox4 = gr.Textbox()
+    btn = gr.Button("Cancel", variant="stop")
+    
+    ev1 = textbox1.submit(slow_event, textbox1, textbox2)
+    ev2 = ev1.then(slow_event, textbox2, textbox3)
+    ev3 = ev2.then(slow_event, textbox3, textbox4)
+    btn.click(None, None, None, cancels=ev2)
+    
+
+demo.queue().launch()
+```
 
 
 
@@ -17361,6 +17639,89 @@ gradio/js/imageeditor/shared/ImageEditor.svelte
 ```
 
 
+
+### 粘贴图片
+
+https://github.com/gradio-app/gradio/issues/735
+
+```python
+
+
+import pyclip
+import numpy as np
+import cv2
+
+def rgb_to_bgr(image):
+    """gradio is turning cv2's BGR colorspace into RGB, so
+    I need to convert it again"""
+    return cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+
+
+def get_image(gallery):
+    print("Getting image from clipboard")
+    try:
+        # load from clipboard
+        pasted = pyclip.paste()
+        decoded = cv2.imdecode(np.frombuffer(pasted, np.uint8), flags=1)
+        decoded = rgb_to_bgr(decoded)
+
+        if decoded is None:
+            print("Image from clipboard was Nonetype")
+            return gallery
+
+        if gallery is None:
+            return [decoded]
+
+        if isinstance(gallery, list):
+            out = []
+            for im in gallery:
+                out.append(
+                        rgb_to_bgr(
+                            cv2.imread(
+                                im["name"],
+                                flags=1)
+                            )
+                        )
+            out += [decoded]
+
+            print("Loaded image from clipboard.")
+            return out
+
+        else:
+            print(f'gallery is not list or None but {type(gallery)}')
+            return None
+
+    except Exception as err:
+        print(f"Error: {err}")
+        return None
+
+```
+
+
+
+#### 可以上传图片的Textbox 
+
+```python
+
+# https://github.com/gradio-app/gradio/issues/7768
+
+import gradio as gr
+
+def dummy(mm):
+  text = mm['text']
+  img = mm['files'][0]['path']
+  return text, img
+
+with gr.Blocks(theme=gr.themes.Default()) as demo:
+  gr.HTML('<h1><center>Multimodal Textbox</center></h1>')
+  mm_input = gr.MultimodalTextbox(interactive=True, file_types=["image"], placeholder="Enter message or upload file...", show_label=False)
+  with gr.Row():
+    ta = gr.TextArea(label='Multimodal text')
+    img = gr.Image()
+  mm_input.submit(dummy, mm_input, [ta, img])
+
+demo.launch(debug=False)
+```
 
 
 

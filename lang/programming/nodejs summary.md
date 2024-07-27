@@ -2245,6 +2245,28 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 
 
+### start json
+
+```
+# see huggingface\powershell\readme.txt
+# see nodejs summary.md -> 安装代理 -> 异地组网
+
+nt.json
+{
+    "apps": [
+        {
+            "name": "proxynt_server_7851",
+            "script": "python3.10",
+            "args" : "/usr/local/bin/nt_server config_s.json"
+        }
+    ]
+}
+pm2 start nt.json
+	# 成功启动
+```
+
+
+
 
 
 ### 每五秒检查一次接口，不好就重启
@@ -3171,6 +3193,8 @@ https://v2ex.com/t/1035681#reply73
 
 
 ```
+# see https://huggingface.co/datasets/dlxjj/powershell
+
 dnf install spdlog openssl uriparser libconfig-devel.x86_64 poco*
 
 git cmake ninja pkgconf g++ spdlog-dev openssl-dev libconfig-dev uriparser-dev poco-dev argp-standalone linux-headers
@@ -3178,7 +3202,29 @@ git cmake ninja pkgconf g++ spdlog-dev openssl-dev libconfig-dev uriparser-dev p
 
 candy --mode="client" --websocket="ws://xxx:1587" --password="xxx" --tun="10.0.0.2/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
 	# .2 固定做代理地址
+	
+可以用 --restart=x 参数,x 指重连的时间间隔.也可以不退出进程了
 
+candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.0.0.0/24" --password="xxx"
+	# 境内vps 专用服务端
+
+candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.1.0.0/24" --password="xxx"
+ 	# 境外vps 专用服务端
+ 	
+
+ 
+
+```
+
+
+
+#### proxynt
+
+https://github.com/sazima/proxynt  WebSocket 内网穿透
+
+```
+# see huggingface\powershell\readme.txt
+pip install -U proxynt
 ```
 
 
@@ -8397,6 +8443,22 @@ j = ANONUM(strs)
 ```
 
 
+
+## 引用捕获组
+
+```
+s = 's123abc123def'
+s.match(/(\d)(.*?)(\1)/)
+[
+  '123abc1',
+  '1',
+  '23abc',
+  '1',
+  index: 1,
+  input: 's123abc123def',
+  groups: undefined
+]
+```
 
 
 
@@ -29359,9 +29421,11 @@ Quora的CEO，他自己其实借着GPT的东风搞了POE，一个可以调用GPT
 
 ## claude api
 
-
+https://github.com/cg-dot/vertexai-cf-workers
 
 ```
+
+see echodict\README.md -> google api
 
 https://cloud.google.com/vertex-ai/generative-ai/docs/partner-models/use-claude?hl=zh-cn
 
@@ -33950,6 +34014,10 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 ### Winform
 
+[syncfusion 文档](https://help.syncfusion.com/windowsforms/overview)
+
+[syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
+
 [ff-utils-improved 抽帧](https://github.com/miifanboy/ff-utils-improved) [1](https://blog.csdn.net/Daniel_yka/article/details/109840350)
 
 [Flyleaf](https://github.com/SuRGeoNix/Flyleaf)
@@ -33982,10 +34050,22 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)
 
+[FramePFX](https://github.com/AngryCarrot789/FramePFX) 视频编辑 必看
+
+- ```
+  FramePFX.NativeEngine 项目 ->属性 -> 平台工具集  Visual Studio 2022 (v143) (未安装)
+  	# https://www.cnblogs.com/coolfan/p/15822057.html
+  ```
+
+[syncfusion 文档](https://help.syncfusion.com/windowsforms/overview)
+
+[syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
+
 [syncfusion demos](https://github.com/syncfusion/wpf-demos)
 
 - https://www.syncfusion.com/downloads/communityLicense 申请后等两天
   - https://communitylicense.syncfusion.com/support/tickets/613578
+  - https://blog.csdn.net/songhuangong123/article/details/131348661  离线注册方法
 - https://www.syncfusion.com/account/downloads 下载
 
 [Prism](https://github.com/PrismLibrary/Prism)

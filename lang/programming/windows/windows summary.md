@@ -833,7 +833,9 @@ choco install docker-desktop --upgrade --force
 
 
 
+# .nuget 占用空间过大
 
+https://blog.csdn.net/songhuangong123/article/details/139597164
 
 
 

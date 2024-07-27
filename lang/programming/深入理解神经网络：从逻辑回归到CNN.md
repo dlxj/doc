@@ -10625,6 +10625,8 @@ def main():
 
 ```
 
+see python summary.md -> OpenCV -> ppcor_aliocr_convert.py
+
 wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 && \
 tar -jxvf p7zip_16.02_src_all.tar.bz2 && \
 cd p7zip_16.02 && \
@@ -11425,6 +11427,16 @@ summary_fun.add_image('{}_predict_{}'.format(mode, self._print_interval_iter), t
 
 
 
+## halcon
+
+https://blog.csdn.net/songhuangong123/article/details/129146123  【halcon】模板匹配和仿射变换总结
+
+```
+HALCON是德国MVtec公司开发的一套完善的标准的机器视觉算法包
+```
+
+
+
 
 
 ## PaddleOCR
@@ -11603,6 +11615,12 @@ miniconda pkgs
 ```
 
 
+
+#### ppcor_aliocr_convert.py
+
+```
+see python summary.md -> OpenCV -> ppcor_aliocr_convert.py
+```
 
 
 
