@@ -6,6 +6,17 @@ https://ftp.riken.jp/Linux/ubuntu-releases/20.04/
 
 
 
+# 安装后进不去
+
+```
+启动后光标移到 *ubuntu -> 按 e 键 -> 启动参数的最后删几个字，加入 nomodeset -> ctrl + x 退出
+	# 成功进入 ubuntu 
+```
+
+
+
+
+
 
 
 # 设置代理
