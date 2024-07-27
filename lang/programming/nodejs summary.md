@@ -7054,6 +7054,10 @@ for text in it:
 
 
 
+## chrome 实时字幕
+
+https://github.com/biemster/gasr/issues/19  chrome 实时字幕
+
 
 
 # Syntax
