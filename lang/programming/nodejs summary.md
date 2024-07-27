@@ -1507,6 +1507,8 @@ Ctrl+Shift+X -> search "C++" ->安装C/C++扩展
 pacman -S mingw-w64-ucrt-x86_64-gcc \
 	mingw-w64-ucrt-x86_64-gdb \
 	mingw-w64-ucrt-x86_64-boost
+	
+	pacman -S mingw-w64-cross-gcc -y
 
 加入 path 环境变量 C:\msys64\ucrt64\bin
 
