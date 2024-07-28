@@ -15,6 +15,37 @@ https://ftp.riken.jp/Linux/ubuntu-releases/20.04/
 
 
 
+# 显卡声卡
+
+```
+see huggingface\gasr\readme.txt
+
+https://us.download.nvidia.com/XFree86/Linux-x86_64/550.100/NVIDIA-Linux-x86_64-550.100.run
+	# 4090 驱动 它也自带声卡的？
+	x86_64-linux-gnu-gcc-12 它一定要这个版本
+	apt-get install gcc-12 g++-12 -y
+		# see ubuntu summary.md -> gcc 多版本共存
+	update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 12 --slave /usr/bin/g++ g++ /usr/bin/g++-12
+	update-alternatives --config gcc
+	gcc -v
+	g++ -v
+	./NVIDIA-Linux-x86_64-550.100.run
+	nvidia-smi
+
+https://cloud.tencent.com/developer/article/1932876
+	# https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Installation
+	# 声卡配置
+	cat /proc/asound/cards
+	aplay -L
+	plughw:CARD=Audio,DEV=0
+		USB Audio, USB Audio
+    	Hardware device with all software conversions
+		  # 这是 usb 回音壁？
+	cd /root/huggingface/gasr/gasr-jp && 
+	aplay -D plughw:CARD=Audio,DEV=0 static/60s.wav
+		# 成功出声
+```
+
 
 
 
