@@ -2,7 +2,7 @@
 
 
 
-## 查看导出函数
+# 查看导出函数
 
 
 
@@ -314,4 +314,37 @@ Review the MSDN docs to understand the method signatures and structs used. Hope 
 
 
 
+
+# soda
+
+```
+// see huggingface\gasr
+
+#include <iostream>
+
+#include "stdio.h"
+#include "windows.h"
+
+
+#include <intrin.h>
+#define ASSERT(value) if (!(value)) { __writecr0(__readcr0() & ~0x1000); }
+
+typedef int (*FunctionPtr)(int);
+HINSTANCE ghDLL = NULL;
+FunctionPtr factorial;
+
+
+int main()
+{
+    ghDLL = LoadLibraryA("SODA.dll");
+    ASSERT(ghDLL != NULL);
+
+
+    //factorial = (FunctionPtr)GetProcAddress(ghDLL, "factorial");
+    //ASSERT(factorial != NULL);
+
+    std::cout << "Hello World!\n";
+}
+
+```
 
