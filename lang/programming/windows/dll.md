@@ -320,6 +320,7 @@ Review the MSDN docs to understand the method signatures and structs used. Hope 
 ```
 // see huggingface\gasr
 
+
 #include <iostream>
 
 #include "stdio.h"
@@ -329,22 +330,88 @@ Review the MSDN docs to understand the method signatures and structs used. Hope 
 #include <intrin.h>
 #define ASSERT(value) if (!(value)) { __writecr0(__readcr0() & ~0x1000); }
 
-typedef int (*FunctionPtr)(int);
-HINSTANCE ghDLL = NULL;
-FunctionPtr factorial;
+typedef void (*callback_t)(char*, int, void*);
+struct SodaConfig {
+	const char* soda_config;
+	int soda_config_size;
+	callback_t callback;
+	void* callback_handle;
+};
 
+typedef void* (*FunctionPtr)(struct SodaConfig);
+HINSTANCE ghDLL = NULL;
+FunctionPtr CreateExtendedSodaAsync;
+
+static void result_handler(char* response, int rlen, void* instance) {
+	int c = 0;
+}
+
+//typedef int(_cdecl* FunctionPtr)(char* imageFileName, char* p, int numOfTest, int numOfOption, double rate, unsigned int brightness);
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+	typedef void (*RecognitionResultHandler)(const char*, const bool, void*);
+
+	//typedef struct {
+	//	// The channel count and sample rate of the audio stream. SODA does not
+	//	// support changing these values mid-stream, so a new SODA instance must be
+	//	// created if these values change.
+	//	int channel_count;
+	//	int sample_rate;
+
+	//	// The fully-qualified path to the language pack.
+	//	const char* language_pack_directory;
+
+	//	// The callback that gets executed on a recognition event. It takes in a
+	//	// char*, representing the transcribed text; a bool, representing whether the
+	//	// result is final or not; and a void* pointer to the SodaRecognizerImpl
+	//	// instance associated with the stream.
+	//	RecognitionResultHandler callback;
+
+	//	// A void pointer to the SodaRecognizerImpl instance associated with the
+	//	// stream.
+	//	void* callback_handle;
+
+	//	const char* api_key;
+	//} SodaConfig;
+
+	//extern void* CreateSodaAsync(SodaConfig config);
+	
+
+#ifdef __cplusplus
+}
+#endif
 
 int main()
 {
     ghDLL = LoadLibraryA("SODA.dll");
     ASSERT(ghDLL != NULL);
 
+	CreateExtendedSodaAsync = (FunctionPtr)GetProcAddress(ghDLL, "CreateExtendedSodaAsync");
 
-    //factorial = (FunctionPtr)GetProcAddress(ghDLL, "factorial");
-    //ASSERT(factorial != NULL);
+	//typedef void* (*CreateExtendedSodaAsync_t)(struct SodaConfig);
+
+    ASSERT(CreateExtendedSodaAsync != NULL);
+
+	struct SodaConfig config;
+	void* handle;
+
+	char* cfg_serialized = (char*)malloc(4);
+	memset(cfg_serialized, 0, 4);
+
+	config.soda_config = cfg_serialized;
+	config.soda_config_size = 4;
+
+	config.callback = result_handler;
+	config.callback_handle = NULL;
+
+	handle = CreateExtendedSodaAsync(config);
 
     std::cout << "Hello World!\n";
 }
+
 
 ```
 
