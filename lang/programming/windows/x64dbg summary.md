@@ -52,5 +52,13 @@ https://down.52pojie.cn/Tools/Debuggers/
 
 https://bbs.kanxue.com/forum-10.htm
 
+```
+有位大佬，应该是俄罗斯的，收集了IDA历次版本(Demo/Free/Leak)，从0.1到8.3，在http://fckilfkscwusoopguhi7i6yg3l6tknaz7lrumvlhg5mvtxzxbbxlimid.onion/  
+	# 暗网？
+
+```
+
+
+
 
 
