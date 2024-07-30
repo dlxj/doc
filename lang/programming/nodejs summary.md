@@ -2580,6 +2580,16 @@ stream {
         listen 223;
         proxy_pass i3700k_223;
     }
+    
+    upstream 13700k_33900 {
+        server 10.0.0.3:3390;
+    }
+
+    server {
+        listen 33900;
+        proxy_pass 13700k_33900;
+    }
+    
 }
 
 http_proxy=http://127.0.0.1:8118 curl google.com
