@@ -78,6 +78,19 @@ https://bbs.kanxue.com/thread-277984.htm
 
 https://github.com/therealdreg/DbgChild
 
+- https://github.com/x64dbg/ScyllaHide
+- https://github.com/a1ext/labeless
+
+
+
+```
+https://www.52pojie.cn/thread-1585120-1-1.html   
+   DbgChild: 他提供了一个自动检测被调试进程创建的子进程的功能，如果主进程创建了子进程，那么它会自动附加到一个新的x64dbg实例上。很多时候，这可以为你节省时间。
+   
+```
+
+
+
 
 
 ## jdk
