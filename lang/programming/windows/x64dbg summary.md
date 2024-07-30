@@ -107,7 +107,10 @@ https://source.chromium.org/chromium/chromium/src/+/main:components/soda/constan
       0x26, 0xea, 0xf0, 0x41, 0x50, 0x09, 0x52, 0xa4, 0xb3, 0x1e, 0x6a,
       0x8e, 0x24, 0x99, 0xde, 0x51, 0x14, 0xc4, 0x3c, 0xfa, 0x48}},
      	# 日语的 
-      
+
+https://source.chromium.org/chromium/chromium/src/+/main:chrome/services/speech/soda/proto/soda_api.proto
+	# 接口协议
+
 
 constexpr SodaLanguagePackComponentConfig kLanguageComponentConfigs[] = {
     {LanguageCode::kEnUs,
