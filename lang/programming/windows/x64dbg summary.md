@@ -99,6 +99,9 @@ git checkout
 
 https://source.chromium.org/chromium/chromium/src/+/main:components/soda/constants.h
 	# api key?
+
+https://github.com/FaintWhisper/SODAKeyDumper
+	# api key dumper
 	
 {LanguageCode::kJaJp,
      "ja-JP",
