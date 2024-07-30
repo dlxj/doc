@@ -34,8 +34,21 @@ PID=17272
 
 火绒的安全分析工具 -> 进程 -> 在 chrome top 进程搜字符串，能搜到
 
+单进程模式：
+	“快捷方式”选项卡。 你需要做的就是在“目标”的路径后面加上下面这个参数:" --single-process"
+	
+	"C:\Program Files\Google\Chrome\Application\chrome.exe" --single-process
+	
+	breakpoint这个回调，我在x64dbgpy中使用了，的确很迅速，好用。
+	
 
 ```
+
+
+
+# debugger tools
+
+https://down.52pojie.cn/Tools/Debuggers/
 
 
 
