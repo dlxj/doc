@@ -145,7 +145,7 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 ```
 
 
-# root gui
+# 允许 root 登录图形界面
 
 ```
 
