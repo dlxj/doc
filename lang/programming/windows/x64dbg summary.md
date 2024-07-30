@@ -62,6 +62,37 @@ DbgChild 插件在附加的主进程创建新进程时，会自动新开一个 x
 
 
 
+## soda 源码
+
+```
+
+https://source.chromium.org/
+	# 这里搜 CreateExtendedSodaAsync
+
+$ git clone https://chromium.googlesource.com/chromiumos/platform2
+
+error: invalid path 'diagnostics/cros_healthd/fetchers/storage/testdata/sys/devices/pci0000:00/0000:00:12.7/device_descriptor/manufacturer_id'
+fatal: unable to checkout working tree
+warning: Clone succeeded, but checkout failed.
+	# 原始报错
+
+
+New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+
+git clone --no-checkout https://chromium.googlesource.com/chromiumos/platform2 platform2
+cd platform2
+git sparse-checkout init --cone
+
+echo "diagnostics/cros_healthd/fetchers/storage/testdata/sys/devices/pci0000:00/0000:00:12.7/" >> .git/info/sparse-checkout
+git checkout
+
+
+```
+
+
+
+ 
+
 
 
 # debugger tools
