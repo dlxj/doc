@@ -169,6 +169,19 @@ auth   required        pam_succeed_if.so user != root quiet_success
 ```
 
 
+
+## 4090 显卡本地 root 登录黑屏
+
+```
+root ssh 登录以后重装驱动：
+Please update your xorg.conf file as    
+  appropriate; see the file /usr/share/doc/NVIDIA_GLX-1.0/README.txt for details.                           
+```
+
+
+
+
+
 # 安装开发环境
 
 ```
