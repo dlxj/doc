@@ -61,6 +61,12 @@ https://bbs.kanxue.com/thread-277984.htm
 
 
 
+## 子进程插件
+
+https://github.com/therealdreg/DbgChild
+
+
+
 ## jdk
 
 ```
