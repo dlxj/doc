@@ -62,6 +62,13 @@ DbgChild 插件在附加的主进程创建新进程时，会自动新开一个 x
 
 
 
+## Ghidra
+
+- https://blog.csdn.net/qq_15174755/article/details/108906564
+- https://blog.csdn.net/kailiaq_1/article/details/134977595
+
+
+
 ## soda 源码
 
 https://source.chromium.org/
