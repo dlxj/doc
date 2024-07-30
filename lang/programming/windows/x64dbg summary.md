@@ -254,7 +254,11 @@ https://down.52pojie.cn/Tools/Debuggers/
 
 https://bbs.kanxue.com/forum-10.htm
 
- 
+ https://bbs.kanxue.com/thread-276162.htm  从0开始编写简易调试器 
+
+- https://51asm.com/ 逆向班
+
+
 
 ```
 https://bbs.kanxue.com/thread-277984.htm
