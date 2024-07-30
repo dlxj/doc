@@ -61,5 +61,16 @@ https://bbs.kanxue.com/thread-277984.htm
 
 
 
+## jdk
+
+```
+vi ~/.bashrc 
+export JAVA_HOME=/root/jdk-21.0.4+7/
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar　
+source ~/.bashrc
+	# jdk 配置
+```
+
 
 
