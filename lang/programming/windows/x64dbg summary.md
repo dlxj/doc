@@ -32,6 +32,8 @@ PID=17272
 
 搜字符串可能可以找到创健进程的地方？  SpeechRecognitionService
 
+火绒的安全分析工具 -> 进程 -> 在 chrome top 进程搜字符串，能搜到
+
 
 ```
 
