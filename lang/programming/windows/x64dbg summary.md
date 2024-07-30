@@ -78,6 +78,15 @@ fatal: unable to checkout working tree
 warning: Clone succeeded, but checkout failed.
 	# 原始报错
 
+  SodaConfig(
+      uint32_t channel_count,
+      uint32_t sample_rate,
+      const std::string& api_key,
+      const std::string& library_dlc_path,
+      const std::string& language_dlc_path,
+      OptionalBool enable_formatting);
+      	# 第三参就是 api_key, 调试 linux 正常运行的 libsoda.so，看能不能导出自已传的 API KEY
+
 
 New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
 
