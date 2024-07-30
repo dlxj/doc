@@ -4210,6 +4210,10 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 
 - ```
   
+  SODAModels/**/* filter=lfs diff=lfs merge=lfs -text
+  	# .gitattributes 文件夹的写法
+  
+  
   注意：windows linux .gitconfig 
   autocrlf = true
   	# 都设成这样，坏处是拉代码时 proxychain 要临时改 autocrlf = false ，pull 完再改回去
