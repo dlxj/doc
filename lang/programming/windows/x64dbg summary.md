@@ -64,6 +64,7 @@ https://bbs.kanxue.com/thread-277984.htm
 ## jdk
 
 ```
+# see huggingface\gasr\readme.txt
 vi ~/.bashrc 
 export JAVA_HOME=/root/jdk-21.0.4+7/
 export PATH=$JAVA_HOME/bin:$PATH
