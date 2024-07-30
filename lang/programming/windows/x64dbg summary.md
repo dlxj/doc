@@ -22,3 +22,18 @@ x64dbg打开"C:\Windows\System32\rundll32.exe"，32位应该是"C:\Windows\SysWO
 
 
 
+# soda
+
+```
+PID=17272
+名称=chrome
+路径=C:\Program Files\Google\Chrome\Application\chrome.exe
+命令行参数=--type=utility --utility-sub-type=media.mojom.SpeechRecognitionService --lang=zh-CN --service-sandbox-type=speech_recognition --video-capture-use-gpu-memory-buffer --field-trial-handle=2060,i,416351341486393937,12593638908818774446,262144 --variations-see
+
+搜字符串可能可以找到创健进程的地方？  SpeechRecognitionService
+
+
+```
+
+
+
