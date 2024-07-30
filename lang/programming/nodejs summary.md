@@ -4213,6 +4213,10 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   SODAModels/**/* filter=lfs diff=lfs merge=lfs -text
   	# .gitattributes 文件夹的写法
   
+  * filter=lfs diff=lfs merge=lfs -text
+  *.* filter=lfs diff=lfs merge=lfs -text
+  	# 任意文件都存 LFS 的写法
+  
   
   注意：windows linux .gitconfig 
   autocrlf = true
@@ -4490,6 +4494,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create RWKV_speech --type dataset
 	# huggingface-cli repo create Pixelorama --type dataset
 	# huggingface-cli repo create pxlrm --type dataset # godot 复刻版
+	# huggingface-cli repo create x64dbg_52PJ --type dataset
 	# huggingface-cli repo create PaddleOCR_ali1k_det_rec_300epoch --type dataset
 			# miniconda3.tar gradio.tar.gz
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
