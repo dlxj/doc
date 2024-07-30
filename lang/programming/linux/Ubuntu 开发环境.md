@@ -175,7 +175,9 @@ auth   required        pam_succeed_if.so user != root quiet_success
 ```
 root ssh 登录以后重装驱动：
 Please update your xorg.conf file as    
-  appropriate; see the file /usr/share/doc/NVIDIA_GLX-1.0/README.txt for details.                           
+  appropriate; see the file /usr/share/doc/NVIDIA_GLX-1.0/README.txt for details.          
+  root 重装以后正常root 登录了图形界面了，但是声音出不来
+ 
 ```
 
 
