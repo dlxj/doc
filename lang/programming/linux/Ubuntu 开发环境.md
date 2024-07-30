@@ -159,10 +159,11 @@ vi /etc/gdm3/custom.conf
 AllowRoot=true
 	# add this line
 
+vi /etc/pam.d/gdm-autologin
 vi /etc/pam.d/gdm-password
 
 auth   required        pam_succeed_if.so user != root quiet_success
-	# comment this line
+	# 注释掉这一行（上面两个文件都要）
 
 
 ```
