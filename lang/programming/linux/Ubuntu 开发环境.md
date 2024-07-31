@@ -62,9 +62,16 @@ https://cloud.tencent.com/developer/article/1932876
      		# 这是 usb 回音壁
     
     vi /etc/asound.conf
+    	# 这文件是全局自定义的，默认不存在
     defaults.pcm.card 2
     defaults.pcm.device 0
     	# 保存重启电脑
+    
+    vi /usr/share/alsa/alsa.conf
+    defaults.ctl.card 0
+    defaults.pcm.card 0
+    defaults.pcm.device 0
+    	# 这个文件是存在的，上面是默认配置
     
     ```
 
