@@ -73,6 +73,8 @@ DbgChild 插件在附加的主进程创建新进程时，会自动新开一个 x
 
 https://www.torproject.org/
 
+https://bbs.kanxue.com/thread-277712.htm  8.1 没密码
+
 ```
 https://bbs.kanxue.com/thread-277984.htm
 位大佬，应该是俄罗斯的，收集了IDA历次版本(Demo/Free/Leak)，从0.1到8.3，在		http://fckilfkscwusoopguhi7i6yg3l6tknaz7lrumvlhg5mvtxzxbbxlimid.onion/  
