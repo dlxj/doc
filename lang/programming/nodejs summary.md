@@ -4426,6 +4426,10 @@ git clone -c http.proxy="socks5h://192.168.1.8:57882"  https://huggingface.co/da
 
 dlxjj pwd email same as github's dlxj
 
+git config --global user.name "dlxjj" && 
+git config --global user.email "12345@qq.com"
+git config --global push.default matching
+
 pip install huggingface_hub && \
 git config --global credential.helper store && \
 huggingface-cli login
