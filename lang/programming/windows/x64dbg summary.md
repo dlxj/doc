@@ -73,7 +73,9 @@ DbgChild 插件在附加的主进程创建新进程时，会自动新开一个 x
 
 https://www.torproject.org/
 
-https://bbs.kanxue.com/thread-277712.htm  8.1 没密码
+https://bbs.kanxue.com/thread-279661.htm
+
+- https://www.52pojie.cn/thread-1861384-1-1.html 8.3 可用 ？
 
 ```
 https://bbs.kanxue.com/thread-277984.htm
