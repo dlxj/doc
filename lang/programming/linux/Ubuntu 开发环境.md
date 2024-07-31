@@ -17,6 +17,22 @@ https://ftp.riken.jp/Linux/ubuntu-releases/20.04/
 
 
 
+# Grub Timeout
+
+```
+vi /etc/default/grub
+	# timeout 设成5
+	# nomodest 好像也可以在这里设置
+
+update-grub
+	# 更新配置，它自动找到了 windows 启动项
+
+```
+
+
+
+
+
 # 显卡声卡
 
 ```
