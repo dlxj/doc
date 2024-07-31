@@ -52,6 +52,24 @@ https://cloud.tencent.com/developer/article/1932876
 
 ## 声卡图形化配置
 
+- https://itsfoss.com/fix-sound-ubuntu-1404/
+
+  - ```
+    alsamixer
+    	# 因为默认是 HDMI 输出，所以内置扬声器没有声音
+    aplay -l
+    	card 2: Audio [USB Audio], device 0: USB Audio [USB Audio]
+     		# 这是 usb 回音壁
+    
+    vi /etc/asound.conf
+    defaults.pcm.card 2
+    defaults.pcm.device 0
+    	# 保存重启电脑
+    
+    ```
+
+  - 
+
 ```
 声卡图形化配置
 	1. 重启动电脑
