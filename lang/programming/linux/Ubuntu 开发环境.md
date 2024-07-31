@@ -50,6 +50,18 @@ https://cloud.tencent.com/developer/article/1932876
 
 
 
+## 声卡图形化配置
+
+```
+声卡图形化配置
+	1. 重启动电脑
+	2. apt-get install pavucontrol
+	3. 输入 pavucontrol
+	4. 选择配置选项
+```
+
+
+
 
 
 # 设置代理
