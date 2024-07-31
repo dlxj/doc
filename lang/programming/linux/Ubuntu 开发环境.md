@@ -62,6 +62,9 @@ https://cloud.tencent.com/developer/article/1932876
 	cd /root/huggingface/gasr/gasr-jp && 
 	aplay -D plughw:CARD=Audio,DEV=0 static/60s.wav
 		# 成功出声
+		sudo lsof /dev/snd/*
+			# 声卡被占用，kill 掉进程
+		
 ```
 
 
