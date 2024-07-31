@@ -4232,6 +4232,9 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   SODAModels/**/* filter=lfs diff=lfs merge=lfs -text
   	# .gitattributes 文件夹的写法
   
+  */**/SODAModels/**/* filter=lfs diff=lfs merge=lfs -text
+  	# 藏得深的目录就这样
+  
   * filter=lfs diff=lfs merge=lfs -text
   *.* filter=lfs diff=lfs merge=lfs -text
   	# 任意文件都存 LFS 的写法

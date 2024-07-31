@@ -12829,6 +12829,12 @@ if __name__ == '__main__':
 
 
 
+## 语音唤醒
+
+https://github.com/Picovoice/porcupine
+
+
+
 ## whisperX 
 
 - https://github.com/openai/whisper
