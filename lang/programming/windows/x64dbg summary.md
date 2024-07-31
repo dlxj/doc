@@ -265,6 +265,7 @@ https://bbs.kanxue.com/thread-277984.htm
 位大佬，应该是俄罗斯的，收集了IDA历次版本(Demo/Free/Leak)，从0.1到8.3，在		http://fckilfkscwusoopguhi7i6yg3l6tknaz7lrumvlhg5mvtxzxbbxlimid.onion/  
 	# 暗网？
 	https://blog.smallfang.us/cn/0012/
+	 Socks5Proxy 10.0.0.1:1080
 
 ```
 
