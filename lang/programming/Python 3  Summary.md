@@ -14571,6 +14571,10 @@ order by all
 
 
 
+# steampipe 嵌入式 postgreSQL
+
+https://github.com/turbot/steampipe
+
 
 
 
