@@ -250,6 +250,7 @@ https://www.cnblogs.com/LexLuc/p/17673672.html
 chmod 600 LightsailDefaultKey-ap-southeast-1.pem
 
 ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=nc -X connect -x 172.16.6.158:5782 %h %p"
+	# wsl 上运行，实测成功连上
 
 
 
@@ -260,6 +261,14 @@ see nodejs summary.dm -> vscode + MSYS2 +  Mingw-w64
 	pacman -S netcat
 	 whereis nc
 	 	-> /usr/bin/nc.exe
+	pacman -S openssh
+		#  ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=nc -X connect -x 172.16.6.158:5782 %h %p"
+		# 没用，出错
+
+下载 ncat
+	linux：https://nmap.org/ncat/
+	windows：https://nmap.org/dist/ncat-portable-5.59BETA1.zip
+
 
 
 ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=/C/msys64/usr/bin/nc.exe -X connect -x 172.16.6.158:5782 %h %p"
