@@ -250,6 +250,18 @@ https://www.cnblogs.com/LexLuc/p/17673672.html
 chmod 600 LightsailDefaultKey-ap-southeast-1.pem
 
 ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=nc -X connect -x 172.16.6.158:5782 %h %p"
+
+
+
+see nodejs summary.dm -> vscode + MSYS2 +  Mingw-w64 
+安装 msys2 from https://www.msys2.org/
+
+按 win 键 -> 找到 MSYS2 UCRT64 图标 -> 运行
+
+mingw64
+	pacman -S netcat
+
+
 ```
 
 
