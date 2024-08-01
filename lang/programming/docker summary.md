@@ -286,12 +286,11 @@ mkdir ubuntu_soda && \
 cd ubuntu_soda && \
 touch Dockerfile && \
 echo "FROM ubuntu:22.04 
-RUN set -x; apt-get update && \
+RUN set -x; apt-get update && \\
 apt-get install -y build-essential && \\
 apt-get install -y p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \\
 apt-get install -y dialog apt-utils && \\
 apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx libcairo2-dev && \\
-apt update && apt upgrade -y && \\
 apt install python3.10-dev -y && \\
 apt install software-properties-common -y && \\
 (sleep 1; echo '\n';) | add-apt-repository ppa:deadsnakes/ppa && \\
