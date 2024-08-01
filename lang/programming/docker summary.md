@@ -269,7 +269,7 @@ nmap 172.20.0.2 -p6006
 
 ```
 # see nodejs summary.md -> docker
-docker system prune --volumes -y 
+docker system prune --volumes
 docker image ls | grep ubuntu:22.04
 if [ $? -ne 0 ] ;then
     echo 'image ubuntu:22.04 not found, pull'
@@ -282,6 +282,19 @@ if [ $? -ne 0 ] ;then
     docker network create --subnet=172.20.0.0/16 customnetwork
     echo 'customnetwork create success'
 fi
+mkdir ubuntu_soda && \
+cd ubuntu_soda && \
+touch Dockerfile && \
+echo "FROM ubuntu:22.04 
+RUN set -x; buildDeps='epel-release curl net-tools cronie lsof git' && \\
+    yum install -y \$buildDeps && \\
+    yum install -y nginx redis nfs-utils crontabs && \\
+    mkdir -p /project/shared && \\
+    mkdir -p /project/script && \\
+    chmod 755 /project/shared && \\
+    cd /project && \\
+    git clone http://用户名:AccessToten@gitlab.xxxxx.git
+
 ```
 
 

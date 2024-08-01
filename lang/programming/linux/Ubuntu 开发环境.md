@@ -166,6 +166,8 @@ PubkeyAuthentication yes
 
 sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
 sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
+sed -i 's/^#\?PubkeyAuthentication.*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config;
+
 
 mkdir -p /var/run/sshd && \
 /usr/sbin/sshd -D &
