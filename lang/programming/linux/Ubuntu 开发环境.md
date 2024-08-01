@@ -279,7 +279,11 @@ icacls "LightsailDefaultKey-ap-southeast-1.pem" /remove "Users"
 icacls "LightsailDefaultKey-ap-southeast-1.pem" /inheritance:r
 icacls "LightsailDefaultKey-ap-southeast-1.pem" /grant:r "$(whoami):r"
 	# powershell 执行，改变权限
+	# 实测现在权限变小了，不得行
 
+右键 -> LightsailDefaultKey-ap-southeast-1.pem -> 安全 -> 改成确保当前登录账号有完全控制权限
+	ssh -i E:\\LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p"
+	# 成功登录！
 
 
 ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=/C/msys64/usr/bin/nc.exe -X connect -x 172.16.6.158:5782 %h %p"
