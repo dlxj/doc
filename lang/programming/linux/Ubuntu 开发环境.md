@@ -254,6 +254,13 @@ ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCo
 
 
 
+```
+vscode 需要多加这一项
+ProxyCommand [第二步下载的ncat.exe的绝对路径] --proxy-type http --proxy [代理服务器ip]:[代理服务器端口号] %h %p
+```
+
+
+
 
 
 
