@@ -294,7 +294,7 @@ apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev l
 apt update && apt upgrade -y && \\
 apt install python3.10-dev -y && \\
 apt install software-properties-common -y && \\
-(sleep 1; echo "\n";) | add-apt-repository ppa:deadsnakes/ppa && \\
+(sleep 1; echo '\n';) | add-apt-repository ppa:deadsnakes/ppa && \\
 apt install python3.10 && \\
 apt install python3.10-distutils && \\
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \\
@@ -305,7 +305,13 @@ ufw disable && \\
 mkdir -p huggingface && \\
 chmod -R 600 huggingface && \\
 cd huggingface && \\
-git clone http://用户名:AccessToten@gitlab.xxxxx.git"
+echo done. " > Dockerfile && \
+docker build -t ubuntu_soda . && \
+docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /sbin/init 
+
+
+
+git clone http://用户名:AccessToten@gitlab.xxxxx.git"  > Dockerfile && \
 
 ```
 
