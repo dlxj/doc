@@ -160,7 +160,12 @@ vi /etc/ssh/sshd_config
 
 PermitRootLogin yes
 PasswordAuthentication yes
-	# 改这两个重启 ssh 成功登录
+PubkeyAuthentication yes
+	# systemctl restart ssh
+	# 改这三个重启 ssh 成功登录
+
+sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
+sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
 
 mkdir -p /var/run/sshd && \
 /usr/sbin/sshd -D &
@@ -283,6 +288,7 @@ icacls "LightsailDefaultKey-ap-southeast-1.pem" /grant:r "$(whoami):r"
 
 右键 -> LightsailDefaultKey-ap-southeast-1.pem -> 安全 -> 改成确保当前登录账号有完全控制权限
 	ssh -i E:\\LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p"
+	# powershell 执行
 	# 成功登录！
 	
 C:\Users\i\.ssh
@@ -293,6 +299,14 @@ Host 54.251.144.81
   IdentityFile E:\\LightsailDefaultKey-ap-southeast-1.pem
   ProxyCommand D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p
 	  # 实测成功连接
+
+
+vi /etc/ssh/sshd_config
+PermitRootLogin yes
+PasswordAuthentication yes
+PubkeyAuthentication yes
+	# systemctl restart ssh
+	# 改这三个重启 ssh 成功登录
 
 
 
