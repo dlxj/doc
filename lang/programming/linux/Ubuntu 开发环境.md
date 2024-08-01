@@ -238,6 +238,24 @@ Please update your xorg.conf file as
 
 
 
+# ssh 代理登录
+
+```
+
+see github\echodict\README.md -> AWS Lightsail
+
+https://www.cnblogs.com/LexLuc/p/17673672.html
+	# 在WSL实测nc可实现代理流量转发
+
+chmod 600 LightsailDefaultKey-ap-southeast-1.pem
+
+ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=nc -X connect -x 172.16.6.158:5782 %h %p"
+```
+
+
+
+
+
 
 
 # 安装开发环境
