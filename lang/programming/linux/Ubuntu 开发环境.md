@@ -273,6 +273,12 @@ ssh -i E:\\LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "Proxy
 	# powershell 执行
 		-> key文件的权限不对，因为它是 windows 的文件，默认 777 ，应该是 600
 	
+cd E:\
+icacls "LightsailDefaultKey-ap-southeast-1.pem" /remove "NT AUTHORITY\Authenticated Users"
+icacls "LightsailDefaultKey-ap-southeast-1.pem" /remove "Users"
+icacls "LightsailDefaultKey-ap-southeast-1.pem" /inheritance:r
+icacls "LightsailDefaultKey-ap-southeast-1.pem" /grant:r "%username%":r
+	# powershell 执行，改变权限
 
 
 
