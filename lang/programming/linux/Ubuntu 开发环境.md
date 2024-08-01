@@ -269,6 +269,11 @@ see nodejs summary.dm -> vscode + MSYS2 +  Mingw-w64
 	linux：https://nmap.org/ncat/
 	windows：https://nmap.org/dist/ncat-portable-5.59BETA1.zip
 
+ssh -i E:\\LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p"
+	# powershell 执行
+		-> key文件的权限不对，因为它是 windows 的文件，默认 777 ，应该是 600
+	
+
 
 
 ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=/C/msys64/usr/bin/nc.exe -X connect -x 172.16.6.158:5782 %h %p"
