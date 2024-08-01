@@ -13061,6 +13061,16 @@ nmap 127.0.0.1 -p6379
 
 
 
+# steampipe 嵌入式 postgreSQL
+
+https://github.com/turbot/steampipe
+
+
+
+duckdb see python summary.md
+
+
+
 # mysql 
 
 
