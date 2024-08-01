@@ -277,7 +277,7 @@ cd E:\
 icacls "LightsailDefaultKey-ap-southeast-1.pem" /remove "NT AUTHORITY\Authenticated Users"
 icacls "LightsailDefaultKey-ap-southeast-1.pem" /remove "Users"
 icacls "LightsailDefaultKey-ap-southeast-1.pem" /inheritance:r
-icacls "LightsailDefaultKey-ap-southeast-1.pem" /grant:r "%username%":r
+icacls "LightsailDefaultKey-ap-southeast-1.pem" /grant:r "$(whoami):r"
 	# powershell 执行，改变权限
 
 
