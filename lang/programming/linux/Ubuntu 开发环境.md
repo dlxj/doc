@@ -284,6 +284,16 @@ icacls "LightsailDefaultKey-ap-southeast-1.pem" /grant:r "$(whoami):r"
 右键 -> LightsailDefaultKey-ap-southeast-1.pem -> 安全 -> 改成确保当前登录账号有完全控制权限
 	ssh -i E:\\LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p"
 	# 成功登录！
+	
+C:\Users\i\.ssh
+Host 54.251.144.81
+  HostName 54.251.144.81
+  Port 22
+  User ubuntu
+  IdentityFile E:\\LightsailDefaultKey-ap-southeast-1.pem
+  ProxyCommand D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p
+	  # 实测成功连接
+
 
 
 ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=/C/msys64/usr/bin/nc.exe -X connect -x 172.16.6.158:5782 %h %p"

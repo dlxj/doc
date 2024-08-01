@@ -1722,6 +1722,70 @@ int main(){
 
 
 
+## vscode 代理连接
+
+```
+
+see doc\lang\programming\linux\Ubuntu 开发环境.md -> ssh 代理登录 
+	see github\echodict\README.md -> AWS Lightsail
+
+https://www.cnblogs.com/LexLuc/p/17673672.html
+	# 在WSL实测nc可实现代理流量转发
+
+chmod 600 LightsailDefaultKey-ap-southeast-1.pem
+
+ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=nc -X connect -x 172.16.6.158:5782 %h %p"
+	# wsl 上运行，实测成功连上
+
+
+
+see nodejs summary.dm -> vscode + MSYS2 +  Mingw-w64 
+安装 msys2 from https://www.msys2.org/
+
+按 win 键 -> 找到 MSYS2 MINGW64 图标 -> 运行
+	pacman -S netcat
+	 whereis nc
+	 	-> /usr/bin/nc.exe
+	pacman -S openssh
+		#  ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=nc -X connect -x 172.16.6.158:5782 %h %p"
+		# 没用，出错
+
+下载 ncat
+	linux：https://nmap.org/ncat/
+	windows：https://nmap.org/dist/ncat-portable-5.59BETA1.zip
+
+ssh -i E:\\LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p"
+	# powershell 执行
+		-> key文件的权限不对，因为它是 windows 的文件，默认 777 ，应该是 600
+	
+cd E:\
+icacls "LightsailDefaultKey-ap-southeast-1.pem" /remove "NT AUTHORITY\Authenticated Users"
+icacls "LightsailDefaultKey-ap-southeast-1.pem" /remove "Users"
+icacls "LightsailDefaultKey-ap-southeast-1.pem" /inheritance:r
+icacls "LightsailDefaultKey-ap-southeast-1.pem" /grant:r "$(whoami):r"
+	# powershell 执行，改变权限
+	# 实测现在权限变小了，不得行
+
+右键 -> LightsailDefaultKey-ap-southeast-1.pem -> 安全 -> 改成确保当前登录账号有完全控制权限
+	ssh -i E:\\LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p"
+	# 成功登录！
+	
+C:\Users\i\.ssh
+Host 54.251.144.81
+  HostName 54.251.144.81
+  Port 22
+  User ubuntu
+  IdentityFile E:\\LightsailDefaultKey-ap-southeast-1.pem
+  ProxyCommand D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p
+	  # 实测成功连接
+
+
+```
+
+
+
+
+
 
 
 ## vs studio WSL Linux 开发
