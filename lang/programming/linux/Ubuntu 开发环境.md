@@ -256,10 +256,10 @@ ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCo
 see nodejs summary.dm -> vscode + MSYS2 +  Mingw-w64 
 安装 msys2 from https://www.msys2.org/
 
-按 win 键 -> 找到 MSYS2 UCRT64 图标 -> 运行
-
-mingw64
+按 win 键 -> 找到 MSYS2 MINGW64 图标 -> 运行
 	pacman -S netcat
+	 whereis nc
+	 	-> /usr/bin/nc.exe
 
 
 ```
