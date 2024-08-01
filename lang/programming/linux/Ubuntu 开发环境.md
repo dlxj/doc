@@ -262,6 +262,18 @@ see nodejs summary.dm -> vscode + MSYS2 +  Mingw-w64
 	 	-> /usr/bin/nc.exe
 
 
+ssh -i ./LightsailDefaultKey-ap-southeast-1.pem ubuntu@54.251.144.81 -o "ProxyCommand=/C/msys64/usr/bin/nc.exe -X connect -x 172.16.6.158:5782 %h %p"
+nc: unknown option -- X
+Try `/usr/bin/nc --help' for more information.
+Connection closed by UNKNOWN port 65535
+
+
+
+ProxyCommand C:\\msys64\\usr\\bin\\nc.exe -X connect -x 172.16.6.158:5782 %h %p
+
+ProxyCommand C:\\Program\ Files\\Git\\mingw64\\bin\\connect.exe -H 172.16.6.158:5872   47.100.192.57  22
+		# 实测不行
+
 ```
 
 
