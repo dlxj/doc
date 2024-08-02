@@ -345,7 +345,10 @@ apt-get install -y p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-
 apt-get install -y dialog apt-utils && \\
 echo done. " > Dockerfile && \
 docker build -t ubuntu_soda . && \
-docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /bin/bash
+docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /bin/bash && \
+docker exec -it ubuntu_soda_ENV bash -c "echo 'all task done.'"
+
+
 ```
 
 
