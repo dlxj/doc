@@ -507,6 +507,25 @@ source "$HOME/.cargo/env"
 
 
 
+## 自动化安装
+
+假设你要设置时区为 `America/New_York`，可以使用以下命令：
+
+```
+echo "tzdata tzdata/Areas select America" | sudo debconf-set-selections
+echo "tzdata tzdata/Zones/America select New_York" | sudo debconf-set-selections
+```
+
+1. **安装软件包**：现在你可以安装软件包而不会提示选择地理区域：
+
+也可以将其应用到其他类似的交互配置中。通用的步骤如下：
+
+1. **找到配置项**：可以通过运行 `sudo dpkg-reconfigure ` 并查看需要的配置项。
+2. **设置默认值**：使用 `debconf-set-selections` 命令来预先设置。
+3. **静默安装**：使用 `-y` 选项进行静默安装。
+
+
+
 ## gcc 多版本共存
 
 [how-to-install-latest-gcc-on-ubuntu-lts.txt](https://gist.github.com/application2000/73fd6f4bf1be6600a2cf9f56315a2d91)

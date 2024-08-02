@@ -287,6 +287,8 @@ cd ubuntu_soda && \
 touch Dockerfile && \
 echo "FROM ubuntu:22.04 
 RUN set -x; apt-get update && \\
+echo "tzdata tzdata/Areas select America" | sudo debconf-set-selections && \\
+echo "tzdata tzdata/Zones/America select New_York" | sudo debconf-set-selections && \\
 apt-get install -y build-essential && \\
 apt-get install -y p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \\
 apt-get install -y dialog apt-utils && \\
