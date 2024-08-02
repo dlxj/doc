@@ -374,7 +374,7 @@ cd /root/huggingface && \\
 echo done. " > Dockerfile && \
 docker build -t ubuntu_soda . && \
 docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /bin/bash && \
-docker exec -it ubuntu_soda_ENV bash -c "echo 'root:1wDSFDFDED555dFDFDE$#' | chpasswd" && \
+docker exec -it ubuntu_soda_ENV bash -c "echo 'root:root' | chpasswd" && \
 docker exec -it ubuntu_soda_ENV bash -c "echo 'all task done.'"
 
 
