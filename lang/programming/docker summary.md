@@ -375,10 +375,16 @@ echo done. " > Dockerfile && \
 docker build -t ubuntu_soda . && \
 docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /bin/bash && \
 docker exec -it ubuntu_soda_ENV bash -c "echo 'root:root' | chpasswd" && \
-docker exec -it ubuntu_soda_ENV bash -c "echo 'all task done.'"
+docker exec -it ubuntu_soda_ENV bash -c "/etc/init.d/ssh restart" && \
+docker exec -it ubuntu_soda_ENV bash -c "echo 'all task done.'" && \
+rm /root/.ssh/known_hosts
 
-
-
+ssh root@127.0.0.1 -p 222
+	# 成功登录
+	# 注意了：容器的端口是由 docker run 指定的
+		# 不能直接访问 容器内网ip:端口号
+		# 而是应该访问 host ip:映射端口 
+		
 
 ```
 
