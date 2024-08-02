@@ -301,6 +301,9 @@ python3.10 get-pip.py && \\
 pip install --upgrade requests && \\
 pip install pysocks wheel && \\
 ufw disable && \\
+update-rc.d ssh enable && \\
+service ssh restart && \\
+service ssh status && \\
 mkdir -p /root/huggingface && \\
 chmod -R 600 /root/huggingface && \\
 cd /root/huggingface && \\
