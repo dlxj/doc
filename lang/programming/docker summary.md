@@ -301,9 +301,9 @@ python3.10 get-pip.py && \\
 pip install --upgrade requests && \\
 pip install pysocks wheel && \\
 ufw disable && \\
-mkdir -p huggingface && \\
-chmod -R 600 huggingface && \\
-cd huggingface && \\
+mkdir -p /root/huggingface && \\
+chmod -R 600 /root/huggingface && \\
+cd /root/huggingface && \\
 echo done. " > Dockerfile && \
 docker build -t ubuntu_soda . && \
 docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /sbin/init 
@@ -322,6 +322,9 @@ git clone http://用户名:AccessToten@gitlab.xxxxx.git"  > Dockerfile && \
 apt install -y tk-dev && \\
 	# auto select the geographic area: apt install -y tk-dev
 	# 没有解决自动选位置就不要它了
+	
+ufw disable && \\
+	# 失败了
 
 docker stop ubuntu_soda_ENV
 docker rm ubuntu_soda_ENV
@@ -343,9 +346,21 @@ cd ubuntu_soda && \
 touch Dockerfile && \
 echo "FROM ubuntu:22.04 
 RUN set -x; apt-get update && \\
-
-apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev && \\
+apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx libcairo2-dev && \\
+apt-get install -y p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \\
 apt-get install -y dialog apt-utils && \\
+apt install python3.10-dev -y && \\
+apt install software-properties-common -y && \\
+(sleep 1; echo '\n';) | add-apt-repository ppa:deadsnakes/ppa && \\
+apt install python3.10 && \\
+apt install python3.10-distutils && \\
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \\
+python3.10 get-pip.py && \\
+pip install --upgrade requests && \\
+pip install pysocks wheel && \\
+mkdir -p /root/huggingface && \\
+chmod -R 600 /root/huggingface && \\
+cd /root/huggingface && \\
 echo done. " > Dockerfile && \
 docker build -t ubuntu_soda . && \
 docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /bin/bash && \
@@ -357,12 +372,11 @@ docker exec -it ubuntu_soda_ENV bash -c "echo 'all task done.'"
 
 
 ```
-libsqlite3-dev   
-libgdbm-dev
 
-libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx libcairo2-dev 
 
-apt-get install -y p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \\
+
+
+
 ```
 
 
