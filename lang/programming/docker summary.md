@@ -387,6 +387,17 @@ ssh root@127.0.0.1 -p 222
 		# 不能直接访问 容器内网ip:端口号
 		# 而是应该访问 host ip:映射端口 
 		
+		
+		
+# vscode代理连docker
+C:\Users\i\.ssh
+Host 209.141.34.77
+  HostName 209.141.34.77
+  Port 222
+  User root
+  ProxyCommand D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p
+  	# 成功连接
+  
 
 ```
 
