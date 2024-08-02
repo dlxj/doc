@@ -399,6 +399,12 @@ Host 209.141.34.77
   	# 成功连接
   
 
+下载 ncat
+	linux：https://nmap.org/ncat/
+	windows：https://nmap.org/dist/ncat-portable-5.59BETA1.zip
+
+
+
 ```
 
 
