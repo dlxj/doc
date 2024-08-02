@@ -365,6 +365,8 @@ echo done. " > Dockerfile && \
 docker build -t ubuntu_soda . && \
 docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /bin/bash && \
 docker exec -it ubuntu_soda_ENV bash -c "echo 'all task done.'"
+docker exec -it ubuntu_soda_ENV bash -c "echo 'root:1wDSFDFDED555dFDFDE$#' | chpasswd"
+
 
 
 ```
@@ -487,6 +489,14 @@ root@localhost /]# docker run --name mytomcat -d -p 8888:8080 tomcat
 ‐p：将主机的端口映射到容器的一个端口，8888:8080代表：主机端口:容器内部的端口
 
 执行完会返回新创建的tomcat镜像ID
+
+
+
+# Docker 自动修改密码
+
+```
+docker exec -it ubuntu_soda_ENV bash -c "echo 'root:1wDSFDFDED555dFDFDE$#' | chpasswd"
+```
 
 
 
