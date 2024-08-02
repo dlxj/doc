@@ -377,6 +377,8 @@ docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 22
 docker exec -it ubuntu_soda_ENV bash -c "echo 'root:root' | chpasswd" && \
 docker exec -it ubuntu_soda_ENV bash -c "/etc/init.d/ssh restart" && \
 docker exec -it ubuntu_soda_ENV bash -c "echo 'all task done.'" && \
+docker exec -it ubuntu_soda_ENV bash -c "curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash" && \
+docker exec -it ubuntu_soda_ENV bash -c "apt install -y git-lfs" && \
 rm /root/.ssh/known_hosts
 
 ssh root@127.0.0.1 -p 222
