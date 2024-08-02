@@ -319,6 +319,9 @@ git clone http://用户名:AccessToten@gitlab.xxxxx.git"  > Dockerfile && \
 ## ubuntu_soda
 
 ```
+apt install -y tk-dev && \\
+	# auto select the geographic area: apt install -y tk-dev
+	# 没有解决自动选位置就不要它了
 
 docker stop ubuntu_soda_ENV
 docker rm ubuntu_soda_ENV
@@ -340,7 +343,8 @@ cd ubuntu_soda && \
 touch Dockerfile && \
 echo "FROM ubuntu:22.04 
 RUN set -x; apt-get update && \\
-apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev && \\
+
+apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev && \\
 apt-get install -y dialog apt-utils && \\
 echo done. " > Dockerfile && \
 docker build -t ubuntu_soda . && \
@@ -353,7 +357,7 @@ docker exec -it ubuntu_soda_ENV bash -c "echo 'all task done.'"
 
 
 ```
-
+libsqlite3-dev   
 libgdbm-dev
 
 libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx libcairo2-dev 
