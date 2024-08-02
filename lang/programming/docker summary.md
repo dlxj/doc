@@ -325,9 +325,9 @@ git clone http://用户名:AccessToten@gitlab.xxxxx.git"  > Dockerfile && \
 apt install -y tk-dev && \\
 	# auto select the geographic area: apt install -y tk-dev
 	# 没有解决自动选位置就不要它了
-	
+
 ufw disable && \\
-	# 失败了
+	# 这句出错
 
 docker stop ubuntu_soda_ENV
 docker rm ubuntu_soda_ENV
@@ -361,14 +361,22 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \\
 python3.10 get-pip.py && \\
 pip install --upgrade requests && \\
 pip install pysocks wheel && \\
+apt install openssh-server -y && \\
+update-rc.d ssh enable && \\
+sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config && \\ 
+sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config && \\ 
+sed -i 's/^#\?PubkeyAuthentication.*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config && \\ 
+/etc/init.d/ssh restart && \\
+/etc/init.d/ssh status && \\
 mkdir -p /root/huggingface && \\
 chmod -R 600 /root/huggingface && \\
 cd /root/huggingface && \\
 echo done. " > Dockerfile && \
 docker build -t ubuntu_soda . && \
 docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /bin/bash && \
+docker exec -it ubuntu_soda_ENV bash -c "echo 'root:1wDSFDFDED555dFDFDE$#' | chpasswd" && \
 docker exec -it ubuntu_soda_ENV bash -c "echo 'all task done.'"
-docker exec -it ubuntu_soda_ENV bash -c "echo 'root:1wDSFDFDED555dFDFDE$#' | chpasswd"
+
 
 
 
