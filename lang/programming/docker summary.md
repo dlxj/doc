@@ -287,11 +287,9 @@ cd ubuntu_soda && \
 touch Dockerfile && \
 echo "FROM ubuntu:22.04 
 RUN set -x; apt-get update && \\
-echo "tzdata tzdata/Areas select America" | debconf-set-selections && \\
-echo "tzdata tzdata/Zones/America select New_York" | debconf-set-selections && \\
-apt-get install -y dialog apt-utils && \\
 apt-get install -y build-essential && \\
 apt-get install -y p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \\
+apt-get install -y dialog apt-utils && \\
 apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx libcairo2-dev && \\
 apt install python3.10-dev -y && \\
 apt install software-properties-common -y && \\
@@ -317,6 +315,38 @@ git clone http://用户名:AccessToten@gitlab.xxxxx.git"  > Dockerfile && \
 ```
 
 
+
+## ubuntu_soda
+
+```
+docker system prune --volumes
+docker image ls | grep ubuntu:22.04
+if [ $? -ne 0 ] ;then
+    echo 'image ubuntu:22.04 not found, pull'
+    docker pull ubuntu:22.04
+    echo 'image ubuntu:22.04 pull success'
+fi
+docker network ls | grep customnetwork
+if [ $? -ne 0 ] ;then
+    echo 'customnetwork not found, create'
+    docker network create --subnet=172.20.0.0/16 customnetwork
+    echo 'customnetwork create success'
+fi
+docker stop ubuntu_soda_ENV && \
+docker rm ubuntu_soda_ENV && \
+rm -rf ubuntu_soda && \
+mkdir ubuntu_soda && \
+cd ubuntu_soda && \
+touch Dockerfile && \
+echo "FROM ubuntu:22.04 
+RUN set -x; apt-get update && \\
+apt-get install -y build-essential && \\
+apt-get install -y p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \\
+apt-get install -y dialog apt-utils && \\
+echo done. " > Dockerfile && \
+docker build -t ubuntu_soda . && \
+docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true ubuntu_soda /bin/bash
+```
 
 
 
