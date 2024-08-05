@@ -54,11 +54,22 @@ DbgChild 插件在附加的主进程创建新进程时，会自动新开一个 x
 
 ## windbg
 
+https://www.cnblogs.com/xuhuajie/p/11215238.html
+
 ```
 
 在调试父进程时使用.childdbg命令
 
 ```
+
+
+
+```
+bp kernel32!CreateFileW "du poi(esp+4); g" 
+	# 调用CreateFile时打印出文件路径(第一个参数)，然后继续执行
+```
+
+
 
 
 
