@@ -34795,6 +34795,8 @@ Visual Studio 2022
 
 [iced GUI对标elm](https://github.com/iced-rs/iced)
 
+- [css](https://github.com/tarkah/iced-snippets/blob/master/snippets/custom-theme/src/main.rs) 样式
+
 [Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
 
 [rust-script](https://github.com/fornwall/rust-script)
