@@ -15520,6 +15520,9 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   	# 生成 gradio-4.16.0-py3-none-any.whl 用于安装
   	# 需要网络的命令全给它加上代理，比全局代理好使
   
+  cd /root/huggingface/gradio && pnpm i --frozen-lockfile --ignore-scripts && 
+  cd js/video && pnpm i --frozen-lockfile --ignore-scripts
+  	# 修改原生组件需要这样安装依赖
   
   cd /root/huggingface/gradio/js/imageeditor
   gradio run.py # 默认它会找demo 作入口点
@@ -15628,6 +15631,11 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
           }
       ]
   }
+  
+  cd /root/huggingface/gradio && pnpm i --frozen-lockfile --ignore-scripts && 
+cd js/video && pnpm i --frozen-lockfile --ignore-scripts
+	# 修改原生组件需要这样安装依赖
+  
   # python 直接运行 run.py 就可以直接断下了
   # 前端用 cd demo/xx && pnpm dev
   # {interactive} 直接在页面上显示变量的值
@@ -15701,6 +15709,10 @@ ubuntu2204 config --default-user root
 ### vsocde 附加调试 gradio
 
 ````
+
+cd /root/huggingface/gradio && pnpm i --frozen-lockfile --ignore-scripts && 
+cd js/video && pnpm i --frozen-lockfile --ignore-scripts
+	# 修改原生组件需要这样安装依赖
 
 # see huggingface/myvideo/readme.txt
 vsocde 成功附加调试 demo/app.py
