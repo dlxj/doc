@@ -1073,6 +1073,26 @@ print("hi,,,")
 
 
 
+### import_module
+
+```python
+import importlib
+currDir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(currDir)
+googlee_protobuf = importlib.import_module('googlee.protobuf') # 绝对导入
+
+_descriptor = importlib.import_module('.descriptor',package='googlee.protobuf') # 相对导入
+_message = importlib.import_module('.message',package='googlee.protobuf')
+_reflection = importlib.import_module('.reflection',package='googlee.protobuf')
+_symbol_database = importlib.import_module('.symbol_database',package='googlee.protobuf')
+descriptor_pb2 = importlib.import_module('.descriptor_pb2',package='googlee.protobuf')
+
+```
+
+
+
+
+
 ## Syntax
 
 
