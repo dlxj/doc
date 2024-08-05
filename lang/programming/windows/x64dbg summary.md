@@ -71,6 +71,18 @@ bp kernel32!CreateFileW "du poi(esp+4); g"
 
 
 
+# x64dbg
+
+https://blog.csdn.net/kinghzking/article/details/122476471
+
+### 条件断点
+
+```
+streq(utf8(ebp-28), "MessagePlayGame")
+```
+
+
+
 
 
 ## Ghidra
