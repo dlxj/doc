@@ -34785,6 +34785,8 @@ Visual Studio 2022
 
 [Rust语言圣经](https://course.rs/about-book.html)
 
+[RawMangaReader 竖排漫画ocr](https://github.com/SunDoge/RawMangaReader)
+
 [candle 对标 jax ?](https://github.com/huggingface/candle)
 
 [Rust解leecode技术小总结](http://notes.jimliang.com/2020/Rust%E8%A7%A3leecode%E6%8A%80%E6%9C%AF%E5%B0%8F%E6%80%BB%E7%BB%93/)
