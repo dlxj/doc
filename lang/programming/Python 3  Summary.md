@@ -1091,6 +1091,56 @@ descriptor_pb2 = importlib.import_module('.descriptor_pb2',package='googlee.prot
 
 
 
+```
+https://evzs.com/2024/07/25/Python%EF%BC%9Aimportlib%E5%BA%93%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95%E4%B8%BE%E4%BE%8B%E5%92%8C%E5%BA%94%E7%94%A8%E8%AF%A6%E8%A7%A3.html
+
+import importlib
+import example_module  # 假设这是你正在开发并频繁修改的模块
+
+# 场景：在不重启程序的情况下重新加载修改后的模块
+def reload_example_module():
+    importlib.reload(example_module)  # 重新加载模块
+    print("example_module已重新加载")
+
+# 修改example_module之后调用reload_example_module来应用新更改
+reload_example_module()
+示例 3：实现简单的插件系统
+
+import importlib
+import os
+
+# 场景：动态加载插件并执行插件中的特定函数
+plugins_directory = "./plugins"  # 插件目录
+plugin_name = "example_plugin"  # 要加载的插件名
+
+# 动态加载插件
+def load_plugin(plugin_name):
+    try:
+        plugin = importlib.import_module(plugin_name)
+        print(f"成功加载插件：{plugin_name}")
+        return plugin
+    except ImportError:
+        print(f"插件{plugin_name}加载失败。")
+        return None
+
+# 执行插件中的特定函数
+def execute_plugin_function(plugin, function_name):
+    if plugin:
+        func = getattr(plugin, function_name, None)  # 获取插件中的指定函数
+        if func:
+            func()  # 执行函数
+        else:
+            print(f"{plugin_name}中不存在函数{function_name}")
+    else:
+        print("插件未加载，无法执行函数")
+
+# 主程序
+plugin = load_plugin(plugin_name)  # 加载插件
+execute_plugin_function(plugin, "plugin_function")  # 执行插件中的具体函数
+```
+
+
+
 
 
 ## Syntax
