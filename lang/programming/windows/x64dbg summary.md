@@ -274,6 +274,8 @@ https://www.cnblogs.com/LyShark/p/16578927.html   LyScript 实现绕过反调试
 
 https://www.52pojie.cn/thread-1843175-1-1.html
 
+- https://github.com/frida/frida-python/blob/main/examples/child_gating.py 轻量python调试工具
+
 https://blog.csdn.net/LostSpeed/article/details/10109867
 
 
