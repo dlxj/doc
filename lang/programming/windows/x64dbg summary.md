@@ -236,6 +236,16 @@ https://bbs.kanxue.com/thread-276079.htm
 
 
 
+### LyScript
+
+```
+安装简单，无任何第三方依赖
+```
+
+
+
+
+
 ## Ghidra
 
 - https://blog.csdn.net/qq_15174755/article/details/108906564
