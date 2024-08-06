@@ -216,7 +216,7 @@ dt _PEB NtGlobalFlag @$peb
 
 
 
-# x64dbg
+## x64dbg
 
 https://blog.csdn.net/kinghzking/article/details/122476471
 
@@ -270,7 +270,9 @@ https://www.cnblogs.com/LyShark/p/16578927.html   LyScript 实现绕过反调试
 
 
 
+### 调试子进程
 
+https://blog.csdn.net/LostSpeed/article/details/10109867
 
 
 
