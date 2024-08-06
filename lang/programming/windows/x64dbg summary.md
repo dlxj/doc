@@ -203,6 +203,8 @@ int main() {
 
 https://www.52pojie.cn/thread-1706400-1-1.html
 
+https://blog.csdn.net/Simon798/article/details/107089339
+
 ```
 u kernelbase!IsDebuggerPresent L3
 dt _PEB -y BeingDebugged
