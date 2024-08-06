@@ -56,6 +56,8 @@ DbgChild 插件在附加的主进程创建新进程时，会自动新开一个 x
 
 https://www.cnblogs.com/xuhuajie/p/11215238.html
 
+https://github.com/ivellioscolin/pykd py插件
+
 ```
 
 在调试父进程时使用.childdbg命令
