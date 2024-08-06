@@ -272,6 +272,8 @@ https://www.cnblogs.com/LyShark/p/16578927.html   LyScript 实现绕过反调试
 
 ### 调试子进程
 
+https://www.52pojie.cn/thread-1843175-1-1.html
+
 https://blog.csdn.net/LostSpeed/article/details/10109867
 
 
