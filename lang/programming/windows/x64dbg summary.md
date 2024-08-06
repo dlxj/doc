@@ -238,6 +238,30 @@ https://bbs.kanxue.com/thread-276079.htm
 
 ### LyScript
 
+http://lyscript.lyshark.com/start.html  安装方法
+
+- ```
+  D:\usr\x64dbg_52PJ\x64\plugins
+  D:\usr\x64dbg_52PJ\x32\plugins
+  	# 下载的 LyScript 中的 LyScript.dp64/LyScript.dp32 LyScript.ini
+  	# 分别复制到这里面
+  
+  pip install x32dbg
+  pip install x64dbg
+  
+  # 它是通过网络远程连接调试器的
+  运行：D:\usr\x64dbg_52PJ\x32\x32dbg.exe
+  运行：python
+  > from x32dbg import Debugger
+  dbg = Debugger(address="127.0.0.1",port=6589)
+  connect = dbg.connect()
+  is_connect = dbg.is_connect()
+  is_connect
+  dbg.close_connect()
+  ```
+
+  
+
 https://www.cnblogs.com/LyShark/p/16578927.html   LyScript 实现绕过反调试保护
 
 ```
