@@ -238,9 +238,15 @@ https://bbs.kanxue.com/thread-276079.htm
 
 ### LyScript
 
+https://www.cnblogs.com/LyShark/p/16578927.html   LyScript 实现绕过反调试保护
+
 ```
 安装简单，无任何第三方依赖
 ```
+
+
+
+
 
 
 
