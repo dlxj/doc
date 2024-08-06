@@ -159,6 +159,46 @@ if __name__ == "__main__":
 
 
 
+```
+u kernelbase!IsDebuggerPresent L3   这句代码是什么意思
+
+`kernelbase!IsDebuggerPresent L3` 表示的是在进行调试时的一种符号表示法，特指 `IsDebuggerPresent` 函数在模块 `kernelbase.dll` 内的某个位置。以下是详细解释：
+
+1. **`kernelbase`**：这是指 Windows 的一个核心动态链接库文件，即 `kernelbase.dll`。
+2. **`IsDebuggerPresent`**：这是一个函数名，用于检查当前进程是否正在被调试。它属于 Windows API。
+3. **`L3`**：通常指的是这个位置的偏移量或特定的行号（比如汇编代码中的第3行）。具体意义可能依赖于工具和环境。
+
+### `IsDebuggerPresent` 函数
+
+这个函数位于 Windows 操作系统的 `kernel32.dll` 和 `kernelbase.dll` 中，其作用是检测当前的进程是否被调试器附加。其定义如下：
+
+​```c
+BOOL IsDebuggerPresent(void);
+​```
+
+### 示例用法
+
+以下是如何使用 `IsDebuggerPresent` 函数的一个简短示例：
+
+​```c
+#include <windows.h>
+#include <stdio.h>
+
+int main() {
+    if (IsDebuggerPresent()) {
+        printf("Debugger is present.\n");
+    } else {
+        printf("Debugger is not present.\n");
+    }
+    return 0;
+}
+​```
+
+
+```
+
+
+
 
 
 
