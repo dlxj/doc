@@ -230,6 +230,10 @@ streq(utf8(ebp-28), "MessagePlayGame")
 
 
 
+### 插件
+
+https://bbs.kanxue.com/thread-276079.htm
+
 
 
 ## Ghidra
