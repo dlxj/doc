@@ -15704,6 +15704,12 @@ ubuntu2204 config --default-user root
 
 
 
+### 热重载
+
+https://www.gradio.app/guides/developing-faster-with-reload-mode
+
+
+
 ## compoment
 
 ### vsocde 附加调试 gradio
