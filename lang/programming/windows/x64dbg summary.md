@@ -199,6 +199,17 @@ int main() {
 
 
 
+### 反调试
+
+https://www.52pojie.cn/thread-1706400-1-1.html
+
+```
+u kernelbase!IsDebuggerPresent L3
+dt _PEB -y BeingDebugged
+dt _PEB NtGlobalFlag @$peb
+
+```
+
 
 
 
