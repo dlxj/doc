@@ -15523,6 +15523,7 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   cd /root/huggingface/gradio && pnpm i --frozen-lockfile --ignore-scripts && 
   cd js/video && pnpm i --frozen-lockfile --ignore-scripts
   	# 修改原生组件需要这样安装依赖
+  	# 出错的话就直接 pnpm i
   
   cd /root/huggingface/gradio/js/imageeditor
   gradio run.py # 默认它会找demo 作入口点
