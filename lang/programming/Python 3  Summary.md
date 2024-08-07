@@ -18733,6 +18733,16 @@ App.svelte
 
 ### $
 
+- ```
+  // see huggingface/gradio440/js/video/shared/VideoControls.svelte
+  $g_isTrimMode[gid] = true
+    // 这样写就不对劲了
+  g_isTrimMode[gid] = true
+    // 这样就 OK
+  ```
+
+  
+
 - 响应式变量
 
   ```
