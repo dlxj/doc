@@ -34164,6 +34164,22 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 [FramePFX](https://github.com/AngryCarrot789/FramePFX) 视频编辑 必看
 
 - ```
+  
+  see huggingface\FramePFX
+  	# 实测能正常运行
+  注意：ffmpeg 必须是 6.1 版才能行
+  
+  1. 安装 cmake-3.30.2-windows-x86_64.msi -> win键 -> 点 cmake-gui
+  2. 解压 pa_stable_v190700_20210406.tgz
+  3. cmake-gui 中 源/目标 目录都填： E:/huggingface/FramePFX/portaudio -> 点 configure -> 点 generate
+      # 4. 新建文件夹 compiled-deps，看这 项目FramePFX.NativeEngine -> 属性 -> 生成事件 -> 生成后事件 -> 命令行 xcopy /y "$(TargetPath)" "$(SolutionDir)compiled-deps" 
+  4. E:\huggingface\FramePFX\FramePFX\bin\x64\Debug  把前面生成的所有 dll 全都复制到这里面，包括 FramePFX\x64\Debug 还有 portaudio\Debug， 还有 E:\huggingface\FramePFX\packages\SkiaSharp.NativeAssets.Win32.2.88.7\runtimes\win-x64\native\libSkiaSharp.dll
+  5. dllpath 看这埋在 E:\huggingface\FramePFX\FramePFX\Natives\PFXNative.cs -> dllPath = @"E:\huggingface\FramePFX\FramePFX\bin\x64\Debug\FramePFX.NativeEngine.dll";
+  6. ffmpeg 的路径看这里 E:\huggingface\FramePFX\FramePFX\App.xaml.cs -> ffmpegFolderPath = @"E:\huggingface\FramePFX\FramePFX\bin\x64\Debug";
+      # 7. 另一个 ffmpeg 项目看这里 -> github\echodict\WPF\Flyleaf\FFmpeg
+  7. 下载 6.1 的 ffmpeg 实测正常运行：https://github.com/GyanD/codexffmpeg/releases/download/6.1/ffmpeg-6.1-full_build-shared.7z ，解压所有文件放 E:\huggingface\FramePFX\FramePFX\bin\x64\Debug
+  
+  
   FramePFX.NativeEngine 项目 ->属性 -> 平台工具集  Visual Studio 2022 (v143) (未安装)
   	# https://www.cnblogs.com/coolfan/p/15822057.html
   ```
