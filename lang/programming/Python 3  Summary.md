@@ -14645,6 +14645,8 @@ order by all
 
 https://github.com/turbot/steampipe
 
+- https://github.com/yugabyte/yugabyte-db  分布式
+
 
 
 
