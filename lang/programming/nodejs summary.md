@@ -1587,6 +1587,7 @@ win键 -> 设置 -> 时间和语言 -> 最右边"日期、时间和区域格式�
 
 
 打开 Developer Command Prompt for VS 2019 命令行
+	-> x86_x64 Cross Tools Command Prompt for VS 2022  win->搜x64 -> code ->编译的就是64位
 在这个命令行运行 code ，会打开 vscode
 打开目录 -> 打开文件t.cpp -> ctrl + shift + P -> 输入C++ 
   -> 选 C/C++:Debug C/C++File
