@@ -15915,6 +15915,16 @@ ssh -CNg -L 7861:127.0.0.1:7861 root@172.16.6.253 -p 22
 
 
 
+### \--python-path \--gradio-path
+
+```
+gradio cc dev --python-path /home/carlosz/miniconda3/envs/AIenv/bin/python --gradio-path /home/carlosz/miniconda3/envs/AIenv/bin/gradio
+```
+
+
+
+
+
 ### kill
 
 ```
