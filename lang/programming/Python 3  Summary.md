@@ -16083,7 +16083,13 @@ if __name__ == "__main__":
 
 
 
+### js
+
+
+
 ```python
+see huggingface/gradio440/js/imageeditor/Index.svelte
+
 	function wait_for_next_frame(): Promise<void> {
 		return new Promise((resolve) => {
 			requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
