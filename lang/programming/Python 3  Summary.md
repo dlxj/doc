@@ -18837,6 +18837,82 @@ $: t, console.log(t)
 
 
 
+
+
+### 传参
+
+```javascript
+# see huggingface/gradio440/js/imageeditor/shared/tools/Crop.svelte
+
+
+	const dispatch = createEventDispatcher<{
+		crop_start: {
+			x: number;
+			y: number;
+			width: number;
+			height: number;
+		};
+		crop_continue: {
+			x: number;
+			y: number;
+			width: number;
+			height: number;
+		};
+		crop_end: {
+			x: number;
+			y: number;
+			width: number;
+			height: number;
+		};
+	}>();
+	
+		function set_finished_with_timeout_and_delay(): void {
+		if (timer) {
+			clearTimeout(timer);
+		}
+		timer = setTimeout(() => {
+			if (triggered) {
+				dispatch("crop_end", {
+					x: l_p,
+					y: t_p,
+					width: w_p,
+					height: h_p
+				});
+				triggered = false;
+			}
+
+			finished = true;
+			position_drag = false;
+		}, 1000);
+	}
+
+	function handle_crop(
+		type: "start" | "stop" | "continue",
+
+		{
+			x,
+			y,
+			width,
+			height
+		}: {
+			x: number;
+			y: number;
+			width: number;
+			height: number;
+		}
+	): void {
+		# 看这里！！！
+	
+	on:crop_end={({ detail }) => handle_crop("stop", detail)}
+	
+	
+	
+```
+
+
+
+
+
 ### 类型检查
 
 
