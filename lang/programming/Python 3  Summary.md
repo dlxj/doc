@@ -18844,6 +18844,8 @@ $: t, console.log(t)
 ```javascript
 # see huggingface/gradio440/js/imageeditor/shared/tools/Crop.svelte
 
+	arr:Array<any>
+        # 泛用
 
 	const dispatch = createEventDispatcher<{
 		crop_start: {
