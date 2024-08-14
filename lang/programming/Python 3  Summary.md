@@ -10253,7 +10253,42 @@ print(base64_message)
 
 
 
+## crop
 
+
+
+```python
+see huggingface/rwkv5-jp-trimvd/appv2.py
+            def changecrp(evt: gr.EventData):
+                global m4
+                if isDebug: 
+                    print("### changecrp hit.", evt.target, evt._data)
+                m4.crop_info = evt._data.copy()  # {x, y, width, height} is orig image's rate,  ori.width * width = corpWidth, others similar this.
+                
+                h = m4.ocr_frame.shape[0]  # 注意：高是行数
+                w = m4.ocr_frame.shape[1]  # 宽是列数
+                x_rate = m4.crop_info['x']
+                y_rate = m4.crop_info['y']
+                width_rate = m4.crop_info['width']
+                height_rate = m4.crop_info['height']
+                
+                x = math.ceil(w * x_rate)
+                y = math.ceil(h * y_rate)
+                width = math.ceil(w * width_rate)
+                height = math.ceil(h * height_rate)
+                
+                img_crop = m4.ocr_frame[y:y+height, x:x+width]
+                
+                # cv2.imshow("img_crop", img_crop)
+                # cv2.waitKey(0)
+                                
+                return img_crop # m4.ocr_frame
+            imageeditor_ocr_frame.change_crop(changecrp, None, [image_preview2])
+```
+
+
+
+ 
 
 ## 读取图片为字节
 
@@ -11685,7 +11720,7 @@ if __name__ == '__main__':
     img_gray = cv2.cvtColor(np.asarray(img_origin), cv2.COLOR_BGR2GRAY)   #cv2.COLOR_RGB2BGR
     print(type(img_gray))
 
-    w = img_gray.shape[0]
+    w = img_gray.shape[0]  # w,h 反了这里，可能是将错就错后面才看起来对
     h = img_gray.shape[1]
 
     # slice 子矩阵，既剪裁图像
