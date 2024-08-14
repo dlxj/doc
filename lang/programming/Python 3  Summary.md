@@ -16083,6 +16083,26 @@ if __name__ == "__main__":
 
 
 
+```python
+	function wait_for_next_frame(): Promise<void> {
+		return new Promise((resolve) => {
+			requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+		});
+	}
+
+	async function handle_change(): Promise<void> {
+		await wait_for_next_frame();
+		
+		
+	function handle_history_change(): void {
+		gradio.dispatch("change");
+		if (!value_is_output) {
+			gradio.dispatch("input");
+			tick().then((_) => (value_is_output = false));
+		}
+	}
+```
+
 
 
 ## envets
