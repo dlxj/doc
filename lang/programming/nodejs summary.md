@@ -35890,6 +35890,16 @@ cmake --build . --target package
 
 
 
+##### manga-ocr
+
+- https://github.com/kha-white/manga-ocr
+
+
+
+
+
+
+
 #### mpv
 
 [问问题](https://github.com/mpv-player/mpv/issues/12158)
