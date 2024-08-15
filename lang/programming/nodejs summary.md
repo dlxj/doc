@@ -35773,6 +35773,14 @@ int main(void)
 
 
 
+### Sunshine
+
+https://github.com/LizardByte/Sunshine 高清远程桌面 server
+
+
+
+
+
 ### ImPlay
 
 [ImPlay IMGUI+MPV](https://github.com/tsl0922/ImPlay/issues/57)
