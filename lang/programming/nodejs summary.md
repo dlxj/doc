@@ -34224,7 +34224,9 @@ https://github.com/wa-lang/wabook 支持评论
   - https://blog.csdn.net/songhuangong123/article/details/131348661  离线注册方法
 - https://www.syncfusion.com/account/downloads 下载
 
-[Prism](https://github.com/PrismLibrary/Prism)
+[Prism](https://github.com/PrismLibrary/Prism) + ReactiveProperty + syncfusion
+
+- https://github.com/runceel/ReactiveProperty
 
 [ffmediaelement 成品播放器 ?](https://github.com/unosquare/ffmediaelement)
 
