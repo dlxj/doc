@@ -17080,7 +17080,7 @@ https://github.com/gradio-app/gradio/issues/7950
 
 ## warning error
 
-```
+```python
     gr.Info("Starting process")
     if name is None:
         gr.Warning("Name is empty")
