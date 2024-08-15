@@ -173,6 +173,29 @@ pm2 monit
 
 
 
+## vscode hotkey
+
+```
+ctrl + p
+	# 最近打开文件
+ctrl + shit + P
+	# 选择 python 解释器
+
+ctrl + shift + X 
+	# 安装插件
+
+选中多行代码 -> 按 Tab
+	所选代码往右移一个 TAB
+
+选中多行代码 -> 按 Shift + Tab
+	所选代码往左移一个 TAB
+
+```
+
+
+
+
+
 ## vscode 附加参数
 
 ```
