@@ -178,6 +178,7 @@ pm2 monit
 ```
 ctrl + p
 	# 最近打开文件
+	
 ctrl + shit + P
 	# 选择 python 解释器
 
