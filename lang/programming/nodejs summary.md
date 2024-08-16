@@ -3298,6 +3298,8 @@ zerotier tailscale
 
 https://github.com/lanthora/candy
 
+- https://github.com/lanthora/gateway docker chmod 0640
+
 https://v2ex.com/t/1035681#reply73
 
 
