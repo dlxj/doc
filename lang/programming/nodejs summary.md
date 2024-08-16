@@ -34227,6 +34227,7 @@ https://github.com/wa-lang/wabook 支持评论
 [Prism](https://github.com/PrismLibrary/Prism) + ReactiveProperty + syncfusion
 
 - https://github.com/runceel/ReactiveProperty
+- https://github.com/Dirkster99/AvalonDock  dockable
 
 [ffmediaelement 成品播放器 ?](https://github.com/unosquare/ffmediaelement)
 
