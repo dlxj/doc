@@ -21372,6 +21372,24 @@ var use_native_file_dialogs := false:
 			await tree_entered
 			await get_tree().process_frame
 		get_tree().set_group(&"FileDialogs", "use_native_dialog", value)
+		
+		
+var _path_dialog: FileDialog:
+	get:
+		if not is_instance_valid(_path_dialog): 
+			#如果instance是有效的Object (例如，没有从内存中删除），则返回true。
+
+			_path_dialog = FileDialog.new()
+			_path_dialog.exclusive = false
+			_path_dialog.popup_window = true
+			_path_dialog.file_mode = FileDialog.FILE_MODE_OPEN_DIR
+			_path_dialog.access = FileDialog.ACCESS_FILESYSTEM
+			_path_dialog.use_native_dialog = Global.use_native_file_dialogs
+			_path_dialog.add_to_group(&"FileDialogs")
+			_path_dialog.dir_selected.connect(_on_path_dialog_dir_selected)
+			add_child(_path_dialog)
+		return _path_dialog
+		
 ```
 
 
@@ -22003,6 +22021,13 @@ var seconds: int:
         return milliseconds / 1000
     set(value):
         milliseconds = value * 1000
+        
+var _path_dialog: FileDialog:
+	get:
+		if not is_instance_valid(_path_dialog): 
+			#如果instance是有效的Object (例如，没有从内存中删除），则返回true。
+
+			_path_dialog = FileDialog.new()
 ```
 
 
@@ -22013,6 +22038,21 @@ var my_prop:
 	# 两函数定义在别处也是可以的，但是 setter 现在好像不支持多参数了？
 	
 ```
+
+
+
+### check
+
+```
+var _path_dialog: FileDialog:
+	get:
+		if not is_instance_valid(_path_dialog): 
+			#如果instance是有效的Object (例如，没有从内存中删除），则返回true。
+
+			_path_dialog = FileDialog.new()
+```
+
+
 
 
 
