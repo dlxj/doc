@@ -21746,6 +21746,20 @@ func initialize(label_name: String, type: int, opts := SlotOptions.new()):
 
 
 
+### &
+
+```
+&"example" 是 StringName("example") 的简写
+
+StringName 是不可变的字符串，用于唯一名称的通用表示（也叫“字符串内嵌”）。值相同的两个 StringName 是同一个对象。进行比较时比普通 String 要快很多。
+
+对于需要 StringName 的方法，你通常可以只传 String，会自动进行转换，不过有时候你可能会想要提前使用 StringName 构造函数来构造 StringName，在 GDScript 中也可以用 &"example" 语法。
+```
+
+
+
+
+
 ### {}
 
 ```
