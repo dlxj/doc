@@ -54,11 +54,231 @@ DbgChild 插件在附加的主进程创建新进程时，会自动新开一个 x
 
 ## windbg
 
+https://www.cnblogs.com/xuhuajie/p/11215238.html
+
+https://github.com/ivellioscolin/pykd py插件
+
 ```
 
 在调试父进程时使用.childdbg命令
 
 ```
+
+
+
+```
+bp kernel32!CreateFileW "du poi(esp+4); g" 
+	# 调用CreateFile时打印出文件路径(第一个参数)，然后继续执行
+	
+
+`poi` 和 `du` 是 WinDbg 调试器中的命令，用于处理和显示内存内容。让我们详细解释一下：
+
+1. **`poi`（Pointer of Integer）：** 
+   - 它是一个宏，表示取某个地址处存储的整数值，并将该地址的无符号整数值作为新地址进行访问和操作。
+   - 例如：`poi(esp+4)` 表示获取 `esp+4` 处内存中的内容，然后将这个内容当作一个地址，再去读取这个地址处的值。
+
+2. **`du`（Display Unicode）：**
+   - 它用于以 Unicode 字符串格式显示内存中的内容。
+   - 例如：`du poi(esp+4)`，表示从 `poi(esp+4)` 所指向的地址开始，以 Unicode 格式显示字符串内容。
+
+### 示例
+
+假设你在做如下操作：
+​```plaintext
+bp kernel32!CreateFileW "du poi(esp+4); g"
+​```
+
+这段代码的作用如下：
+
+1. 为 `kernel32.dll` 中的 `CreateFileW` 函数设置断点。
+2. 当断点被触发时，执行以下命令：
+   - `poi(esp+4)` 获取 `esp+4` 处的地址，这是 `CreateFileW` 调用时第一个参数的地址。
+   - 然后，用 `du` 将该地址处的 Unicode 字符串显示出来。
+3. 最后，继续运行程序（`g` 表示继续执行）。
+
+### 小结
+
+- `poi` 用于解析指针并获取其指向的实际地址或值。
+- `du` 用于显示指定地址处的内存内容，以 Unicode 字符串格式展现。
+
+希望这些解释对你有帮助！如果有其他问题，请随时告诉我。
+
+
+
+
+在 WinDbg 中，直接显示 UTF-8 字符串并没有像 `du` 这样简单的命令，因为 WinDbg 默认支持显示的是 ASCII（`da`）、Unicode（`du`）和 DBCS（Double-Byte Character Set，即双字节字符集，`db`）格式。
+
+为了显示 UTF-8 格式的字符串，你需要一些额外的步骤，将其转换为 Unicode 或 ASCII 格式，然后再使用 WinDbg 的相关命令显示它们。
+
+### 示例
+
+假设我们有一个包含 UTF-8 编码字符串的内存地址，你可以进行以下步骤：
+
+1. **读取内存内容：** 首先，使用 `db` 命令读取 UTF-8 编码的原始数据。
+2. **手动解码 UTF-8：** 使用脚本或其他工具将读取到的 UTF-8 数据解码成 Unicode 或 ASCII 格式进行查看。
+
+虽然 WinDbg 没有直接的命令来显示 UTF-8，但是我们可以通过插件或者扩展来实现。例如，可以借助 Python 脚本结合 WinDbg 的 pykd 插件来完成这个任务。这是一种通用方案，可以结合 WinDbg 的外部工具灵活地工作。
+
+### 使用 pykd 插件示例：
+以下是如何使用 pykd 和 Python 脚本读取并显示 UTF-8 字符串的示例：
+
+1. **安装 pykd：** 确保你已经安装了 pykd 插件。可以参考 [pykd 官方页面](https://github.com/pykd/pykd) 进行安装。
+
+2. **编写脚本：**
+   
+​```python
+# utf8string.py
+
+import pykd
+
+def read_utf8_string(address, length):
+    byte_array = pykd.loadBytes(address, length)
+    utf8_string = byte_array.decode('utf-8')
+    print(utf8_string)
+
+if __name__ == "__main__":
+    # Example usage: load a specific memory address and length
+    address = 0x12345678  # replace with actual address
+    length = 50  # replace with actual length
+    read_utf8_string(address, length)
+​```
+
+3. **运行脚本：**
+   在 WinDbg 中，加载并调用你的 Python 脚本：
+   
+​```plaintext
+!py utf8string.py
+​```
+
+你需要根据实际情况修改脚本中的地址和长度，并保证 `address` 是有效的内存地址。
+
+### 小结
+尽管 WinDbg 没有直接的命令来显示 UTF-8 字符串，通过使用脚本和插件，我们依然可以高效地完成这项任务。如果你对其他解决方案有兴趣或需要更多帮助，请随时告诉我！
+
+```
+
+
+
+```
+u kernelbase!IsDebuggerPresent L3   这句代码是什么意思
+
+`kernelbase!IsDebuggerPresent L3` 表示的是在进行调试时的一种符号表示法，特指 `IsDebuggerPresent` 函数在模块 `kernelbase.dll` 内的某个位置。以下是详细解释：
+
+1. **`kernelbase`**：这是指 Windows 的一个核心动态链接库文件，即 `kernelbase.dll`。
+2. **`IsDebuggerPresent`**：这是一个函数名，用于检查当前进程是否正在被调试。它属于 Windows API。
+3. **`L3`**：通常指的是这个位置的偏移量或特定的行号（比如汇编代码中的第3行）。具体意义可能依赖于工具和环境。
+
+### `IsDebuggerPresent` 函数
+
+这个函数位于 Windows 操作系统的 `kernel32.dll` 和 `kernelbase.dll` 中，其作用是检测当前的进程是否被调试器附加。其定义如下：
+
+​```c
+BOOL IsDebuggerPresent(void);
+​```
+
+### 示例用法
+
+以下是如何使用 `IsDebuggerPresent` 函数的一个简短示例：
+
+​```c
+#include <windows.h>
+#include <stdio.h>
+
+int main() {
+    if (IsDebuggerPresent()) {
+        printf("Debugger is present.\n");
+    } else {
+        printf("Debugger is not present.\n");
+    }
+    return 0;
+}
+​```
+
+
+```
+
+
+
+### 反调试
+
+https://www.52pojie.cn/thread-1706400-1-1.html
+
+https://blog.csdn.net/Simon798/article/details/107089339
+
+```
+u kernelbase!IsDebuggerPresent L3
+dt _PEB -y BeingDebugged
+dt _PEB NtGlobalFlag @$peb
+
+```
+
+
+
+
+
+## x64dbg
+
+https://blog.csdn.net/kinghzking/article/details/122476471
+
+https://www.cnblogs.com/LyShark/collections/6445?page=1  大神
+
+### 条件断点
+
+```
+streq(utf8(ebp-28), "MessagePlayGame")
+```
+
+
+
+### 插件
+
+https://bbs.kanxue.com/thread-276079.htm
+
+
+
+### LyScript
+
+http://lyscript.lyshark.com/start.html  安装方法
+
+- ```
+  D:\usr\x64dbg_52PJ\x64\plugins
+  D:\usr\x64dbg_52PJ\x32\plugins
+  	# 下载的 LyScript 中的 LyScript.dp64/LyScript.dp32 LyScript.ini
+  	# 分别复制到这里面
+  
+  pip install x32dbg
+  pip install x64dbg
+  
+  # 它是通过网络远程连接调试器的
+  运行：D:\usr\x64dbg_52PJ\x32\x32dbg.exe
+  运行：python
+  > from x32dbg import Debugger
+  dbg = Debugger(address="127.0.0.1",port=6589)
+  connect = dbg.connect()
+  is_connect = dbg.is_connect()
+  is_connect
+  dbg.close_connect()
+  ```
+
+  
+
+https://www.cnblogs.com/LyShark/p/16578927.html   LyScript 实现绕过反调试保护
+
+```
+安装简单，无任何第三方依赖
+```
+
+
+
+### 调试子进程
+
+https://www.52pojie.cn/thread-1843175-1-1.html
+
+- https://github.com/frida/frida-python/blob/main/examples/child_gating.py 轻量python调试工具
+
+https://blog.csdn.net/LostSpeed/article/details/10109867
+
+
 
 
 

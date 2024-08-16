@@ -173,6 +173,30 @@ pm2 monit
 
 
 
+## vscode hotkey
+
+```
+ctrl + p
+	# 最近打开文件
+	
+ctrl + shit + P
+	# 选择 python 解释器
+
+ctrl + shift + X 
+	# 安装插件
+
+选中多行代码 -> 按 Tab
+	所选代码往右移一个 TAB
+
+选中多行代码 -> 按 Shift + Tab
+	所选代码往左移一个 TAB
+
+```
+
+
+
+
+
 ## vscode 附加参数
 
 ```
@@ -1587,6 +1611,7 @@ win键 -> 设置 -> 时间和语言 -> 最右边"日期、时间和区域格式�
 
 
 打开 Developer Command Prompt for VS 2019 命令行
+	-> x86_x64 Cross Tools Command Prompt for VS 2022  win->搜x64 -> code ->编译的就是64位
 在这个命令行运行 code ，会打开 vscode
 打开目录 -> 打开文件t.cpp -> ctrl + shift + P -> 输入C++ 
   -> 选 C/C++:Debug C/C++File
@@ -3272,6 +3297,8 @@ zerotier tailscale
 #### candy
 
 https://github.com/lanthora/candy
+
+- https://github.com/lanthora/gateway docker chmod 0640
 
 https://v2ex.com/t/1035681#reply73
 
@@ -21054,6 +21081,44 @@ ai作画 ps拆补图 spine做动画 再导入godot做游戏
 
 
 
+### mix C# & gdscript
+
+https://docs.godotengine.org/en/stable/tutorials/scripting/cross_language_scripting.html
+
+- https://www.reddit.com/r/godot/comments/16qtzfm/godot_tip_4_you_can_use_both_c_and_gdscript_in/
+
+
+
+#### gdscript use C#
+
+```
+# MyCoolNode.cs 
+using Godot;
+public partial class MyCoolNode : Node {
+	# MyCoolNode.cs 必须有一个类名为 MyCoolNode
+
+# main.gd
+var my_csharp_script = load("res://Path/To/MyCoolNode.cs")
+var my_csharp_node = my_csharp_script.new()
+
+```
+
+
+
+#### C# use gdscript
+
+```
+using Godot;
+GDScript MyGDScript = GD.Load<GDScript>("res://path/to/my_gd_script.gd");
+GodotObject myGDScriptNode = (GodotObject)MyGDScript.New(); // This is a GodotObject.
+```
+
+
+
+
+
+
+
 ### Pixelorama
 
 ```
@@ -21293,6 +21358,43 @@ func _idle(_delta):
 
 SceneTree 是场景所使用的默认 MainLoop 实现，因此掌控着游戏循环。
 ```
+
+
+
+#### 批量设置分组结点属性
+
+```
+# huggingface/Pixelorama___/src/Autoload/Global.gd
+var use_native_file_dialogs := false:
+	set(value):
+		if value == use_native_file_dialogs:
+			return
+		use_native_file_dialogs = value
+		if not is_inside_tree():
+			await tree_entered
+			await get_tree().process_frame
+		get_tree().set_group(&"FileDialogs", "use_native_dialog", value)
+		
+		
+var _path_dialog: FileDialog:
+	get:
+		if not is_instance_valid(_path_dialog): 
+			#如果instance是有效的Object (例如，没有从内存中删除），则返回true。
+
+			_path_dialog = FileDialog.new()
+			_path_dialog.exclusive = false
+			_path_dialog.popup_window = true
+			_path_dialog.file_mode = FileDialog.FILE_MODE_OPEN_DIR
+			_path_dialog.access = FileDialog.ACCESS_FILESYSTEM
+			_path_dialog.use_native_dialog = Global.use_native_file_dialogs
+			_path_dialog.add_to_group(&"FileDialogs")
+			_path_dialog.dir_selected.connect(_on_path_dialog_dir_selected)
+			add_child(_path_dialog)
+		return _path_dialog
+		
+```
+
+
 
 
 
@@ -21683,6 +21785,20 @@ func initialize(label_name: String, type: int, opts := SlotOptions.new()):
 
 
 
+### &
+
+```
+&"example" 是 StringName("example") 的简写
+
+StringName 是不可变的字符串，用于唯一名称的通用表示（也叫“字符串内嵌”）。值相同的两个 StringName 是同一个对象。进行比较时比普通 String 要快很多。
+
+对于需要 StringName 的方法，你通常可以只传 String，会自动进行转换，不过有时候你可能会想要提前使用 StringName 构造函数来构造 StringName，在 GDScript 中也可以用 &"example" 语法。
+```
+
+
+
+
+
 ### {}
 
 ```
@@ -21907,6 +22023,13 @@ var seconds: int:
         return milliseconds / 1000
     set(value):
         milliseconds = value * 1000
+        
+var _path_dialog: FileDialog:
+	get:
+		if not is_instance_valid(_path_dialog): 
+			#如果instance是有效的Object (例如，没有从内存中删除），则返回true。
+
+			_path_dialog = FileDialog.new()
 ```
 
 
@@ -21917,6 +22040,21 @@ var my_prop:
 	# 两函数定义在别处也是可以的，但是 setter 现在好像不支持多参数了？
 	
 ```
+
+
+
+### check
+
+```
+var _path_dialog: FileDialog:
+	get:
+		if not is_instance_valid(_path_dialog): 
+			#如果instance是有效的Object (例如，没有从内存中删除），则返回true。
+
+			_path_dialog = FileDialog.new()
+```
+
+
 
 
 
@@ -34115,6 +34253,10 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 
 
 
+### wabook 对标gitbook
+
+https://github.com/wa-lang/wabook 支持评论
+
 
 
 ## F\# Monads
@@ -34164,6 +34306,22 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 [FramePFX](https://github.com/AngryCarrot789/FramePFX) 视频编辑 必看
 
 - ```
+  
+  see huggingface\FramePFX
+  	# 实测能正常运行
+  注意：ffmpeg 必须是 6.1 版才能行
+  
+  1. 安装 cmake-3.30.2-windows-x86_64.msi -> win键 -> 点 cmake-gui
+  2. 解压 pa_stable_v190700_20210406.tgz
+  3. cmake-gui 中 源/目标 目录都填： E:/huggingface/FramePFX/portaudio -> 点 configure -> 点 generate
+      # 4. 新建文件夹 compiled-deps，看这 项目FramePFX.NativeEngine -> 属性 -> 生成事件 -> 生成后事件 -> 命令行 xcopy /y "$(TargetPath)" "$(SolutionDir)compiled-deps" 
+  4. E:\huggingface\FramePFX\FramePFX\bin\x64\Debug  把前面生成的所有 dll 全都复制到这里面，包括 FramePFX\x64\Debug 还有 portaudio\Debug， 还有 E:\huggingface\FramePFX\packages\SkiaSharp.NativeAssets.Win32.2.88.7\runtimes\win-x64\native\libSkiaSharp.dll
+  5. dllpath 看这埋在 E:\huggingface\FramePFX\FramePFX\Natives\PFXNative.cs -> dllPath = @"E:\huggingface\FramePFX\FramePFX\bin\x64\Debug\FramePFX.NativeEngine.dll";
+  6. ffmpeg 的路径看这里 E:\huggingface\FramePFX\FramePFX\App.xaml.cs -> ffmpegFolderPath = @"E:\huggingface\FramePFX\FramePFX\bin\x64\Debug";
+      # 7. 另一个 ffmpeg 项目看这里 -> github\echodict\WPF\Flyleaf\FFmpeg
+  7. 下载 6.1 的 ffmpeg 实测正常运行：https://github.com/GyanD/codexffmpeg/releases/download/6.1/ffmpeg-6.1-full_build-shared.7z ，解压所有文件放 E:\huggingface\FramePFX\FramePFX\bin\x64\Debug
+  
+  
   FramePFX.NativeEngine 项目 ->属性 -> 平台工具集  Visual Studio 2022 (v143) (未安装)
   	# https://www.cnblogs.com/coolfan/p/15822057.html
   ```
@@ -34175,11 +34333,15 @@ curl --location 'http://127.0.0.1:8080/chatgpt/login' \
 [syncfusion demos](https://github.com/syncfusion/wpf-demos)
 
 - https://www.syncfusion.com/downloads/communityLicense 申请后等两天
-  - https://communitylicense.syncfusion.com/support/tickets/613578
+  - https://communitylicense.syncfusion.com/support/tickets/613578  **已通过 gmail登录**
   - https://blog.csdn.net/songhuangong123/article/details/131348661  离线注册方法
 - https://www.syncfusion.com/account/downloads 下载
 
-[Prism](https://github.com/PrismLibrary/Prism)
+[Prism](https://github.com/PrismLibrary/Prism) + ReactiveProperty + syncfusion
+
+- https://github.com/runceel/ReactiveProperty
+- https://github.com/Dirkster99/AvalonDock  dockable
+- https://github.com/loongEgg/LoongKeys  [1](https://zhuanlan.zhihu.com/p/108497547)  [2](https://www.bilibili.com/video/BV1LQ4y1K76K/) UI好看
 
 [ffmediaelement 成品播放器 ?](https://github.com/unosquare/ffmediaelement)
 
@@ -34785,6 +34947,8 @@ Visual Studio 2022
 
 [Rust语言圣经](https://course.rs/about-book.html)
 
+[RawMangaReader 竖排漫画ocr](https://github.com/SunDoge/RawMangaReader)
+
 [candle 对标 jax ?](https://github.com/huggingface/candle)
 
 [Rust解leecode技术小总结](http://notes.jimliang.com/2020/Rust%E8%A7%A3leecode%E6%8A%80%E6%9C%AF%E5%B0%8F%E6%80%BB%E7%BB%93/)
@@ -34792,6 +34956,8 @@ Visual Studio 2022
 [Rust bindings for Godot 4](https://github.com/godot-rust/gdext)
 
 [iced GUI对标elm](https://github.com/iced-rs/iced)
+
+- [css](https://github.com/tarkah/iced-snippets/blob/master/snippets/custom-theme/src/main.rs) 样式
 
 [Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
 
@@ -35752,6 +35918,14 @@ int main(void)
 
 
 
+### Sunshine
+
+https://github.com/LizardByte/Sunshine 高清远程桌面 server
+
+
+
+
+
 ### ImPlay
 
 [ImPlay IMGUI+MPV](https://github.com/tsl0922/ImPlay/issues/57)
@@ -35858,6 +36032,16 @@ cmake --build . --target package
   # This will build a MSI installer and a portable ZIP.
   
 ```
+
+
+
+##### manga-ocr
+
+- https://github.com/kha-white/manga-ocr
+
+
+
+
 
 
 

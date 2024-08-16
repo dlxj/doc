@@ -1674,7 +1674,7 @@ mysqldump -uusername -ppassword databasename | mysql –host=*.*.*.* -C database
 
 
 
-```
+```mysql
 CREATE DEFINER=`book`@`%` FUNCTION `ntval`(
 	`i_BookID` int,
 	`i_tableName` varchar(32)
@@ -1697,7 +1697,7 @@ begin
 end
 ```
 
-```
+```mysql
 CREATE DEFINER=`book`@`%` FUNCTION `crrval`(
 	`i_BookID` int,
 	`i_tableName` varchar(32)
@@ -1714,6 +1714,51 @@ begin
     select MaxID into v_maxID from TableMaxID  where BookID  = i_BookID  and TableName = i_tableName;
     return v_maxID;
 end
+```
+
+
+
+## getFullPath
+
+```mysql
+CREATE DEFINER=`root`@`%` FUNCTION `getFullPath`(
+	`_menuID` int
+)
+RETURNS varchar(4096) CHARSET utf8mb4
+LANGUAGE SQL
+NOT DETERMINISTIC
+CONTAINS SQL
+SQL SECURITY INVOKER
+COMMENT '根据目录ID获取完整目录路径'
+BEGIN
+
+	declare vPath varchar(4096);
+	declare vTemp varchar(512);
+	declare vPID int(11);
+	declare vIdx int(2) default 0;
+
+	set vPID=_menuID;
+
+	while vIdx <20 and vPID is not null and vPID<>-1 do
+
+		select pid,name into vPID,vTemp from book_menu_parse where ID=vPID;
+		
+		if vTemp is not null
+		then
+			if vIdx=0 
+			then
+				set vPath=vTemp;
+			else
+				set vPath=concat(vTemp,'/',vPath);
+			end if;
+		end if;
+		
+		set vIdx=vIdx+1;
+
+	end while;
+
+	RETURN vPath;
+END
 ```
 
 

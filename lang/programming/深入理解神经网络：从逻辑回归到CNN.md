@@ -11441,6 +11441,8 @@ HALCON是德国MVtec公司开发的一套完善的标准的机器视觉算法包
 
 ## PaddleOCR
 
+- https://github.com/kha-white/manga-ocr  see nodejs summary -> C++ monads -> Implay -> Memento
+
 - https://github.com/PaddlePaddle/PaddleOCR/blob/release/2.6/doc/doc_ch/recognition.md
 
   - https://github.com/PaddlePaddle/PaddleOCR/blob/static/doc/doc_ch/FAQ.md
@@ -13066,6 +13068,8 @@ see nodejs summary.md -> godot -> 必看教程
 https://github.com/FunAudioLLM/CosyVoice/issues/37
 
 https://www.cnblogs.com/v3ucn/p/18288786
+
+https://github.com/espnet/espnet  mcu
 
 
 

@@ -1073,6 +1073,76 @@ print("hi,,,")
 
 
 
+### import_module
+
+```python
+import importlib
+currDir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(currDir)
+googlee_protobuf = importlib.import_module('googlee.protobuf') # 绝对导入
+
+_descriptor = importlib.import_module('.descriptor',package='googlee.protobuf') # 相对导入
+_message = importlib.import_module('.message',package='googlee.protobuf')
+_reflection = importlib.import_module('.reflection',package='googlee.protobuf')
+_symbol_database = importlib.import_module('.symbol_database',package='googlee.protobuf')
+descriptor_pb2 = importlib.import_module('.descriptor_pb2',package='googlee.protobuf')
+
+```
+
+
+
+```
+https://evzs.com/2024/07/25/Python%EF%BC%9Aimportlib%E5%BA%93%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95%E4%B8%BE%E4%BE%8B%E5%92%8C%E5%BA%94%E7%94%A8%E8%AF%A6%E8%A7%A3.html
+
+import importlib
+import example_module  # 假设这是你正在开发并频繁修改的模块
+
+# 场景：在不重启程序的情况下重新加载修改后的模块
+def reload_example_module():
+    importlib.reload(example_module)  # 重新加载模块
+    print("example_module已重新加载")
+
+# 修改example_module之后调用reload_example_module来应用新更改
+reload_example_module()
+示例 3：实现简单的插件系统
+
+import importlib
+import os
+
+# 场景：动态加载插件并执行插件中的特定函数
+plugins_directory = "./plugins"  # 插件目录
+plugin_name = "example_plugin"  # 要加载的插件名
+
+# 动态加载插件
+def load_plugin(plugin_name):
+    try:
+        plugin = importlib.import_module(plugin_name)
+        print(f"成功加载插件：{plugin_name}")
+        return plugin
+    except ImportError:
+        print(f"插件{plugin_name}加载失败。")
+        return None
+
+# 执行插件中的特定函数
+def execute_plugin_function(plugin, function_name):
+    if plugin:
+        func = getattr(plugin, function_name, None)  # 获取插件中的指定函数
+        if func:
+            func()  # 执行函数
+        else:
+            print(f"{plugin_name}中不存在函数{function_name}")
+    else:
+        print("插件未加载，无法执行函数")
+
+# 主程序
+plugin = load_plugin(plugin_name)  # 加载插件
+execute_plugin_function(plugin, "plugin_function")  # 执行插件中的具体函数
+```
+
+
+
+
+
 ## Syntax
 
 
@@ -10183,7 +10253,42 @@ print(base64_message)
 
 
 
+## crop
 
+
+
+```python
+see huggingface/rwkv5-jp-trimvd/appv2.py
+            def changecrp(evt: gr.EventData):
+                global m4
+                if isDebug: 
+                    print("### changecrp hit.", evt.target, evt._data)
+                m4.crop_info = evt._data.copy()  # {x, y, width, height} is orig image's rate,  ori.width * width = corpWidth, others similar this.
+                
+                h = m4.ocr_frame.shape[0]  # 注意：高是行数
+                w = m4.ocr_frame.shape[1]  # 宽是列数
+                x_rate = m4.crop_info['x']
+                y_rate = m4.crop_info['y']
+                width_rate = m4.crop_info['width']
+                height_rate = m4.crop_info['height']
+                
+                x = math.ceil(w * x_rate)
+                y = math.ceil(h * y_rate)
+                width = math.ceil(w * width_rate)
+                height = math.ceil(h * height_rate)
+                
+                img_crop = m4.ocr_frame[y:y+height, x:x+width]
+                
+                # cv2.imshow("img_crop", img_crop)
+                # cv2.waitKey(0)
+                                
+                return img_crop # m4.ocr_frame
+            imageeditor_ocr_frame.change_crop(changecrp, None, [image_preview2])
+```
+
+
+
+ 
 
 ## 读取图片为字节
 
@@ -11615,7 +11720,7 @@ if __name__ == '__main__':
     img_gray = cv2.cvtColor(np.asarray(img_origin), cv2.COLOR_BGR2GRAY)   #cv2.COLOR_RGB2BGR
     print(type(img_gray))
 
-    w = img_gray.shape[0]
+    w = img_gray.shape[0]  # w,h 反了这里，可能是将错就错后面才看起来对
     h = img_gray.shape[1]
 
     # slice 子矩阵，既剪裁图像
@@ -14575,6 +14680,8 @@ order by all
 
 https://github.com/turbot/steampipe
 
+- https://github.com/yugabyte/yugabyte-db  分布式
+
 
 
 
@@ -15450,6 +15557,10 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   	# 生成 gradio-4.16.0-py3-none-any.whl 用于安装
   	# 需要网络的命令全给它加上代理，比全局代理好使
   
+  cd /root/huggingface/gradio && pnpm i --frozen-lockfile --ignore-scripts && 
+  cd js/video && pnpm i --frozen-lockfile --ignore-scripts
+  	# 修改原生组件需要这样安装依赖
+  	# 出错的话就直接 pnpm i
   
   cd /root/huggingface/gradio/js/imageeditor
   gradio run.py # 默认它会找demo 作入口点
@@ -15558,6 +15669,11 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
           }
       ]
   }
+  
+  cd /root/huggingface/gradio && pnpm i --frozen-lockfile --ignore-scripts && 
+cd js/video && pnpm i --frozen-lockfile --ignore-scripts
+	# 修改原生组件需要这样安装依赖
+  
   # python 直接运行 run.py 就可以直接断下了
   # 前端用 cd demo/xx && pnpm dev
   # {interactive} 直接在页面上显示变量的值
@@ -15626,11 +15742,21 @@ ubuntu2204 config --default-user root
 
 
 
+### 热重载
+
+https://www.gradio.app/guides/developing-faster-with-reload-mode
+
+
+
 ## compoment
 
 ### vsocde 附加调试 gradio
 
 ````
+
+cd /root/huggingface/gradio && pnpm i --frozen-lockfile --ignore-scripts && 
+cd js/video && pnpm i --frozen-lockfile --ignore-scripts
+	# 修改原生组件需要这样安装依赖
 
 # see huggingface/myvideo/readme.txt
 vsocde 成功附加调试 demo/app.py
@@ -15824,6 +15950,16 @@ ssh -CNg -L 7861:127.0.0.1:7861 root@172.16.6.253 -p 22
 
 
 
+### \--python-path \--gradio-path
+
+```
+gradio cc dev --python-path /home/carlosz/miniconda3/envs/AIenv/bin/python --gradio-path /home/carlosz/miniconda3/envs/AIenv/bin/gradio
+```
+
+
+
+
+
 ### kill
 
 ```
@@ -15834,6 +15970,72 @@ kill -9 $(lsof -i:7862 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
 kill -9 $(lsof -i:7863 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
 
 ```
+
+
+
+## multiple pages
+
+https://github.com/gradio-app/gradio/issues/3806
+
+- https://github.com/gradio-app/gradio/issues/2654
+
+```
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+import gradio as gr
+
+app = FastAPI()
+
+HELLO_ROUTE = "/hello"
+GOODBYE_ROUTE = "/goodbye"
+iframe_dimensions = "height=300px width=1000px"
+
+index_html = f'''
+<h1>Put header here</h1>
+
+<h3>
+You can mount multiple gradio apps on a single FastAPI object for a multi-page app.
+However if you mount a gradio app downstream of another gradio app, the downstream
+apps will be stuck loading. 
+</h3>
+
+<h3>
+So in particular if you mount a gradio app at the index route "/", then all your 
+other mounted gradio apps will be stuck loading. But don't worry, you can still embed
+your downstream gradio apps into the index route using iframes like I do here. In fact,
+you probably want to do this anyway since its your index page, which you want to detail 
+more fully with a jinja template. 
+For a full example, you can see my <a href=https://yfu.one/>generative avatar webapp</a>
+</h3>
+
+<div>
+<iframe src={HELLO_ROUTE} {iframe_dimensions}></iframe>
+</div>
+
+<div>
+<iframe src={GOODBYE_ROUTE} {iframe_dimensions}></iframe>
+</div>
+
+'''
+
+@app.get("/", response_class=HTMLResponse)
+def index():
+    return index_html
+
+
+hello_app = gr.Interface(lambda x: "Hello, " + x + "!", "textbox", "textbox")
+goodbye_app = gr.Interface(lambda x: "Goodbye, " + x + "!", "textbox", "textbox")
+
+
+app = gr.mount_gradio_app(app, hello_app, path=HELLO_ROUTE)
+app = gr.mount_gradio_app(app, goodbye_app, path=GOODBYE_ROUTE)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app)
+```
+
+
 
 
 
@@ -15981,6 +16183,32 @@ if __name__ == "__main__":
 ```
 
 
+
+### js
+
+
+
+```python
+see huggingface/gradio440/js/imageeditor/Index.svelte
+
+	function wait_for_next_frame(): Promise<void> {
+		return new Promise((resolve) => {
+			requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
+		});
+	}
+
+	async function handle_change(): Promise<void> {
+		await wait_for_next_frame();
+		
+		
+	function handle_history_change(): void {
+		gradio.dispatch("change");
+		if (!value_is_output) {
+			gradio.dispatch("input");
+			tick().then((_) => (value_is_output = false));
+		}
+	}
+```
 
 
 
@@ -16847,6 +17075,19 @@ scheduler.start()
 ## textbox
 
 https://github.com/gradio-app/gradio/issues/7950
+
+
+
+## warning error
+
+```python
+    gr.Info("Starting process")
+    if name is None:
+        gr.Warning("Name is empty")
+    ...
+    if success == False:
+        raise gr.Error("Process failed")
+```
 
 
 
@@ -18644,6 +18885,16 @@ App.svelte
 
 ### $
 
+- ```
+  // see huggingface/gradio440/js/video/shared/VideoControls.svelte
+  $g_isTrimMode[gid] = true
+    // 这样写就不对劲了
+  g_isTrimMode[gid] = true
+    // 这样就 OK
+  ```
+
+  
+
 - 响应式变量
 
   ```
@@ -18697,6 +18948,84 @@ $: t, console.log(t)
   \# 状态改变时 执行后面的语句
 
 ```
+
+
+
+
+
+### 传参
+
+```javascript
+# see huggingface/gradio440/js/imageeditor/shared/tools/Crop.svelte
+
+	arr:Array<any>
+        # 泛用
+
+	const dispatch = createEventDispatcher<{
+		crop_start: {
+			x: number;
+			y: number;
+			width: number;
+			height: number;
+		};
+		crop_continue: {
+			x: number;
+			y: number;
+			width: number;
+			height: number;
+		};
+		crop_end: {
+			x: number;
+			y: number;
+			width: number;
+			height: number;
+		};
+	}>();
+	
+		function set_finished_with_timeout_and_delay(): void {
+		if (timer) {
+			clearTimeout(timer);
+		}
+		timer = setTimeout(() => {
+			if (triggered) {
+				dispatch("crop_end", {
+					x: l_p,
+					y: t_p,
+					width: w_p,
+					height: h_p
+				});
+				triggered = false;
+			}
+
+			finished = true;
+			position_drag = false;
+		}, 1000);
+	}
+
+	function handle_crop(
+		type: "start" | "stop" | "continue",
+
+		{
+			x,
+			y,
+			width,
+			height
+		}: {
+			x: number;
+			y: number;
+			width: number;
+			height: number;
+		}
+	): void {
+		# 看这里！！！
+	
+	on:crop_end={({ detail }) => handle_crop("stop", detail)}
+	
+	
+	
+```
+
+
 
 
 
