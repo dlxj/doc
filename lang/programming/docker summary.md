@@ -395,7 +395,7 @@ Host 209.141.34.77
   HostName 209.141.34.77
   Port 222
   User root
-  ProxyCommand D:\\usr\\ncat.exe --proxy 172.16.6.158:5782 %h %p
+  ProxyCommand D:\\usr\\ncat.exe --proxy 127.0.0.1:5782 %h %p
   	# 成功连接
   
 
