@@ -21079,6 +21079,18 @@ ai作画 ps拆补图 spine做动画 再导入godot做游戏
 
 
 
+### mix C# & gdscript
+
+https://docs.godotengine.org/en/stable/tutorials/scripting/cross_language_scripting.html
+
+- https://www.reddit.com/r/godot/comments/16qtzfm/godot_tip_4_you_can_use_both_c_and_gdscript_in/
+
+
+
+
+
+
+
 ### Pixelorama
 
 ```
@@ -34220,7 +34232,7 @@ https://github.com/wa-lang/wabook 支持评论
 [syncfusion demos](https://github.com/syncfusion/wpf-demos)
 
 - https://www.syncfusion.com/downloads/communityLicense 申请后等两天
-  - https://communitylicense.syncfusion.com/support/tickets/613578
+  - https://communitylicense.syncfusion.com/support/tickets/613578  **已通过 gmail登录**
   - https://blog.csdn.net/songhuangong123/article/details/131348661  离线注册方法
 - https://www.syncfusion.com/account/downloads 下载
 
