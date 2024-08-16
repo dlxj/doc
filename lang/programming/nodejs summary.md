@@ -21087,6 +21087,22 @@ https://docs.godotengine.org/en/stable/tutorials/scripting/cross_language_script
 
 
 
+#### gdscript use C#
+
+```
+# MyCoolNode.cs 
+using Godot;
+public partial class MyCoolNode : Node {
+	# MyCoolNode.cs 必须有一个类名为 MyCoolNode
+
+# main.gd
+var my_csharp_script = load("res://Path/To/MyCoolNode.cs")
+var my_csharp_node = my_csharp_script.new()
+
+```
+
+
+
 
 
 
