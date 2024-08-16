@@ -21359,6 +21359,25 @@ SceneTree 是场景所使用的默认 MainLoop 实现，因此掌控着游戏循
 
 
 
+#### 批量设置分组结点属性
+
+```
+# huggingface/Pixelorama___/src/Autoload/Global.gd
+var use_native_file_dialogs := false:
+	set(value):
+		if value == use_native_file_dialogs:
+			return
+		use_native_file_dialogs = value
+		if not is_inside_tree():
+			await tree_entered
+			await get_tree().process_frame
+		get_tree().set_group(&"FileDialogs", "use_native_dialog", value)
+```
+
+
+
+
+
 ### 加载项目配置
 
 ```
