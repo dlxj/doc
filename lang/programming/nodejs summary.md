@@ -34228,6 +34228,7 @@ https://github.com/wa-lang/wabook 支持评论
 
 - https://github.com/runceel/ReactiveProperty
 - https://github.com/Dirkster99/AvalonDock  dockable
+- https://github.com/loongEgg/LoongKeys  [1](https://zhuanlan.zhihu.com/p/108497547) UI好看
 
 [ffmediaelement 成品播放器 ?](https://github.com/unosquare/ffmediaelement)
 
