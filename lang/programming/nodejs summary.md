@@ -21103,6 +21103,16 @@ var my_csharp_node = my_csharp_script.new()
 
 
 
+#### C# use gdscript
+
+```
+using Godot;
+GDScript MyGDScript = GD.Load<GDScript>("res://path/to/my_gd_script.gd");
+GodotObject myGDScriptNode = (GodotObject)MyGDScript.New(); // This is a GodotObject.
+```
+
+
+
 
 
 
