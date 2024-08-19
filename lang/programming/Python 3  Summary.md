@@ -18953,7 +18953,7 @@ $: t, console.log(t)
 
 ### \#key
 
-```javascript
+```
 # 响应式创建和销毁
 # huggingface/gradio440/js/video/shared/InteractiveVideo.svelte
 {#if playable()}
