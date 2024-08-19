@@ -18951,6 +18951,27 @@ $: t, console.log(t)
 
 
 
+### \#key
+
+```javascript
+# 响应式创建和销毁
+# huggingface/gradio440/js/video/shared/InteractiveVideo.svelte
+{#if playable()}
+			{#key value?.url}
+				<Player
+				/>
+			{/key}
+{:else if value.size}
+			<div class="file-size">
+				{prettyBytes(value.size)}
+			</div>
+{/if}
+	#  value?.url 每当它一变，Player 就会被销毁和重建
+	
+```
+
+
+
 
 
 ### 传参
