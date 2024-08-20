@@ -31069,7 +31069,18 @@ decode = lambda l: enc.decode(l)
 https://github.com/howard-hou/VisualRWKV
 
 - https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain 预训练数据集
+
 - https://github.com/haotian-liu/LLaVA 微调数据集
+
+  
+
+```
+git clone https://github.com/howard-hou/VisualRWKV.git
+	- git clone https://huggingface.co/datasets/dlxjj/VisualRWKV
+
+
+
+```
 
 
 
