@@ -25,6 +25,9 @@ x64dbg打开"C:\Windows\System32\rundll32.exe"，32位应该是"C:\Windows\SysWO
 # soda
 
 ```
+
+see huggingface\gasr
+
 PID=17272
 名称=chrome
 路径=C:\Program Files\Google\Chrome\Application\chrome.exe
