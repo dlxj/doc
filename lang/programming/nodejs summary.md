@@ -21226,6 +21226,20 @@ chosen_artwork = wrapi(chosen_artwork + direction, 0, artworks.size())
 
 
 
+#### databinding
+
+https://www.reddit.com/r/godot/comments/kfreup/any_resources_on_data_binding_in_godot_for/ 双向绑定
+
+- 
+
+```
+
+```
+
+##### 自定义属性 _set
+
+- https://docs.godotengine.org/zh-cn/4.x/classes/class_object.html#class-object-private-method-set
+
 
 
 ### 插件
