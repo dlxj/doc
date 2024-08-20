@@ -21196,6 +21196,29 @@ git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
 
 
 
+#### splash_dialog
+
+```
+# Main.gd
+const SPLASH_DIALOG_SCENE_PATH := "res://src/UI/Dialogs/SplashDialog.tscn"
+
+var splash_dialog: AcceptDialog:
+	get:
+		if not is_instance_valid(splash_dialog):
+			splash_dialog = load(SPLASH_DIALOG_SCENE_PATH).instantiate()
+			add_child(splash_dialog)
+		return splash_dialog
+
+# Wait for the window to adjust itself, so the popup is correctly centered
+await get_tree().process_frame
+splash_dialog.popup_centered()  # Splash screen (artwork)
+
+```
+
+
+
+
+
 #### Texture2D 表示图片
 
 ```
@@ -35056,6 +35079,8 @@ Visual Studio 2022
 [Rust bindings for the Python interpreter](https://github.com/PyO3/pyo3)
 
 [rust-script](https://github.com/fornwall/rust-script)
+
+[proxy-checker-rs 检测代理](https://v2ex.com/t/1066463)
 
 
 
