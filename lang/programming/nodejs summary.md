@@ -31064,6 +31064,14 @@ decode = lambda l: enc.decode(l)
 
 
 
+## VisualRWKV
+
+https://github.com/howard-hou/VisualRWKV
+
+
+
+
+
 ## RWKV CLIP
 
 https://github.com/deepglint/RWKV-CLIP
