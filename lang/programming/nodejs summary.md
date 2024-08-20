@@ -21140,6 +21140,13 @@ GodotObject myGDScriptNode = (GodotObject)MyGDScript.New(); // This is a GodotOb
 
 ### Pixelorama
 
+- ```
+  huggingface\pxlrm
+  	# splash 成功分离，单独运行
+  ```
+
+  
+
 ```
 
 # res://src/UI/Canvas/Rulers/VerticalRuler.gd 报错
