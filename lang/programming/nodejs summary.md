@@ -21189,6 +21189,36 @@ git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
 
 
 
+#### Texture2D 表示图片
+
+```
+var artwork: Texture2D =  preload("res://assets/graphics/splash_screen/artworks/roroto.png")
+
+```
+
+
+
+#### wrapi 随机数？
+
+```
+# res://src/UI/Dialogs/SplashDialog.gd
+chosen_artwork = wrapi(chosen_artwork + direction, 0, artworks.size())
+
+```
+
+
+
+#### Z 顺序
+
+```
+看起来最上面的控件是最底部，最下面的控件是顶部，下面覆盖上面。
+
+平级的控件只会抢位置，不会互相覆盖。
+
+```
+
+
+
 
 
 ### 插件
