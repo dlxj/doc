@@ -21230,11 +21230,13 @@ chosen_artwork = wrapi(chosen_artwork + direction, 0, artworks.size())
 
 https://www.reddit.com/r/godot/comments/kfreup/any_resources_on_data_binding_in_godot_for/ 双向绑定
 
-- 
+- ```
+  publish/subscribe pattern using signals in godot
+  ```
 
-```
+  
 
-```
+
 
 ##### 自定义属性 _set
 
