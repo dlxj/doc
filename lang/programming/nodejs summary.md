@@ -21238,6 +21238,16 @@ chosen_artwork = wrapi(chosen_artwork + direction, 0, artworks.size())
 
 
 
+#### clampi 裁剪整数
+
+```
+frame_number = clampi(frame_number, 0, project.frames.size() - 1)
+```
+
+
+
+
+
 #### Z 顺序
 
 ```
@@ -21264,6 +21274,20 @@ https://www.reddit.com/r/godot/comments/kfreup/any_resources_on_data_binding_in_
 ##### 自定义属性 _set
 
 - https://docs.godotengine.org/zh-cn/4.x/classes/class_object.html#class-object-private-method-set
+
+
+
+#### quit
+
+```
+func quit():
+	modulate = Color(0.5, 0.5, 0.5) # 灰化 UI
+	await get_tree().create_timer(60).timeout
+	get_tree().quit()
+	# 它不是系统函数
+```
+
+
 
 
 
@@ -31172,6 +31196,9 @@ To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-12.3/bin
 proxychains4 pip install "setuptools<70" && 
 proxychains4 pip install pytorch-lightning==1.9.5 deepspeed wandb ninja
 
+https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain/resolve/main/images.zip?download=true
+	# 数据集下载。太大了 .77 超内存 . lfs 没办法断点续传. 用 IDM 开代理很快
+	
 
 # 参考 rwkv6 的配置
 # rwkv6
