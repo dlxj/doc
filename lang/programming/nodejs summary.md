@@ -21289,6 +21289,22 @@ func quit():
 
 
 
+#### config
+
+```
+# Global.gd 
+extends Node
+const CONFIG_PATH := "user://config.ini"
+var config_cache := ConfigFile.new()
+func _init() -> void:
+	config_cache.load(CONFIG_PATH)
+
+
+
+```
+
+
+
 
 
 ### 插件
