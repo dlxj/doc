@@ -31223,11 +31223,21 @@ Please make sure that
 To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-12.3/bin
 
 proxychains4 pip install "setuptools<70" && 
-proxychains4 pip install pytorch-lightning==1.9.5 deepspeed wandb ninja
+proxychains4 pip install pytorch-lightning==1.9.5 deepspeed wandb ninja && 
+proxychains4 pip install pillow einops rwkv==0.8.26 pynvml tokenizers ninja transformers
+
+proxychains4 pip install -U git+https://github.com/sustcsonglin/flash-linear-attention
 
 https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain/resolve/main/images.zip?download=true
 	# 数据集下载。太大了 .77 超内存 . lfs 没办法断点续传. 用 IDM 开代理很快
 	
+
+Y:\ai\images.zip
+	# 图片放这里了(13700k)
+
+mkdir LLaVA-Pretrain && 
+cd LLaVA-Pretrain && 
+unzip /mnt/y/ai/images.zip
 
 # 参考 rwkv6 的配置
 # rwkv6
