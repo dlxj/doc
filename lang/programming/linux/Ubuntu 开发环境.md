@@ -1346,6 +1346,9 @@ win11 远程桌面，连 10.0.0.1:33899 成功
 # NTFS
 
 ```
+
+umount -lf /mnt
+
 # 硬盘扩容
 ls /dev/disk/by-id/
 	--> ata-QEMU_DVD-ROM_QM00004  scsi-0BUYVM_SLAB_VOLUME-7514
