@@ -564,6 +564,22 @@ See my blog post at https://www.application2000.com
 
 
 
+## 链接库配置
+
+```
+Toolkit:  Installed in /usr/local/cuda-12.3/
+Please make sure that
+ -   PATH includes /usr/local/cuda-12.3/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-12.3/lib64, or, add /usr/local/cuda-12.3/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-12.3/bin
+
+```
+
+
+
+
+
 
 
 ## 安装 postgresql

@@ -31162,6 +31162,16 @@ conda activate visualrwkv
 pip install --upgrade pip
 
 
+Toolkit:  Installed in /usr/local/cuda-12.3/
+Please make sure that
+ -   PATH includes /usr/local/cuda-12.3/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-12.3/lib64, or, add /usr/local/cuda-12.3/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-12.3/bin
+
+proxychains4 pip install "setuptools<70" && 
+proxychains4 pip install pytorch-lightning==1.9.5 deepspeed wandb ninja
+
 
 # 参考 rwkv6 的配置
 # rwkv6
