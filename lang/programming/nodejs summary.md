@@ -31154,7 +31154,30 @@ https://github.com/howard-hou/VisualRWKV
 git clone https://github.com/howard-hou/VisualRWKV.git
 	- git clone https://huggingface.co/datasets/dlxjj/VisualRWKV
 
+git clone https://github.com/howard-hou/VisualRWKV.git && 
+cd VisualRWKV-v6/v6.0
 
+conda create -n visualrwkv python=3.10 pip -y
+conda activate visualrwkv
+pip install --upgrade pip
+
+
+
+# 参考 rwkv6 的配置
+# rwkv6
+wget https://developer.download.nvidia.com/compute/cuda/12.3.0/local_installers/cuda_12.3.0_545.23.06_linux.run
+sudo sh cuda_12.3.0_545.23.06_linux.run
+update-alternatives --remove cuda /usr/local/cuda-11.8
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-12.3 123
+ln -sfT /usr/local/cuda-12.3 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+conda create -n KV6 pip python=3.10 && 
+conda activate KV6 && 
+pip install torch==2.1.2+cu121 --extra-index-url https://download.pytorch.org/whl/cu121 && 
+pip install "setuptools<70" && 
+pip install pytorch-lightning==1.9.5 deepspeed wandb ninja 
+	# setuptools<70 fix cannot import name 'packaging' from 'pkg_resources'
+cd ~/RWKV-LM/RWKV-v5 
 
 ```
 
