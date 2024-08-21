@@ -21300,6 +21300,19 @@ func _init() -> void:
 	config_cache.load(CONFIG_PATH)
 
 
+Global.config_cache.set_value("window", "screen", get_window().current_screen)
+	# 该窗口当前所在的屏幕
+Global.config_cache.set_value(
+		"window",
+		"maximized",
+		(
+			(get_window().mode == Window.MODE_MAXIMIZED)
+			|| (
+				(get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN)
+				or (get_window().mode == Window.MODE_FULLSCREEN)
+			)
+		)
+	)
 
 ```
 
