@@ -87,6 +87,13 @@ find /yingedu/www/ocr_server/data/img -name "*.txt" | xargs -i cp {} /yingedu/20
 # mount
 
 ```
+
+sudo ntfsfix /dev/sda1
+	# 解决因为休眠造成的问题
+umount -lf /mnt
+mount -t ntfs-3g /dev/sda1 /mnt
+
+
 umount /mnt
 
 ```
