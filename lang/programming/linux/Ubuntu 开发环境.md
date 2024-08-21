@@ -1347,7 +1347,11 @@ win11 远程桌面，连 10.0.0.1:33899 成功
 
 ```
 
+sudo ntfsfix /dev/sda1
+	# 解决因为休眠造成的问题
 umount -lf /mnt
+mount -t ntfs-3g /dev/sda1 /mnt
+
 
 # 硬盘扩容
 ls /dev/disk/by-id/
