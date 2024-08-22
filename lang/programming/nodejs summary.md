@@ -31324,6 +31324,13 @@ https://github.com/deepglint/RWKV-CLIP
 
 https://github.com/theodorblackbird/lina-speech
 
+- https://github.com/m-bain/whisperX
+
+  - ```
+    Diarization (still in beta, add --diarize)
+    	# 分离说话者
+    ```
+
 - https://github.com/howard-hou/RWKV-TS 时间序列任务
   - https://github.com/lss-1138/SegRNN 
 
@@ -31336,6 +31343,8 @@ https://github.com/theodorblackbird/lina-speech
 
 ```
 conda create -n  rwkvspeech pip python=3.10
+
+
 ```
 
 
