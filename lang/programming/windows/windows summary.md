@@ -1887,11 +1887,23 @@ netstat -ano | findstr :6006
 
 
 
+
+
 # 杀进程
 
 ```
 taskkill -PID 进程号 -F
 ```
+
+
+
+```
+ Get-Process | Where-Object { $_.Name -like "Face*" } | Stop-Process
+ 	# kill 掉以 Face* 开头的进程
+ 
+```
+
+
 
 
 

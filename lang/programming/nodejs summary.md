@@ -31215,6 +31215,52 @@ conda activate visualrwkv
 pip install --upgrade pip
 
 
+wget https://developer.download.nvidia.com/compute/cuda/12.1.0/local_installers/cuda_12.1.0_530.30.02_linux.run
+	# 好像它必须 cu12.1
+
+update-alternatives --remove cuda /usr/local/cuda-12.3 && 
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-12.1 121 && 
+ln -sfT /usr/local/cuda-12.1 /etc/alternatives/cuda && 
+ln -sfT /etc/alternatives/cuda /usr/local/cuda 
+
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-12.1/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-12.1/lib64, or, add /usr/local/cuda-12.1/lib64 to /etc/ld.so.conf and run ldconfig as root
+	
+
+vi /root/.bashrc
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-12.1/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.1/lib64
+fi
+export LD_LIBRARY_PATH
+
+source ~/.bashrc && 
+echo $LD_LIBRARY_PATH
+
+
+/root/VisualRWKV/VisualRWKV-v6/v6.0/src/model.py
+	# wkv6_cuda = load(name="wkv6", sources=["cuda/wkv6_op.cpp", f"cuda/wkv6_cuda.cu"],
+		
+
+cd /root/VisualRWKV/VisualRWKV-v6/v6.20 && 
+cp /root/VisualRWKV/VisualRWKV-v6/v6.0/dummy_data/ .
+python train.py --load_model "" --wandb "" --proj_dir "out/dummy" \
+    --data_file "dummy_data/dummy.json" --data_type "json" --vocab_size 65536 \
+    --ctx_len 256 --epoch_steps 1000 --epoch_count 1 --epoch_begin 0 --epoch_save 1 \
+    --micro_bsz 8 --accumulate_grad_batches 16 --n_layer 6 --n_embd 512 --pre_ffn 0 \
+    --lr_init 1e-5 --lr_final 1e-5 --warmup_steps 0 --beta1 0.9 --beta2 0.99 --adam_eps 1e-8 \
+    --accelerator gpu --devices 1 --precision bf16 --strategy deepspeed_stage_2 --grad_cp 0 \
+    --image_folder dummy_data/images/ --vision_tower_name /root/clip-vit-base-patch32/ \
+    --freeze_rwkv 0 --freeze_proj 0 --detail low --grid_size -1 \
+    --enable_progress_bar False
+   		# v6.20 不报错，但是卡住不动
+
+
+
+
 Toolkit:  Installed in /usr/local/cuda-12.3/
 Please make sure that
  -   PATH includes /usr/local/cuda-12.3/bin
