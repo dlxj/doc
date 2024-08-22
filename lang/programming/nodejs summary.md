@@ -4609,6 +4609,7 @@ huggingface-cli repo create pandora --type dataset
 	# huggingface-cli repo create RWKV5_nlpp --type dataset
 	# huggingface-cli repo create RWKV1 --type dataset
 	# huggingface-cli repo create RWKV_speech --type dataset
+	# huggingface-cli repo create VisualRWKV --type dataset
 	# huggingface-cli repo create Pixelorama --type dataset
 	# huggingface-cli repo create pxlrm --type dataset # godot 复刻版
 	# huggingface-cli repo create x64dbg_52PJ --type dataset
@@ -29923,6 +29924,10 @@ https://linux.do/t/topic/125092/3
 
 
 ```
+
+用于图像分割的 RWKV-SAM，用于视觉-语言表示学习的 RWKV-CLIP，以及用于 3D 点云学习框架的 Point-RWKV。值得注意的是，RWKV-SAM 在分类和语义分割方面优于最新的视觉 Mamba 模型，而 RWKV-CLIP 在图像-文本模态空间中展现出卓越的跨模态对齐性能。此外，Point-RWKV 在下游点云任务中显著节省了 FLOPS，并在性能上优于基于 Transformer 和 Mamba 的对应模型。
+
+
 24g显存用offload全量微调6b
 
 内存占用100g左右
@@ -31241,12 +31246,12 @@ source ~/.bashrc &&
 echo $LD_LIBRARY_PATH
 
 
-/root/VisualRWKV/VisualRWKV-v6/v6.0/src/model.py
-	# wkv6_cuda = load(name="wkv6", sources=["cuda/wkv6_op.cpp", f"cuda/wkv6_cuda.cu"],
-		
+pip install pytorch-lightning==1.9.5 deepspeed==0.14.4 wandb==0.17.7 ninja==1.11.1.1 transformers==4.44.1 datasets==2.21.0 timm==1.0.8
 
 cd /root/VisualRWKV/VisualRWKV-v6/v6.20 && 
 cp /root/VisualRWKV/VisualRWKV-v6/v6.0/dummy_data/ .
+	# 先复制v6.0 的数据过来
+
 python train.py --load_model "" --wandb "" --proj_dir "out/dummy" \
     --data_file "dummy_data/dummy.json" --data_type "json" --vocab_size 65536 \
     --ctx_len 256 --epoch_steps 1000 --epoch_count 1 --epoch_begin 0 --epoch_save 1 \
@@ -31255,8 +31260,8 @@ python train.py --load_model "" --wandb "" --proj_dir "out/dummy" \
     --accelerator gpu --devices 1 --precision bf16 --strategy deepspeed_stage_2 --grad_cp 0 \
     --image_folder dummy_data/images/ --vision_tower_name /root/clip-vit-base-patch32/ \
     --freeze_rwkv 0 --freeze_proj 0 --detail low --grid_size -1 \
-    --enable_progress_bar False
-   		# v6.20 不报错，但是卡住不动
+    --enable_progress_bar True
+   		# v6.20 成功运行
 
 
 
@@ -31318,6 +31323,8 @@ https://github.com/deepglint/RWKV-CLIP
 ## RWKV speech
 
 https://github.com/theodorblackbird/lina-speech
+
+- https://github.com/espnet/espnet MCU  asr tts 全都有
 
 
 

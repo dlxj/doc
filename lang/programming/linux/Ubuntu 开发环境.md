@@ -578,6 +578,21 @@ To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-12.3/bin
 
 
 
+```
+vi /root/.bashrc
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-12.1/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.1/lib64
+fi
+export LD_LIBRARY_PATH
+
+source ~/.bashrc && 
+echo $LD_LIBRARY_PATH
+```
+
+
+
 
 
 
