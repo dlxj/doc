@@ -31324,9 +31324,13 @@ https://github.com/deepglint/RWKV-CLIP
 
 https://github.com/theodorblackbird/lina-speech
 
-- https://github.com/lss-1138/SegRNN 时间序列任务
+- https://github.com/howard-hou/RWKV-TS 时间序列任务
+  - https://github.com/lss-1138/SegRNN 
 
 - https://github.com/espnet/espnet MCU  asr tts 全都有
+- https://github.com/OpenTalker/video-retalking 嘴形同步
+  - https://github.com/black-forest-labs/flux
+  - https://github.com/THUDM/CogVideo
 
 
 
