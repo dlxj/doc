@@ -31324,6 +31324,8 @@ https://github.com/deepglint/RWKV-CLIP
 
 https://github.com/theodorblackbird/lina-speech
 
+- https://github.com/lss-1138/SegRNN 时间序列任务
+
 - https://github.com/espnet/espnet MCU  asr tts 全都有
 
 
