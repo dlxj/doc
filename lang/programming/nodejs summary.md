@@ -31332,8 +31332,9 @@ https://github.com/theodorblackbird/lina-speech
     ```
 
 - https://github.com/howard-hou/RWKV-TS 时间序列任务
-  - https://github.com/lss-1138/SegRNN 
-
+  
+- https://github.com/lss-1138/SegRNN 
+  
 - https://github.com/espnet/espnet MCU  asr tts 全都有
 - https://github.com/OpenTalker/video-retalking 嘴形同步
   - https://github.com/black-forest-labs/flux
@@ -34620,6 +34621,10 @@ https://github.com/wa-lang/wabook 支持评论
   - https://communitylicense.syncfusion.com/support/tickets/613578  **已通过 gmail登录**
   - https://blog.csdn.net/songhuangong123/article/details/131348661  离线注册方法
 - https://www.syncfusion.com/account/downloads 下载
+
+[Mile.Xaml](https://github.com/ProjectMile/Mile.Xaml) 带设计器？
+
+- [NanaZip](https://github.com/M2Team/NanaZip) 成品应用
 
 [Prism](https://github.com/PrismLibrary/Prism) + ReactiveProperty + syncfusion
 
