@@ -113,6 +113,26 @@ Newtonsoft.Json与System.Text.Json相比，反序列化性能哪个好？耗时�
 
 
 
+### ??
+
+```
+`??` 是 C# 语言中的空合并运算符（Null-coalescing operator）。它用于在一个表达式可能为空（null）时提供一个默认值。
+
+see https://github.com/loongEgg/LoongKeys
+
+        public DelegateCommand(Action<T> execute, Predicate<T> canExecute) {
+            _Execute = execute ?? throw new ArgumentNullException("execute 不能为空");
+            _CanExecute = canExecute;
+        }
+        	# 为空就抛异常
+        
+
+```
+
+
+
+
+
 ### Switch
 
 

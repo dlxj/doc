@@ -34615,7 +34615,7 @@ https://github.com/wa-lang/wabook 支持评论
 
 [syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
 
-[syncfusion demos](https://github.com/syncfusion/wpf-demos)
+[syncfusion wpf-demos](https://github.com/syncfusion/wpf-demos)
 
 - https://www.syncfusion.com/downloads/communityLicense 申请后等两天
   - https://communitylicense.syncfusion.com/support/tickets/613578  **已通过 gmail登录**
