@@ -2190,6 +2190,27 @@ vscode + vite
 
 
 
+## vscode + centos7
+
+https://developer.aliyun.com/article/1099333
+
+```
+ v1.86 的请自行降级回 v1.85.2 ，禁用自动升级功能，并且要卸载、重装 Remote - SSH
+这个插件
+
+ cat /etc/redhat-release 
+ 
+ 
+ （1）删除本地插件
+C:\Users\TeddyBear\.vscode下的extensions，里面放的安装过的插件，不放心把整个.vscode文件夹都删了。
+
+（2）删除本地缓存
+C:\Users\TeddyBear\AppData\Roaming\Code，主要是配置缓存信息，全删了好了
+
+```
+
+
+
 
 
 ## vscode + jupyter 
