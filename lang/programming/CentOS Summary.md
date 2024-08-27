@@ -9,6 +9,63 @@
 [root@localhost ~]# yum -y install p7zip p7zip-plugins
 ```
 
+
+
+## CentOS7.9 换源
+
+```
+
+vi /etc/yum.repos.d/CentOS-Base.repo
+[base]
+name=CentOS-$releasever - Base - mirrors.aliyun.com
+failovermethod=priority
+baseurl=https://mirrors.aliyun.com/centos-vault/7.9.2009/os/x86_64/
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/7.9.2009/RPM-GPG-KEY-CentOS-7
+ 
+#released updates 
+[updates]
+name=CentOS-$releasever - Updates - mirrors.aliyun.com
+failovermethod=priority
+baseurl=https://mirrors.aliyun.com/centos-vault/7.9.2009/os/x86_64/
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/7.9.2009/RPM-GPG-KEY-CentOS-7
+ 
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras - mirrors.aliyun.com
+failovermethod=priority
+baseurl=https://mirrors.aliyun.com/centos-vault/7.9.2009/os/x86_64/
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/7.9.2009/RPM-GPG-KEY-CentOS-7
+ 
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus - mirrors.aliyun.com
+failovermethod=priority
+baseurl=https://mirrors.aliyun.com/centos-vault/7.9.2009/os/x86_64/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirrors.aliyun.com/centos-vault/7.9.2009/RPM-GPG-KEY-CentOS-7
+ 
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-$releasever - Contrib - mirrors.aliyun.com
+failovermethod=priority
+baseurl=http://mirrors.aliyun.com/centos-vault/7.9.2009/contrib/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=http://mirrors.aliyun.com/centos-vault/7.9.2009/RPM-GPG-KEY-CentOS-7
+
+
+yum clean all
+sudo yum makecache
+```
+
+
+
+
+
 ## Install PG
 
 
