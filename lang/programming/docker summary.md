@@ -1505,6 +1505,19 @@ npm install redis@3.1.2 --save
 
 # CentOS7.9 安装Docker
 
+https://www.cnblogs.com/kohler21/p/18331060 配置源
+
+- ```
+  sudo mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak && 
+  wget -O /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+  
+  yum clean all
+  sudo yum makecache
+  
+  ```
+
+  
+
 https://www.cnblogs.com/jhdhl/p/17072590.html
 
 ```
@@ -1527,12 +1540,18 @@ yum remove docker \
 	# 删除旧版本
     
 
-yum -y install gcc
-yum -y install gcc-c++
+yum -y install gcc gcc-c++ yum-utils
+
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 
     
 https://mirrors.tuna.tsinghua.edu.cn/centos-vault/7.9.2009/                
 	
+sed -e "s|^mirrorlist=|#mirrorlist=|g" \
+    -e "s|^#baseurl=http://mirror.centos.org/centos/\$releasever|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-vault/7.9.2009|g" \
+    -e "s|^#baseurl=http://mirror.centos.org/\$contentdir/\$releasever|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-vault/7.9.2009|g" \
+    -i.bak \
+    /etc/yum.repos.d/CentOS-*.repo
 	
 ```
 
