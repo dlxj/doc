@@ -1558,6 +1558,8 @@ https://www.cnblogs.com/kohler21/p/18331060 配置源
   yum clean all
   sudo yum makecache
   
+   yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm   
+  
   ```
 
   
@@ -1589,13 +1591,10 @@ yum -y install gcc gcc-c++ yum-utils
 yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 
     
-https://mirrors.tuna.tsinghua.edu.cn/centos-vault/7.9.2009/                
-	
-sed -e "s|^mirrorlist=|#mirrorlist=|g" \
-    -e "s|^#baseurl=http://mirror.centos.org/centos/\$releasever|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-vault/7.9.2009|g" \
-    -e "s|^#baseurl=http://mirror.centos.org/\$contentdir/\$releasever|baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos-vault/7.9.2009|g" \
-    -i.bak \
-    /etc/yum.repos.d/CentOS-*.repo
+ yum install -y http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm   
+ 	# 先安装这个依赖
+ 
+ 
 	
 ```
 
