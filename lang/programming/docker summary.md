@@ -1503,4 +1503,33 @@ npm install redis@3.1.2 --save
 
 
 
-## 
+# CentOS7.9 安装Docker
+
+https://www.cnblogs.com/jhdhl/p/17072590.html
+
+```
+# cat /etc/redhat-release
+	# CentOS Linux release 7.9.2009 (Core)
+	# uname -r 显示操作系统的发行版号
+	# uname -a 示系统名、节点名称、操作系统的发行版号、内核版本等等。
+# uname -r
+	# 3.10.0-1160.25.1.el7.x86_64
+	
+	
+yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+	# 删除旧版本
+    
+    
+    
+                
+	
+	
+```
+
