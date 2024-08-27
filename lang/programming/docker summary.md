@@ -1528,7 +1528,7 @@ yum remove docker \
     
     
     
-                
+https://mirrors.tuna.tsinghua.edu.cn/centos-vault/7.9.2009/                
 	
 	
 ```
