@@ -1526,7 +1526,10 @@ yum remove docker \
                   docker-engine
 	# 删除旧版本
     
-    
+
+yum -y install gcc
+yum -y install gcc-c++
+
     
 https://mirrors.tuna.tsinghua.edu.cn/centos-vault/7.9.2009/                
 	
