@@ -107,6 +107,17 @@ tty-share # webbrowser 访问shell
 
 https://dkxuanye.cn/?p=9772  多巴胺2.0越狱自动挂载系统目录
 
+```
+iOS上应用程序的路径是：/var/containers/Bundle/Application/
+
+卡贴机运营商文件路径是：/System/Library/Carrir Bundle/iPhone/ATT_US.bundle/(att举例)
+
+
+
+```
+
+
+
 
 
 # 个人开发者
