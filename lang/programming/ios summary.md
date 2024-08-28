@@ -105,6 +105,8 @@ tty-share # webbrowser 访问shell
 
 # 越狱
 
+https://github.com/opa334/Dopamine  多巴胺官网
+
 https://dkxuanye.cn/?p=9772  多巴胺2.0越狱自动挂载系统目录
 
 ```
