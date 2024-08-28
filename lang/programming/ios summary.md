@@ -121,6 +121,12 @@ iOS上应用程序的路径是：/var/containers/Bundle/Application/
 
 
 
+##  巨魔二代
+
+https://github.com/XLsn0w/TrollStore2/blob/main/README.md   巨魔二代  TrollStore2
+
+
+
 
 
 # 个人开发者
