@@ -113,6 +113,9 @@ iOS上应用程序的路径是：/var/containers/Bundle/Application/
 卡贴机运营商文件路径是：/System/Library/Carrir Bundle/iPhone/ATT_US.bundle/(att举例)
 
 
+在 iOS 15 后的越狱统称为 无根越狱，即 并没有真正的 根 权限，无法真正修改系统底层文件，所以 iOS 14 及之前的越狱插件都需要开发者手动适配才可以在无根环境正常使用。
+
+现在 iOS 15 官方系统发布近一年后才发布的 Dopamine，很明显能看出来越狱的时代即将就要过去了。
 
 ```
 
