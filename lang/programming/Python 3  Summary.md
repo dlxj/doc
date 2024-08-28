@@ -17078,6 +17078,41 @@ https://github.com/gradio-app/gradio/issues/7950
 
 
 
+## dropdown
+
+```
+import gradio as gr
+
+options_1 = ['Paris', 'Berlin' ]
+options_2 = {
+    'Paris': ['Saint Denis', 'Eiffel Tower', 'Le Louvre'],
+    'Berlin': ['Reichstag', 'Alexanderplatz', 'Kreuzberg'],
+    }
+
+with gr.Blocks() as demo:
+    d1 = gr.Dropdown(choices=options_1, label="City dropdown")
+    d2 = gr.Dropdown([])
+    
+    def update_second(first_val):
+        d2 = gr.Dropdown(options_2[first_val])
+        return d2 
+    
+    d1.input(update_second, d1, d2)
+
+    outputs = gr.Textbox()
+
+    def print_results(option_1, option_2):
+        return f"You selected '{option_1}' in the first dropdown and '{option_2}' in the second dropdown."
+        
+    d2.input(print_results, [d1, d2], outputs) 
+
+demo.launch()
+```
+
+
+
+
+
 ## warning error
 
 ```python

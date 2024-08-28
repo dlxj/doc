@@ -103,6 +103,12 @@ tty-share # webbrowser 访问shell
 
 
 
+# 越狱
+
+https://dkxuanye.cn/?p=9772  多巴胺2.0越狱自动挂载系统目录
+
+
+
 # 个人开发者
 
 - https://www.v2ex.com/t/835778
