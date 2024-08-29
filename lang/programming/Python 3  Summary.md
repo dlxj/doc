@@ -18728,6 +18728,17 @@ https://www.gradio.app/guides/pdf-component-example
 
 - https://huggingface.co/spaces/freddyaboulton/gradio_pdf
 
+  - ```
+    proxychains4 conda create -n pdf python==3.10 pip && \
+    conda activate pdf
+    proxychains4 pip install -r demo/requirements.txt
+    proxychains4 pip install gradio
+    proxychains4 gradio cc install
+    gradio cc dev
+    ```
+
+  - 
+
 - https://github.com/freddyaboulton/gradio-pdf
 
 https://gist.github.com/ichord/9808444  pdf 取图片
