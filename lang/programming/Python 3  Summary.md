@@ -18720,6 +18720,28 @@ demo.launch()
 
 
 
+
+
+## pdfjs
+
+https://www.gradio.app/guides/pdf-component-example
+
+- https://huggingface.co/spaces/freddyaboulton/gradio_pdf
+
+- https://github.com/freddyaboulton/gradio-pdf
+
+https://gist.github.com/ichord/9808444  pdf 取图片
+
+```
+canvas.toDataURL('image/jpeg')
+	# canvas 转图片 
+	
+```
+
+
+
+
+
 ## fastapi+gradio
 
 
