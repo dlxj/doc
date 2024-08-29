@@ -18731,14 +18731,19 @@ https://www.gradio.app/guides/pdf-component-example
   - ```
     proxychains4 conda create -n pdf python==3.10 pip && \
     conda activate pdf
-    proxychains4 pip install -r demo/requirements.txt
-    proxychains4 pip install gradio
+    proxychains4 pip install -r demo/requirements.txt && 
+    proxychains4 pip install gradio && 
     proxychains4 gradio cc install
     vi gradio-pdf/frontend/package.json
     	"pdfjs-dist":"4.4.168"
     		# 改成这个版本
     gradio cc dev
     	# http://localhost:7861/  成功运行
+    	
+    
+    https://jsfiddle.net/pdfjs/wagvs9Lf/
+    pnpm create vite vite-pdfjs -- --template svelte
+    
     ```
 
   - 
