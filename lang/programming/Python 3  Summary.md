@@ -18734,7 +18734,11 @@ https://www.gradio.app/guides/pdf-component-example
     proxychains4 pip install -r demo/requirements.txt
     proxychains4 pip install gradio
     proxychains4 gradio cc install
+    vi gradio-pdf/frontend/package.json
+    	"pdfjs-dist":"4.4.168"
+    		# 改成这个版本
     gradio cc dev
+    	# http://localhost:7861/  成功运行
     ```
 
   - 
