@@ -16041,6 +16041,8 @@ if __name__ == "__main__":
 
 ## docker部署
 
+https://huggingface.co/spaces/freddyaboulton/gradio_pdf  范例 **必看**
+
 https://huggingface.co/docs/hub/spaces-sdks-docker
 
 
