@@ -15196,6 +15196,8 @@ see https://github.com/kkroening/ffmpeg-python/tree/master/examples  **视频混
 
 see https://juejin.cn/post/7201506099342082105  **关键帧信息** **必看**
 
+see https://github.com/remotion-dev/remotion  **videos programmatically with React**
+
 see https://github.com/mifi/lossless-cut js 剪视频
 
 see https://github.com/mean00/avidemux2 视频编辑
