@@ -18743,6 +18743,9 @@ https://www.gradio.app/guides/pdf-component-example
     
     https://jsfiddle.net/pdfjs/wagvs9Lf/
     pnpm create vite vite-pdfjs -- --template svelte
+    cd vite-pdfjs &&
+    pnpm install &&
+    pnpm run dev
     
     ```
 
