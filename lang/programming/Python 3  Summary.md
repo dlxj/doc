@@ -18726,6 +18726,8 @@ demo.launch()
 
 ## pdfjs
 
+see huggingface/vite-pdf  成功显示 pdf ，完成度很高
+
 https://www.gradio.app/guides/pdf-component-example
 
 - https://huggingface.co/spaces/freddyaboulton/gradio_pdf
