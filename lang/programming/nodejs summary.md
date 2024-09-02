@@ -32361,6 +32361,12 @@ True
 
 
 
+# pyvideotrans 识别+合成
+
+https://github.com/jianchang512/pyvideotrans  必看
+
+
+
 # TTS
 
 [tts-vue](https://github.com/LokerL/tts-vue)
