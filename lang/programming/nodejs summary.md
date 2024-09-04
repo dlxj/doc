@@ -10267,6 +10267,10 @@ console.log(pets.includes('cat'))
 ## slice
 
 ```
+
+menuschapter.splice(j, 1)
+	# 从后往前编历，删除其中一项
+
 const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
 
 console.log(animals.slice(2));
