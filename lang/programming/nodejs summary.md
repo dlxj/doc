@@ -31379,7 +31379,7 @@ conda create -n  rwkvspeech pip python=3.10
 
 https://github.com/huggingface/speech-to-speech
 
-https://github.com/huggingface/speech-to-speech/pull/60
+https://github.com/huggingface/speech-to-speech/pull/60 [1](https://github.com/huggingface/transformers/blob/6b7d64ac1c5d19ab4b9e99142a08e31741106e4e/src/transformers/models/whisper/tokenization_whisper.py#L87)
 
 - ```
   For multi-language, I'm using this command:
