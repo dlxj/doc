@@ -4364,6 +4364,11 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   * text=auto
   	# 自动检测文本 LF 并转换
   
+  git clone https://github.com/<your GitHub handle>/distil-whisper.git
+  cd distil-whisper
+  git remote add upstream https://github.com/huggingface/distil-whisper.git
+  	# fork 以后同步上游代码
+  
   win图标旁搜索 Credential Manager -> 删掉 huggingface
   
   C:\Users\Administrator\.git-credentials
