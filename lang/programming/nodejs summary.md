@@ -31387,9 +31387,23 @@ https://github.com/huggingface/speech-to-speech/pull/60 [1](https://github.com/h
   
   For any other language, you can use:
   python s2s_pipeline.py --recv_host 0.0.0.0 --send_host 0.0.0.0 --lm_model_name meta-llama/Meta-Llama-3.1-8B-Instruct --init_chat_role system --tts melo --stt_model_name openai/whisper-large-v3 --language zh
+  
+  
+  Server:
+  python s2s_pipeline.py --recv_host 0.0.0.0 --send_host 0.0.0.0
+  
+  Client:
+  python listen_and_play.py --host <IP address of your server>
+  
   ```
 
-  
+
+
+### 抱抱脸的 whisper 
+
+https://github.com/huggingface/distil-whisper
+
+
 
 ## chattts
 
