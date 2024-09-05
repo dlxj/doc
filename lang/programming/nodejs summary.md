@@ -31414,9 +31414,15 @@ https://github.com/huggingface/distil-whisper
 
 
 ```
+
+conda create -n distilwhisper python=3.8 pip -y && 
+conda activate distilwhisper && 
+pip install numpy==1.19.5 pyarrow fsspec datasets[audio] transformers accelerate evaluate jiwer tensorboard gradio
+
+
 conda create -n distilwhisper python=3.10 pip -y && 
 conda activate distilwhisper && 
-pip install pyarrow==14.0.2 fsspec==2024.6.1 datasets[audio]==2.0.0 transformers==4.44.2 accelerate==0.34.0 evaluate==0.4.2 jiwer==3.0.4 tensorboard==2.17.1 gradio==4.4.0 
+pip install numpy==1.19.5 pyarrow==14.0.2 fsspec==2024.6.1 datasets[audio]==2.0.0 transformers==4.44.2 accelerate==0.34.0 evaluate==0.4.2 jiwer==3.0.4 tensorboard==2.17.1 gradio==4.4.0 
 
 rm -rf ~/miniforge3/envs/distilwhisper && 
 conda deactivate 
