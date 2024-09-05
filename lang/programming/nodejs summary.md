@@ -31423,6 +31423,11 @@ conda deactivate
 	# 删除环境
 
 t.py
+# https://huggingface.co/datasets/mozilla-foundation/common_voice_11_0 需要同意协议
+# 看上面的 colab ，需登录 hub 
+from huggingface_hub import notebook_login
+notebook_login()
+
 from datasets import load_dataset, DatasetDict
 
 common_voice = DatasetDict()
