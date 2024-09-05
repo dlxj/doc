@@ -31375,6 +31375,12 @@ conda create -n  rwkvspeech pip python=3.10
 
 
 
+## speech-to-speech 抱抱脸
+
+https://github.com/huggingface/speech-to-speech
+
+
+
 ## chattts
 
 https://github.com/jianchang512/ChatTTS-ui
