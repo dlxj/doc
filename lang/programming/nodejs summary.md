@@ -31415,6 +31415,11 @@ https://github.com/huggingface/distil-whisper
 
 ```
 
+huggingface-cli repo create finetune_whisper --type dataset
+	# 需 cli 登录抱抱脸  
+	# 需同意协议  https://huggingface.co/datasets/mozilla-foundation/common_voice_11_0
+
+
 conda create -n distilwhisper python=3.8 pip -y && 
 conda activate distilwhisper && 
 pip install numpy==1.19.5 pyarrow fsspec datasets[audio] transformers accelerate evaluate jiwer tensorboard gradio
