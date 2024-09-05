@@ -31409,6 +31409,23 @@ https://github.com/huggingface/speech-to-speech/pull/60 [1](https://github.com/h
 https://github.com/huggingface/distil-whisper
 
 - https://huggingface.co/blog/zh/fine-tune-whisper  **先看这个**
+- https://colab.research.google.com/github/sanchit-gandhi/notebooks/blob/main/fine_tune_whisper.ipynb  **colab 看跑得通不**
+
+
+
+```
+conda create -n distilwhisper python=3.10 pip -y && 
+conda activate distilwhisper && 
+pip install pyarrow==14.0.1 fsspec==2024.6.1 datasets[audio]==2.14.4 transformers==4.44.2 accelerate==0.34.0 evaluate==0.4.2 jiwer==3.0.4 tensorboard==2.17.1 gradio==4.4.0
+
+rm -rf ~/miniforge3/envs/distilwhisper && 
+conda deactivate 
+	# 删除环境
+
+
+```
+
+
 
 
 
