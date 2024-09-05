@@ -31476,7 +31476,7 @@ common_voice = common_voice.map(prepare_dataset, remove_columns=common_voice.col
 
 
 https://numpy.org/devdocs/release/1.19.4-notes.html
-	# 需要不个小于 numpy==2.0 的版本
+	# 需要不小于 numpy==2.0 的版本
 	# pip install numpy==1.19.5 build faild , 它要 python=3.8 ?
 
 ```
