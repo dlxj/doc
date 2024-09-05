@@ -31441,7 +31441,7 @@ print(common_voice)
 
 https://numpy.org/devdocs/release/1.19.4-notes.html
 	# 需要不个小于 numpy==2.0 的版本
-	# build faild , 它要 python=3.8 ?
+	# pip install numpy==1.19.5 build faild , 它要 python=3.8 ?
 
 ```
 
