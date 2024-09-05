@@ -31408,6 +31408,8 @@ https://github.com/huggingface/speech-to-speech/pull/60 [1](https://github.com/h
 
 https://github.com/huggingface/distil-whisper
 
+- https://huggingface.co/blog/zh/fine-tune-whisper  **先看这个**
+
 
 
 ## chattts
