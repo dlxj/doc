@@ -13206,6 +13206,8 @@ nmap 127.0.0.1 -p6379
 
 https://github.com/turbot/steampipe
 
+https://github.com/theseus-rs/postgresql-embedded  rust
+
 duckdb see python summary.md
 
 ```
@@ -31380,6 +31382,10 @@ https://github.com/theodorblackbird/lina-speech
 - https://github.com/m-bain/whisperX
 
   - ```
+    Fine-tune the standard whisper model. Here is an entry article: https://huggingface.co/blog/fine-tune-whisper
+    Since faster-whisper is using ctranslate2 you will need to concert your model: https://opennmt.net/CTranslate2/guides/transformers.html#whisper
+    Because WhisperX is using faster_whisper, you should use a translated model. So here is the chain.
+    
     Diarization (still in beta, add --diarize)
     	# 分离说话者
     ```
