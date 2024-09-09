@@ -13215,10 +13215,19 @@ sudo /bin/sh -c "$(curl -fsSL https://steampipe.io/install/steampipe.sh)"
 su i && cd ~
 	# no root to run
 
+steampipe query
+	# cli 查询
+	
 .tables
 	# 查看可用的表，它会下载并安装 embedded PostgreSQL (开全局代理)
+		# TablePlus , Navicat Premium
 
+select version();
+	# 它现在就是一个普通的 pq 
 
+steampipe query "select version();"
+
+	
 
 ```
 
