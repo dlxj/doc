@@ -10220,6 +10220,28 @@ pip install opencv-python  # import cv2  # win10要编译很久的
 
 
 
+## 读mp4第一帧图片
+
+```
+import cv2, subprocess, math
+import os,sys
+from PIL import Image
+import numpy as np
+		self.cap = cv2.VideoCapture(mp4)
+        if not self.cap.isOpened():
+            raise ValueError("Cannot open video file")
+		self.cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
+        iterating, frame = self.cap.read()
+        display_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+        img = Image.fromarray(display_frame)
+        img.save('xxx.jpeg', format="JPEG")
+```
+
+
+
+
+
 ## 图像处理宝藏
 
 - https://pyimagesearch.com/2021/01/25/detecting-low-contrast-images-with-opencv-scikit-image-and-python/
