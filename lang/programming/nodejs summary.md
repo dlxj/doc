@@ -13206,9 +13206,23 @@ nmap 127.0.0.1 -p6379
 
 https://github.com/turbot/steampipe
 
-
-
 duckdb see python summary.md
+
+```
+# wsl
+sudo /bin/sh -c "$(curl -fsSL https://steampipe.io/install/steampipe.sh)"
+
+su i && cd ~
+	# no root to run
+
+.tables
+	# 查看可用的表，它会下载并安装 embedded PostgreSQL (开全局代理)
+
+
+
+```
+
+
 
 
 
