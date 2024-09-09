@@ -603,3 +603,5 @@ ffmpeg -y -i "1.mp4" -i "1.mkv" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='1
 
 http://www.obsproject.com.cn/obs/377.html  固定帧率
 
+https://blog.csdn.net/acalvin88/article/details/136952193  六项设置，教你解决直播间高清画质不卡顿
+
