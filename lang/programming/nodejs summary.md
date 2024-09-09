@@ -31377,6 +31377,8 @@ https://github.com/deepglint/RWKV-CLIP
 
 ## RWKV speech
 
+https://github.com/AGENDD/RWKV-ASR
+
 https://github.com/theodorblackbird/lina-speech
 
 - https://github.com/m-bain/whisperX
