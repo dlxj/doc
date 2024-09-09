@@ -597,3 +597,9 @@ ffmpeg -y -i "1.mp4" -i "1.mkv" -map 0:v -map 1:a:0 -map 0:a:0 -vf "subtitles='1
 
 ```
 
+
+
+# OBS Studio
+
+http://www.obsproject.com.cn/obs/377.html  固定帧率
+
