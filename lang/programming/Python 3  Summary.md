@@ -10209,7 +10209,7 @@ anaconda3+ paddleOCR安装使用
 
 
 
-# OpenCV
+# opencv
 
 - https://yanshilin.xyz/
   - 周旋的梦游仙境 | 一个工程师的后花园
