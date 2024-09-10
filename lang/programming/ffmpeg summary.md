@@ -605,3 +605,6 @@ http://www.obsproject.com.cn/obs/377.html  固定帧率
 
 https://blog.csdn.net/acalvin88/article/details/136952193  六项设置，教你解决直播间高清画质不卡顿
 
+
+
+来源 -> 显示器采集 -> 变换 -> 拉申到全屏
