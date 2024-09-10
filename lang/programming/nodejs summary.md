@@ -32212,6 +32212,23 @@ conda activate vits
 
 
 
+# pyannote-audio 必看
+
+https://github.com/pyannote/pyannote-audio  识别人声开始结束时间
+
+```
+pyannote-audio
+
+# file: /opt/conda/lib/python3.10/site-packages/pyannote/audio/core/model.py
+from lightning_fabric.utilities.cloud_io import _load as pl_load
+to
+
+from lightning.fabric.utilities.cloud_io import _load as pl_load
+
+```
+
+
+
 
 
 # whisperX
