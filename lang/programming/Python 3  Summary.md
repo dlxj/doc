@@ -3427,6 +3427,33 @@ print('main: done')
 
 
 
+#### 异步任务
+
+```
+    import asyncio
+
+    async def my_task(name, delay):
+        print(f"Task {name} started")
+        await asyncio.sleep(delay)
+        print(f"Task {name} completed")
+
+    async def main():
+        # 创建多个异步任务
+        task1 = asyncio.create_task(my_task("A", 2))
+        task2 = asyncio.create_task(my_task("B", 1))
+        task3 = asyncio.create_task(my_task("C", 3))
+
+        # 等待所有任务完成
+        await asyncio.gather(task1, task2, task3)
+
+    # 运行主异步函数
+    asyncio.run(main())
+```
+
+
+
+
+
 #### 进程池锁
 
 ```python
