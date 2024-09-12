@@ -10287,6 +10287,8 @@ anaconda3+ paddleOCR安装使用
 
 # opencv
 
+- https://github.com/OpenStitching/stitching  图片拼接
+
 - https://yanshilin.xyz/
   - 周旋的梦游仙境 | 一个工程师的后花园
 
