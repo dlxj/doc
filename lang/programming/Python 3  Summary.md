@@ -3452,6 +3452,55 @@ print('main: done')
 
 
 
+#### 多线程
+
+```
+def rec():
+    
+    if os.path.exists(asrtxt):
+        os.remove(asrtxt)
+    
+    import threading
+    import time
+
+    def task_soda_asr():
+        def result_callback(s, type):
+            """
+            因为这个回调是传给 .so 库去执行的，它访问不到 python 的变量，只能通过文件写入识别结果了
+            """
+            with open(asrtxt, 'a', encoding='utf-8') as f:
+                f.write(s+'\n')
+            if type == 'end':
+                print(s)
+            else:
+                print(s, end='\n')
+
+        
+        client = SodaClient()
+
+        try:
+            client.start(wav_path=wav, result_callback=result_callback)
+        except KeyboardInterrupt:
+            client.delete()
+
+    # 创建线程
+    thread = threading.Thread(target=task_soda_asr)
+
+    # 启动线程
+    thread.start()
+    
+    while thread.is_alive():
+        print("Thread is still running...")
+        time.sleep(1)
+
+    print("Thread has completed")
+    
+    # thread.join() # 等待线程完成 阻塞模式
+    
+```
+
+
+
 
 
 #### 进程池锁
