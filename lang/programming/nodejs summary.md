@@ -34778,6 +34778,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)
 
+- [kiss-translator 简约翻译](https://github.com/fishjar/kiss-translator)
+
 [downkyicore  B站下载](https://github.com/yaobiao131/downkyicore)
 
 [Livet包学习借鉴 双向绑定](https://b23.tv/BatbUhF) [1](https://github.com/runceel/Livet)  [2](https://gist.github.com/BYJRK/b49db5538a006d17fe4858217b330382)
