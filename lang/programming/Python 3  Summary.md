@@ -3501,6 +3501,47 @@ def rec():
 
 
 
+#### 管道通信
+
+https://benpaodewoniu.github.io/2022/10/07/python172/  pipe 管道通信
+
+
+
+```
+import multiprocessing
+conn1, conn2 = multiprocessing.Pipe( [duplex=True] )
+	# True，表示该管道是双向的，即位于 2 个端口的进程既可以发送数据，也可以接受数据。
+	# False，则表示管道是单向的，conn1 只能用来接收数据，而 conn2 只能用来发送数据。
+
+
+import multiprocessing
+import time
+
+
+def processFun(conn):
+    while True:
+        print(conn.recv())
+        print("接收到数据了")
+
+
+if __name__ == '__main__':
+    # 创建管道
+    conn1, conn2 = multiprocessing.Pipe(False)
+    # 创建子进程
+    process = multiprocessing.Process(target=processFun, args=(conn1,))
+    # 启动子进程
+    process.start()
+    i = 0
+    while True:
+        time.sleep(1)
+        conn2.send(i)
+        i += 1
+
+
+```
+
+
+
 
 
 #### 进程池锁
