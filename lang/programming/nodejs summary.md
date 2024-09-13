@@ -34779,6 +34779,7 @@ https://github.com/wa-lang/wabook 支持评论
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)
 
 - [kiss-translator 简约翻译](https://github.com/fishjar/kiss-translator)
+- [机器人学导论](https://github.com/HITSZ-OpenAuto/AUTO3005)
 
 [downkyicore  B站下载](https://github.com/yaobiao131/downkyicore)
 
