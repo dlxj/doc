@@ -1843,6 +1843,26 @@ with open(text_input_path, "r") as text_file, open(bin_output_path, "ab") as bin
 
 
 
+### bytes
+
+```
+type ( bytes(1) ) == bytes
+	--> True
+
+
+# 如果你只是想依次读取并处理每个 1024 字节的数据块
+while data:
+    chunk, data = data[:1024], data[1024:]
+    # 处理 chunk
+    print(f'Chunk size: {len(chunk)}')
+
+
+```
+
+
+
+
+
 ### size
 
 ```
@@ -3293,7 +3313,7 @@ for p in permutations([0,0,0,0,1,1,1]):
 
 
 
-### parallel
+## parallel 进程
 
 
 
@@ -3508,6 +3528,7 @@ https://benpaodewoniu.github.io/2022/10/07/python172/  pipe 管道通信
 
 
 ```
+# see /root/huggingface/rwkv5-jp-trimvd/appv2.py -> click_button_asr
 # see /root/huggingface/rwkv5-jp-trimvd/asr.py
 def rec2():
         
