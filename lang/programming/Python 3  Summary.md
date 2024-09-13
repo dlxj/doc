@@ -3508,36 +3508,46 @@ https://benpaodewoniu.github.io/2022/10/07/python172/  pipe 管道通信
 
 
 ```
-import multiprocessing
-conn1, conn2 = multiprocessing.Pipe( [duplex=True] )
-	# True，表示该管道是双向的，即位于 2 个端口的进程既可以发送数据，也可以接受数据。
-	# False，则表示管道是单向的，conn1 只能用来接收数据，而 conn2 只能用来发送数据。
+# see /root/huggingface/rwkv5-jp-trimvd/asr.py
+def rec2():
+        
+    import multiprocessing
 
+    def task_soda_asr(conn2, wav_pth):
+        def result_callback(s, type):
+            """
+            语音识别结果回调
+            """
+            conn2.send(s)
+        
+        client = SodaClient()
 
-import multiprocessing
-import time
+        try:
+            client.start(wav_path=wav_pth, result_callback=result_callback)
+        except KeyboardInterrupt:
+            client.delete()
+        
+        client.delete()
+        conn2.send('<|eNd|>')
 
-
-def processFun(conn):
-    while True:
-        print(conn.recv())
-        print("接收到数据了")
+    conn1, conn2 = multiprocessing.Pipe(False)
+    	# True，表示该管道是双向的，即位于 2 个端口的进程既可以发送数据，也可以接受数据。
+	    # False，则表示管道是单向的，conn1 只能用来接收数据，而 conn2 只能用来发送数据。
+    process = multiprocessing.Process(target=task_soda_asr, args=(conn2, wav))
+    process.start()
+    while process.is_alive():
+        s = conn1.recv()
+        if s == '<|eNd|>':
+            break
+        yield s
 
 
 if __name__ == '__main__':
-    # 创建管道
-    conn1, conn2 = multiprocessing.Pipe(False)
-    # 创建子进程
-    process = multiprocessing.Process(target=processFun, args=(conn1,))
-    # 启动子进程
-    process.start()
-    i = 0
-    while True:
-        time.sleep(1)
-        conn2.send(i)
-        i += 1
 
-
+    it = rec2()
+    for s in it:
+        print(s)
+        
 ```
 
 
