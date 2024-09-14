@@ -31395,7 +31395,23 @@ https://github.com/AGENDD/RWKV-ASR
 
 https://github.com/rhasspy/piper 开源 tts
 
+- https://www.codewithgpu.com/i/RVC-Boss/GPT-SoVITS/GPT-SoVITS-Official [教程](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e/xyyqrfwiu3e2bgyk)
+
+  - ```
+    jupyterlab run:
+    
+    echo {}> ~/GPT-SoVITS/i18n/locale/en_US.json && source activate GPTSoVits && cd ~/GPT-SoVITS/ && python webui.py zh_CN
+    
+    open share link
+    ```
+
+    
+
 - https://github.com/FunAudioLLM/CosyVoice  阿里 tts
+
+  - https://blog.csdn.net/weixin_62798503/article/details/140958562  Cosyvoice 部署
+
+    
 
 https://github.com/theodorblackbird/lina-speech
 
