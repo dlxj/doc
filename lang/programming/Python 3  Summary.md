@@ -5095,6 +5095,17 @@ echo 'the blue dog and blue cat wore blue hats' | sed 's/blue \(dog\|cat\)/gray 
 
 
 
+## 空白符
+
+```
+re.sub(r'[ \t\r\f\v]', '', s) # 空格、制表符、回车符、换页符和垂直制表符
+	# 去掉除换行以外的所有空白符
+```
+
+
+
+
+
 #### named groups
 
 
@@ -10306,6 +10317,10 @@ anaconda3+ paddleOCR安装使用
 - https://blog.csdn.net/u013171226/article/details/115179480
 
 
+
+# GOT-OCR2.0
+
+https://github.com/Ucas-HaoranWei/GOT-OCR2.0
 
 
 

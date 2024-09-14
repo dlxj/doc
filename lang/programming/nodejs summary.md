@@ -8332,6 +8332,19 @@ throw new Error(errMsg)
 
 
 
+## 空白
+
+```
+[^\r\n\S]*
+	# 表示 不是 回车、换行、非空白符，就只能是 空格还有换页和制表符了
+	# \f\t\v 换页符、制表符、垂直制表符
+	# \s 是空白  \S 是非空白
+```
+
+
+
+
+
 ## test
 
 
@@ -31379,6 +31392,10 @@ https://github.com/deepglint/RWKV-CLIP
 ## RWKV speech
 
 https://github.com/AGENDD/RWKV-ASR
+
+https://github.com/rhasspy/piper 开源 tts
+
+- https://github.com/FunAudioLLM/CosyVoice  阿里 tts
 
 https://github.com/theodorblackbird/lina-speech
 
