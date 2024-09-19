@@ -2542,6 +2542,23 @@ raise RuntimeError('some err')
 
 
 
+```python
+#  see gradio440/lib/python3.10/site-packages/jinja2/loaders.py
+		for searchpath in self.searchpath:
+            # Use posixpath even on Windows to avoid "drive:" or UNC
+            # segments breaking out of the search directory.
+            filename = posixpath.join(searchpath, *pieces)
+
+            if os.path.isfile(filename):
+                break
+        else:
+            raise TemplateNotFound(template)
+```
+
+
+
+
+
 ## yield
 
 
@@ -15760,7 +15777,7 @@ https://github.com/gradio-app/gradio/blob/main/js/README.md 前端调试看这�
   	# 生成 gradio-4.16.0-py3-none-any.whl 用于安装
   	# 需要网络的命令全给它加上代理，比全局代理好使
   
-  cd /root/huggingface/gradio && pnpm i --frozen-lockfile --ignore-scripts && 
+  cd /root/huggingface/gradio440 && pnpm i --frozen-lockfile --ignore-scripts && 
   cd js/video && pnpm i --frozen-lockfile --ignore-scripts
   	# 修改原生组件需要这样安装依赖
   	# 出错的话就直接 pnpm i
@@ -15958,6 +15975,7 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode
 ### mypdf
 
 ```
+
 proxychains4 gradio cc create mypdf
 cd mypdf && 
 conda activate gradio440 
@@ -15968,6 +15986,45 @@ proxychains4  gradio cc build
 	
 
 下一步把它移值到 gradio440，因为只有源码编译才能单频调试！
+
+
+改成复制 gradio440 的 image 组件，名字改为 myimage
+	# 注意要复制几个地方
+	
+	demo/myimage_component
+		# 复制这个文件
+	
+	/root/huggingface/gradio440/gradio/components/__init__.py
+		from gradio.components.image import Image
+		from gradio.components.myimage import MyImage 
+			# 加这一行
+	
+	gradio/components/myimage.py
+		# 复制这个文件
+		
+		
+	gradio/__init__.py
+	from gradio.components import (
+    	Image,
+    	MyImage,
+    		# 加这一行
+    		
+    js/myimage
+    	# 复制
+    	
+    package.json
+    	"@gradio/image": "workspace:^",
+		"@gradio/myimage": "workspace:^",
+    		# 加这一行
+    
+proxychains4 pnpm i
+	# 重要
+proxychains4 bash ./build_pypi.sh
+	# 成功
+
+cd demo/myimage_component && 
+python run.py
+	# 成功打开前端
 
 
 ```
