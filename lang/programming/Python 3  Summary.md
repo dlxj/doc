@@ -15965,6 +15965,9 @@ proxychains4 gradio cc install
 gradio cc dev
 proxychains4  gradio cc build
 	# 成功生成 whl 
+	
+
+下一步把它移值到 gradio440，因为只有源码编译才能单频调试！
 
 
 ```
