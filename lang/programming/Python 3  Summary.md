@@ -15953,6 +15953,26 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode
 
 ## compoment
 
+
+
+### mypdf
+
+```
+proxychains4 gradio cc create mypdf
+cd mypdf && 
+conda activate gradio440 
+proxychains4 gradio cc install
+gradio cc dev
+proxychains4  gradio cc build
+	# 成功生成 whl 
+
+
+```
+
+
+
+
+
 ### vsocde 附加调试 gradio
 
 ````
