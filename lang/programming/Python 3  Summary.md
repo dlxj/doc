@@ -15992,6 +15992,8 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode
 
 https://github.com/freddyaboulton/gradio-pdf
 
+- https://github.com/freddyaboulton/gradio-pdf/issues/23  how to build this project
+
 ```
 git clone https://github.com/freddyaboulton/gradio-pdf
 
