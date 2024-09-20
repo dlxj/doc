@@ -1877,6 +1877,54 @@ while data:
 
 
 
+```
+	// huggingface/myvideo/frontend/shared/VideoControls.svelte
+	const handle_change_AB_time__ = (): void => {
+		// 获取AB复读起止时间
+		processingVideo = true;
+		trimVideo(ffmpeg, dragStart, dragEnd, videoElement)
+			.then( async (videoBlob) => {
+
+				// to base64 
+				// var reader = new FileReader();
+				// reader.readAsDataURL(videoBlob);
+				// reader.onload = function() {
+				// 	processingVideo = false;
+				// 	toggleTrimmingMode()
+				// 	handle_change_AB_time([dragStart, dragEnd, reader.result])
+				// };
+				var blob = new Uint8Array(await videoBlob.arrayBuffer())
+				handle_change_AB_time([dragStart, dragEnd, blob])
+			});
+	};
+
+
+	# huggingface/myvideo/demo/app.py
+	def change_ABT(evt: gr.EventData):
+        global mp4
+        [ begintime, endtime, videoBase64UrlEndcode ] = evt._data
+        # if isDebug: print("### change_ABT hit.", evt.target, [ begintime, endtime, videoBase64UrlEndcode ])
+        # data:video/mp4;base64, 需要去掉最前面这一段 mime 它才是纯 base64
+        # videoBase64 = re.compile(r'^data:.+?;base64,').sub('', videoBase64UrlEndcode)
+        # videoBytes = base64.b64decode(videoBase64)
+        videoBytes = bytes(list(videoBase64UrlEndcode.values())) # 改成不传 base64 了; 它返回的是字典
+        trim_dir = os.path.join( os.path.dirname(mp4), f'{Path(mp4).stem}[trim]' )
+        trim_name = f'{Path(mp4).stem}[{begintime}][{endtime}].mp4' # whitout ext
+        if not os.path.exists(trim_dir):
+            os.makedirs(trim_dir)
+            print("Directory '%s' created" % trim_dir)
+        print('write bytes:')
+        with open(os.path.join(trim_dir, trim_name), "wb") as f:
+            f.write(videoBytes)
+        
+        return evt._data
+    out.change_AB_time(change_ABT, None, [])
+```
+
+
+
+
+
 
 
 ### size
