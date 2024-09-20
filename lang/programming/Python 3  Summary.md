@@ -16023,6 +16023,11 @@ proxychains4  gradio cc build
 
 下一步把它移值到 gradio440，因为只有源码编译才能单频调试！
 
+cd demo/mypdf_component && 
+./kill.sh
+cd ../../demo/mypdf_component && conda activate gradio440 && python run.py
+cd ../../demo/mypdf_component && conda activate gradio440 && pnpm dev
+
 
 改成复制 gradio440 的 image 组件，名字改为 myimage
 	# 注意要复制几个地方
