@@ -1582,6 +1582,22 @@ if os.path.exists(path):
 
 
 
+```
+# see gradio440/gradio/components/video.py
+if Path(output_file_name).exists():
+	return output_file_name
+	
+        file_name = Path(payload.video.path)
+        uploaded_format = file_name.suffix.replace(".", "")
+        
+        output_file_name = str(file_name.with_name(f"muted_{file_name.name}"))
+        
+```
+
+
+
+
+
 ### mkdir
 
 ```
@@ -15972,6 +15988,24 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode
 
 
 
+### gradio-pdf
+
+https://github.com/freddyaboulton/gradio-pdf
+
+```
+git clone https://github.com/freddyaboulton/gradio-pdf
+
+cd frontend && 
+proxychains4 pnpm i --no-frozen-lockfile --ignore-scripts && 
+proxychains4 pnpm i --frozen-lockfile --ignore-scripts
+
+proxychains4 gradio cc build
+```
+
+
+
+
+
 ### mypdf
 
 ```
@@ -16026,6 +16060,11 @@ cd demo/mypdf_component &&
 python run.py
 	# 成功打开前端
 	# 改名成 mypdf 了
+
+cd /root/huggingface/gradio440 && proxychains4 pnpm i --no-frozen-lockfile --ignore-scripts && 
+cd js/mypdf && proxychains4 pnpm i --frozen-lockfile --ignore-scripts && 
+cd /root/huggingface/gradio440 && proxychains4 pnpm i --frozen-lockfile --ignore-scripts 
+	# 修改原生组件需要这样安装依赖
 
 
 ```
