@@ -16028,6 +16028,18 @@ cd demo/mypdf_component &&
 cd ../../demo/mypdf_component && conda activate gradio440 && python run.py
 cd ../../demo/mypdf_component && conda activate gradio440 && pnpm dev
 
+# see huggingface/vite-pdf/src/pdf.mjs
+# pdf 库是可以接受 ArrayBuffer 作为参数的
+function getDocument(src = {}) {
+  if (typeof src === "string" || src instanceof URL) {
+    src = {
+      url: src
+    };
+  } else if (src instanceof ArrayBuffer || ArrayBuffer.isView(src)) {
+    src = {
+      data: src
+    };
+  }
 
 改成复制 gradio440 的 image 组件，名字改为 myimage
 	# 注意要复制几个地方
