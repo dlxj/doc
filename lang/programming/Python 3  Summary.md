@@ -16022,9 +16022,10 @@ proxychains4 pnpm i
 proxychains4 bash ./build_pypi.sh
 	# 成功
 
-cd demo/myimage_component && 
+cd demo/mypdf_component && 
 python run.py
 	# 成功打开前端
+	# 改名成 mypdf 了
 
 
 ```
@@ -16033,7 +16034,7 @@ python run.py
 
 
 
-### vsocde 附加调试 gradio
+### vscode 附加调试
 
 ````
 
@@ -16230,6 +16231,46 @@ Python311\Lib\site-packages\gradio\networking.py
 ssh -CNg -L 7861:127.0.0.1:7861 root@172.16.6.253 -p 22
 
 ````
+
+
+
+### vscode 前端调试
+
+```
+# see huggingface/gradio440/.vscode/launch.json
+
+// {
+//     "configurations": [
+//         {
+//             "type": "chrome",
+//             "request": "launch",
+//             "name": "Launch Chrome against localhost",
+//             "url": "http://localhost:9876",
+//             "webRoot": "${workspaceFolder}"
+//         }
+//     ]
+// }
+
+// cd demo/mypdf_component && conda activate gradio440 && python run.py 
+// cd demo/mypdf_component && conda activate gradio440 && pnpm dev
+    // 只有这样运行，它的前端端口才是 9876
+    // 注意：是在 vscode 开两个 terminal 运行上面两个命令
+
+gradio440/js/mypdf/shared/ClearImage.svelte
+	<IconButton
+		Icon={Clear}
+		label="Remove Image"
+		on:click={(event) => {
+			dispatch("remove_image");  # 这行下断点
+			event.stopPropagation();
+		}}
+	/>
+
+vscode F5, 点清除图片按钮成功断下
+
+```
+
+
 
 
 
