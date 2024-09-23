@@ -6880,6 +6880,24 @@ const base64String = await convertBlobToBase64(blob);
 
 
 
+#### base64 to Uint8Array
+
+```
+	function base64ToUint8Array(base64: string) {
+		var binaryString = atob(base64);
+		var len = binaryString.length;
+		var bytes = new Uint8Array(len);
+		for (var i = 0; i < len; i++) {
+			bytes[i] = binaryString.charCodeAt(i);
+		}
+		return bytes;
+	}
+
+	onMount(async () => {
+		data = base64ToUint8Array(pdf_base64_str);
+	});
+```
+
 
 
 

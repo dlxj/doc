@@ -12,6 +12,8 @@ https://imshuai.com/python-pip-install-package-offline-tensorflow  pip离线安�
 
 
 
+
+
 ```
 >>> import blinker
 >>> blinker.__file__
@@ -1443,6 +1445,31 @@ def init_gpt():
 
 
 ```python
+
+orig_name = Path(saved).name if Path(saved).exists() else None
+
+import os, base64
+from pathlib import Path
+
+__dir__ = os.path.dirname(os.path.abspath(__file__))
+
+pth_pdf = str( ( Path(__dir__) / 'invoice_2.pdf' ).resolve() )
+
+def binary_file_to_base64(pth):
+    with open(pth, 'rb') as fp:
+        binary_data = fp.read()
+    base64_str = base64.b64encode(binary_data).decode('utf-8')
+    return base64_str
+
+pdf_base64_str = binary_file_to_base64(pth_pdf)
+
+pdf_bytes = base64.b64decode(pdf_base64_str)
+print('write bytes:')
+with open(str( ( Path(__dir__) / 't.pdf' ).resolve() ), "wb") as f:
+    f.write(pdf_bytes)
+    
+
+
 from pathlib import Path
 import tempfile
         self.GRADIO_CACHE = str(
@@ -1856,6 +1883,35 @@ with open(text_input_path, "r") as text_file, open(bin_output_path, "ab") as bin
                 stripped_line = line.strip()
                 bin_file.write(saved_bin) # b'something'
 ```
+
+
+
+### base64
+
+```
+import os, base64
+from pathlib import Path
+
+__dir__ = os.path.dirname(os.path.abspath(__file__))
+
+pth_pdf = str( ( Path(__dir__) / 'invoice_2.pdf' ).resolve() )
+
+def binary_file_to_base64(pth):
+    with open(pth, 'rb') as fp:
+        binary_data = fp.read()
+    base64_str = base64.b64encode(binary_data).decode('utf-8')
+    return base64_str
+
+pdf_base64_str = binary_file_to_base64(pth_pdf)
+
+pdf_bytes = base64.b64decode(pdf_base64_str)
+print('write bytes:')
+with open(str( ( Path(__dir__) / 't.pdf' ).resolve() ), "wb") as f:
+    f.write(pdf_bytes)
+
+```
+
+
 
 
 
