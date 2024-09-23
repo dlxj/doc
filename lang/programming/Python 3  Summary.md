@@ -16740,6 +16740,61 @@ import { onMount } from "svelte";
 		};
 		# onMount 好像可以返回一个析构函数？ 
 
+        
+ // 前端是没有办法读　OS 路径下的文件的，只能通过接口访问
+
+ see huggingface/vite-pdf/src/App.svelte
+
+ export let data: ArrayBuffer | undefined  = undefined;
+ 
+  onMount(async () => {
+    function get_rawdata(url): Promise<ArrayBuffer | null> {
+      return new Promise( async ( resolve ) => {
+        fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+              console.error('Network response was not ok: ', response.statusText)
+            }
+            return response.blob();
+        })
+        .then((pdfBlob) => {
+          return pdfBlob.arrayBuffer();
+        }).then((arraybuf) =>{
+          let data = arraybuf
+          return resolve(data);
+        })
+        .catch((error) => {
+            console.error('There was a problem with the fetch operation:', error);
+            return resolve(null);
+        });
+      })
+    }
+    data = await get_rawdata('./static/tackling-ts-preview-book.pdf');
+  });
+  
+   {#if data}
+    <Document
+      data={data}
+      on:loadsuccess={(e) => {
+        max_pages = e.detail.numPages;
+        num = Math.min(num, max_pages);
+      }}
+      on:loaderror={(e) => alert(e.detail + '')}
+    >
+      <div>
+        <Page
+          {scale}
+          {num}
+          {renderTextLayer}
+          {rotation}
+          getViewport={sizing === 1 ? undefined : preferThisHeight(target_height)}
+        />
+      </div>
+    </Document>
+  {:else}
+    <p>Loading...</p>
+  {/if}       
+        
 ```
 
 

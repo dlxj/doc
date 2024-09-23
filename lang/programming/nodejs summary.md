@@ -6789,6 +6789,101 @@ try {
 
 ### 浏览器中的 fetch
 
+
+
+#### vite 中的 static 文件
+
+```
+// 前端是没有办法读　OS 路径下的文件的，只能通过接口访问
+
+ see huggingface/vite-pdf/src/App.svelte
+
+ export let data: ArrayBuffer | undefined  = undefined;
+ 
+  onMount(async () => {
+    function get_rawdata(url): Promise<ArrayBuffer | null> {
+      return new Promise( async ( resolve ) => {
+        fetch(url)
+        .then((response) => {
+            if (!response.ok) {
+              console.error('Network response was not ok: ', response.statusText)
+            }
+            return response.blob();
+        })
+        .then((pdfBlob) => {
+          return pdfBlob.arrayBuffer();
+        }).then((arraybuf) =>{
+          let data = arraybuf
+          return resolve(data);
+        })
+        .catch((error) => {
+            console.error('There was a problem with the fetch operation:', error);
+            return resolve(null);
+        });
+      })
+    }
+    data = await get_rawdata('./static/tackling-ts-preview-book.pdf');
+  });
+  
+   {#if data}
+    <Document
+      data={data}
+      on:loadsuccess={(e) => {
+        max_pages = e.detail.numPages;
+        num = Math.min(num, max_pages);
+      }}
+      on:loaderror={(e) => alert(e.detail + '')}
+    >
+      <div>
+        <Page
+          {scale}
+          {num}
+          {renderTextLayer}
+          {rotation}
+          getViewport={sizing === 1 ? undefined : preferThisHeight(target_height)}
+        />
+      </div>
+    </Document>
+  {:else}
+    <p>Loading...</p>
+  {/if}
+  
+```
+
+
+
+#### blob base64 互转
+
+```
+see python summary.md -> gradio -> image -> pixi.js -> blob base64 互转
+
+const base64Data = "aGV5IHRoZXJl";
+const base64 = await fetch(base64Data);
+
+const base64Response = await fetch(`data:image/jpeg;base64,${base64Data}`);
+	# 图片的 base64 的转换比较特殊
+
+const blob = await base64Response.blob();
+
+
+convertBlobToBase64 = (blob) => new Promise((resolve, reject) => {
+    const reader = new FileReader;
+    reader.onerror = reject;
+    reader.onload = () => {
+        resolve(reader.result);
+    };
+    reader.readAsDataURL(blob);
+});
+
+const base64String = await convertBlobToBase64(blob);
+```
+
+
+
+
+
+
+
 #### 流式输出
 
 ```
@@ -6828,6 +6923,7 @@ const response = await fetch('http://et.com:8880/v1/chat/completions', {
           }
         }
       }
+      
 ```
 
 
@@ -11133,6 +11229,23 @@ function getContent(fileName) {
 
       let imgpath = path.join(path_scan, imgName)
       fs.writeFileSync(imgpath, imgBuf)
+```
+
+
+
+## Uint8Array
+
+```
+see gradio440/js/mypdf/Index.svelte
+
+	// data  Uint8Array 
+	// gradio440/js/mypdf/node_modules/pdfjs-dist/build/pdf.js  getDocument
+	var buffer = new Uint8Array(data.buffer, data.byteOffset, data.byteLength);
+	const sharedUint8Array = new Uint8Array(new SharedArrayBuffer(4));
+	var blob = new Uint8Array(await videoBlob.arrayBuffer())
+	
+	let bytes = fs.readFileSync(gifpath)  // 'binary'
+    let b64 = Buffer.from(bytes).toString('base64')  // new Buffer(bytes)
 ```
 
 
