@@ -35609,6 +35609,10 @@ Visual Studio 2022
 
 [tauri](https://github.com/tauri-apps/tauri) 全平台 超多星
 
+- [MirrorX 远程桌面](https://github.com/MirrorX-Desktop/MirrorX) 
+
+[egui](https://github.com/emilk/egui) web+native
+
 [iced GUI对标elm](https://github.com/iced-rs/iced)
 
 - [css](https://github.com/tarkah/iced-snippets/blob/master/snippets/custom-theme/src/main.rs) 样式
