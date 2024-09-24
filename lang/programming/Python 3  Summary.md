@@ -14969,6 +14969,8 @@ revenue.sort_values(ascending=False).index[0]
 
 # duckdb
 
+https://duckdb.org/docs/data/csv/overview.html  csv
+
 https://huggingface.co/docs/datasets-server/duckdb
 
 https://duckdb.org/docs/extensions/httpfs/overview.html
