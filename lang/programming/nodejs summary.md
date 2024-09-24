@@ -35607,6 +35607,8 @@ Visual Studio 2022
 
 [Rust bindings for Godot 4](https://github.com/godot-rust/gdext)
 
+[tauri](https://github.com/tauri-apps/tauri) 全平台 超多星
+
 [iced GUI对标elm](https://github.com/iced-rs/iced)
 
 - [css](https://github.com/tarkah/iced-snippets/blob/master/snippets/custom-theme/src/main.rs) 样式
