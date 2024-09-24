@@ -14971,6 +14971,8 @@ revenue.sort_values(ascending=False).index[0]
 
 https://duckdb.org/docs/data/csv/overview.html  csv
 
+- https://github.com/duckdb/duckdb/issues/7015   nested json
+
 https://huggingface.co/docs/datasets-server/duckdb
 
 https://duckdb.org/docs/extensions/httpfs/overview.html
@@ -15013,6 +15015,29 @@ order by all
 %timeit duckdb.sql(sql).df()
 
 ```
+
+
+
+```
+pip install duckdb --upgrade
+```
+
+
+
+# lmdb
+
+https://www.cnblogs.com/zhangxianrong/p/14919706.html 内存映射 键值数据库
+
+```
+LMDB不仅可以用来存放训练和测试用的数据集，还可以存放神经网络提取出的特征数据。如果数据的结构很简单，就是大量的矩阵和向量，而且数据之间没有什么关联，数据内没有复杂的对象结构，那么就可以选择LMDB这个简单的数据库来存放数据。
+
+用LMDB数据库来存放图像数据，而不是直接读取原始图像数据的原因：
+
+数据类型多种多样，比如：二进制文件、文本文件、编码后的图像文件jpeg、png等，不可能用一套代码实现所有类型的输入数据读取，因此通过LMDB数据库，转换为统一数据格式可以简化数据读取层的实现。
+lmdb具有极高的存取速度，大大减少了系统访问大量小文件时的磁盘IO的时间开销。LMDB将整个数据集都放在一个文件里，避免了文件系统寻址的开销，你的存储介质有多快，就能访问多快，不会因为文件多而导致时间长。LMDB使用了内存映射的方式访问文件，这使得文件内寻址的开销大幅度降低。
+```
+
+
 
 
 

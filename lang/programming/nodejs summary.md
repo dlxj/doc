@@ -23820,6 +23820,8 @@ The easy way to avoid lifetime issues would be to create a PoolByteArray singlet
 
 ### lmdb
 
+https://www.cnblogs.com/zhangxianrong/p/14919706.html
+
 [LMDB-基础结构与Mmap思想](https://www.jianshu.com/p/6378082987ec)
 
 [构建高可用分布式Key-Value存储服务](https://github.com/siddontang/blog/blob/master/before-2016/build-ha-distributed-kv-service.md)
@@ -24179,6 +24181,38 @@ func _process(delta):
 [通过SPINE命令行简化工作](https://zhuanlan.zhihu.com/p/420705994)
 
 [基于Spine动画的AVATAR换装系统优化](https://zhuanlan.zhihu.com/p/445125141)
+
+
+
+```
+Spine 动画确实可以使用 JavaScript 进行控制，从而实现与以前的 Flash 动画类似的交互体验。Spine 提供的各种运行时，尤其是 Spine 网络播放器以及与 PixiJS 等库的集成，为实现这一功能提供了便利。
+Spine 网络播放器
+Spine 网络播放器允许您将 Spine 动画直接嵌入到网络应用程序中。它提供多种可通过 JavaScript 控制的互动功能：
+播放控制： 用户可以暂停、继续播放或刷新动画。
+动画选择： 您可以让用户从可用动画列表中进行选择。
+皮肤选择： 用户可以在动画人物的不同皮肤之间进行切换。
+骨骼操作 播放器支持直接拖动和操作骨骼。
+你可以在初始化播放器时配置这些功能，从而实现高度的交互性。例如，你可以将播放器设置为从特定动画开始，或根据需要限制可用动画。
+将 PixiJS 与 Spine 结合使用
+对于更复杂的交互，将 Spine 与 PixiJS 集成是一种流行的方法。这种设置允许对动画和用户交互进行高级控制：
+鼠标交互： 您可以跟踪鼠标移动，并操纵骨架组件（如眼睛）以跟随光标移动。
+事件处理： 您可以在动画中的指定点触发特定操作（如播放音效或更改状态）。
+
+const spine = new PIXI.spine.Spine(spineData);
+spine.state.setAnimation(0, 'walk', true);
+
+// Tracking mouse position to move eyes
+app.stage.addChild(spine);
+app.renderer.plugins.interaction.on('mousemove', (event) => {
+    const mousePosition = event.data.global;
+    // Logic to adjust eye position based on mousePosition
+});
+
+```
+
+
+
+
 
 ```
 Note: This is about 2d rigged animations
