@@ -23926,6 +23926,12 @@ if OS.has_feature('JavaScript'):
 
 
 
+### javascript 回调
+
+https://godotforums.org/d/31671-js-event-listener-inside-gdscript/4
+
+
+
 ## video
 
 [godot-video-rendering-demo](https://github.com/Calinou/godot-video-rendering-demo) need  Godot 3.1 beta 8
@@ -24231,6 +24237,11 @@ Godot's built-in animation system isn't bad for simple cut-out animations. Tween
 
 
 ### spine-pixi
+
+https://github.com/dlxj/spineboy-demo 完全可交互动画
+
+- https://engineering.cocone.io/2023/08/17/pixijs-spine-2danimation/
+- https://codesandbox.io/p/sandbox/spineboy-demo-forked-yvpn3m  在线运行 它还可以云开发
 
 https://github.com/EsotericSoftware/spine-runtimes/tree/4.2/spine-ts
 
