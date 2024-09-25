@@ -24243,6 +24243,10 @@ https://github.com/dlxj/spineboy-demo 完全可交互动画
 - https://engineering.cocone.io/2023/08/17/pixijs-spine-2danimation/
 - https://codesandbox.io/p/sandbox/spineboy-demo-forked-yvpn3m  在线运行 它还可以云开发
 
+
+
+https://en.esotericsoftware.com/forum/d/26132-%E5%85%B3%E4%BA%8Epixijs%E4%BD%BF%E7%94%A8spine%E7%9A%84%E4%B8%80%E4%BA%9B%E7%96%91%E9%97%AE 必看
+
 https://github.com/EsotericSoftware/spine-runtimes/tree/4.2/spine-ts
 
 
