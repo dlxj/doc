@@ -4329,7 +4329,7 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 
 
 
-## 抱抱脸 
+## 抱抱脸
 
 [如何上传大文件](https://zhuanlan.zhihu.com/p/473651876)
 
@@ -30213,6 +30213,8 @@ https://linux.do/t/topic/125092/3
 - [并行训练 Context Parallelism](https://zhuanlan.zhihu.com/p/698447429)
 
 [梳理RWKV 4，5(Eagle)，6(Finch)架构的区别](https://zhuanlan.zhihu.com/p/694348918)
+
+- https://zhuanlan.zhihu.com/p/730714110 **depyf**：轻松掌握 torch.compile
 
 https://github.com/00ffcc/chunkRWKV6
 
