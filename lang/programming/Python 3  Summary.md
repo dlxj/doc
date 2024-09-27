@@ -10934,6 +10934,66 @@ for text in it:
 
 
 
+### 6.  numpy 和 string 互转
+
+```
+# see /root/huggingface/rwkv_mnist/train.py
+		im = cv2.imread(path)
+        im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+
+        """
+        输入：im.shape，  可以看到维度是 (28, 28)
+              im，       可以看到数值范围是 0 ~ 255
+              im/255     可以看到数值范围变成了 0.0 ~ 1.0
+        """
+        # import pdb; pdb.set_trace() # 调试， exit 退出
+
+        # im = im / 255
+        
+        #ret, thresh1 = cv2.threshold(im, 120, 255, cv2.THRESH_BINARY)
+        
+        # thresh = cv2.adaptiveThreshold(im, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 199, 5) 
+        ret, otsu_threshold = cv2.threshold(im, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            # 二值化
+            
+        im_str = str( otsu_threshold.tolist() )
+        im_json = json.loads(im_str)
+        im_array = np.array(im_json, dtype='uint8')       
+         
+        cv2.imshow('image', im_array)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+```
+
+
+
+#### 图片转 string 给 rwkv 用
+
+```
+# see /root/huggingface/rwkv_mnist/train.py
+
+		im = cv2.imread(path)
+        im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+
+        ret, otsu_threshold = cv2.threshold(im, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            # 二值化
+            
+        otsu_threshold = otsu_threshold / 255
+        otsu_threshold = np.array(otsu_threshold, dtype='uint8') 
+            
+        im_str = str( otsu_threshold.tolist() )  # 给 rwkv 作为图片用
+        im_json = json.loads(im_str)
+        im_array = np.array(im_json, dtype='uint8')  
+        im_array = im_array * 255
+            # 给 rwkv 作为图片用的图片string 恢复为正常图片的方法
+```
+
+
+
+
+
+
+
 ## simple.cs
 
 ```
