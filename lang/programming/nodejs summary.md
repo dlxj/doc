@@ -30774,6 +30774,8 @@ v4neo 可以用v4 代码推理，**v5 用 v4 推理出错**
 
 #### RWKV5
 
+https://github.com/TencentEdgeOne/pages-templates/tree/main/examples/chrome-ai  chrome 内置AI
+
 
 
 ```
