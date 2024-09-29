@@ -5030,6 +5030,24 @@ r'@*?([1-9][0-9]*\.[^0-9a-zA-Z].+?)\n' # . 后面不能出现特定字符
 ### 提取
 
 ```python
+s = "* もうすごく幸せ信じられないぐらいに あなたがいて私と一緒にいてくれて、 そ れ が も う す ご く 嬉 し い な"
+
+import re
+will_be_replace = []
+if match := re.compile("((?:\S\ ){2,999})").findall(s):
+    for text in match:
+        replace = text.replace(" ","")
+        will_be_replace.append( {"text": text, "replace": replace} )
+        pass
+
+s = s.replace("* ", "")
+for item in will_be_replace:
+    s = s.replace(item["text"], item["replace"], 1)
+```
+
+
+
+```python
 print( re.compile('([一二三四五六七八九十]+)').search('三四五').group(1) )
 ```
 
