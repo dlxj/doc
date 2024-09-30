@@ -31577,6 +31577,29 @@ https://github.com/deepglint/RWKV-CLIP
 
 https://github.com/AGENDD/RWKV-ASR
 
+- https://huggingface.co/datasets/joujiboi/japanese-anime-speech-v2  超大的 jp 语音数据集
+
+  - ```
+    # pip install datasets soundfile
+    
+    from datasets import load_dataset
+    dataset = load_dataset("parquet", data_files={'train': 'nsfw-00000-of-00006.parquet' })
+    
+    audio = dataset['train'][0]['audio']
+    transcription = dataset['train'][0]['transcription']
+    ```
+
+    
+
+- https://github.com/Tele-AI/TeleSpeech-ASR 
+
+  - ```
+    模型输入为从16K采样率音频中提取的40维mfcc特征，非原始音频
+    利用kaldi提取40维mfcc特征 
+    ```
+
+    
+
 https://github.com/rhasspy/piper 开源 tts
 
 - https://www.codewithgpu.com/i/RVC-Boss/GPT-SoVITS/GPT-SoVITS-Official [教程](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e/xyyqrfwiu3e2bgyk)
