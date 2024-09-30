@@ -31587,6 +31587,54 @@ https://github.com/AGENDD/RWKV-ASR
     
     audio = dataset['train'][0]['audio']
     transcription = dataset['train'][0]['transcription']
+    
+    from torch.utils.data import Dataset
+    class MyDataset(Dataset):
+        def __init__(self, args, hf_dataset):
+            self.args = args
+            self.hf_dataset = hf_dataset[args.op]
+    
+        def __len__(self):
+            return len(self.hf_dataset)
+    
+        def __getitem__(self, idx):
+            
+            while(True):
+                try:
+                    sample = self.hf_dataset[idx]
+                    break
+                except:
+                    idx = idx+1
+            
+            transcription = sample['transcription']
+            audio = sample['audio']['array']
+            audio = librosa.resample(audio,orig_sr= 48000,target_sr= 16000)
+            
+            return audio, transcription
+            
+    
+    # main.py
+    # pip install datasets soundfile
+    from datasets import load_dataset
+    dataset = load_dataset("parquet", data_files={'train': 'nsfw-00000-of-00006.parquet' })
+    
+    nrows = len(dataset['train'])
+    
+    audio = dataset['train'][0]['audio']
+    transcription = dataset['train'][0]['transcription']
+    
+    from src.dataset2 import MyDataset 
+    
+    
+    class AttributeDict(dict):
+        def __getattr__(self, attr):
+            return self[attr]
+        def __setattr__(self, attr, value):
+            self[attr] = value
+    
+    mydataset = MyDataset(AttributeDict({"op":"train"}), dataset)
+    
+    audio, transcription = mydataset[0]
     ```
 
     
