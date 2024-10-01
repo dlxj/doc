@@ -31586,6 +31586,11 @@ https://github.com/AGENDD/RWKV-ASR
         # http://openslr.trmal.net/resources/12/train-clean-100.tar.gz
             # 正常下载
     
+    from datasets import load_dataset, DownloadManager
+    dl_manager = DownloadManager()
+    local_extracted_archive = dl_manager.extract("train-clean-100.tar.gz")
+    	# 手动下载数据集后成功加载
+    
     # load_dataset("${local_path}/librispeech_asr.py")
     
     # load_dataset("${hugging_face_username}/librispeech_asr")
