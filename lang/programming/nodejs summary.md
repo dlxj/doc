@@ -31580,6 +31580,20 @@ https://github.com/AGENDD/RWKV-ASR
 - https://huggingface.co/datasets/joujiboi/japanese-anime-speech-v2  超大的 jp 语音数据集
 
   - ```
+    
+    # https://github.com/huggingface/datasets/issues/4179
+        # https://huggingface.co/datasets/openslr/librispeech_asr/blob/main/librispeech_asr.py
+        # http://openslr.trmal.net/resources/12/train-clean-100.tar.gz
+            # 正常下载
+    
+    # load_dataset("${local_path}/librispeech_asr.py")
+    
+    # load_dataset("${hugging_face_username}/librispeech_asr")
+    
+    from datasets import load_dataset
+    load_dataset('librispeech_asr.py', trust_remote_code=True)
+    	# 自动下载
+    
     # pip install datasets soundfile
     
     from datasets import load_dataset
@@ -31636,7 +31650,7 @@ https://github.com/AGENDD/RWKV-ASR
     
     audio, transcription = mydataset[0]
     ```
-
+    
     
 
 - https://github.com/Tele-AI/TeleSpeech-ASR 
