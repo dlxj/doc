@@ -31581,6 +31581,10 @@ https://github.com/deepglint/RWKV-CLIP
 
 https://github.com/AGENDD/RWKV-ASR
 
+- https://huggingface.co/openai/whisper-large-v3-turbo  openai 多语言识别
+  - https://huggingface.co/spaces/hf-audio/whisper-large-v3-turbo 在线使用
+  - https://github.com/openai/whisper/discussions/2363 官方代码
+
 - https://huggingface.co/datasets/joujiboi/japanese-anime-speech-v2  超大的 jp 语音数据集
 
   - ```
