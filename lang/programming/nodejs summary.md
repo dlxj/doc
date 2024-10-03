@@ -4341,6 +4341,10 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 
 - ```
   
+  huggingface-cli download --repo-type dataset OOPPEENN/Galgame_Dataset --local-dir Galgame_Dataset
+  	# 不要用git直接拉仓库，git lfs会占用双倍空间！
+  	# see echodict/README.md -> 
+  
   SODAModels/**/* filter=lfs diff=lfs merge=lfs -text
   	# .gitattributes 文件夹的写法
   
