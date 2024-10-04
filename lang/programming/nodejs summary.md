@@ -36849,6 +36849,7 @@ cmake --build . --target package
 ##### manga-ocr
 
 - https://github.com/kha-white/manga-ocr
+- https://github.com/dmMaze/BallonsTranslator  漫画自动翻译
 
 
 
