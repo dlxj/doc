@@ -35104,6 +35104,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 [FramePFX](https://github.com/AngryCarrot789/FramePFX) 视频编辑 必看
 
+[subtitleedit](https://github.com/SubtitleEdit/subtitleedit)
+
 - ```
   
   see huggingface\FramePFX
