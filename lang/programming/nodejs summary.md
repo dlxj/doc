@@ -35106,6 +35106,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 [subtitleedit](https://github.com/SubtitleEdit/subtitleedit)
 
+[LunaTranslator](https://github.com/HIllya51/LunaTranslator) 游戏翻译 python
+
 [SakuraTranslator](https://github.com/fkiliver/SakuraTranslator)  游戏翻译
 
 - ```
