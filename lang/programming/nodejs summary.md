@@ -31582,6 +31582,11 @@ https://github.com/deepglint/RWKV-CLIP
 https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scrollTo=a2787582-554f-44ce-9f38-4180a5ed6b44  **Whisper_w_PEFT**
 
 - https://github.com/openai/whisper/discussions/2363  **fine_tune_whisper** 
+
+  - ```
+    pip install -q transformers datasets librosa evaluate jiwer gradio bitsandbytes==0.38.0.post1 accelerate
+    ```
+
   - whisper-large-v3-turbo 是**官方蒸溜版**
 
 - https://huggingface.co/datasets/mozilla-foundation/common_voice_13_0  多国语言数据集很不错
