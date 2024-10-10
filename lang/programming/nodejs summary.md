@@ -31579,6 +31579,20 @@ https://github.com/deepglint/RWKV-CLIP
 
 ## RWKV speech
 
+https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scrollTo=a2787582-554f-44ce-9f38-4180a5ed6b44  **Whisper_w_PEFT**
+
+- https://huggingface.co/datasets/mozilla-foundation/common_voice_13_0  多国语言数据集很不错
+
+https://github.com/modelscope/FunASR
+
+- ```
+  pip install funasr
+  # protobuf==5.28.2
+  # funasr==1.1.10
+  ```
+
+  
+
 https://github.com/AGENDD/RWKV-ASR
 
 - https://huggingface.co/openai/whisper-large-v3-turbo  openai 多语言识别
