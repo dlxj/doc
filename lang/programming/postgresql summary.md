@@ -66,6 +66,40 @@ cat /var/lib/pgsql/13/data/postgresql.conf
 
 
 
+### AlmaLinux 9.3
+
+```
+cat /etc/redhat-release
+
+AlmaLinux release 9.3 (Shamrock Pampas Cat)
+
+
+# Install the repository RPM:
+sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+# Disable the built-in PostgreSQL module:
+sudo dnf -qy module disable postgresql
+
+# Install PostgreSQL:
+sudo dnf install -y postgresql17-server
+
+# Optionally initialize the database and enable automatic start:
+sudo /usr/pgsql-17/bin/postgresql-17-setup initdb
+sudo systemctl enable postgresql-17
+sudo systemctl start postgresql-17
+
+
+sudo -u postgres psql
+select version();
+\password postgres  # 修改密码
+\q
+
+```
+
+
+
+
+
 
 
 ### 免安装配置
