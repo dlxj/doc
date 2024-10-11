@@ -139,6 +139,26 @@ systemctl restart postgresql-17
 systemctl status postgresql-17
 
 
+
+yum groupinstall "Development Tools" && \
+yum install llvm-toolset-7-clang && \
+yum install postgresql17-devel && \
+yum install postgresql17-contrib && \
+yum install systemtap-sdt-devel
+
+
+git clone https://github.com/postgrespro/rum && \
+cd rum && \
+export PATH=$PATH:/usr/pgsql-17/bin/ && \
+make USE_PGXS=1 && \
+make USE_PGXS=1 install
+
+make USE_PGXS=1 installcheck && \
+psql DB -c "CREATE EXTENSION rum;"
+
+
+
+
 ```
 
 
