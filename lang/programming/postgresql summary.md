@@ -158,6 +158,19 @@ psql DB -c "CREATE EXTENSION rum;"
 
 
 
+CREATE TABLE IF NOT EXISTS test_vector (
+    ID integer generated always as identity,
+    AppID integer NOT NULL,
+    TestID integer NOT NULL,
+    ChildTableID integer NOT NULL,
+    S_Test text NOT NULL,
+    V_Test tsvector,
+    Enabled boolean,
+    UNIQUE(ID),  
+    PRIMARY KEY (AppID, TestID, ChildTableID) 
+);
+
+
 
 ```
 
