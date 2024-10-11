@@ -171,6 +171,36 @@ pm2 monit
 
 
 
+## install cuda11.8
+
+```
+install cuda 11.8
+
+update-alternatives --remove cuda /usr/local/cuda-12.2
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118
+ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+
+vi ~/.bashrc 
+
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
+fi
+export LD_LIBRARY_PATH
+
+export PATH=/usr/local/cuda/bin:$PATH
+
+
+source ~/.bashrc 
+
+nvcc --version
+```
+
+
+
 
 
 ## vscode hotkey
@@ -31580,6 +31610,38 @@ https://github.com/deepglint/RWKV-CLIP
 ## RWKV speech
 
 https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scrollTo=a2787582-554f-44ce-9f38-4180a5ed6b44  **Whisper_w_PEFT**
+
+- ```
+  ln -sfT /etc/alternatives/cuda /usr/local/cuda
+  update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118
+  ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda
+  ln -sfT /etc/alternatives/cuda /usr/local/cuda
+  nvcc --version
+  	# 11.8 成功编译
+  
+  # https://huggingface.co/docs/bitsandbytes/main/en/installation#multi-backend
+  ! apt-get install -y build-essential cmake
+  ! git clone https://github.com/bitsandbytes-foundation/bitsandbytes.git && cd bitsandbytes/
+  ! cd bitsandbytes && pip install -r requirements-dev.txt
+  # set(CMAKE_CUDA_ARCHITECTURES "native") 修改 CMakeList.txt, 加在 project(bitsandbytes LANGUAGES CXX) 下面
+  ! cd bitsandbytes && cmake -DCOMPUTE_BACKEND=cuda -S .
+  ! cd bitsandbytes && make
+  ! cd bitsandbytes && pip install -e .
+      # 装完成后 AttributeError: module 'bitsandbytes.nn
+      # 先 pip uninstall bitsandbytes , 再 pip install bitsandbytes 就正常了
+      
+  model_name_or_path = "openai/whisper-large-v2"
+  task = "transcribe"
+  
+  from transformers import WhisperForConditionalGeneration, BitsAndBytesConfig
+  quantization_config = BitsAndBytesConfig(load_in_8bit=True)
+  model = WhisperForConditionalGeneration.from_pretrained(model_name_or_path, quantization_config=quantization_config, device_map="auto")
+      
+      
+    
+  ```
+
+  
 
 - https://github.com/openai/whisper/discussions/2363  **fine_tune_whisper** 
 

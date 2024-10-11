@@ -542,6 +542,30 @@ PGPASSWORD="xxx" psql -h 127.0.0.1 -p 5432 -U postgres -d anime -f anime_2021-07
 
 
 
+## 向量查询
+
+https://liaoxuefeng.com/blogs/all/2023-08-10-ai-search-engine-by-postgres/
+
+```
+其中，embedding <=> %s是pgvector按余弦距离查询的语法，值越小表示相似度越高，取相似度最高的3个文档。
+
+用Python配合psycopg2查询代码如下：
+
+def db_select_by_embedding(embedding: np.array):
+    sql = 'SELECT id, name, content, embedding <=> %s AS distance FROM docs ORDER BY embedding <=> %s LIMIT 3'
+    with db_conn() as conn:
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        values = (embedding, embedding)
+        cursor.execute(sql, values)
+        results = cursor.fetchall()
+        cursor.close()
+        return results
+```
+
+
+
+
+
 ## 跨库查询
 
 - https://cloud.tencent.com/document/product/409/67298
