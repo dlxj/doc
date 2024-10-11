@@ -69,6 +69,7 @@ cat /var/lib/pgsql/13/data/postgresql.conf
 ### AlmaLinux 9.3
 
 ```
+
 cat /etc/redhat-release
 
 AlmaLinux release 9.3 (Shamrock Pampas Cat)
@@ -93,6 +94,50 @@ sudo -u postgres psql
 select version();
 \password postgres  # 修改密码
 \q
+
+postgres 	pt41
+	# 用户名 密码
+
+psql -h 127.0.0.1 -p 5432 -U postgres
+	# 成功登录
+
+mkdir /home/psqldata
+
+chown -R postgres:postgres /home/psqldata
+
+
+
+ systemctl stop postgresql-17
+
+cp -R /var/lib/pgsql/17/data /home/psqldata   # 只能透亮换柱了
+
+mv /var/lib/pgsql/17/data /var/lib/pgsql/17/data__link__to_home_psqldata
+
+ln -s  /home/psqldata/data  /var/lib/pgsql/17/data
+			# unlink 取消软链用这个
+
+chown -R postgres:postgres /home/psqldata
+
+
+
+systemctl start postgresql-17
+
+systemctl status postgresql-17
+
+
+
+# 允许运程连接
+vi /var/lib/pgsql/17/data/postgresql.conf
+	listen_addresses = '*' # 改成这个
+vi /var/lib/pgsql/17/data/pg_hba.conf
+hostnossl    all          all            0.0.0.0/0  md5  
+	# hostnossl    all          all            0.0.0.0/0  trust  # 任何密码都能连
+	# 加在最后面，接受所有远程IP
+
+
+systemctl restart postgresql-17
+systemctl status postgresql-17
+
 
 ```
 
