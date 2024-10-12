@@ -6826,26 +6826,34 @@ try {
 https://oxylabs.io/resources/integrations/node-fetch
 
 ```
-
-npm install node-fetch@2 https-proxy-agent
-
-const fetch = require('node-fetch');
-const { HttpsProxyAgent } = require('https-proxy-agent');
-
 (async () => {
-  try {
-    for (let i = 0; i < proxyUrls.length; i++) {
-      const proxyAgent = new HttpsProxyAgent(proxyUrls[i]);
-      const response = await fetch("https://ip.oxylabs.io/location", {
-        agent: proxyAgent,
-      });
-      const data = await response.text();
-      console.log(data);
-    }
-  } catch (e) {
-    console.error(e.message);
+
+  // npm install node-fetch@2 https-proxy-agent
+
+  const fetch = require('node-fetch')
+  const { HttpsProxyAgent } = require('https-proxy-agent')
+
+  const proxyAgent = new HttpsProxyAgent('http://127.0.0.1:5782')
+  const response = await fetch("https://api.openai.com/v1/embeddings", {
+    method:"post", 
+    headers: {
+        "Content-Type": "application/json;chart-set:utf-8",
+        "Authorization": "Bearer apikey here"
+    },
+    body: JSON.stringify({
+      "model": "text-embedding-ada-002",
+      "encoding_format": "float",
+      "input":"什么什么向量"
+    }), 
+    agent: proxyAgent,
+  });
+
+  if (response.status == 200) {
+    let data = await response.json()
+    embedding= data.data[0].embedding  // 1536
   }
-})();
+
+})()
 ```
 
 
