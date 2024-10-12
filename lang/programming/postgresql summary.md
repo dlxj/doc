@@ -170,6 +170,8 @@ CREATE TABLE IF NOT EXISTS test_vector (
     PRIMARY KEY (AppID, TestID, ChildTableID) 
 );
 
+CREATE INDEX idx_appid ON test_vector (AppID);
+
 
 
 ```

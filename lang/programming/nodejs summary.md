@@ -6821,6 +6821,37 @@ try {
 
 
 
+#### 代理
+
+https://oxylabs.io/resources/integrations/node-fetch
+
+```
+
+npm install node-fetch@2 https-proxy-agent
+
+const fetch = require('node-fetch');
+const { HttpsProxyAgent } = require('https-proxy-agent');
+
+(async () => {
+  try {
+    for (let i = 0; i < proxyUrls.length; i++) {
+      const proxyAgent = new HttpsProxyAgent(proxyUrls[i]);
+      const response = await fetch("https://ip.oxylabs.io/location", {
+        agent: proxyAgent,
+      });
+      const data = await response.text();
+      console.log(data);
+    }
+  } catch (e) {
+    console.error(e.message);
+  }
+})();
+```
+
+
+
+
+
 ### 浏览器中的 fetch
 
 
@@ -31611,7 +31642,17 @@ https://github.com/deepglint/RWKV-CLIP
 
 https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scrollTo=a2787582-554f-44ce-9f38-4180a5ed6b44  **Whisper_w_PEFT**
 
+- https://huggingface.co/docs/datasets/audio_dataset 创建音频数据集
+
+  - ```
+    
+    ```
+
+  - 
+
 - ```
+  # huggingface/colab_Whisper_w_PEFT/main.py
+  
   ln -sfT /etc/alternatives/cuda /usr/local/cuda
   update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118
   ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda
@@ -31638,11 +31679,11 @@ https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scroll
   model = WhisperForConditionalGeneration.from_pretrained(model_name_or_path, quantization_config=quantization_config, device_map="auto")
       
       
-    
+  
   ```
 
   
-
+  
 - https://github.com/openai/whisper/discussions/2363  **fine_tune_whisper** 
 
   - ```
