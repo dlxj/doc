@@ -31653,9 +31653,18 @@ https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scroll
 - https://huggingface.co/docs/datasets/audio_dataset 创建音频数据集
 
   - ```
+    # see huggingface/common_voice_17_0/train.py
+    array = common_voice["train"][0]["audio"]["array"]
+    
+    import torch, numpy as np, torchaudio
+     
+    tensor = torch.tensor(np.array( array, dtype='float32'))
+    
+    sampling_rate = 48000
+    torchaudio.save("t.wav", tensor.unsqueeze(0), sampling_rate, bits_per_sample=16)
     
     ```
-
+    
   - 
 
 - ```
