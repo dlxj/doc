@@ -15686,6 +15686,8 @@ https://github.com/encode/databases 异步查 db
 
 see https://huggingface.co/spaces/dlxjj/rwkv5-jp-explain
 
+see https://modelscope.cn/studios/aihobbyist/Anime_GPT-Sovits 国内gradio **原神音频数据集** nodejsmd rwkv
+
 see https://github.com/gradio-app/gradio/issues/1349 auto play
 
 see https://github.com/gradio-app/gradio/issues/2945 **subtitle** [1](https://github.com/tomchang25/gradio/tree/main/demo/video_subtitle)

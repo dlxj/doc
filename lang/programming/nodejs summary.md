@@ -31652,6 +31652,8 @@ https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scroll
 
 - https://huggingface.co/docs/datasets/audio_dataset 创建音频数据集
 
+  - https://modelscope.cn/studios/aihobbyist/Anime_GPT-Sovits  国内gradio **原神音频数据集**
+
   - ```
     # see huggingface/common_voice_17_0/train.py
     array = common_voice["train"][0]["audio"]["array"]
