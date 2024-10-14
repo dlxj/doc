@@ -1886,6 +1886,73 @@ with open(text_input_path, "r") as text_file, open(bin_output_path, "ab") as bin
 
 
 
+#### 1T 日语音频
+
+```
+
+# see nodejs summary.md -> rwkv speech -> 1T 日语语料
+# https://huggingface.co/datasets/reazon-research/reazonspeech/blob/main/reazonspeech.py
+
+_BASE_URL = "https://reazonspeech.s3.abci.ai/"
+_AUDIO_V2 = "v2/{:03x}.tar"
+
+_DATASETS = {
+    "tiny":      {"tsv": 'v2-tsv/tiny.tsv',   "audio": _AUDIO_V2, "nfiles": 1},
+    "small":     {"tsv": 'v2-tsv/small.tsv',  "audio": _AUDIO_V2, "nfiles": 12},
+    "medium":    {"tsv": 'v2-tsv/medium.tsv', "audio": _AUDIO_V2, "nfiles": 116},
+    "large":     {"tsv": 'v2-tsv/large.tsv',  "audio": _AUDIO_V2, "nfiles": 579},
+    "all":       {"tsv": 'v2-tsv/all.tsv',    "audio": _AUDIO_V2, "nfiles": 4096},
+}
+
+ds = {"tsv": 'v2-tsv/all.tsv',    "audio": _AUDIO_V2, "nfiles": 4096}
+
+url_tsv = _BASE_URL + ds['tsv']
+    # https://reazonspeech.s3.abci.ai/v2-tsv/all.tsv
+
+url_tar = [ _BASE_URL + ds["audio"].format(idx) for idx in range(ds["nfiles"]) ]
+    # https://reazonspeech.s3.abci.ai/v2/000.tar
+    # https://reazonspeech.s3.abci.ai/v2/fff.tar
+
+
+# proxychains4 apt install aria2 -y
+from pathlib import Path
+import subprocess, os
+dir_dst = '/mnt/y/ai/reazonspeech_Dataset'
+for idx, url in enumerate(url_tar):
+    name = url.split('/')[-1]
+    dst = (Path(dir_dst) / name).resolve()
+    if dst.exists():
+        continue
+    
+    # aria2c --http-proxy "http://192.168.1.8:5782"  -d /mnt -o 001.tar "https://reazonspeech.s3.abci.ai/v2/001.tar"
+        # .77 上能成功下载
+    
+    out_bytes = subprocess.check_output([
+        "aria2c", 
+        "--http-proxy", "http://192.168.1.8:5782", 
+        "-d", f"{dir_dst}", 
+        "-o", f"{name}",
+        url
+    ])
+    out_text = out_bytes.decode('utf-8')
+    
+    if "(OK):download completed." in out_text:
+        print( f"{name} success download. {idx+1} / {len(url_tar)}" )
+    else:
+        print( f"{name} fail download." )
+        if dst.exists():
+            os.remove( str(dst) )
+    # cmd = f"ffprobe -i {input_video} -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1"
+    # out_bytes = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT)
+    
+    pass
+
+```
+
+
+
+
+
 ### base64
 
 ```
