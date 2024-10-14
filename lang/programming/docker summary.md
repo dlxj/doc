@@ -421,6 +421,18 @@ Host 209.141.34.77
 
 
 
+# docker-in-docker
+
+https://www.zhaowenyu.com/docker-doc/dind/docker-in-docker.html
+
+```
+kicbase 提供了完整的隔离环境，也提供 systemd 的系统服务的管理，和 VM 虚拟机使用体验很相似，也可以安装启动其他 systed 服务。
+
+minikube 社区使用 kicbase 就用来提供类似虚拟化 VM 的驱动，使用该驱动来运行 Kubernetes 集群的。
+```
+
+
+
 
 
 # 移除镜像
