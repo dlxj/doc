@@ -4888,6 +4888,24 @@ class Pair:
 
 
 
+### similarity
+
+```
+def similarity(t1, t2):
+    s1, s2 = set(t1), set(t2)
+   
+    intersection = list(s1.intersection(s2))  # 交集  Or t & s
+    union = list(s1.union(set(s2))) # 并集
+    
+    sim = len(intersection) / len(union)
+    
+    return sim
+```
+
+
+
+
+
 ### jieba
 
 
