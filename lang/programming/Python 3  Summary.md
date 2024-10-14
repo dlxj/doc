@@ -1929,6 +1929,44 @@ for chunk in chunks:
     it = asr_rec(byte_array)
     for s in it:
       print(s)
+
+# huggingface/colab_Whisper_w_PEFT/kotoba_asr.py
+def convert_audio(pth_media):
+    import subprocess
+    from io import BytesIO
+    audio_bytes = BytesIO()
+    
+    command = [
+        'ffmpeg',
+        '-i', pth_media,
+        '-metadata', 'encoder=Lavf58.45.100',
+        '-t', '60',
+        '-acodec', 'pcm_s16le',
+        '-ar', '16000',
+        '-ac', '1',
+        '-b:a', '256k',
+        '-f', 'wav',         
+        'pipe:1'
+    ]
+
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE
+    )
+
+    stdout, stderr = process.communicate()
+
+    audio_bytes.write(stdout)
+        # audio_bytes 是内存流，用起来就像普通的文件指针
+
+    audio_bytes.seek(0)
+
+    if stderr:
+        print(f"Error: {stderr.decode()}")
+
+    return audio_bytes.read()
+
 ```
 
 
@@ -6508,6 +6546,55 @@ sys.stdout.write("\rIteration: {} and {}".format(i + 1, j + 1))
 
 
 ```python
+
+see huggingface/rwkv5-jp-trimvd/vad.py
+
+# tensor 转 bytes
+for chunk in chunks:
+    np_array = chunk.numpy()
+    byte_array = np_array.tobytes()
+    it = asr_rec(byte_array)
+    for s in it:
+      print(s)
+
+# huggingface/colab_Whisper_w_PEFT/kotoba_asr.py
+def convert_audio(pth_media):
+    import subprocess
+    from io import BytesIO
+    audio_bytes = BytesIO()
+    
+    command = [
+        'ffmpeg',
+        '-i', pth_media,
+        '-metadata', 'encoder=Lavf58.45.100',
+        '-t', '60',
+        '-acodec', 'pcm_s16le',
+        '-ar', '16000',
+        '-ac', '1',
+        '-b:a', '256k',
+        '-f', 'wav',         
+        'pipe:1'
+    ]
+
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE
+    )
+
+    stdout, stderr = process.communicate()
+
+    audio_bytes.write(stdout)
+        # audio_bytes 是内存流，用起来就像普通的文件指针
+
+    audio_bytes.seek(0)
+
+    if stderr:
+        print(f"Error: {stderr.decode()}")
+
+    return audio_bytes.read()
+
+
 
 see huggingface/myvideo/readme.txt
     /root/miniforge3/envs/gradiomyvideo/lib/python3.10/site-packages/gradio/cli/commands/components/dev.py
