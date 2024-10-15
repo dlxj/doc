@@ -3213,6 +3213,7 @@ nameserver 8.8.8.8
 		
 
 proxychains4 curl https://www.youtube.com
+
 	# 成功
 ```
 
@@ -3222,8 +3223,19 @@ proxychains4 curl https://www.youtube.com
 
 https://github.com/v2rayA/v2raya-openwrt
 
+https://v2raya.org/en/docs/prologue/installation/debian/
+
+https://github.com/v2fly/v2ray-core
+
 ```
-https://github.com/v2rayA/v2raya-openwrt
+wget -qO - https://apt.v2raya.org/key/public-key.asc | sudo tee /etc/apt/keyrings/v2raya.asc && 
+echo "deb [signed-by=/etc/apt/keyrings/v2raya.asc] https://apt.v2raya.org/ v2raya main" | sudo tee /etc/apt/sources.list.d/v2raya.list && 
+apt update
+
+sudo apt install v2raya v2ray
+
+systemctl start v2raya.service
+
 
 ```
 
