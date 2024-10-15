@@ -3219,6 +3219,81 @@ proxychains4 curl https://www.youtube.com
 
 
 
+### 订阅地址解析
+
+```
+import requests as r
+from base64 import urlsafe_b64decode as b64decode
+from typing import List, Optional
+import json
+
+订阅服务器 = "https://52pokemon.xz61.cn/api/v1/client/subscribe?token=13dbb1bd2634dc38b473c69aff59bedd&flag=Shadowsocks"
+
+# convert string to json 
+def jsonparse(s):
+    return json.loads(s, strict=False )
+
+# convert dict to string
+def jsonstring(d):
+    return json.dumps(d, ensure_ascii=False)
+
+def query(url: str) -> Optional[str]:
+    resp = r.get(url, timeout=30)
+    if resp.status_code == 200:
+        j = jsonparse(resp.text)
+        return resp.text.removeprefix("\ufeff")
+
+
+def decode(text: str) -> List[str]:
+    decoded1 = (line for line in b64decode(text).decode().split("\n") if line != "")
+    noprefix = (line.removeprefix("ssr://") for line in decoded1)
+    decoded2 = (b64decode(line).decode() for line in noprefix)
+    links = [f"ssr://{line}" for line in decoded2]
+    return links
+
+def parse(line: str) -> dict:
+    ssr_url = line.removeprefix("ssr://")
+    main, param, *_ = ssr_url.split("/?")
+    domain, port, protocol, method, obfs, passwd_b64, *_ = main.split(":")
+    passwd = b64decode(passwd_b64).decode()
+    params = {}
+    for item in param.split("&"):
+        key, value, *_ = item.split("=")
+        if (lastlen := len(value) % 4) != 0:
+            params[key] = b64decode(value + (4 - lastlen)*"=").decode()
+        else:
+            params[key] = b64decode(value).decode()
+    return {
+        "address": domain,
+        "port": int(port),
+        "password": passwd,
+        "method": method,
+        "timeout": 300,
+        #"params": params
+    }
+
+if __name__ == "__main__":
+    urls = decode(query(订阅服务器))
+    links = []
+    for i in urls:
+        try:
+            parsed = parse(i)
+            links.append(parsed)
+        except Exception as e:
+            print(i)
+            raise e
+    config = {
+        "servers": links,
+        "local_port": 1080,
+        "local_address": "0.0.0.0"
+    }
+    print(json.dumps(config, indent=2))
+```
+
+
+
+
+
 ### v2raya
 
 https://github.com/v2rayA/v2raya-openwrt
@@ -3226,6 +3301,8 @@ https://github.com/v2rayA/v2raya-openwrt
 https://v2raya.org/en/docs/prologue/installation/debian/
 
 https://github.com/v2fly/v2ray-core
+
+https://github.com/clash-verge-rev/clash-verge-rev/releases
 
 ```
 wget -qO - https://apt.v2raya.org/key/public-key.asc | sudo tee /etc/apt/keyrings/v2raya.asc && 
