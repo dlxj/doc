@@ -271,9 +271,10 @@ mysqld -install
 let AddTime = moment(nowDate).format('YYYY-MM-DD HH:mm:ss')
 
 
-date_format(StartTime, "%Y-%c-%d %H:%i:%s") as StartTime
+date_format(StartTime, "%Y-%m-%d %H:%i:%s") as StartTime
+	# %Y-%c-%d 的话月分会是一位
 
-date_format(user_behaviors.endtime,"%Y-%c-%d %H:%i:%s") as endtime
+date_format(user_behaviors.endtime,"%Y-%m-%d %H:%i:%s") as endtime
 
 每个用户取一条最新的测评ID
   sql: `
