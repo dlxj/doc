@@ -3218,6 +3218,21 @@ proxychains4 curl https://www.youtube.com
 
 
 
+### v2raya
+
+https://github.com/v2rayA/v2raya-openwrt
+
+```
+https://github.com/v2rayA/v2raya-openwrt
+
+```
+
+
+
+
+
+
+
 ### 学术加速
 
 ```
@@ -33216,6 +33231,20 @@ parentPort.onmessage = function (event) {
   [ssr-command-clien](https://github.com/TyrantLucifer/ssr-command-client)
 
   [How to setup CUDA 10.2, 11.0, and 11.5 in order to use eddy_cuda10.2](https://www.nemotos.net/?p=5067)
+
+  
+
+  ```
+  conda create -n rapids-24.10 -c rapidsai -c conda-forge -c nvidia  \
+      rapids=24.10 python=3.10 'cuda-version>=11.4,<=11.8'
+      
+  pip install rapids=24.10 --extra-index-url https://pypi.nvidia.com
+  
+  ```
+
+  
+
+  
 
   ```
   
