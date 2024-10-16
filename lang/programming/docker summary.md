@@ -500,6 +500,15 @@ kubectl get pods
 kubectl exec -it ubuntu-22-04-deployment-f784b8b74-k7hdd -- /bin/bash
 	# 替换成上面命令看到的 pod 名称
 
+$ cp /mnt/c/Users/i/Downloads/candy_5.6+ubuntu22.04_amd64.deb /home/i
+	# 复制 candy 客户端
+
+kubectl cp /home/i/candy_5.6+ubuntu22.04_amd64.deb ubuntu-22-04-deployment-f784b8b74-k7hdd:/root
+	# 复制到 虚拟机
+	
+apt --fix-broken install   ./candy_5.6+ubuntu22.04_amd64.deb -y
+	# 切换成 虚拟机的 shell 执行
+
 kubectl delete deployment ubuntu-22-04-deployment
 	# 删除
 
