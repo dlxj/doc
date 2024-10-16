@@ -518,6 +518,8 @@ candy --mode="client" --websocket="ws://47.100.192.57:1587" --password="1q2w1587
 kubectl delete deployment ubuntu-22-04-deployment
 	# 删除
 
+试试 qemu
+
 ```
 
 
@@ -582,6 +584,10 @@ minikube 社区使用 kicbase 就用来提供类似虚拟化 VM 的驱动，使�
 ```
 
 
+
+# QEMU
+
+https://wiki.qemu.org/Hosts/Linux
 
 
 
