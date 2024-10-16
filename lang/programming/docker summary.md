@@ -493,8 +493,11 @@ spec:
 kubectl apply -f ubuntu-22.04-deployment.yaml
 
 kubectl get pods
+	# ubuntu-22-04-deployment-f784b8b74-k7hdd
+		# 名字是这个
+		# 它还要拉镜像，注意看它的状态等它完成
 	
-kubectl exec -it <pod-name> -- /bin/bash
+kubectl exec -it ubuntu-22-04-deployment-f784b8b74-k7hdd -- /bin/bash
 	# 替换成上面命令看到的 pod 名称
 
 kubectl delete deployment ubuntu-22-04-deployment
