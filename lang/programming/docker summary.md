@@ -509,6 +509,12 @@ kubectl cp /home/i/candy_5.6+ubuntu22.04_amd64.deb ubuntu-22-04-deployment-f784b
 apt --fix-broken install   ./candy_5.6+ubuntu22.04_amd64.deb -y
 	# 切换成 虚拟机的 shell 执行
 
+candy --mode="client" --websocket="ws://47.100.192.57:1587" --password="1q2w1587" --tun="10.0.0.9/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
+	# 虚拟机的中的 candy 从 9 往后递减
+	# 因为没有 Tun 设备，出错
+	# lsmod | grep tun
+		# 没有输出
+
 kubectl delete deployment ubuntu-22-04-deployment
 	# 删除
 
