@@ -3221,6 +3221,29 @@ proxychains4 curl https://www.youtube.com
 
 ### 订阅地址解析
 
+
+
+```
+/usr/local/bin/shadowsocksr-cli
+#!/usr/bin/python3.10
+# -*- coding: utf-8 -*-
+import re
+import sys
+from shadowsocksr_cli.main import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.argv.append("--add-url")
+    sys.argv.append("https://52pokemon.xz61.cn/api/v1/client/subscribe?token=13dbb1bd2634dc38b473c69aff59bedd&flag=Shadowsocks")
+    sys.exit(main())
+    	# 改成这样
+    
+    
+```
+
+
+
+
+
 ```
 import requests as r
 from base64 import urlsafe_b64decode as b64decode
