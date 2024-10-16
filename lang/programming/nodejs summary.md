@@ -6678,6 +6678,27 @@ sendPostRequestThroughSocks5Proxy()
 
 [node-fetch](https://www.npmjs.com/package/node-fetch)
 
+https://github.com/node-fetch/timeout-signal 
+
+```
+npm install timeout-signal
+
+import timeoutSignal from 'timeout-signal';
+
+const signal = timeoutSignal(5000);
+
+try {
+	const response = await fetch('https://www.google.com', {signal});
+	// Handle response
+} catch (error) {
+	if (signal.aborted) {
+		// Handle abortion
+	}
+}
+```
+
+
+
 
 
 ```
