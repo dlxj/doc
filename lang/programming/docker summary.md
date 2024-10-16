@@ -425,6 +425,72 @@ Host 209.141.34.77
 
 https://www.zhaowenyu.com/docker-doc/dind/docker-in-docker.html
 
+https://github.com/kubernetes/minikube
+
+https://fancyerii.github.io/2020/08/28/minikube/ 
+
+- https://www.cnblogs.com/yinzhengjie/p/12258215.html
+
+- ```
+  $ grep -E --color 'vmx|svm' /proc/cpuinfo
+  	# 检查虚拟化的支持，如果上面的命令返回的不是空就ok
+  	
+  
+  ```
+
+  
+
+```
+要在 Minikube 上运行 Ubuntu 22.04 的容器，你可以指定使用 `ubuntu:22.04` 镜像。以下是一个示例 Pod 配置文件，可以帮助你在 Minikube 上运行一个 Ubuntu 22.04 的容器：
+
+​```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-22-04-pod
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu:22.04
+    command: ["/bin/bash", "-c", "sleep infinity"]
+    resources:
+      limits:
+        memory: "256Mi"
+        cpu: "500m"
+​```
+
+以下是详细步骤：
+
+1. **创建 YAML 文件：** 使用上面的内容创建一个名为 `ubuntu-22-04-pod.yaml` 的文件。
+
+2. **在 Minikube 中部署 Pod：** 在终端中，导航到包含该 YAML 文件的目录，并使用以下命令应用配置：
+   ```bash
+   kubectl apply -f ubuntu-22-04-pod.yaml
+   ```
+
+3. **验证 Pod 是否运行：** 使用以下命令检查 Pod 的状态：
+   ```bash
+   kubectl get pods
+   ```
+   
+   你应该能够看到 `ubuntu-22-04-pod` 的状态为 `Running`。
+
+4. **进入 Ubuntu 22.04 容器：** 要访问和使用 Ubuntu 22.04 的环境，可以运行：
+   ```bash
+   kubectl exec -it ubuntu-22-04-pod -- /bin/bash
+   ```
+
+这会启动一个交互式 Bash 会话，你可以在其中使用 Ubuntu 22.04 进行任何需要的测试和开发。使用 Kubernetes 和容器技术，你可以轻松地部署和管理这种轻量级的测试环境。
+```
+
+
+
+
+
+
+
+
+
 ```
 kicbase 提供了完整的隔离环境，也提供 systemd 的系统服务的管理，和 VM 虚拟机使用体验很相似，也可以安装启动其他 systed 服务。
 
