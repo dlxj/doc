@@ -442,7 +442,18 @@ https://fancyerii.github.io/2020/08/28/minikube/
 
 ```
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+
 sudo dpkg -i minikube_latest_amd64.deb
+
+su i
+
+sudo usermod -aG docker $USER && newgrp docker
+
+minikube start
+ # 成功启动
+	
+	
+
 ```
 
 
