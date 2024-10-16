@@ -438,7 +438,16 @@ https://fancyerii.github.io/2020/08/28/minikube/
   
   ```
 
-  
+
+
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+sudo dpkg -i minikube_latest_amd64.deb
+```
+
+
+
+
 
 ```
 要在 Minikube 上运行 Ubuntu 22.04 的容器，你可以指定使用 `ubuntu:22.04` 镜像。以下是一个示例 Pod 配置文件，可以帮助你在 Minikube 上运行一个 Ubuntu 22.04 的容器：

@@ -12957,6 +12957,74 @@ await sleep(2000)
 
 
 
+## Promise.all
+
+```
+async function get_embedding(text) {
+
+    // npm install node-fetch@2 https-proxy-agent
+  
+    const fetch = require('node-fetch')
+    const { HttpsProxyAgent } = require('https-proxy-agent')
+  
+    try {
+      const proxyAgent = new HttpsProxyAgent('http://127.0.0.1:5782')
+      const response = await fetch("https://api.openai.com/v1/embeddings", {
+      method:"post", 
+      headers: {
+          "Content-Type": "application/json;chart-set:utf-8",
+          "Authorization": "Bearer openai_api_key_here"
+      },
+      body: JSON.stringify({
+          "model": "text-embedding-ada-002",
+          "encoding_format": "float",
+          "input": text
+      }), 
+      agent: proxyAgent,
+      });
+  
+      if (response.status == 200) {
+          let data = await response.json()
+          embedding= data.data[0].embedding  // 1536
+          return [embedding, '']
+      } else {
+          return [null, 'openai 向量获取失败']
+      }
+    } catch (error) {
+      return [null, `openai 向量获取失败. ${error}`]
+    }  
+}
+
+async function get_embeddings(array) {
+
+    let promises = []
+    for (let item of array) {
+        if ( item.s_test.trim() ) {
+            promises.push(     
+                new Promise( async (resolve, reject) => {
+                    let [embedding, err] = await get_embedding(item.s_test)
+                    item.v_test = JSON.stringify(embedding)
+                    return resolve( [item, err] )
+                })
+            )
+        }
+
+    }
+
+    return new Promise( async (resolve, reject) => {
+        Promise.all(promises)
+        .then(results => {
+            return resolve( [ results, ''] )
+        })
+        .catch(error => {
+            return resolve([null, '获取嵌入向量失败'])
+        })
+    })
+}
+```
+
+
+
 
 
 ## 异步函数是Promise的实例
