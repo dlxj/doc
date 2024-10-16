@@ -445,7 +445,11 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest
 
 sudo dpkg -i minikube_latest_amd64.deb
 
-su i
+sudo adduser i
+
+sudo usermod -aG sudo i
+
+su - i
 
 sudo usermod -aG docker $USER && newgrp docker
 
