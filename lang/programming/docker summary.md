@@ -454,9 +454,51 @@ su - i
 sudo usermod -aG docker $USER && newgrp docker
 
 minikube start
- # 成功启动
+ # 成功启动 （开全局代理）
+
+proxychains4 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 	
+chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin/kubectl
+
+kubectl version --client
+
+kubectl get pods -A
+
+minikube dashboard
+	# web start
+
+
+vi ubuntu-22.04-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ubuntu-22-04-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ubuntu-22-04
+  template:
+    metadata:
+      labels:
+        app: ubuntu-22-04
+    spec:
+      containers:
+      - name: ubuntu-22-04
+        image: ubuntu:22.04
+        command: ["/bin/bash", "-c", "--"]
+        args: ["while true; do sleep 30; done;"]
+
+
+kubectl apply -f ubuntu-22.04-deployment.yaml
+
+kubectl get pods
 	
+kubectl exec -it <pod-name> -- /bin/bash
+	# 替换成上面命令看到的 pod 名称
+
+kubectl delete deployment ubuntu-22-04-deployment
+	# 删除
 
 ```
 
