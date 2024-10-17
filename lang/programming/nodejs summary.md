@@ -33584,12 +33584,51 @@ parentPort.onmessage = function (event) {
   
 
   ```
-  conda create -n rapids-24.10 -c rapidsai -c conda-forge -c nvidia  \
-      rapids=24.10 python=3.10 'cuda-version>=11.4,<=11.8'
-      
-  pip install rapids=24.10 --extra-index-url https://pypi.nvidia.com
+  
+  pip install --extra-index-url=https://pypi.nvidia.com cudf-cu11
+  	# 11.8 以下
+  	# pip install --extra-index-url=https://pypi.nvidia.com cudf-cu12
+  		# 12 以上
   
   ```
+
+  
+
+  ```
+  import cudf
+  celsius = cudf.Series([0, 100, cudf.NA])
+  
+  # functions destined for Series.apply take the form of a lambda with one return value
+  # i.e. one element in, one element out
+  def ctof(temp):
+      # null case
+      if temp is cudf.NA:
+          return cudf.NA
+      else:
+          return 1.8 * temp + 32
+  
+  farenheit = celsius.apply(ctof)
+  print(farenheit)
+  ```
+
+  ```
+  import pandas as pd
+  from difflib import SequenceMatcher
+  
+  df = pd.DataFrame({
+      'string1': ['hello world', 'python programming', 'data science'],
+      'string2': ['hello there', 'python coding', 'machine learning']
+  })
+  
+  def similarity_ratio(s1, s2):
+      return SequenceMatcher(None, s1, s2).ratio()
+  
+  df['similarity'] = df.apply(lambda row: similarity_ratio(row['string1'], row['string2']), axis=1)
+  
+  print(df)
+  ```
+
+  
 
   
 
