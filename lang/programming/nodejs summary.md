@@ -3224,7 +3224,17 @@ proxychains4 curl https://www.youtube.com
 
 
 ```
+see /usr/lib/python3.10/ctypes/util.py
+	# 加载各种库出错了
+```
+
+
+
+
+
+```
 /usr/local/bin/shadowsocksr-cli
+	# /usr/local/lib/python3.10/dist-packages/shadowsocksr_cli/main.py
 #!/usr/bin/python3.10
 # -*- coding: utf-8 -*-
 import re
