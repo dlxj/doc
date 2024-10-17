@@ -33653,6 +33653,56 @@ parentPort.onmessage = function (event) {
 
   
 
+  ```
+  import cudf
+  import numpy as np
+  df = cudf.DataFrame()
+  nelem = 3
+  df['in1'] = np.arange(nelem)
+  df['in2'] = np.arange(nelem)
+  df['in3'] = np.arange(nelem)
+  
+  in1 = df['in1']
+  in2 = df['in2']
+  in3 = df['in3']
+  def kernel(in1, in2, in3, out1, out2, kwarg1, kwarg2):
+      for i, (x, y, z) in enumerate(zip(in1, in2, in3)):
+          out1[i] = kwarg2 * x - kwarg1 * y
+          out2[i] = y - kwarg1 * z
+  
+  
+  outs=df.apply_rows(kernel,
+                incols=['in1', 'in2', 'in3'],
+                outcols=dict(out1=np.float64, out2=np.float64),
+                kwargs=dict(kwarg1=3, kwarg2=4))
+  
+  print(outs)
+  
+  	# 这是正常的
+  ```
+
+  
+
+  ```
+  import cudf
+  import numpy as np
+  
+  df1 = cudf.DataFrame({'a': cudf.Series([1], dtype=np.int64), 'b': cudf.Series([2], dtype=np.int64)})
+  df2 = cudf.DataFrame({'a': cudf.Series([], dtype=np.int64), 'b': cudf.Series([], dtype=np.int64)})
+  
+  def some_fun(a, b, out):
+      for i, (x, y) in enumerate(zip(a, b)):
+          out[i] = x + y
+  
+  ## works as expected
+  df1.apply_rows(some_fun, incols=['a', 'b'], outcols={'out': np.int64}, kwargs={})
+  
+  ## surprise: throws exn
+  df2.apply_rows(some_fun, incols=['a', 'b'], outcols={'out': np.int64}, kwargs={})
+  ```
+
+  
+
   
 
   
