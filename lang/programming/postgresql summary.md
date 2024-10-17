@@ -1094,6 +1094,134 @@ id BIGSERIAL PRIMARY KEY,
 
 
 
+## vector
+
+```
+const { Pool } = require('pg');
+config = require('../../../config.js')
+
+const pool = new Pool(config.db_vector)
+
+async function getVectorIDs(appID, testIDs, childTableIDs) {
+
+    const client = await pool.connect()
+    try {
+        let sq = `
+            SELECT appid, testid, childtableid, testcptid, TO_CHAR(operatetime, 'YYYY-MM-DD HH24:MI:SS') AS operatetime FROM test_vector 
+            WHERE appid = ${appID} and enabled = 't';
+        `
+        if (testIDs.length > 0) {
+            sq = `
+                SELECT appid, testid, childtableid, testcptid, TO_CHAR(operatetime, 'YYYY-MM-DD HH24:MI:SS') AS operatetime FROM test_vector 
+                WHERE appid = ${appID} and testid in (${ testIDs.join(',') }) and enabled = 't';
+            `
+        }
+
+        if (testIDs.length > 0 && childTableIDs.length > 0) {
+            sq = `
+                SELECT appid, testid, childtableid, testcptid, TO_CHAR(operatetime, 'YYYY-MM-DD HH24:MI:SS') AS operatetime FROM test_vector 
+                WHERE appid = ${appID} and testid in (${ testIDs.join(',') }) and childtableid in ( ${ childTableIDs.join(',') } ) and enabled = 't';
+            `
+        }
+
+        const re = await client.query(sq, [])
+        return [re.rows, ""]
+    } catch (err) {
+        let errmsg = `### 查询向量失败. appid: ${appID} ${err}`
+        console.error(errmsg)
+        return [null, errmsg]
+    } finally {
+        client.release()
+    }
+}
+
+async function insertVectors(list) {
+    
+    const client = await pool.connect()
+
+    let t = []
+    for (let {appid, testid, childtableid, testcptid, operatetime, s_test, v_test, userid} of list) {
+        t.push(`(${appid}, ${testid}, ${childtableid}, ${testcptid}, '${operatetime}', '${s_test}', '${v_test}', ${userid})`)
+    }
+    t = t.join(',\n')
+
+    
+    try {
+      const queryText = `
+      INSERT INTO test_vector (appid, testid, childtableid, testcptid, operatetime, s_test, v_test, adduserid) 
+      VALUES 
+        ${t}
+      ON CONFLICT (appid, testid, childtableid)
+      DO UPDATE SET s_test = EXCLUDED.s_test, v_test = EXCLUDED.v_test, updatetime=now(), updateuserid=EXCLUDED.adduserid, enabled='t';
+      `;
+      const re = await client.query(queryText, [])
+      console.log(`Inserted vectors. appid: ${list[0].appid} rowCount: ${re.rowCount}`)
+      return [re, ""]
+    } catch (err) {
+      let errmsg = `### 插入向量失败: ${err}`
+      console.error(errmsg)
+      return [null, errmsg]
+    } finally {
+      client.release()
+    }
+}
+
+async function disableVectors(appID, testIDs) {
+    const client = await pool.connect()
+    try {
+        const queryText = `
+            UPDATE test_vector SET enabled = 'f' 
+            WHERE appid = ${appID} and testid in (${ testIDs.join(',') });
+        `;
+        const re = await client.query(queryText, [])
+        return [re, ""]
+      } catch (err) {
+        let errmsg = `### 禁用向量失败: ${err}`
+        console.error(errmsg)
+        return [null, errmsg]
+      } finally {
+        client.release()
+      }
+}
+```
+
+
+
+```
+
+// https://github.com/pgvector/pgvector 先安装
+// yum install pgvector_17 -y
+
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE TABLE IF NOT EXISTS test_vector (
+    ID bigint generated always as identity (START WITH 1 INCREMENT BY 1), 
+    AppID integer NOT NULL,
+    TestID integer NOT NULL,
+    ChildTableID integer NOT NULL,
+    TestCptID integer DEFAULT -1,
+    OperateTime timestamp NOT NULL,
+    S_Test text NOT NULL,
+    V_Test vector(1536) NOT NULL,
+    AddTime timestamp DEFAULT CURRENT_TIMESTAMP,
+    UpdateTime timestamp DEFAULT NULL,
+    AddUserID integer DEFAULT -1,
+    UpdateUserID integer DEFAULT -1,
+    Enabled boolean DEFAULT '1',
+    UNIQUE(ID),  
+    PRIMARY KEY (AppID, TestID, ChildTableID) 
+);
+CREATE INDEX IF NOT EXISTS idx_appid ON test_vector (AppID);
+CREATE INDEX IF NOT EXISTS idx_appid_cptid ON test_vector (AppID, TestCptID);
+CREATE INDEX ON test_vector USING hnsw (V_Test vector_cosine_ops);
+```
+
+
+
+
+
+
+
 ## UUID
 
 ```
