@@ -33613,7 +33613,8 @@ parentPort.onmessage = function (event) {
 
   ```
   import pandas as pd
-  from difflib import SequenceMatcher
+  #import cudf as pd
+  	# pandas 正常, cudf 出错
   
   df = pd.DataFrame({
       'string1': ['hello world', 'python programming', 'data science'],
@@ -33621,9 +33622,31 @@ parentPort.onmessage = function (event) {
   })
   
   def similarity_ratio(s1, s2):
-      return SequenceMatcher(None, s1, s2).ratio()
+      return len(s1)
   
   df['similarity'] = df.apply(lambda row: similarity_ratio(row['string1'], row['string2']), axis=1)
+  
+  print(df)
+  ```
+
+  
+
+  ```
+  df['C'] = df.apply_rows(custom_function, incols=['A', 'B'], outcols={'C': np.float64})
+  ```
+
+  
+
+  ```
+  import cudf as pd
+  
+  df = pd.DataFrame([["a","bb"],["cc","dd"]], index=["one", "two"], columns=["A", "B"])
+  
+  
+  def fun(row):
+      return row["A"] + row["B"]
+  
+  df['C'] = df.apply_rows(fun, incols=['A', 'B'], outcols={'C': str})
   
   print(df)
   ```
