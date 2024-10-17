@@ -3221,7 +3221,7 @@ proxychains4 curl https://www.youtube.com
 
 ### 订阅地址解析
 
-
+see https://gist.github.com/zombie110year/13b854d2919bbdd9fa975d7283d634f5
 
 ```
 see /usr/lib/python3.10/ctypes/util.py
@@ -3377,12 +3377,14 @@ if __name__ == "__main__":
 
 https://github.com/shadowsocks/shadowsocks-rust
 
+- https://gist.github.com/zombie110year/13b854d2919bbdd9fa975d7283d634f5
+
 ```
 cargo install shadowsocks-rust
 
 Installed package `shadowsocks-rust v1.21.0` (executables `sslocal`, `ssmanager`, `ssserver`, `ssservice`, `ssurl`)
 
-sslocal -b "127.0.0.1:1080" --server-url "ss://Y2hhY2hhMjAtajNzYtOTEyNC05MDNkOGU2NzVhNWI@sshk01.mypokeworld.link:52001#%F0%9%99%E6%B8%AF01%E3%80%903x%E3%80%91"
+sslocal -b "127.0.0.1:1080" --server-url "ss://Y2hhY2hC05MDNkOGU2NzVhNWI@sshk01.mypokeworld.link:52001#%F0%9%99%E6%B%E3%80%903x%E3%80%91"
 
 2022-blake3-chacha20-poly1305
 
