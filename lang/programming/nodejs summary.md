@@ -3226,6 +3226,7 @@ proxychains4 curl https://www.youtube.com
 ```
 see /usr/lib/python3.10/ctypes/util.py
 	# 加载各种库出错了
+	# /lib/x86_64-linux-gnu/libm.so: invalid ELF header
 ```
 
 
@@ -3243,10 +3244,57 @@ from shadowsocksr_cli.main import main
 if __name__ == '__main__':
     sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
     sys.argv.append("--add-url")
-    sys.argv.append("https://52pokemon.xz61.cn/api/v1/client/subscribe?token=13dbb1bd2634dc38b473c69aff59bedd&flag=Shadowsocks")
+    sys.argv.append("https://52pokemon.xz61.cn/api/v1/client/subscribe?token=13dbb1bd2634dc38b473c69aff59bedd")
     sys.exit(main())
     	# 改成这样
     
+    2022-blake3-chacha20-poly1305
+    
+    
+    要解码给定的 ss:// URL 编码的字符串，我们需要按以下步骤进行操作：
+
+去除协议头 ss:// ：只处理后面的编码字符串。
+Base64 解码 ：ss:// 协议使用 Base64 编码，我们首先需要将 Base64 进行解码来获取原始内容。
+分析解码出内容 ：通常，这部分会包含加密信息、密码、服务器信息等结构化数据。
+URL解码 : 对URL尾部进行解码获取原始信息。
+让我们开始步骤解析：
+
+1. Base64 解码
+原始数据：
+
+Y2hhY2hhMjAtaWV0Zi1wb2x5MRjNzYtOTEyNC05MDNkOGU2NzVhNWI
+解码此 Base64 内容得到：
+
+chacha20-ietf-poly1305:c57-9124-903d8e675a5b
+这里的格式一般是：
+
+加密方法：chacha20-ietf-poly1305
+密码：f616-6a8e-4c76-9124-903d8e
+2. 解析剩余的字符串
+接下来的 URI 中的字符串为：
+
+@sshk01.mypokeworld.link:52001#%F0%9F%g%E4%B8%A8%E9%A6%99%E6%B8%AF01%E3%80%903x%E3%81
+解析 ：
+
+@sshk01.mypokeworld.link:52001：
+服务器地址：sshk01.mypokeworld.link
+端口：52001
+3. URL 解码尾部内容
+现在处理最后以 # 开始的部分，它是 Base64 编码后的 URL 编码：
+
+%F0%9F%87%AD%F0%9F%87%Bong%E4%B8%A8%E9%A6%99%E6%B8%AF01%E3%80%903x%E3%80%91
+URL 解码结果为：
+
+🇭🇰 Hong Kong丨香港01【3x】
+这通常是对该服务器的一些描述或标签，帮助用户区分该服务器的所在地及特色。
+
+总结解析结果
+加密方法 ：chacha20-ietf-poly1305
+密码 ：
+服务器 ：sshk01.mypokeworld.link
+端口 ：52001
+备注 ：🇭🇰 Hong Kong丨香港01【3x】
+通过这些步骤，你可以解码大部分类型的 ss:// 协议的 URL。这里展示的解析过程既能深入理解基础网络协议运作原理，也对处理 Shadowsocks 等工具的连接信息很有帮助。
     
 ```
 
@@ -3322,6 +3370,25 @@ if __name__ == "__main__":
     }
     print(json.dumps(config, indent=2))
 ```
+
+
+
+### shadowsocks-rust
+
+https://github.com/shadowsocks/shadowsocks-rust
+
+```
+cargo install shadowsocks-rust
+
+Installed package `shadowsocks-rust v1.21.0` (executables `sslocal`, `ssmanager`, `ssserver`, `ssservice`, `ssurl`)
+
+sslocal -b "127.0.0.1:1080" --server-url "ss://Y2hhY2hhMjAtajNzYtOTEyNC05MDNkOGU2NzVhNWI@sshk01.mypokeworld.link:52001#%F0%9%99%E6%B8%AF01%E3%80%903x%E3%80%91"
+
+2022-blake3-chacha20-poly1305
+
+```
+
+
 
 
 
