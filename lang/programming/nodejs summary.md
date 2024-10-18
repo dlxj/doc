@@ -33561,7 +33561,7 @@ parentPort.onmessage = function (event) {
 
 
 
-# cudf
+# cudf+pandas
 
   [用法教程](https://docs.rapids.ai/api/cudf/stable/user_guide/10min.html)
 
@@ -33584,6 +33584,9 @@ parentPort.onmessage = function (event) {
   
 
   ```
+  
+  numpy==1.26.4
+  pandas==2.2.2
   
   pip install --extra-index-url=https://pypi.nvidia.com cudf-cu11
   	# 11.8 以下
@@ -33887,6 +33890,31 @@ parentPort.onmessage = function (event) {
 - https://github.com/rapidsai/node
 
   > nodejs python cuda 加速
+
+
+
+## pandas 相似度
+
+```
+import pandas as pd
+
+df = pd.DataFrame([["a","bb"],["cac","ddbd"]], index=["one", "two"], columns=["A", "B"])
+
+def similarity(s1, s2):
+    s1, s2 = set(s1), set(s2)
+    intersection = s1.intersection(s2)  # 交集
+    union = s1.union(s2) # 并集
+
+    sim = len(intersection) / len(union)
+
+    return sim
+
+df['similarity'] = df.apply(lambda row: similarity(row['A'], row['B']), axis=1)
+
+print(df)
+```
+
+
 
 
 
