@@ -31784,6 +31784,22 @@ class Rwkv(BaseEmbedding):
 
 
 
+##### openai tokens
+
+```
+    const tiktoken = require('tiktoken-node')
+	let enc = tiktoken.getEncoding("cl100k_base")
+    let tokens = enc.encode(text)
+    if (tokens.length > 8192) {
+        console.log(`查询向量要生成 embedding 的文本超出 8192 tokens`)
+        let newtokens = tokens.slice(0, 8192)
+        text = enc.decode(newtokens)
+        console.log(`新文本截断为：${text}`)
+    }
+```
+
+
+
 
 
 #####  nanoRWKV

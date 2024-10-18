@@ -445,6 +445,12 @@ ssh root@localhost
 
 
 
+## 静态 IP
+
+https://www.ryanshang.com/2022/10/23/WSL2%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/
+
+
+
 ## 远程桌面
 
 https://qiita.com/atomyah/items/887a5185ec9a8206c7c4  **必看**
