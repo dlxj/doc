@@ -14809,6 +14809,13 @@ df = df.with_column(
 
 
 
+```
+# 不要按行遍历，因为 pandas polars 是按列存储存的
+result = [f(x, y) for x, y in zip(df['col1'], df['col2'])]
+```
+
+
+
 
 
 # Pandas
