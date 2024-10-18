@@ -14778,7 +14778,83 @@ if __name__ == '__main__':
 
 
 
-# Panda
+# Polars 
+
+```
+df = pl.read_excel('data/nlpp_dialog.xlsx', sheet_name='Sheet1', columns=['A', 'B', 'C'])
+```
+
+
+
+
+
+# Pandas
+
+
+
+## 相似度
+
+```
+import pandas as pd
+
+df = pd.DataFrame([["a","bb"],["cac","ddbd"]], index=["one", "two"], columns=["A", "B"])
+
+def similarity(s1, s2):
+    s1, s2 = set(s1), set(s2)
+    intersection = s1.intersection(s2)  # 交集
+    union = s1.union(s2) # 并集
+
+    sim = len(intersection) / len(union)
+
+    return sim
+
+df['similarity'] = df.apply(lambda row: similarity(row['A'], row['B']), axis=1)
+
+print(df)
+```
+
+## torch 余弦相似度
+
+https://blog.csdn.net/qq_39852676/article/details/107342584
+
+```
+import torch
+import torch.nn.functional as F
+import time
+
+
+class CosineSimilarity(torch.nn.Module):
+
+    def __init__(self, dim=1, eps=1e-8):
+        super(CosineSimilarity, self).__init__()
+        self.dim = dim
+        self.eps = eps
+
+    def forward(self, x1, x2):
+        return F.cosine_similarity(x1, x2, self.dim, self.eps)
+
+
+def test():
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    model = CosineSimilarity().to(device)
+    model = torch.nn.DataParallel(model)
+
+    start_time = time.time()
+    for i in range(50000):
+        x1 = torch.randn(1, 256).to(device)
+        x2 = torch.randn(1, 256).to(device)
+
+        distance = model(x1, x2)
+        print("index:{}, similar:{}".format(i, distance))
+    end_time = time.time()
+    print("time is :{}".format(end_time-start_time))
+
+if __name__ == "__main__":
+    test()
+
+```
+
+
 
 
 
