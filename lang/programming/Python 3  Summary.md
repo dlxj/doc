@@ -14781,7 +14781,30 @@ if __name__ == '__main__':
 # Polars 
 
 ```
+import polars as pl
+df = pl.read_excel('data/nlpp_dialog.xlsx')
+```
+
+
+
+```
 df = pl.read_excel('data/nlpp_dialog.xlsx', sheet_name='Sheet1', columns=['A', 'B', 'C'])
+```
+
+
+
+```
+import polars as pl
+
+def seg_2_array(seg):
+    if pl.Series.is_null(seg):
+        return []
+    else:
+        return seg.str.strip().str.split(' ')
+
+df = df.with_column(
+    pl.col('seg').map(seg_2_array).alias('seg')
+)
 ```
 
 
