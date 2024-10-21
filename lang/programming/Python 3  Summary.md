@@ -14870,6 +14870,48 @@ df['aac_info'] = df['seg'].apply(match)
 
 
 
+```
+def match(seg):
+    
+    aac_info = []
+
+    df2['sim'] = 0.0
+    if len(seg) > 0:
+        for idx, (seg2, name) in enumerate( zip(df2['seg'], df2['name']) ):
+
+            if len(seg2) <= 0:
+                continue
+
+            mx = max(len(seg), len(seg2))
+            mi = min(len(seg), len(seg2))
+
+            rate = mi / mx
+
+            if rate < 0.35:
+                continue
+
+            sim = similarity( seg, seg2 )
+            if sim > 0.35:
+                df2.loc[idx, 'sim'] = sim   
+
+        df_tmp = df2.sort_values(by='sim', ascending=False).reset_index(drop=True)  # 相似度降序
+
+        for idx, (seg2, name, result, sim) in enumerate( zip(df_tmp['seg'], df_tmp['name'], df_tmp['result'], df_tmp['sim']) ):
+            if sim >= 0.45:
+                aac_info.append({ "aac_name": name, "result": result, "sim": sim })
+            if idx >= 2:
+                break
+
+    return aac_info
+
+df['aac_info'] = df['seg'].apply(match)
+
+
+df.to_excel('nlpp_dialog_aacinfo.xlsx', sheet_name='sheet1', index=False)
+```
+
+
+
 
 
 ## 相似度
