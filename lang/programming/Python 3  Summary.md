@@ -14828,6 +14828,50 @@ result = [f(x, y) for x, y in zip(df['col1'], df['col2'])]
 
 
 
+## 遍历列更效率高
+
+```
+def seg_2_array(seg):
+    if pandas.isna(seg):
+        seg = []
+    else:
+        seg = seg.strip().split(' ')
+    return seg
+df['seg'] = df['seg'].apply(seg_2_array)
+```
+
+
+
+```
+# see huggingface\NLPP_Audio\man.py
+def match(seg):
+    
+    df2['sim'] = 0
+    if len(seg) > 0:
+        for idx, (seg2, name) in enumerate( zip(df2['seg'], df2['name']) ):
+
+            if len(seg2) <= 0:
+                continue
+
+            mx = max(len(seg), len(seg2))
+            mi = min(len(seg), len(seg2))
+
+            rate = mi / mx
+
+            if rate < 0.35:
+                continue
+
+            sim = similarity( seg, seg2 )
+            df2.loc[idx, 'sim'] = sim   
+
+
+df['aac_info'] = df['seg'].apply(match)
+```
+
+
+
+
+
 ## 相似度
 
 ```
