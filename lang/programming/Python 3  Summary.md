@@ -15213,6 +15213,15 @@ for pth in jp_dic_paths:
 
 
 
+## 过滤行
+
+```
+df = df[~(df['name'].isna() | (df['name'] == ' '))]
+	# 取不是 nan 和 空串的行
+```
+
+
+
 
 
 ### 筛选数据

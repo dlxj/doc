@@ -32258,6 +32258,74 @@ conda create -n  rwkvspeech pip python=3.10
 
 
 
+### 40维mfcc
+
+https://github.com/pykaldi/pykaldi
+
+```
+sudo apt-get install autoconf automake cmake curl g++ git graphviz \
+    libatlas3-base libtool make pkg-config subversion unzip wget zlib1g-dev
+
+pip install --upgrade pip
+pip install --upgrade setuptools
+pip install numpy pyparsing
+pip install ninja  # not required but strongly recommended
+
+
+```
+
+
+
+```python
+import kaldi.feat.mfcc as mfcc
+import kaldi.matrix as kaldi_matrix
+import kaldi.util.io as kaldi_io
+from kaldi.util.options import ParseOptions
+
+# Kaldi 的音频读取工具
+from kaldi.util.table import SequentialWaveReader
+from kaldi.util.table import MatrixWriter
+
+# PyKaldi 中的音频读取工具
+from kaldi.feat.window import FrameExtractionOptions
+from kaldi.feat.mfcc import MfccOptions, Mfcc
+
+# 定义提取 MFCC 特征的函数
+def extract_mfcc(wav_file, sample_rate=16000, num_ceps=40):
+    # 设置 MFCC 提取选项
+    mfcc_opts = MfccOptions()
+    mfcc_opts.num_ceps = num_ceps  # 设置维度为 40
+    mfcc_opts.frame_opts.samp_freq = sample_rate  # 设置采样率为 16k
+
+    # 初始化 MFCC 提取器
+    mfcc_extractor = Mfcc(mfcc_opts)
+
+    # 读取音频文件
+    wave_reader = SequentialWaveReader("scp:" + wav_file)
+
+    for key, wave_data in wave_reader:
+        assert wave_data.samp_freq == sample_rate, f"错误的采样率 {wave_data.samp_freq}, 需要 {sample_rate}"
+
+        # 提取特征
+        features = kaldi_matrix.Matrix()
+        mfcc_extractor.Compute(wave_data.data()[0], 1.0, features)
+
+        # 将提取的特征保存到文件或进行其他处理
+        print(f"音频文件 {key} 的 MFCC 特征：")
+        print(features)
+
+if __name__ == "__main__":
+    # 提供待处理的音频文件
+    wav_file = "example.wav"
+    
+    # 调用 MFCC 提取函数
+    extract_mfcc(wav_file)
+```
+
+
+
+
+
 ## speech-to-speech 抱抱脸
 
 https://github.com/huggingface/speech-to-speech
