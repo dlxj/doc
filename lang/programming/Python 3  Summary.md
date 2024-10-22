@@ -2352,8 +2352,16 @@ os.environ['RWKV_FLOAT_MODE'] = 'fp32'
 
 
 
-
 ## package
+
+
+
+```
+# see huggingface/proxynt/run_client.py
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+```
+
+
 
 ```python
 import graphics.primitive.line
