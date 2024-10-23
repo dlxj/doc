@@ -8757,6 +8757,14 @@ throw new Error(errMsg)
 
 
 
+## 任意字符 [\s\S]
+
+```
+const list = str.match(/<ytc[\s\S]*?>[\s\S]*?<\/ytc>/g);
+```
+
+
+
 
 
 ## test
