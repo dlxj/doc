@@ -32352,8 +32352,11 @@ numpy==1.26.4
 torch==2.1.1
 torchaudio==2.1.1
 # transformers==4.45.2
+bitsandbytes==0.40.2
+auto_gptq==0.4.2
 sentencepiece==0.2.0
 xformers==0.0.23+cu118
+
 
 ```
 
