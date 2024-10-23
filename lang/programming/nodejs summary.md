@@ -32360,7 +32360,23 @@ xformers==0.0.23+cu118
 --prefer-binary
 llama-cpp-python==0.2.26+cu118
 
+from transformers import GenerationConfig
+	# 运行这句就报错，离谱
 
+python server.py \
+    --model_name_or_path SakuraLLM/Sakura-13B-LNovel-v0.9 \
+    --vllm \
+    --model_version 0.9 \
+    --trust_remote_code \
+    --no-auth \
+    --tensor_parallel_size 2 \
+    --enforce_eager
+
+
+https://github.com/SakuraLLM/SakuraLLM/blob/main/usage.md
+	# linux 运行方法
+
+# windows 的 GUI
 Sakura_Launcher_GUI_v0.0.6-beta
 	https://github.com/PiDanShouRouZhouXD/Sakura_Launcher_GUI/blob/main/main.py
 
