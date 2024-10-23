@@ -32361,6 +32361,11 @@ xformers==0.0.23+cu118
 llama-cpp-python==0.2.26+cu118
 
 
+Sakura_Launcher_GUI_v0.0.6-beta
+	https://github.com/PiDanShouRouZhouXD/Sakura_Launcher_GUI/blob/main/main.py
+
+
+
 ```
 
 
