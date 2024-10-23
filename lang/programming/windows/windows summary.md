@@ -159,6 +159,18 @@ https://github.com/PowerShell/Win32-OpenSSH/releases/download/v9.5.0.0p1-Beta/Op
 
   
 
+```
+Stop-Service -Name sshd -Force
+Set-Service -Name sshd -StartupType Disabled
+	# 停止 ssh 服务
+
+netstat -aon | findstr "22"
+	# 查看端口
+
+```
+
+
+
 
 
 ```
