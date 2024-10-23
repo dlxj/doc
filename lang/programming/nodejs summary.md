@@ -32334,6 +32334,19 @@ if __name__ == "__main__":
 
 
 
+## SakuraLLM
+
+https://github.com/SakuraLLM/SakuraLLM/wiki/Python%E9%83%A8%E7%BD%B2%E6%95%99%E7%A8%8B
+
+```
+nvcc -V
+
+conda create -n sakurallm python==3.10 pip
+
+```
+
+
+
 
 
 ## speech-to-speech 抱抱脸
