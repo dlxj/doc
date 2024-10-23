@@ -32341,7 +32341,16 @@ https://github.com/SakuraLLM/SakuraLLM/wiki/Python%E9%83%A8%E7%BD%B2%E6%95%99%E7
 ```
 nvcc -V
 
-conda create -n sakurallm python==3.10 pip
+git clone https://huggingface.co/datasets/dlxjj/sakurallm
+
+conda create -n sakurallm python==3.10 pip && 
+conda activate sakurallm
+
+vi requirements.txt
+--extra-index-url https://download.pytorch.org/whl/cu118
+numpy==1.26.4
+torch==2.1.1
+torchaudio==2.1.1
 
 ```
 
