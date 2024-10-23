@@ -32028,6 +32028,8 @@ https://github.com/deepglint/RWKV-CLIP
 
 ## RWKV speech
 
+see github -> echodict -> READFME.md -> LiveABC互動日语 -> **galgame语音数据集**
+
 https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scrollTo=a2787582-554f-44ce-9f38-4180a5ed6b44  **Whisper_w_PEFT**
 
 - https://huggingface.co/docs/datasets/audio_dataset 创建音频数据集
@@ -36092,7 +36094,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 
 **search videoStreamPlayer in outline**
 
-[Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895) [2](https://github.com/SuRGeoNix/Flyleaf) [3](https://www.cnblogs.com/chifan/p/16516018.html) [appList](https://github.com/DesignLipsx/WinUI-3-Apps-List) [book](https://github.com/PacktPublishing/Learn-WinUI-3-Second-Edition)
+[Bili.Copilot 必看](https://github.com/Richasy/Bili.Copilot) [1](https://zhuanlan.zhihu.com/p/602954895) [2](https://github.com/SuRGeoNix/Flyleaf) [3](https://www.cnblogs.com/chifan/p/16516018.html) [4](https://github.com/files-community/Files) [appList](https://github.com/DesignLipsx/WinUI-3-Apps-List) [book](https://github.com/PacktPublishing/Learn-WinUI-3-Second-Edition) 
 
 - ```
   vs2022 install  
