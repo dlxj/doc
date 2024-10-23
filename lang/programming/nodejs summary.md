@@ -32356,6 +32356,9 @@ bitsandbytes==0.40.2
 auto_gptq==0.4.2
 sentencepiece==0.2.0
 xformers==0.0.23+cu118
+--extra-index-url=https://jllllll.github.io/llama-cpp-python-cuBLAS-wheels/AVX2/cu118
+--prefer-binary
+llama-cpp-python==0.2.26+cu118
 
 
 ```
