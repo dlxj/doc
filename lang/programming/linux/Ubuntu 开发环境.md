@@ -1713,6 +1713,8 @@ print(m.parse("彼女はペンパイナッポーアッポーペンと恋ダン�
 
 # 乱码
 
+https://blog.csdn.net/weixin_39246554/article/details/123487843
+
 see huggingface/Sakura_Launcher_GUI/readme.txt  **没解决**
 
 ```
