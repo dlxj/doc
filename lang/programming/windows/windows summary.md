@@ -316,7 +316,7 @@ http://localhost:6006
 # wsl2 ubuntu22.04 执行
 mkdir -p /usr/share/fonts/windows11 && 
 cp -rf /mnt/c/Windows/Fonts/* /usr/share/fonts/windows11 && 
-/usr/share/fonts/windows11/
+ls /usr/share/fonts/windows11/
 	# 实测解决问题
 	
 设置 Ubuntu 中文语言环境
