@@ -743,7 +743,15 @@ autoProxy=true
 
 
 
+## wsl 执行命令
 
+```
+# see huggingface/Sakura_Launcher_GUI/readme.txt
+# pyside6 linux中文乱码
+$OutputEncoding = [System.Text.Encoding]::UTF8
+pyside2-uic.exe uiFile.ui | wsl ascii2uni -a U > ui_file.py 
+    # 需要用 wsl 来跑
+```
 
 
 
