@@ -32390,6 +32390,8 @@ Sakura_Launcher_GUI_v0.0.6-beta
 
 https://github.com/PiDanShouRouZhouXD/Sakura_Launcher_GUI
 
+- https://github.com/zhiyiYo/Alpha-Gobang-Zero  qfluentwidgets
+
 ```
 conda create -n sakuragui python==3.10 pip && 
 conda activate sakuragui
