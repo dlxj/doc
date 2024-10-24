@@ -1715,6 +1715,68 @@ print(m.parse("彼女はペンパイナッポーアッポーペンと恋ダン�
 
 https://juejin.cn/post/7320102376175501322
 
+- ```
+  # wsl2 ubuntu22.04 执行
+  mkdir -p /usr/share/fonts/windows11 && 
+  cp -rf /mnt/c/Windows/Fonts/* /usr/share/fonts/windows11 && 
+  /usr/share/fonts/windows11/
+  	# 实测解决问题
+  	
+  设置 Ubuntu 中文语言环境
+  
+  安装中文语言包
+  
+  bash 代码解读复制代码sudo apt install language-pack-zh-han*
+  
+  
+  运行语言支持检查
+  
+  bash 代码解读复制代码sudo apt install $(check-language-support)
+  
+  
+  修改相关配置文件（两种方法）
+  
+  方法 1：
+  bash 代码解读复制代码sudo vim /etc/default/locale
+  
+  替换原始内容如下：
+  bash 代码解读复制代码LANG="zh_CN.UTF-8"
+  LANGUAGE="zh_CN:zh"
+  LC_NUMERIC="zh_CN"
+  LC_TIME="zh_CN"
+  LC_MONETARY="zh_CN"
+  LC_PAPER="zh_CN"
+  LC_NAME="zh_CN"
+  LC_ADDRESS="zh_CN"
+  LC_TELEPHONE="zh_CN"
+  LC_MEASUREMENT="zh_CN"
+  LC_IDENTIFICATION="zh_CN"
+  LC_ALL="zh_CN.UTF-8"
+  
+  方法 2：
+  通过图形界面修改上述文件中的 LANG 字段。
+  bash 代码解读复制代码sudo dpkg-reconfigure locales
+  
+  使用空格键选择 en_US.UTF-8 以及 zh_CN.UTF-8，使用 TAB 键切换至 OK，再将 en_US.UTF-8 选为默认（此处选择 zh_CN.UTF-8 及修改上述文件中的 LANG 字段）。
+  然后重启 WSL2
+  
+  修改环境变量
+  添加 LANG=zh_CN.UTF-8 到配置文件末尾。有两种做法，仅供参考。
+  
+  bash 代码解读复制代码echo "LANG=zh_CN.UTF-8" >> ~/.profile
+  
+  bash 代码解读复制代码echo "LANG=zh_CN.UTF-8" >> /etc/profile
+  
+  WSL2 无内容显示无法操作
+  折腾的途中遇到 WSL2 只有光标闪烁，无内容显示也无法操作，wsl --shutdown wsl -l -v 等等指令都没有效果。
+  解决方法：
+  在启动或关闭Windows功能中，关掉适用于Linux的Windows子系统，再重新打开。重启后一切恢复正常
+  
+  
+  ```
+
+  
+
 https://blog.csdn.net/weixin_39246554/article/details/123487843
 
 see huggingface/Sakura_Launcher_GUI/readme.txt  **没解决**
