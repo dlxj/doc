@@ -32399,6 +32399,12 @@ proxychains4 pip install just &&
 proxychains4 pip install -r requirements.txt && 
 proxychains4 apt install libegl1
 
+
+    # from PySide6.QtCore import QTranslator, QLocale
+    # from qfluentwidgets import FluentTranslator
+    # translator = FluentTranslator(QLocale(QLocale.Chinese, QLocale.China))
+    # app.installTranslator(translator)
+
 ```
 
 
