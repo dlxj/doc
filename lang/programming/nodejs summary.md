@@ -32386,6 +32386,23 @@ Sakura_Launcher_GUI_v0.0.6-beta
 
 
 
+### Sakura_Launcher_GUI
+
+https://github.com/PiDanShouRouZhouXD/Sakura_Launcher_GUI
+
+```
+conda create -n sakuragui python==3.10 pip && 
+conda activate sakuragui
+
+proxychains4 curl -fsSL https://xmake.io/shget.text | bash && 
+proxychains4 pip install just && 
+proxychains4 pip install -r requirements.txt && 
+proxychains4 apt install libegl1
+
+```
+
+
+
 
 
 ## speech-to-speech 抱抱脸
