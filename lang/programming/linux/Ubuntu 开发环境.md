@@ -1713,6 +1713,8 @@ print(m.parse("彼女はペンパイナッポーアッポーペンと恋ダン�
 
 # 乱码
 
+see huggingface/Sakura_Launcher_GUI/readme.txt  **没解决**
+
 ```
 sudo apt-get install language-pack-zh-hans
 
