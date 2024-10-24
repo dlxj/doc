@@ -1716,6 +1716,7 @@ print(m.parse("彼女はペンパイナッポーアッポーペンと恋ダン�
 https://juejin.cn/post/7320102376175501322
 
 - ```
+  # see huggingface/Sakura_Launcher_GUI/readme.txt
   # wsl2 ubuntu22.04 执行
   mkdir -p /usr/share/fonts/windows11 && 
   cp -rf /mnt/c/Windows/Fonts/* /usr/share/fonts/windows11 && 
