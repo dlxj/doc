@@ -251,7 +251,21 @@ crontab -l
 新增系统变量 MYSQL_HOME=D:\usr\mysql-5.7.40-winx64
 在系统变量Path后面追加;%MYSQL_HOME%\bin
 
+https://downloads.mysql.com/archives/community/
+
 mysqld -install
+
+mysqld --initialize --console
+	# 记住初始密码 45A!BI6f/o-d
+
+接着就是在输入net start mysql启动服务
+开始使用mysql，输入命令：mysql -uroot -p，然后输入刚才的初始密码
+修改密码
+ mysql> alter user 'root'@'localhost' identified by 'root';
+mysql> flush privileges;
+使用quit退出
+输入命令：mysql -uroot -p，然后尝试新密码
+
 
 ```
 

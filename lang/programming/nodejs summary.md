@@ -31938,6 +31938,29 @@ decode = lambda l: enc.decode(l)
 
 https://github.com/howard-hou/VisualRWKV
 
+- https://huggingface.co/spaces/howard-hou/VisualRWKV-Gradio-1  在线推理
+
+  - ```
+    see huggingface/rwkv5-jp-trimvd/requirements.txt
+    
+    conda create --name visualrwkv_gradio python==3.10 pip && 
+    conda activate visualrwkv_gradio && 
+    proxychains4 pip install -r requirements.txt
+    
+    vi requirements.txt
+    numpy==1.26.4
+    transformers==4.45.2
+    datasets==3.0.1
+    torch==2.1.1
+    ninja
+    tokenizers
+    rwkv==0.8.22
+    pynvml
+    huggingface_hub
+    ```
+
+    
+
 - https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain 预训练数据集
 
 - https://github.com/haotian-liu/LLaVA 微调数据集
