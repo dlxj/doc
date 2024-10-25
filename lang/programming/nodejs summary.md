@@ -5043,16 +5043,7 @@ That's it now all the files that have CRLF will be converted to LF.
 
 Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
-​```
-First disable the autoCRLF in the git config by running the following command in your terminal git config core.autocrlf false
 
-Then remove the cached files in the git. Run the following command: git rm --cached -r .
-
-Then reset the project files by executing the following command to complete conversion. git reset --hard
-
-That's it now all the files that have CRLF will be converted to LF.
-
-Additionally you can add "files.eol": "\n" in your Vscode settings.
 ```
 
 
