@@ -31924,7 +31924,7 @@ https://github.com/howard-hou/VisualRWKV
 
 - https://github.com/haotian-liu/LLaVA 微调数据集
 
-  
+- https://github.com/AIIRWKV/RWKV-RAG **知识库**
 
 ```
 git clone https://github.com/howard-hou/VisualRWKV.git
