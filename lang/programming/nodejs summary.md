@@ -21628,6 +21628,7 @@ ai作画 ps拆补图 spine做动画 再导入godot做游戏
 [Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama)
 
 - https://github.com/VoylinsGamedevJourney/gozen [1](https://www.youtube.com/watch?v=HTz_qxI9zZ0&list=PL8opQePBSY5mr2Fup2mqc-4cMBxxaqvMg&index=9)视频编缉器 **必看**
+- https://github.com/FLamefiREz/speaker-verification  声纹识别
 
 - https://github.com/irmozius/meta_player  音频编缉？
 
@@ -32095,7 +32096,10 @@ https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scroll
 
   - https://huggingface.co/japanese-asr **各种日语数据集** 大模型
 
-    - https://huggingface.co/kotoba-tech/kotoba-whisper-v2.1  **直接可用** **必看** 
+    - https://huggingface.co/kotoba-tech/kotoba-whisper-v2.1 **语音识别** **必看** 
+
+      - https://github.com/FLamefiREz/speaker-verification  **声纹识别**
+
       - see huggingface/colab_Whisper_w_PEFT/kotoba_asr.py  成功推理
       - https://huggingface.co/datasets/reazon-research/reazonspeech  **1T 日语语料**
         - [数据集下载](https://huggingface.co/datasets/reazon-research/reazonspeech/blob/main/reazonspeech.py)
