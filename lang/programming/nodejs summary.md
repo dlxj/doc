@@ -32084,6 +32084,12 @@ https://github.com/haotian-liu/LLaVA
 
 
 
+## F5-TTS
+
+https://github.com/SWivid/F5-TTS
+
+
+
 ## RWKV speech
 
 see github -> echodict -> READFME.md -> LiveABC互動日语 -> **galgame语音数据集**
