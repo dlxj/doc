@@ -32088,6 +32088,8 @@ https://github.com/haotian-liu/LLaVA
 
 https://github.com/SWivid/F5-TTS
 
+- https://huggingface.co/spaces/mrfakename/E2-F5-TTS 在线使用
+
 
 
 ## RWKV speech
