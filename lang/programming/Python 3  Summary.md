@@ -3740,6 +3740,53 @@ print('main: done')
 
 
 
+```
+# see huggingface/NLPP_Audio/sakura_trs.py
+
+common.bat设置命令.\llama\server.exe -m .\%model.name%.gguf -c 2048 -ngl %ngl% -a %model.name% --host 127.0.0.1 --parallel 500 --threads-http 500，500个线程应该够用了
+
+python简单示例，能直接一次性并发5个请求：
+
+import requests
+import asyncio
+import aiohttp
+
+async def fetch(session, url,data):
+    print()
+    try:
+        async with session.post(url,json=data, timeout=600) as response:
+            print( await response.text())
+    except asyncio.TimeoutError:
+        return f'Timeout for {url}'
+
+async def main():
+    url = "http://127.0.0.1:8080/completion"  # 替换为你要请求的网址
+    num_requests = 5
+    test=["你是什么？","你能干嘛？","啊，你是助理吗？","作为助理的你，你能提供什么服务？","你作为助理，提供翻译服务吗？"]
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        for _ in range(num_requests):
+            data = {
+                "frequency_penalty": 0.4,
+                "n_predict": 1000,
+                "prompt": f"<|im_start|>system\n你是友善的助理，给用户解答任何问题。<|im_end|>\n<|im_start|>user\n{test[_]}<|im_end|>\n<|im_start|>assistant\n",
+                "repeat_penalty": 1,
+                "temperature": 0.1,
+                "top_k": 40,
+                "top_p": 0.3
+            }
+            task = asyncio.create_task(fetch(session, url,data))
+            tasks.append(task)
+
+        await asyncio.gather(*tasks)
+
+asyncio.run(main())
+```
+
+
+
+
+
 #### 多线程
 
 ```
