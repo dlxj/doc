@@ -1820,6 +1820,42 @@ for data in data_loader:
 
 
 
+### 读最后一个非空行
+
+```
+# see huggingface/NLPP_Audio/translate.py
+def get_last_line(pth):
+    with open(pth, 'rb') as f:
+        f.seek(0, 2)  # 移动到文件末尾
+        position = f.tell()  # 得到文件大小（字节数）
+        
+        while position > 0:
+            f.seek(position - 1)  # 从当前位置往前移动一字节
+            char = f.read(1)
+            
+            if char == b'\n':  # 找到最后一个换行符
+                # 读取最后一行
+                last_line = f.readline().decode('utf-8').strip()
+                if last_line:
+                    break
+            position -= 1
+        
+        print('lat_line is: ', last_line)
+        return last_line
+
+def get_last_idx(pth):
+    import os
+    if os.path.exists(pth):
+        lat_line = get_last_line(pth)
+        if lat_line:
+            arr = lat_line.strip().split('\t')
+            idx = int(arr[2])
+            return idx
+    return -1
+```
+
+
+
 
 
 ### write file
