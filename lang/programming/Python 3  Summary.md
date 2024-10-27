@@ -6798,6 +6798,44 @@ class(o)
 
 
 
+### 子进程流式输出
+
+```python
+import subprocess
+
+def run_command(command):
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,  # 将输出作为文本处理，而非字节流
+        bufsize=1,  # 行缓冲
+        universal_newlines=True  # 兼容不同平台上的换行符
+    )
+
+    # 实时打印 stdout 的输出
+    for stdout_line in iter(process.stdout.readline, ""):
+        print(stdout_line, end="")  # 避免多打印一个换行符
+
+    process.stdout.close()
+    process.wait()
+
+    stderr = process.stderr.read()
+    process.stderr.close()
+
+    return process.returncode, stderr
+
+command = ["ping", "-c", "4", "qq.com"]
+returncode, stderr = run_command(command)
+
+if returncode != 0:
+    print(f"Error occurred: {stderr}")
+```
+
+
+
+
+
 ### time
 
 ```python
