@@ -36019,6 +36019,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 [lossless-cut  js视频剪切](https://github.com/mifi/lossless-cut)
 
+[vapoursynth](https://github.com/vapoursynth/vapoursynth) python视频剪切
+
 [avidemux2  视频编辑](https://github.com/mean00/avidemux2 )
 
 [downkyicore bili下载 avalonia](https://github.com/yaobiao131/downkyicore/releases)
