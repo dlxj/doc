@@ -12,6 +12,40 @@ What I cannot create I do not understand
 
 Things Happen for A Reason
 
+
+
+### install cuda 11.8
+
+```
+install cuda 11.8
+
+update-alternatives --remove cuda /usr/local/cuda-12.2
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118
+ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+
+vi ~/.bashrc 
+
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
+fi
+export LD_LIBRARY_PATH
+
+export PATH=/usr/local/cuda/bin:$PATH
+
+
+source ~/.bashrc 
+
+nvcc --version
+```
+
+
+
+
+
 ### 极好的
 
 https://xiaosheng.run/2022/03/24/transformers-note-7.html
@@ -11639,7 +11673,10 @@ https://github.com/PaddlePaddle/PaddleOCR/issues/11597
   
   pip uninstall paddlepaddle
   
+  python3.8 + cuda11.6
   pip install paddlepaddle==2.4.2
+  protobuf==3.20 pip install pyyaml
+  
   
   pip install -r requirements.txt
   

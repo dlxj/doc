@@ -1,5 +1,37 @@
 
 
+# install cuda 11.8
+
+```
+install cuda 11.8
+
+update-alternatives --remove cuda /usr/local/cuda-12.2
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118
+ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+
+vi ~/.bashrc 
+
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
+fi
+export LD_LIBRARY_PATH
+
+export PATH=/usr/local/cuda/bin:$PATH
+
+
+source ~/.bashrc 
+
+nvcc --version
+```
+
+
+
+
+
 # ISO
 
 https://ftp.riken.jp/Linux/ubuntu-releases/20.04/
@@ -1660,6 +1692,19 @@ apt-get install fcitx-googlepinyin
 ## if cannot not be used immediately, log out once
 
 ```
+
+
+
+# JAVA
+
+```
+vi ~/.bashrc
+export JAVA_HOME=/root/jdk-21.0.4+7/
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+```
+
+
 
 
 
