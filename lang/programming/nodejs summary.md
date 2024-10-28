@@ -13782,6 +13782,24 @@ steampipe query "select version();"
 
 # mysql 
 
+cnpm i mysql@2.18.1
+
+```
+    let mysql = require('./mysql')
+    let testDB = mysql.createPool({
+        host: '',
+        user: '',
+        password: '',
+        database: '',
+        port: 3306,
+        multipleStatements: true,//支持多语句查询,
+        connectTimeout: 60 * 1000,
+        connectionLimit: 50
+    })
+    let re = await testDB.query('SELECT 1;')
+
+```
+
 
 
 ## 封装
