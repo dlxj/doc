@@ -11538,6 +11538,9 @@ character_type: CN
 
 ```
 
+see huggingface/PPOCRLabel
+	# 图片标注这个是正常的, 原来那个框选就报错了
+
 ubuntu20.04 + Python3.8 + Cuda11.2 + 3090(24GB) + 内存160GB
 	# 成功训练的配置
 
