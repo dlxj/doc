@@ -11568,7 +11568,7 @@ pip install paddlepaddle-gpu==2.6.1
 vi requirements.txt
 paddlepaddle-gpu==2.6.1
 pyyaml==6.0.2
-numpy==1.24.4
+numpy==1.23.5
 shapely==2.0.6
 scikit-image==0.21.0
 imgaug==0.4.0
@@ -11591,12 +11591,17 @@ vi /root/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
     	# 改成这样
 
 python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
-	# 开始训练
+	# 开始识别训练
+
+python tools/train.py -c configs/det/det_res18_db_v2.0.yml
+	# 开始检测训练
 
 
-
-
-
+nvidia-smi
+	# 查看显存占用， ps -al 然后 kill -9
+	
+systemctl restart nvidia-persistenced
+	# 重启 cuda 服务
 
 
 
