@@ -11557,6 +11557,10 @@ conda create -n PP python==3.8 pip &&
 conda activate PP && 
 pip install paddlepaddle-gpu==2.6.1
 	# 实测 4090 2.6.1 正常 (ubuntu20.04 + Python3.8 + Cuda11.6 + paddlepaddle-gpu==2.6.1)
+	# https://pypi.org/project/paddlepaddle-gpu/2.6.1/
+		# Ubuntu 16.04/18.04/20.04/22.04 (GPUVersion Supports CUDA 10.2/11.2/11.6/11.7)
+		# Python Version: 3.8/3.9/3.10/3.11/3.12 (64 bit)
+			# 这些都是支持的
 
 vi requirements.txt
 paddlepaddle-gpu==2.6.1
