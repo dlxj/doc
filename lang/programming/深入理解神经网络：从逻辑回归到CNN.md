@@ -11583,6 +11583,14 @@ vi /root/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
     values : [0.001, 0.0005, 0.0001]
     	# 改成这样
 
+python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+	# 开始训练
+
+
+
+
+
+
 
 
 mega-cmd
