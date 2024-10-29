@@ -11545,6 +11545,46 @@ conda install paddlepaddle-gpu==2.3.2 cudatoolkit=11.6 -c https://mirrors.tuna.t
 	# 4090 用这个, 4090 可以用 11.3 及以上，官方说最低 11.8 ，实际上大可不必。
 	# paddlepaddle-gpu==2.3.2 不可以用 11.3 , 也不可以 11.7 ，所以只能是 11.6 了
 
+
+# autodl
+~/miniconda3/bin/conda init && \
+ln -s ~/miniconda3/bin/conda /usr/local/bin && \
+ln -s ~/miniconda3/bin/activate /usr/local/bin && \
+ln -s ~/miniconda3/bin/deactivate /usr/local/bin && \
+source ~/miniconda3/etc/profile.d/conda.sh
+
+conda create -n PP python==3.8 pip && 
+conda activate PP && 
+pip install paddlepaddle-gpu==2.6.1
+	# 实测 4090 2.6.1 正常
+
+vi requirements.txt
+paddlepaddle-gpu==2.6.1
+pyyaml==6.0.2
+numpy==1.24.4
+shapely==2.0.6
+scikit-image==0.21.0
+imgaug==0.4.0
+pyclipper==1.3.0.post6
+lmdb==1.5.1
+tqdm==4.66.6
+visualdl==2.5.3
+rapidfuzz==3.9.7
+opencv-contrib-python==4.10.0.84
+Cython==3.0.11
+lxml==5.3.0
+premailer==3.10.0
+openpyxl==3.1.5
+attrdict==2.0.1
+
+
+vi /root/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
+    decay_epochs : [700, 800]
+    values : [0.001, 0.0005, 0.0001]
+    	# 改成这样
+
+
+
 mega-cmd
 login 1234xxxxx@qq.com  xxxxCNxxxx
 put /root/miniforge3_PP_cuda117.tar
