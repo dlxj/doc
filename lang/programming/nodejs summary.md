@@ -13747,6 +13747,12 @@ nmap 127.0.0.1 -p6379
 
 
 
+https://github.com/asg017/sqlite-vec/releases/download/v0.1.4-alpha.2/sqlite-vec-0.1.4-alpha.2-static-linux-x86_64.tar.gz
+
+​	# 向量插件
+
+
+
 # steampipe 嵌入式 postgreSQL
 
 https://github.com/turbot/steampipe

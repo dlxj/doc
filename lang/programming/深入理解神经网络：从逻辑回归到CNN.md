@@ -11584,6 +11584,18 @@ premailer==3.10.0
 openpyxl==3.1.5
 attrdict==2.0.1
 
+huggingface/project/ppcor_aliocr_convert.py
+	# aliocr 图片识别结果自动生成框选
+
+huggingface\PPOCRLabel\PPOCRLabel.py
+	# 查看 aliocr 图片生成的框选
+
+PaddleOCR/PPOCRLabel/gen_ocr_train_val_test.py
+	# PaddleOCR/train_data 生成的图片放这里
+	# 生成训练集和测试集
+
+python tools/train.py -c configs/det/det_res18_db_v2.0.yml
+	# 开始检测训练
 
 vi /root/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
     decay_epochs : [700, 800]
@@ -11593,8 +11605,7 @@ vi /root/PaddleOCR/configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
 python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
 	# 开始识别训练
 
-python tools/train.py -c configs/det/det_res18_db_v2.0.yml
-	# 开始检测训练
+
 
 
 nvidia-smi
