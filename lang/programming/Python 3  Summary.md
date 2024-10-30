@@ -1606,6 +1606,16 @@ SRC_DIR = os.path.dirname(os.path.realpath(__file__))
 
 
 
+### stem
+
+```
+base = Path(json_path).stem
+```
+
+
+
+
+
 ### which
 
 ```

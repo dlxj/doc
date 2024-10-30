@@ -13187,6 +13187,8 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
 
 # redis
 
+- https://www.cnblogs.com/yyee/p/15835952.html
+
 - https://www.digitalocean.com/community/tutorials/how-to-install-secure-redis-centos-7
 
   > redis-cli -h host -p port -a password
