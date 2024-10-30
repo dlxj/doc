@@ -11733,6 +11733,8 @@ see python summary.md -> OpenCV -> ppcor_aliocr_convert.py
 
 ```
 
+see huggingface/project/ppcor_aliocr_convert.py
+
 """
 # pip install numpy==1.23.5 opencv-python==4.10.0.84 -i https://mirrors.aliyun.com/pypi/simple/
 
