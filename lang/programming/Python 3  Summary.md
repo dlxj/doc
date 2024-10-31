@@ -57,6 +57,14 @@ nvcc --version
 
 
 
+## pip 清华源
+
+```
+pip install torch==2.1.1 torchaudio==2.1.1 numpy==1.23.5 -f https://mirror.sjtu.edu.cn/pytorch-wheels/cu118
+```
+
+
+
 
 
 ## OSError: Missing dependencies for SOCKS support.
