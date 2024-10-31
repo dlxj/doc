@@ -32133,7 +32133,7 @@ https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scroll
     - https://huggingface.co/kotoba-tech/kotoba-whisper-v2.1 **语音识别** **必看** 
 
       - https://github.com/FLamefiREz/speaker-verification  **声纹识别**
-
+- https://github.com/2DIPW/audio_dataset_vpr 直接可用
       - see huggingface/colab_Whisper_w_PEFT/kotoba_asr.py  成功推理
       - https://huggingface.co/datasets/reazon-research/reazonspeech  **1T 日语语料**
         - [数据集下载](https://huggingface.co/datasets/reazon-research/reazonspeech/blob/main/reazonspeech.py)
@@ -32358,6 +32358,9 @@ conda create -n  rwkvspeech pip python=3.10
 ### 40维mfcc
 
 https://github.com/pykaldi/pykaldi
+
+- https://github.com/pykaldi/pykaldi/blob/master/examples/notebooks/mfcc-extraction.ipynb
+- https://github.com/2DIPW/audio_dataset_vpr  声纹识别直接可用
 
 ```
 sudo apt-get install autoconf automake cmake curl g++ git graphviz \
