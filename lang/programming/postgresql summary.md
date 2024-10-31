@@ -656,6 +656,190 @@ PGPASSWORD="xxx" psql -h 127.0.0.1 -p 5432 -U postgres -d anime -f anime_2021-07
 
 
 
+## openai embedding
+
+```
+
+# see huggingface/project/向量查询问题.txt
+
+https://github.com/asg017/sqlite-vec
+	# sqlie 向量插件
+
+/*
+
+
+text-embedding-3-small	1536    $0.020 / 1M tokens      $0.010 / 1M tokens
+text-embedding-3-large  3072    $0.130 / 1M tokens      $0.065 / 1M tokens     
+    # 后面是批处理接口的价格
+
+
+https://platform.openai.com/docs/guides/batch
+    # 批处理更使宜些
+
+
+// https://github.com/pgvector/pgvector 先安装
+// yum install pgvector_17 -y
+
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE TABLE IF NOT EXISTS test_vector (
+    ID bigint generated always as identity (START WITH 1 INCREMENT BY 1), 
+    AppID integer NOT NULL,
+    TestID integer NOT NULL,
+    ChildTableID integer NOT NULL,
+    TestCptID integer DEFAULT -1,
+    OperateTime timestamp NOT NULL,
+    S_Test text NOT NULL,
+    V_Test vector(1536) NOT NULL,
+    AddTime timestamp DEFAULT CURRENT_TIMESTAMP,
+    UpdateTime timestamp DEFAULT NULL,
+    AddUserID integer DEFAULT -1,
+    UpdateUserID integer DEFAULT -1,
+    Enabled boolean DEFAULT '1',
+    UNIQUE(ID),  
+    PRIMARY KEY (AppID, TestID, ChildTableID) 
+);
+CREATE INDEX IF NOT EXISTS idx_appid ON test_vector (AppID);
+CREATE INDEX IF NOT EXISTS idx_appid_cptid ON test_vector (AppID, TestCptID);
+CREATE INDEX ON test_vector USING hnsw (V_Test vector_cosine_ops);
+
+*/
+
+
+
+cat /etc/redhat-release
+
+AlmaLinux release 9.3 (Shamrock Pampas Cat)
+
+
+# Install the repository RPM:
+sudo dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+
+# Disable the built-in PostgreSQL module:
+sudo dnf -qy module disable postgresql
+
+# Install PostgreSQL:
+sudo dnf install -y postgresql17-server
+
+# Optionally initialize the database and enable automatic start:
+sudo /usr/pgsql-17/bin/postgresql-17-setup initdb
+sudo systemctl enable postgresql-17
+sudo systemctl start postgresql-17
+
+
+sudo -u postgres psql
+select version();
+\password postgres  # 修改密码
+\q
+
+postgres 	post4321
+	# 用户名 密码
+
+psql -h 127.0.0.1 -p 5432 -U postgres
+	# 成功登录
+
+mkdir /home/psqldata
+
+chown -R postgres:postgres /home/psqldata
+
+
+
+ systemctl stop postgresql-17
+
+cp -R /var/lib/pgsql/17/data /home/psqldata   # 只能透亮换柱了
+
+mv /var/lib/pgsql/17/data /var/lib/pgsql/17/data__link__to_home_psqldata
+
+ln -s  /home/psqldata/data  /var/lib/pgsql/17/data
+			# unlink 取消软链用这个
+
+chown -R postgres:postgres /home/psqldata
+
+
+
+systemctl start postgresql-17
+
+systemctl status postgresql-17
+
+
+
+# 允许运程连接
+vi /var/lib/pgsql/17/data/postgresql.conf
+	listen_addresses = '*' # 改成这个
+vi /var/lib/pgsql/17/data/pg_hba.conf
+hostnossl    all          all            0.0.0.0/0  md5  
+	# hostnossl    all          all            0.0.0.0/0  trust  # 任何密码都能连
+	# 加在最后面，接受所有远程IP
+
+
+systemctl restart postgresql-17
+systemctl status postgresql-17
+
+
+
+yum groupinstall "Development Tools" && \
+yum install llvm-toolset-7-clang && \
+yum install postgresql17-devel && \
+yum install postgresql17-contrib && \
+yum install systemtap-sdt-devel
+
+
+git clone https://github.com/postgrespro/rum && \
+cd rum && \
+export PATH=$PATH:/usr/pgsql-17/bin/ && \
+make USE_PGXS=1 && \
+make USE_PGXS=1 install
+
+make USE_PGXS=1 installcheck && \
+psql DB -c "CREATE EXTENSION rum;"
+
+
+
+yum install pgvector_17 -y
+	# https://github.com/pgvector/pgvector 先安装
+
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE TABLE IF NOT EXISTS test_vector (
+    ID integer generated always as identity,
+    AppID integer NOT NULL,
+    TestID integer NOT NULL,
+    ChildTableID integer NOT NULL,
+    TestCptID integer DEFAULT -1,
+    S_Test text NOT NULL,
+    V_Test vector(1536) NOT NULL,
+    AddedTime timestamp DEFAULT CURRENT_TIMESTAMP,
+    UpdateTime timestamp DEFAULT NULL,
+    AddUserID integer DEFAULT -1,
+    UpdateUserID integer DEFAULT -1,
+    Enabled boolean DEFAULT '1',
+    UNIQUE(ID),  
+    PRIMARY KEY (AppID, TestID, ChildTableID) 
+);
+CREATE INDEX IF NOT EXISTS idx_appid ON test_vector (AppID);
+CREATE INDEX IF NOT EXISTS idx_appid_cptid ON test_vector (AppID, TestCptID);
+CREATE INDEX ON test_vector USING hnsw (V_Test vector_cosine_ops);
+
+
+(async () => {
+  let bent = require('bent')
+  let post = bent("http://xxxx:xxx", 'POST', 'json', 200)
+  
+  let response = await post('/embeddings', JSON.stringify({"sentence":"什么什么向量"}), { 'Content-Type': "application/json;chart-set:utf-8" })
+
+  if (response.status == 0) {
+      return [response.data, '']
+  } else {
+      return [null, response.msg]
+  }
+})()
+
+```
+
+
+
+
+
 ## 向量查询
 
 https://liaoxuefeng.com/blogs/all/2023-08-10-ai-search-engine-by-postgres/
