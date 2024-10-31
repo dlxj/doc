@@ -11607,6 +11607,15 @@ python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
 
 
 
+# 检测模型推断
+python tools/infer_det.py -c configs/det/det_res18_db_v2.0.yml  -o Global.checkpoints="output/ch_db_res18/best_accuracy" image_dir="train_data/det/test/12.jpg"
+
+
+# 检测模型导出后推断
+python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy Global.save_inference_dir=output/det_model
+
+python tools/infer/predict_det.py --det_algorithm="DB" --det_model_dir="output/det_model" --image_dir="train_data/det/test/12.jpg" --use_gpu=True --det_limit_side_len=960 --det_db_unclip_ratio=3.5
+
 
 nvidia-smi
 	# 查看显存占用， ps -al 然后 kill -9
