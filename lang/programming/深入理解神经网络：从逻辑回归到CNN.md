@@ -11624,6 +11624,21 @@ systemctl restart nvidia-persistenced
 	# 重启 cuda 服务
 
 
+https://github.com/PaddlePaddle/PaddleOCR/blob/main/doc/doc_en/inference_ppocr_en.md
+
+You can use the parameters limit_type and det_limit_side_len to limit the size of the input image, The optional parameters of limit_type are [max, min], and det_limit_size_len is a positive integer, generally set to a multiple of 32, such as 960.
+
+The default setting of the parameters is limit_type='max', det_limit_side_len=960. Indicates that the longest side of the network input image cannot exceed 960, If this value is exceeded, the image will be resized with the same width ratio to ensure that the longest side is det_limit_side_len. Set as limit_type='min', det_limit_side_len=960, it means that the shortest side of the image is limited to 960.
+
+If the resolution of the input picture is relatively large and you want to use a larger resolution prediction, you can set det_limit_side_len to the desired value, such as 1216:
+
+python3 tools/infer/predict_det.py --image_dir="./doc/imgs/1.jpg" --det_model_dir="./ch_PP-OCRv3_det_infer/" --det_limit_type=max --det_limit_side_len=1216
+If you want to use the CPU for prediction, execute the command as follows
+
+python3 tools/infer/predict_det.py --image_dir="./doc/imgs/1.jpg" --det_model_dir="./ch_PP-OCRv3_det_infer/"  --use_gpu=False
+
+
+
 
 mega-cmd
 login 1234xxxxx@qq.com  xxxxCNxxxx
