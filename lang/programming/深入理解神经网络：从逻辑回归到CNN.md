@@ -11610,6 +11610,11 @@ python tools/train.py -c configs/rec/PP-OCRv3/ch_PP-OCRv3_rec_distillation.yml
 # 检测模型推断
 python tools/infer_det.py -c configs/det/det_res18_db_v2.0.yml  -o Global.checkpoints="output/ch_db_res18/best_accuracy" image_dir="train_data/det/test/12.jpg"
 
+	PaddleOCR/configs/det/det_res18_db_v2.0.yml
+		Global:
+  			use_gpu: false
+  				# 如果没有 gpu 把这里设成 false
+
 
 # 检测模型导出后推断
 python tools/export_model.py -c configs/det/det_res18_db_v2.0.yml -o Global.checkpoints=output/ch_db_res18/best_accuracy Global.save_inference_dir=output/det_model
