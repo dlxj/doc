@@ -32365,6 +32365,8 @@ https://github.com/pykaldi/pykaldi
 
   - https://github.com/yeyupiaoling/VoiceprintRecognition-Pytorch
 
+    - https://github.com/yeyupiaoling/MASR 同作者的语音识别
+
     - ```
       pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118
       
@@ -32431,6 +32433,12 @@ if __name__ == "__main__":
     # 调用 MFCC 提取函数
     extract_mfcc(wav_file)
 ```
+
+
+
+### wav 文件格式
+
+https://www.cnblogs.com/Mufasa/p/10878777.html
 
 
 

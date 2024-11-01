@@ -13351,7 +13351,7 @@ Eval:
 
   > 同时识别多个音频
 
-
+- https://github.com/yeyupiaoling/MASR 同作者的语音识别
 
 ```
 
@@ -13690,7 +13690,7 @@ https://www.cnblogs.com/v3ucn/p/18288786
 
 https://github.com/espnet/espnet  mcu
 
-
+https://github.com/yeyupiaoling/MASR 同作者的语音识别
 
 
 
