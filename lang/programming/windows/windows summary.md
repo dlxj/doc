@@ -771,6 +771,10 @@ pyside2-uic.exe uiFile.ui | wsl ascii2uni -a U > ui_file.py
 
 
 
+### 开机启动脚本
+
+https://blog.csdn.net/popboy29/article/details/126854886
+
 
 
 # choco
