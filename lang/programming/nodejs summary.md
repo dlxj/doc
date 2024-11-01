@@ -33339,6 +33339,14 @@ from lightning.fabric.utilities.cloud_io import _load as pl_load
 
 
 
+# kotoba-whisper
+
+https://github.com/kotoba-tech/kotoba-whisper
+
+huggingface/rwkv5-jp-trimvd/kotoba_asr.py
+
+
+
 
 
 # whisperX
