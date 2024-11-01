@@ -32360,7 +32360,17 @@ conda create -n  rwkvspeech pip python=3.10
 https://github.com/pykaldi/pykaldi
 
 - https://github.com/pykaldi/pykaldi/blob/master/examples/notebooks/mfcc-extraction.ipynb
+
 - https://github.com/2DIPW/audio_dataset_vpr  声纹识别直接可用
+
+  - https://github.com/yeyupiaoling/VoiceprintRecognition-Pytorch
+
+    - ```
+      pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118
+      
+      ```
+
+      
 
 ```
 sudo apt-get install autoconf automake cmake curl g++ git graphviz \

@@ -61,7 +61,13 @@ nvcc --version
 
 ```
 pip install torch==2.1.1 torchaudio==2.1.1 numpy==1.23.5 -f https://mirror.sjtu.edu.cn/pytorch-wheels/cu118
+
+pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118
+	# 清华源没有的这样
+
 ```
+
+
 
 
 
