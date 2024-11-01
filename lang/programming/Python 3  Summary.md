@@ -33,9 +33,9 @@ rm -rf /usr/lib/python3/dist-packages/blinker*
 install cuda 11.8
 
 update-alternatives --remove cuda /usr/local/cuda-12.2
-update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118
-ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda
-ln -sfT /etc/alternatives/cuda /usr/local/cuda
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118 && 
+ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda && 
+ln -sfT /etc/alternatives/cuda /usr/local/cuda  
 
 
 vi ~/.bashrc 

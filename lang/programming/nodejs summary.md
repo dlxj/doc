@@ -33359,7 +33359,7 @@ datasets[audio]==3.0.1
 accelerate==0.26.0
 jiwer
 evaluate>=0.4.1
-
+flash-attn==2.6.3
 
 see huggingface/rwkv5-jp-trimvd/requirements.txt
 numpy==1.26.4
