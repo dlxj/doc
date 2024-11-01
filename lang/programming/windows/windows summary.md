@@ -775,6 +775,22 @@ pyside2-uic.exe uiFile.ui | wsl ascii2uni -a U > ui_file.py
 
 https://blog.csdn.net/popboy29/article/details/126854886
 
+```
+apt update && 
+apt install cron && 
+service cron start
+
+crontab -e
+@reboot  /root/run_pm2.sh
+
+vi /root/run_pm2.sh
+pm2 start pm2_proxynt_home_pc257.json
+
+
+```
+
+
+
 
 
 # choco

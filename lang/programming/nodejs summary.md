@@ -33351,6 +33351,32 @@ huggingface/rwkv5-jp-trimvd/kotoba_asr.py
 
 
 
+```
+numpy==1.26.4
+torch==2.1.1
+transformers==4.45.2
+datasets[audio]==3.0.1
+accelerate==0.26.0
+jiwer
+evaluate>=0.4.1
+
+
+see huggingface/rwkv5-jp-trimvd/requirements.txt
+numpy==1.26.4
+transformers==4.45.2
+accelerate==0.26.0
+datasets==3.0.1
+torch==2.1.1
+torchaudio==2.1.1
+stable-ts==2.16.0
+punctuators==0.0.5
+einops==0.8.0 
+flash-attn==2.6.3
+
+```
+
+
+
 
 
 # whisperX
