@@ -33343,6 +33343,10 @@ from lightning.fabric.utilities.cloud_io import _load as pl_load
 
 https://github.com/kotoba-tech/kotoba-whisper
 
+- https://huggingface.co/kotoba-tech/kotoba-whisper-v2.1
+- https://huggingface.co/distil-whisper/distil-large-v3
+  - https://github.com/huggingface/distil-whisper
+
 huggingface/rwkv5-jp-trimvd/kotoba_asr.py
 
 
