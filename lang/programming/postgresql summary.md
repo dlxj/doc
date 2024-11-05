@@ -237,7 +237,18 @@ http://ｘｘ.ｘｘ.ｘｘ.57:7851/wsproxy/admin
 
 
 // https://github.com/pgvector/pgvector 先安装
-// proxychains4 apt install postgresql-17-pgvector
+
+proxychains4 apt install postgresql-17-pgvector
+	# 安装向量插件
+
+git clone https://github.com/postgrespro/rum && 
+cd rum &&
+make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config &&
+make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config install &&
+make USE_PGXS=1 installcheck &&
+$ psql DB -c "CREATE EXTENSION rum;
+	# 安装　RUM 插件
+
 
 CREATE EXTENSION IF NOT EXISTS rum;
 CREATE EXTENSION IF NOT EXISTS vector;

@@ -2440,6 +2440,18 @@ crontab -e
 
 
 
+### 日志发现错误就重启
+
+```
+tail -f $HOME/.pm2/logs/aicbyserver-v2-master-7007-out.log
+
+
+```
+
+
+
+
+
 ### node-gpy 下载出错
 
 ```
