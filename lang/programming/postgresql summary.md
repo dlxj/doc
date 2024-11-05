@@ -197,7 +197,7 @@ sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresq
 
 proxychains4 apt update
 
-proxychains4 apt -y install postgresql-17 postgresql-server-dev-17 libpq-dev 
+proxychains4 apt -y install postgresql-17 postgresql-server-dev-17 libpq-dev postgresql-contrib 
 
 ```
 
