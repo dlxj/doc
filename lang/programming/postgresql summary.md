@@ -1523,6 +1523,27 @@ res = search_reviews(df, 'delicious beans', n=3)
 
 
 
+## jsonb
+
+### 联合索引
+
+```
+CREATE TABLE my_table (
+    id serial PRIMARY KEY,
+    category text,
+    data jsonb
+);
+
+CREATE INDEX my_btree_index ON my_table (category, (data->>'key'));
+
+CREATE INDEX ON my_table USING GIN ((data->'key')), category;
+
+SELECT * FROM my_table WHERE category = 'some_category' AND data->>'key' = 'some_value';
+
+
+
+```
+
 
 
 
