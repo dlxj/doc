@@ -3880,6 +3880,87 @@ asyncio.run(main())
 
 
 
+#### 异步 openai 请求
+
+```
+import aiohttp
+import asyncio
+import json
+
+async def get_embedding_async(text):
+    # 代理地址
+    proxy = "http://10.0.0.2:5782"
+
+    # 请求头
+    headers = {
+        "Content-Type": "application/json; charset=utf-8",
+        "Authorization": "Bearer openai_key_here"
+    }
+
+    # 请求体
+    data = {
+        "model": "text-embedding-3-small",  # "text-embedding-ada-002",
+        "encoding_format": "float",
+        "input": text
+    }
+
+    try:
+        # 使用 aiohttp 的 ClientSession 进行异步请求
+        async with aiohttp.ClientSession() as session:
+            async with session.post(
+                "https://api.openai.com/v1/embeddings",
+                headers=headers,
+                data=json.dumps(data),
+                proxy=proxy
+            ) as response:
+
+                # 检查响应状态码
+                if response.status == 200:
+                    result = await response.json()
+                    embedding = result['data'][0]['embedding']  # 1536
+                    return embedding, ''
+                else:
+                    return None, 'openai 向量获取失败'
+
+    except Exception as e:
+        return None, f'openai 向量获取失败. {str(e)}'
+
+
+async def get_embeddings_in_batches(text_list, batch_size=10):
+
+    results = []
+    
+    for i in range(0, len(text_list), batch_size):
+        batch_texts = text_list[i:i + batch_size]
+        
+        batch_results = await asyncio.gather(
+            *[get_embedding_async(text) for text in batch_texts]
+        )
+        
+        results.extend(batch_results)
+    
+    return results
+
+
+if __name__ == "__main__":
+    # 示例输入文本
+    texts = ["文本1", "文本2", "文本3"]
+
+    # 异步运行批量处理函数
+    loop = asyncio.get_event_loop()
+    embeddings = loop.run_until_complete(get_embeddings_in_batches(texts, batch_size=2))
+
+    # 输出结果
+    for i, (embedding, error) in enumerate(embeddings):
+        if error:
+            print(f"请求 {i} 失败: {error}")
+        else:
+            print(f"请求 {i} 成功: {embedding[:5]}...")  # 仅展示部分嵌入向量
+
+```
+
+
+
 
 
 #### 多线程
