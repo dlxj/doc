@@ -178,6 +178,31 @@ CREATE INDEX idx_appid ON test_vector (AppID);
 
 
 
+### Ubuntu 22.04
+
+```
+
+proxychains4 apt install -y postgresql-common && 
+proxychains4 bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+
+proxychains4 apt install curl ca-certificates &&
+sudo install -d /usr/share/postgresql-common/pgdg && 
+curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.as
+c
+
+
+
+
+sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+proxychains4 apt update
+
+proxychains4 apt -y install postgresql-17
+
+```
+
+
+
 
 
 
@@ -674,7 +699,7 @@ text-embedding-3-large  3072    $0.130 / 1M tokens      $0.065 / 1M tokens
 
 
 https://platform.openai.com/docs/guides/batch
-    # 批处理更使宜些
+    # 批处理更便宜些
 
 
 // https://github.com/pgvector/pgvector 先安装
