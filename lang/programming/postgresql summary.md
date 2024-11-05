@@ -237,7 +237,7 @@ http://ｘｘ.ｘｘ.ｘｘ.57:7851/wsproxy/admin
 
 
 // https://github.com/pgvector/pgvector 先安装
-// yum install pgvector_17 -y
+// proxychains4 apt install postgresql-17-pgvector
 
 CREATE EXTENSION IF NOT EXISTS rum;
 CREATE EXTENSION IF NOT EXISTS vector;
