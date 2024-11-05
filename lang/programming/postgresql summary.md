@@ -199,6 +199,43 @@ proxychains4 apt update
 
 proxychains4 apt -y install postgresql-17 postgresql-server-dev-17 libpq-dev postgresql-contrib 
 
+
+
+/etc/postgresql/17/main/pg_hba.conf
+
+
+sudo -u postgres psql
+select version();
+\password postgres  # 修改密码
+\q
+
+postgres 	pt41
+	# 用户名 密码
+
+psql -h 127.0.0.1 -p 5432 -U postgres
+	# 成功登录
+	
+
+# 允许运程连接
+vi /etc/postgresql/17/main/pg_hba.conf
+	listen_addresses = '*' # 改成这个
+vi /var/lib/pgsql/17/data/pg_hba.conf
+hostnossl    all          all            0.0.0.0/0  md5  
+	# hostnossl    all          all            0.0.0.0/0  trust  # 任何密码都能连
+	# 加在最后面，接受所有远程IP
+
+
+#local   all             postgres                                peer
+local   all             postgres                                password
+	# 改成这样
+
+
+systemctl restart postgresql
+
+mkdir /home/psqldata
+
+chown -R postgres:postgres /home/psqldata
+
 ```
 
 
