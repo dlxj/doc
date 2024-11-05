@@ -31205,6 +31205,8 @@ v4neo 可以用v4 代码推理，**v5 用 v4 推理出错**
 
 https://github.com/TencentEdgeOne/pages-templates/tree/main/examples/chrome-ai  chrome 内置AI
 
+https://gptcache.readthedocs.io/en/latest/_modules/gptcache/embedding/rwkv.html?highlight=rwkv# **embedding**
+
 
 
 ```
@@ -32135,7 +32137,7 @@ https://colab.research.google.com/drive/1AaoBzZG6t3uE-E5I-I3XsNW_N4VI2DCq#scroll
       - https://github.com/FLamefiREz/speaker-verification  **声纹识别**
 - https://github.com/2DIPW/audio_dataset_vpr 直接可用
       - see huggingface/colab_Whisper_w_PEFT/kotoba_asr.py  成功推理
-      - https://huggingface.co/datasets/reazon-research/reazonspeech  **1T 日语语料**
+          - https://huggingface.co/datasets/reazon-research/reazonspeech  **1T 日语语料**
         - [数据集下载](https://huggingface.co/datasets/reazon-research/reazonspeech/blob/main/reazonspeech.py)
 
   - ```
