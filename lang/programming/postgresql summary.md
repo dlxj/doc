@@ -236,6 +236,34 @@ http://ｘｘ.ｘｘ.ｘｘ.57:7851/wsproxy/admin
 
 
 
+// https://github.com/pgvector/pgvector 先安装
+// yum install pgvector_17 -y
+
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE TABLE IF NOT EXISTS test_vector (
+    ID bigint generated always as identity (START WITH 1 INCREMENT BY 1), 
+    AppID integer NOT NULL,
+    TestID integer NOT NULL,
+    ChildTableID integer NOT NULL,
+    TestCptID integer DEFAULT -1,
+    OperateTime timestamp NOT NULL,
+    S_Test text NOT NULL,
+    V_Test vector(1536) NOT NULL,
+    AddTime timestamp DEFAULT CURRENT_TIMESTAMP,
+    UpdateTime timestamp DEFAULT NULL,
+    AddUserID integer DEFAULT -1,
+    UpdateUserID integer DEFAULT -1,
+    Enabled boolean DEFAULT '1',
+    UNIQUE(ID),  
+    PRIMARY KEY (AppID, TestID, ChildTableID) 
+);
+CREATE INDEX IF NOT EXISTS idx_appid ON test_vector (AppID);
+CREATE INDEX IF NOT EXISTS idx_appid_cptid ON test_vector (AppID, TestCptID);
+CREATE INDEX ON test_vector USING hnsw (V_Test vector_cosine_ops);
+
+
+
 mkdir /home/psqldata
 
 chown -R postgres:postgres /home/psqldata
