@@ -218,12 +218,9 @@ psql -h 127.0.0.1 -p 5432 -U postgres
 
 # 允许运程连接
 vi /etc/postgresql/17/main/pg_hba.conf
-	listen_addresses = '*' # 改成这个
-vi /var/lib/pgsql/17/data/pg_hba.conf
 hostnossl    all          all            0.0.0.0/0  md5  
 	# hostnossl    all          all            0.0.0.0/0  trust  # 任何密码都能连
 	# 加在最后面，接受所有远程IP
-
 
 #local   all             postgres                                peer
 local   all             postgres                                password
@@ -231,6 +228,13 @@ local   all             postgres                                password
 
 
 systemctl restart postgresql
+
+
+http://ｘｘ.ｘｘ.ｘｘ.57:7851/wsproxy/admin
+	# ali57 添加远程端口  54322 转到　wsl2 5432
+
+
+
 
 mkdir /home/psqldata
 
