@@ -2572,6 +2572,61 @@ https://groonga.org/docs/install/ubuntu.html
 
 
 ```
+proxychains4 apt install -y software-properties-common && 
+proxychains4 add-apt-repository -y universe && 
+proxychains4 add-apt-repository -y ppa:groonga/ppa &&
+proxychains4 apt install -y wget lsb-release && 
+proxychains4 wget https://packages.groonga.org/ubuntu/groonga-apt-source-latest-$(lsb_release --codename --short).deb && 
+proxychains4 apt install -y -V ./groonga-apt-source-latest-$(lsb_release --codename --short).deb && 
+echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release --codename --short)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list && 
+proxychains4 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && 
+proxychains4 apt update && 
+proxychains4 apt install -y -V postgresql-17-pgdg-pgroonga && 
+proxychains4 apt install -y -V groonga-tokenizer-mecab
+
+CREATE EXTENSION pgroonga;
+	# 成功
+
+```
+
+
+
+
+
+```
+    CREATE TABLE danganronpa (
+        id integer primary key generated always as identity, 
+        name text, 
+        jp text, 
+        ch text DEFAULT '', 
+        en text DEFAULT '', 
+        type text, 
+        begintime text,
+        endtime text,
+        jp_ruby text,
+        jp_mecab text, 
+        v_jp  tsvector, 
+        v_ch  tsvector, 
+        v_en  tsvector, 
+        seasion text DEFAULT '',
+        seasionname text DEFAULT '',
+        episode text DEFAULT '',
+        audio bytea, 
+        video bytea,
+        videoname text 
+      );
+    create extension pgroonga;
+    create extension pg_jieba;
+    CREATE INDEX pgroonga_jp_index ON danganronpa USING pgroonga (jp);
+    CREATE INDEX animename_index ON danganronpa (name);
+    CREATE INDEX episode_index ON danganronpa (episode);
+```
+
+
+
+
+
+```
 $ sudo -H yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-$(cut -d: -f5 /etc/system-release-cpe | cut -d. -f1)-$(rpm -qf --queryformat="%{ARCH}" /etc/redhat-release)/pgdg-redhat-repo-latest.noarch.rpm
 $ sudo -H yum install -y https://packages.groonga.org/centos/groonga-release-latest.noarch.rpm
 $ sudo -H yum install -y postgresql13-pgdg-pgroonga
