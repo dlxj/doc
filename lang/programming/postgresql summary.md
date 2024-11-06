@@ -2572,6 +2572,9 @@ https://groonga.org/docs/install/ubuntu.html
 
 
 ```
+
+# see huggingface/NLPP_Audio/vector.py
+
 proxychains4 apt install -y software-properties-common && 
 proxychains4 add-apt-repository -y universe && 
 proxychains4 add-apt-repository -y ppa:groonga/ppa &&
@@ -2586,6 +2589,41 @@ proxychains4 apt install -y -V groonga-tokenizer-mecab
 
 CREATE EXTENSION pgroonga;
 	# 成功
+
+see https://pgroonga.github.io/tutorial/
+    # 用法很详细
+    
+-- 在 postgres 数据库里运行
+CREATE DATABASE nlppvector
+    WITH OWNER = postgres 
+    ENCODING = 'UTF8' 
+    TABLESPACE = pg_default 
+    CONNECTION LIMIT = -1 
+    TEMPLATE template0;
+
+
+
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS pgroonga;
+CREATE TABLE IF NOT EXISTS nlpp_vector (
+    ID bigint generated always as identity (START WITH 1 INCREMENT BY 1), 
+    JPMD5 CHAR(32) NOT NULL,
+    S_JP text NOT NULL,
+    V_JP vector(1536) NOT NULL,
+    S_CN text NOT NULL,
+    S_EN text NOT NULL,
+    metadata jsonb NOT NULL,
+    AddTime timestamp DEFAULT CURRENT_TIMESTAMP,
+    UpdateTime timestamp DEFAULT NULL,
+    Enabled boolean DEFAULT '1',
+    UNIQUE(ID),  
+    PRIMARY KEY (JPMD5) 
+);
+CREATE INDEX IF NOT EXISTS index_pgvector_VJP ON nlpp_vector USING hnsw (V_JP vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS index_pgroonga_SJP ON nlpp_vector USING pgroonga (S_JP);
+
 
 ```
 
