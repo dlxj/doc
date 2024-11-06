@@ -1516,6 +1516,30 @@ apt-get install cron
 
 
 
+# crontab 
+
+```
+systemctl status crond
+
+crontab -e
+00   *    *      *   *  /usr/bin/sh /root/restartvector.sh
+@reboot pm2 resurrect
+
+vi ~/restartvector.sh
+echo 'restart vector seversr...'
+pm2 restart aicbyserver_v2_master_7007
+echo 'sleep 5 sec...'
+sleep 5
+echo 'post embedding...'
+node /project/post/post_embeding.js > outlog &
+echo 'all task done.'
+
+
+
+```
+
+
+
 
 
 
