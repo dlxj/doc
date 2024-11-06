@@ -2445,6 +2445,21 @@ crontab -e
 ```
 tail -f $HOME/.pm2/logs/aicbyserver-v2-master-7007-out.log
 
+vi restartvector.sh
+echo 'restart vector seversr...'
+pm2 restart aicbyserver_v2_master_7007
+echo 'sleep 5 sec...'
+sleep 5
+echo 'post embedding...'
+node /project/post/post_embeding.js > outlog &
+echo 'all task done.'
+
+
+crontab -e
+
+bash restartvector.sh
+
+
 
 ```
 
