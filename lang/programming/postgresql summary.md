@@ -2567,6 +2567,8 @@ cp  /usr/share/postgresql/13/tsearch_data/jieba_user.dict
 
 https://pgroonga.github.io/install/
 
+https://groonga.org/docs/install/ubuntu.html
+
 
 
 ```
