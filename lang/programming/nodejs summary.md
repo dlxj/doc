@@ -12530,7 +12530,7 @@ int main(int argc, char* argv[])
 
 [lossless-cut typescript视频剪辑](https://github.com/mifi/lossless-cut)
 
-
+https://cloud.tencent.com/developer/article/2350995  MPEG2-TS
 
 
 
