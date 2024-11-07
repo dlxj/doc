@@ -12532,6 +12532,8 @@ int main(int argc, char* argv[])
 
 https://cloud.tencent.com/developer/article/2350995  MPEG2-TS
 
+- https://ffmpeg.xianwaizhiyin.net/base-knowledge/mux-mpeg-ts.html
+
 
 
 ```
