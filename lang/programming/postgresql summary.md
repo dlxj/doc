@@ -187,8 +187,7 @@ proxychains4 bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 
 proxychains4 apt install curl ca-certificates &&
 sudo install -d /usr/share/postgresql-common/pgdg && 
-curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.as
-c
+curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
 
 
 
@@ -244,34 +243,39 @@ proxychains4 apt install postgresql-17-pgvector
 git clone https://github.com/postgrespro/rum && 
 cd rum &&
 make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config &&
-make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config install &&
-make USE_PGXS=1 installcheck &&
+make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config install
 $ psql DB -c "CREATE EXTENSION rum;
 	# 安装　RUM 插件
 
 
+CREATE DATABASE nlppvector
+WITH OWNER = postgres 
+ENCODING = 'UTF8' 
+TABLESPACE = pg_default 
+CONNECTION LIMIT = -1 
+TEMPLATE template0;
+
 CREATE EXTENSION IF NOT EXISTS rum;
 CREATE EXTENSION IF NOT EXISTS vector;
-CREATE TABLE IF NOT EXISTS test_vector (
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS pgroonga;
+CREATE TABLE IF NOT EXISTS nlpp_vector (
     ID bigint generated always as identity (START WITH 1 INCREMENT BY 1), 
-    AppID integer NOT NULL,
-    TestID integer NOT NULL,
-    ChildTableID integer NOT NULL,
-    TestCptID integer DEFAULT -1,
-    OperateTime timestamp NOT NULL,
-    S_Test text NOT NULL,
-    V_Test vector(1536) NOT NULL,
+    JPMD5 CHAR(32) NOT NULL,
+    name text NOT NULL,
+    S_JP text NOT NULL,
+    V_JP vector(1536) NOT NULL,
+    S_CN text DEFAULT '' NOT NULL,
+    S_EN text DEFAULT '' NOT NULL,
+    metadata jsonb NOT NULL,
     AddTime timestamp DEFAULT CURRENT_TIMESTAMP,
     UpdateTime timestamp DEFAULT NULL,
-    AddUserID integer DEFAULT -1,
-    UpdateUserID integer DEFAULT -1,
     Enabled boolean DEFAULT '1',
     UNIQUE(ID),  
-    PRIMARY KEY (AppID, TestID, ChildTableID) 
+    PRIMARY KEY (JPMD5, name) 
 );
-CREATE INDEX IF NOT EXISTS idx_appid ON test_vector (AppID);
-CREATE INDEX IF NOT EXISTS idx_appid_cptid ON test_vector (AppID, TestCptID);
-CREATE INDEX ON test_vector USING hnsw (V_Test vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS index_pgvector_VJP ON nlpp_vector USING hnsw (V_JP vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS index_pgroonga_SJP ON nlpp_vector USING pgroonga (S_JP);
 
 
 
