@@ -375,9 +375,10 @@ cat /etc/passwd
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\{6f84f58e-2c93-4199-b374-eb7ccb8a61d1}
 DefaultUid 改成 十进制的 0
 	# 成功更改默认用户
+	# 不知为什么最近失效了，看下面
 
-wsl --distribution Ubuntu-20.04 -u root
-	# 更改默认用户
+ubuntu2204.exe config --default-user root
+	# 更改默认用户成功
 	# 试看在 .wslconfig 配置里加 ？
 
 sudo passwd
