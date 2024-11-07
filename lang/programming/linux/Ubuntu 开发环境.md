@@ -1542,6 +1542,14 @@ echo 'all task done.'
 
 
 
+# copy 大量文件
+
+```
+find data/img -name "*.txt" | xargs -i cp {} xxx/data/img__origin_20230529
+```
+
+
+
 
 
 # 安装双系统
