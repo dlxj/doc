@@ -3976,6 +3976,12 @@ where en @@ to_tsquery('rebell')
 
 
 
+# pg_duckdb
+
+https://github.com/duckdb/pg_duckdb
+
+https://github.com/abersheeran/r2-webdav  Cloudflare Workers + R2 免维护，10 GB 配置绰绰有余
+
 # ltree
 
 ```

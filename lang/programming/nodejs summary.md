@@ -5664,11 +5664,13 @@ sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
 
 
 
-## Cloudflare
+## Cloudflare cf
 
 
 
 ### R2对象存储
+
+https://github.com/abersheeran/r2-webdav  Cloudflare Workers + R2 免维护，10 GB 配置绰绰有余
 
 https://juejin.cn/post/7331584783611281444
 
