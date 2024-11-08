@@ -5709,6 +5709,13 @@ const response = await S3.send(command)
 
 https://fast.v2ex.com/t/969197
 
+- ```
+  使用 workers 提供的 KV 作为数据库，可达到 wordpress 的灵活性
+  使用 cloudflare 缓存 html 来降低 KV 的读写，使其可达到静态博客的速度
+  ```
+
+  
+
 
 
 ### D1 数据库

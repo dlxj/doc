@@ -1550,6 +1550,17 @@ SELECT * FROM my_table WHERE category = 'some_category' AND data->>'key' = 'some
 
 
 
+```
+-- 创建一个包含 jsonb 属性的节点
+SELECT * 
+FROM cypher('your_graph', $$
+    CREATE (n:Person {name: 'Alice', attributes: '{"age": 30, "hobbies": ["reading", "hiking"]}'::jsonb})
+$$) AS (a agtype);
+
+```
+
+
+
 
 
 ## UUID
@@ -3970,6 +3981,56 @@ where en @@ to_tsquery('rebell')
     (1 row)
     ```
 
+  - ```
+    -- 创建一个包含 jsonb 属性的节点
+    SELECT * 
+    FROM cypher('your_graph', $$
+        CREATE (n:Person {name: 'Alice', attributes: '{"age": 30, "hobbies": ["reading", "hiking"]}'::jsonb})
+    $$) AS (a agtype);
+    
+    -- GIN 索引用于通用的 jsonb 查询
+    CREATE INDEX idx_person_attributes_gin ON your_graph.ag_catalog.v_label USING GIN ((properties -> 'attributes'));
+    
+    -- 表达式索引用于优化针对 age 字段的查询
+    CREATE INDEX idx_person_age_expr ON your_graph.ag_catalog.v_label USING BTREE ((properties -> 'attributes' ->> 'age'));
+    
+    查询：查找所有 hobbies 包含 "reading" 的人员。
+    SELECT *
+    FROM cypher('your_graph', $$
+        MATCH (n:Person)
+        WHERE n.attributes @> '{"hobbies": ["reading"]}'::jsonb
+        RETURN n
+    $$) AS (n agtype);
+    
+    查询：查找 age 等于 30 岁的人员。
+    SELECT *
+    FROM cypher('your_graph', $$
+        MATCH (n:Person)
+        WHERE (n.attributes->>'age')::int = 30
+        RETURN n
+    $$) AS (n agtype);
+    
+    按 age 从小到大排序人员。
+    SELECT *
+    FROM cypher('your_graph', $$
+        MATCH (n:Person)
+        RETURN n
+        ORDER BY (n.attributes->>'age')::int ASC
+    $$) AS (n agtype);
+    	# BTREE 索引支持高效的排序操作。
+    
+    ```
+
+  - ```
+    SELECT *
+    FROM cypher('your_graph', $$
+        MATCH (n:Person)
+        WHERE (n.attributes->>'age')::int > 25
+        RETURN n
+    $$) AS (n agtype);
+    
+    ```
+
   - 
 
 - https://blog.csdn.net/qq_21090437/article/details/120292081 AgensGraph
@@ -3981,6 +4042,8 @@ where en @@ to_tsquery('rebell')
 https://github.com/duckdb/pg_duckdb
 
 https://github.com/abersheeran/r2-webdav  Cloudflare Workers + R2 免维护，10 GB 配置绰绰有余
+
+
 
 # ltree
 
