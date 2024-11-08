@@ -5684,6 +5684,15 @@ cloudflare workers回环问题，即workers不能连接并访问具有cloudflare
 
 ### Workers
 
+```
+python 目前只支持一部分 stdlib 的 package
+
+Wrangler 是 Cloudflare 提供的命令行工具，用于本地开发、构建和部署 Workers。通过 Wrangler，你可以在本地环境中运行 Workers，并利用 IDE（如 Visual Studio Code）提供的调试功能设置断点、逐步执行代码等。
+
+```
+
+
+
 #### openai api 中转
 
 ```
