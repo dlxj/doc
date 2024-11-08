@@ -2607,6 +2607,23 @@ https://groonga.org/docs/install/ubuntu.html
 
 
 ```
+  SELECT unnest -> 'value' AS "value" FROM unnest(
+  pgroonga_tokenize('This is a pen. これはペンです。你为什么学习普通话？',
+                    'tokenizer', 'TokenMecab("include_class", true)',
+                    'token_filters', 'TokenFilterNFKC100("unify_kana", true)')
+  );
+  
+    SELECT unnest -> 'value' AS "value" FROM unnest(
+  pgroonga_tokenize('This is a pen. これはペンです。你为什么学习普通话？',
+                    'tokenizer', 'TokenBigram')
+  );
+```
+
+
+
+
+
+```
 
 # see huggingface/NLPP_Audio/vector.py
 
