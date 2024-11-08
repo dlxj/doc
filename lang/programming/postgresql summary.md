@@ -2608,6 +2608,17 @@ https://groonga.org/docs/install/ubuntu.html
 
 
 
+**TokenBigram** 将文本按 **二元组（bigrams）** 的方式进行分词，即将相邻的两个字符作为一个词元进行处理。
+
+```
+CREATE INDEX idx_content ON documents USING pgroonga (content pgroonga_text_full_text_search_config('TokenBigram'));
+
+```
+
+
+
+
+
 ```
   SELECT unnest -> 'value' AS "value" FROM unnest(
   pgroonga_tokenize('This is a pen. これはペンです。你为什么学习普通话？',
@@ -2736,6 +2747,21 @@ $ sudo -H yum install -y postgresql13-pgdg-pgroonga
 sudo -u postgres -H psql --command 'CREATE DATABASE pgroonga_test'
 
 sudo -u postgres -H psql -d pgroonga_test --command 'CREATE EXTENSION pgroonga'
+
+
+```
+
+
+
+### TokenMecab + mecab-ipadic-neologd
+
+```
+apt install mecab libmecab-dev mecab-ipadic && 
+git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
+cd mecab-ipadic-neologd && 
+sudo ./bin/install-mecab-ipadic-neologd -n
+
+
 
 
 ```
