@@ -3927,6 +3927,25 @@ where en @@ to_tsquery('rebell')
 
 - https://github.com/apache/age  Apache AGE
 
+  - ```
+    select * from cypher('graph1', $AnythingInsideDollars$
+    Match(v:Persion{p_id:'safd$$bbb'}
+    return v
+    $AnythingInsideDollars$) as (v agtype);
+    ```
+
+  - ```
+    So if you have the following in your db:
+    
+    (:City)-[:AirRoute]-(:City)
+    (:City)-[:SeaRoute]-(:City)
+    Being able to run a query and say 'Give me any Air OR Sea route between these two cities', which should be possible (in openCypher terms) via
+    
+    (:City { name: 'London' })-[:SeaRoute|AirRoute]-(:City { name: :'Rotterdam' })
+    ```
+
+    
+
 - https://blog.csdn.net/qq_21090437/article/details/120292081 AgensGraph
 
 
