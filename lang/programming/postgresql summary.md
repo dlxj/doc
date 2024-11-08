@@ -2600,6 +2600,8 @@ cp  /usr/share/postgresql/13/tsearch_data/jieba_user.dict
 
 ## Install pgroonga
 
+https://www.skypyb.com/2020/12/jishu/1705/  提前分词方案
+
 https://pgroonga.github.io/install/
 
 https://groonga.org/docs/install/ubuntu.html
