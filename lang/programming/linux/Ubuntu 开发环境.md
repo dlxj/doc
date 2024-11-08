@@ -1543,21 +1543,21 @@ echo 'all task done.'
 ## 自动重启
 
 ```
+vi restartvector.sh
 #!/bin/bash
-
 # 定义日志文件路径
-LOG_FILE="/root/.pm2/logs/aicbyserver-v2-master-7007-out.log"
+LOG_FILE="/root/.pm2/logs/aicbyserver-v2-master-7007-error.log"
 
 # 使用 tail 命令获取最后 20 条日志记录，并通过 grep 搜索 "Error"
-if tail -n 20 "$LOG_FILE" | grep -q "Error"; then
+if tail -n 20 "$LOG_FILE" | grep -q "ECONNRESET"; then
   echo 'restart vector seversr...'
   pm2 restart aicbyserver_v2_master_7007
+  rm -f /root/.pm2/logs/aicbyserver-v2-master-7007-error.log
   echo 'sleep 5 sec...'
   sleep 5
   echo 'post embedding...'
   node /project/post/post_embeding.js > outlog &
   echo 'all task done.'
-  
 else
   # 如果没有找到 "Error"，打印信息
   echo "No error found in the last 20 lines."
