@@ -4168,7 +4168,17 @@ shared_buffer=512
 
 
 
+# 模糊查询
 
+https://www.cnblogs.com/xueqiuqiu/articles/10994428.html
+
+
+
+# 正则查询
+
+https://www.cnblogs.com/xueqiuqiu/articles/10994428.html
+
+- https://github.com/digoal/blog/blob/master/201611/20161118_01.md 正则
 
 
 
