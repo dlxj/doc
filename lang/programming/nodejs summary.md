@@ -5670,6 +5670,108 @@ https://github.com/openRin/Rin  Cloudflare Pages + Workers + D1 + R2  **Workers 
 
 
 
+### 回环问题
+
+https://linux.do/t/topic/203808
+
+```
+cloudflare workers回环问题，即workers不能连接并访问具有cloudflare ip的主机，比如点亮小云朵的网站
+
+遇到cloudflare的IP，就用自已的vps来访问
+```
+
+
+
+### Workers
+
+#### openai api 中转
+
+```
+const OPENWEBUI_BASE_URL = OPENWEBUI_BASE_URL;
+const OPENWEBUI_API_KEY = OPENWEBUI_API_KEY;
+const API_KEY = API_KEY;
+
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request));
+});
+
+async function handleRequest(request) {
+  if (request.method !== 'POST') {
+    return new Response('Method Not Allowed', { status: 405 });
+  }
+
+  const apiKey = request.headers.get('Authorization');
+  if (!apiKey || apiKey !== `Bearer ${API_KEY}`) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  const contentType = request.headers.get('content-type');
+  if (!contentType || !contentType.includes('application/json')) {
+    return new Response('Content-Type must be application/json', { status: 400 });
+  }
+
+  try {
+    const requestUrl = new URL(request.url);
+    const path = requestUrl.pathname;
+
+    let apiUrl;
+    switch (path) {
+      case '/v1/chat/completions':
+        apiUrl = `${OPENWEBUI_BASE_URL}/api/chat/completions`;
+        break;
+      case '/v1/models':
+        apiUrl = `${OPENWEBUI_BASE_URL}/api/models`;
+        break;
+      default:
+        return new Response('Not Found', { status: 404 });
+    }
+
+    const requestBody = await request.json();
+    const customResponse = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENWEBUI_API_KEY}`
+      },
+      body: JSON.stringify(requestBody)
+    });
+
+    if (!customResponse.ok) {
+      throw new Error(`API request failed with status ${customResponse.status}`);
+    }
+
+    const responseData = await customResponse.json();
+    return new Response(JSON.stringify(responseData), {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+}
+
+在 Cloudflare Workers 控制面板中，添加以下环境变量：
+
+	名称：OPENWEBUI_BASE_URL
+	值：替换成Open WebUI的网址(带https)
+
+	名称：OPENWEBUI_API_KEY
+	值：替换成你在Open WebUI申请的API密钥
+
+	名称：API_KEY
+	值：你设置的Workers接口保护密钥
+
+
+```
+
+
+
+
+
+
+
 ### R2对象存储
 
 https://github.com/abersheeran/r2-webdav  Cloudflare Workers + R2 免维护，10 GB 配置绰绰有余
