@@ -5666,6 +5666,8 @@ sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
 
 ## Cloudflare cf
 
+https://github.com/openRin/Rin  Cloudflare Pages + Workers + D1 + R2  **Workers 相当于后端**
+
 
 
 ### R2对象存储

@@ -1565,7 +1565,7 @@ fi
 
 
 crontab -e
-* * * * * /path/to/check_logs.sh
+* * * * * /root/restartvector.sh
 	# 每分钟检查一次
 
 ```
