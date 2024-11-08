@@ -3944,7 +3944,31 @@ where en @@ to_tsquery('rebell')
     (:City { name: 'London' })-[:SeaRoute|AirRoute]-(:City { name: :'Rotterdam' })
     ```
 
+  - ```
+    issue1996=# SELECT * FROM cypher('issue1996', $$ CREATE (a:NODE {key1: "prop1", key2:"prop2"}) $$) as (a agtype);
+     a 
+    ---
+    (0 rows)
     
+    issue1996=# SELECT * FROM cypher('issue1996', $$ MATCH (a) return a$$) as (a json);
+                                                 a                                              
+    --------------------------------------------------------------------------------------------
+     {"id": 844424930131969, "label": "NODE", "properties": {"key1": "prop1", "key2": "prop2"}}
+    (1 row)
+    issue1996=# SELECT cast(a as json) FROM cypher('issue1996', $$ MATCH (a) return a$$) as (a agtype);
+                                                 a                                              
+    --------------------------------------------------------------------------------------------
+     {"id": 844424930131969, "label": "NODE", "properties": {"key1": "prop1", "key2": "prop2"}}
+    (1 row)
+    
+    issue1996=# SELECT pg_typeof(a) FROM cypher('issue1996', $$ MATCH (a) return a$$) as (a json);
+     pg_typeof 
+    -----------
+     json
+    (1 row)
+    ```
+
+  - 
 
 - https://blog.csdn.net/qq_21090437/article/details/120292081 AgensGraph
 
