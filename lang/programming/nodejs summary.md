@@ -5668,9 +5668,13 @@ sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
 
 https://github.com/openRin/Rin  Cloudflare Pages + Workers + D1 + R2  **Workers 相当于后端**
 
-https://linux.do/t/topic/174255  Cloudflare CDN传递私有的Backblaze B2内容
+https://linux.do/t/topic/174255  Cloudflare CDN传递私有的Backblaze B2内容 
 
+- ```
+  公开的桶多少都有被刷流量的风险,目前我用的是私有桶+workers,会被workers用量限制,不过用不到这么多就是了
+  ```
 
+  
 
 ### 回环问题
 
