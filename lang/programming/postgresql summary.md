@@ -2768,6 +2768,71 @@ sudo ./bin/install-mecab-ipadic-neologd -n
 
 
 
+### TokenBigramSplitSymbolAlpha 中文模糊搜索
+
+适用小规模应用
+
+```
+-- 使用前缀索引提高准确性
+CREATE INDEX idx_name ON table_name 
+USING pgroonga (column_name) 
+WITH (tokenizer='TokenBigramSplitSymbolAlpha("report_source_location", true)');
+
+PGroonga 使用 TokenBigramSplitSymbolAlpha 的几种常用查询方式：
+
+基础匹配查询 (pgroonga_match)：
+
+-- 最基础的全文搜索
+SELECT * FROM table_name 
+WHERE column_name @@ '关键词';
+
+-- 使用 pgroonga_match
+SELECT * FROM table_name 
+WHERE pgroonga_match(column_name, '关键词');
+模糊查询 (pgroonga_query)：
+sql
+
+-- 支持查询语法，如 OR、AND 等
+SELECT * FROM table_name 
+WHERE pgroonga_query(column_name, '关键词1 OR 关键词2');
+
+-- 使用通配符
+SELECT * FROM table_name 
+WHERE pgroonga_query(column_name, '关*词');
+相似度查询：
+sql
+
+-- 返回相似度分数
+SELECT *,
+  pgroonga_score(tableoid, ctid) AS score 
+FROM table_name 
+WHERE column_name &@ '关键词' 
+ORDER BY score DESC;
+
+-- 设置最小相似度阈值
+SELECT * FROM table_name 
+WHERE pgroonga_similarity_search(column_name, '关键词') > 0.5;
+短语搜索：
+sql
+
+-- 精确短语匹配
+SELECT * FROM table_name 
+WHERE pgroonga_query(column_name, '"完整短语"');
+结合其他条件：
+sql
+
+-- 组合多个条件
+SELECT * FROM table_name 
+WHERE pgroonga_query(column_name, '关键词')
+  AND created_at > '2024-01-01'
+  AND status = 'active';
+
+```
+
+
+
+
+
 
 
 ## Install ffmpeg
