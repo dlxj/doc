@@ -5668,6 +5668,8 @@ sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
 
 https://github.com/openRin/Rin  Cloudflare Pages + Workers + D1 + R2  **Workers 相当于后端**
 
+https://linux.do/t/topic/174255  Cloudflare CDN传递私有的Backblaze B2内容
+
 
 
 ### 回环问题
@@ -35631,6 +35633,10 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 
 @tammy 我都是调用 you-get 下载的（Firefox 添加“鼠标中键点击下载按钮条用 you-get.exe 下载视频” 的功能 - Ryan 快快跑），对于支持的网站不用说，一流，默认最高画质，在配合你这个搞不支持的网站，那就更舒服了
 ```
+
+
+
+
 
 
 
