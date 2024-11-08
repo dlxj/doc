@@ -5768,7 +5768,13 @@ async function handleRequest(request) {
 
 
 
+#### 防 worker 扫描
 
+```
+带 cf-worker 头的一律办了。这个头隐藏不了的
+```
+
+<img src="nodejs summary.assets/image-20241108161523404.png" alt="image-20241108161523404" style="zoom:50%;" />
 
 
 
