@@ -3927,6 +3927,8 @@ where en @@ to_tsquery('rebell')
 
 - https://github.com/apache/age  Apache AGE
 
+  - https://github.com/apache/age/issues/2111  pg 17 支持
+
   - ```
     select * from cypher('graph1', $AnythingInsideDollars$
     Match(v:Persion{p_id:'safd$$bbb'}
