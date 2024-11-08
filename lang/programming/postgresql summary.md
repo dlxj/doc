@@ -1585,6 +1585,26 @@ $$;
 
 
 
+## 查询转数据帧
+
+```
+# see huggingface/NLPP_Audio/vector.py
+async def fetch_data(sql_query) -> pd.DataFrame:
+    global async_pool
+    await async_pool.open()
+
+    async with async_pool.connection() as conn:
+        async with conn.cursor() as cur:
+            await cur.execute(sql_query)
+            rows = await cur.fetchall()
+            df = pd.DataFrame(rows, columns=[desc[0] for desc in cur.description])
+    return df
+```
+
+
+
+
+
 ## 重设自增ID
 
 
@@ -4063,7 +4083,59 @@ where u.id = '1';
 
 
 
-# pool
+# 连接池
+
+
+
+```python
+# see huggingface/NLPP_Audio/vector.py
+
+import aiohttp
+import asyncio
+import json
+import psycopg
+import psycopg_pool
+import pandas as pd
+
+# 创建一个全局变量，用于存储连接池实例
+async_pool = None
+
+async def pool_connect():
+    global async_pool
+    if async_pool is None:
+        async_pool = psycopg_pool.AsyncConnectionPool(
+            conninfo="postgres://postgres:post4321@127.0.0.1/nlppvector",
+            min_size=1,
+            max_size=32,
+            open=False  # Avoid automatic opening on initialization to handle manually
+        )
+        # Opening the pool
+        await async_pool.open()
+        logging.info("Database connection pool is initialized and open.")
+
+async def fetch_data(sql_query) -> pd.DataFrame:
+    global async_pool
+    await async_pool.open()
+
+    async with async_pool.connection() as conn:
+        async with conn.cursor() as cur:
+            await cur.execute(sql_query)
+            rows = await cur.fetchall()
+            df = pd.DataFrame(rows, columns=[desc[0] for desc in cur.description])
+    return df
+    
+async def main():
+    global async_pool
+    await pool_connect()
+
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
+
+```
+
+
 
 
 
