@@ -258,6 +258,34 @@ T.K.M.N字幕组
 
 - https://zh.dict.naver.com/#/search?query=박수   可以查各国语言
 
+<img src="survive.assets/image-20241109213630092.png" alt="image-20241109213630092" style="zoom:50%;" />
+
+
+
+see huggingface\dict\广苏话在线发音.md
+
+[语保工程](https://zhongguoyuyan.cn/) 1xxx3253  搜  梅州  广州 苏州 上海
+
+[小學堂中古音](https://xiaoxue.iis.sinica.edu.tw/zhongguyin)
+
+[苏州闲话单字调在线字典](https://www.wugniu.com/)
+
+[粵語審音配詞字庫](https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/)
+
+[泛語語料庫 嘉绒语](https://pangloss.cnrs.fr/corpus/Japhug?lang=en)
+
+[新老派普通话的宽严式记音](https://phesoca.com/aws/268/)
+
+[naver 日语单词本](https://learn.dict.naver.com/wordbook/jakodict/#/my/main) facebook账号登录 silu**@gmail.com  v4
+
+[部件檢索](https://forum.freemdict.com/t/topic/10387)
+
+[切韵拼音](https://phesoca.com/tupa/)
+
+[朝鲜语音系](https://zh.wikipedia.org/zh-cn/%E6%9C%9D%E9%B2%9C%E8%AF%AD%E9%9F%B3%E7%B3%BB)
+
+
+
 
 
 # 俄语
