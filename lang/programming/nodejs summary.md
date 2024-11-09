@@ -5676,6 +5676,8 @@ https://linux.do/t/topic/174255  Cloudflare CDN传递私有的Backblaze B2内容
 
   
 
+  
+
 ### 回环问题
 
 https://linux.do/t/topic/203808
@@ -21799,6 +21801,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 
 ## godot4.0
+
+[py4godot](https://github.com/niklas2902/py4godot)
 
 [gdcef  chrome 浏览器](https://github.com/Lecrapouille/gdcef/tree/godot-4.x)
 
