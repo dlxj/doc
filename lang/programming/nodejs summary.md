@@ -5664,11 +5664,140 @@ sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
 
 
 
-## Cloudflare
+## Cloudflare cf
+
+https://github.com/openRin/Rin  Cloudflare Pages + Workers + D1 + R2  **Workers 相当于后端**
+
+https://linux.do/t/topic/174255  Cloudflare CDN传递私有的Backblaze B2内容 
+
+- ```
+  公开的桶多少都有被刷流量的风险,目前我用的是私有桶+workers,会被workers用量限制,不过用不到这么多就是了
+  ```
+
+  
+
+  
+
+### 回环问题
+
+https://linux.do/t/topic/203808
+
+```
+cloudflare workers回环问题，即workers不能连接并访问具有cloudflare ip的主机，比如点亮小云朵的网站
+
+遇到cloudflare的IP，就用自已的vps来访问
+```
+
+
+
+### Workers
+
+```
+python 目前只支持一部分 stdlib 的 package
+
+Wrangler 是 Cloudflare 提供的命令行工具，用于本地开发、构建和部署 Workers。通过 Wrangler，你可以在本地环境中运行 Workers，并利用 IDE（如 Visual Studio Code）提供的调试功能设置断点、逐步执行代码等。
+
+```
+
+
+
+#### openai api 中转
+
+```
+const OPENWEBUI_BASE_URL = OPENWEBUI_BASE_URL;
+const OPENWEBUI_API_KEY = OPENWEBUI_API_KEY;
+const API_KEY = API_KEY;
+
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request));
+});
+
+async function handleRequest(request) {
+  if (request.method !== 'POST') {
+    return new Response('Method Not Allowed', { status: 405 });
+  }
+
+  const apiKey = request.headers.get('Authorization');
+  if (!apiKey || apiKey !== `Bearer ${API_KEY}`) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
+  const contentType = request.headers.get('content-type');
+  if (!contentType || !contentType.includes('application/json')) {
+    return new Response('Content-Type must be application/json', { status: 400 });
+  }
+
+  try {
+    const requestUrl = new URL(request.url);
+    const path = requestUrl.pathname;
+
+    let apiUrl;
+    switch (path) {
+      case '/v1/chat/completions':
+        apiUrl = `${OPENWEBUI_BASE_URL}/api/chat/completions`;
+        break;
+      case '/v1/models':
+        apiUrl = `${OPENWEBUI_BASE_URL}/api/models`;
+        break;
+      default:
+        return new Response('Not Found', { status: 404 });
+    }
+
+    const requestBody = await request.json();
+    const customResponse = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENWEBUI_API_KEY}`
+      },
+      body: JSON.stringify(requestBody)
+    });
+
+    if (!customResponse.ok) {
+      throw new Error(`API request failed with status ${customResponse.status}`);
+    }
+
+    const responseData = await customResponse.json();
+    return new Response(JSON.stringify(responseData), {
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  }
+}
+
+在 Cloudflare Workers 控制面板中，添加以下环境变量：
+
+	名称：OPENWEBUI_BASE_URL
+	值：替换成Open WebUI的网址(带https)
+
+	名称：OPENWEBUI_API_KEY
+	值：替换成你在Open WebUI申请的API密钥
+
+	名称：API_KEY
+	值：你设置的Workers接口保护密钥
+
+
+```
+
+
+
+#### 防 worker 扫描
+
+```
+带 cf-worker 头的一律办了。这个头隐藏不了的
+```
+
+<img src="nodejs summary.assets/image-20241108161523404.png" alt="image-20241108161523404" style="zoom:50%;" />
 
 
 
 ### R2对象存储
+
+https://github.com/abersheeran/r2-webdav  Cloudflare Workers + R2 免维护，10 GB 配置绰绰有余
 
 https://juejin.cn/post/7331584783611281444
 
@@ -5706,6 +5835,13 @@ const response = await S3.send(command)
 ### KV存储
 
 https://fast.v2ex.com/t/969197
+
+- ```
+  使用 workers 提供的 KV 作为数据库，可达到 wordpress 的灵活性
+  使用 cloudflare 缓存 html 来降低 KV 的读写，使其可达到静态博客的速度
+  ```
+
+  
 
 
 
@@ -21666,6 +21802,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 ## godot4.0
 
+[py4godot](https://github.com/niklas2902/py4godot)
+
 [gdcef  chrome 浏览器](https://github.com/Lecrapouille/gdcef/tree/godot-4.x)
 
 [llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
@@ -35503,6 +35641,10 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 
 @tammy 我都是调用 you-get 下载的（Firefox 添加“鼠标中键点击下载按钮条用 you-get.exe 下载视频” 的功能 - Ryan 快快跑），对于支持的网站不用说，一流，默认最高画质，在配合你这个搞不支持的网站，那就更舒服了
 ```
+
+
+
+
 
 
 

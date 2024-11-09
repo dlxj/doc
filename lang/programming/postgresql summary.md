@@ -1550,6 +1550,17 @@ SELECT * FROM my_table WHERE category = 'some_category' AND data->>'key' = 'some
 
 
 
+```
+-- 创建一个包含 jsonb 属性的节点
+SELECT * 
+FROM cypher('your_graph', $$
+    CREATE (n:Person {name: 'Alice', attributes: '{"age": 30, "hobbies": ["reading", "hiking"]}'::jsonb})
+$$) AS (a agtype);
+
+```
+
+
+
 
 
 ## UUID
@@ -1582,6 +1593,26 @@ end loop;
 end;
 $$;
 ```
+
+
+
+## 查询转数据帧
+
+```
+# see huggingface/NLPP_Audio/vector.py
+async def fetch_data(sql_query) -> pd.DataFrame:
+    global async_pool
+    await async_pool.open()
+
+    async with async_pool.connection() as conn:
+        async with conn.cursor() as cur:
+            await cur.execute(sql_query)
+            rows = await cur.fetchall()
+            df = pd.DataFrame(rows, columns=[desc[0] for desc in cur.description])
+    return df
+```
+
+
 
 
 
@@ -2569,9 +2600,39 @@ cp  /usr/share/postgresql/13/tsearch_data/jieba_user.dict
 
 ## Install pgroonga
 
+https://www.skypyb.com/2020/12/jishu/1705/  提前分词方案
+
 https://pgroonga.github.io/install/
 
 https://groonga.org/docs/install/ubuntu.html
+
+
+
+**TokenBigram** 将文本按 **二元组（bigrams）** 的方式进行分词，即将相邻的两个字符作为一个词元进行处理。
+
+```
+CREATE INDEX idx_content ON documents USING pgroonga (content pgroonga_text_full_text_search_config('TokenBigram'));
+
+```
+
+
+
+
+
+```
+  SELECT unnest -> 'value' AS "value" FROM unnest(
+  pgroonga_tokenize('This is a pen. これはペンです。你为什么学习普通话？',
+                    'tokenizer', 'TokenMecab("include_class", true)',
+                    'token_filters', 'TokenFilterNFKC100("unify_kana", true)')
+  );
+  
+    SELECT unnest -> 'value' AS "value" FROM unnest(
+  pgroonga_tokenize('This is a pen. これはペンです。你为什么学习普通话？',
+                    'tokenizer', 'TokenBigram')
+  );
+```
+
+
 
 
 
@@ -2689,6 +2750,86 @@ sudo -u postgres -H psql -d pgroonga_test --command 'CREATE EXTENSION pgroonga'
 
 
 ```
+
+
+
+### TokenMecab + mecab-ipadic-neologd
+
+```
+apt install mecab libmecab-dev mecab-ipadic && 
+git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
+cd mecab-ipadic-neologd && 
+sudo ./bin/install-mecab-ipadic-neologd -n
+
+
+
+
+```
+
+
+
+### TokenBigramSplitSymbolAlpha 中文模糊搜索
+
+适用小规模应用
+
+```
+-- 使用前缀索引提高准确性
+CREATE INDEX idx_name ON table_name 
+USING pgroonga (column_name) 
+WITH (tokenizer='TokenBigramSplitSymbolAlpha("report_source_location", true)');
+
+PGroonga 使用 TokenBigramSplitSymbolAlpha 的几种常用查询方式：
+
+基础匹配查询 (pgroonga_match)：
+
+-- 最基础的全文搜索
+SELECT * FROM table_name 
+WHERE column_name @@ '关键词';
+
+-- 使用 pgroonga_match
+SELECT * FROM table_name 
+WHERE pgroonga_match(column_name, '关键词');
+模糊查询 (pgroonga_query)：
+sql
+
+-- 支持查询语法，如 OR、AND 等
+SELECT * FROM table_name 
+WHERE pgroonga_query(column_name, '关键词1 OR 关键词2');
+
+-- 使用通配符
+SELECT * FROM table_name 
+WHERE pgroonga_query(column_name, '关*词');
+相似度查询：
+sql
+
+-- 返回相似度分数
+SELECT *,
+  pgroonga_score(tableoid, ctid) AS score 
+FROM table_name 
+WHERE column_name &@ '关键词' 
+ORDER BY score DESC;
+
+-- 设置最小相似度阈值
+SELECT * FROM table_name 
+WHERE pgroonga_similarity_search(column_name, '关键词') > 0.5;
+短语搜索：
+sql
+
+-- 精确短语匹配
+SELECT * FROM table_name 
+WHERE pgroonga_query(column_name, '"完整短语"');
+结合其他条件：
+sql
+
+-- 组合多个条件
+SELECT * FROM table_name 
+WHERE pgroonga_query(column_name, '关键词')
+  AND created_at > '2024-01-01'
+  AND status = 'active';
+
+```
+
+
 
 
 
@@ -3903,9 +4044,114 @@ where en @@ to_tsquery('rebell')
 
 
 
-# AgensGraph 图数据库
+# 图数据库
 
-- https://blog.csdn.net/qq_21090437/article/details/120292081
+- https://github.com/apache/age  Apache AGE
+
+  - https://github.com/apache/age/issues/2111  pg 17 支持
+
+  - ```
+    select * from cypher('graph1', $AnythingInsideDollars$
+    Match(v:Persion{p_id:'safd$$bbb'}
+    return v
+    $AnythingInsideDollars$) as (v agtype);
+    ```
+
+  - ```
+    So if you have the following in your db:
+    
+    (:City)-[:AirRoute]-(:City)
+    (:City)-[:SeaRoute]-(:City)
+    Being able to run a query and say 'Give me any Air OR Sea route between these two cities', which should be possible (in openCypher terms) via
+    
+    (:City { name: 'London' })-[:SeaRoute|AirRoute]-(:City { name: :'Rotterdam' })
+    ```
+
+  - ```
+    issue1996=# SELECT * FROM cypher('issue1996', $$ CREATE (a:NODE {key1: "prop1", key2:"prop2"}) $$) as (a agtype);
+     a 
+    ---
+    (0 rows)
+    
+    issue1996=# SELECT * FROM cypher('issue1996', $$ MATCH (a) return a$$) as (a json);
+                                                 a                                              
+    --------------------------------------------------------------------------------------------
+     {"id": 844424930131969, "label": "NODE", "properties": {"key1": "prop1", "key2": "prop2"}}
+    (1 row)
+    issue1996=# SELECT cast(a as json) FROM cypher('issue1996', $$ MATCH (a) return a$$) as (a agtype);
+                                                 a                                              
+    --------------------------------------------------------------------------------------------
+     {"id": 844424930131969, "label": "NODE", "properties": {"key1": "prop1", "key2": "prop2"}}
+    (1 row)
+    
+    issue1996=# SELECT pg_typeof(a) FROM cypher('issue1996', $$ MATCH (a) return a$$) as (a json);
+     pg_typeof 
+    -----------
+     json
+    (1 row)
+    ```
+
+  - ```
+    -- 创建一个包含 jsonb 属性的节点
+    SELECT * 
+    FROM cypher('your_graph', $$
+        CREATE (n:Person {name: 'Alice', attributes: '{"age": 30, "hobbies": ["reading", "hiking"]}'::jsonb})
+    $$) AS (a agtype);
+    
+    -- GIN 索引用于通用的 jsonb 查询
+    CREATE INDEX idx_person_attributes_gin ON your_graph.ag_catalog.v_label USING GIN ((properties -> 'attributes'));
+    
+    -- 表达式索引用于优化针对 age 字段的查询
+    CREATE INDEX idx_person_age_expr ON your_graph.ag_catalog.v_label USING BTREE ((properties -> 'attributes' ->> 'age'));
+    
+    查询：查找所有 hobbies 包含 "reading" 的人员。
+    SELECT *
+    FROM cypher('your_graph', $$
+        MATCH (n:Person)
+        WHERE n.attributes @> '{"hobbies": ["reading"]}'::jsonb
+        RETURN n
+    $$) AS (n agtype);
+    
+    查询：查找 age 等于 30 岁的人员。
+    SELECT *
+    FROM cypher('your_graph', $$
+        MATCH (n:Person)
+        WHERE (n.attributes->>'age')::int = 30
+        RETURN n
+    $$) AS (n agtype);
+    
+    按 age 从小到大排序人员。
+    SELECT *
+    FROM cypher('your_graph', $$
+        MATCH (n:Person)
+        RETURN n
+        ORDER BY (n.attributes->>'age')::int ASC
+    $$) AS (n agtype);
+    	# BTREE 索引支持高效的排序操作。
+    
+    ```
+
+  - ```
+    SELECT *
+    FROM cypher('your_graph', $$
+        MATCH (n:Person)
+        WHERE (n.attributes->>'age')::int > 25
+        RETURN n
+    $$) AS (n agtype);
+    
+    ```
+
+  - 
+
+- https://blog.csdn.net/qq_21090437/article/details/120292081 AgensGraph
+
+
+
+# pg_duckdb
+
+https://github.com/duckdb/pg_duckdb
+
+https://github.com/abersheeran/r2-webdav  Cloudflare Workers + R2 免维护，10 GB 配置绰绰有余
 
 
 
@@ -4063,7 +4309,59 @@ where u.id = '1';
 
 
 
-# pool
+# 连接池
+
+
+
+```python
+# see huggingface/NLPP_Audio/vector.py
+
+import aiohttp
+import asyncio
+import json
+import psycopg
+import psycopg_pool
+import pandas as pd
+
+# 创建一个全局变量，用于存储连接池实例
+async_pool = None
+
+async def pool_connect():
+    global async_pool
+    if async_pool is None:
+        async_pool = psycopg_pool.AsyncConnectionPool(
+            conninfo="postgres://postgres:post4321@127.0.0.1/nlppvector",
+            min_size=1,
+            max_size=32,
+            open=False  # Avoid automatic opening on initialization to handle manually
+        )
+        # Opening the pool
+        await async_pool.open()
+        logging.info("Database connection pool is initialized and open.")
+
+async def fetch_data(sql_query) -> pd.DataFrame:
+    global async_pool
+    await async_pool.open()
+
+    async with async_pool.connection() as conn:
+        async with conn.cursor() as cur:
+            await cur.execute(sql_query)
+            rows = await cur.fetchall()
+            df = pd.DataFrame(rows, columns=[desc[0] for desc in cur.description])
+    return df
+    
+async def main():
+    global async_pool
+    await pool_connect()
+
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
+
+```
+
+
 
 
 
@@ -4096,7 +4394,17 @@ shared_buffer=512
 
 
 
+# 模糊查询
 
+https://www.cnblogs.com/xueqiuqiu/articles/10994428.html
+
+
+
+# 正则查询
+
+https://www.cnblogs.com/xueqiuqiu/articles/10994428.html
+
+- https://github.com/digoal/blog/blob/master/201611/20161118_01.md 正则
 
 
 
