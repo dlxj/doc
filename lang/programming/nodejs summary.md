@@ -36317,6 +36317,9 @@ https://github.com/wa-lang/wabook 支持评论
 
 ### WPF
 
+- https://www.bilibili.com/video/BV17kptetEQV B UP
+- https://www.bilibili.com/video/BV1cC411x7aV B UP
+
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)
 
 - [kiss-translator 简约翻译](https://github.com/fishjar/kiss-translator)
