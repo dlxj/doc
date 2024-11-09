@@ -1,8 +1,17 @@
 
 
+# 游戏翻译
 
+see nodejs.md -> F\# Monads -> WPF
 
+LunaTranslator](https://github.com/HIllya51/LunaTranslator) 游戏翻译 python
 
+- [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
+- [qolibri](https://github.com/mvf/qolibri) ebpwing + qt5
+
+[SakuraTranslator](https://github.com/fkiliver/SakuraTranslator)  游戏翻译
+
+- [VNR + Cheat Engine 翻译 PPSSPP 游戏
 
 [李宏毅2020作业](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
 
@@ -193,7 +202,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
