@@ -4,6 +4,8 @@
 
 see nodejs.md -> F\# Monads -> WPF
 
+see NewLovePlusPlus所有资源\LovePlusEvery\out\TextAsset
+
 LunaTranslator](https://github.com/HIllya51/LunaTranslator) 游戏翻译 python
 
 - [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
@@ -202,7 +204,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
