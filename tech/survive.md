@@ -13,6 +13,28 @@ LunaTranslator](https://github.com/HIllya51/LunaTranslator) 游戏翻译 python
 
 - [VNR + Cheat Engine 翻译 PPSSPP 游戏
 
+## Data
+
+### ak48
+
+```
+echodict\chatgpt_server\lib\ak148_extradata.js
+	# 提取 excel ，给 pandora 生成解析
+```
+
+### nlpp
+
+````
+# see huggingface/nlpp_audio
+echodict\xml\extract_nlpp.js # 提取 excel ，给 pandora 生成解析
+````
+
+
+
+
+
+
+
 [李宏毅2020作业](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
 
 [李宏毅2021作业 pytorch+colab](https://speech.ee.ntu.edu.tw/~hylee/ml/2021-spring.html)
@@ -202,7 +224,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
