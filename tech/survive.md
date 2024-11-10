@@ -28,6 +28,7 @@ echodict\chatgpt_server\lib\ak148_extradata.js
 
 ````
 # see huggingface/nlpp_audio
+# see NewLovePlusPlus所有资源\LovePlusEvery\out\TextAsset
 echodict\xml\extract_nlpp.js # 提取 excel ，给 pandora 生成解析
 ````
 
@@ -226,7 +227,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
