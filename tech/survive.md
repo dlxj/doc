@@ -34,6 +34,16 @@ echodict\xml\extract_nlpp.js # 提取 excel ，给 pandora 生成解析
 
 
 
+### 珍钻双语
+
+https://github.com/Xzonn/NintendoOfficialChineseGames/blob/master/%E5%AE%9D%E5%8F%AF%E6%A2%A6%20%E6%99%B6%E7%81%BF%E9%92%BB%E7%9F%B3%EF%BC%8F%E6%98%8E%E4%BA%AE%E7%8F%8D%E7%8F%A0/dlp/simp_chinese.txt
+
+
+
+### 游戏原声
+
+https://downloads.khinsider.com/game-soundtracks/album/love-plus-sound-portrait-rinko-kobayakawa-ds-sscx-10510
+
 
 
 
