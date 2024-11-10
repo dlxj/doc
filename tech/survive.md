@@ -258,9 +258,7 @@ T.K.M.N字幕组
 
 - https://zh.dict.naver.com/#/search?query=박수   可以查各国语言
 
-<img src="survive.assets/image-20241109213630092.png" alt="image-20241109213630092" style="zoom:50%;" />
-
-
+![image-20241110082953450](survive.assets/image-20241110082953450.png)
 
 see huggingface\dict\广苏话在线发音.md
 
