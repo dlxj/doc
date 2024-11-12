@@ -31408,8 +31408,6 @@ https://github.com/zilliztech/GPTCache/blob/main/gptcache/embedding/rwkv.py
   
   ```
 
-- 
-
 https://github.com/FlagOpen/FlagEmbedding/tree/master/research/BGE_M3 embedding
 
 - https://www.cnblogs.com/xiaoqi/p/18143552/bge-m3 
