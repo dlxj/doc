@@ -2901,6 +2901,42 @@ CREATE EXTENSION pgroonga;
 
 see https://pgroonga.github.io/tutorial/
     # 用法很详细
+    
+DROP DATABASE IF EXISTS nlppvector;
+CREATE DATABASE nlppvector
+WITH OWNER = postgres 
+ENCODING = 'UTF8' 
+TABLESPACE = pg_default 
+CONNECTION LIMIT = -1 
+TEMPLATE template0;
+
+
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+DROP TABLE IF EXISTS nlppvector;
+CREATE TABLE IF NOT EXISTS nlpp_vector (
+    ID bigint generated always as identity (START WITH 1 INCREMENT BY 1), 
+    JPMD5 CHAR(32) NOT NULL,
+    Name text NOT NULL,
+    S_jp text NOT NULL,
+    S_zhs text NOT NULL,
+    Embed_rwkv_jp vector(1024) NOT NULL,
+    V_jp tsvector NOT NULL,
+    V_zh tsvector NOT NULL,
+    Metadata jsonb NOT NULL,
+    AddTime timestamp DEFAULT CURRENT_TIMESTAMP,
+    UpdateTime timestamp DEFAULT NULL,
+    Enabled boolean DEFAULT '1',
+    UNIQUE(ID),
+    PRIMARY KEY (JPMD5, name)
+);
+CREATE INDEX fts_rum_v_jp ON nlpp_vector USING rum (V_jp rum_tsvector_ops);
+CREATE INDEX fts_rum_v_zh ON nlpp_vector USING rum (V_zh rum_tsvector_ops);
+
+
+
+
+    
 
 CREATE DATABASE nlppvector
 WITH OWNER = postgres 
@@ -3247,6 +3283,43 @@ RUM索引
 > CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);
 >
 > CREATE INDEX fts_rum_studio ON studio USING rum (v_zh rum_tsvector_ops);
+
+
+
+```
+DROP DATABASE IF EXISTS nlppvector;
+CREATE DATABASE nlppvector
+WITH OWNER = postgres 
+ENCODING = 'UTF8' 
+TABLESPACE = pg_default 
+CONNECTION LIMIT = -1 
+TEMPLATE template0;
+
+
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+DROP TABLE IF EXISTS nlppvector;
+CREATE TABLE IF NOT EXISTS nlpp_vector (
+    ID bigint generated always as identity (START WITH 1 INCREMENT BY 1), 
+    JPMD5 CHAR(32) NOT NULL,
+    Name text NOT NULL,
+    S_jp text NOT NULL,
+    S_zhs text NOT NULL,
+    Embed_rwkv_jp vector(1024) NOT NULL,
+    V_jp tsvector NOT NULL,
+    V_zh tsvector NOT NULL,
+    Metadata jsonb NOT NULL,
+    AddTime timestamp DEFAULT CURRENT_TIMESTAMP,
+    UpdateTime timestamp DEFAULT NULL,
+    Enabled boolean DEFAULT '1',
+    UNIQUE(ID),
+    PRIMARY KEY (JPMD5, name)
+);
+CREATE INDEX fts_rum_v_jp ON nlpp_vector USING rum (V_jp rum_tsvector_ops);
+CREATE INDEX fts_rum_v_zh ON nlpp_vector USING rum (V_zh rum_tsvector_ops);
+```
+
+
 
 
 
