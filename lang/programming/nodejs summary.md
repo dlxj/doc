@@ -3415,6 +3415,7 @@ sslocal -b "127.0.0.1:1080" --server-url "ss://Y2hhY2hC05MDNkOGU2NzVhNWI@sshk01.
 
 2022-blake3-chacha20-poly1305
 
+
 ```
 
 
@@ -3626,6 +3627,20 @@ https://github.com/sazima/proxynt  WebSocket 内网穿透
 # see huggingface\powershell\readme.txt
 pip install -U proxynt
 ```
+
+
+
+```
+# see huggingface/NLPP_Audio/vector.py
+# see nodejs summary.md -> proxynt
+# see huggingface\powershell\readme.txt -> proxynt 
+
+# http://xxx.57:7851/wsproxy/admin
+#  ali57:2222 -> homepc_wsl2_ssh:22
+#  ali57:54322 -> homepc_wsl2_ssh:5432
+```
+
+
 
 
 
@@ -31380,9 +31395,20 @@ v4neo 可以用v4 代码推理，**v5 用 v4 推理出错**
 
 #### RWKV5
 
+https://github.com/harrisonvanderbyl/godot-rwkv  rwkv for godot
+
 https://github.com/TencentEdgeOne/pages-templates/tree/main/examples/chrome-ai  chrome 内置AI
 
-https://gptcache.readthedocs.io/en/latest/_modules/gptcache/embedding/rwkv.html?highlight=rwkv# **embedding**
+https://github.com/zilliztech/GPTCache/blob/main/gptcache/embedding/rwkv.py
+
+- ```
+  # huggingface/NLPP_Audio/rwkv_embedding.py
+  
+  成功生成向量
+  
+  ```
+
+- 
 
 https://github.com/FlagOpen/FlagEmbedding/tree/master/research/BGE_M3 embedding
 
