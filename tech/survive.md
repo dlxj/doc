@@ -1,5 +1,49 @@
 
 
+# 游戏翻译
+
+see nodejs.md -> F\# Monads -> WPF
+
+see NewLovePlusPlus所有资源\LovePlusEvery\out\TextAsset
+
+LunaTranslator](https://github.com/HIllya51/LunaTranslator) 游戏翻译 python
+
+- [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
+- [qolibri](https://github.com/mvf/qolibri) ebpwing + qt5
+
+[SakuraTranslator](https://github.com/fkiliver/SakuraTranslator)  游戏翻译
+
+- [VNR + Cheat Engine 翻译 PPSSPP 游戏
+
+## Data
+
+### ak48
+
+```
+echodict\chatgpt_server\lib\ak148_extradata.js
+	# 提取 excel ，给 pandora 生成解析
+```
+
+### nlpp
+
+````
+# see huggingface/nlpp_audio
+# see NewLovePlusPlus所有资源\LovePlusEvery\out\TextAsset
+echodict\xml\extract_nlpp.js # 提取 excel ，给 pandora 生成解析
+````
+
+
+
+### 珍钻双语
+
+https://github.com/Xzonn/NintendoOfficialChineseGames/blob/master/%E5%AE%9D%E5%8F%AF%E6%A2%A6%20%E6%99%B6%E7%81%BF%E9%92%BB%E7%9F%B3%EF%BC%8F%E6%98%8E%E4%BA%AE%E7%8F%8D%E7%8F%A0/dlp/simp_chinese.txt
+
+
+
+### 游戏原声
+
+https://downloads.khinsider.com/game-soundtracks/album/love-plus-sound-portrait-rinko-kobayakawa-ds-sscx-10510
+
 
 
 
@@ -193,7 +237,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
@@ -248,6 +292,32 @@ T.K.M.N字幕组
 # 韩语
 
 - https://zh.dict.naver.com/#/search?query=박수   可以查各国语言
+
+![image-20241110082953450](survive.assets/image-20241110082953450.png)
+
+see huggingface\dict\广苏话在线发音.md
+
+[语保工程](https://zhongguoyuyan.cn/) 1xxx3253  搜  梅州  广州 苏州 上海
+
+[小學堂中古音](https://xiaoxue.iis.sinica.edu.tw/zhongguyin)
+
+[苏州闲话单字调在线字典](https://www.wugniu.com/)
+
+[粵語審音配詞字庫](https://humanum.arts.cuhk.edu.hk/Lexis/lexi-can/)
+
+[泛語語料庫 嘉绒语](https://pangloss.cnrs.fr/corpus/Japhug?lang=en)
+
+[新老派普通话的宽严式记音](https://phesoca.com/aws/268/)
+
+[naver 日语单词本](https://learn.dict.naver.com/wordbook/jakodict/#/my/main) facebook账号登录 silu**@gmail.com  v4
+
+[部件檢索](https://forum.freemdict.com/t/topic/10387)
+
+[切韵拼音](https://phesoca.com/tupa/)
+
+[朝鲜语音系](https://zh.wikipedia.org/zh-cn/%E6%9C%9D%E9%B2%9C%E8%AF%AD%E9%9F%B3%E7%B3%BB)
+
+
 
 
 

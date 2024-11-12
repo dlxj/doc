@@ -5669,7 +5669,15 @@ sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
 
 https://github.com/openRin/Rin  Cloudflare Pages + Workers + D1 + R2  **Workers 相当于后端**
 
+https://linux.do/t/topic/174255  Cloudflare CDN传递私有的Backblaze B2内容 
 
+- ```
+  公开的桶多少都有被刷流量的风险,目前我用的是私有桶+workers,会被workers用量限制,不过用不到这么多就是了
+  ```
+
+  
+
+  
 
 ### 回环问题
 
@@ -21795,6 +21803,8 @@ SIZE_SHRINK_END = 8 --- 告诉父级Container将节点与其末端（底部或�
 
 ## godot4.0
 
+[py4godot](https://github.com/niklas2902/py4godot)
+
 [gdcef  chrome 浏览器](https://github.com/Lecrapouille/gdcef/tree/godot-4.x)
 
 [llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
@@ -35646,6 +35656,10 @@ Ps: 都是谷歌翻译成英文的，因为英文是个通用语言，所以不�
 
 
 
+
+
+
+
 ## CF 流式输出
 
 [cf-openai-with-sub-account-proxy](https://github.com/yinm0591/cf-openai-with-sub-account-proxy)
@@ -36315,6 +36329,9 @@ https://github.com/wa-lang/wabook 支持评论
 
 ### WPF
 
+- https://www.bilibili.com/video/BV17kptetEQV B UP
+- https://www.bilibili.com/video/BV1cC411x7aV B UP
+
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)
 
 - [kiss-translator 简约翻译](https://github.com/fishjar/kiss-translator)
@@ -36324,6 +36341,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 [Livet包学习借鉴 双向绑定](https://b23.tv/BatbUhF) [1](https://github.com/runceel/Livet)  [2](https://gist.github.com/BYJRK/b49db5538a006d17fe4858217b330382)
 
+[iNKORE](https://github.com/iNKORE-NET/UI.WPF.Modern) **最佳选择？** B站搜它
+
 [Panuon.WPF.UI](https://github.com/Panuon/Panuon.WPF.UI)  活跃 简洁
 
 [FramePFX](https://github.com/AngryCarrot789/FramePFX) 视频编辑 必看
@@ -36332,7 +36351,12 @@ https://github.com/wa-lang/wabook 支持评论
 
 [LunaTranslator](https://github.com/HIllya51/LunaTranslator) 游戏翻译 python
 
+- [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
+- [qolibri](https://github.com/mvf/qolibri) ebpwing + qt5
+
 [SakuraTranslator](https://github.com/fkiliver/SakuraTranslator)  游戏翻译
+
+- [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
 
 - ```
   

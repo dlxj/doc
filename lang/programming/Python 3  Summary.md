@@ -3965,6 +3965,47 @@ if __name__ == "__main__":
 
 #### 多线程
 
+多线程比异步函数好把握得住
+
+```
+
+# see huggingface/NLPP_Audio/translate.py
+
+		import threading
+        import queue
+        class MyThread(threading.Thread): 
+            def __init__(self, item, queue): 
+                threading.Thread.__init__(self) 
+                self.item = item
+                self.queue = queue
+
+            def run(self): 
+                result = one_task(self.item)
+                self.queue.put(result)
+
+
+        for g in group:
+            threads = []
+            q = queue.Queue() 
+            
+            for item in g:
+                thread = MyThread(item, q)
+                thread.start()
+                threads.append(thread)
+
+            for thread in threads:
+                thread.join()
+            
+            results = []
+            while not q.empty():
+                results.append( q.get() )
+                    # 按调用顺序得到所有线程的输出结果
+```
+
+
+
+
+
 ```
 def rec():
     
