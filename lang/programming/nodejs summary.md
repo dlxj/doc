@@ -3415,6 +3415,7 @@ sslocal -b "127.0.0.1:1080" --server-url "ss://Y2hhY2hC05MDNkOGU2NzVhNWI@sshk01.
 
 2022-blake3-chacha20-poly1305
 
+
 ```
 
 
@@ -31370,9 +31371,20 @@ v4neo 可以用v4 代码推理，**v5 用 v4 推理出错**
 
 #### RWKV5
 
+https://github.com/harrisonvanderbyl/godot-rwkv  rwkv for godot
+
 https://github.com/TencentEdgeOne/pages-templates/tree/main/examples/chrome-ai  chrome 内置AI
 
-https://gptcache.readthedocs.io/en/latest/_modules/gptcache/embedding/rwkv.html?highlight=rwkv# **embedding**
+https://github.com/zilliztech/GPTCache/blob/main/gptcache/embedding/rwkv.py
+
+- ```
+  # huggingface/NLPP_Audio/rwkv_embedding.py
+  
+  成功生成向量
+  
+  ```
+
+- 
 
 
 
