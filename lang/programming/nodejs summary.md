@@ -31384,6 +31384,10 @@ https://github.com/TencentEdgeOne/pages-templates/tree/main/examples/chrome-ai  
 
 https://gptcache.readthedocs.io/en/latest/_modules/gptcache/embedding/rwkv.html?highlight=rwkv# **embedding**
 
+https://github.com/FlagOpen/FlagEmbedding/tree/master/research/BGE_M3 embedding
+
+https://huggingface.co/nvidia/NV-Embed-v2 embedding
+
 
 
 ```
