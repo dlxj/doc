@@ -2865,6 +2865,81 @@ sudo yum install ffmpeg ffmpeg-devel
 
 
 ```
+
+# see huggingface/NLPP_Audio/vector.py
+
+proxychains4 pip install --upgrade pip && 
+proxychains4 pip install "psycopg[binary]"  
+
+
+proxychains4 apt install postgresql-17-pgvector
+	# 安装向量插件
+
+git clone https://github.com/postgrespro/rum && 
+cd rum &&
+make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config &&
+make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config install &&
+make USE_PGXS=1 installcheck &&
+$ psql DB -c "CREATE EXTENSION rum;
+	# 安装  RUM 插件
+
+# see https://pgroonga.github.io/install/ubuntu.html
+proxychains4 apt install -y software-properties-common && 
+proxychains4 add-apt-repository -y universe && 
+proxychains4 add-apt-repository -y ppa:groonga/ppa &&
+proxychains4 apt install -y wget lsb-release && 
+proxychains4 wget https://packages.groonga.org/ubuntu/groonga-apt-source-latest-$(lsb_release --codename --short).deb && 
+proxychains4 apt install -y -V ./groonga-apt-source-latest-$(lsb_release --codename --short).deb && 
+echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release --codename --short)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list && 
+proxychains4 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && 
+proxychains4 apt update && 
+proxychains4 apt install -y -V postgresql-17-pgdg-pgroonga && 
+proxychains4 apt install -y -V groonga-tokenizer-mecab
+
+CREATE EXTENSION pgroonga;
+	# 成功
+
+see https://pgroonga.github.io/tutorial/
+    # 用法很详细
+
+CREATE DATABASE nlppvector
+WITH OWNER = postgres 
+ENCODING = 'UTF8' 
+TABLESPACE = pg_default 
+CONNECTION LIMIT = -1 
+TEMPLATE template0;
+
+
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+CREATE EXTENSION IF NOT EXISTS pgroonga;
+CREATE TABLE IF NOT EXISTS nlpp_vector (
+    ID bigint generated always as identity (START WITH 1 INCREMENT BY 1), 
+    JPMD5 CHAR(32) NOT NULL,
+    name text NOT NULL,
+    S_JP text NOT NULL,
+    S_CN text DEFAULT '' NOT NULL,
+    S_EN text DEFAULT '' NOT NULL,
+    Embed_gpt_jp vector(1536) NOT NULL,
+    Embed_rwkv_jp vector(1024) NOT NULL,
+    V_JP vector(1536) NOT NULL,
+    metadata jsonb NOT NULL,
+    AddTime timestamp DEFAULT CURRENT_TIMESTAMP,
+    UpdateTime timestamp DEFAULT NULL,
+    Enabled boolean DEFAULT '1',
+    UNIQUE(ID),  
+    PRIMARY KEY (JPMD5, name) 
+);
+CREATE INDEX IF NOT EXISTS index_pgvector_VJP ON nlpp_vector USING hnsw (V_JP vector_cosine_ops);
+CREATE INDEX IF NOT EXISTS index_pgroonga_SJP ON nlpp_vector USING pgroonga (S_JP);
+```
+
+
+
+
+
+```
 yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm && \
 yum -y update && \
 yum search postgresql13 && \
