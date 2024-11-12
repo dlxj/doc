@@ -1390,6 +1390,18 @@ id BIGSERIAL PRIMARY KEY,
 ## vector
 
 ```
+# see huggingface/NLPP_Audio/vector.py
+# see nodejs summary.md -> proxynt
+# see huggingface\powershell\readme.txt -> proxynt 
+
+# http://xxx.57:7851/wsproxy/admin
+#  ali57:2222 -> homepc_wsl2_ssh:22
+#  ali57:54322 -> homepc_wsl2_ssh:5432
+```
+
+
+
+```
 const { Pool } = require('pg');
 config = require('../../../config.js')
 
