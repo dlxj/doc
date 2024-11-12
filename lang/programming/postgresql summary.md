@@ -2901,14 +2901,14 @@ CREATE EXTENSION pgroonga;
 
 see https://pgroonga.github.io/tutorial/
     # 用法很详细
-    
-DROP DATABASE IF EXISTS nlppvector;
+    DROP DATABASE IF EXISTS nlppvector;
 CREATE DATABASE nlppvector
 WITH OWNER = postgres 
 ENCODING = 'UTF8' 
 TABLESPACE = pg_default 
 CONNECTION LIMIT = -1 
 TEMPLATE template0;
+    # 整完 nvcat 重连一次，选这个库再运行下面的语句
 
 
 CREATE EXTENSION IF NOT EXISTS rum;
@@ -2919,7 +2919,7 @@ CREATE TABLE IF NOT EXISTS nlpp_vector (
     JPMD5 CHAR(32) NOT NULL,
     Name text NOT NULL,
     S_jp text NOT NULL,
-    S_zhs text NOT NULL,
+    S_zh text NOT NULL,
     Embed_rwkv_jp vector(1024) NOT NULL,
     V_jp tsvector NOT NULL,
     V_zh tsvector NOT NULL,
@@ -2928,10 +2928,11 @@ CREATE TABLE IF NOT EXISTS nlpp_vector (
     UpdateTime timestamp DEFAULT NULL,
     Enabled boolean DEFAULT '1',
     UNIQUE(ID),
-    PRIMARY KEY (JPMD5, name)
+    PRIMARY KEY (JPMD5, Name)
 );
 CREATE INDEX fts_rum_v_jp ON nlpp_vector USING rum (V_jp rum_tsvector_ops);
 CREATE INDEX fts_rum_v_zh ON nlpp_vector USING rum (V_zh rum_tsvector_ops);
+
 
 
 
@@ -3294,6 +3295,7 @@ ENCODING = 'UTF8'
 TABLESPACE = pg_default 
 CONNECTION LIMIT = -1 
 TEMPLATE template0;
+    # 整完 nvcat 重连一次，选这个库再运行下面的语句
 
 
 CREATE EXTENSION IF NOT EXISTS rum;
@@ -3304,7 +3306,7 @@ CREATE TABLE IF NOT EXISTS nlpp_vector (
     JPMD5 CHAR(32) NOT NULL,
     Name text NOT NULL,
     S_jp text NOT NULL,
-    S_zhs text NOT NULL,
+    S_zh text NOT NULL,
     Embed_rwkv_jp vector(1024) NOT NULL,
     V_jp tsvector NOT NULL,
     V_zh tsvector NOT NULL,
@@ -3313,10 +3315,11 @@ CREATE TABLE IF NOT EXISTS nlpp_vector (
     UpdateTime timestamp DEFAULT NULL,
     Enabled boolean DEFAULT '1',
     UNIQUE(ID),
-    PRIMARY KEY (JPMD5, name)
+    PRIMARY KEY (JPMD5, Name)
 );
 CREATE INDEX fts_rum_v_jp ON nlpp_vector USING rum (V_jp rum_tsvector_ops);
 CREATE INDEX fts_rum_v_zh ON nlpp_vector USING rum (V_zh rum_tsvector_ops);
+
 ```
 
 
