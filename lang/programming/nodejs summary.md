@@ -31412,6 +31412,14 @@ https://github.com/zilliztech/GPTCache/blob/main/gptcache/embedding/rwkv.py
 
 https://github.com/FlagOpen/FlagEmbedding/tree/master/research/BGE_M3 embedding
 
+- https://www.cnblogs.com/xiaoqi/p/18143552/bge-m3 
+
+- ```
+  M3-Embedding支持超过100种工作语言，支持8192长度的输入文本，同时支持密集检索（Dense Retrieval）、多向量检索（Multi-Vector Retrieval）和稀疏检索（Sparse Retrieval）
+  ```
+
+https://github.com/UKPLab/sentence-transformers
+
 https://huggingface.co/nvidia/NV-Embed-v2 embedding
 
 
