@@ -340,7 +340,19 @@ C:\Windows\system32\wsl.exe -d Ubuntu-22.04
 点击确定关闭窗口。可以先右键运行试试效果。这种方法运行的 WSL 即使当前用户注销也是会继续运行的。
 
 
+```
 
+
+
+## 阻止休眠
+
+```
+WIN+R 运行 shell:startup 打开启动目录
+在此目录中创建文件 wsl-startup.vbs
+在 wsl-startup.vbs 中填充如下内容，Arch需替换为你使用的发行版名称。
+set ws=wscript.CreateObject("wscript.shell")
+ws.run "wsl -d Arch", 0
+这样当你系统启动，登录系统后，Windows会开启 WSL 实例，它会永久等待输入，不会关闭。所以当你下次再使用WSL命令时，就不会遇到需要重新唤醒 WSL 的耗时。
 ```
 
 
