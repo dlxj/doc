@@ -31408,7 +31408,42 @@ https://github.com/zilliztech/GPTCache/blob/main/gptcache/embedding/rwkv.py
   
   ```
 
+https://github.com/FlagOpen/FlagEmbedding/tree/master/research/BGE_M3 embedding
+
+- https://www.cnblogs.com/xiaoqi/p/18143552/bge-m3 
+
+- ```
+  M3-Embedding支持超过100种工作语言，支持8192长度的输入文本，同时支持密集检索（Dense Retrieval）、多向量检索（Multi-Vector Retrieval）和稀疏检索（Sparse Retrieval）
+  ```
+
+- ```
+  pip install -U FlagEmbedding
+  
+  from FlagEmbedding import BGEM3FlagModel
+  
+  model = BGEM3FlagModel('BAAI/bge-m3',  
+                         use_fp16=True,
+                         devices=['cuda:0']) # Setting use_fp16 to True speeds up computation with a slight performance degradation
+  
+  sentences_1 = ["What is BGE M3?", "Defination of BM25"]
+  sentences_2 = ["BGE M3 is an embedding model supporting dense retrieval, lexical matching and multi-vector interaction.", 
+                 "BM25 is a bag-of-words retrieval function that ranks a set of documents based on the query terms appearing in each document"]
+  
+  embeddings_1 = model.encode(sentences_1, 
+                              batch_size=12, 
+                              max_length=8192, # If you don't need such a long length, you can set a smaller value to speed up the encoding process.
+                              )['dense_vecs']
+  embeddings_2 = model.encode(sentences_2)['dense_vecs']
+  similarity = embeddings_1 @ embeddings_2.T
+  print(similarity)
+  # [[0.6265, 0.3477], [0.3499, 0.678 ]]
+  ```
+
 - 
+
+https://github.com/UKPLab/sentence-transformers
+
+https://huggingface.co/nvidia/NV-Embed-v2 embedding
 
 
 
