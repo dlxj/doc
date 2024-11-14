@@ -33625,6 +33625,14 @@ https://github.com/jarvisx17/ASR
 https://github.com/jarvisx17/ASR
 ```
 
+https://github.com/lovemefan/SenseVoice.cpp/issues/5
+
+```
+1秒的音频为16000帧数据，经过特征提取fbank变成了97帧，再进过lfr变成了15帧，最后ctc输出为对应的15个logit，也就是60ms/per ，直接按照每60ms每个token其实是可以的，前提是切分的粒度和准确度可以接受。
+据我了解，目前较为成熟的对齐算法有两个，分别是dwt(whisper.cpp在使用)和ctc-alignment（torchaudio、wenet在使用），这两个算法输入是ctc出来的概率矩阵，时间戳会更精确。
+
+```
+
 
 
 
