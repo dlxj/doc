@@ -177,8 +177,8 @@ pm2 monit
 install cuda 11.8
 
 update-alternatives --remove cuda /usr/local/cuda-12.2
-update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118
-ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118 && 
+ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda && 
 ln -sfT /etc/alternatives/cuda /usr/local/cuda
 
 
