@@ -33621,6 +33621,8 @@ flash-attn==2.6.3
 
 https://github.com/lovemefan/SenseVoice.cpp/issues/5  
 
+- https://liuyanfeier.github.io/2017/10/07/fbank%E5%92%8Cmfcc%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/
+
 - ```
   1秒的音频为16000帧数据，经过特征提取fbank变成了97帧，再进过lfr变成了15帧，最后ctc输出为对应的15个logit，也就是60ms/per ，直接按照每60ms每个token其实是可以的，前提是切分的粒度和准确度可以接受。
   据我了解，目前较为成熟的对齐算法有两个，分别是dwt(whisper.cpp在使用)和ctc-alignment（torchaudio、wenet在使用），这两个算法输入是ctc出来的概率矩阵，时间戳会更精确。
