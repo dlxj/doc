@@ -33617,6 +33617,16 @@ flash-attn==2.6.3
 
 
 
+# ASR From Scratch
+
+https://github.com/jarvisx17/ASR 
+
+```
+https://github.com/jarvisx17/ASR
+```
+
+
+
 
 
 # whisperX
