@@ -1,0 +1,1 @@
+建议换 kernelSU/Apatch ，Magisk 时代已经过了

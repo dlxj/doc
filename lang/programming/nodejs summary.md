@@ -3415,6 +3415,7 @@ sslocal -b "127.0.0.1:1080" --server-url "ss://Y2hhY2hC05MDNkOGU2NzVhNWI@sshk01.
 
 2022-blake3-chacha20-poly1305
 
+
 ```
 
 
@@ -3626,6 +3627,20 @@ https://github.com/sazima/proxynt  WebSocket 内网穿透
 # see huggingface\powershell\readme.txt
 pip install -U proxynt
 ```
+
+
+
+```
+# see huggingface/NLPP_Audio/vector.py
+# see nodejs summary.md -> proxynt
+# see huggingface\powershell\readme.txt -> proxynt 
+
+# http://xxx.57:7851/wsproxy/admin
+#  ali57:2222 -> homepc_wsl2_ssh:22
+#  ali57:54322 -> homepc_wsl2_ssh:5432
+```
+
+
 
 
 
@@ -31380,9 +31395,55 @@ v4neo 可以用v4 代码推理，**v5 用 v4 推理出错**
 
 #### RWKV5
 
+https://github.com/harrisonvanderbyl/godot-rwkv  rwkv for godot
+
 https://github.com/TencentEdgeOne/pages-templates/tree/main/examples/chrome-ai  chrome 内置AI
 
-https://gptcache.readthedocs.io/en/latest/_modules/gptcache/embedding/rwkv.html?highlight=rwkv# **embedding**
+https://github.com/zilliztech/GPTCache/blob/main/gptcache/embedding/rwkv.py
+
+- ```
+  # huggingface/NLPP_Audio/rwkv_embedding.py
+  
+  成功生成向量
+  
+  ```
+
+https://github.com/FlagOpen/FlagEmbedding/tree/master/research/BGE_M3 embedding
+
+- https://www.cnblogs.com/xiaoqi/p/18143552/bge-m3 
+
+- ```
+  M3-Embedding支持超过100种工作语言，支持8192长度的输入文本，同时支持密集检索（Dense Retrieval）、多向量检索（Multi-Vector Retrieval）和稀疏检索（Sparse Retrieval）
+  ```
+
+- ```
+  pip install -U FlagEmbedding
+  
+  from FlagEmbedding import BGEM3FlagModel
+  
+  model = BGEM3FlagModel('BAAI/bge-m3',  
+                         use_fp16=True,
+                         devices=['cuda:0']) # Setting use_fp16 to True speeds up computation with a slight performance degradation
+  
+  sentences_1 = ["What is BGE M3?", "Defination of BM25"]
+  sentences_2 = ["BGE M3 is an embedding model supporting dense retrieval, lexical matching and multi-vector interaction.", 
+                 "BM25 is a bag-of-words retrieval function that ranks a set of documents based on the query terms appearing in each document"]
+  
+  embeddings_1 = model.encode(sentences_1, 
+                              batch_size=12, 
+                              max_length=8192, # If you don't need such a long length, you can set a smaller value to speed up the encoding process.
+                              )['dense_vecs']
+  embeddings_2 = model.encode(sentences_2)['dense_vecs']
+  similarity = embeddings_1 @ embeddings_2.T
+  print(similarity)
+  # [[0.6265, 0.3477], [0.3499, 0.678 ]]
+  ```
+
+- 
+
+https://github.com/UKPLab/sentence-transformers
+
+https://huggingface.co/nvidia/NV-Embed-v2 embedding
 
 
 
@@ -33552,6 +33613,25 @@ punctuators==0.0.5
 einops==0.8.0 
 flash-attn==2.6.3
 
+```
+
+
+
+# SenseVoice.cpp
+
+https://github.com/lovemefan/SenseVoice.cpp/issues/5  
+
+- https://liuyanfeier.github.io/2017/10/07/fbank%E5%92%8Cmfcc%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/
+
+- ```
+  1秒的音频为16000帧数据，经过特征提取fbank变成了97帧，再进过lfr变成了15帧，最后ctc输出为对应的15个logit，也就是60ms/per ，直接按照每60ms每个token其实是可以的，前提是切分的粒度和准确度可以接受。
+  据我了解，目前较为成熟的对齐算法有两个，分别是dwt(whisper.cpp在使用)和ctc-alignment（torchaudio、wenet在使用），这两个算法输入是ctc出来的概率矩阵，时间戳会更精确。
+  ```
+
+https://github.com/jarvisx17/ASR  **ASR From Scratch**
+
+```
+https://github.com/jarvisx17/ASR
 ```
 
 
