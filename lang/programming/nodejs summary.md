@@ -33619,6 +33619,30 @@ flash-attn==2.6.3
 
 # SenseVoice.cpp
 
+https://gist.github.com/murphypei/dcae63c9de780586a70a89603bd0f2c2  gist 代码
+
+https://github.com/NVIDIA/NeMo/blob/main/tutorials/asr/ASR_with_NeMo.ipynb 代码
+
+- **梅尔尺度**：Mel Spectrogram 通过将传统频谱图的频率轴转换为梅尔尺度（Mel Scale）。梅尔尺度是一种非线性尺度，它模仿人耳对音调的感知，低频部分更精细，高频部分则比较粗略。这种尺度使得高频与低频在听觉上具有更均匀的感知效果。
+- **计算过程**：
+  - 先将音频信号通过短时傅里叶变换（STFT）产生频谱图。
+  - 然后应用一个梅尔滤波器组，将频谱能量分布转换成梅尔尺度上的频率分布。
+  - 生成的结果就是 Mel Spectrogram，其中保留了音频信号的时频分布讯息，更适合典型的音频处理和分析任务。
+- **应用**：Mel Spectrogram 在语音信号处理，特别是语音识别、说话人识别和音乐信息检索中被广泛应用。它因为能够较好地保留时间和频率信息，帮助模型捕获语音中的特征模式。
+
+- ```
+  # Plot the mel spectrogram of our sample
+  mel_spec = librosa.feature.melspectrogram(y=audio, sr=sample_rate)
+  mel_spec_db = librosa.power_to_db(mel_spec, ref=np.max)
+  
+  librosa.display.specshow(
+      mel_spec_db, x_axis='time', y_axis='mel')
+  plt.colorbar()
+  plt.title('Mel Spectrogram');
+  ```
+
+  
+
 https://github.com/lovemefan/SenseVoice.cpp/issues/5  
 
 - https://liuyanfeier.github.io/2017/10/07/fbank%E5%92%8Cmfcc%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/
