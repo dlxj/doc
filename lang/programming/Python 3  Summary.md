@@ -15982,6 +15982,7 @@ pip install duckdb --upgrade
 https://bnm3k.github.io/blog/duckdb-jit-udfs-numba
 
 ```
+# 脚本放虚拟机里面运行，开启虚拟机磁盘加密。（真实案例，千万级别项目就这样干的）
 
 import math
 
