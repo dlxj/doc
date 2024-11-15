@@ -15432,13 +15432,22 @@ data.groupby('company').agg({'salary':'median','age':'mean'})
 
 ```python
 # see huggingface/NLPP_Audio/translate_ak48.py
-	import pandas as pd
+
+    import pandas as pd
     df = pd.read_excel('data/ak148_script.xlsx')
+
+    def split_name(name):
+        name1, name2, name3 = name.split('_')
+        return pd.Series({ "name1":name1, "name2":name2, "name3":name3 })
+    df[['name1', 'name2', 'name3']] = df['name'].apply(split_name)
+
+
     grouped = df.groupby(['name', 'locate'])
-	
+
     for (name, locate), group in grouped:
         print(f'Group: name={name}, locate={locate}')
-        print(group)
+        result = group.to_dict(orient='records')
+        pass
 ```
 
 
@@ -15462,8 +15471,27 @@ data.groupby('company').agg({'salary':'median','age':'mean'})
 ## apply
 
 ```python
-# see huggingface/NLPP_Audio/main.py
 
+see huggingface/NLPP_Audio/translate_ak48.py
+    import pandas as pd
+    df = pd.read_excel('data/ak148_script.xlsx')
+
+    def split_name(name):
+        name1, name2, name3 = name.split('_')
+        return pd.Series({ "name1":name1, "name2":name2, "name3":name3 })
+    df[['name1', 'name2', 'name3']] = df['name'].apply(split_name)
+
+
+    grouped = df.groupby(['name', 'locate'])
+
+    for (name, locate), group in grouped:
+        print(f'Group: name={name}, locate={locate}')
+        result = group.to_dict(orient='records')
+        pass
+    
+  
+
+# see huggingface/NLPP_Audio/main.py
     def match(seg):
         
         aac_info = []
