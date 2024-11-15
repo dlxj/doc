@@ -15977,6 +15977,66 @@ pip install duckdb --upgrade
 
 
 
+## numba + duckdb
+
+https://bnm3k.github.io/blog/duckdb-jit-udfs-numba
+
+```
+
+import math
+
+def _calc_haversine_dist(x0, y0, x1, y1):
+    # x -> longitude
+    # y -> latitude
+    EARTH_RADIUS = 6372.8  # km
+
+    p0_latitude = math.radians(y0)
+    p1_latitude = math.radians(y1)
+
+    delta_latitude = math.radians(y0 - y1)
+    delta_longitude = math.radians(x0 - x1)
+
+    central_angle_inner = (math.sin(delta_latitude / 2.0)) ** 2 + math.cos(
+        p0_latitude
+    ) * math.cos(p1_latitude) * (math.sin(delta_longitude / 2.0) ** 2)
+
+    central_angle = 2.0 * math.asin(math.sqrt(central_angle_inner))
+
+    distance = EARTH_RADIUS * central_angle
+    return distance
+
+import duckdb
+from duckdb.typing import DOUBLE
+
+conn = duckdb.connect("points.db")
+conn.create_function(
+    "haversine_dist",
+    _calc_haversine_dist,
+    [DOUBLE, DOUBLE, DOUBLE, DOUBLE],
+    DOUBLE,
+    type="native",
+    side_effects=False,
+)
+
+
+select 
+  avg(haversine_dist(x0,y0,x1,y1)) as avg_dist
+from points
+
+from numba import jit
+
+_calc_haversine_dist_py_jit = jit(nopython=True, nogil=True, parallel=False)(
+    _calc_haversine_dist
+)
+
+
+
+```
+
+
+
+
+
 # lmdb
 
 https://www.cnblogs.com/zhangxianrong/p/14919706.html 内存映射 键值数据库
