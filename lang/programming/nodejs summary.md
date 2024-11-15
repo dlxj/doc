@@ -33589,6 +33589,8 @@ https://github.com/kotoba-tech/kotoba-whisper
 - https://huggingface.co/distil-whisper/distil-large-v3
   - https://github.com/huggingface/distil-whisper
 
+https://github.com/bean-du/SpeakSense  实时转写 rust
+
 huggingface/rwkv5-jp-trimvd/kotoba_asr.py
 
 
@@ -33624,6 +33626,8 @@ flash-attn==2.6.3
 https://gist.github.com/murphypei/dcae63c9de780586a70a89603bd0f2c2  gist 代码
 
 https://github.com/NVIDIA/NeMo/blob/main/tutorials/asr/ASR_with_NeMo.ipynb 代码
+
+https://github.com/bean-du/SpeakSense  实时转写 rust
 
 - **梅尔尺度**：Mel Spectrogram 通过将传统频谱图的频率轴转换为梅尔尺度（Mel Scale）。梅尔尺度是一种非线性尺度，它模仿人耳对音调的感知，低频部分更精细，高频部分则比较粗略。这种尺度使得高频与低频在听觉上具有更均匀的感知效果。
 - **计算过程**：
