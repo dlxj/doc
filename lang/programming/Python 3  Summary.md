@@ -15430,6 +15430,19 @@ data.groupby('company').agg({'salary':'median','age':'mean'})
 
 
 
+```python
+# see huggingface/NLPP_Audio/translate_ak48.py
+	import pandas as pd
+    df = pd.read_excel('data/ak148_script.xlsx')
+    grouped = df.groupby(['name', 'locate'])
+	
+    for (name, locate), group in grouped:
+        print(f'Group: name={name}, locate={locate}')
+        print(group)
+```
+
+
+
 
 
 
