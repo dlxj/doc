@@ -33645,6 +33645,8 @@ https://github.com/NVIDIA/NeMo/blob/main/tutorials/asr/ASR_with_NeMo.ipynb 代�
 
 https://github.com/lovemefan/SenseVoice.cpp/issues/5  
 
+- https://github.com/lovemefan/SenseVoice-python  python 直接用
+
 - https://liuyanfeier.github.io/2017/10/07/fbank%E5%92%8Cmfcc%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/
 
 - ```
