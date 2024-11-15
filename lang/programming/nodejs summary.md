@@ -181,6 +181,8 @@ update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118 &&
 ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda && 
 ln -sfT /etc/alternatives/cuda /usr/local/cuda
 
+/usr/lib/wsl/lib/nvidia-smi
+    # wsl2 的 nvidia-smi 命令在这里
 
 vi ~/.bashrc 
 
@@ -191,7 +193,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-export PATH=/usr/local/cuda/bin:$PATH
+export PATH=/usr/local/cuda/bin:/usr/lib/wsl/lib:$PATH
 
 
 source ~/.bashrc 

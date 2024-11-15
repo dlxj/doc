@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-export PATH=/usr/local/cuda/bin:$PATH
+export PATH=/usr/local/cuda/bin:/usr/lib/wsl/lib:$PATH
 
 
 source ~/.bashrc 
