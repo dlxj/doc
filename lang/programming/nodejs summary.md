@@ -33629,7 +33629,7 @@ https://github.com/NVIDIA/NeMo/blob/main/tutorials/asr/ASR_with_NeMo.ipynb 代�
 
 https://github.com/bean-du/SpeakSense  实时转写 rust
 
-https://github.com/PlayVoice/whisper-vits-svc **音色转换**
+https://github.com/PlayVoice/whisper-vits-svc **音色转换** **语音算法科普 up**
 
 - https://www.bilibili.com/video/BV1Tj411e7pQ 带教程
 
