@@ -2864,6 +2864,29 @@ sudo yum install ffmpeg ffmpeg-devel
 
 see huggingface/NLPP_Audio/vector.py
 
+```
+            """
+            SELECT s_jp, v_jp <=> tsquery('まずは|どう|したら') as distance FROM nlpp_vector ORDER BY v_jp <=> tsquery('まずは|どう|したら') asc LIMIT 3;
+                # | 表示只要命中其中一个就给分 (结果是距离)
+            SELECT s_jp, v_jp <=> tsquery('まずは&どう&したら&○○') as distance FROM nlpp_vector ORDER BY v_jp <=> tsquery('まずは&どう&したら&○○') asc LIMIT 3;
+                # & 表示必须全部命中，否则给 0 分 (结果是距离)
+            """
+            q = "|".join( mmsegjp("まずはどうしたら"))
+            sql = f"SELECT v_jp <=> tsquery('{q}') as distance, name, s_jp, s_zh, v_jp, v_zh, metadata, TO_CHAR(AddTime, 'YYYY-MM-DD HH24:MI:SS') AS AddTime FROM nlpp_vector WHERE enable='t' ORDER BY v_jp <=> tsquery('{q}') ASC LIMIT 20;"
+            sql = f"""
+                WITH tmp AS (
+                SELECT s_jp, v_jp <=> tsquery('{q}') as distance
+                FROM nlpp_vector WHERE name = 'nlpp_姉ヶ崎'
+                )
+                SELECT * from tmp
+                WHERE distance < 99999
+                ORDER BY distance ASC
+                LIMIT 10;
+            """
+```
+
+
+
 
 
 ```
