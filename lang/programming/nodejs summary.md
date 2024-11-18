@@ -36455,6 +36455,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 [LunaTranslator](https://github.com/HIllya51/LunaTranslator) 游戏翻译 python
 
+- https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
+
 - [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
 - [qolibri](https://github.com/mvf/qolibri) ebpwing + qt5
 

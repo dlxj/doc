@@ -40,6 +40,12 @@ https://github.com/Xzonn/NintendoOfficialChineseGames/blob/master/%E5%AE%9D%E5%8
 
 
 
+### 游戏解包
+
+https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
+
+
+
 ### 游戏原声
 
 https://downloads.khinsider.com/game-soundtracks/album/love-plus-sound-portrait-rinko-kobayakawa-ds-sscx-10510
@@ -237,7 +243,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
