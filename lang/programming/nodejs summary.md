@@ -36389,6 +36389,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 [category-theory-for-dotnet-programmers](https://github.com/cboudereau/category-theory-for-dotnet-programmers)
 
+https://github.com/clsid2/mpc-hc  potplay 替代播放器
+
 
 
 ### Winform
@@ -36428,6 +36430,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 
 ### WPF
+
+https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 - https://www.bilibili.com/video/BV17kptetEQV B UP
 - https://www.bilibili.com/video/BV1cC411x7aV B UP
@@ -37720,6 +37724,8 @@ typedef struct EitherInt {
 
 
 ## C++ Monads
+
+https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus)
 
