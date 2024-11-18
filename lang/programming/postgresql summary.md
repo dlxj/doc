@@ -2862,6 +2862,8 @@ sudo yum install ffmpeg ffmpeg-devel
 
 ##  Install RUM
 
+see huggingface/NLPP_Audio/vector.py
+
 
 
 ```
