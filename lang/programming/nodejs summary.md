@@ -33629,6 +33629,10 @@ https://github.com/NVIDIA/NeMo/blob/main/tutorials/asr/ASR_with_NeMo.ipynb 代�
 
 https://github.com/bean-du/SpeakSense  实时转写 rust
 
+https://github.com/PlayVoice/whisper-vits-svc **音色转换** **语音算法科普 up**
+
+- https://www.bilibili.com/video/BV1Tj411e7pQ 带教程
+
 - **梅尔尺度**：Mel Spectrogram 通过将传统频谱图的频率轴转换为梅尔尺度（Mel Scale）。梅尔尺度是一种非线性尺度，它模仿人耳对音调的感知，低频部分更精细，高频部分则比较粗略。这种尺度使得高频与低频在听觉上具有更均匀的感知效果。
 - **计算过程**：
   - 先将音频信号通过短时傅里叶变换（STFT）产生频谱图。
