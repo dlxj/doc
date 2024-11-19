@@ -15163,6 +15163,78 @@ result = [f(x, y) for x, y in zip(df['col1'], df['col2'])]
 
 
 
+## xlsx、jsonl、csv
+
+```python
+
+# see huggingface/NLPP_Audio/main.py
+# see huggingface/NLPP_Audio/vector.py
+
+df = pd.read_csv(csv, sep='\t', header=None, encoding='utf-8') # dtype=dtype_dict
+
+            df.columns = ['s_jp', 's_zh', 'section', 'lineNum']
+                # 手动添加列名
+
+            df['name'] = name
+
+            array = df.to_dict(orient='records') 
+                # 转换的方向，每一行将生成一个字典
+
+
+# pip install openpyxl==3.1.5 xlrd==2.0.1 pandas==1.26.4
+        
+    
+    # see github\echodict\friso_vs2019\mmseg_jp.py
+    # pip install json_lines
+    import json_lines
+
+    
+    import pandas
+    df = pandas.read_excel('data/nlpp_dialog.xlsx',engine='openpyxl')
+    # df['sim'] = 0 # 添加一列并初始化为 0
+
+    df2 = pandas.read_json("data/nlpp_asr_kotoba.jsonl", lines=True)
+
+    # df['similarity'] = df.apply(lambda row: similarity(row['A'], row['B']), axis=1)
+
+    pass
+    
+    with open('data/nlpp_asr_kotoba.jsonl', 'rb') as f: # opening file in binary(rb) mode    
+        for item in json_lines.reader(f):
+            name = item["name"]
+            text = item["result"]["text"]
+            chunks = item["result"]["chunks"]  # timestamp
+            segs = mmseg(text)
+
+            df['sim'] = 0
+            for idx_row in range(len(df)):
+                role = df.loc[idx_row, 'role']
+                dlg = df.loc[idx_row, 'dlg']
+                gpt = df.loc[idx_row, 'gpt']
+                seg = df.loc[idx_row, 'seg']
+                
+                if pandas.isna(seg):
+                    continue
+                
+                seg = seg.strip().split(' ')
+                if gpt and dlg:
+                    # segs2 = mmseg( dlg )
+                    if len(seg) <= 0:
+                        sim = 0
+                    else:
+                        sim = similarity( segs, seg )
+                    
+                    if sim > 0.5:
+                        pass
+                    
+                    df.loc[idx_row, 'sim'] = sim
+
+```
+
+
+
+
+
 ## 遍历列更效率高
 
 ```
