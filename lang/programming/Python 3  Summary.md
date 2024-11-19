@@ -3294,6 +3294,31 @@ product 笛卡尔集
 
 
 
+### 安全 del
+
+```
+see huggingface/NLPP_Audio/vector.py
+			will_be_delete = []
+            for curr, item in enumerate(array):
+                delQ = False
+                # if math.isnan(item['section']):
+                #     will_be_delete.append( curr )
+                #     delQ = True
+                # if math.isnan(item['lineNum']):
+                #     if not delQ:
+                #         will_be_delete.append( curr )
+
+                try:
+                    item['section'] = int(item['section'])
+                    item['lineNum'] = int(item['lineNum'])
+                except Exception:
+                    will_be_delete.append(curr)
+
+            array = [item for idx, item in enumerate(array) if idx not in will_be_delete]
+```
+
+
+
 
 
 ### delete_duplicates
