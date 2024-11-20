@@ -2594,6 +2594,17 @@ npm config get registry
 
 
 ```
+
+npm config get prefix
+	# 全局安装的包在哪里
+	
+ls /usr/local/node-v18.9.1-linux-x64/lib/node_modules/cnpm/bin
+	# 装到这里去了
+
+vi ~/.bashrc
+export PATH="/usr/local/node-v18.9.1-linux-x64/lib/node_modules/cnpm/bin:$PATH"
+source ~/.bashrc
+
 管理员身份运行 powershell
 	set-executionpolicy remotesigned
 
