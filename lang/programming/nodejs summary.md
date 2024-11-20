@@ -36533,6 +36533,8 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 [syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
 
+[Avalonia  DockPanel](https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/building-layouts/panels-overview) **划分空间**
+
 [ff-utils-improved 抽帧](https://github.com/miifanboy/ff-utils-improved) [1](https://blog.csdn.net/Daniel_yka/article/details/109840350)
 
 [Flyleaf](https://github.com/SuRGeoNix/Flyleaf)
@@ -36580,6 +36582,8 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 [Livet包学习借鉴 双向绑定](https://b23.tv/BatbUhF) [1](https://github.com/runceel/Livet)  [2](https://gist.github.com/BYJRK/b49db5538a006d17fe4858217b330382)
 
 [iNKORE](https://github.com/iNKORE-NET/UI.WPF.Modern) **最佳选择？** B站搜它
+
+[Avalonia  DockPanel](https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/building-layouts/panels-overview) **划分空间** [ryujinx 模似器](https://github.com/ryujinx-mirror/ryujinx)
 
 [Panuon.WPF.UI](https://github.com/Panuon/Panuon.WPF.UI)  活跃 简洁
 
