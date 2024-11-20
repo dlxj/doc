@@ -6975,20 +6975,137 @@ sendPostRequestThroughSocks5Proxy()
 https://github.com/node-fetch/timeout-signal 
 
 ```
+
+# see huggingface/project
+	# lib\vector\wxembedding.js
+
 npm install timeout-signal
 
-import timeoutSignal from 'timeout-signal';
 
-const signal = timeoutSignal(5000);
+let fetch = require('node-fetch')
 
-try {
-	const response = await fetch('https://www.google.com', {signal});
-	// Handle response
-} catch (error) {
-	if (signal.aborted) {
-		// Handle abortion
-	}
+let access_token = ''
+let expires_time = ''
+
+async function get_access_token() {
+    let { default:timeoutSignal } = await import('timeout-signal')
+    const signal = timeoutSignal(3000)
+
+    
+
+    let url = `https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=${api_key}&client_secret=${api_secret}`
+    let pth = url.replace(host, '')
+    let headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    }
+
+    try {
+        const response = await fetch(url, { 
+            method:"get",
+            headers:headers,
+            signal: signal
+        })
+    
+        let token = await response.json()
+
+        return [token, null]
+    } catch(e) {
+        if (signal.aborted) {
+            return [null, 'get_access_token timeout.']
+        } else {
+            return [null, `get_access_token ${e}`]
+        }
+    }
+
+
+
+    //let GET = bent(host, 'GET', 'json', 200)
+    //let token = await GET(pth, {})
+    //return token
 }
+
+
+
+async function get_Embedding(text) {
+
+    let { default:timeoutSignal } = await import('timeout-signal')
+    const signal = timeoutSignal(5000)
+
+    if (!access_token) {
+        let err = await reset_access_token()
+        if (err) {
+            return [null, err]
+        }
+    }
+    let diff = moment().diff(expires_time)
+    if (diff >= 0) {
+        // access_token 过期了
+        let err = await reset_access_token()
+        if (err) {
+            return [null, err]
+        }        
+    }
+
+    let url = `https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/embeddings/embedding-v1?access_token=${access_token}`
+    
+    text = text.slice(0, 150)
+
+    let body = {
+        "input": [text]
+    }
+    headers = {
+        'Content-Type': 'application/json'
+    }
+
+    let pth = url.replace(host, '')
+
+    //let formurlencoded_body = formurlencoded(body)
+
+    try {
+        let response = await fetch(url, { 
+            method:"post",
+            headers:headers,
+            body: JSON.stringify(body),
+            signal: signal
+        })
+    
+        response = await response.json()
+        if (response && response.data && response.data[0]) {
+            let embedding = response.data[0].embedding
+            return [embedding, '']
+        } else {
+            let emsg = '##### Error: wx embedding vector json parse fail'
+            if (response && response.error_msg) { 
+                emsg = `##### Error: wx embedding vector json parse fail ${response.error_msg}`
+            }
+            console.log(emsg)
+            return [null, emsg]
+        }
+
+    } catch(e) {
+        if (signal.aborted) {
+            return [null, 'get_Embedding timeout.']
+        } else {
+            return [null, `get_Embedding ${e}`]
+        }
+    }
+    
+    let post = bent(host, 'POST', 'json', 200)
+    let response = await post(pth, body, headers)
+    if (response && response.data && response.data[0]) {
+        let embedding = response.data[0].embedding
+        return [embedding, '']
+    } else {
+        let emsg = '##### Error: wx embedding vector json parse fail'
+        if (response && response.error_msg) { 
+            emsg = `##### Error: wx embedding vector json parse fail ${response.error_msg}`
+        }
+        console.log(emsg)
+        return [null, emsg]
+    }
+}
+
 ```
 
 
