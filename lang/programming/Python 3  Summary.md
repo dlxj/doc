@@ -19771,6 +19771,81 @@ demo.launch(share=True)
 
 
 
+```
+import gradio as gr
+from pydub import AudioSegment
+
+def stream_audio(audio_file):
+    audio = AudioSegment.from_mp3(audio_file)
+    i = 0
+    chunk_size = 3000
+    
+    while chunk_size*i < len(audio):
+        chunk = audio[chunk_size*i:chunk_size*(i+1)]
+        i += 1
+        if chunk:
+            file = f"/tmp/{i}.mp3"
+            chunk.export(file, format="mp3")            
+            yield file
+        
+demo = gr.Interface(
+    fn=stream_audio,
+    inputs=gr.Audio(type="filepath", label="Audio file to stream"),
+    outputs=gr.Audio(autoplay=True, streaming=True),
+)
+
+if __name__ == "__main__":
+    demo.queue().launch()
+```
+
+
+
+```
+import pyaudio
+
+# Audio settings
+FORMAT = pyaudio.paFloat32 #paInt16
+CHANNELS = 1
+RATE = 24000
+CHUNK_SIZE = 8192
+
+# Create PyAudio audio output stream
+audio = pyaudio.PyAudio()
+stream = audio.open(
+    format=FORMAT,
+    channels=CHANNELS,
+    rate=RATE,
+    output=True,
+    frames_per_buffer=CHUNK_SIZE
+)
+
+SILENCE = chr(0)*CHUNK_SIZE*2 
+
+
+while True:    
+    try:
+        audio_data = ...# Receive audio stream from generator
+        
+        
+        print("audio", len(audio_data))
+
+        # generation is too slow so silence
+        if audio_data == "":
+            print("silence")
+            audio_data = SILENCE
+        stream.write(audio_data)
+        
+    except:
+        break
+
+# Clean up
+stream.stop_stream()
+stream.close()
+audio.terminate()
+```
+
+
+
 
 
 ## video
