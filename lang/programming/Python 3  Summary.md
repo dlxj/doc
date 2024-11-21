@@ -19728,7 +19728,9 @@ demo.launch()
 
 ### stream
 
+see huggingface/rwkv5-jp-explain/autoplay.py
 
+see huggingface/rwkv5-jp-explain/embedding.py
 
 ```python
 import gradio as gr
