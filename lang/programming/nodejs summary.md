@@ -36529,9 +36529,11 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 ### Winform
 
-[syncfusion 文档](https://help.syncfusion.com/windowsforms/overview)
+[syncfusion 文档](https://help.syncfusion.com/windowsforms/overview) 
 
 [syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
+
+[syncfusion](https://help.syncfusion.com/wpf/gridsplitter/getting-started#structure-of-sfgridsplitter) **splitter**
 
 [Avalonia  DockPanel](https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/building-layouts/panels-overview) **划分空间**
 
