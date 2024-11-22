@@ -46,11 +46,15 @@ https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 
 https://github.com/Xzonn/NintendoOfficialChineseGames/
 
+- https://github.com/GreemDev/Ryujinx/releases
+
 - https://xzonn.top/posts/Try-to-Extract-Messages-from-Games.html  
 
   - ```
     对于Nintendo Switch游戏的ROM文件，可以使用Ryujinx提取其中的romfs；对于任天堂自家的常用打包格式，可以使用Switch-Toolbox进行拆包；而对于跨平台的游戏引擎Unity，则有专门的工具AssetStudio用于分析数据文件。
     ```
+
+- https://www.bilibili.com/opus/534827074512420036 MonsterHunterRise 解包
 
 https://www.bilibili.com/opus/745350067860275235 教程详细
 
