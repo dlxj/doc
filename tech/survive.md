@@ -44,6 +44,8 @@ https://github.com/Xzonn/NintendoOfficialChineseGames/blob/master/%E5%AE%9D%E5%8
 
 https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 
+https://www.bilibili.com/opus/745350067860275235 教程详细
+
 https://github.com/SciresM/hactool  **switch 解包**
 
 - https://juejin.cn/post/6929846759736737806
