@@ -36525,6 +36525,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
+- https://github.com/Aleksoid1978/MPC-BE  毛子开源版 
+
 
 
 ### Winform
