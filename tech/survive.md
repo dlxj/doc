@@ -44,6 +44,8 @@ https://github.com/Xzonn/NintendoOfficialChineseGames/blob/master/%E5%AE%9D%E5%8
 
 https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 
+https://shipengliang.com/games/switch-%E8%A7%A3%E5%8C%85-%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B.html  **switch 解包**
+
 
 
 ### 游戏原声
@@ -243,7 +245,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
