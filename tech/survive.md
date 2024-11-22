@@ -46,6 +46,8 @@ https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 
 https://github.com/SciresM/hactool  **switch 解包**
 
+- https://juejin.cn/post/6929846759736737806
+
 https://github.com/StudentBlake/XCI-Explorer  **switch 仅查看？**
 
 - https://shipengliang.com/games/switch-%E8%A7%A3%E5%8C%85-%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B.html
