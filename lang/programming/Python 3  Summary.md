@@ -11094,7 +11094,8 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
 
 # ppstructure 版面分析
 
-
+- https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.5/configs/picodet/legacy_model/application/layout_analysis
+- https://github.com/RapidAI/RapidLayout
 
 - https://blog.csdn.net/wss794/article/details/122494246?spm=1001.2014.3001.5502
 

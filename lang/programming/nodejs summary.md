@@ -15414,6 +15414,57 @@ const trim = async ({ target: { files } }) => {
 
 
 ```
+# see echodict\pmserver\http\api\getNLPPAudio.js
+	//let audio_path = path.join(audio_dir, `${gid}.mp3`)
+            
+            let re = await nlppvectorDB.query(`select guid, audio from nlpp_vector where guid=$(guid);`, {"guid": '4045979c-d6d3-4877-92e3-47e8f048858b'})
+            let buf = re.rows[0].audio
+            // let uint8array = new Uint8Array(buf)
+
+            // audio_path = 'data/bts.aac'
+
+            // if ( ! fs.existsSync( audio_path ) ) {
+            //     throw `au not exist ${audio_path}`
+            // }
+
+            // let readStream = fs.createReadStream(audio_path)
+            // let readStream = fs.createReadStream(uint8array)
+            // let stat = fs.statSync(audio_path)
+            // let size = stat.size
+
+            const { Readable } = require('stream');
+
+            function bufferToStream(buffer) {
+                // 创建一个自定义的 Readable 流
+                const readableInstance = new Readable({
+                    read() {
+                        // 将 Buffer 数据推送到流中
+                        this.push(buffer);
+                        // 流结束后发送 null
+                        this.push(null);
+                    }
+                });
+
+                return readableInstance;
+            }
+
+            const stream = bufferToStream(buf);
+
+            res.writeHead(200, {
+                'Content-Type': 'audio/aac',  // 'audio/mpeg',  for mp3
+                //'Content-Length': size
+            })
+
+            stream.pipe(res)
+
+            // readStream.pipe(res)
+```
+
+
+
+
+
+```
 app.get('/stream', (req, res) => {
     let _url = req.query.url;
 
