@@ -36533,7 +36533,7 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 [syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
 
-[syncfusion](https://help.syncfusion.com/wpf/gridsplitter/getting-started#structure-of-sfgridsplitter) **splitter**
+[syncfusion](https://help.syncfusion.com/wpf/gridsplitter/getting-started#structure-of-sfgridsplitter) [1](https://github.com/SyncfusionExamples/syncfusion-gridsplitter-control-examples) **splitter**
 
 [Avalonia  DockPanel](https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/building-layouts/panels-overview) **划分空间**
 
