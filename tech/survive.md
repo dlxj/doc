@@ -55,6 +55,7 @@ https://github.com/Xzonn/NintendoOfficialChineseGames/
     ```
 
 - https://www.bilibili.com/opus/534827074512420036 MonsterHunterRise 解包
+  - https://www.vgter.net/archives/2487 怪物猎人 崛起 曙光 下载
 
 https://www.bilibili.com/opus/745350067860275235 教程详细
 
