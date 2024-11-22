@@ -42,7 +42,23 @@ https://github.com/Xzonn/NintendoOfficialChineseGames/blob/master/%E5%AE%9D%E5%8
 
 ### 游戏解包
 
+SAK工具 各种格式转换
+
 https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
+
+火焰之纹章 Engage 成功提取音频
+
+https://github.com/vgmstream/vgmstream
+
+- https://huggingface.co/datasets/dlxjj/win10_dev/blob/main/vgmstream-win.zip
+
+- ```
+  F:\BigGame\YUZU 4176\YUZU\user\dump\0100A6301214E000\romfs\Data\StreamingAssets\Audio\GeneratedSoundBanks\Switch\Japanese
+  	# 火焰之纹章 Engage 成功提取音频
+  	# .wem 文件拖到 D:\usr\vgmstream-win\test.exe 成功提取
+  ```
+
+  
 
 https://github.com/Xzonn/NintendoOfficialChineseGames/
 
