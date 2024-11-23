@@ -64,6 +64,12 @@ https://github.com/AlexCSDev/XbTool异度神剑3 解包
 - https://github.com/RoccoDev/bdat-rs/wiki/Xenoblade-3-BDAT-editing 这个解解看
 
 - ```
+  Wwise-Unpacker\Game_Files
+  	# jp.pck 放这里面
+  F:\GameAudio\switch\Wwise-Unpacker\unpack_wav.bat
+  	# 双击就解压
+  	# 结果在这
+  
   xbtool.exe -g xb3 -t ExtractArchive -a bf3.arh bf3.ard -o unpack_xbtool
   
   python bdat.py -l jp -o out F:\GameAudio\switch\xbtool_040623\unpack_xbtool\bdat
