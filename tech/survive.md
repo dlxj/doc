@@ -83,6 +83,7 @@ https://github.com/AlexCSDev/XbTool异度神剑3 解包
   ```
 
 - [音频解码](https://gbatemp.net/threads/help-with-xenoblade-chronicles-3-soundtrack-pck-format.615970/) [Wwise-Unpacker 工具](https://github.com/mortalis13/Wwise-Unpacker) 异度神剑3  Wwise-Unpacker 成功提取音频
+  - https://xenobladedata.github.io/xb3_audio_mapping.html 音频和文字对应表
 - https://gamebanana.com/questions/45278 只是模型导出？
 
 - ```
