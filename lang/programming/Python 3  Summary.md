@@ -1055,6 +1055,40 @@ print(iSeg.segment('苯巴比妥显效慢的主要原因是脂溶性较小'))
 
 ### args parse  [u](https://github.com/jplalor/py-irt)
 
+```
+# see servive summary.md -> 游戏解包
+# see F:\GameAudio\switch\xb3tool\bdat.py
+parser.add_argument('bdatdir', metavar='BDAT-DIR', nargs='+',
+help=('Path of Xenoblade 3 "bdat" directory.\n'
+'If multiple directories are given, tables in later directories (DLC data, for example) will override same-named tables in earlier directories.'))
+args = parser.parse_args()
+
+python script.py /path/to/bdat
+
+python script.py /path/to/base/bdat /path/to/dlc1/bdat /path/to/dlc2/bdat
+
+多个目录用法 - 后面的目录会覆盖前面相同名称的表:
+
+python script.py /path/to/base/bdat /path/to/dlc1/bdat /path/to/dlc2/bdat
+代码中的 nargs='+' 表示:
+
+至少需要提供一个目录路径参数
+可以接受多个目录路径参数
+所有提供的路径会被收集到一个列表中存储在 args.bdatdir
+在程序中可以这样访问参数:
+
+
+for bdat_path in args.bdatdir:
+    # 处理每个bdat目录
+    process_bdat(bdat_path)
+
+
+```
+
+
+
+
+
 ```python
 import argparse
 
