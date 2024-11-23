@@ -56,6 +56,14 @@ https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 
   - https://github.com/three-houses-research-team/Progenitor voiceID
 
+https://github.com/dlxj/xb3tool 异度神剑3 解包
+
+- ```
+  F:\GameAudio\switch\Xenoblade 3\sound
+  ```
+
+  
+
 https://github.com/vgmstream/vgmstream
 
 - https://huggingface.co/datasets/dlxjj/win10_dev/blob/main/vgmstream-win.zip
