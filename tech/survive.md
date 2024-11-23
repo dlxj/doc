@@ -48,6 +48,8 @@ https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 
 火焰之纹章 Engage 成功提取音频
 
+异度神剑3  Wwise-Unpacker 成功提取音频
+
 - ```
   YUZU 模似器 -> 提取 RomFS 
   ```
