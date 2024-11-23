@@ -71,10 +71,12 @@ https://github.com/AlexCSDev/XbTool异度神剑3 解包
   	
   ./bdat-toolset-win64.exe extract F:\GameAudio\switch\xbtool_040623\unpack_xbtool\bdat -o out -f json --pretty
   	# 成功解码出文本
+  	# 文本量不对劲，没什么用
+  	# 只要音频算了
   
   ```
 
-- [音频解码](https://gbatemp.net/threads/help-with-xenoblade-chronicles-3-soundtrack-pck-format.615970/) [Wwise-Unpacker 工具](https://github.com/mortalis13/Wwise-Unpacker)
+- [音频解码](https://gbatemp.net/threads/help-with-xenoblade-chronicles-3-soundtrack-pck-format.615970/) [Wwise-Unpacker 工具](https://github.com/mortalis13/Wwise-Unpacker) 异度神剑3  Wwise-Unpacker 成功提取音频
 - https://gamebanana.com/questions/45278 只是模型导出？
 
 - ```
