@@ -61,12 +61,17 @@ https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 https://github.com/AlexCSDev/XbTool异度神剑3 解包
 
 - https://github.com/vaxherd/xb3tool/blob/main/bdat.py 解包上一步出来的 bdat
+- https://github.com/RoccoDev/bdat-rs/wiki/Xenoblade-3-BDAT-editing 这个解解看
 
 - ```
   xbtool.exe -g xb3 -t ExtractArchive -a bf3.arh bf3.ard -o unpack_xbtool
   
   python bdat.py -l jp -o out F:\GameAudio\switch\xbtool_040623\unpack_xbtool\bdat
   	# 不行，解不出
+  	
+  ./bdat-toolset-win64.exe extract F:\GameAudio\switch\xbtool_040623\unpack_xbtool\bdat -o out -f json --pretty
+  	# 成功解码出文本
+  
   ```
 
 - [音频解码](https://gbatemp.net/threads/help-with-xenoblade-chronicles-3-soundtrack-pck-format.615970/) [Wwise-Unpacker 工具](https://github.com/mortalis13/Wwise-Unpacker)
