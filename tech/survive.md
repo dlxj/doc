@@ -48,6 +48,12 @@ https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 
 火焰之纹章 Engage 成功提取音频
 
+- ```
+  YUZU 模似器 -> 提取 RomFS 
+  ```
+
+- 
+
 https://github.com/vgmstream/vgmstream
 
 - https://huggingface.co/datasets/dlxjj/win10_dev/blob/main/vgmstream-win.zip
