@@ -73,12 +73,12 @@ https://github.com/AlexCSDev/XbTool异度神剑3 解包
   xbtool.exe -g xb3 -t ExtractArchive -a bf3.arh bf3.ard -o unpack_xbtool
   
   python bdat.py -l jp -o out F:\GameAudio\switch\xbtool_040623\unpack_xbtool\bdat
-  	# 不行，解不出
+  	xb3tool/out/msg_tlk110601.html
+  		# 成功解出来文本
   	
   ./bdat-toolset-win64.exe extract F:\GameAudio\switch\xbtool_040623\unpack_xbtool\bdat -o out -f json --pretty
   	# 成功解码出文本
   	# 文本量不对劲，没什么用
-  	# 只要音频算了
   
   ```
 
