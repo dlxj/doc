@@ -58,6 +58,8 @@ https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 
 https://github.com/dlxj/xb3tool 异度神剑3 解包
 
+- [音频解码](https://gbatemp.net/threads/help-with-xenoblade-chronicles-3-soundtrack-pck-format.615970/)
+
 - ```
   F:\GameAudio\switch\Xenoblade 3\sound
   ```
