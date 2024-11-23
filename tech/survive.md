@@ -65,8 +65,8 @@ https://github.com/AlexCSDev/XbTool异度神剑3 解包
 - ```
   xbtool.exe -g xb3 -t ExtractArchive -a bf3.arh bf3.ard -o unpack_xbtool
   
-  python bdat.py -l jp -o out 
-  
+  python bdat.py -l jp -o out F:\GameAudio\switch\xbtool_040623\unpack_xbtool\bdat
+  	# 不行，解不出
   ```
 
 - [音频解码](https://gbatemp.net/threads/help-with-xenoblade-chronicles-3-soundtrack-pck-format.615970/) [Wwise-Unpacker 工具](https://github.com/mortalis13/Wwise-Unpacker)
