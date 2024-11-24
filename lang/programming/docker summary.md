@@ -552,7 +552,7 @@ spec:
 2. **在 Minikube 中部署 Pod：** 在终端中，导航到包含该 YAML 文件的目录，并使用以下命令应用配置：
    ```bash
    kubectl apply -f ubuntu-22-04-pod.yaml
-   ```
+```
 
 3. **验证 Pod 是否运行：** 使用以下命令检查 Pod 的状态：
    ```bash
@@ -750,7 +750,7 @@ psql -h 127.0.0.1 -p 5432 -U postgres  # 注意端口
 # 宿主连接测试
 psql -h 127.0.0.1 -p 54322 -U postgres # 注意端口
   --> 成功
-  
+
 ```
 
 <img src="postgresql summary.assets/image-20210330185047454.png" alt="image-20210330185047454" style="zoom:50%;" />
@@ -789,11 +789,18 @@ see nodejs summary.md  -> 范畴论 -> Python Monads
 - ```
   proxychains4 docker-compose build
   
-  ```
+```
 
 
 
 # Docker 走代理
+
+https://george.betterde.com/technology/20240608.html  其它都讲不清
+
+- ```
+  Docker Client Proxy：负责 docker run 和 docker build 阶段的代理配置
+  Docker Daemon Proxy：负责 docker push 和 docker pull 阶段的代理配置
+  ```
 
 https://note.qidong.name/2020/05/docker-proxy/
 
