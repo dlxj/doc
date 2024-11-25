@@ -11129,10 +11129,24 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
 # ppstructure 版面分析
 
 - https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.5/configs/picodet/legacy_model/application/layout_analysis
+
 - https://github.com/RapidAI/RapidLayout
+
 - https://blog.csdn.net/wss794/article/details/122494246?spm=1001.2014.3001.5502
+
 - https://blog.csdn.net/sexy19910923/article/details/136535420  yolov8训练CDLA数据文版版面分析
+
 - https://github.com/PaddlePaddle/PaddleOCR/blob/133d67f27dc8a241d6b2e30a9f047a0fb75bebbe/ppstructure/docs/quickstart.md  PP-Structure 原来那个就直接可用？
+
+  - ```
+    pip3 install paddleocr==2.6.0.3
+    paddleocr --image_dir=ppstructure/docs/table/1.png --type=structure --table=false --ocr=false
+    	# 成功输出
+    	{"type": "text", "bbox": [177, 992, 2145, 2731], "res": "", "img_idx": 0}
+        {"type": "title", "bbox": [504, 1004, 675, 1052], "res": "", "img_idx": 0}
+    ```
+
+    
 
 
 
