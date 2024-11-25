@@ -11130,8 +11130,8 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
 
 - https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.5/configs/picodet/legacy_model/application/layout_analysis
 - https://github.com/RapidAI/RapidLayout
-
 - https://blog.csdn.net/wss794/article/details/122494246?spm=1001.2014.3001.5502
+- https://blog.csdn.net/sexy19910923/article/details/136535420  yolov8训练CDLA数据文版版面分析
 
 
 
