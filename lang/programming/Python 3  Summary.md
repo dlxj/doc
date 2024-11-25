@@ -11140,10 +11140,40 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
 
   - ```
     pip3 install paddleocr==2.6.0.3
-    paddleocr --image_dir=ppstructure/docs/table/1.png --type=structure --table=false --ocr=false
+    paddleocr --image_dir=F:/ttttttttttttttttttttttttttttt/0002_25409106314132ccfac0b4963cff1365.jpg --type=structure --table=false --ocr=false
     	# 成功输出
     	{"type": "text", "bbox": [177, 992, 2145, 2731], "res": "", "img_idx": 0}
         {"type": "title", "bbox": [504, 1004, 675, 1052], "res": "", "img_idx": 0}
+        
+    
+    vi pp.py
+    import os
+    import cv2
+    from paddleocr import PPStructure,save_structure_res, draw_structure_result
+    
+    table_engine = PPStructure(table=False, ocr=False, show_log=True)
+    
+    save_folder = './output'
+    img_path = '0002_25409106314132ccfac0b4963cff1365.jpg'
+    img = cv2.imread(img_path)
+    result = table_engine(img)
+    save_structure_res(result, save_folder, os.path.basename(img_path).split('.')[0])
+    
+    for line in result:
+        line.pop('img')
+        print(line)
+    
+    
+    from PIL import Image
+    
+    font_path = 'simfang.ttf' # PaddleOCR下提供字体包
+    image = Image.open(img_path).convert('RGB')
+    im_show = draw_structure_result(image, result,font_path=font_path)
+    im_show = Image.fromarray(im_show)
+    im_show.save('result.jpg') 
+    	# 成功分析并绘制
+        # 它没有框出左右分栏，只是框了个大的
+        
     ```
 
     
