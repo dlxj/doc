@@ -11132,6 +11132,7 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
 - https://github.com/RapidAI/RapidLayout
 - https://blog.csdn.net/wss794/article/details/122494246?spm=1001.2014.3001.5502
 - https://blog.csdn.net/sexy19910923/article/details/136535420  yolov8训练CDLA数据文版版面分析
+- https://github.com/PaddlePaddle/PaddleOCR/blob/133d67f27dc8a241d6b2e30a9f047a0fb75bebbe/ppstructure/docs/quickstart.md  PP-Structure 原来那个就直接可用？
 
 
 
