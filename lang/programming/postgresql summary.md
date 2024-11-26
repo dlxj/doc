@@ -196,13 +196,14 @@ curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://
 
 sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
-proxychains4 apt update
-
+proxychains4 apt update && 
 proxychains4 apt -y install postgresql-17 postgresql-server-dev-17 libpq-dev postgresql-contrib 
 
 
 
 /etc/postgresql/17/main/pg_hba.conf
+
+sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'post4321';"
 
 
 sudo -u postgres psql
