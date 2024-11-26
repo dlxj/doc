@@ -15889,6 +15889,44 @@ https://github.com/turbot/steampipe
 
 
 
+## pgserver
+
+```
+
+see huggingface/Sakurallm_server_254_6006/app.py
+
+pgserver==0.1.4
+psycopg2_binary==2.9.10
+sqlalchemy==2.0.36
+sqlalchemy_utils==0.41.2
+
+
+import pgserver
+srv = pgserver.get_server('./mypgdata')
+
+print(srv.psql('SELECT 1+1 as res;'))
+
+from sqlalchemy_utils import create_database, database_exists
+from sqlalchemy import create_engine
+import sqlalchemy as sql
+
+dburi = srv.get_uri(database='mydb')
+print(dburi)
+if not database_exists(dburi):
+    create_database(dburi)
+engine = create_engine(dburi)
+
+table_name = 'mytable'
+with engine.connect() as conn:
+    conn.execute(sql.text(f"create table {table_name} (id int);"))
+    conn.execute(sql.text(f"insert into {table_name} values (1);"))
+    cur = conn.execute(sql.text(f"select * from {table_name};"))
+    result = cur.fetchone()
+    print(result)
+```
+
+
+
 
 
 # 爬虫
