@@ -187,8 +187,8 @@ CREATE INDEX idx_appid ON test_vector (AppID);
 proxychains4 apt install -y postgresql-common && 
 proxychains4 (sleep 1; echo "\n";) | bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 
-proxychains4 apt install curl ca-certificates &&
-sudo install -d /usr/share/postgresql-common/pgdg && 
+proxychains4 (sleep 1; echo "Y";) | apt install curl ca-certificates &&
+install -d /usr/share/postgresql-common/pgdg && 
 curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
 
 
