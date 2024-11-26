@@ -5201,22 +5201,6 @@ CMD python3.10 app.py
     # 还是不行
 
 # CMD ["python3.10", "app.py"]
-    
-    
-
-关于 huggingface space 上安装 pg 数据库无法启动
-
-Dockerfile 前面安装好后用命令启动：
-​```
-USER postgres
-CMD pg_ctlcluster 17 main restart & python3.10 app.py
-​```
-日志显示错误：Error: You must run this program as the cluster owner (postgres) or root
-
-空间地址是：
-    https://huggingface.co/spaces/dlxjj/NLPP_vector_server
-
-感兴趣的可以拿去玩玩。我在前端留了一个可以执行任何命令的功能，方便调试问题
 
 
 ```
