@@ -5112,6 +5112,23 @@ https://linux.do/t/topic/271283
 ```
 # https://huggingface.co/spaces/dlxjj/NLPP_vector_server
 
+see huggingface/NLPP_vector_server/readme.txt
+
+docker build -t pg17_image . \
+    && docker run -tid --name pg17 -p 54322:5432 --privileged=true pg17_image /sbin/init \
+    && docker ps -al
+    
+docker exec -it pg17 bash -c 'lsof -i:5432' \
+    && docker exec -it pg17 bash -c 'pg_ctlcluster 17 main status'
+
+
+docker stop pg17 \
+    && docker remove pg17 \
+    && docker image remove pg17_image
+    
+    
+    
+
 关于 huggingface space 上安装 pg 数据库无法启动
 
 Dockerfile 前面安装好后用命令启动：
