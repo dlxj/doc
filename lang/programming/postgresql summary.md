@@ -238,6 +238,12 @@ see huggingface/NLPP_vector_server/Dockerfile
 PGPASSWORD=post4321 psql -U postgres  -c "SELECT pg_reload_conf()"
 	# 能执行成功的前提是上一行改好了
 
+
+pg_ctlcluster 17 main restart
+pg_ctlcluster 17 main status
+	# 成功重启
+	# 但是在 docker 中不知道怎么运行它
+
 systemctl restart postgresql
 
 
