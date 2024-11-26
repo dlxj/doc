@@ -426,6 +426,18 @@ git clone http://用户名:AccessToten@gitlab.xxxxx.git"  > Dockerfile && \
 
 
 
+## 上转 docker 镜像
+
+https://blog.csdn.net/weixin_44649780/article/details/135107176
+
+```
+
+```
+
+
+
+
+
 ## ubuntu_soda
 
 ```
