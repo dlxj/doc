@@ -431,6 +431,18 @@ git clone http://用户名:AccessToten@gitlab.xxxxx.git"  > Dockerfile && \
 https://blog.csdn.net/weixin_44649780/article/details/135107176
 
 ```
+docker login
+	# 登录（同抱抱脸）
+
+docker tag pg17_image:latest dlxjj/pg17_pgvector_rum
+	# 打标镜像
+	
+docker push dlxjj/pg17_pgvector_rum
+	# 推送成功
+
+vi Dockerfile
+FROM dlxjj/pg17_pgvector_rum
+	# 这样？
 
 ```
 
