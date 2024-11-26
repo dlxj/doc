@@ -183,7 +183,7 @@ CREATE INDEX idx_appid ON test_vector (AppID);
 ```
 
 proxychains4 apt install -y postgresql-common && 
-proxychains4 bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+proxychains4 (sleep 1; echo "\n";) | bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 
 proxychains4 apt install curl ca-certificates &&
 sudo install -d /usr/share/postgresql-common/pgdg && 
@@ -614,6 +614,23 @@ Navicat for PostgreSQL版本链接工具，专门为PostgreSQL定制使用，功
 5、点击选项，配置详细参数
 6、导出即可！
 ```
+
+
+
+### 查看表大小
+
+```
+select pg_size_pretty(pg_relation_size('nlpp_vector')) as size;
+ 	# 单个表
+select pg_size_pretty(pg_total_relation_size('nlpp_vector')) as size;
+  	# 单个表包含索引大小
+  	
+select pg_size_pretty(pg_database_size('nlppvector')) as size;
+	# 单个库大小
+
+```
+
+
 
 
 
