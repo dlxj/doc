@@ -182,6 +182,8 @@ CREATE INDEX idx_appid ON test_vector (AppID);
 
 ```
 
+# see huggingface/NLPP_Audio/vector.py
+
 proxychains4 apt install -y postgresql-common && 
 proxychains4 (sleep 1; echo "\n";) | bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 
@@ -286,6 +288,85 @@ chown -R postgres:postgres /home/psqldata
 ```
 
 
+
+```
+
+# see huggingface/NLPP_Audio/vector.py
+
+proxychains4 pip install --upgrade pip && 
+proxychains4 pip install "psycopg[binary]"  
+
+
+proxychains4 apt install postgresql-17-pgvector
+	# 安装向量插件
+
+git clone https://github.com/postgrespro/rum && 
+cd rum &&
+make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config &&
+make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config install &&
+make USE_PGXS=1 installcheck &&
+$ psql DB -c "CREATE EXTENSION rum;
+	# 安装  RUM 插件
+
+# see https://pgroonga.github.io/install/ubuntu.html
+proxychains4 apt install -y software-properties-common && 
+proxychains4 add-apt-repository -y universe && 
+proxychains4 add-apt-repository -y ppa:groonga/ppa &&
+proxychains4 apt install -y wget lsb-release && 
+proxychains4 wget https://packages.groonga.org/ubuntu/groonga-apt-source-latest-$(lsb_release --codename --short).deb && 
+proxychains4 apt install -y -V ./groonga-apt-source-latest-$(lsb_release --codename --short).deb && 
+echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release --codename --short)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list && 
+proxychains4 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && 
+proxychains4 apt update && 
+proxychains4 apt install -y -V postgresql-17-pgdg-pgroonga && 
+proxychains4 apt install -y -V groonga-tokenizer-mecab
+
+CREATE EXTENSION pgroonga;
+	# 成功
+
+see https://pgroonga.github.io/tutorial/
+    # 用法很详细
+
+DROP DATABASE IF EXISTS nlppvector;
+CREATE DATABASE nlppvector
+WITH OWNER = postgres 
+ENCODING = 'UTF8' 
+TABLESPACE = pg_default 
+CONNECTION LIMIT = -1 
+TEMPLATE template0;
+    # 整完 nvcat 重连一次，选这个库再运行下面的语句
+
+# see https://github.com/pgvector/pgvector  各类型向量的长度说明
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+DROP TABLE IF EXISTS nlpp_vector;
+CREATE TABLE IF NOT EXISTS nlpp_vector (
+    id bigint generated always as identity (START WITH 1 INCREMENT BY 1),
+    guid uuid DEFAULT uuid_generate_v4(),
+    name text NOT NULL,
+    s_jp text NOT NULL,
+    s_zh text NOT NULL,
+    v_jp tsvector NOT NULL,
+    v_zh tsvector NOT NULL,
+    metadata jsonb NOT NULL,
+    embed_jp vector(1024) NOT NULL,
+    embed_zh vector(1024) NOT NULL,
+    audio bytea DEFAULT NULL,
+    image bytea DEFAULT NULL,
+    addtime timestamp DEFAULT CURRENT_TIMESTAMP,
+    updatetime timestamp DEFAULT NULL,
+    enable boolean DEFAULT '1',
+    UNIQUE(ID),
+    PRIMARY KEY (GUID)
+);
+CREATE INDEX index_halfvec_embed_jp ON nlpp_vector USING hnsw (embed_jp vector_cosine_ops);
+CREATE INDEX index_halfvec_embed_zh ON nlpp_vector USING hnsw (embed_zh vector_cosine_ops);
+CREATE INDEX fts_rum_v_jp ON nlpp_vector USING rum (v_jp rum_tsvector_ops);
+CREATE INDEX fts_rum_v_zh ON nlpp_vector USING rum (v_zh rum_tsvector_ops);
+CREATE INDEX index_btree_name ON nlpp_vector (name);
+CREATE INDEX index_btree_name_section ON nlpp_vector (name, (metadata->>'section'));
+```
 
 
 
