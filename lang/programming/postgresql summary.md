@@ -216,7 +216,10 @@ postgres 	pt41
 
 psql -h 127.0.0.1 -p 5432 -U postgres
 	# 成功登录
-	
+
+
+echo 'hostnossl    all          all            0.0.0.0/0  md5' >> /etc/postgresql/17/main/pg_hba.conf
+	# >> 表示追加在最后
 
 # 允许运程连接
 vi /etc/postgresql/17/main/pg_hba.conf
@@ -228,6 +231,12 @@ hostnossl    all          all            0.0.0.0/0  md5
 local   all             postgres                                password
 	# 改成这样
 
+see huggingface/NLPP_vector_server/Dockerfile
+	# sed -i 's/\(local[[:space:]]\+all[[:space:]]\+postgres[[:space:]]\+\)peer/\1password/' /etc/postgresql/17/main/pg_hba.conf 
+	# 能自动修改成功
+
+PGPASSWORD=post4321 psql -U postgres  -c "SELECT pg_reload_conf()"
+	# 能执行成功的前提是上一行改好了
 
 systemctl restart postgresql
 
