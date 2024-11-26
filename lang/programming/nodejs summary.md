@@ -181,6 +181,8 @@ update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118 &&
 ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda && 
 ln -sfT /etc/alternatives/cuda /usr/local/cuda
 
+/usr/lib/wsl/lib/nvidia-smi
+    # wsl2 的 nvidia-smi 命令在这里
 
 vi ~/.bashrc 
 
@@ -191,7 +193,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-export PATH=/usr/local/cuda/bin:$PATH
+export PATH=/usr/local/cuda/bin:/usr/lib/wsl/lib:$PATH
 
 
 source ~/.bashrc 
@@ -2592,6 +2594,17 @@ npm config get registry
 
 
 ```
+
+npm config get prefix
+	# 全局安装的包在哪里
+	
+ls /usr/local/node-v18.9.1-linux-x64/lib/node_modules/cnpm/bin
+	# 装到这里去了
+
+vi ~/.bashrc
+export PATH="/usr/local/node-v18.9.1-linux-x64/lib/node_modules/cnpm/bin:$PATH"
+source ~/.bashrc
+
 管理员身份运行 powershell
 	set-executionpolicy remotesigned
 
@@ -3642,7 +3655,9 @@ pip install -U proxynt
 
 
 
+#### ops
 
+https://github.com/zero-rp/ops
 
 
 
@@ -5090,6 +5105,108 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
 
 
+### 安装 pg 数据库
+
+https://linux.do/t/topic/271283
+
+```
+# https://huggingface.co/spaces/dlxjj/NLPP_vector_server
+
+see huggingface/NLPP_vector_server/readme.txt
+
+.77 先试试
+docker build -t pg17_image . \
+    && docker run -tid --name pg17 -p 54322:5432 --privileged=true pg17_image /sbin/init \
+    && docker ps -al
+    
+docker exec -it pg17 bash -c 'lsof -i:5432' \
+    && docker exec -it pg17 bash -c 'pg_ctlcluster 17 main status'
+
+
+docker stop pg17 \
+    && docker remove pg17 \
+    && docker image remove pg17_image
+    
+
+vi DockerFile
+FROM ubuntu:22.04
+RUN set -x; apt-get update && \
+ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone && \
+(sleep 1; echo "Y";) | apt-get install build-essential && \
+(sleep 1; echo "Y";) | apt-get install p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \
+apt-get install -y dialog apt-utils && \
+apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx libcairo2-dev && \
+apt update && apt upgrade -y && \
+apt install python3.10-dev -y && \ 
+apt install software-properties-common -y && \
+add-apt-repository ppa:deadsnakes/ppa && \
+apt install python3.10 && \
+apt install python3.10-distutils && \
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+python3.10 get-pip.py && \
+pip install --upgrade requests && \
+pip install pysocks wheel 
+
+RUN apt install -y postgresql-common \
+    &&  (sleep 1; echo "\n";) | bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh \
+    && (sleep 1; echo "Y";) | apt install curl ca-certificates \
+    && install -d /usr/share/postgresql-common/pgdg \ 
+    && curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc \
+    && sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' \
+    && apt update \
+    && apt -y install postgresql-17 postgresql-server-dev-17 libpq-dev postgresql-contrib 
+
+RUN apt install postgresql-17-pgvector \
+    && git clone https://github.com/postgrespro/rum \
+    && cd rum \
+    && make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config \
+    && make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config install
+
+RUN whereis pg_ctlcluster
+
+RUN echo 'hostnossl    all          all            0.0.0.0/0  md5' >> /etc/postgresql/17/main/pg_hba.conf \
+    && sed -i 's/\(local[[:space:]]\+all[[:space:]]\+postgres[[:space:]]\+\)peer/\1password/' /etc/postgresql/17/main/pg_hba.conf
+
+# RUN psql -U postgres -c "ALTER USER postgres WITH PASSWORD 'post4321';" \
+    # && echo 'hostnossl    all          all            0.0.0.0/0  md5' >> /etc/postgresql/17/main/pg_hba.conf \
+    # && sed -i 's/\(local[[:space:]]\+all[[:space:]]\+postgres[[:space:]]\+\)peer/\1password/' /etc/postgresql/17/main/pg_hba.conf \
+    # && pg_ctlcluster 17 main restart \
+    # && pg_ctlcluster 17 main status \
+    # && PGPASSWORD=post4321 psql -U postgres  -c "SELECT pg_reload_conf()"
+
+# RUN useradd -m -u 1000 user
+# USER user
+# ENV PATH="/home/user/.local/bin:$PATH"
+USER root
+RUN whoami
+
+WORKDIR /app
+
+COPY ./requirements.txt requirements.txt
+
+# RUN chown -R user /app
+
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+COPY . /app
+
+RUN ls -al /app
+
+CMD python3.10 app.py
+    # 正常 docker pg 服务会自已正常启动
+
+# CMD pg_ctlcluster 17 main restart & python3.10 app.py
+
+# Error: You must run this program as the cluster owner (postgres) or root
+    # 还是不行
+
+# CMD ["python3.10", "app.py"]
+
+
+```
+
+
+
 
 
 ### huggingface 镜像
@@ -5692,6 +5809,30 @@ https://linux.do/t/topic/174255  Cloudflare CDN传递私有的Backblaze B2内容
   
 
   
+  
+  
+
+### 优选IP
+
+https://linux.do/t/topic/269385
+
+```
+大家都知道Cloudflare的公共DNS（1.1.1.1和1.0.0.1）。但是，很少有人知道，其实它也能够当做优选IP来用，在这两个IP段中，仅需更改地址的最后一位数字（从2到255中选择），你就可以体验到相同甚至更好的网络连接效果。之所以选择1.1.1.0/16和1.0.0.0/16这个两个IP段，是因为这两个IP段提供Cloudflare的DNS服务，服务器数量庞大，线路优化良好，全国范围内使用时延低，表现优异。至于为什么不直接选择1.1.1.1和1.0.0.1，是因为这两个地址在国内某些地区可能会遭遇阻挠，导致连接不稳定。
+
+这么做的好处显而易见。选择这些优选IP后，连接状态一般会持续显示为绿色，没有频繁的波动。利用Cloudflare的Anycast网络技术，这些IP可以实现全球节点的快速接入，延迟低至200毫秒，甚至有时不到100毫秒。使用这个方法，我个人的网络体验极为流畅，远超过其他常规的优选。
+
+更令人兴奋的是，这一设置过程极为简单。只需要记住1.1.1.1和1.0.0.1这两个基础IP地址址，然后随意更换最后一位数字即可，比如1.1.1.2、1.1.1.3、1.0.0.2、1.0.0.3等。只要你选择了合适的IP，就能享受到高速稳定的网络连接。一旦你设定好这些IP，基本上无需再做调整，这保证了解决方案的长期有效性。我的网络连通性图如下所示，几乎在全国各地均能实现快速、稳定的连接。
+
+
+IPv6 也同理
+2606:4700:4700::2222
+修改最后一部分，而且 IP 更多
+
+```
+
+
+
+
 
 ### 回环问题
 
@@ -6960,20 +7101,137 @@ sendPostRequestThroughSocks5Proxy()
 https://github.com/node-fetch/timeout-signal 
 
 ```
+
+# see huggingface/project
+	# lib\vector\wxembedding.js
+
 npm install timeout-signal
 
-import timeoutSignal from 'timeout-signal';
 
-const signal = timeoutSignal(5000);
+let fetch = require('node-fetch')
 
-try {
-	const response = await fetch('https://www.google.com', {signal});
-	// Handle response
-} catch (error) {
-	if (signal.aborted) {
-		// Handle abortion
-	}
+let access_token = ''
+let expires_time = ''
+
+async function get_access_token() {
+    let { default:timeoutSignal } = await import('timeout-signal')
+    const signal = timeoutSignal(3000)
+
+    
+
+    let url = `https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=${api_key}&client_secret=${api_secret}`
+    let pth = url.replace(host, '')
+    let headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    }
+
+    try {
+        const response = await fetch(url, { 
+            method:"get",
+            headers:headers,
+            signal: signal
+        })
+    
+        let token = await response.json()
+
+        return [token, null]
+    } catch(e) {
+        if (signal.aborted) {
+            return [null, 'get_access_token timeout.']
+        } else {
+            return [null, `get_access_token ${e}`]
+        }
+    }
+
+
+
+    //let GET = bent(host, 'GET', 'json', 200)
+    //let token = await GET(pth, {})
+    //return token
 }
+
+
+
+async function get_Embedding(text) {
+
+    let { default:timeoutSignal } = await import('timeout-signal')
+    const signal = timeoutSignal(5000)
+
+    if (!access_token) {
+        let err = await reset_access_token()
+        if (err) {
+            return [null, err]
+        }
+    }
+    let diff = moment().diff(expires_time)
+    if (diff >= 0) {
+        // access_token 过期了
+        let err = await reset_access_token()
+        if (err) {
+            return [null, err]
+        }        
+    }
+
+    let url = `https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/embeddings/embedding-v1?access_token=${access_token}`
+    
+    text = text.slice(0, 150)
+
+    let body = {
+        "input": [text]
+    }
+    headers = {
+        'Content-Type': 'application/json'
+    }
+
+    let pth = url.replace(host, '')
+
+    //let formurlencoded_body = formurlencoded(body)
+
+    try {
+        let response = await fetch(url, { 
+            method:"post",
+            headers:headers,
+            body: JSON.stringify(body),
+            signal: signal
+        })
+    
+        response = await response.json()
+        if (response && response.data && response.data[0]) {
+            let embedding = response.data[0].embedding
+            return [embedding, '']
+        } else {
+            let emsg = '##### Error: wx embedding vector json parse fail'
+            if (response && response.error_msg) { 
+                emsg = `##### Error: wx embedding vector json parse fail ${response.error_msg}`
+            }
+            console.log(emsg)
+            return [null, emsg]
+        }
+
+    } catch(e) {
+        if (signal.aborted) {
+            return [null, 'get_Embedding timeout.']
+        } else {
+            return [null, `get_Embedding ${e}`]
+        }
+    }
+    
+    let post = bent(host, 'POST', 'json', 200)
+    let response = await post(pth, body, headers)
+    if (response && response.data && response.data[0]) {
+        let embedding = response.data[0].embedding
+        return [embedding, '']
+    } else {
+        let emsg = '##### Error: wx embedding vector json parse fail'
+        if (response && response.error_msg) { 
+            emsg = `##### Error: wx embedding vector json parse fail ${response.error_msg}`
+        }
+        console.log(emsg)
+        return [null, emsg]
+    }
+}
+
 ```
 
 
@@ -15278,6 +15536,57 @@ const trim = async ({ target: { files } }) => {
 
 
 #### pipe stream
+
+
+
+```
+# see echodict\pmserver\http\api\getNLPPAudio.js
+	//let audio_path = path.join(audio_dir, `${gid}.mp3`)
+            
+            let re = await nlppvectorDB.query(`select guid, audio from nlpp_vector where guid=$(guid);`, {"guid": '4045979c-d6d3-4877-92e3-47e8f048858b'})
+            let buf = re.rows[0].audio
+            // let uint8array = new Uint8Array(buf)
+
+            // audio_path = 'data/bts.aac'
+
+            // if ( ! fs.existsSync( audio_path ) ) {
+            //     throw `au not exist ${audio_path}`
+            // }
+
+            // let readStream = fs.createReadStream(audio_path)
+            // let readStream = fs.createReadStream(uint8array)
+            // let stat = fs.statSync(audio_path)
+            // let size = stat.size
+
+            const { Readable } = require('stream');
+
+            function bufferToStream(buffer) {
+                // 创建一个自定义的 Readable 流
+                const readableInstance = new Readable({
+                    read() {
+                        // 将 Buffer 数据推送到流中
+                        this.push(buffer);
+                        // 流结束后发送 null
+                        this.push(null);
+                    }
+                });
+
+                return readableInstance;
+            }
+
+            const stream = bufferToStream(buf);
+
+            res.writeHead(200, {
+                'Content-Type': 'audio/aac',  // 'audio/mpeg',  for mp3
+                //'Content-Length': size
+            })
+
+            stream.pipe(res)
+
+            // readStream.pipe(res)
+```
+
+
 
 
 
@@ -33587,6 +33896,8 @@ https://github.com/kotoba-tech/kotoba-whisper
 - https://huggingface.co/distil-whisper/distil-large-v3
   - https://github.com/huggingface/distil-whisper
 
+https://github.com/bean-du/SpeakSense  实时转写 rust
+
 huggingface/rwkv5-jp-trimvd/kotoba_asr.py
 
 
@@ -33619,7 +33930,39 @@ flash-attn==2.6.3
 
 # SenseVoice.cpp
 
+https://gist.github.com/murphypei/dcae63c9de780586a70a89603bd0f2c2  gist 代码
+
+https://github.com/NVIDIA/NeMo/blob/main/tutorials/asr/ASR_with_NeMo.ipynb 代码
+
+https://github.com/bean-du/SpeakSense  实时转写 rust
+
+https://github.com/PlayVoice/whisper-vits-svc **音色转换** **语音算法科普 up**
+
+- https://www.bilibili.com/video/BV1Tj411e7pQ 带教程
+
+- **梅尔尺度**：Mel Spectrogram 通过将传统频谱图的频率轴转换为梅尔尺度（Mel Scale）。梅尔尺度是一种非线性尺度，它模仿人耳对音调的感知，低频部分更精细，高频部分则比较粗略。这种尺度使得高频与低频在听觉上具有更均匀的感知效果。
+- **计算过程**：
+  - 先将音频信号通过短时傅里叶变换（STFT）产生频谱图。
+  - 然后应用一个梅尔滤波器组，将频谱能量分布转换成梅尔尺度上的频率分布。
+  - 生成的结果就是 Mel Spectrogram，其中保留了音频信号的时频分布讯息，更适合典型的音频处理和分析任务。
+- **应用**：Mel Spectrogram 在语音信号处理，特别是语音识别、说话人识别和音乐信息检索中被广泛应用。它因为能够较好地保留时间和频率信息，帮助模型捕获语音中的特征模式。
+
+- ```
+  # Plot the mel spectrogram of our sample
+  mel_spec = librosa.feature.melspectrogram(y=audio, sr=sample_rate)
+  mel_spec_db = librosa.power_to_db(mel_spec, ref=np.max)
+  
+  librosa.display.specshow(
+      mel_spec_db, x_axis='time', y_axis='mel')
+  plt.colorbar()
+  plt.title('Mel Spectrogram');
+  ```
+
+  
+
 https://github.com/lovemefan/SenseVoice.cpp/issues/5  
+
+- https://github.com/lovemefan/SenseVoice-python  python 直接用
 
 - https://liuyanfeier.github.io/2017/10/07/fbank%E5%92%8Cmfcc%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96/
 
@@ -36357,13 +36700,21 @@ https://github.com/wa-lang/wabook 支持评论
 
 [category-theory-for-dotnet-programmers](https://github.com/cboudereau/category-theory-for-dotnet-programmers)
 
+https://github.com/clsid2/mpc-hc  potplay 替代播放器
+
+- https://github.com/Aleksoid1978/MPC-BE  毛子开源版 
+
 
 
 ### Winform
 
-[syncfusion 文档](https://help.syncfusion.com/windowsforms/overview)
+[syncfusion 文档](https://help.syncfusion.com/windowsforms/overview) 
 
 [syncfusion 知识库](https://support.syncfusion.com/kb/desktop/category/82)
+
+[syncfusion](https://help.syncfusion.com/wpf/gridsplitter/getting-started#structure-of-sfgridsplitter) [1](https://github.com/SyncfusionExamples/syncfusion-gridsplitter-control-examples) **splitter**
+
+[Avalonia  DockPanel](https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/building-layouts/panels-overview) **划分空间**
 
 [ff-utils-improved 抽帧](https://github.com/miifanboy/ff-utils-improved) [1](https://blog.csdn.net/Daniel_yka/article/details/109840350)
 
@@ -36397,6 +36748,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 ### WPF
 
+https://github.com/clsid2/mpc-hc  potplay 替代播放器
+
 - https://www.bilibili.com/video/BV17kptetEQV B UP
 - https://www.bilibili.com/video/BV1cC411x7aV B UP
 
@@ -36411,6 +36764,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 [iNKORE](https://github.com/iNKORE-NET/UI.WPF.Modern) **最佳选择？** B站搜它
 
+[Avalonia  DockPanel](https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/building-layouts/panels-overview) **划分空间** [ryujinx 模似器](https://github.com/ryujinx-mirror/ryujinx)
+
 [Panuon.WPF.UI](https://github.com/Panuon/Panuon.WPF.UI)  活跃 简洁
 
 [FramePFX](https://github.com/AngryCarrot789/FramePFX) 视频编辑 必看
@@ -36418,6 +36773,8 @@ https://github.com/wa-lang/wabook 支持评论
 [subtitleedit](https://github.com/SubtitleEdit/subtitleedit)
 
 [LunaTranslator](https://github.com/HIllya51/LunaTranslator) 游戏翻译 python
+
+- https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
 
 - [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
 - [qolibri](https://github.com/mvf/qolibri) ebpwing + qt5
@@ -37688,6 +38045,8 @@ typedef struct EitherInt {
 
 
 ## C++ Monads
+
+https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus)
 

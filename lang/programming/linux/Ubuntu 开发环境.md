@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-export PATH=/usr/local/cuda/bin:$PATH
+export PATH=/usr/local/cuda/bin:/usr/lib/wsl/lib:$PATH
 
 
 source ~/.bashrc 
@@ -1232,6 +1232,23 @@ service systemd-resolved restart
 ping qq.com
 
 	# 实测问题解决
+
+
+almalinux 9
+
+cat /etc/resolv.conf
+
+nmcli
+
+nmcli con modify enp3s0 ipv4.dns "180.76.76.76 223.5.5.5 1.1.1.1"
+
+nmcli con up enp3s0
+	# 应用更改
+	
+cat /etc/resolv.conf
+	# 显示已改
+
+
 
 ```
 

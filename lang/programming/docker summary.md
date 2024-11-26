@@ -269,6 +269,111 @@ nmap 172.20.0.2 -p6006
 
 # Docker+Ubuntu
 
+## 安装 pg 数据库
+
+https://linux.do/t/topic/271283
+
+```
+# https://huggingface.co/spaces/dlxjj/NLPP_vector_server
+
+see huggingface/NLPP_vector_server/readme.txt
+
+.77 先试试
+docker build -t pg17_image . \
+    && docker run -tid --name pg17 -p 54322:5432 --privileged=true pg17_image /sbin/init \
+    && docker ps -al
+    
+docker exec -it pg17 bash -c 'lsof -i:5432' \
+    && docker exec -it pg17 bash -c 'pg_ctlcluster 17 main status'
+
+
+docker stop pg17 \
+    && docker remove pg17 \
+    && docker image remove pg17_image
+    
+
+vi DockerFile
+FROM ubuntu:22.04
+RUN set -x; apt-get update && \
+ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone && \
+(sleep 1; echo "Y";) | apt-get install build-essential && \
+(sleep 1; echo "Y";) | apt-get install p7zip-full unzip vim curl lsof git iputils-ping ufw wget net-tools git pollen libsodium-dev && \
+apt-get install -y dialog apt-utils && \
+apt install -y wget net-tools build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev lzma lzma-dev uuid-dev libncurses5-dev libreadline6-dev libgdbm-compat-dev liblzma-dev gdb lcov libsodium-dev nginx libcairo2-dev && \
+apt update && apt upgrade -y && \
+apt install python3.10-dev -y && \ 
+apt install software-properties-common -y && \
+add-apt-repository ppa:deadsnakes/ppa && \
+apt install python3.10 && \
+apt install python3.10-distutils && \
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
+python3.10 get-pip.py && \
+pip install --upgrade requests && \
+pip install pysocks wheel 
+
+RUN apt install -y postgresql-common \
+    &&  (sleep 1; echo "\n";) | bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh \
+    && (sleep 1; echo "Y";) | apt install curl ca-certificates \
+    && install -d /usr/share/postgresql-common/pgdg \ 
+    && curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc \
+    && sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list' \
+    && apt update \
+    && apt -y install postgresql-17 postgresql-server-dev-17 libpq-dev postgresql-contrib 
+
+RUN apt install postgresql-17-pgvector \
+    && git clone https://github.com/postgrespro/rum \
+    && cd rum \
+    && make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config \
+    && make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config install
+
+RUN whereis pg_ctlcluster
+
+RUN echo 'hostnossl    all          all            0.0.0.0/0  md5' >> /etc/postgresql/17/main/pg_hba.conf \
+    && sed -i 's/\(local[[:space:]]\+all[[:space:]]\+postgres[[:space:]]\+\)peer/\1password/' /etc/postgresql/17/main/pg_hba.conf
+
+# RUN psql -U postgres -c "ALTER USER postgres WITH PASSWORD 'post4321';" \
+    # && echo 'hostnossl    all          all            0.0.0.0/0  md5' >> /etc/postgresql/17/main/pg_hba.conf \
+    # && sed -i 's/\(local[[:space:]]\+all[[:space:]]\+postgres[[:space:]]\+\)peer/\1password/' /etc/postgresql/17/main/pg_hba.conf \
+    # && pg_ctlcluster 17 main restart \
+    # && pg_ctlcluster 17 main status \
+    # && PGPASSWORD=post4321 psql -U postgres  -c "SELECT pg_reload_conf()"
+
+# RUN useradd -m -u 1000 user
+# USER user
+# ENV PATH="/home/user/.local/bin:$PATH"
+USER root
+RUN whoami
+
+WORKDIR /app
+
+COPY ./requirements.txt requirements.txt
+
+# RUN chown -R user /app
+
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+COPY . /app
+
+RUN ls -al /app
+
+CMD python3.10 app.py
+    # 正常 docker pg 服务会自已正常启动
+
+# CMD pg_ctlcluster 17 main restart & python3.10 app.py
+
+# Error: You must run this program as the cluster owner (postgres) or root
+    # 还是不行
+
+# CMD ["python3.10", "app.py"]
+
+```
+
+
+
+
+
+
+
 ```
 # see nodejs summary.md -> docker
 docker system prune --volumes
@@ -318,6 +423,30 @@ docker run -tid --name ubuntu_soda_ENV --net=customnetwork --ip=172.20.0.2 -p 22
 git clone http://用户名:AccessToten@gitlab.xxxxx.git"  > Dockerfile && \
 
 ```
+
+
+
+## 上转 docker 镜像
+
+https://blog.csdn.net/weixin_44649780/article/details/135107176
+
+```
+docker login
+	# 登录（同抱抱脸）
+
+docker tag pg17_image:latest dlxjj/pg17_pgvector_rum
+	# 打标镜像
+	
+docker push dlxjj/pg17_pgvector_rum
+	# 推送成功
+
+vi Dockerfile
+FROM dlxjj/pg17_pgvector_rum
+	# 这样？
+
+```
+
+
 
 
 
@@ -552,7 +681,7 @@ spec:
 2. **在 Minikube 中部署 Pod：** 在终端中，导航到包含该 YAML 文件的目录，并使用以下命令应用配置：
    ```bash
    kubectl apply -f ubuntu-22-04-pod.yaml
-   ```
+```
 
 3. **验证 Pod 是否运行：** 使用以下命令检查 Pod 的状态：
    ```bash
@@ -750,7 +879,7 @@ psql -h 127.0.0.1 -p 5432 -U postgres  # 注意端口
 # 宿主连接测试
 psql -h 127.0.0.1 -p 54322 -U postgres # 注意端口
   --> 成功
-  
+
 ```
 
 <img src="postgresql summary.assets/image-20210330185047454.png" alt="image-20210330185047454" style="zoom:50%;" />
@@ -789,11 +918,18 @@ see nodejs summary.md  -> 范畴论 -> Python Monads
 - ```
   proxychains4 docker-compose build
   
-  ```
+```
 
 
 
 # Docker 走代理
+
+https://george.betterde.com/technology/20240608.html  其它都讲不清
+
+- ```
+  Docker Client Proxy：负责 docker run 和 docker build 阶段的代理配置
+  Docker Daemon Proxy：负责 docker push 和 docker pull 阶段的代理配置
+  ```
 
 https://note.qidong.name/2020/05/docker-proxy/
 

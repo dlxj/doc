@@ -182,11 +182,13 @@ CREATE INDEX idx_appid ON test_vector (AppID);
 
 ```
 
-proxychains4 apt install -y postgresql-common && 
-proxychains4 bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+# see huggingface/NLPP_Audio/vector.py
 
-proxychains4 apt install curl ca-certificates &&
-sudo install -d /usr/share/postgresql-common/pgdg && 
+proxychains4 apt install -y postgresql-common && 
+proxychains4 (sleep 1; echo "\n";) | bash /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+
+proxychains4 (sleep 1; echo "Y";) | apt install curl ca-certificates &&
+install -d /usr/share/postgresql-common/pgdg && 
 curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://www.postgresql.org/media/keys/ACCC4CF8.asc
 
 
@@ -194,13 +196,14 @@ curl -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc --fail https://
 
 sudo sh -c 'echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
-proxychains4 apt update
-
+proxychains4 apt update && 
 proxychains4 apt -y install postgresql-17 postgresql-server-dev-17 libpq-dev postgresql-contrib 
 
 
 
 /etc/postgresql/17/main/pg_hba.conf
+
+sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'post4321';"
 
 
 sudo -u postgres psql
@@ -213,7 +216,10 @@ postgres 	pt41
 
 psql -h 127.0.0.1 -p 5432 -U postgres
 	# 成功登录
-	
+
+
+echo 'hostnossl    all          all            0.0.0.0/0  md5' >> /etc/postgresql/17/main/pg_hba.conf
+	# >> 表示追加在最后
 
 # 允许运程连接
 vi /etc/postgresql/17/main/pg_hba.conf
@@ -225,6 +231,18 @@ hostnossl    all          all            0.0.0.0/0  md5
 local   all             postgres                                password
 	# 改成这样
 
+see huggingface/NLPP_vector_server/Dockerfile
+	# sed -i 's/\(local[[:space:]]\+all[[:space:]]\+postgres[[:space:]]\+\)peer/\1password/' /etc/postgresql/17/main/pg_hba.conf 
+	# 能自动修改成功
+
+PGPASSWORD=post4321 psql -U postgres  -c "SELECT pg_reload_conf()"
+	# 能执行成功的前提是上一行改好了
+
+
+pg_ctlcluster 17 main restart
+pg_ctlcluster 17 main status
+	# 成功重启
+	# 但是在 docker 中不知道怎么运行它
 
 systemctl restart postgresql
 
@@ -286,6 +304,85 @@ chown -R postgres:postgres /home/psqldata
 ```
 
 
+
+```
+
+# see huggingface/NLPP_Audio/vector.py
+
+proxychains4 pip install --upgrade pip && 
+proxychains4 pip install "psycopg[binary]"  
+
+
+proxychains4 apt install postgresql-17-pgvector
+	# 安装向量插件
+
+git clone https://github.com/postgrespro/rum && 
+cd rum &&
+make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config &&
+make USE_PGXS=1 PG_CONFIG=/usr/bin/pg_config install &&
+make USE_PGXS=1 installcheck &&
+$ psql DB -c "CREATE EXTENSION rum;
+	# 安装  RUM 插件
+
+# see https://pgroonga.github.io/install/ubuntu.html
+proxychains4 apt install -y software-properties-common && 
+proxychains4 add-apt-repository -y universe && 
+proxychains4 add-apt-repository -y ppa:groonga/ppa &&
+proxychains4 apt install -y wget lsb-release && 
+proxychains4 wget https://packages.groonga.org/ubuntu/groonga-apt-source-latest-$(lsb_release --codename --short).deb && 
+proxychains4 apt install -y -V ./groonga-apt-source-latest-$(lsb_release --codename --short).deb && 
+echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release --codename --short)-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list && 
+proxychains4 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - && 
+proxychains4 apt update && 
+proxychains4 apt install -y -V postgresql-17-pgdg-pgroonga && 
+proxychains4 apt install -y -V groonga-tokenizer-mecab
+
+CREATE EXTENSION pgroonga;
+	# 成功
+
+see https://pgroonga.github.io/tutorial/
+    # 用法很详细
+
+DROP DATABASE IF EXISTS nlppvector;
+CREATE DATABASE nlppvector
+WITH OWNER = postgres 
+ENCODING = 'UTF8' 
+TABLESPACE = pg_default 
+CONNECTION LIMIT = -1 
+TEMPLATE template0;
+    # 整完 nvcat 重连一次，选这个库再运行下面的语句
+
+# see https://github.com/pgvector/pgvector  各类型向量的长度说明
+CREATE EXTENSION IF NOT EXISTS rum;
+CREATE EXTENSION IF NOT EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+DROP TABLE IF EXISTS nlpp_vector;
+CREATE TABLE IF NOT EXISTS nlpp_vector (
+    id bigint generated always as identity (START WITH 1 INCREMENT BY 1),
+    guid uuid DEFAULT uuid_generate_v4(),
+    name text NOT NULL,
+    s_jp text NOT NULL,
+    s_zh text NOT NULL,
+    v_jp tsvector NOT NULL,
+    v_zh tsvector NOT NULL,
+    metadata jsonb NOT NULL,
+    embed_jp vector(1024) NOT NULL,
+    embed_zh vector(1024) NOT NULL,
+    audio bytea DEFAULT NULL,
+    image bytea DEFAULT NULL,
+    addtime timestamp DEFAULT CURRENT_TIMESTAMP,
+    updatetime timestamp DEFAULT NULL,
+    enable boolean DEFAULT '1',
+    UNIQUE(ID),
+    PRIMARY KEY (GUID)
+);
+CREATE INDEX index_halfvec_embed_jp ON nlpp_vector USING hnsw (embed_jp vector_cosine_ops);
+CREATE INDEX index_halfvec_embed_zh ON nlpp_vector USING hnsw (embed_zh vector_cosine_ops);
+CREATE INDEX fts_rum_v_jp ON nlpp_vector USING rum (v_jp rum_tsvector_ops);
+CREATE INDEX fts_rum_v_zh ON nlpp_vector USING rum (v_zh rum_tsvector_ops);
+CREATE INDEX index_btree_name ON nlpp_vector (name);
+CREATE INDEX index_btree_name_section ON nlpp_vector (name, (metadata->>'section'));
+```
 
 
 
@@ -614,6 +711,23 @@ Navicat for PostgreSQL版本链接工具，专门为PostgreSQL定制使用，功
 5、点击选项，配置详细参数
 6、导出即可！
 ```
+
+
+
+### 查看表大小
+
+```
+select pg_size_pretty(pg_relation_size('nlpp_vector')) as size;
+ 	# 单个表
+select pg_size_pretty(pg_total_relation_size('nlpp_vector')) as size;
+  	# 单个表包含索引大小
+  	
+select pg_size_pretty(pg_database_size('nlppvector')) as size;
+	# 单个库大小
+
+```
+
+
 
 
 
@@ -2861,6 +2975,31 @@ sudo yum install ffmpeg ffmpeg-devel
 
 
 ##  Install RUM
+
+see huggingface/NLPP_Audio/vector.py
+
+```
+            """
+            SELECT s_jp, v_jp <=> tsquery('まずは|どう|したら') as distance FROM nlpp_vector ORDER BY v_jp <=> tsquery('まずは|どう|したら') asc LIMIT 3;
+                # | 表示只要命中其中一个就给分 (结果是距离)
+            SELECT s_jp, v_jp <=> tsquery('まずは&どう&したら&○○') as distance FROM nlpp_vector ORDER BY v_jp <=> tsquery('まずは&どう&したら&○○') asc LIMIT 3;
+                # & 表示必须全部命中，否则给 0 分 (结果是距离)
+            """
+            q = "|".join( mmsegjp("まずはどうしたら"))
+            sql = f"SELECT v_jp <=> tsquery('{q}') as distance, name, s_jp, s_zh, v_jp, v_zh, metadata, TO_CHAR(AddTime, 'YYYY-MM-DD HH24:MI:SS') AS AddTime FROM nlpp_vector WHERE enable='t' ORDER BY v_jp <=> tsquery('{q}') ASC LIMIT 20;"
+            sql = f"""
+                WITH tmp AS (
+                SELECT s_jp, v_jp <=> tsquery('{q}') as distance
+                FROM nlpp_vector WHERE name = 'nlpp_姉ヶ崎'
+                )
+                SELECT * from tmp
+                WHERE distance < 99999
+                ORDER BY distance ASC
+                LIMIT 10;
+            """
+```
+
+
 
 
 

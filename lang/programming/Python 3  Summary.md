@@ -47,7 +47,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-export PATH=/usr/local/cuda/bin:$PATH
+export PATH=/usr/local/cuda/bin:/usr/lib/wsl/lib:$PATH
 
 
 source ~/.bashrc 
@@ -1054,6 +1054,40 @@ print(iSeg.segment('苯巴比妥显效慢的主要原因是脂溶性较小'))
 
 
 ### args parse  [u](https://github.com/jplalor/py-irt)
+
+```
+# see servive summary.md -> 游戏解包
+# see F:\GameAudio\switch\xb3tool\bdat.py
+parser.add_argument('bdatdir', metavar='BDAT-DIR', nargs='+',
+help=('Path of Xenoblade 3 "bdat" directory.\n'
+'If multiple directories are given, tables in later directories (DLC data, for example) will override same-named tables in earlier directories.'))
+args = parser.parse_args()
+
+python script.py /path/to/bdat
+
+python script.py /path/to/base/bdat /path/to/dlc1/bdat /path/to/dlc2/bdat
+
+多个目录用法 - 后面的目录会覆盖前面相同名称的表:
+
+python script.py /path/to/base/bdat /path/to/dlc1/bdat /path/to/dlc2/bdat
+代码中的 nargs='+' 表示:
+
+至少需要提供一个目录路径参数
+可以接受多个目录路径参数
+所有提供的路径会被收集到一个列表中存储在 args.bdatdir
+在程序中可以这样访问参数:
+
+
+for bdat_path in args.bdatdir:
+    # 处理每个bdat目录
+    process_bdat(bdat_path)
+
+
+```
+
+
+
+
 
 ```python
 import argparse
@@ -3290,6 +3324,31 @@ product 笛卡尔集
             for i in sorted(removes, reverse = True):  # 排序，从后面开始删起。前面的索引是不会变的
                 del l[i]
             print('after del:', len(l))
+```
+
+
+
+### 安全 del
+
+```
+see huggingface/NLPP_Audio/vector.py
+			will_be_delete = []
+            for curr, item in enumerate(array):
+                delQ = False
+                # if math.isnan(item['section']):
+                #     will_be_delete.append( curr )
+                #     delQ = True
+                # if math.isnan(item['lineNum']):
+                #     if not delQ:
+                #         will_be_delete.append( curr )
+
+                try:
+                    item['section'] = int(item['section'])
+                    item['lineNum'] = int(item['lineNum'])
+                except Exception:
+                    will_be_delete.append(curr)
+
+            array = [item for idx, item in enumerate(array) if idx not in will_be_delete]
 ```
 
 
@@ -11069,9 +11128,55 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
 
 # ppstructure 版面分析
 
+- https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.5/configs/picodet/legacy_model/application/layout_analysis
 
+- https://github.com/RapidAI/RapidLayout
 
 - https://blog.csdn.net/wss794/article/details/122494246?spm=1001.2014.3001.5502
+
+- https://blog.csdn.net/sexy19910923/article/details/136535420  yolov8训练CDLA数据文版版面分析
+
+- https://github.com/PaddlePaddle/PaddleOCR/blob/133d67f27dc8a241d6b2e30a9f047a0fb75bebbe/ppstructure/docs/quickstart.md  PP-Structure 原来那个就直接可用？
+
+  - ```
+    pip3 install paddleocr==2.6.0.3
+    paddleocr --image_dir=F:/ttttttttttttttttttttttttttttt/0002_25409106314132ccfac0b4963cff1365.jpg --type=structure --table=false --ocr=false
+    	# 成功输出
+    	{"type": "text", "bbox": [177, 992, 2145, 2731], "res": "", "img_idx": 0}
+        {"type": "title", "bbox": [504, 1004, 675, 1052], "res": "", "img_idx": 0}
+        
+    
+    vi pp.py
+    import os
+    import cv2
+    from paddleocr import PPStructure,save_structure_res, draw_structure_result
+    
+    table_engine = PPStructure(table=False, ocr=False, show_log=True)
+    
+    save_folder = './output'
+    img_path = '0002_25409106314132ccfac0b4963cff1365.jpg'
+    img = cv2.imread(img_path)
+    result = table_engine(img)
+    save_structure_res(result, save_folder, os.path.basename(img_path).split('.')[0])
+    
+    for line in result:
+        line.pop('img')
+        print(line)
+    
+    
+    from PIL import Image
+    
+    font_path = 'simfang.ttf' # PaddleOCR下提供字体包
+    image = Image.open(img_path).convert('RGB')
+    im_show = draw_structure_result(image, result,font_path=font_path)
+    im_show = Image.fromarray(im_show)
+    im_show.save('result.jpg') 
+    	# 成功分析并绘制
+        # 它没有框出左右分栏，只是框了个大的
+        
+    ```
+
+    
 
 
 
@@ -15138,6 +15243,78 @@ result = [f(x, y) for x, y in zip(df['col1'], df['col2'])]
 
 
 
+## xlsx、jsonl、csv
+
+```python
+
+# see huggingface/NLPP_Audio/main.py
+# see huggingface/NLPP_Audio/vector.py
+
+df = pd.read_csv(csv, sep='\t', header=None, encoding='utf-8') # dtype=dtype_dict
+
+            df.columns = ['s_jp', 's_zh', 'section', 'lineNum']
+                # 手动添加列名
+
+            df['name'] = name
+
+            array = df.to_dict(orient='records') 
+                # 转换的方向，每一行将生成一个字典
+
+
+# pip install openpyxl==3.1.5 xlrd==2.0.1 pandas==1.26.4
+        
+    
+    # see github\echodict\friso_vs2019\mmseg_jp.py
+    # pip install json_lines
+    import json_lines
+
+    
+    import pandas
+    df = pandas.read_excel('data/nlpp_dialog.xlsx',engine='openpyxl')
+    # df['sim'] = 0 # 添加一列并初始化为 0
+
+    df2 = pandas.read_json("data/nlpp_asr_kotoba.jsonl", lines=True)
+
+    # df['similarity'] = df.apply(lambda row: similarity(row['A'], row['B']), axis=1)
+
+    pass
+    
+    with open('data/nlpp_asr_kotoba.jsonl', 'rb') as f: # opening file in binary(rb) mode    
+        for item in json_lines.reader(f):
+            name = item["name"]
+            text = item["result"]["text"]
+            chunks = item["result"]["chunks"]  # timestamp
+            segs = mmseg(text)
+
+            df['sim'] = 0
+            for idx_row in range(len(df)):
+                role = df.loc[idx_row, 'role']
+                dlg = df.loc[idx_row, 'dlg']
+                gpt = df.loc[idx_row, 'gpt']
+                seg = df.loc[idx_row, 'seg']
+                
+                if pandas.isna(seg):
+                    continue
+                
+                seg = seg.strip().split(' ')
+                if gpt and dlg:
+                    # segs2 = mmseg( dlg )
+                    if len(seg) <= 0:
+                        sim = 0
+                    else:
+                        sim = similarity( segs, seg )
+                    
+                    if sim > 0.5:
+                        pass
+                    
+                    df.loc[idx_row, 'sim'] = sim
+
+```
+
+
+
+
+
 ## 遍历列更效率高
 
 ```
@@ -15429,6 +15606,119 @@ data.groupby('company').agg({'salary':'median','age':'mean'})
 ```
 
 
+
+```python
+# see huggingface/NLPP_Audio/translate_ak48.py
+
+    import pandas as pd
+    df = pd.read_excel('data/ak148_script.xlsx')
+
+    def split_name(name):
+        name1, name2, name3 = name.split('_')
+        return pd.Series({ "name1":name1, "name2":name2, "name3":name3 })
+    df[['name1', 'name2', 'name3']] = df['name'].apply(split_name)
+
+
+    grouped = df.groupby(['name', 'locate'])
+
+    for (name, locate), group in grouped:
+        print(f'Group: name={name}, locate={locate}')
+        result = group.to_dict(orient='records')
+        pass
+```
+
+
+
+## df 转 dict
+
+```
+# see huggingface/NLPP_Audio/vector.py
+	sql = "SELECT 1 - (embed_rwkv_jp <=> %s) AS cosine_similarity, name, s_jp, s_zh, v_jp, v_zh, metadata, TO_CHAR(AddTime, 'YYYY-MM-DD HH24:MI:SS') AS AddTime FROM nlpp_vector WHERE enable='t' ORDER BY embed_rwkv_jp <-> %s ASC LIMIT 500;"
+            
+            embed = rwkv_embedding("まずはどうしたら")
+            embed = str( embed.tolist() )
+            await cur.execute(sql, (embed, embed))
+            rows = await cur.fetchall()
+            df = pd.DataFrame(rows, columns=[desc[0] for desc in cur.description])
+            result = df.to_dict(orient='records')
+```
+
+
+
+## apply
+
+```python
+
+see huggingface/NLPP_Audio/translate_ak48.py
+    import pandas as pd
+    df = pd.read_excel('data/ak148_script.xlsx')
+
+    def split_name(name):
+        name1, name2, name3 = name.split('_')
+        return pd.Series({ "name1":name1, "name2":name2, "name3":name3 })
+    df[['name1', 'name2', 'name3']] = df['name'].apply(split_name)
+
+
+    grouped = df.groupby(['name', 'locate'])
+
+    for (name, locate), group in grouped:
+        print(f'Group: name={name}, locate={locate}')
+        result = group.to_dict(orient='records')
+        pass
+    
+  
+
+# see huggingface/NLPP_Audio/main.py
+    def match(seg):
+        
+        aac_info = []
+
+        df2['sim'] = 0.0
+        if len(seg) > 0:
+            for idx, (seg2, name) in enumerate( zip(df2['seg'], df2['name']) ):
+
+                if len(seg2) <= 0:
+                    continue
+
+                mx = max(len(seg), len(seg2))
+                mi = min(len(seg), len(seg2))
+
+                rate = mi / mx
+
+                if rate < 0.35:
+                    continue
+
+                sim = similarity( seg, seg2 )
+                if sim > 0.35:
+                    df2.loc[idx, 'sim'] = sim   
+
+            df_tmp = df2.sort_values(by='sim', ascending=False).reset_index(drop=True)  # 相似度降序
+
+            for idx, (seg2, name, result, sim) in enumerate( zip(df_tmp['seg'], df_tmp['name'], df_tmp['result'], df_tmp['sim']) ):
+                if sim >= 0.45:
+                    aac_info.append({ "aac_name": name, "result": result, "sim": sim })
+                if idx >= 2:
+                    break
+
+        return aac_info
+
+    df['aac_info'] = df['seg'].apply(match)
+    
+    
+    
+
+	def seg_2_array(seg):
+        if pandas.isna(seg):
+            seg = []
+        elif not seg:
+            seg = []
+        else:
+            seg = seg.strip().split(' ')
+        return seg
+    df['seg'] = df['seg'].apply(seg_2_array)
+
+
+```
 
 
 
@@ -15861,6 +16151,67 @@ order by all
 ```
 pip install duckdb --upgrade
 ```
+
+
+
+## numba + duckdb
+
+https://bnm3k.github.io/blog/duckdb-jit-udfs-numba
+
+```
+# 脚本放虚拟机里面运行，开启虚拟机磁盘加密。（真实案例，千万级别项目就这样干的）
+
+import math
+
+def _calc_haversine_dist(x0, y0, x1, y1):
+    # x -> longitude
+    # y -> latitude
+    EARTH_RADIUS = 6372.8  # km
+
+    p0_latitude = math.radians(y0)
+    p1_latitude = math.radians(y1)
+
+    delta_latitude = math.radians(y0 - y1)
+    delta_longitude = math.radians(x0 - x1)
+
+    central_angle_inner = (math.sin(delta_latitude / 2.0)) ** 2 + math.cos(
+        p0_latitude
+    ) * math.cos(p1_latitude) * (math.sin(delta_longitude / 2.0) ** 2)
+
+    central_angle = 2.0 * math.asin(math.sqrt(central_angle_inner))
+
+    distance = EARTH_RADIUS * central_angle
+    return distance
+
+import duckdb
+from duckdb.typing import DOUBLE
+
+conn = duckdb.connect("points.db")
+conn.create_function(
+    "haversine_dist",
+    _calc_haversine_dist,
+    [DOUBLE, DOUBLE, DOUBLE, DOUBLE],
+    DOUBLE,
+    type="native",
+    side_effects=False,
+)
+
+
+select 
+  avg(haversine_dist(x0,y0,x1,y1)) as avg_dist
+from points
+
+from numba import jit
+
+_calc_haversine_dist_py_jit = jit(nopython=True, nogil=True, parallel=False)(
+    _calc_haversine_dist
+)
+
+
+
+```
+
+
 
 
 
@@ -19495,7 +19846,9 @@ demo.launch()
 
 ### stream
 
+see huggingface/rwkv5-jp-explain/autoplay.py
 
+see huggingface/rwkv5-jp-explain/embedding.py
 
 ```python
 import gradio as gr
@@ -19534,6 +19887,81 @@ with gr.Blocks() as demo:
     button.click(response, [], audio_out) \
 
 demo.launch(share=True)
+```
+
+
+
+```
+import gradio as gr
+from pydub import AudioSegment
+
+def stream_audio(audio_file):
+    audio = AudioSegment.from_mp3(audio_file)
+    i = 0
+    chunk_size = 3000
+    
+    while chunk_size*i < len(audio):
+        chunk = audio[chunk_size*i:chunk_size*(i+1)]
+        i += 1
+        if chunk:
+            file = f"/tmp/{i}.mp3"
+            chunk.export(file, format="mp3")            
+            yield file
+        
+demo = gr.Interface(
+    fn=stream_audio,
+    inputs=gr.Audio(type="filepath", label="Audio file to stream"),
+    outputs=gr.Audio(autoplay=True, streaming=True),
+)
+
+if __name__ == "__main__":
+    demo.queue().launch()
+```
+
+
+
+```
+import pyaudio
+
+# Audio settings
+FORMAT = pyaudio.paFloat32 #paInt16
+CHANNELS = 1
+RATE = 24000
+CHUNK_SIZE = 8192
+
+# Create PyAudio audio output stream
+audio = pyaudio.PyAudio()
+stream = audio.open(
+    format=FORMAT,
+    channels=CHANNELS,
+    rate=RATE,
+    output=True,
+    frames_per_buffer=CHUNK_SIZE
+)
+
+SILENCE = chr(0)*CHUNK_SIZE*2 
+
+
+while True:    
+    try:
+        audio_data = ...# Receive audio stream from generator
+        
+        
+        print("audio", len(audio_data))
+
+        # generation is too slow so silence
+        if audio_data == "":
+            print("silence")
+            audio_data = SILENCE
+        stream.write(audio_data)
+        
+    except:
+        break
+
+# Clean up
+stream.stop_stream()
+stream.close()
+audio.terminate()
 ```
 
 

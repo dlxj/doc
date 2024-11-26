@@ -1,3 +1,33 @@
+## install cuda11.8
+
+```
+install cuda 11.8
+
+update-alternatives --remove cuda /usr/local/cuda-12.2
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118 && 
+ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda && 
+ln -sfT /etc/alternatives/cuda /usr/local/cuda  
+
+
+vi ~/.bashrc 
+
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
+fi
+export LD_LIBRARY_PATH
+
+export PATH=/usr/local/cuda/bin:/usr/lib/wsl/lib:$PATH
+
+
+source ~/.bashrc 
+
+nvcc --version
+```
+
+
+
 
 
 ## rwkv_jax

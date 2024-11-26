@@ -40,6 +40,98 @@ https://github.com/Xzonn/NintendoOfficialChineseGames/blob/master/%E5%AE%9D%E5%8
 
 
 
+### 游戏解包
+
+SAK工具 各种格式转换
+
+https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
+
+火焰之纹章 Engage 成功提取音频
+
+异度神剑3  Wwise-Unpacker 成功提取音频
+
+- ```
+  YUZU 模似器 -> 提取 RomFS 
+  ```
+
+  https://github.com/three-houses-research-team/THAT 风花雪月解包
+
+  - https://github.com/three-houses-research-team/Progenitor voiceID
+
+https://github.com/AlexCSDev/XbTool异度神剑3 解包
+
+- https://github.com/vaxherd/xb3tool/blob/main/bdat.py 解包上一步出来的 bdat
+- https://github.com/RoccoDev/bdat-rs/wiki/Xenoblade-3-BDAT-editing 这个解解看
+
+- ```
+  Wwise-Unpacker\Game_Files
+  	# jp.pck 放这里面
+  F:\GameAudio\switch\Wwise-Unpacker\unpack_wav.bat
+  	# 双击就解压
+  	# 结果在这
+  
+  xbtool.exe -g xb3 -t ExtractArchive -a bf3.arh bf3.ard -o unpack_xbtool
+  
+  python bdat.py -l jp -o out F:\GameAudio\switch\xbtool_040623\unpack_xbtool\bdat
+  	xb3tool/out/msg_tlk110601.html
+  		# 成功解出来文本
+  	
+  ./bdat-toolset-win64.exe extract F:\GameAudio\switch\xbtool_040623\unpack_xbtool\bdat -o out -f json --pretty
+  	# 成功解码出文本
+  	# 文本量不对劲，没什么用
+  
+  ```
+
+- [音频解码](https://gbatemp.net/threads/help-with-xenoblade-chronicles-3-soundtrack-pck-format.615970/) [Wwise-Unpacker 工具](https://github.com/mortalis13/Wwise-Unpacker) 异度神剑3  Wwise-Unpacker 成功提取音频
+  
+  - https://xenobladedata.github.io/xb3_audio_mapping.html 音频和文字对应表
+- https://gamebanana.com/questions/45278 只是模型导出？
+
+- ```
+  F:\GameAudio\switch\Xenoblade 3\sound
+  ```
+
+  
+
+https://github.com/vgmstream/vgmstream
+
+- https://huggingface.co/datasets/dlxjj/win10_dev/blob/main/vgmstream-win.zip
+
+- ```
+  F:\BigGame\YUZU 4176\YUZU\user\dump\0100A6301214E000\romfs\Data\StreamingAssets\Audio\GeneratedSoundBanks\Switch\Japanese
+  	# 火焰之纹章 Engage 成功提取音频
+  	# .wem 文件拖到 D:\usr\vgmstream-win\test.exe 成功提取
+  ```
+
+  
+
+https://github.com/Xzonn/NintendoOfficialChineseGames/
+
+- https://github.com/GreemDev/Ryujinx/releases
+
+- https://xzonn.top/posts/Try-to-Extract-Messages-from-Games.html  
+
+  - ```
+    对于Nintendo Switch游戏的ROM文件，可以使用Ryujinx提取其中的romfs；对于任天堂自家的常用打包格式，可以使用Switch-Toolbox进行拆包；而对于跨平台的游戏引擎Unity，则有专门的工具AssetStudio用于分析数据文件。
+    ```
+
+- https://www.bilibili.com/opus/534827074512420036 MonsterHunterRise 解包
+  - https://www.vgter.net/archives/2487 怪物猎人 崛起 曙光 下载
+  - https://www.gamer520.com/ 下载站
+
+https://www.bilibili.com/opus/745350067860275235 教程详细
+
+https://github.com/SciresM/hactool  **switch 解包**
+
+- https://juejin.cn/post/6929846759736737806
+
+https://github.com/StudentBlake/XCI-Explorer  **switch 仅查看？**
+
+- https://shipengliang.com/games/switch-%E8%A7%A3%E5%8C%85-%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B.html
+- https://www.bilibili.com/opus/456009863373992688
+
+
+
 ### 游戏原声
 
 https://downloads.khinsider.com/game-soundtracks/album/love-plus-sound-portrait-rinko-kobayakawa-ds-sscx-10510
@@ -237,7 +329,7 @@ https://pe.metaquant.org/
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
@@ -665,7 +757,7 @@ mac mount Android as drive
 
   > Namesilo 域名注册
   >
-  > cloudflare 域名解析
+  > cloudflare 域名解析  账号：1234xxx@qq.com
   >
   > echodict@outlook.com
 
