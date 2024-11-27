@@ -16278,6 +16278,26 @@ with engine.connect() as conn:
 
 
 
+# sqlite 向量搜索
+
+https://github.com/asg017/sqlite-vec/issues/126
+
+
+
+```
+
+
+see huggingface/NLPP_Audio/vector.py
+
+pysqlite3==0.5.4
+sqlite-vec==0.1.6
+
+
+
+```
+
+
+
 
 
 # 爬虫
