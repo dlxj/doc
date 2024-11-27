@@ -16284,6 +16284,8 @@ https://github.com/asg017/sqlite-vec/issues/126
 
 https://github.com/unum-cloud/usearch 索引优化，文本搜索说是将来实现？
 
+https://github.com/rqlite/rqlite  分布式 sqlite
+
 
 
 ```
