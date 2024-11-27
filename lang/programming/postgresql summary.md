@@ -843,6 +843,14 @@ CREATE TABLE IF NOT EXISTS japanese (
 
 
 ```
+PGPASSWORD="post4321" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d nlppvector -t public.nlpp_vector --inserts | gzip -9 > /root/nlppvector_$(date +%Y-%m-%d).psql.gz
+```
+
+
+
+
+
+```
 # http://blog.itpub.net/28833846/viewspace-2742419/
 PGPASSWORD="postgres" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d touch -t public.anime --inserts | gzip -9 > ./touch_$(date +%Y-%m-%d).psql.gz
 
