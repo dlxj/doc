@@ -729,6 +729,21 @@ select pg_size_pretty(pg_database_size('nlppvector')) as size;
 
 
 
+### 导出整个 PostgreSQL 实例
+
+```
+如果需要导出整个 PostgreSQL 实例并保留所有插件的声明，使用 pg_dumpall：
+pg_dumpall -U 用户名 > /path/to/backup.sql
+pg_dumpall 会包含所有用户、角色、权限以及 CREATE EXTENSION 命令。
+
+
+psql -U 用户名 -d 数据库名 -f /path/to/backup.sql
+	# 恢复
+
+```
+
+
+
 
 
 ## 重建数据库和表结构
