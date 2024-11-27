@@ -16282,6 +16282,50 @@ with engine.connect() as conn:
 
 https://github.com/asg017/sqlite-vec/issues/126
 
+https://github.com/unum-cloud/usearch 索引优化，文本搜索说是将来实现？
+
+
+
+```
+
+see huggingface/NLPP_Audio/vector.py
+
+# https://github.com/unum-cloud/usearch
+    # 支持索引，性能可能更好
+
+    index = usearch.Index(
+        dim=1024,  # Define the number of dimensions in input vectors
+        metric="cos",  # Choose the "metric" or "distance", default = 'ip', optional
+        dtype=dtype_string,  # Quantize to 'f16' or 'i8q100' if needed, default = 'f32', optional
+        connectivity=16,  # How frequent should the connections in the graph be, optional
+        expansion_add=200,  # Control the recall of indexing, optional
+        expansion_search=5000,  # Control the quality of search, optional
+    )
+
+for k in [200, 3]:
+    matches, distances, count = index.search(query_embedding_matrix, k)
+
+    l_dicts_matches_distances = [{"abs_id": m, "similarity": d} for m, d in zip(matches[0], distances[0])]
+    bestdoc = sorted(l_dicts_matches_distances, key=lambda x: x["similarity"], reverse=True)[0]
+    found = bestdoc["abs_id"] == 32
+    print(f"{k=} {'✅' if found else '❌'}")
+
+
+l_best_match = []
+for k in [1, 10, 100, 1000]:
+    matches, distances, count = iu.search(emb_np, k)
+    best_match = matches[0]
+    l_best_match.append(best_match)
+
+if len(set(l_best_match)) == 1:
+    print("✅ Passed")
+else:
+    print(f"Different top result depending on output size. Best matches: {', '.join(l_best_match)}")
+
+```
+
+
+
 
 
 ```
