@@ -1092,6 +1092,9 @@ CREATE INDEX ON test_vector USING hnsw (V_Test vector_cosine_ops);
 
 ## 向量查询
 
+    # see huggingface/NLPP_vector_server/readme.txt
+    https://github.com/lanterndata/lantern  
+        # pg 支持 but up to 16
 https://liaoxuefeng.com/blogs/all/2023-08-10-ai-search-engine-by-postgres/
 
 ```

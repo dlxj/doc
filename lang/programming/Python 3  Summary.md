@@ -16317,6 +16317,8 @@ https://github.com/unum-cloud/usearch 索引优化，文本搜索说是将来实
 
 https://github.com/rqlite/rqlite  分布式 sqlite
 
+https://github.com/lanterndata/lantern userch for postgresql
+
 
 
 ```
