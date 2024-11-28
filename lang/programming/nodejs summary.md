@@ -32665,6 +32665,14 @@ https://github.com/SWivid/F5-TTS
 
 - https://huggingface.co/spaces/mrfakename/E2-F5-TTS 在线使用
 
+https://github.com/fishaudio/fish-speech
+
+- https://github.com/fishaudio/fish-speech  **pyqt6 前端**
+
+https://linux.do/t/topic/127781 tts 汇总
+
+
+
 
 
 ## RWKV speech
