@@ -1665,6 +1665,15 @@ base = Path(json_path).stem
 
 
 
+```
+# huggingface/NLPP_vector_server/app.py
+# /usr/local/lib/python3.10/dist-packages/usearch/__init__.py
+path_wout_extension, _, _ = local_path.rpartition(".")
+
+```
+
+
+
 
 
 ### which
