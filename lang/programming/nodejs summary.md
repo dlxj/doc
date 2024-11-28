@@ -14199,6 +14199,13 @@ https://github.com/asg017/sqlite-vec/releases/download/v0.1.4-alpha.2/sqlite-vec
 
 ​	# 向量插件
 
+```
+# usearch
+# see huggingface/NLPP_vector_server/readme.txt
+https://github.com/lanterndata/lantern  
+    # pg 支持 but up to 16
+```
+
 
 
 # steampipe 嵌入式 postgreSQL

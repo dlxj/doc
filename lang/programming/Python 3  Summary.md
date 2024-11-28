@@ -16362,6 +16362,11 @@ sqlite_version, vec_version = db.execute(
 ).fetchone()
 print(f"sqlite_version={sqlite_version}, vec_version={vec_version}")
 
+db.execute('''
+    CREATE VIRTUAL TABLE DefectFeature USING vec0(
+    rowid integer primary key, 
+    embedding float[1000] distance_metric=L2);
+''')
 
 db.execute(
 '''
