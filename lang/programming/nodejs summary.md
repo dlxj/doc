@@ -5110,7 +5110,28 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 https://huggingface.co/docs/huggingface_hub/guides/upload
 
 ```
-https://huggingface.co/docs/huggingface_hub/guides/upload
+# 自定义上传
+class ZipScheduler(CommitScheduler):
+    def push_to_hub(self):
+        # 1. List PNG files
+          png_files = list(self.folder_path.glob("*.png"))
+          if len(png_files) == 0:
+              return None  # return early if nothing to commit
+
+        # 2. Zip png files in a single archive
+        with tempfile.TemporaryDirectory() as tmpdir:
+            archive_path = Path(tmpdir) / "train.zip"
+            with zipfile.ZipFile(archive_path, "w", zipfile.ZIP_DEFLATED) as zip:
+                for png_file in png_files:
+                    zip.write(filename=png_file, arcname=png_file.name)
+
+            # 3. Upload archive
+            self.api.upload_file(..., path_or_fileobj=archive_path)
+
+        # 4. Delete local png files to avoid re-uploading them later
+        for png_file in png_files:
+            png_file.unlink()
+
 ```
 
 
