@@ -5105,6 +5105,18 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
 
 
+### 上传大文件
+
+https://huggingface.co/docs/huggingface_hub/guides/upload
+
+```
+https://huggingface.co/docs/huggingface_hub/guides/upload
+```
+
+
+
+
+
 ### 安装 pg 数据库
 
 https://linux.do/t/topic/271283
