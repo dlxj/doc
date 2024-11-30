@@ -784,6 +784,22 @@ tensor([[-0.5044,  0.0005],
 
 
 
+### view
+
+https://github.com/ashvardanian/SimSIMD
+
+```
+see huggingface/NLPP_vector_server/readme.txt
+
+vec1 = np.random.randint(2, size=80).astype(np.uint8).packbits().view(np.bool_)
+vec2 = np.random.randint(2, size=80).astype(np.uint8).packbits().view(np.bool_)
+hamming_distance = simsimd.hamming(vec1, vec2)
+jaccard_distance = simsimd.jaccard(vec1, vec2)
+
+```
+
+
+
 
 
 ### numpy 互转

@@ -862,16 +862,23 @@ yum install nmap
 			# 也是显示开放了
 
 
+iptables -F \
+	&& iptables -X \
+	&& iptables -Z
+		# 全部清空
+
+
 	https://blog.csdn.net/qq_39176597/article/details/111939051
 		# linux关闭防火墙了，但端口还是访问不了
+		
+		apt install firewalld
 
-		systemctl  start  firewalld
-			# 启动防火墙
-			systemctl  status  firewalld
+		systemctl  start  firewalld \
+			&& systemctl  status  firewalld
 
-		firewall-cmd --zone=public --add-port=222/tcp --permanent
-		firewall-cmd --zone=public --add-port=222/tcp --permanent
-		firewall-cmd --zone=public --add-port=6006/tcp --permanent
+		firewall-cmd --zone=public --add-port=2222/tcp --permanent \
+			&& firewall-cmd --zone=public --add-port=5432/tcp --permanent \
+			&& firewall-cmd --zone=public --add-port=6006/tcp --permanent
 			# 开放端口
 	
 		firewall-cmd --reload

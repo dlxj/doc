@@ -729,6 +729,25 @@ select pg_size_pretty(pg_database_size('nlppvector')) as size;
 
 
 
+### 导出整个 PostgreSQL 实例
+
+```
+如果需要导出整个 PostgreSQL 实例并保留所有插件的声明，使用 pg_dumpall：
+pg_dumpall -U postgres > /root/backup.sql
+pg_dumpall 会包含所有用户、角色、权限以及 CREATE EXTENSION 命令。
+
+
+psql -U 用户名 -d 数据库名 -f /path/to/backup.sql
+	# 恢复
+
+因为导出的 .sql 文件已经包括了 CREATE DATABASE 语句，当你导入时，备份会自动创建新数据库，所以 不需要手动创建一个空数据库。
+
+pg_dumpall需要多次连接到PostgreSQL服务器（每个数据库一次）。如果您使用密码身份验证，它将每次都要求输入密码。~/.pgpass
+
+```
+
+
+
 
 
 ## 重建数据库和表结构
@@ -820,6 +839,14 @@ CREATE TABLE IF NOT EXISTS japanese (
 
 
 ## 备份表
+
+
+
+```
+PGPASSWORD="post4321" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d nlppvector -t public.nlpp_vector --inserts | gzip -9 > /root/nlppvector_$(date +%Y-%m-%d).psql.gz
+```
+
+
 
 
 
@@ -1065,6 +1092,9 @@ CREATE INDEX ON test_vector USING hnsw (V_Test vector_cosine_ops);
 
 ## 向量查询
 
+    # see huggingface/NLPP_vector_server/readme.txt
+    https://github.com/lanterndata/lantern  
+        # pg 支持 but up to 16
 https://liaoxuefeng.com/blogs/all/2023-08-10-ai-search-engine-by-postgres/
 
 ```

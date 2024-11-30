@@ -5105,6 +5105,39 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
 
 
+### 上传大文件
+
+https://huggingface.co/docs/huggingface_hub/guides/upload
+
+```
+# 自定义上传
+class ZipScheduler(CommitScheduler):
+    def push_to_hub(self):
+        # 1. List PNG files
+          png_files = list(self.folder_path.glob("*.png"))
+          if len(png_files) == 0:
+              return None  # return early if nothing to commit
+
+        # 2. Zip png files in a single archive
+        with tempfile.TemporaryDirectory() as tmpdir:
+            archive_path = Path(tmpdir) / "train.zip"
+            with zipfile.ZipFile(archive_path, "w", zipfile.ZIP_DEFLATED) as zip:
+                for png_file in png_files:
+                    zip.write(filename=png_file, arcname=png_file.name)
+
+            # 3. Upload archive
+            self.api.upload_file(..., path_or_fileobj=archive_path)
+
+        # 4. Delete local png files to avoid re-uploading them later
+        for png_file in png_files:
+            png_file.unlink()
+
+```
+
+
+
+
+
 ### 安装 pg 数据库
 
 https://linux.do/t/topic/271283
@@ -5814,9 +5847,14 @@ https://linux.do/t/topic/174255  Cloudflare CDN传递私有的Backblaze B2内容
 
 ### 优选IP
 
+https://dooo.ng/archives/1701171631107 cf+SaaS回源优选IP使国内用户加速
+
 https://linux.do/t/topic/269385
 
 ```
+
+
+
 大家都知道Cloudflare的公共DNS（1.1.1.1和1.0.0.1）。但是，很少有人知道，其实它也能够当做优选IP来用，在这两个IP段中，仅需更改地址的最后一位数字（从2到255中选择），你就可以体验到相同甚至更好的网络连接效果。之所以选择1.1.1.0/16和1.0.0.0/16这个两个IP段，是因为这两个IP段提供Cloudflare的DNS服务，服务器数量庞大，线路优化良好，全国范围内使用时延低，表现优异。至于为什么不直接选择1.1.1.1和1.0.0.1，是因为这两个地址在国内某些地区可能会遭遇阻挠，导致连接不稳定。
 
 这么做的好处显而易见。选择这些优选IP后，连接状态一般会持续显示为绿色，没有频繁的波动。利用Cloudflare的Anycast网络技术，这些IP可以实现全球节点的快速接入，延迟低至200毫秒，甚至有时不到100毫秒。使用这个方法，我个人的网络体验极为流畅，远超过其他常规的优选。
@@ -14198,6 +14236,13 @@ nmap 127.0.0.1 -p6379
 https://github.com/asg017/sqlite-vec/releases/download/v0.1.4-alpha.2/sqlite-vec-0.1.4-alpha.2-static-linux-x86_64.tar.gz
 
 ​	# 向量插件
+
+```
+# usearch
+# see huggingface/NLPP_vector_server/readme.txt
+https://github.com/lanterndata/lantern  
+    # pg 支持 but up to 16
+```
 
 
 
@@ -32664,6 +32709,14 @@ https://github.com/haotian-liu/LLaVA
 https://github.com/SWivid/F5-TTS
 
 - https://huggingface.co/spaces/mrfakename/E2-F5-TTS 在线使用
+
+https://github.com/fishaudio/fish-speech
+
+- https://github.com/fishaudio/fish-speech  **pyqt6 前端**
+
+https://linux.do/t/topic/127781 tts 汇总
+
+
 
 
 

@@ -802,6 +802,10 @@ https://manage.buyvm.net/login
 # 测速脚本
 https://zhuanlan.zhihu.com/p/117547388
 
+https://blog.laoda.de/archives/vps-servarica
+http://www.vpsxxs.com/servarica20240716/
+	# 两个大盘鸡
+
 LV RYZEN KVM 512MB
 
 Hostname: xxxx
