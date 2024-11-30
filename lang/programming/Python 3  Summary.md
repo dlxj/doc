@@ -16246,6 +16246,11 @@ https://github.com/turbot/steampipe
 
 see huggingface/Sakurallm_server_254_6006/app.py
 
+git clone https://github.com/orm011/pgserver \
+	&& python -m build \
+	&& pip install dist/pgserver-0.1.4.tar.gz
+		# 自已编译安装
+
 pgserver==0.1.4
 psycopg2_binary==2.9.10
 sqlalchemy==2.0.36
