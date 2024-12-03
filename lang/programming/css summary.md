@@ -1,5 +1,59 @@
 
 
+# div > :global
+
+
+
+```
+div > :global(.md.prose) {
+    color: var(--block-info-text-color);
+    font-weight: var(--block-info-text-weight);
+    font-size: var(--block-info-text-size);
+    line-height: var(--line-sm);
+}
+
+div {
+    margin-bottom: var(--spacing-md);
+}
+```
+
+这里的 CSS 分为两部分，分别设置了 `div > :global(.md.prose)` 和 `div` 元素的样式。
+
+------
+
+## 背后的设计原因
+
+1. **为什么使用 `:global`？**
+
+   - `:global` 是特定 CSS 工具或框架（如 CSS Modules 或 Svelte 的 Scoped CSS）中的写法，用来解除样式的局部作用域限制。当你在某些框架（比如 Svelte）中使用 scoped CSS 时，默认的样式规则仅对当前组件生效，但可能需要定义全局的样式，使样式可以影响其他组件中触及的元素。
+   - 在这里，`:global(.md.prose)` 表示 `.md.prose` 是一个 **全局类名**，不会受组件作用域限制，而 `div >` 是为了限定作用范围，仅应用于当前组件的某些结构（即 `div` 中的直接后代元素 `.md.prose`）。
+
+   **作用：确保 `.md.prose` 的样式能跨组件生效，同时限制在特定结构下调用该样式。**
+
+------
+
+1. **避免使用 `!important`**
+
+   - `!important` 是一种非常强制性的方式，用来提高 CSS 样式优先级，但过多使用 `!important` 会带来难以维护的样式冲突，因此一般是在没办法的情况下才使用。
+   - 在这段代码中，并未使用 `!important` 强制覆盖其他样式，而是通过清晰的选择器优先策略（如使用更具体的 `div > :global(.md.prose)`）实现了对元素样式的精准控制，从而避免了使用 `!important`。
+
+   **作用：通过精确的选择器提升优先级，避免了使用强制的 `!important`，提高了代码的可维护性。**
+
+------
+
+1. **为什么设置 `margin-bottom` 在 `div` 上，而不是子元素 `span`？**
+
+   - `div` 的样式中设置了 `margin-bottom: var(--spacing-md);`，这是为了给某些元素在块级布局中添加间距，比如段与段之间的下边距。
+   - CSS 的 `margin` 属性只对块级（block-level）元素生效，如果子元素是 `span`（默认是 `display: inline`），它不会响应 `margin-bottom`。换句话说，将 `margin-bottom` 设置在 `span` 上是无效的。
+
+   在实际情况中，可能遇到了 `:global(.md.prose)` 使用了 `span` 或其他内联元素，因此改为将 `margin-bottom` 设置在 `div`，这是块级元素，能正确应用下边距。
+
+    
+
+   **作用：保证间距适用于块级布局，而不会因为子元素为内联元素（`display: inline`）导致样式无效。**
+
+
+
 
 
 # 标准盒子
