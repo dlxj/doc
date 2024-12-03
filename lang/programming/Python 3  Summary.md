@@ -19271,6 +19271,29 @@ if __name__ == "__main__":
 
 
 
+```
+js = """
+  <script>
+    const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault(); // Prevent the default link behavior
+        
+        const targetUrl = link.href;
+        
+        console.log('Clicked link target URL:', targetUrl);
+
+        // Optionally, if you want to allow navigation after logging or handling the URL:
+        // window.location.href = targetUrl;
+      });
+    });
+  </script>
+"""
+```
+
+
+
 
 
 ## code
