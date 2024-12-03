@@ -5993,6 +5993,12 @@ async function handleRequest(request) {
 
 
 
+#### 反代
+
+https://github.com/ymyuuu/Cloudflare-Workers-Proxy
+
+
+
 #### 自动优选 IP
 
 https://github.com/XIU2/CloudflareSpeedTest/issues/40 
