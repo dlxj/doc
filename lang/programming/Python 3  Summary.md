@@ -17604,6 +17604,28 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode
 ### css
 
 ```
+import gradio as gr
+
+css = """
+h1 {
+    text-align: center;
+    display:block;
+}
+"""
+
+with gr.Blocks(css=css) as demo:
+    gr.Markdown("# title")
+
+if __name__ == "__main__":
+    demo.queue().launch()
+
+```
+
+
+
+
+
+```
 代码分析
 div > :global(.md.prose) {
     color: var(--block-info-text-color);
@@ -19167,6 +19189,23 @@ https://github.com/gradio-app/gradio/issues/7950
 
 ## dropdown
 
+
+
+```
+# 5.0 change 
+import gradio as gr
+
+with gr.Blocks() as demo:
+    gr.Dropdown(["apple", "banana"], value=lambda : None)
+
+demo.launch()
+
+```
+
+
+
+
+
 ```
 import gradio as gr
 
@@ -19195,6 +19234,37 @@ with gr.Blocks() as demo:
 
 demo.launch()
 ```
+
+
+
+## markdown
+
+```
+![](gradio_api/file=/my/path/to/the/image/)
+```
+
+
+
+```
+import gradio as gr
+
+css = """
+h1 {
+    text-align: center;
+    display:block;
+}
+"""
+
+with gr.Blocks(css=css) as demo:
+    md = gr.Markdown('''# title\n[chapter1](https://google.com)\n<a href="../a/a.mp4 02:300 03:00" target="_blank" rel="noopener noreferrer">gramma1</a>''')
+
+    # <a href="../a/a.mp4 02:300 03:00" target="_blank" rel="noopener noreferrer">gramma1</a>
+
+if __name__ == "__main__":
+    demo.queue().launch()
+```
+
+
 
 
 
