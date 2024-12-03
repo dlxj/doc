@@ -17664,22 +17664,36 @@ CSS 的 margin 属性只对块级（block-level）元素生效，如果子元素
 
 
 ```
-	// 监听 a 标签的 click 事件，如果是 mp4 带时间路径则播放视频
-	
-	const links = document.querySelectorAll('a');
+# 先接任一个键，再点 a 标签的 link，会打印链接，并且阻止跳转。这里面可以判断播放 mp4
+	# 可以是页面没有完全加载, 放 onload 事件里也是不行的
 
+import gradio as gr
+
+js = """
+<script>
+function shortcuts(e) {
+    var event = document.all ? window.event : e;
+    console.log('press.')
+    const links = document.querySelectorAll('a');
     links.forEach(link => {
-      link.addEventListener('click', event => {
-        event.preventDefault(); // Prevent the default link behavior
+        link.addEventListener('click', event => {
+            event.preventDefault(); // Prevent the default link behavior
         
-        const targetUrl = link.href;
+            const targetUrl = link.href;
         
-        console.log('Clicked link target URL:', targetUrl);
+            console.log('Clicked link target URL:', targetUrl);
 
-        // Optionally, if you want to allow navigation after logging or handling the URL:
-        // window.location.href = targetUrl;
-      });
+            // window.location.href = targetUrl;  // go to the link
+        });
     });
+}
+document.addEventListener('keypress', shortcuts, false);
+</script>
+"""
+with gr.Blocks(head=js) as demo:
+    md = gr.Markdown(elem_id='md', value='''# title\n[chapter1](https://google.com)\n<a href="../a/a.mp4 02:300 03:00" target="_blank" rel="noopener noreferrer">gramma1</a>''')
+
+demo.launch()
 ```
 
 
