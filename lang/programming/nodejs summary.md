@@ -5110,6 +5110,20 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 https://huggingface.co/docs/huggingface_hub/guides/upload
 
 ```
+
+see huggingface/NLPP_Audio/upload_hf.py
+
+from huggingface_hub import HfApi
+api = HfApi()
+api.upload_large_folder(
+    repo_id="dlxjj/NLPP_vector",
+    repo_type="dataset",
+    private=True,
+    folder_path="upload/",
+)
+	# 能上传成功，传到了运程仓的根目录，并不带本地那个文件夹
+
+
 # 自定义上传
 class ZipScheduler(CommitScheduler):
     def push_to_hub(self):
@@ -5976,6 +5990,55 @@ async function handleRequest(request) {
 
 
 ```
+
+
+
+#### 自动优选 IP
+
+https://github.com/XIU2/CloudflareSpeedTest/issues/40 
+
+
+
+#### 自定义域名
+
+```
+Cloudflare Workers 自定义域名使用自选 IP 其实很简单，只需要做一些小改动即可。
+
+Workers 自定义域名 正常情况下的常规步骤：
+正常部署完 Workers 后，
+添加一个子域名记录（指向 IP 随意）并开启代理（橙色 ☁），
+去该域名的 Workers 侧栏选项中添加路由将刚刚添加的 子域名 指向部署的 Workers 服务。
+配置完成等待生效后，手动访问一次刚刚添加的自定义域名，确保正常
+指定自选 IP 的小改动：
+想要自选 IP，那么只需要在添加子域名记录的时候，不开启代理（橙色 ☁），直接指向自选 IP 即可。
+
+
+Cloudflare Pages 自定义域名使用自选 IP 和 Workers 差不多，也是只需要做一些小改动即可。
+
+Pages 自定义域名 正常情况下的常规步骤：
+正常部署完 Pages 后，
+点进去 Pages 项目，选择顶部 自定义域 选项卡，点击右边的 设置自定义域，
+填写自定义域名，配置域名解析记录（如果域名就托管在 Cloudflare 那么会自动完成，反之则需要手动添加），
+配置完成等待生效后，手动访问一次刚刚添加的自定义域名，确保正常
+指定自选 IP 的小改动：
+在确保自定义域名能正常访问后（即已签发 1 年 SSL 证书），就可以修改域名解析记录了。
+删除旧 CNAME 的解析记录，添加一个 A 解析记录（不开橙色 ☁），直接指向自选 IP 即可。
+
+
+
+如果你同时有多个 Workers / Pages 自定义域名，那么为了方便管理 及 更新自选 IP，建议专门添加一个用来 指向自选 IP 的 A 记录子域名，然后让那些 Workers / Pages 自定义域名都 CNAME 解析到该子域名即可。
+
+后续只要更新该子域名指向的自选 IP，其他所有 CNAME 指向该子域名的自定义域名也都会跟着更新了。
+
+# 这样的话，用户访问你的自定义域名，DNS 解析流程就是这样的了：
+访客  =[DNS 解析]=>  自定义域名  =[CANME 指向]=>  专门子域名  =[A 指向]=> 自选 IP
+例如，专门用来指向自选 IP 的 A 记录子域名为 cf.aaa.com，那么其他所有域名都可以 CNAME 指向 cf.aaa.com，而你只需要定期更新 cf.aaa.com 指向的自选 IP 即可（无论是手动还是通过 Cloudflare API 自动）。
+
+我以前写的一个 Cloudflare API 手动教程及 bat/sh 脚本 #40 ，可以很方便的 自动更新域名指向的自选 IP。
+
+```
+
+
 
 
 
