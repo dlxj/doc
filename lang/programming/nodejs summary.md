@@ -6190,6 +6190,10 @@ https://www.cloudflare.com/zh-cn/developer-platform/d1/
 
 
 
+### 建邮箱
+
+https://linux.do/t/topic/249521 
+
 
 
 ### Warp
@@ -22376,6 +22380,7 @@ ai作画 ps拆补图 spine做动画 再导入godot做游戏
 
 - [godot-sprite-painter](https://github.com/don-tnowe/godot-sprite-painter)
 - [godot-engine.file-editor  Markdonw 转 bbcode](https://github.com/fenix-hub/godot-engine.file-editor)
+- https://github.com/phnix-dev/markdown-book  markdown 插件
 
 [Add a Spreadsheet resource for handling tabular data](https://github.com/don-tnowe/godot-sprite-painter)
 
