@@ -5999,9 +5999,42 @@ https://github.com/XIU2/CloudflareSpeedTest/issues/40
 
 
 
+```
+前往 Cloudflare API 令牌页面。 https://dash.cloudflare.com/profile/api-tokens
+点击 Global API Key 后面的 [查看] 按钮。
+输入 Cloudflare 账号的密码，并通过人机验证。
+点击复制 API 令牌并保存好。
+
+
+curl -X GET "https://api.cloudflare.com/client/v4/zones" \
+-H "X-Auth-Email: 账号邮箱" \
+-H "X-Auth-Key: 前面获取的 API 令牌" \
+-H "Content-Type: application/json"
+	# linux
+	
+"D:\Program Files\curl\bin\curl.exe" -X GET "https://api.cloudflare.com/client/v4/zones" ^
+-H "X-Auth-Email: 账号邮箱" ^
+-H "X-Auth-Key: 前面获取的 API 令牌" ^
+-H "Content-Type: application/json"
+	# windows
+
+
+
+```
+
+
+
+
+
 #### 自定义域名
 
 ```
+
+Cloudflare Workers 自选 IP 很简单，只要在添加域名解析时，不要开启橙色云朵，而解析 IP 填写为任意 CF CDN IP 即可。
+
+
+
+
 Cloudflare Workers 自定义域名使用自选 IP 其实很简单，只需要做一些小改动即可。
 
 Workers 自定义域名 正常情况下的常规步骤：
