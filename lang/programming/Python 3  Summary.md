@@ -19260,10 +19260,31 @@ h1 {
 }
 """
 
-with gr.Blocks(css=css) as demo:
-    md = gr.Markdown('''# title\n[chapter1](https://google.com)\n<a href="../a/a.mp4 02:300 03:00" target="_blank" rel="noopener noreferrer">gramma1</a>''')
+js = """
+  <script>
 
-    # <a href="../a/a.mp4 02:300 03:00" target="_blank" rel="noopener noreferrer">gramma1</a>
+  </script>
+"""
+
+"""
+    const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault(); // Prevent the default link behavior
+        
+        const targetUrl = link.href;
+        
+        console.log('Clicked link target URL:', targetUrl);
+
+        // Optionally, if you want to allow navigation after logging or handling the URL:
+        // window.location.href = targetUrl;
+      });
+    });
+"""
+
+with gr.Blocks(css=css, js=js) as demo:
+    md = gr.Markdown('''# title\n[chapter1](https://google.com)\n<a href="../a/a.mp4 02:300 03:00" target="_blank" rel="noopener noreferrer">gramma1</a>''')
 
 if __name__ == "__main__":
     demo.queue().launch()
