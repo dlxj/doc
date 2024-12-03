@@ -17093,6 +17093,9 @@ see https://github.com/gradio-app/gradio/blob/main/CONTRIBUTING.md  开发者环
   	# linux
   	ln -s /root/.local/share/pnpm/pnpm  /usr/bin/pnpm
   
+  	env PNPM_VERSION=9.1.0 proxychains4 bash install.sh
+  		# 安装指定版本 gradio440 需要 9.1.0
+  
   version=v20.11.1 && 
 wget https://nodejs.org/download/release/$version/node-$version-linux-x64.tar.gz && 
 tar xvf node-$version-linux-x64.tar.gz && 
