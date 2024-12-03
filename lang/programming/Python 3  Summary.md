@@ -17659,6 +17659,115 @@ CSS 的 margin 属性只对块级（block-level）元素生效，如果子元素
 
 
 
+### js
+
+
+
+```
+	// 监听 a 标签的 click 事件，如果是 mp4 带时间路径则播放视频
+	
+	const links = document.querySelectorAll('a');
+
+    links.forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault(); // Prevent the default link behavior
+        
+        const targetUrl = link.href;
+        
+        console.log('Clicked link target URL:', targetUrl);
+
+        // Optionally, if you want to allow navigation after logging or handling the URL:
+        // window.location.href = targetUrl;
+      });
+    });
+```
+
+
+
+
+
+```
+import gradio as gr
+
+shortcut_js = """
+<script>
+function shortcuts(e) {
+    var event = document.all ? window.event : e;
+    switch (e.target.tagName.toLowerCase()) {
+        case "input":
+        case "textarea":
+        break;
+        default:
+        if (e.key.toLowerCase() == "s" && e.shiftKey) {
+            document.getElementById("my_btn").click();
+        }
+    }
+}
+document.addEventListener('keypress', shortcuts, false);
+</script>
+"""
+
+with gr.Blocks(head=shortcut_js) as demo:
+    action_button = gr.Button(value="Name", elem_id="my_btn")
+    textbox = gr.Textbox()
+    action_button.click(lambda : "button pressed", None, textbox)
+    
+demo.launch()
+```
+
+
+
+
+
+```
+import gradio as gr
+
+def welcome(name):
+    return f"Welcome to Gradio, {name}!"
+
+js = """
+function createGradioAnimation() {
+    var container = document.createElement('div');
+    container.id = 'gradio-animation';
+    container.style.fontSize = '2em';
+    container.style.fontWeight = 'bold';
+    container.style.textAlign = 'center';
+    container.style.marginBottom = '20px';
+
+    var text = 'Welcome to Gradio!';
+    for (var i = 0; i < text.length; i++) {
+        (function(i){
+            setTimeout(function(){
+                var letter = document.createElement('span');
+                letter.style.opacity = '0';
+                letter.style.transition = 'opacity 0.5s';
+                letter.innerText = text[i];
+
+                container.appendChild(letter);
+
+                setTimeout(function() {
+                    letter.style.opacity = '1';
+                }, 50);
+            }, i * 250);
+        })(i);
+    }
+
+    var gradioContainer = document.querySelector('.gradio-container');
+    gradioContainer.insertBefore(container, gradioContainer.firstChild);
+
+    return 'Animation created';
+}
+"""
+with gr.Blocks(js=js) as demo:
+    inp = gr.Textbox(placeholder="What is your name?")
+    out = gr.Textbox()
+    inp.change(welcome, inp, out)
+
+demo.launch()
+```
+
+
+
 
 
 ### gradio-pdf
