@@ -6006,19 +6006,40 @@ https://github.com/XIU2/CloudflareSpeedTest/issues/40
 点击复制 API 令牌并保存好。
 
 
+# 获取域名 ID
 curl -X GET "https://api.cloudflare.com/client/v4/zones" \
 -H "X-Auth-Email: 账号邮箱" \
 -H "X-Auth-Key: 前面获取的 API 令牌" \
 -H "Content-Type: application/json"
 	# linux
 	
-"D:\Program Files\curl\bin\curl.exe" -X GET "https://api.cloudflare.com/client/v4/zones" ^
--H "X-Auth-Email: 账号邮箱" ^
--H "X-Auth-Key: 前面获取的 API 令牌" ^
+"D:\Program Files\curl\bin\curl.exe" -X GET "https://api.cloudflare.com/client/v4/zones" 
+-H "X-Auth-Email: 账号邮箱" 
+-H "X-Auth-Key: 前面获取的 API 令牌" 
 -H "Content-Type: application/json"
 	# windows
 
 
+# 获取域名解析记录 ID
+curl -X GET "https://api.cloudflare.com/client/v4/zones/域名ID/dns_records?page=1&per_page=20&order=type&direction=asc" \
+-H "X-Auth-Email: 账号邮箱" \
+-H "X-Auth-Key: 前面获取的 API 令牌" \
+-H "Content-Type: application/json"
+
+
+# 更新域名解析记录
+curl -X PUT "https://api.cloudflare.com/client/v4/zones/域名ID/dns_records/解析记录ID" \
+-H "X-Auth-Email: 账号邮箱" \
+-H "X-Auth-Key: 前面获取的 API 令牌" \
+-H "Content-Type: application/json" \
+--data '{"type":"A","name":"xxx.yyy.zzz","content":"最快 IP","ttl":1,"proxied":true}'
+
+如果你只需要更新该域名解析记录中单独 “一个” 信息（上面那个只能同时设置域名解析记录的所有信息），那么可以改成这样：
+curl -X PATCH "https://api.cloudflare.com/client/v4/zones/域名ID/dns_records/解析记录ID" \
+-H "X-Auth-Email: 账号邮箱" \
+-H "X-Auth-Key: 前面获取的 API 令牌" \
+-H "Content-Type: application/json" \
+--data '{"content":"最快 IP"}'
 
 ```
 
