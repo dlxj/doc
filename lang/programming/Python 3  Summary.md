@@ -17661,6 +17661,47 @@ CSS 的 margin 属性只对块级（block-level）元素生效，如果子元素
 
 ### js
 
+```
+	# see huggingface/gradio440/js/markdown/shared/MarkdownCode.svelte
+	let timerID:any;
+	onMount(() => {
+		let busyQ = false
+		document.addEventListener('keypress', ()=>{ console.log(`press.`) }, false);
+		timerID = setInterval(() => {
+			if (busyQ) {
+				return
+			}
+			busyQ = true
+
+			const links = document.querySelectorAll('a');
+			links.forEach(link => {
+					let inited = link.getAttribute('inited')
+					if (!inited) {
+						console.log(`addEventListener`)
+						link.addEventListener('click', event => {
+						event.preventDefault(); // Prevent the default link behavior
+					
+						const targetUrl = link.href;
+					
+						console.log('Clicked link target URL:', targetUrl);
+
+						// window.location.href = targetUrl;  // go to the link
+					});
+					link.setAttribute('inited', '1');
+				}
+			})
+
+			busyQ = false
+		}, 100);
+	})
+
+	onDestroy(() => {
+		clearInterval(timerID);
+	});
+```
+
+
+
 
 
 ```
@@ -17817,7 +17858,7 @@ proxychains4  gradio cc build
 	# 成功生成 whl 
 	
 
-下一步把它移值到 gradio440，因为只有源码编译才能单频调试！
+下一步把它移值到 gradio440，因为只有源码编译才能单步调试！
 
 cd demo/mypdf_component && 
 ./kill.sh
@@ -22124,9 +22165,26 @@ contexts.update((c) => [...c, type]);
 
 
 
+### @html
+
+```
+see huggingface/gradio440/js/markdown/shared/MarkdownCode.svelte
+{@html ...} 是一个特殊的语法，用来在模板中直接渲染原生的 HTML 字符串。
+而不是将内容转义后作为普通文本显示。这在需要动态插入 HTML 代码时特别有用。
+<span class:chatbot bind:this={el} class="md" class:prose={render_markdown}>
+	{@html html}
+</span>
+
+
+```
+
+
+
+
+
 ### spring
 
-string 是一种特殊的 store, 它的数值不是一步到位，而是渐近式从初值变到终值。
+spring 是一种特殊的 store, 它的数值不是一步到位，而是渐近式从初值变到终值。
 
 用subscribe 订阅值的更新　　 
 
