@@ -11191,7 +11191,7 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
     
     ```
 
-  - 
+    
 
 - https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.5/configs/picodet/legacy_model/application/layout_analysis
 
