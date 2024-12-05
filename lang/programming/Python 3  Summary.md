@@ -11183,7 +11183,9 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
   - ```
     python -m pip install paddlepaddle==3.0.0b2 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
     
+    pip uninstall opencv-python && 
     pip install paddlex==3.0.0b2
+    	# 先卸载 opencv 不然出错
     
     
     ```
