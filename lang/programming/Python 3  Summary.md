@@ -11181,7 +11181,11 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
 - https://paddlepaddle.github.io/PaddleX/latest/module_usage/tutorials/ocr_modules/layout_detection.html  **高精度版面区域检测模型**
 
   - ```
+    python -m pip install paddlepaddle==3.0.0b2 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
+    
     pip install paddlex==3.0.0b2
+    
+    
     ```
 
   - 
