@@ -17606,6 +17606,52 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode
 
 ### css
 
+https://github.com/gradio-app/gradio/issues/9068
+
+
+
+```
+import gradio as gr
+import numpy as np
+import pandas as pd
+import plotly.express as px
+
+np.random.seed(0)
+data = np.random.normal(size=(1000, 3))
+data[0, :] = 0
+data = data.cumsum(axis=0)
+df = pd.DataFrame(data, columns=["a", "b", "c"])
+
+with gr.Blocks(css="style.css") as demo:
+    for _ in range(3):
+        gr.Plot(value=px.line(df))
+
+if __name__ == "__main__":
+    demo.queue().launch()
+    
+
+vi style.css
+.js-plotly-plot .plotly {
+  padding-top: 30px !important;
+  background-color: white;
+}
+
+.js-plotly-plot .plotly .modebar {
+  top: -30px !important;
+  right: 10px !important;
+}
+
+.modebar-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+```
+
+
+
+
+
 ```
 import gradio as gr
 
@@ -17860,10 +17906,9 @@ proxychains4  gradio cc build
 
 下一步把它移值到 gradio440，因为只有源码编译才能单步调试！
 
-cd demo/mypdf_component && 
 ./kill.sh
-cd ../../demo/mypdf_component && conda activate gradio440 && python run.py
-cd ../../demo/mypdf_component && conda activate gradio440 && pnpm dev
+cd /root/huggingface/gradio440/demo/mypdf_component && conda activate gradio440 && python run.py
+cd /root/huggingface/gradio440/demo/mypdf_component && conda activate gradio440 && pnpm dev
 
 # see huggingface/vite-pdf/src/pdf.mjs
 # pdf 库是可以接受 ArrayBuffer 作为参数的
@@ -19298,6 +19343,8 @@ demo.launch(allowed_paths=["cantina.wav"])
 
 
 
+
+
 ## save data
 
 [save data](https://huggingface.co/spaces/Wauplin/space_to_dataset_saver)
@@ -20389,6 +20436,144 @@ with gr.Blocks(theme=gr.themes.Default()) as demo:
   mm_input.submit(dummy, mm_input, [ta, img])
 
 demo.launch(debug=False)
+```
+
+
+
+## plot
+
+https://github.com/gradio-app/gradio/issues/141
+
+https://huggingface.co/spaces/gradio/map_airbnb
+
+https://huggingface.co/spaces/freddyaboulton/gradio_folium 完整的地图应用
+
+
+
+###　网络图
+
+https://github.com/gradio-app/gradio/issues/4574
+
+https://pyvis.readthedocs.io/en/latest/tutorial.html#networkx-integration
+
+```python
+
+# 成功显示
+
+# https://github.com/gradio-app/gradio/issues/4574
+
+# proxychains4 pip install pyvis 
+
+import gradio as gr
+from pyvis.network import Network
+import networkx as nx
+nx_graph = nx.cycle_graph(10)
+nx_graph.nodes[1]['title'] = 'Number 1'
+nx_graph.nodes[1]['group'] = 1
+nx_graph.nodes[3]['title'] = 'I belong to a different group!'
+nx_graph.nodes[3]['group'] = 10
+nx_graph.add_node(20, size=20, title='couple', group=2)
+nx_graph.add_node(21, size=15, title='couple', group=2)
+nx_graph.add_edge(20, 21, weight=5)
+nx_graph.add_node(25, size=25, label='lonely', title='lonely node', group=3)
+
+# graph above refer to: https://pyvis.readthedocs.io/en/latest/tutorial.html#networkx-integration
+
+# nt_notebook = Network('500px', '500px', notebook=True, cdn_resources='remote')
+# populates the nodes and edges data structures
+# nt_notebook.from_nx(nx_graph)
+# nt_notebook.show('nx.html')
+
+
+def needs_analysis():
+    nt = Network()
+    nt.from_nx(nx_graph)
+    html = nt.generate_html()
+    #need to remove ' from HTML
+    html = html.replace("'", "\"")
+    
+    return f"""<iframe style="width: 100%; height: 600px;margin:0 auto" name="result" allow="midi; geolocation; microphone; camera; 
+    display-capture; encrypted-media;" sandbox="allow-modals allow-forms 
+    allow-scripts allow-same-origin allow-popups 
+    allow-top-navigation-by-user-activation allow-downloads" allowfullscreen="" 
+    allowpaymentrequest="" frameborder="0" srcdoc='{html}'></iframe>"""
+
+
+demo = gr.Interface(
+    needs_analysis,
+    inputs=None,
+    outputs=gr.HTML(),
+    title="pyvis_in_gradio",
+    allow_flagging='never'
+)
+
+demo.launch()
+
+
+```
+
+
+
+### 地图
+
+```python
+# type: ignore
+import gradio as gr
+import plotly.graph_objects as go
+from datasets import load_dataset
+
+dataset = load_dataset("gradio/NYC-Airbnb-Open-Data", split="train")
+df = dataset.to_pandas()
+
+def filter_map(min_price, max_price, boroughs):
+
+    filtered_df = df[(df['neighbourhood_group'].isin(boroughs)) &
+          (df['price'] > min_price) & (df['price'] < max_price)]
+    names = filtered_df["name"].tolist()
+    prices = filtered_df["price"].tolist()
+    text_list = [(names[i], prices[i]) for i in range(0, len(names))]
+    fig = go.Figure(go.Scattermapbox(
+            customdata=text_list,
+            lat=filtered_df['latitude'].tolist(),
+            lon=filtered_df['longitude'].tolist(),
+            mode='markers',
+            marker=go.scattermapbox.Marker(
+                size=6
+            ),
+            hoverinfo="text",
+            hovertemplate='<b>Name</b>: %{customdata[0]}<br><b>Price</b>: $%{customdata[1]}'
+        ))
+
+    fig.update_layout(
+        mapbox_style="open-street-map",
+        hovermode='closest',
+        mapbox=dict(
+            bearing=0,
+            center=go.layout.mapbox.Center(
+                lat=40.67,
+                lon=-73.90
+            ),
+            pitch=0,
+            zoom=9
+        ),
+    )
+
+    return fig
+
+with gr.Blocks() as demo:
+    with gr.Column():
+        with gr.Row():
+            min_price = gr.Number(value=250, label="Minimum Price")
+            max_price = gr.Number(value=1000, label="Maximum Price")
+        boroughs = gr.CheckboxGroup(choices=["Queens", "Brooklyn", "Manhattan", "Bronx", "Staten Island"], value=["Queens", "Brooklyn"], label="Select Boroughs:")
+        btn = gr.Button(value="Update Filter")
+        map = gr.Plot()
+    demo.load(filter_map, [min_price, max_price, boroughs], map)
+    btn.click(filter_map, [min_price, max_price, boroughs], map)
+
+if __name__ == "__main__":
+    demo.launch()
+
 ```
 
 
