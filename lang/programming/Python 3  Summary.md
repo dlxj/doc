@@ -11178,6 +11178,14 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
 
 # ppstructure 版面分析
 
+- https://paddlepaddle.github.io/PaddleX/latest/module_usage/tutorials/ocr_modules/layout_detection.html  **高精度版面区域检测模型**
+
+  - ```
+    pip install paddlex==3.0.0b2
+    ```
+
+  - 
+
 - https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.5/configs/picodet/legacy_model/application/layout_analysis
 
 - https://github.com/RapidAI/RapidLayout
