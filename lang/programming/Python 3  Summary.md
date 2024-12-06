@@ -22023,6 +22023,81 @@ gradio_4290/js/imageeditor/shared/tools/Cropper.svelte
 
 
 
+### svelte:self
+
+```
+# see gradio440/js/fileexplorer/shared/FileTree.svelte
+使用 <svelte:self> 来递归渲染组件，也就是说，组件可以在其内部调用自身（递归调用）。这种用法通常见于渲染递归数据结构的场景，例如处理文件树、嵌套的列表或菜单等。
+
+			{#if type === "folder" && opened_folders.includes(i)}
+				<svelte:self
+					path={[...path, name]}
+					selected_files={selected_files
+						.filter((x) => x[0] === name)
+						.map((x) => x.slice(1))}
+					selected_folders={selected_folders
+						.filter((x) => x[0] === name)
+						.map((x) => x.slice(1))}
+					is_selected_entirely={selected_folders.some(
+						(x) => x[0] === name && x.length === 1
+					)}
+					{interactive}
+					{ls_fn}
+					{file_count}
+					valid_for_selection={valid}
+					on:check
+				/>
+			{/if}
+
+```
+
+
+
+```
+<script>
+  export let node;
+</script>
+
+<ul>
+  <li>
+    {node.name}
+    {#if node.children}
+      <ul>
+        {#each node.children as child}
+          <svelte:self node={child} />
+        {/each}
+      </ul>
+    {/if}
+  </li>
+</ul>
+
+
+const tree = {
+  name: "Root",
+  children: [
+    {
+      name: "Folder 1",
+      children: [
+        { name: "File 1.1" },
+        { name: "File 1.2" }
+      ]
+    },
+    {
+      name: "Folder 2",
+      children: [
+        { name: "File 2.1" },
+        { name: "Folder 2.2", children: [{ name: "File 2.2.1" }] }
+      ]
+    }
+  ]
+};
+
+```
+
+
+
+
+
 ### filter
 
 ```
