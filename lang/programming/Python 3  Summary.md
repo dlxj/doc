@@ -17728,6 +17728,8 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode
 
 https://github.com/gradio-app/gradio/issues/9068
 
+https://github.com/gradio-app/gradio/issues/8875 模态对话框
+
 
 
 ```
@@ -19642,6 +19644,147 @@ js = """
     });
   </script>
 """
+```
+
+
+
+## modal
+
+https://github.com/gradio-app/gradio/issues/8875 模态对话框
+
+- https://huggingface.co/spaces/aliabid94/gradio_modal 自定义组件
+
+```python
+import gradio as gr
+import random
+
+# Chatbot demo with multimodal input (text, markdown, LaTeX, code blocks, image, audio, & video). Plus shows support for streaming text.
+css = """
+.modal {
+    position: absolute !important;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: fit-content !important;
+    height: fit-content !important;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-left: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content {
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+}
+"""
+color_map = {
+    "harmful": "crimson",
+    "neutral": "gray",
+    "beneficial": "green",
+}
+
+def html_src(harm_level):
+    return f"""
+<div style="display: flex; gap: 5px;">
+  <div style="background-color: {color_map[harm_level]}; padding: 2px; border-radius: 5px;">
+  {harm_level}
+  </div>
+</div>
+"""
+
+def print_like_dislike(x: gr.LikeData):
+    print(x.index, x.value, x.liked)
+    msg = "What was satisfying about this response?" if x.liked else "What was unsatisfying about this response?"
+    return gr.Row(visible=True), gr.Textbox(label=msg)
+
+def add_message(history, message):
+    for x in message["files"]:
+        history.append(((x,), None))
+    if message["text"] is not None:
+        history.append((message["text"], None))
+    return history, gr.MultimodalTextbox(value=None, interactive=False)
+
+def bot(history, response_type):
+    if response_type == "gallery":
+        history[-1][1] = gr.Gallery(
+            [
+                "https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png",
+                "https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png",
+            ]
+        )
+    elif response_type == "image":
+        history[-1][1] = gr.Image(
+            "https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png"
+        )
+    elif response_type == "video":
+        history[-1][1] = gr.Video(
+            "https://github.com/gradio-app/gradio/raw/main/demo/video_component/files/world.mp4"
+        )
+    elif response_type == "audio":
+        history[-1][1] = gr.Audio(
+            "https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav"
+        )
+    elif response_type == "html":
+        history[-1][1] = gr.HTML(
+            html_src(random.choice(["harmful", "neutral", "beneficial"]))
+        )
+    else:
+        history[-1][1] = "Cool!"
+    return history
+
+with gr.Blocks(fill_height=True, css=css) as demo:
+    chatbot = gr.Chatbot(
+        elem_id="chatbot",
+        bubble_full_width=False,
+        scale=1,
+    )
+    response_type = gr.Radio(
+        [
+            "image",
+            "text",
+            "gallery",
+            "video",
+            "audio",
+            "html",
+        ],
+        value="text",
+        label="Response Type",
+    )
+
+    chat_input = gr.MultimodalTextbox(
+        interactive=True,
+        placeholder="Enter message or upload file...",
+        show_label=False,
+    )
+
+    chat_msg = chat_input.submit(
+        add_message, [chatbot, chat_input], [chatbot, chat_input]
+    )
+    bot_msg = chat_msg.then(
+        bot, [chatbot, response_type], chatbot, api_name="bot_response"
+    )
+    bot_msg.then(lambda: gr.MultimodalTextbox(interactive=True), None, [chat_input])
+
+    sidebar_row = gr.Row(visible=False, elem_classes="modal")
+    with sidebar_row:
+        with gr.Column(elem_classes="modal-content"):
+            gr.Markdown("Please provide details: (optional)!")
+            txt = gr.Textbox(interactive=True)
+            modalButton = gr.Button("Submit")
+            modalButton.click(lambda: gr.Row(visible=False), None, [sidebar_row])
+
+    chatbot.like(print_like_dislike, None, outputs=[sidebar_row, txt])
+
+if __name__ == "__main__":
+    demo.launch()
+
 ```
 
 
