@@ -1686,6 +1686,111 @@ node = shutil.which("node")
 
 
 
+### fnmatch
+
+```
+# see huggingface/gradio440/gradio/components/file_explorer.py
+
+在 Python 中，`fnmatch.fnmatch` 函数可以用来匹配字符串（比如文件路径）是否与特定的模式（通常是文件通配符模式）匹配。它是文件名模式匹配的常用工具，并且使用 Unix shell 风格的通配符语法。
+
+代码示例：
+
+​```python
+valid_by_glob = fnmatch.fnmatch(full_path, self.glob)
+​```
+
+### 名词解释
+1. **`fnmatch.fnmatch` 的功能**：
+   - `fnmatch.fnmatch(filename, pattern)` 判断给定的 `filename` 是否与 `pattern`（通配符模式）相匹配。
+   - 返回值是布尔值，`True` 表示匹配；`False` 表示不匹配。
+
+2. **参数解释**：
+   - `filename`（示例中的 `full_path`）：要匹配的文件路径或名称。
+   - `pattern`（示例中的 `self.glob`）：通配符模式，支持的通配符包括：
+     - `"*"`：匹配任意数量的字符（包括空字符）。
+     - `"?"`：匹配任意单个字符。
+     - `"[seq]"`：匹配括号中列出的字符之一。
+     - `"[!seq]"` 或 `"[^seq]"`：匹配不在括号中的字符。
+
+3. **返回值**：
+   - 返回 `True` 或 `False`，分别表示匹配和不匹配。
+
+---
+
+### 示例分析
+假设：
+- `full_path` 是某个文件的完整路径，比如 `/home/user/data/test.txt`。
+- `self.glob` 是某个通配符模式，比如 `*.txt` 或 `/home/*/data/*.txt`。
+
+代码的功能是判断 `full_path` 是否与 `self.glob` 匹配。
+- 如果 `full_path` 符合 `self.glob` 中的通配符规则，`valid_by_glob` 将为 `True`。
+- 否则，`valid_by_glob` 将为 `False`。
+
+---
+
+### 示例代码
+
+1. 直接匹配文件名：
+​```python
+import fnmatch
+
+filename = "test.txt"
+pattern = "*.txt"
+
+valid_by_glob = fnmatch.fnmatch(filename, pattern)
+print(valid_by_glob)  # 输出：True
+​```
+
+2. 匹配文件路径中的某一部分：
+​```python
+import fnmatch
+
+full_path = "/home/user/data/test.txt"
+pattern = "/home/*/data/*.txt"
+
+valid_by_glob = fnmatch.fnmatch(full_path, pattern)
+print(valid_by_glob)  # 输出：True
+​```
+
+3. 使用否定模式：
+​```python
+import fnmatch
+
+full_path = "example.py"
+pattern = "!*.txt"  # 注意：`!` 或 `^` 否定需要额外小心处理
+
+valid_by_glob = fnmatch.fnmatch(full_path, pattern)  # 如果不符合，则为 False。
+​```
+
+---
+
+### 注意点
+- `fnmatch.fnmatch` 的匹配规则是 **大小写敏感** 的，具体取决于你的操作系统：
+  - 在大部分 Unix 系统上是大小写敏感的。
+  - 在 Windows 上默认是大小写不敏感的。
+- 如果需要强制实现大小写不敏感匹配，可以使用 `fnmatch.fnmatchcase` 函数。
+
+---
+
+### 扩展说明：`fnmatch.fnmatchcase`
+
+如果需要更严格的大小写敏感匹配，可以使用 `fnmatch.fnmatchcase`，其用法和 `fnmatch` 类似，但忽略系统对大小写的默认处理。
+
+​```python
+import fnmatch
+
+filename = "test.TXT"
+pattern = "*.txt"
+
+# 大小写敏感匹配
+valid_by_case = fnmatch.fnmatchcase(filename, pattern)
+print(valid_by_case)  # 输出：False
+​```
+
+```
+
+
+
 
 
 ## File
