@@ -803,6 +803,7 @@ https://manage.buyvm.net/login
 https://zhuanlan.zhihu.com/p/117547388
 
 https://blog.laoda.de/archives/vps-servarica
+https://linux.do/t/topic/273680
 http://www.vpsxxs.com/servarica20240716/
 	# 两个大盘鸡
 

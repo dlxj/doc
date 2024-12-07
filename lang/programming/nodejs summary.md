@@ -5823,6 +5823,8 @@ pip3 install --no-index --find-links=/tmp/packages -r requirments.txt
 
 [mount google driver](https://medium.com/@ajarus/how-to-mount-a-google-drive-directory-to-a-headless-linux-ubuntu-system-in-2-minutes-92e22218eb3e)
 
+https://github.com/abersheeran/r2-webdav  Cloudflare Workers + R2 免维护，10 GB 配置绰绰有余
+
 
 
 ```

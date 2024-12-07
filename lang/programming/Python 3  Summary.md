@@ -1686,6 +1686,111 @@ node = shutil.which("node")
 
 
 
+### fnmatch
+
+```
+# see huggingface/gradio440/gradio/components/file_explorer.py
+
+在 Python 中，`fnmatch.fnmatch` 函数可以用来匹配字符串（比如文件路径）是否与特定的模式（通常是文件通配符模式）匹配。它是文件名模式匹配的常用工具，并且使用 Unix shell 风格的通配符语法。
+
+代码示例：
+
+​```python
+valid_by_glob = fnmatch.fnmatch(full_path, self.glob)
+​```
+
+### 名词解释
+1. **`fnmatch.fnmatch` 的功能**：
+   - `fnmatch.fnmatch(filename, pattern)` 判断给定的 `filename` 是否与 `pattern`（通配符模式）相匹配。
+   - 返回值是布尔值，`True` 表示匹配；`False` 表示不匹配。
+
+2. **参数解释**：
+   - `filename`（示例中的 `full_path`）：要匹配的文件路径或名称。
+   - `pattern`（示例中的 `self.glob`）：通配符模式，支持的通配符包括：
+     - `"*"`：匹配任意数量的字符（包括空字符）。
+     - `"?"`：匹配任意单个字符。
+     - `"[seq]"`：匹配括号中列出的字符之一。
+     - `"[!seq]"` 或 `"[^seq]"`：匹配不在括号中的字符。
+
+3. **返回值**：
+   - 返回 `True` 或 `False`，分别表示匹配和不匹配。
+
+---
+
+### 示例分析
+假设：
+- `full_path` 是某个文件的完整路径，比如 `/home/user/data/test.txt`。
+- `self.glob` 是某个通配符模式，比如 `*.txt` 或 `/home/*/data/*.txt`。
+
+代码的功能是判断 `full_path` 是否与 `self.glob` 匹配。
+- 如果 `full_path` 符合 `self.glob` 中的通配符规则，`valid_by_glob` 将为 `True`。
+- 否则，`valid_by_glob` 将为 `False`。
+
+---
+
+### 示例代码
+
+1. 直接匹配文件名：
+​```python
+import fnmatch
+
+filename = "test.txt"
+pattern = "*.txt"
+
+valid_by_glob = fnmatch.fnmatch(filename, pattern)
+print(valid_by_glob)  # 输出：True
+​```
+
+2. 匹配文件路径中的某一部分：
+​```python
+import fnmatch
+
+full_path = "/home/user/data/test.txt"
+pattern = "/home/*/data/*.txt"
+
+valid_by_glob = fnmatch.fnmatch(full_path, pattern)
+print(valid_by_glob)  # 输出：True
+​```
+
+3. 使用否定模式：
+​```python
+import fnmatch
+
+full_path = "example.py"
+pattern = "!*.txt"  # 注意：`!` 或 `^` 否定需要额外小心处理
+
+valid_by_glob = fnmatch.fnmatch(full_path, pattern)  # 如果不符合，则为 False。
+​```
+
+---
+
+### 注意点
+- `fnmatch.fnmatch` 的匹配规则是 **大小写敏感** 的，具体取决于你的操作系统：
+  - 在大部分 Unix 系统上是大小写敏感的。
+  - 在 Windows 上默认是大小写不敏感的。
+- 如果需要强制实现大小写不敏感匹配，可以使用 `fnmatch.fnmatchcase` 函数。
+
+---
+
+### 扩展说明：`fnmatch.fnmatchcase`
+
+如果需要更严格的大小写敏感匹配，可以使用 `fnmatch.fnmatchcase`，其用法和 `fnmatch` 类似，但忽略系统对大小写的默认处理。
+
+​```python
+import fnmatch
+
+filename = "test.TXT"
+pattern = "*.txt"
+
+# 大小写敏感匹配
+valid_by_case = fnmatch.fnmatchcase(filename, pattern)
+print(valid_by_case)  # 输出：False
+​```
+
+```
+
+
+
 
 
 ## File
@@ -17623,6 +17728,8 @@ https://www.gradio.app/guides/developing-faster-with-reload-mode
 
 https://github.com/gradio-app/gradio/issues/9068
 
+https://github.com/gradio-app/gradio/issues/8875 模态对话框
+
 
 
 ```
@@ -19537,6 +19644,147 @@ js = """
     });
   </script>
 """
+```
+
+
+
+## modal
+
+https://github.com/gradio-app/gradio/issues/8875 模态对话框
+
+- https://huggingface.co/spaces/aliabid94/gradio_modal 自定义组件
+
+```python
+import gradio as gr
+import random
+
+# Chatbot demo with multimodal input (text, markdown, LaTeX, code blocks, image, audio, & video). Plus shows support for streaming text.
+css = """
+.modal {
+    position: absolute !important;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: fit-content !important;
+    height: fit-content !important;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-left: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content {
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+}
+"""
+color_map = {
+    "harmful": "crimson",
+    "neutral": "gray",
+    "beneficial": "green",
+}
+
+def html_src(harm_level):
+    return f"""
+<div style="display: flex; gap: 5px;">
+  <div style="background-color: {color_map[harm_level]}; padding: 2px; border-radius: 5px;">
+  {harm_level}
+  </div>
+</div>
+"""
+
+def print_like_dislike(x: gr.LikeData):
+    print(x.index, x.value, x.liked)
+    msg = "What was satisfying about this response?" if x.liked else "What was unsatisfying about this response?"
+    return gr.Row(visible=True), gr.Textbox(label=msg)
+
+def add_message(history, message):
+    for x in message["files"]:
+        history.append(((x,), None))
+    if message["text"] is not None:
+        history.append((message["text"], None))
+    return history, gr.MultimodalTextbox(value=None, interactive=False)
+
+def bot(history, response_type):
+    if response_type == "gallery":
+        history[-1][1] = gr.Gallery(
+            [
+                "https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png",
+                "https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png",
+            ]
+        )
+    elif response_type == "image":
+        history[-1][1] = gr.Image(
+            "https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png"
+        )
+    elif response_type == "video":
+        history[-1][1] = gr.Video(
+            "https://github.com/gradio-app/gradio/raw/main/demo/video_component/files/world.mp4"
+        )
+    elif response_type == "audio":
+        history[-1][1] = gr.Audio(
+            "https://github.com/gradio-app/gradio/raw/main/test/test_files/audio_sample.wav"
+        )
+    elif response_type == "html":
+        history[-1][1] = gr.HTML(
+            html_src(random.choice(["harmful", "neutral", "beneficial"]))
+        )
+    else:
+        history[-1][1] = "Cool!"
+    return history
+
+with gr.Blocks(fill_height=True, css=css) as demo:
+    chatbot = gr.Chatbot(
+        elem_id="chatbot",
+        bubble_full_width=False,
+        scale=1,
+    )
+    response_type = gr.Radio(
+        [
+            "image",
+            "text",
+            "gallery",
+            "video",
+            "audio",
+            "html",
+        ],
+        value="text",
+        label="Response Type",
+    )
+
+    chat_input = gr.MultimodalTextbox(
+        interactive=True,
+        placeholder="Enter message or upload file...",
+        show_label=False,
+    )
+
+    chat_msg = chat_input.submit(
+        add_message, [chatbot, chat_input], [chatbot, chat_input]
+    )
+    bot_msg = chat_msg.then(
+        bot, [chatbot, response_type], chatbot, api_name="bot_response"
+    )
+    bot_msg.then(lambda: gr.MultimodalTextbox(interactive=True), None, [chat_input])
+
+    sidebar_row = gr.Row(visible=False, elem_classes="modal")
+    with sidebar_row:
+        with gr.Column(elem_classes="modal-content"):
+            gr.Markdown("Please provide details: (optional)!")
+            txt = gr.Textbox(interactive=True)
+            modalButton = gr.Button("Submit")
+            modalButton.click(lambda: gr.Row(visible=False), None, [sidebar_row])
+
+    chatbot.like(print_like_dislike, None, outputs=[sidebar_row, txt])
+
+if __name__ == "__main__":
+    demo.launch()
+
 ```
 
 
@@ -22020,6 +22268,81 @@ gradio_4290/js/imageeditor/shared/tools/Cropper.svelte
 \- `as meta` 意味着在每次迭代中，当前的数组元素将被命名为 `meta` ，使得您可以在`each`块内部访问它。
 
 \- `(meta.id)` 是一个可选的键表达式，它用来优化列表的更新。当数据发生变化时，Svelte将使用这个键来最小化DOM的更新，因为它能够识别哪些项是新加入的，哪些项已经移除，从而只对有实际变动的项目进行DOM操作。
+
+
+
+### svelte:self
+
+```
+# see gradio440/js/fileexplorer/shared/FileTree.svelte
+使用 <svelte:self> 来递归渲染组件，也就是说，组件可以在其内部调用自身（递归调用）。这种用法通常见于渲染递归数据结构的场景，例如处理文件树、嵌套的列表或菜单等。
+
+			{#if type === "folder" && opened_folders.includes(i)}
+				<svelte:self
+					path={[...path, name]}
+					selected_files={selected_files
+						.filter((x) => x[0] === name)
+						.map((x) => x.slice(1))}
+					selected_folders={selected_folders
+						.filter((x) => x[0] === name)
+						.map((x) => x.slice(1))}
+					is_selected_entirely={selected_folders.some(
+						(x) => x[0] === name && x.length === 1
+					)}
+					{interactive}
+					{ls_fn}
+					{file_count}
+					valid_for_selection={valid}
+					on:check
+				/>
+			{/if}
+
+```
+
+
+
+```
+<script>
+  export let node;
+</script>
+
+<ul>
+  <li>
+    {node.name}
+    {#if node.children}
+      <ul>
+        {#each node.children as child}
+          <svelte:self node={child} />
+        {/each}
+      </ul>
+    {/if}
+  </li>
+</ul>
+
+
+const tree = {
+  name: "Root",
+  children: [
+    {
+      name: "Folder 1",
+      children: [
+        { name: "File 1.1" },
+        { name: "File 1.2" }
+      ]
+    },
+    {
+      name: "Folder 2",
+      children: [
+        { name: "File 2.1" },
+        { name: "Folder 2.2", children: [{ name: "File 2.2.1" }] }
+      ]
+    }
+  ]
+};
+
+```
+
+
 
 
 
