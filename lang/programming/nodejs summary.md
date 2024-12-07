@@ -3655,6 +3655,31 @@ pip install -U proxynt
 
 
 
+```
+
+自己加个nginx反向代理, 客户端配连接url的时候写wss就行
+
+server{
+    listen       443  ssl;
+    server_name    jaaaaaa.com;
+    ssl_certificate /helloxxxxxxxx.crt;
+    ssl_certificate_key /helloxxxxx.key;
+
+   location /websocket_path {
+            proxy_pass http://127.0.0.1:18888;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+        }
+
+}
+  
+```
+
+
+
+
+
 #### ops
 
 https://github.com/zero-rp/ops
