@@ -802,6 +802,10 @@ https://manage.buyvm.net/login
 # 测速脚本
 https://zhuanlan.zhihu.com/p/117547388
 
+https://clients.servarica.com/
+	si***@gmail.com pwd 同qq
+	# 4G + 200G ssd + 4T hhd
+
 https://linux.do/t/topic/286858
 https://blog.laoda.de/archives/vps-servarica
 https://linux.do/t/topic/273680
