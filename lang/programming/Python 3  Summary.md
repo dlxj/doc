@@ -15527,6 +15527,248 @@ df.to_csv(path_or_buf=new_all_tsv, sep='\t', header=True, index=False)
 
 
 
+## 按行遍历
+
+```python
+# see huggingface/rwkv5-jp-trimvd/vector_sqlite.py
+
+	for idx2, row in g.iterrows():
+
+	def one_task(item):
+            text = item['s_jp']            
+            trans, err = tr(text)
+            if err:
+                print(f'Error: translate {err}')
+                item['s_zh'] = ''
+            else:
+                item['s_zh'] = trans.strip()
+            return item
+        
+        def translate_chunk(chunk):
+            """
+            开多少个线程同时请求 Sakurallm api 翻译
+            """
+            batch_size = 3
+            group = [ chunk.loc[i:i+batch_size - 1] for i in range(0, len(chunk), batch_size) ]
+
+            import threading
+            import queue
+            class MyThread(threading.Thread): 
+                def __init__(self, item, queue): 
+                    threading.Thread.__init__(self) 
+                    self.item = item
+                    self.queue = queue
+
+                def run(self): 
+                    result = one_task(self.item)
+                    self.queue.put( result )
+
+            results = []
+            for idx, g in enumerate(group):
+                threads = []
+                q = queue.Queue() 
+                                
+                for idx2, row in g.iterrows():
+                    thread = MyThread(row, q)
+                    thread.start()
+                    threads.append(thread)
+
+                for thread in threads:
+                    thread.join()
+                
+                
+                while not q.empty():
+                    results.append( q.get() )
+                        # 得到所有线程的输出结果
+                
+                print( f'tranlated group: {idx+1} / {len(group)}' )
+
+            pass
+            # results = sorted(results, key=lambda r:(
+            #     r["begintime"]
+            # ))
+            
+            # for idx, item in enumerate(results):        
+            #     if item['translate'].strip():
+            #         pass
+
+        # see huggingface/rwkv5-jp-trimvd/translate.py
+        # from kotoba_asr import convert_audio, convert_flac_to_aac
+        # from kotoba_asr import rec2
+
+        
+
+        import pandas as pd
+        from tqdm import tqdm
+        import cudf.pandas
+        tqdm.pandas() 
+        cudf.pandas.install()
+            # pandas 加载扩展
+        
+        
+
+        # from joblib import Parallel, delayed
+        # import cudf as pd
+        import tarfile
+
+        
+        # # 示例数据
+        # data = {'pth_audio': ['tar1/audio1.wav', 'tar2/audio2.wav', 'tar3/audio3.wav']}
+        # df = pd.DataFrame(data)
+
+        # # 定义函数
+        # def split_name(pth_audio):
+        #     tar_name, audioname = pth_audio.split('/')
+        #     return {"tar_name": tar_name, "audioname": audioname}
+
+        # # 并行化处理
+        # results = Parallel(n_jobs=-1)(delayed(split_name)(pth_audio) for pth_audio in df['pth_audio'])
+
+        # # 将结果转换为 DataFrame 并合并
+        # results_df = pd.DataFrame(results)
+        # df = pd.concat([df, results_df], axis=1)
+
+        # # 查看结果
+        # print(df)
+        
+        tar_root = '/mnt/y/ai/reazonspeech_Dataset' # '/mnt/d/'
+        db_root = '/mnt/y/ai/reazonspeechdb'
+        parts_root = os.path.join( db_root , 'parts' )
+        if not os.path.exists(db_root):
+            os.mkdir(db_root)
+        
+        if not os.path.exists(parts_root):
+            os.mkdir(parts_root)
+
+        all_tsv = str( Path(tar_root) / 'all.tsv' )
+        db_all_tsv = str( Path(db_root) / 'all.tsv' )
+        db_all_translate_tsv = str( Path(db_root) / 'all_translate.tsv' )
+
+        def convert_allcsv(new_all_tsv, all_tsv):
+
+            if os.path.exists(new_all_tsv):
+                return
+
+            df = pd.read_csv(all_tsv, sep='\t', header=None) # encoding='utf-8'
+            df.columns = ['pth_audio', 's_jp']
+
+            df = df[:50000]
+
+            # df.set_index('pth_audio', inplace=True)    # 设置为索引
+            # result = df.loc['000/00410d6d45167.flac']  # 加速查询
+
+
+            # df[df['pth_audio'] == '000/00410d6d45167.flac']
+
+            def split_name(pth_audio):
+                tar_name, audioname = pth_audio.split('/')
+                return pd.Series({ "tar_name":tar_name, "audioname": audioname })
+            df[['tar_name', 'audioname']] = df['pth_audio'].progress_apply(split_name)
+
+            # 使用正则表达式提取 tar_name 和 audioname
+            # df[['tar_name', 'audioname']] = df['pth_audio'].str.extract(r'([^/]+)/(.+)')
+
+            # df.set_index('key', inplace=True)  # 设置为索引
+
+
+            df = df.astype({'tar_name': 'string', 'audioname': 'string'})
+            df.to_csv(path_or_buf=new_all_tsv, sep='\t', header=True, index=False)
+
+
+        convert_allcsv(db_all_tsv, all_tsv)
+
+        df = pd.read_csv(db_all_tsv, sep='\t', dtype={'tar_name': str})
+        # df['original_index'] = df.index    # 保存原始索引为一列
+        # df['key'] = df['pth_audio']        # 复制一列用作索引
+        # df.set_index('key', inplace=True)  # 整数索引失效, key 列消失
+        # row = df.loc['000/00410d6d45167.flac']
+        # print( row['s_jp'] )  # row['key'] 会出错
+        # df.set_index('original_index', inplace=True)      # original_index 消失
+        # print( df.loc[0] ) 
+
+        # df = df.astype({'tar_name': 'string', 'audioname': 'string'})
+        # df.to_csv(path_or_buf='all.csv', sep='\t', header=True, index=False)
+
+        grouped = df.groupby('tar_name')
+        chunks = [group for _, group in grouped]
+
+        # 查看形成的 chunks
+        for chunk in chunks:
+            # chunk.set_index('original_index', inplace=True)
+            # chunk.to_csv(path_or_buf=db_all_translate_tsv, sep='\t', header=True, index=False)
+            # print(chunk)
+            # print('-' * 20)
+
+            tar_name = chunk['tar_name'][0]
+            pth_parts_tsv = str( Path(parts_root) / f'{tar_name}.tsv' )
+
+            chunk['s_zh'] = ''
+
+            translate_chunk(chunk)
+
+            pass
+```
+
+
+
+## 合并行数组
+
+```
+        def translate_chunk(chunk):
+            """
+            开多少个线程同时请求 Sakurallm api 翻译
+            """
+            batch_size = 3
+            group = [ chunk.loc[i:i+batch_size - 1] for i in range(0, len(chunk), batch_size) ]
+
+            import threading
+            import queue
+            class MyThread(threading.Thread): 
+                def __init__(self, item, queue): 
+                    threading.Thread.__init__(self) 
+                    self.item = item
+                    self.queue = queue
+
+                def run(self): 
+                    result = one_task(self.item)
+                    self.queue.put( result )
+
+            results = []
+            for idx, g in enumerate(group):
+                threads = []
+                q = queue.Queue() 
+                                
+                for idx2, row in g.iterrows():
+                    row['section'] = idx2
+                    thread = MyThread(row, q)
+                    thread.start()
+                    threads.append(thread)
+
+                for thread in threads:
+                    thread.join()
+                
+                
+                while not q.empty():
+                    results.append( q.get() )
+                        # 得到所有线程的输出结果
+                
+                # results = sorted(results, key=lambda r:(
+                #     r['section']
+                # ))
+
+                print( f'tranlated group: {idx+1} / {len(group)}' )
+
+            results = sorted(results, key=lambda r:(
+                r['section']
+            ))
+
+            # dataframe = pd.concat( results, axis=0 )
+            dataframe = pd.DataFrame(results)
+            return dataframe
+```
+
+
+
 
 
 ## 遍历列更效率高
@@ -15675,6 +15917,183 @@ def split_name(pth_audio):
     return pd.Series({ "key":pth_audio, "tar_name":tar_name, "audioname":audioname })
 
 df[['key', 'tar_name', 'audioname']] = df['pth_audio'].progress_apply(split_name)
+
+
+        def translate_chunk(chunk):
+            """
+            开多少个线程同时请求 Sakurallm api 翻译
+            """
+            batch_size = 3
+            group = [ chunk.loc[i:i+batch_size - 1] for i in range(0, len(chunk), batch_size) ]
+
+            import threading
+            import queue
+            class MyThread(threading.Thread): 
+                def __init__(self, item, queue): 
+                    threading.Thread.__init__(self) 
+                    self.item = item
+                    self.queue = queue
+
+                def run(self): 
+                    result = one_task(self.item)
+                    self.queue.put( result )
+
+            results = []
+            for idx, g in enumerate(group):
+                threads = []
+                q = queue.Queue() 
+                                
+                for idx2, row in g.iterrows():
+                    row['section'] = idx2
+                    thread = MyThread(row, q)
+                    thread.start()
+                    threads.append(thread)
+
+                for thread in threads:
+                    thread.join()
+                
+                
+                while not q.empty():
+                    results.append( q.get() )
+                        # 得到所有线程的输出结果
+                
+                # results = sorted(results, key=lambda r:(
+                #     r['section']
+                # ))
+
+                print( f'tranlated group: {idx+1} / {len(group)}' )
+
+            results = sorted(results, key=lambda r:(
+                r['section']
+            ))
+
+            # dataframe = pd.concat( results, axis=0 )
+            dataframe = pd.DataFrame(results)
+            return dataframe
+            
+            # for idx, item in enumerate(results):        
+            #     if item['translate'].strip():
+            #         pass
+
+        # see huggingface/rwkv5-jp-trimvd/translate.py
+        # from kotoba_asr import convert_audio, convert_flac_to_aac
+        # from kotoba_asr import rec2
+
+        
+
+        import pandas as pd
+        from tqdm import tqdm
+        import cudf.pandas
+        tqdm.pandas() 
+        cudf.pandas.install()
+            # pandas 加载扩展
+        
+        
+
+        # from joblib import Parallel, delayed
+        # import cudf as pd
+        import tarfile
+
+        
+        # # 示例数据
+        # data = {'pth_audio': ['tar1/audio1.wav', 'tar2/audio2.wav', 'tar3/audio3.wav']}
+        # df = pd.DataFrame(data)
+
+        # # 定义函数
+        # def split_name(pth_audio):
+        #     tar_name, audioname = pth_audio.split('/')
+        #     return {"tar_name": tar_name, "audioname": audioname}
+
+        # # 并行化处理
+        # results = Parallel(n_jobs=-1)(delayed(split_name)(pth_audio) for pth_audio in df['pth_audio'])
+
+        # # 将结果转换为 DataFrame 并合并
+        # results_df = pd.DataFrame(results)
+        # df = pd.concat([df, results_df], axis=1)
+
+        # # 查看结果
+        # print(df)
+        
+        tar_root = '/mnt/y/ai/reazonspeech_Dataset' # '/mnt/d/'
+        db_root = '/mnt/y/ai/reazonspeechdb'
+        parts_root = os.path.join( db_root , 'parts' )
+        if not os.path.exists(db_root):
+            os.mkdir(db_root)
+        
+        if not os.path.exists(parts_root):
+            os.mkdir(parts_root)
+
+        all_tsv = str( Path(tar_root) / 'all.tsv' )
+        db_all_tsv = str( Path(db_root) / 'all.tsv' )
+        db_all_translate_tsv = str( Path(db_root) / 'all_translate.tsv' )
+
+        def convert_allcsv(new_all_tsv, all_tsv):
+
+            if os.path.exists(new_all_tsv):
+                return
+
+            df = pd.read_csv(all_tsv, sep='\t', header=None) # encoding='utf-8'
+            df.columns = ['pth_audio', 's_jp']
+
+            df = df[:50000]
+
+            # df.set_index('pth_audio', inplace=True)    # 设置为索引
+            # result = df.loc['000/00410d6d45167.flac']  # 加速查询
+
+
+            # df[df['pth_audio'] == '000/00410d6d45167.flac']
+
+            def split_name(pth_audio):
+                tar_name, audioname = pth_audio.split('/')
+                return pd.Series({ "tar_name":tar_name, "audioname": audioname })
+            df[['tar_name', 'audioname']] = df['pth_audio'].progress_apply(split_name)
+
+            # 使用正则表达式提取 tar_name 和 audioname
+            # df[['tar_name', 'audioname']] = df['pth_audio'].str.extract(r'([^/]+)/(.+)')
+
+            # df.set_index('key', inplace=True)  # 设置为索引
+
+
+            df = df.astype({'tar_name': 'string', 'audioname': 'string'})
+            df.to_csv(path_or_buf=new_all_tsv, sep='\t', header=True, index=False)
+
+
+        convert_allcsv(db_all_tsv, all_tsv)
+
+        df = pd.read_csv(db_all_tsv, sep='\t', dtype={'tar_name': str})
+        # df['original_index'] = df.index    # 保存原始索引为一列
+        # df['key'] = df['pth_audio']        # 复制一列用作索引
+        # df.set_index('key', inplace=True)  # 整数索引失效, key 列消失
+        # row = df.loc['000/00410d6d45167.flac']
+        # print( row['s_jp'] )  # row['key'] 会出错
+        # df.set_index('original_index', inplace=True)      # original_index 消失
+        # print( df.loc[0] ) 
+
+        # df = df.astype({'tar_name': 'string', 'audioname': 'string'})
+        # df.to_csv(path_or_buf='all.csv', sep='\t', header=True, index=False)
+
+        grouped = df.groupby('tar_name')
+        chunks = [group for _, group in grouped]
+
+        # 查看形成的 chunks
+        for chunk in chunks:
+            # chunk.set_index('original_index', inplace=True)
+            # chunk.to_csv(path_or_buf=db_all_translate_tsv, sep='\t', header=True, index=False)
+            # print(chunk)
+            # print('-' * 20)
+
+            tar_name = chunk['tar_name'][0]
+            pth_parts_tsv = str( Path(parts_root) / f'{tar_name}.tsv' )
+
+            chunk['s_zh'] = ''
+
+            dataframes = translate_chunk(chunk[:5])
+
+            dataframes.to_csv(path_or_buf=pth_parts_tsv, sep='\t', header=True, index=False)
+
+            print( 'one task done.' )
+
+        print( 'all task done.' )
 
 ```
 
