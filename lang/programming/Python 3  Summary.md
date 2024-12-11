@@ -15769,6 +15769,14 @@ df.to_csv(path_or_buf=new_all_tsv, sep='\t', header=True, index=False)
 
 
 
+## 取某列的第一个元素
+
+```
+tar_name = chunk['tar_name'].iloc[0]
+```
+
+
+
 
 
 ## 遍历列更效率高
