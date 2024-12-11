@@ -15517,6 +15517,16 @@ df = pd.read_csv(csv, sep='\t', header=None, encoding='utf-8') # dtype=dtype_dic
 
 
 
+### 读写指定类型
+
+```
+# 避免 '000' 变成整型的 0
+df = df.astype({'tar_name': 'string', 'audioname': 'string'})
+df.to_csv(path_or_buf=new_all_tsv, sep='\t', header=True, index=False)
+```
+
+
+
 
 
 ## 遍历列更效率高
