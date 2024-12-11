@@ -15644,12 +15644,40 @@ result = df.loc['000/00410d6d45167.flac']  # 加速查询
 ## 进度条 & cudf 扩展
 
 ```python
-        import pandas as pd
-        from tqdm import tqdm
-        import cudf.pandas
-        tqdm.pandas() 
-        cudf.pandas.install()
-            # pandas 加载扩展
+# see huggingface/rwkv5-jp-trimvd/vector_sqlite.py
+import pandas as pd
+from tqdm import tqdm
+import cudf.pandas
+tqdm.pandas() 
+cudf.pandas.install()
+# pandas 加载扩展
+
+def split_name(pth_audio):
+    tar_name, audioname = (pth_audio[:3], pth_audio[4:])  # pth_audio.split('/')
+    return pd.Series({ "key":pth_audio, "tar_name":tar_name, "audioname":audioname })
+
+df[['key', 'tar_name', 'audioname']] = df['pth_audio'].progress_apply(split_name)
+
+```
+
+
+
+## 分块读取
+
+```
+chunksize = 1_000_000       # 根据情况写每次读取的量
+dtype_map = {'a':np.uint8 } # 用最节省空间又能完全保证信息量的数据类型
+
+# chunks不是dataframe的集合，而是一个TextFileReader对象，文件还没有读
+# 后面逐个遍历时，一个一个地读
+chunks = pd.read_csv( 'large.csv', chunksize=chunksize, dtype=dtype_map ) #
+
+# 然后每个chunk进行一些压缩内存的操作，比如全都转成sparse类型
+# string类型比如，学历，可以转化成sparse的category变量，可以省很多内存
+sdf = pd.concat( chunk.to_sparse(fill_value=0.0) for chunk in chunks ) #很稀疏有可能可以装的下 
+
+#然后在sparse数据类型上做计算
+sdf.sum()
 ```
 
 
