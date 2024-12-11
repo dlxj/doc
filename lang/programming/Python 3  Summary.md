@@ -15773,6 +15773,10 @@ df.to_csv(path_or_buf=new_all_tsv, sep='\t', header=True, index=False)
 
 ```
 tar_name = chunk['tar_name'].iloc[0]
+
+chunk.iloc[:20]
+	# 前 20 行
+
 ```
 
 
