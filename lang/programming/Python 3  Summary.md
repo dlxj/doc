@@ -15607,9 +15607,17 @@ df.to_excel('nlpp_dialog_aacinfo.xlsx', sheet_name='sheet1', index=False)
 
 ```
 # see huggingface/rwkv5-jp-trimvd/vector_sqlite.py
-df.set_index('pth_audio', inplace=True)    # 设置为索引
-result = df.loc['000/00410d6d45167.flac']  # 加速查询
-	# 注意：转为索引这一列就不存在了
+df = pd.read_csv(db_all_tsv, sep='\t')
+df['original_index'] = df.index    # 保存原始索引为一列
+df['key'] = df['pth_audio']        # 复制一列用作索引
+df.set_index('key', inplace=True)  # 整数索引失效, key 列消失
+row = df.loc['000/00410d6d45167.flac']
+print( row['s_jp'] )  # row['key'] 会出错
+df.set_index('original_index', inplace=True)      # original_index 消失
+print( df.loc[0] ) 
+
+df[df['pth_audio'] == '000/00410d6d45167.flac']
+	# 性能不太行
 
 ```
 
