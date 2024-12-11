@@ -2027,6 +2027,40 @@ for data in data_loader:
 
 
 
+### read tar
+
+```python
+import tarfile
+
+# 打开 tar 文件（无需解压）
+tar_file_path = 'example.tar'
+with tarfile.open(tar_file_path, 'r') as tar:
+    # 列出 tar 文件中的所有文件名
+    print("文件列表:")
+    for member in tar.getmembers():
+        print(member.name)
+    
+    # 如果想读取某个文件内容，比如读取名为 'test.txt' 的文件
+    file_name_to_read = 'test.txt'
+    if file_name_to_read in tar.getnames():  # 检查目标文件是否在压缩包中
+        extracted_file = tar.extractfile(file_name_to_read)  # 提取文件到内存中
+        if extracted_file:
+            file_content = extracted_file.read()  # 读取文件内容
+            print(f"\n文件 '{file_name_to_read}' 的内容:")
+            print(file_content.decode('utf-8'))  # 假设文件是 UTF-8 编码，解码后打印
+    else:
+        print(f"\n文件 '{file_name_to_read}' 不在压缩包中。")
+
+
+tarfile.open('example.tar.gz', 'r:gz') 用于读取 .tar.gz
+tarfile.open('example.tar.bz2', 'r:bz2') 用于读取 .tar.bz2
+
+```
+
+
+
+
+
 ### 读最后一个非空行
 
 ```
@@ -15565,6 +15599,44 @@ df['aac_info'] = df['seg'].apply(match)
 
 
 df.to_excel('nlpp_dialog_aacinfo.xlsx', sheet_name='sheet1', index=False)
+```
+
+
+
+## 列索引
+
+```
+# see huggingface/rwkv5-jp-trimvd/vector_sqlite.py
+df.set_index('pth_audio', inplace=True)    # 设置为索引
+result = df.loc['000/00410d6d45167.flac']  # 加速查询
+	# 注意：转为索引这一列就不存在了
+
+```
+
+
+
+## 并行化
+
+```
+		# 重型任务才值得
+		from joblib import Parallel, delayed
+
+
+        # 示例数据
+        data = {'pth_audio': ['tar1/audio1.wav', 'tar2/audio2.wav', 'tar3/audio3.wav']}
+        df = pd.DataFrame(data)
+
+        # 定义函数
+        def split_name(pth_audio):
+            tar_name, audioname = pth_audio.split('/')
+            return {"tar_name": tar_name, "audioname": audioname}
+
+        # 并行化处理
+        results = Parallel(n_jobs=-1)(delayed(split_name)(pth_audio) for pth_audio in df['pth_audio'])
+
+        # 将结果转换为 DataFrame 并合并
+        results_df = pd.DataFrame(results)
+        df = pd.concat([df, results_df], axis=1)
 ```
 
 
