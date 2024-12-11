@@ -15700,6 +15700,22 @@ sdf.sum()
 
 
 
+## 分组但是不统计
+
+```
+        grouped = df.groupby('tar_name')
+
+        # 遍历分组形成一个个 chunks，并存储为 DataFrame
+        chunks = [group for _, group in grouped]
+
+        # 查看形成的 chunks
+        for chunk in chunks:
+            print(chunk)  # chunk 是 dataframe
+            print('-' * 20)
+```
+
+
+
 
 
 ## 相似度
