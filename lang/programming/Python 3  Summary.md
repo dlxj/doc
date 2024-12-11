@@ -16023,6 +16023,16 @@ see huggingface/NLPP_Audio/translate_ak48.py
 
 
 
+## extract
+
+```
+# 使用正则表达式提取 tar_name 和 audioname
+df[['tar_name', 'audioname']] = df['pth_audio'].str.extract(r'([^/]+)/(.+)')
+
+```
+
+
+
 
 
 ## DataFrame
