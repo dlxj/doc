@@ -15641,6 +15641,19 @@ result = df.loc['000/00410d6d45167.flac']  # 加速查询
 
 
 
+## 进度条 & cudf 扩展
+
+```python
+        import pandas as pd
+        from tqdm import tqdm
+        import cudf.pandas
+        tqdm.pandas() 
+        cudf.pandas.install()
+            # pandas 加载扩展
+```
+
+
+
 
 
 ## 相似度
