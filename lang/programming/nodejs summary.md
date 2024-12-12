@@ -34207,6 +34207,12 @@ https://github.com/jarvisx17/ASR
 
 
 
+# seamless-m4t
+
+https://github.com/facebookresearch/seamless_communication
+
+
+
 
 
 # whisperX
