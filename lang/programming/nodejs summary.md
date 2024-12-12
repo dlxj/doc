@@ -34211,7 +34211,7 @@ https://github.com/jarvisx17/ASR
 
 https://github.com/facebookresearch/seamless_communication
 
-
+https://github.com/ggerganov/whisper.cpp
 
 
 
