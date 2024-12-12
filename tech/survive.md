@@ -415,6 +415,9 @@ see huggingface\dict\广苏话在线发音.md
 
 # 俄语
 
+- https://en.openrussian.org/
+  - https://forum.freemdict.com/t/topic/19881
+
 - http://www.simplecd.cc/page-ZbZPxeYm.html
 
 - https://www.wanmen.org/courses/586d23485f07127674135d2a/lectures/586d23535f07127674158989
