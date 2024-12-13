@@ -455,6 +455,7 @@ see huggingface/rwkv5-jp-trimvd/vector_sqlite.py -> insertJPdict
 https://github.com/mmjang/mdict-query
 https://github.com/terasum/medict 成品 app
 https://github.com/liuyug/mdict-utils
+https://juejin.cn/post/6905260258101788680 竖排文本
 
 
 
