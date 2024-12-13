@@ -32889,6 +32889,8 @@ https://github.com/fishaudio/fish-speech
 
 - https://github.com/fishaudio/fish-speech  **pyqt6 前端**
 
+https://github.com/myshell-ai/MeloTTS  支持很多语言 可以变速
+
 https://linux.do/t/topic/127781 tts 汇总
 
 
