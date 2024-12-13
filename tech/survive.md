@@ -458,13 +458,16 @@ https://github.com/liuyug/mdict-utils
 
 
 
+# mdict -q '居る' '/mnt/y/huggingface/dict/mdict/JPCN/明镜日汉双解辞典/明镜日汉双解辞典.mdx'    
+
+
 from mdict_query import IndexBuilder
 builder = IndexBuilder('/mnt/y/huggingface/dict/mdict/JPCN/明镜日汉双解辞典/明镜日汉双解辞典.mdx')
 
 result_text = builder.mdx_lookup('居る', ignorecase = True)
 
-result_text2 = builder.mdx_lookup('おる', ignorecase = True)
-
+result_text2 = builder.mdx_lookup('░おる░【居る】🗏0444№7297', ignorecase = True)
+	# 它有跳转
 
 ```
 
