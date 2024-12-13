@@ -416,8 +416,9 @@ see huggingface\dict\广苏话在线发音.md
 # 俄语
 
 - https://en.openrussian.org/
-  - https://forum.freemdict.com/t/topic/19881
-
+  
+- https://forum.freemdict.com/t/topic/19881
+  
 - http://www.simplecd.cc/page-ZbZPxeYm.html
 
 - https://www.wanmen.org/courses/586d23485f07127674135d2a/lectures/586d23535f07127674158989
@@ -444,6 +445,28 @@ see huggingface\dict\广苏话在线发音.md
 
 - https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=44885&extra=page%3D1%26filter%3Dtypeid%26typeid%3D71
 - https://www.pdawiki.com/forum/forum.php?mod=viewthread&tid=36415
+
+
+
+```
+
+see huggingface/rwkv5-jp-trimvd/vector_sqlite.py -> insertJPdict
+
+https://github.com/mmjang/mdict-query
+https://github.com/terasum/medict 成品 app
+https://github.com/liuyug/mdict-utils
+
+
+
+from mdict_query import IndexBuilder
+builder = IndexBuilder('/mnt/y/huggingface/dict/mdict/JPCN/明镜日汉双解辞典/明镜日汉双解辞典.mdx')
+
+result_text = builder.mdx_lookup('居る', ignorecase = True)
+
+result_text2 = builder.mdx_lookup('おる', ignorecase = True)
+
+
+```
 
 
 
