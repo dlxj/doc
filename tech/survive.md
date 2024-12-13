@@ -457,6 +457,15 @@ https://github.com/terasum/medict 成品 app
 https://github.com/liuyug/mdict-utils
 https://juejin.cn/post/6905260258101788680 竖排文本
 
+# pip install unidic
+	# proxychains4 python -m unidic download
+	# https://github.com/polm/unidic-py
+	
+# pip install mecab-python3
+	# https://github.com/SamuraiT/mecab-python3
+	
+# pip install mecab-ko
+	# https://github.com/NoUnique/pymecab-ko
 
 
 # mdict -q '居る' '/mnt/y/huggingface/dict/mdict/JPCN/明镜日汉双解辞典/明镜日汉双解辞典.mdx'    

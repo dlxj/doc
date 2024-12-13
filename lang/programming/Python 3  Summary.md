@@ -5067,6 +5067,63 @@ __public_key = b'-----BEGIN PUBLIC KEY-----\n' \
 
 
 
+### 每个字符都带属性
+
+```python
+        class JSONString(str):
+            def __new__(cls, value, char_metadata=None):
+                # 初始化 string 的实际值
+                obj = super().__new__(cls, value)
+                
+                # 关联每个字符的元数据（JSON）
+                if char_metadata is None:
+                    char_metadata = [{} for _ in value]  # 默认空元数据
+                elif len(char_metadata) != len(value):
+                    raise ValueError("char_metadata 的长度必须与字符串长度一致")
+                
+                obj.char_metadata = char_metadata
+                return obj
+
+            def get_metadata(self, index):
+                """返回字符串中某个字符的 JSON 元数据"""
+                if 0 <= index < len(self):
+                    return self.char_metadata[index]
+                else:
+                    raise IndexError("字符串索引超出范围")
+
+            def set_metadata(self, index, metadata):
+                """设置字符串中某个字符的 JSON 元数据"""
+                if 0 <= index < len(self):
+                    self.char_metadata[index] = metadata
+                else:
+                    raise IndexError("字符串索引超出范围")
+
+            def __repr__(self):
+                """为了更容易调试，显示字符串和元数据"""
+                return f"JSONString(value={super().__repr__()}, metadata={self.char_metadata})"
+
+        value = "hello"
+        metadata = [
+            {"char": "h", "type": "letter"},
+            {"char": "e", "type": "letter"},
+            {"char": "l", "type": "letter"},
+            {"char": "l", "type": "letter"},
+            {"char": "o", "type": "letter"},
+        ]
+
+        js = JSONString(value, metadata)
+
+        print(js)  # 打印整个对象
+        print(js[1])  # 像普通字符串那样操作，返回 'e'
+        print(js.get_metadata(1))  # 获得索引为 1 的字符的 JSON 元数据
+
+        # 设置新的元数据
+        js.set_metadata(1, {"char": "e", "type": "vowel"})
+        print(js.get_metadata(1))
+```
+
+
+
 
 
 ### format
