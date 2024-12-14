@@ -3422,6 +3422,7 @@ https://github.com/shadowsocks/shadowsocks-rust
 ```
 
 # see echodict/README.md -> 代理订阅地址 -> shadowsocks-rust
+	# 实际配置和部署看这里
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &&
 source ~/.cargo/env
