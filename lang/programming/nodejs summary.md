@@ -3420,6 +3420,12 @@ https://github.com/shadowsocks/shadowsocks-rust
 - https://gist.github.com/zombie110year/13b854d2919bbdd9fa975d7283d634f5
 
 ```
+
+# see echodict/README.md -> 代理订阅地址 -> shadowsocks-rust
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &&
+source ~/.cargo/env
+
 cargo install shadowsocks-rust
 
 Installed package `shadowsocks-rust v1.21.0` (executables `sslocal`, `ssmanager`, `ssserver`, `ssservice`, `ssurl`)
