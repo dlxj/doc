@@ -37723,6 +37723,17 @@ Visual Studio 2022
 
 
 
+```
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &&
+source ~/.cargo/env
+
+```
+
+
+
+
+
 ### ninja pandora开源替代 必看
 
 [ninja](https://github.com/gngpp/ninja)
