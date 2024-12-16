@@ -4679,7 +4679,7 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   git clone https://huggingface.co/datasets/dlxjj/NLPP_vector
   	# 本地先拉
   	# 复制已有大文件, 提交本地大文件
-  	# 再同步，就不用重新拉远程大文件了
+  	# 再同步，就不用重新拉远程大文件了（不需要同步）
   
   huggingface-cli download --repo-type dataset OOPPEENN/Galgame_Dataset --local-dir Galgame_Dataset
   	# 不要用git直接拉仓库，git lfs会占用双倍空间！
