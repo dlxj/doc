@@ -2677,6 +2677,8 @@ yum install nginx  && \
 nginx -t && \
 systemctl restart nginx && \
 nginx -s reload
+	# sudo setenforce 0 权限错误运行这个
+
 
 systemctl restart  postgresql-13 && systemctl status postgresql-13 && systemctl stop firewalld && pm2 resurrect && systemctl restart nginx && nginx -s reload
 
