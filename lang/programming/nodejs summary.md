@@ -4685,6 +4685,8 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   	# git pull --rebase && git lfs pull
   		# 移动大文件出问题依次尝试
   
+  sha256sum reazonspeechdb/000.db
+  
   
   huggingface-cli download --repo-type dataset OOPPEENN/Galgame_Dataset --local-dir Galgame_Dataset
   	# 不要用git直接拉仓库，git lfs会占用双倍空间！
