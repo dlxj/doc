@@ -4681,6 +4681,10 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   	# 复制已有大文件, 提交本地大文件
   	# 再同步，就不用重新拉远程大文件了（不需要同步）
   	# git lfs prune && git lfs pull
+  	# git lfs fetch --all && git lfs pull
+  	# git pull --rebase && git lfs pull
+  		# 移动大文件出问题依次尝试
+  
   
   huggingface-cli download --repo-type dataset OOPPEENN/Galgame_Dataset --local-dir Galgame_Dataset
   	# 不要用git直接拉仓库，git lfs会占用双倍空间！
