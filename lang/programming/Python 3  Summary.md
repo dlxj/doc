@@ -3577,6 +3577,15 @@ tests_segsNew = copy.deepcopy(tests_segs)
         seasion := match[0][1],
         (seasion, number) # 如果第一项相等就会比较第二项
     ))
+    
+    pths = ['term_bank_1.json','term_bank_10.json', 
+           'term_bank_11.json', 'term_bank_2.json']
+    pths = sorted(pths, key=lambda p:(
+       int(re.search(r'term_bank_(\d+)', Path(p).stem).group(1))
+    ))
+    	# 用上面的方法竟然不成功
+    
+    
 ```
 
 
