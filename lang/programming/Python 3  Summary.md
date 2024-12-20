@@ -2103,7 +2103,7 @@ def get_last_idx(pth):
 
 ```
 with open(label_path, 'w', encoding='utf-8') as f:
-	f.write('hi,,')
+    f.write('hi,,')
 
 # Opening a file
 file1 = open('myfile.txt', 'w')
