@@ -28319,6 +28319,185 @@ if __name__ == "__main__":
 
 ## llama.cpp
 
+```
+# see huggingface/rwkv5-jp-trimvd/sakura_trs.py
+	# see huggingface/rwkv5-jp-trimvd/vector_sqlite.py
+
+
+# see huggingface/Sakurallm_server_254_6006/readme.txt
+
+
+git clone https://github.com/ggerganov/llama.cpp && 
+cd llama.cpp && 
+cmake -B build -DGGML_CUDA=ON && 
+cmake --build build --config Release
+    # 先配置好 cuda11.8
+    # 成功编译
+
+cp -rf ~/llama.cpp/build/bin/ llama.cpp
+
+/usr/lib/wsl/lib/nvidia-smi
+    # wsl2 的 nvidia-smi 命令在这里
+     
+llama.cpp/llama-server -m /mnt/y/ai/sakura-14b-qwen2.5-v1.0-q6k.gguf -t 8 -c 4096 -ngl 999 --repeat-penalty 1.2 --temp 0.5 --top-k 30 --top-p 0.1 -n 8192 -a sakura-14b-qwen2.5-v1.0-q6k --port 8080
+    # CUDA11.8
+    # 成功启动，时间二分钟左右？
+    # see https://github.com/ggerganov/llama.cpp/blob/master/examples/main/README.md
+    
+    --temp 0.82
+        temperature(温度)控制输出的随机性/创造性
+        0.82是较中等的值:
+        0 = 完全确定性输出
+        1 = 标准随机性
+        1 = 更加随机/创造性
+        0.82会产生相对合理但仍有一定创造性的输出
+    
+    --top-k 30
+
+        每次只考虑概率最高的前30个词进行采样
+        较小的值(如30)会让输出更加集中/保守
+        较大的值会增加词汇多样性但可能降低连贯性
+
+    --top-p 1.8
+
+        通常 top-p 的范围是 0-1
+        1.8 是一个不寻常的高值:
+        会大幅增加采样范围
+        可能导致更发散、不可预测的输出
+        建议调整到 0.1-0.9 之间以获得更好的结果
+    
+    --ctx_size 1024
+    --batch-size 2048
+    --temp 0.82
+    --top-k 30
+    --top-p 1.8
+    --tfs 2.0
+    --typical 1.0
+    --keep -1
+    --repeat-last-n 1024   在后面会寻找未使用的新token
+    --repeat-penalty 1.2   尽量不生成重复 token 
+    --no-penalize-nl       鼓励换行
+    --mirostat 1
+    --mirostat-lr 0.5
+    --mirostat-ent 4.0
+
+    --threads N, -t N: 设置生成时要使用的线程数.
+    -tb N, --threads-batch N: 设置批处理和提示处理期间使用的线程数。如果未指定，则线程数将设置为用于生成的线程数
+    -m FNAME, --model FNAME: 指定 LLaMA 模型文件的路径（例如，models/7B/ggml-model.gguf）.
+    -a ALIAS, --alias ALIAS: 设置模型的别名。别名将在 API 响应中返回.
+    -c N, --ctx-size N: 设置提示上下文的大小。默认值为 512，但 LLaMA 模型是在 2048 的上下文中构建的，这将为更长的输入/推理提供更好的结果。其他模型的大小可能有所不同，例如，百川模型是在上下文为 4096 的情况下构建的.
+    -ngl N, --n-gpu-layers N: 当使用适当的支持（目前为 CLBlast 或 cuBLAS）进行编译时，此选项允许将某些层卸载到 GPU 进行计算。通常会导致性能提高.
+    -mg i, --main-gpu i: 使用多个 GPU 时，此选项控制哪个 GPU 用于小张量，对于这些张量，在所有 GPU 之间拆分计算的开销是不值得的。有问题的 GPU 将使用稍多的 VRAM 来存储暂存缓冲区以获得临时结果。默认情况下，使用 GPU 0。需要 cuBLAS.
+    -ts SPLIT, --tensor-split SPLIT: 使用多个 GPU 时，此选项控制应在所有 GPU 之间拆分多大的张量。SPLIT 是一个以逗号分隔的非负值列表，用于分配每个 GPU 应按顺序获取的数据比例。例如，“3,2”会将 60% 的数据分配给 GPU 0，将 40% 分配给 GPU 1。默认情况下，数据按 VRAM 比例拆分，但这可能不是性能的最佳选择。需要 cuBLAS.
+    -b N, --batch-size N: 设置用于提示处理的批大小。默认值：512.
+    --memory-f32: 使用 32 位浮点数而不是 16 位浮点数来表示内存键 + 值。不推荐.
+    --mlock: 将模型锁定在内存中，防止在内存映射时将其换出.
+    --no-mmap: 不要对模型进行内存映射。默认情况下，模型映射到内存中，这允许系统根据需要仅加载模型的必要部分.
+    --numa: 尝试对某些 NUMA 系统有帮助的优化.
+    --lora FNAME: 将 LoRA（低秩适配）适配器应用于模型（隐含 --no-mmap）。这允许您使预训练模型适应特定任务或领域.
+    --lora-base FNAME: 可选模型，用作 LoRA 适配器修改的层的基础。此标志与 --lora 标志结合使用，并指定适配的基本模型.
+    -to N, --timeout N: 服务器读/写超时（以秒为单位）。默认值：600.
+    --host: 设置要侦听的主机名或 IP 地址. 默认 127.0.0.1.
+    --port: 将端口设置为侦听。默认值：8080
+    --path: 从中提供静态文件的路径 (default examples/server/public)
+    --embedding: 启用嵌入提取，默认值：禁用.
+    -np N, --parallel N: 设置进程请求的槽数（默认值：1）
+    -cb, --cont-batching: 启用连续批处理（又名动态批处理）（默认：禁用）
+    -spf FNAME, --system-prompt-file FNAME :将文件设置为加载“系统提示符（所有插槽的初始提示符）”，这对于聊天应用程序很有用. 
+    --mmproj MMPROJ_FILE: LLaVA 的多模态投影仪文件的路径.
+
+    
+
+https://huggingface.co/SakuraLLM/Sakura-14B-Qwen2.5-v1.0-GGUF/resolve/main/sakura-14b-qwen2.5-v1.0-q6k.gguf?download=true
+    # sakura-14b-qwen2.5-v1.0-q6k.gguf 显存占用 20G 左右
+
+
+
+export HF_ENDPOINT=https://hf-mirror.com
+
+huggingface-cli download --resume-download gpt2 --local-dir gpt2
+    # model
+
+
+huggingface-cli download --repo-type dataset --resume-download wikitext --local-dir wikitext
+    # dataset
+    # 添加 --local-dir-use-symlinks False 参数禁用文件软链接，这样下载路径下所见即所得
+
+https://huggingface.co/SakuraLLM/Sakura-14B-Qwen2.5-v1.0-GGUF
+
+https://huggingface.co/SakuraLLM/Sakura-14B-Qwen2.5-v1.0-GGUF/blob/main/sakura-14b-qwen2.5-v1.0-iq4xs.gguf
+
+
+    # 现在用
+"""
+
+
+""""
+proxychains4 pip install llama-cpp-python --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu118
+    # 未使用
+"""
+
+
+"""
+/root/huggingface/NLPP_Audio/llama/llama-server --model "/mnt/y/ai/SakuraLLM/Sakura-14B-Qwen2beta-v0.9.2_IQ4_XS.gguf" -ngl 200 -c 2048 -a Sakura-14B-Qwen2beta-v0.9.2_IQ4_XS.gguf --host 127.0.0.1 --port 8080 -np 1 -fa --no-mmap --metrics
+    # 成功运行 llama server
+    # python eval.py 成功翻译
+    # 之前用
+"""
+
+"""
+
+# see huggingface/Sakurallm_server_254_6006/readme.txt
+
+huggingface 上单独开一个 space 运行 sakura 翻译服务
+
+see https://huggingface.co/docs/hub/spaces-sdks-docker
+
+FROM ghcr.io/ggerganov/llama.cpp:server-b4154
+
+
+git clone https://huggingface.co/spaces/dlxjj/Sakurallm_server_254_6006
+
+vi requirements.txt
+fastapi
+uvicorn[standard]
+
+vi app.py
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def greet_json():
+    return {"Hello": "World!"}
+
+vi Dockerfile
+
+FROM python:3.9
+
+RUN useradd -m -u 1000 user
+USER user
+ENV PATH="/home/user/.local/bin:$PATH"
+
+WORKDIR /app
+
+COPY --chown=user ./requirements.txt requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+COPY --chown=user . /app
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
+
+
+"""
+
+```
+
+
+
+
+
+
+
 [llama.cpp on windows](https://github.com/ggerganov/llama.cpp/issues/103)
 
 [Improve the Chat Mode with some tricks](https://github.com/ggerganov/llama.cpp/issues/353)
