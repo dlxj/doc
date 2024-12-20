@@ -32653,6 +32653,10 @@ class Rwkv(BaseEmbedding):
 
 
 
+##### rwkv-kit 官方 torch 实现
+
+https://github.com/TorchRWKV/rwkv-kit
+
 
 
 #####  nanoRWKV
