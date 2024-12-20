@@ -33514,6 +33514,26 @@ https://github.com/facebookresearch/seamless_communication/blob/main/docs/m4t/RE
 
 
 
+```
+
+# https://huggingface.co/docs/transformers/main/en/model_doc/seamless_m4t_v2
+
+# from text
+output_tokens = model.generate(**text_inputs, tgt_lang="fra", generate_speech=False)
+translated_text_from_text = processor.decode(output_tokens[0].tolist()[0], skip_special_tokens=True)
+	# 文本到文本翻译
+
+# from audio
+output_tokens = model.generate(**audio_inputs, tgt_lang="fra", generate_speech=False)
+translated_text_from_audio = processor.decode(output_tokens[0].tolist()[0], skip_special_tokens=True)
+
+
+```
+
+
+
+
+
 ## speech-to-speech 抱抱脸
 
 https://github.com/huggingface/speech-to-speech
