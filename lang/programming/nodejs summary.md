@@ -33508,6 +33508,10 @@ proxychains4 apt install libegl1
 
 
 
+## SeamlessM4T
+
+https://github.com/facebookresearch/seamless_communication/blob/main/docs/m4t/README.md
+
 
 
 ## speech-to-speech 抱抱脸
