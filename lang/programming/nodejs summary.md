@@ -33334,6 +33334,19 @@ https://github.com/huggingface/speech-to-speech
 https://github.com/huggingface/speech-to-speech/pull/60 [1](https://github.com/huggingface/transformers/blob/6b7d64ac1c5d19ab4b9e99142a08e31741106e4e/src/transformers/models/whisper/tokenization_whisper.py#L87)
 
 - ```
+  
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  
+  git clone https://github.com/huggingface/speech-to-speech.git \
+    && cd speech-to-speech
+    && uv pip install -r requirements.txt
+    
+  $ uv venv
+  	-> Using CPython 3.10.12 interpreter at: /usr/bin/python3
+  	-> Creating virtual environment at: .venv
+  	-> Activate with: source .venv/bin/activate
+  
+  
   For multi-language, I'm using this command:
   python s2s_pipeline.py --recv_host 0.0.0.0 --send_host 0.0.0.0 --lm_model_name meta-llama/Meta-Llama-3.1-8B-Instruct --init_chat_role system --tts melo --stt_model_name openai/whisper-large-v3 --init_chat_prompt "You are a helpful and friendly AI assistant. You are polite, respectful, and aim to provide concise responses of less than 20 words. Users will talk to you in several different languages, and will change language during a conversation. Always switch immediately to the language from the user's last message." --language None
   
