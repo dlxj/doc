@@ -37991,6 +37991,12 @@ Visual Studio 2022
 
 
 ```
+# see echodict/README.md -> 代理订阅地址 -> shadowsocks-rust
+vi ~/.bashrc
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+	# 国内代理
+source ~/.bashrc
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh &&
 source ~/.cargo/env
