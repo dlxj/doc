@@ -33559,6 +33559,12 @@ translated_text_from_audio = processor.decode(output_tokens[0].tolist()[0], skip
 
 
 
+## Qwen2.5
+
+https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF  选 Q4_K_M
+
+- https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF/resolve/main/Qwen2.5-32B-Instruct-Q4_K_M.gguf?download=true
+
 
 
 ## speech-to-speech 抱抱脸
