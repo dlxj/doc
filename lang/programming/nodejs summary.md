@@ -33567,7 +33567,9 @@ https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF  选 Q4_K_M
 
 
 
-https://huggingface.co/google/gemma-2-27b
+https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
+
+- https://huggingface.co/google/gemma-2-27b
 
 
 
