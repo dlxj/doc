@@ -3627,7 +3627,10 @@ git cmake ninja pkgconf g++ spdlog-dev openssl-dev libconfig-dev uriparser-dev p
 
 candy --mode="client" --websocket="ws://xxx:1587" --password="xxx" --tun="10.0.0.2/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
 	# .2 固定做代理地址
-	
+
+candy --mode="client" --websocket="ws://xxx:1587" --password="xxx" --tun="10.0.0.20/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
+	# .20 是 ctyun
+
 可以用 --restart=x 参数,x 指重连的时间间隔.也可以不退出进程了
 
 candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.0.0.0/24" --password="xxx"
