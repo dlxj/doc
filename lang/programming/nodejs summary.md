@@ -33567,6 +33567,10 @@ https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF  选 Q4_K_M
 
 
 
+https://huggingface.co/google/gemma-2-27b
+
+
+
 ## speech-to-speech 抱抱脸
 
 https://github.com/huggingface/speech-to-speech
