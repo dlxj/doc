@@ -3653,6 +3653,22 @@ https://github.com/sazima/proxynt  WebSocket 内网穿透
 ```
 # see huggingface\powershell\readme.txt
 pip install -U proxynt
+
+
+pip3 install https://github.com/sazima/proxynt/archive/refs/heads/snappy.zip
+pip3 install python-snappy
+	# 据说开启压缩后减少TLS in TLS特征，反代 ssh 连接稳定不少
+
+客户端开启压缩：
+{
+  "server": {
+    "url": "ws://xxxx:18888/websocket_path",
+    "password": "helloworld",
+    "compress": true
+  },
+  "client_name": "windows10_sql",
+  "log_file": "/var/log/nt/nt.log"
+}
 ```
 
 
