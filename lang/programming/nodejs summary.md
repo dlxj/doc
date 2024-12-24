@@ -5938,6 +5938,8 @@ https://linux.do/t/topic/174255  Cloudflare CDN传递私有的Backblaze B2内容
 
 https://dooo.ng/archives/1701171631107 cf+SaaS回源优选IP使国内用户加速
 
+https://linux.do/t/topic/184885 cf-tunnels.sh 一键内网穿透
+
 https://linux.do/t/topic/269385
 
 ```
@@ -11326,6 +11328,11 @@ const array1 = ['a', 'b', 'c'];
 for (const element of array1) {
   console.log(element);
 }
+
+for (let [idx, name] of names.entries()) {
+	
+}
+
 ```
 
 
