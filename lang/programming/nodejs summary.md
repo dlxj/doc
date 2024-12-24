@@ -33608,6 +33608,7 @@ https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-AWQ
 https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4
 
 
+1. 试试 qwen2.5 72b q4km ，内存占用大概 59GB ，体验提升明显，可能比精度带来的提升来的更快更直接
 
 
 ```
