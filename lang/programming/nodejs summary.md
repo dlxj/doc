@@ -33592,7 +33592,27 @@ https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF  选 Q4_K_M
 
 https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
 
+- https://github.com/ggerganov/llama.cpp/issues/8183
+
+  - ```
+    ./llama-cli -m gemma-2-27b-it-Q6_K.gguf -p "<bos><start_of_turn>user\nRepeat the question and then answer it: Matteo has 20 apples, he buys 20 oranges. Then he discards half of his fruits equally. Then he discards a quarter of his fruits equally between apples and oranges. How many apples remain?<end_of_turn>\n<start_of_turn>model\n"
+    ```
+
 - https://huggingface.co/google/gemma-2-27b
+
+
+
+```
+lmdeploy + Qwen2.5 72B awq int8 ，响应速度很快，支持多卡，在 4xV100 上实跑 72B gptq int4 比 vllm 好用
+https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-AWQ
+https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4
+
+
+
+
+```
+
+
 
 
 
