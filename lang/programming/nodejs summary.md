@@ -33607,6 +33607,10 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     	# LMDeploy: 0.6.4+
     	# transformers: 4.47.1
     
+    conda create -n gemma python=3.8 -y \
+      && conda activate gemma \
+      && pip install lmdeploy
+    
     export LMDEPLOY_VERSION=0.6.4
     export PYTHON_VERSION=38
     pip install https://github.com/InternLM/lmdeploy/releases/download/v${LMDEPLOY_VERSION}/lmdeploy-${LMDEPLOY_VERSION}+cu118-cp${PYTHON_VERSION}-cp${PYTHON_VERSION}-manylinux2014_x86_64.whl --extra-index-url https://download.pytorch.org/whl/cu118
