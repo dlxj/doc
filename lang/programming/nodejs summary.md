@@ -33597,6 +33597,11 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
 
   - ```
     ./llama-cli -m /root/gemma-2-27b-it-Q4_K_M.gguf -p "<bos><start_of_turn>user\nRepeat the question and then answer it: Matteo has 20 apples, he buys 20 oranges. Then he discards half of his fruits equally. Then he discards a quarter of his fruits equally between apples and oranges. How many apples remain?<end_of_turn>\n<start_of_turn>model\n"
+    
+    ./llama-cli -m /root/gemma-2-27b-it-Q4_K_M.gguf -p "<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n"
+    
+    
+    
     ```
 
 - https://huggingface.co/google/gemma-2-27b
