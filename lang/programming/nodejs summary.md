@@ -33617,6 +33617,12 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     	# OSError: It looks like the config file at '/root/autodl-tmp/gemma-2-27b-it-Q4_K_M.gguf' is not a valid JSON file.
     		# 出错
     
+    LMDeploy supports LLM models in three formats:
+        huggingface transformers
+        facebook/llama
+        awq
+    		# 它不支持 gguf 量化
+    
     # 安装环境
     conda create -n gemma python=3.8 -y \
       && conda activate gemma \
