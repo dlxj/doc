@@ -33583,7 +33583,7 @@ translated_text_from_audio = processor.decode(output_tokens[0].tolist()[0], skip
 
 
 
-## Qwen2.5
+## gemma + Qwen2.5
 
 https://huggingface.co/bartowski/Qwen2.5-32B-Instruct-GGUF  选 Q4_K_M
 
@@ -33602,6 +33602,8 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     # 多卡推理
     
+    lmdeploy chat /root/gemma-2-27b-it-Q4_K_M --backend pytorch --session-len 4096 --tp 1
+    
     lmdeploy chat /nvme/qa_test_models/google/gemma-2-27b-it --backend pytorch --session-len 4096 --tp 2
     	# PyTorch: 2.4.0+cu118
     	# LMDeploy: 0.6.4+
@@ -33610,11 +33612,12 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     conda create -n gemma python=3.8 -y \
       && conda activate gemma \
       && pip install lmdeploy
+      	# cuda12+ 才用这个
     
-    export LMDEPLOY_VERSION=0.6.4
-    export PYTHON_VERSION=38
+    export LMDEPLOY_VERSION=0.6.4 && \
+    export PYTHON_VERSION=38 && \
     pip install https://github.com/InternLM/lmdeploy/releases/download/v${LMDEPLOY_VERSION}/lmdeploy-${LMDEPLOY_VERSION}+cu118-cp${PYTHON_VERSION}-cp${PYTHON_VERSION}-manylinux2014_x86_64.whl --extra-index-url https://download.pytorch.org/whl/cu118
-    
+    	# 11.8 用这个
     
     
     from lmdeploy import pipeline, TurbomindEngineConfig
