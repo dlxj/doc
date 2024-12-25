@@ -33601,6 +33601,10 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     ./llama-cli -m /root/gemma-2-27b-it-Q4_K_M.gguf -p "<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n"
     
     # 多卡推理
+    
+    lmdeploy chat /nvme/qa_test_models/google/gemma-2-27b-it --backend pytorch --session-len 4096 --tp 2
+    	# PyTorch: 2.4.0+cu118
+    
     from lmdeploy import pipeline, TurbomindEngineConfig
     from lmdeploy.vl import load_image
     
