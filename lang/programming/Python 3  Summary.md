@@ -376,6 +376,12 @@ __pycache__/
 
 ```
 
+conda clean --all \
+  && rm -rf ~/.cache/pip \
+    # C:\Users\username\AppData\Local\pip\cache
+	# 清缓存
+
+
 # pip freeze > freeze.txt
 
 wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && \
