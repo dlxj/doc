@@ -33623,6 +33623,10 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
         awq
     		# 它不支持 gguf 量化
     
+    https://huggingface.co/shuyuej/gemma-2-27b-it-GPTQ
+    	# 试试 GPTQ
+    
+    
     https://huggingface.co/solidrust/gemma-2-9b-it-AWQ
     	# 试试 awq 量化
     
