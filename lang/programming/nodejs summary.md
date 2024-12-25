@@ -33600,7 +33600,11 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     ./llama-cli -m /root/gemma-2-27b-it-Q4_K_M.gguf -p "<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n"
     
+    # 多卡推理
+    from lmdeploy import pipeline, TurbomindEngineConfig
+    from lmdeploy.vl import load_image
     
+    pipe = pipeline("./models/InternVL2-26B", backend_config=TurbomindEngineConfig(tp=4))
     
     ```
 
