@@ -33610,6 +33610,10 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     		# Load model config with transformers==4.46.3 failed. Please make sure model can be loaded with transformers API.
     			# 出错
     
+    proxychains4 lmdeploy chat TechxGenus/gemma-2b-GPTQ --backend pytorch --session-len 4096 --tp 1
+    	# Unsupported quant method: gptq
+    	# 可能要装最新版的 lmdeploy 需要 cuda12
+    
     import lmdeploy
     pipe = lmdeploy.pipeline("/root/autodl-tmp/gemma-2-27b-it-Q4_K_M.gguf")
     response = pipe(["<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n"], do_preprocess=False)
@@ -33624,6 +33628,7 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     		# 它不支持 gguf 量化
     
     https://huggingface.co/shuyuej/gemma-2-27b-it-GPTQ
+    	# https://huggingface.co/TechxGenus/gemma-2b-GPTQ 先拿小的试水
     	# 试试 GPTQ
     
     
