@@ -33610,6 +33610,14 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     		# Load model config with transformers==4.46.3 failed. Please make sure model can be loaded with transformers API.
     			# 出错
     
+    import lmdeploy
+    pipe = lmdeploy.pipeline("/root/autodl-tmp/gemma-2-27b-it-Q4_K_M.gguf")
+    response = pipe(["<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n"], do_preprocess=False)
+    print(response)
+    	# OSError: It looks like the config file at '/root/autodl-tmp/gemma-2-27b-it-Q4_K_M.gguf' is not a valid JSON file.
+    		# 出错
+    
+    # 安装环境
     conda create -n gemma python=3.8 -y \
       && conda activate gemma \
       && pip install lmdeploy
