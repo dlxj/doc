@@ -33628,7 +33628,14 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     
     https://huggingface.co/solidrust/gemma-2-9b-it-AWQ
+    	# pip install --upgrade autoawq autoawq-kernels
     	# 试试 awq 量化
+    
+    vi chat.py
+    import lmdeploy
+    pipe = lmdeploy.pipeline("solidrust/gemma-2-9b-it-AWQ")
+    response = pipe(["<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n"], do_preprocess=False)
+    print(response)
     
     # 安装环境
     conda create -n gemma python=3.8 -y \
