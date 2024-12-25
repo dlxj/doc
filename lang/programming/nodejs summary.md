@@ -33612,7 +33612,10 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     proxychains4 lmdeploy chat TechxGenus/gemma-2b-GPTQ --backend pytorch --session-len 4096 --tp 1
     	# Unsupported quant method: gptq
-    	# 可能要装最新版的 lmdeploy 需要 cuda12
+    	# https://github.com/AutoGPTQ/AutoGPTQ
+    		# 应该要先安装 GPTQ
+    		# 可能要装最新版的 lmdeploy 需要 cuda12
+    	
     
     import lmdeploy
     pipe = lmdeploy.pipeline("/root/autodl-tmp/gemma-2-27b-it-Q4_K_M.gguf")
