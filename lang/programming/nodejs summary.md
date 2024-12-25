@@ -33614,6 +33614,15 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     	# Unsupported quant method: gptq
     	# https://github.com/AutoGPTQ/AutoGPTQ
     		# 应该要先安装 GPTQ
+    		git clone https://github.com/PanQiWei/AutoGPTQ.git && cd AutoGPTQ
+    		pip install -vvv --no-build-isolation -e .
+    		
+    		# conda install pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+    
+    		2.2.1+cu118
+    			# pip install auto-gptq --no-build-isolation --extra-index-url https://huggingface.github.io/autogptq-index/whl/cu118/
+    		2.2.1+cu121
+    			# pip install auto-gptq --no-build-isolation	
     		# 可能要装最新版的 lmdeploy 需要 cuda12
     	
     
@@ -33655,7 +33664,7 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     export PYTHON_VERSION=38 && \
     pip install https://github.com/InternLM/lmdeploy/releases/download/v${LMDEPLOY_VERSION}/lmdeploy-${LMDEPLOY_VERSION}+cu118-cp${PYTHON_VERSION}-cp${PYTHON_VERSION}-manylinux2014_x86_64.whl --extra-index-url https://download.pytorch.org/whl/cu118
     	# 11.8 用这个
-    
+    	# Collecting torch<=2.4.0,>=2.0.0 (from lmdeploy==0.6.4+cu118)
     
     from lmdeploy import pipeline, TurbomindEngineConfig
     from lmdeploy.vl import load_image
