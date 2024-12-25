@@ -28361,6 +28361,7 @@ cmake -B build -DGGML_CUDA=ON &&
 cmake --build build --config Release
     # 先配置好 cuda11.8
     # 成功编译
+    # 缺 .so 在 llama.cpp/build 子目录里面找 llama.cpp/build/src ggml 等
 
 cp -rf ~/llama.cpp/build/bin/ llama.cpp
 
