@@ -33602,12 +33602,13 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     # 多卡推理
     
-    lmdeploy chat /root/gemma-2-27b-it-Q4_K_M --backend pytorch --session-len 4096 --tp 1
-    
-    lmdeploy chat /nvme/qa_test_models/google/gemma-2-27b-it --backend pytorch --session-len 4096 --tp 2
+    lmdeploy chat /root/autodl-tmp/gemma-2-27b-it-Q4_K_M.gguf --backend pytorch --session-len 4096 --tp 1
     	# PyTorch: 2.4.0+cu118
     	# LMDeploy: 0.6.4+
     	# transformers: 4.47.1
+    	# 成功运行
+    		# Load model config with transformers==4.46.3 failed. Please make sure model can be loaded with transformers API.
+    			# 出错
     
     conda create -n gemma python=3.8 -y \
       && conda activate gemma \
