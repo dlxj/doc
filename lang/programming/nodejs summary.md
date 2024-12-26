@@ -33668,6 +33668,8 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     	# Collecting torch<=2.4.0,>=2.0.0 (from lmdeploy==0.6.4+cu118)
     	# pip install torch==2.2.1+cu118  --index-url https://download.pytorch.org/whl/cu118
     		# lmdeploy 它又把 2.2.1 卸载了装 torch-2.4.0+cu118 torchvision-0.19.0+cu118
+    		# pip install auto-gptq --no-build-isolation --extra-index-url https://huggingface.github.io/autogptq-index/whl/cu118/
+    			# 再装 autogptq
     		# 先装好 torch==2.2.1 ，因为 autogptq 需要这个
     
     from lmdeploy import pipeline, TurbomindEngineConfig
