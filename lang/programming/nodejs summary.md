@@ -33666,7 +33666,6 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     pip install https://github.com/InternLM/lmdeploy/releases/download/v${LMDEPLOY_VERSION}/lmdeploy-${LMDEPLOY_VERSION}+cu118-cp${PYTHON_VERSION}-cp${PYTHON_VERSION}-manylinux2014_x86_64.whl --extra-index-url https://download.pytorch.org/whl/cu118
     	# 11.8 用这个
     	# Collecting torch<=2.4.0,>=2.0.0 (from lmdeploy==0.6.4+cu118)
-    	# conda install pytorch==2.2.1 pytorch-cuda=11.8 -c pytorch -c nvidia
     	# pip install torch==2.2.1+cu118  --index-url https://download.pytorch.org/whl/cu118
     		# 先装好 torch==2.2.1 ，因为 autogptq 需要这个
     
