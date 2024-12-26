@@ -11689,6 +11689,28 @@ cv2.imwrite('./ttttttttttttttttttt.jpg', rotated)  # 成功，opencv 保存 img 
 
 
 
+## 缩放
+
+```
+def show_img(image, target_width=400):
+    # 获取原始图片的宽度和高度
+    original_height, original_width = image.shape[:2]
+    
+    # 计算缩放比例和目标高度
+    scale = target_width / original_width
+    target_height = int(original_height * scale)
+    
+    # 等比例缩放图片
+    resized_image = cv2.resize(image, (target_width, target_height), interpolation=cv2.INTER_AREA)
+    cv2.imshow("green", resized_image)
+    cv2.waitKey(0)
+    return resized_image
+```
+
+
+
+
+
 ## 卷积
 
 ```
