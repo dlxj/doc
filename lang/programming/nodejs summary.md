@@ -33612,6 +33612,27 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     LMDeploy only supports quantized model with group_size 128
     	# 它只支持 group_size 128 的量化
+    	
+    export HF_MODEL=internlm/internlm2_5-7b-chat
+    export WORK_DIR=internlm/internlm2_5-7b-chat-4bit
+    lmdeploy lite auto_awq \
+       $HF_MODEL \
+      --calib-dataset 'ptb' \
+      --calib-samples 128 \
+      --calib-seqlen 2048 \
+      --w-bits 4 \
+      --w-group-size 128 \
+      --batch-size 1 \
+      --work-dir $WORK_DIR	
+      # 自动量化，然后保存
+      
+    lmdeploy chat ./internlm2_5-7b-chat-4bit --model-format awq
+    
+    lmdeploy serve gradio ./internlm2_5-7b-chat-4bit --server_name {ip_addr} --server_port {port} --model-format awq
+    	# 推理方法
+    
+      
+    	
     proxychains4 lmdeploy chat TechxGenus/gemma-2b-GPTQ --backend pytorch --session-len 4096 --tp 1
     proxychains4 lmdeploy chat elysiantech/gemma-2b-gptq-4bit --backend pytorch --session-len 4096 --tp 1
     
