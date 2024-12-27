@@ -33602,7 +33602,14 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     cd /root/huggingface/rwkv5-jp-trimvd \
       && llama.cpp/llama-cli -m /mnt/y/ai/gemma-2-27b-it-Q4_K_M.gguf -t 8 -c 4096 -ngl 999 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 1024 -p "<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n" \
-      && llama.cpp/llama-server -m /mnt/y/ai/gemma-2-27b-it-Q4_K_M.gguf -t 8 -c 4096 -ngl 999 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 1024 -a gemma-2-27b-it-Q4_K_M --port 8080
+      && llama.cpp/llama-server -m /mnt/y/ai/gemma-2-27b-it-Q4_K_M.gguf -t 8 -c 4096 -ngl 999 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 -a gemma-2-27b-it-Q4_K_M --port 8080
+    	# cli 正常输出，server 正常运行
+    
+    curl --request POST \
+        --url http://localhost:8080/completion \
+        --header "Content-Type: application/json" \
+        --data '{"prompt": "<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n","n_predict": 1024}'
+    	# 成功
     
     
     # 多卡推理
