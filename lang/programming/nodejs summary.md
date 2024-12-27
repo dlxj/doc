@@ -33715,8 +33715,13 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
 
   - ```
     https://github.com/InternLM/lmdeploy/issues/2140 推理27B的方法
+    
+    https://huggingface.co/bartowski/gemma-2-27b-it-GGUF/tree/main
+    	# 先用 llamma.cpp 推理看看效果
+    
     https://huggingface.co/google/gemma-2-2b-it
     	# 自已量化它先试试水
+    
     
     ```
 
