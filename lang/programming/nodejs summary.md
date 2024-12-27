@@ -33610,7 +33610,8 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     		# Load model config with transformers==4.46.3 failed. Please make sure model can be loaded with transformers API.
     			# 出错
     
-    
+    LMDeploy only supports quantized model with group_size 128
+    	# 它只支持 group_size 128 的量化
     proxychains4 lmdeploy chat TechxGenus/gemma-2b-GPTQ --backend pytorch --session-len 4096 --tp 1
     proxychains4 lmdeploy chat elysiantech/gemma-2b-gptq-4bit --backend pytorch --session-len 4096 --tp 1
     
