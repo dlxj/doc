@@ -33600,6 +33600,11 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     ./llama-cli -m /root/gemma-2-27b-it-Q4_K_M.gguf -p "<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n"
     
+    cd /root/huggingface/rwkv5-jp-trimvd \
+      && llama.cpp/llama-cli -m /mnt/y/ai/gemma-2-27b-it-Q4_K_M.gguf -t 8 -c 4096 -ngl 999 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 1024 -p "<bos><start_of_turn>user\n日语翻译成中文，只翻译不要添加解释：担当の先輩は、先生にこっぴどく怒られてたけどね。<end_of_turn>\n<start_of_turn>model\n" \
+      && llama.cpp/llama-server -m /mnt/y/ai/gemma-2-27b-it-Q4_K_M.gguf -t 8 -c 4096 -ngl 999 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 1024 -a gemma-2-27b-it-Q4_K_M --port 8080
+    
+    
     # 多卡推理
     
     lmdeploy chat /root/autodl-tmp/gemma-2-27b-it-Q4_K_M.gguf --backend pytorch --session-len 4096 --tp 1
@@ -33719,12 +33724,15 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     https://huggingface.co/bartowski/gemma-2-27b-it-GGUF/tree/main
     	# 先用 llamma.cpp 推理看看效果
     
+    /mnt/y/ai/gemma-2-27b-it-Q4_K_M.gguf
+    
+    
     https://huggingface.co/google/gemma-2-2b-it
     	# 自已量化它先试试水
-    
+
     
     ```
-
+    
     
 
 - https://github.com/InternLM/lmdeploy/issues/2960  DeepSeek-V3
