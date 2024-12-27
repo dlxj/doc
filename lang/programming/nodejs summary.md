@@ -33610,7 +33610,14 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     		# Load model config with transformers==4.46.3 failed. Please make sure model can be loaded with transformers API.
     			# 出错
     
+    
     proxychains4 lmdeploy chat TechxGenus/gemma-2b-GPTQ --backend pytorch --session-len 4096 --tp 1
+    proxychains4 lmdeploy chat elysiantech/gemma-2b-gptq-4bit --backend pytorch --session-len 4096 --tp 1
+    
+    lmdeploy lite auto_awq /nvme/qa_test_models/THUDM/glm-4-9b-chat --work-dir /nvme/qa_test_models/THUDM/glm-4-9b-chat-inner-4bits --batch-size 32
+    
+    CUDA_VISIBLE_DEVICES=4,5 lmdeploy serve api_server /mnt/data1/models/Qwen2-72B-Instruct-AWQ --server-port 8012 --tp 2 --backend turbomind --model-format awq --model-name Qwen2-72B-Instruct
+    
     	# Unsupported quant method: gptq
     	# https://github.com/AutoGPTQ/AutoGPTQ
     		# 应该要先安装 GPTQ
