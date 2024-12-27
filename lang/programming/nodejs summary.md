@@ -33713,6 +33713,17 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
 
 - https://huggingface.co/google/gemma-2-27b
 
+  - ```
+    https://github.com/InternLM/lmdeploy/issues/2140 推理27B的方法
+    https://huggingface.co/google/gemma-2-2b-it
+    	# 自已量化它先试试水
+    
+    ```
+
+    
+
+- https://github.com/InternLM/lmdeploy/issues/2960  DeepSeek-V3
+
 
 
 ```
