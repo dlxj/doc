@@ -33626,6 +33626,9 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
       --work-dir $WORK_DIR	
       # 自动量化，然后保存
       
+       reducing the parameter --calib-seqlen, increasing the parameter --calib-samples, and set --batch-size to 1.
+          # 显存不存就这样
+      
     lmdeploy chat ./internlm2_5-7b-chat-4bit --model-format awq
     
     lmdeploy serve gradio ./internlm2_5-7b-chat-4bit --server_name {ip_addr} --server_port {port} --model-format awq
