@@ -5776,7 +5776,7 @@ print( re.compile('([一二三四五六七八九十]+)').search('三四五').gro
 ```python
 # python 3.8 新特性
 if match := re.compile('([一二三四五六七八九十]+)').search('三四五'):  
-	print( match.group(1) )
+    print( match.group(1) )
 ```
 
 
