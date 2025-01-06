@@ -97,6 +97,9 @@ kill -9 $(lsof -i:7861 | tail -n +2   |  awk '{print $2}' | tr '\n' ' ')
 
 ```
 ps -ef | grep redis
+
+ps -ef | grep sshd
+
 ```
 
 

@@ -187,6 +187,8 @@ ufw disable && \
 apt install openssh-server -y && \
 systemctl enable --now ssh && \
 systemctl status ssh
+	# service ssh status
+		# autodl 用这个命令
 
 vi /etc/ssh/sshd_config
 
