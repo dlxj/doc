@@ -33773,6 +33773,12 @@ https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4
 
 
 
+## deepseekv3
+
+### AI agent 自动发贴
+
+https://github.com/deepseek-ai/DeepSeek-V3/issues/218
+
 
 
 ## speech-to-speech 抱抱脸
