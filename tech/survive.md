@@ -313,6 +313,8 @@ https://pe.metaquant.org/
 
 # 日语
 
+https://zh.howtopronounce.com/vietnamese/index.php
+
 > [愛知大学 中国語語彙](http://hcs.aichi-u.ac.jp/php/search.php)
 >
 > - [【爱知大学】中日大辞典第三版](https://forum.freemdict.com/t/topic/9289)
