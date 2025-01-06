@@ -1783,6 +1783,14 @@ int main(){
 
 ```
 
+.ssh/config
+Host xx.77
+  HostName xx.77
+  Port 222
+  User root
+  ProxyCommand D:\\usr\\ncat.exe --proxy 127.0.0.1:5782 %h %p
+
+
 see doc\lang\programming\linux\Ubuntu 开发环境.md -> ssh 代理登录 
 	see github\echodict\README.md -> AWS Lightsail
 
