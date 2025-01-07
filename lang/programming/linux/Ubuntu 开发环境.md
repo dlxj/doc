@@ -1824,6 +1824,12 @@ export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
 apt-get --fix-broken install ./candy_5.6+ubuntu22.04_amd64.deb
 
+apt-get remove candy
+
+apt-get --fix-broken install ./candy_5.10.6+ubuntu22.04_amd64.deb
+
+
+
 
 
 # mecab
