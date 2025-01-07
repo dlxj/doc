@@ -33775,9 +33775,15 @@ https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4
 
 ## deepseekv3
 
+https://note.com/kind_crocus236/n/ndd8db8009d4e  deekseekv3 日译中，结果很好
+
+
+
 ### AI agent 自动发贴
 
 https://github.com/deepseek-ai/DeepSeek-V3/issues/218
+
+
 
 
 
