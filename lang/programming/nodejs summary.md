@@ -33777,6 +33777,28 @@ https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4
 
 https://note.com/kind_crocus236/n/ndd8db8009d4e  deekseekv3 日译中，结果很好
 
+```
+export PYTORCH_CUDA_ALLOC_CONF="expandable_segments:True"
+ 
+vllm serve deepseek-ai/DeepSeek-V3 \
+    --trust-remote-code \
+    --host 0.0.0.0 --port $PORT \
+    --gpu-memory-utilization 0.98 \
+    --max-model-len 128 \
+    --tensor-parallel-size 8 --pipeline-parallel-size 4 --enforce-eager
+    
+ Try with --max-model-len 128 --max-num-seqs 1 to see if you can run the model.
+
+It is also possible to reduce the model weight memory by using --cpu-offload-gb , but I'm not sure if it is compatible with the deepseek v3 model.
+
+
+ 
+```
+
+
+
+
+
 
 
 ### AI agent 自动发贴
