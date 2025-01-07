@@ -2528,6 +2528,75 @@ package.json if node < 16.14
 
 
 
+### windows + pm2
+
+https://www.cnblogs.com/xusx2014/p/16089510.html
+
+```
+1、我们一般会把 pm2 安装到全局：
+
+npm install pm2 -g
+2、安装windows自启动包：
+
+npm install pm2-windows-startup -g
+3、创建开机启动脚本文件：
+
+pm2-startup install
+注意：并不是到第3步就可以了，需要4、5步操作完，开机启动才有效。
+
+4、使用pm2启用项目：
+
+pm2 start 路径 --name 名称
+例如：pm2 start ./app.js –name xsx
+
+5、保存pm2中的项目：
+
+pm2 save
+注意：pm2 save很重要, 它保存当前 pm2 正在管理的 NodeJS 服务, 并在开机后恢复这些服务。
+
+重启电脑可以查看（ 以表格显示 ）：
+
+pm2 ls
+如果要卸载服务，执行：
+
+pm2-service-uninstall
+常用命令
+pm2 的服务都有一个数字 id，你可以用 id 快速操作它。下面以编号为 0 的服务为例（当然，把 id 换为应用名也是一样的）：
+
+pm2 start       # 启动一个服务，携带 --name 参数添加一个应用名，携带参数 --watch 将观察修改重启服务
+pm2 list        # 列出当前的服务
+pm2 monit       # 监视每个node进程的CPU和内存的使用情况
+pm2 stop 0      # 停止服务
+pm2 stop all    # 停止所有服务进程
+pm2 restart 0   # 重启服务
+pm2 restart all # 重启所有进程
+pm2 delete 0    # 删除服务
+pm2 delete all  # 删除全部服务
+pm2 logs        # 查看所有服务的输出日志
+pm2 logs 0      # 查看服务的输出日志
+更详细用法请看：https://github.com/Unitech/pm2
+
+扩展阅读
+pm2 以 windows 服务运行
+通过上面 pm2-windows-startup 的方式【推荐】，我们在windows 服务里面是找不到 pm2 相关服务的，它是基于 start-on-windows-boot 在注册表中将 PM2 设为自启动程序，从而实现自启动。
+
+而 pm2-windows-service 基于 node-windows 将 PM2 注册为 Windows 服务。
+
+两种方案经测试，只有 pm2-windows-startup 在 Windows Server 2012 上可行，故选择 pm2-windows-startup 作为解决 Node.js 应用开机自启动的方案。
+所以，这里只顺带说说 pm2 以 windows 服务运行的操作步骤：
+
+1、npm i pm2 -g
+2、npm i pm2-windows-service -g
+3、安装服务：pm2-service-install -n myservice （安装后在windows服务中多了一个myservice的服务）
+卸载命令：pm2-service-uninstall
+4、设置环境变量：PM2_SERVICE_SCRIPTS = PM2 的配置文件
+5、windows 服务中重新启动 myservice 服务
+```
+
+
+
+
+
 ## npm 
 
 
@@ -33771,7 +33840,7 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     https://huggingface.co/google/gemma-2-2b-it
     	# 自已量化它先试试水
-
+  
     
     ```
     
