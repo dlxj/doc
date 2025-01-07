@@ -3631,6 +3631,11 @@ https://github.com/heiher/natmap/issues/18  stun 服务器地址
   stun.miwifi.com	3478		
   stun.chat.bilibili.com	3478		
   stun.cloudflare.com	3478	53
+  
+  candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.0.0.0/24" --password="xxx" --stun="stun://stun.chat.bilibili.com"
+  
+  
+  
   ```
 
   
