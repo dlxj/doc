@@ -3684,6 +3684,9 @@ see github -> echodict -> README.md -> candy
 
 https://github.com/lanthora/candy
 
+- https://github.com/dlxj/openp2p
+- https://github.com/EasyTier/EasyTier
+
 - https://github.com/daeuniverse/dae  透明代理 必看
 
 - https://github.com/lanthora/gateway docker chmod 0640
