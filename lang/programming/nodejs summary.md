@@ -6533,6 +6533,21 @@ https://developers.cloudflare.com/learning-paths/replace-vpn/
 
   
 
+https://blog.csdn.net/hvdanyan/article/details/142265145
+
+```
+如果你已经搭建好了tunnel，还是无法建立连接的原因是：需要在客户端也安装cloudflared，并配置/.ssh/config：
+
+vim ~/.ssh/config
+ 
+#在文件中添加
+Host ssh.example.com
+ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
+注：如果你是在macOS上用Homebrew安装的cloudflared，路径是/opt/Homebrew/bin/cloudflared。
+
+
+```
+
 
 
 ## nmap测试端口
