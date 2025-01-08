@@ -3747,6 +3747,23 @@ candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.1.0.0/24" --pas
 
 
 
+#### 移动公网 ip
+
+https://post.smzdm.com/p/aqqgzgdk/
+
+
+
+```
+1. 光猫改成桥接，并且开启 ipv6 选项
+2. 路由器打开 ipv6 功能，并关闭路由器 ipv6 的防火墙，大多数路由器的 ipv6 入站都是关着的，而且好多路由器不能改，比如我的小米就是这样，这个地方阻碍了我好久。。
+3. 此时一切正常的话，电脑上就已经分配 ipv6 的地址了，test-ipv6.com 可以测
+4. 找一台手机，打开 test-ipv6.com 如果也是 ipv6 的话，就可以通过 ipv6 地址访问了
+
+感觉还是很 Nice 的，虽然移动的 ipv4 没有公网 IP ，但是通过 ipv6 ，也可以外网访问了
+```
+
+
+
 #### proxynt
 
 https://github.com/sazima/proxynt  WebSocket 内网穿透
