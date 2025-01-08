@@ -3751,6 +3751,8 @@ candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.1.0.0/24" --pas
 
 https://post.smzdm.com/p/aqqgzgdk/
 
+https://www.bilibili.com/opus/748434378355376185  移动光猫超级密码
+
 
 
 ```
