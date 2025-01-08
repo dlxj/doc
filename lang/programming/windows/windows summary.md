@@ -2023,6 +2023,14 @@ taskkill -PID 进程号 -F
 # 端口转发
 
 ```
+
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=2222 connectaddress=127.0.0.1 connectport=22
+	# WSL2 的 22 端口原先只有 127.0.0.1:22 它才通
+	# candy 10.0.0.3:2222 现在可以这样访问
+	# nmap -p 2222 10.0.0.3 
+		# 实测连通
+
+
 netsh interface portproxy add v4tov4  listenaddress=209.141.34.77 listenport=80 connectaddress=209.141.34.77 connectport=7999
 	# 80 转 7999
 
