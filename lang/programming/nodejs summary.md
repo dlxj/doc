@@ -3498,6 +3498,8 @@ https://github.com/shadowsocks/shadowsocks-rust
 
 - https://gist.github.com/zombie110year/13b854d2919bbdd9fa975d7283d634f5
 
+https://github.com/clash-verge-rev/clash-verge-rev
+
 ```
 
 # see echodict/README.md -> 代理订阅地址 -> shadowsocks-rust
@@ -33986,7 +33988,7 @@ https://huggingface.co/bartowski/gemma-2-27b-it-GGUF
     
     https://huggingface.co/google/gemma-2-2b-it
     	# 自已量化它先试试水
-  
+    
     
     ```
     
