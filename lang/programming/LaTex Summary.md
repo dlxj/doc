@@ -458,5 +458,11 @@ $$
 
 
 
+## 本地 texlive
+
+```
+texlive，使用vscode+latex插件，体验和overleaf类似，且编译全都在本地
+```
+
 
 
