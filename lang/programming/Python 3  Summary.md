@@ -6752,6 +6752,35 @@ assert_equal(np.all((sm == 0) | (sm == 1)),True)
 
 
 
+### json 序列化
+
+```
+# see /root/mokuro/comic_text_detector/utils/io_utils.py
+	# see nodejs summary.md -> search ocr -> manga-ocr
+
+# https://stackoverflow.com/questions/26646362/numpy-array-is-not-json-serializable
+class NumpyEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif isinstance(obj, np.ScalarType):
+            if isinstance(obj, NP_BOOL_TYPES):
+                return bool(obj)
+            elif isinstance(obj, NP_FLOAT_TYPES):
+                return float(obj)
+            elif isinstance(obj, NP_INT_TYPES):
+                return int(obj)
+        return json.JSONEncoder.default(self, obj)
+        
+with open(osp.join(save_dir, imname+'.json'), 'w', encoding='utf8') as f:
+    f.write(json.dumps(blk_dict_list, ensure_ascii=False, cls=NumpyEncoder))        
+
+```
+
+
+
+
+
 ## JAX
 
 
