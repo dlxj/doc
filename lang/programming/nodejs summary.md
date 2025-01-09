@@ -39572,10 +39572,10 @@ cmake --build . --target package
 
 ##### manga-ocr
 
-- https://github.com/kha-white/manga-ocr
+- https://github.com/kha-white/manga-ocr 只识别
   - https://github.com/kha-white/mokuro
     
-    - https://github.com/dmMaze/comic-text-detector
+    - https://github.com/dmMaze/comic-text-detector 这个有坐标
     
       - https://github.com/juvian/Manga-Text-Segmentation
     
