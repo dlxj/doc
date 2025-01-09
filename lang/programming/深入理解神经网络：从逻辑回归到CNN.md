@@ -5795,6 +5795,20 @@ https://blog.csdn.net/coolyoung520/article/details/109015443
 
 ## OCR
 
+##### manga-ocr
+
+- https://github.com/kha-white/manga-ocr
+
+  - https://github.com/kha-white/mokuro
+
+    - https://github.com/dmMaze/comic-text-detector
+
+      - https://github.com/juvian/Manga-Text-Segmentation
+
+      - https://t.me/SugarPic
+
+- https://github.com/dmMaze/BallonsTranslator  漫画自动翻译
+
 - https://github.com/demuxin/pytorch_tricks
 
 - https://github.com/ZER-0-NE/EAST-Detector-for-text-detection-using-OpenCV
@@ -11474,6 +11488,20 @@ HALCON是德国MVtec公司开发的一套完善的标准的机器视觉算法包
 
 
 ## PaddleOCR
+
+##### manga-ocr
+
+- https://github.com/kha-white/manga-ocr
+
+  - https://github.com/kha-white/mokuro
+
+    - https://github.com/dmMaze/comic-text-detector
+
+      - https://github.com/juvian/Manga-Text-Segmentation
+
+      - https://t.me/SugarPic
+
+- https://github.com/dmMaze/BallonsTranslator  漫画自动翻译
 
 - https://github.com/kha-white/manga-ocr  see nodejs summary -> C++ monads -> Implay -> Memento
 

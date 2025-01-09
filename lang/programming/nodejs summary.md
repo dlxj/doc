@@ -39574,7 +39574,11 @@ cmake --build . --target package
 
 - https://github.com/kha-white/manga-ocr
   - https://github.com/kha-white/mokuro
+    
     - https://github.com/dmMaze/comic-text-detector
+    
+      - https://github.com/juvian/Manga-Text-Segmentation
+    
       - https://t.me/SugarPic
 - https://github.com/dmMaze/BallonsTranslator  漫画自动翻译
 
