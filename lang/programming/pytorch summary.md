@@ -1542,6 +1542,8 @@ device = torch.device("cuda" if args.cuda else "cpu")
 
 https://zhuanlan.zhihu.com/p/448407149 CV预训练MAE（Masked AutoEncoder）
 
+- https://github.com/facebookresearch/mae
+
 ```
 信息密度不同：文本数据是经过人类高度抽象之后的一种信号，它的信息是密集的，所以仅仅预测文本中的几个被掩码掉的单词就能很好的捕捉文本的语义特征。而图像数据是一个信息密度非常小的矩阵，其中包含着大量的冗余信息，而且像素和它周围的像素仅仅在纹理上就有非常大的相似性，恢复被掩码的像素并不需要太多的语义信息。
 
