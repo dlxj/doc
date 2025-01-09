@@ -39582,6 +39582,12 @@ cmake --build . --target package
       - https://t.me/SugarPic
 - https://github.com/dmMaze/BallonsTranslator  漫画自动翻译
 
+```
+capture region with ShareX -> write image to clipboard -> Manga OCR -> write text to clipboard -> Yomichan
+	# 从截图到查字典的过程 
+	
+```
+
 
 
 
