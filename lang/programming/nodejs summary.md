@@ -2347,7 +2347,7 @@ http://172.16.6.253:8118
 
 systemctl start postgresql.service  # ubuntu 18.04 
 systemctl status postgresql-13      # centos7
-systemctl enable postgresql-13 # 自启动
+systemctl enable postgresql-13      # 自启动
 
 npm i -g pm2
 	# node18 用这个
@@ -39571,6 +39571,8 @@ cmake --build . --target package
 ##### manga-ocr
 
 - https://github.com/kha-white/manga-ocr
+  - https://github.com/kha-white/mokuro
+    - https://github.com/dmMaze/comic-text-detector
 - https://github.com/dmMaze/BallonsTranslator  漫画自动翻译
 
 

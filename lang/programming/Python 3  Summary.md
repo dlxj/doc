@@ -11330,6 +11330,8 @@ if __name__ == '__main__':
 
 # paddleOCR
 
+https://github.com/kha-white/manga-ocr
+
 
 
 ```
