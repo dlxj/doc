@@ -39595,6 +39595,14 @@ conda create -n mangaocr python==3.10 pip \
   && conda activate mangaocr \
   && proxychains4 pip install -e .
 
+run.py
+if __name__ == "__main__":
+    import sys
+    sys.argv.append( '"/path/to/manga/volume 1"' ) # 加这一句
+    fire.Fire(run)
+
+AttributeError: module 'numpy' has no attribute 'bool8'. Did you mean: 'bool'?
+
 
 ```
 
