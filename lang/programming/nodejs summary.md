@@ -39586,6 +39586,14 @@ cmake --build . --target package
 capture region with ShareX -> write image to clipboard -> Manga OCR -> write text to clipboard -> Yomichan
 	# 从截图到查字典的过程 
 	
+git clone https://github.com/kha-white/mokuro \
+  && cd mokuro
+ 
+conda create -n mangaocr python==3.10 pip \
+  && conda activate mangaocr \
+  && proxychains4 pip install -e .
+
+
 ```
 
 
