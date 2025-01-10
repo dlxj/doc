@@ -1265,6 +1265,34 @@ execute_plugin_function(plugin, "plugin_function")  # 执行插件中的具体�
 
 
 
+#### fire 参数解析
+
+```
+# see /root/mokuro/mokuro/run.py
+import fire
+
+def run(
+    *paths: Optional[Sequence[Union[str, Path]]],
+    parent_dir: Optional[Union[str, Path]] = None,
+    pretrained_model_name_or_path: str = "kha-white/manga-ocr-base",
+    force_cpu: bool = False,
+    
+    	# paths 接收到的值是：('/path/to/manga/volume 1', '/path/to/manga/volume 2') 
+        
+if __name__ == "__main__":
+    import sys
+    sys.argv.append( '/path/to/manga/volume 1' )
+    sys.argv.append( '/path/to/manga/volume 2' )
+    sys.argv.append( '--force_cpu' )
+    sys.argv.append( 'True' )
+    fire.Fire(run)
+
+```
+
+
+
+
+
 ### 类的动态构建
 
 ```
