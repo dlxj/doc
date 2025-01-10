@@ -3760,6 +3760,10 @@ https://www.bilibili.com/opus/748434378355376185  移动光猫超级密码
 - ```
   欢迎使用H60G
   
+  https://www.right.com.cn/forum/thread-8384779-1-1.html
+    # 电信 联通 一直可以自己换 移动要打电话叫装维 移动自己换猫一直要报备的不是本地运营商有的猫一律不准绑定入网
+  
+  
   使用光猫背后标签的 user 账号登录光猫 记录下LOID（重新注册设备需要用到）以及宽带账号（装维可以提供）
   
   现在是动态超密，得装维用SN+mac查
@@ -39583,6 +39587,8 @@ cmake --build . --target package
 
 - https://github.com/kha-white/manga-ocr 只识别
   - https://github.com/kha-white/mokuro
+    
+    - https://github.com/blueaxis/Poricom  qt gui
     
     - https://github.com/dmMaze/comic-text-detector 这个有坐标
     
