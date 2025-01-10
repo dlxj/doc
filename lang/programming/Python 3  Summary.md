@@ -2606,6 +2606,19 @@ return out_file.name
 
 
 
+```
+# see /root/mokuro/mokuro/run.py
+from tempfile import TemporaryDirectory
+
+with TemporaryDirectory() as tmp_dir:
+  tmp_dir = Path(tmp_dir)
+	
+```
+
+
+
+
+
 
 
 ## pickle 序列化存储
