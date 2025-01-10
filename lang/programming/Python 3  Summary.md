@@ -1291,6 +1291,17 @@ if __name__ == "__main__":
 
 
 
+#### 等待用户输入
+
+```
+    if not disable_confirmation:
+        inp = input("\nContinue? [yes/no]")
+        if inp.lower() not in ("y", "yes"):
+            return
+```
+
+
+
 
 
 ### 类的动态构建
