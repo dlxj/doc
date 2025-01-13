@@ -32487,6 +32487,10 @@ pip install torch==1.13.1+cu116 --extra-index-url https://download.pytorch.org/w
 	# pip install torch==2.0.0 --index-url https://download.pytorch.org/whl/cu118
 
 
+pip install torch==2.1.2+cu121 -f https://mirror.sjtu.edu.cn/pytorch-wheels/torch_stable.h
+tml
+	# 上海交大的源比较快
+
 
 # 实测 4090 成功训练
 Python3.10 + ubuntu22.04 + Cuda11.8 + GRTX 4090(24GB) + 内存120GB
