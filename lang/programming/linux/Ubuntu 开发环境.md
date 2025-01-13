@@ -1718,6 +1718,14 @@ exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --test-type --no-sandbox
 
 
 
+## 长截图
+
+F12 -> Ctrl+Shift+P -> 输入 Cap 选 Capture full size screenshot
+
+知乎公式它是显示 latex 源码
+
+
+
 # Install vscode
 
 [how-to-install-visual-studio-code-on-almalinux](https://www.linuxcapable.com/how-to-install-visual-studio-code-on-almalinux/)
