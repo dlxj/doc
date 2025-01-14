@@ -32490,6 +32490,29 @@ pip install torch==1.13.1+cu116 --extra-index-url https://download.pytorch.org/w
 pip install torch==2.1.2+cu121 -f https://mirror.sjtu.edu.cn/pytorch-wheels/torch_stable.h
 tml
 	# 上海交大的源比较快
+requirements.txt
+-f https://mirror.sjtu.edu.cn/pytorch-wheels/torch_stable.html
+numpy==1.26.4
+torch==2.1.2+cu121
+pytorch-lightning==1.9.5
+deepspeed==0.12.0
+wandb==0.19.2
+	# rwkv7
+
+
+cd /root/RWKV-LM/RWKV-v5 \
+  && conda create --name rwkv7 python==3.10 pip \
+  && conda activate rwkv7
+pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cu124
+pip install pytorch-lightning==1.9.5 deepspeed wandb ninja --upgrade
+
+python make_data.py ak148.jsonl 3 512
+    # --my_exit_tokens 18427863 --magic_prime 35969 --ctx_len 512
+
+./demo-training-prepare.sh
+./demo-training-run.sh
+    # MODEL_TYPE="x060" 正常训练
+    # MODEL_TYPE="x070" 正常训练
 
 
 # 实测 4090 成功训练
