@@ -6393,6 +6393,8 @@ OCR Engine modes:
 
 #### DBNet 可微分二值化
 
+https://blog.csdn.net/weixin_43507865/article/details/136671486
+
 > DBNet.pytorch: 训练灰度图时需要在配置里移除`dataset.args.transforms.Normalize`
 
 - a
