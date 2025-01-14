@@ -11411,6 +11411,8 @@ if __name__ == '__main__':
 
 # paddleOCR
 
+https://github.com/PaddlePaddle/PaddleOCR/issues/10377 返回单个字坐标
+
 https://github.com/PaddlePaddle/PaddleOCR/issues/10815  返回单个字坐标
 
 https://github.com/kha-white/manga-ocr
