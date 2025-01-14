@@ -39613,7 +39613,7 @@ cmake --build . --target package
 ##### manga-ocr
 
 - https://github.com/kha-white/manga-ocr 只识别
-  - https://github.com/kha-white/mokuro
+  - https://github.com/kha-white/mokuro  see huggingface/project/zh_jp_auto_selection.py
     
     - https://github.com/blueaxis/Poricom  qt gui
     
