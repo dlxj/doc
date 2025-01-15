@@ -2544,6 +2544,29 @@ print(os.path.splitext("/path/to/some/file.txt")[0])
 
 ### MD5
 
+
+
+```python
+def md5_file(fname):
+    hash_md5 = hashlib.md5()
+    with open(fname, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+        hash_md5.update(chunk)
+        return hash_md5.hexdigest()
+
+def md5_bytes(bts):
+    hash_md5 = hashlib.md5()
+    chunk_size = 4096
+    for i in range(0, len(bts), chunk_size):
+        chunk = bts[i:i+chunk_size]
+        hash_md5.update(chunk)
+        return hash_md5.hexdigest()
+```
+
+
+
+
+
 ```python
 dataset = {"id": hashlib.md5( bytes(k, encoding='utf-8') ).hexdigest(),  "summary":k, "text": []}
 ```
