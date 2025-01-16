@@ -2044,6 +2044,14 @@ netsh interface  portproxy delete v4tov4 listenaddress=209.141.34.77 listenport=
 
 
 
+# 打开任务管理器
+
+```
+Start-Process -FilePath "Taskmgr.exe" -Verb RunAs
+```
+
+
+
 
 
 # 遍历进程
