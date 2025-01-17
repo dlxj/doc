@@ -4950,6 +4950,12 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   	# git pull --rebase && git lfs pull
   		# 移动大文件出问题依次尝试
   
+  
+  git pull --recurse-submodules \
+    && git submodule update --init --recursive \
+    && git submodule foreach git pull origin main
+  	# 子模块更新 
+  
   sha256sum reazonspeechdb/000.db
   
   
