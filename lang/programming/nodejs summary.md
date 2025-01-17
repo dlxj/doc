@@ -22689,7 +22689,7 @@ ai作画 ps拆补图 spine做动画 再导入godot做游戏
 
 [游戏背包](https://github.com/alfredbaudisch/GodotDynamicInventorySystem)
 
-[Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama)
+[Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama) [GodSVG](https://github.com/MewPurPur/GodSVG)
 
 - https://github.com/VoylinsGamedevJourney/gozen [1](https://www.youtube.com/watch?v=HTz_qxI9zZ0&list=PL8opQePBSY5mr2Fup2mqc-4cMBxxaqvMg&index=9)视频编缉器 **必看**
 - https://github.com/FLamefiREz/speaker-verification  声纹识别
