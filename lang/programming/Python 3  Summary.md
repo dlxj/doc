@@ -20252,6 +20252,44 @@ demo.launch(allowed_paths=["cantina.wav"])
 
 
 
+### 联动
+
+https://github.com/gradio-app/gradio/issues/10296
+
+```
+import gradio as gr
+import pandas as pd
+
+# Sample DataFrame
+data = {
+    "Name": ["Alice", "Bob", "Charlie", "David"],
+    "Age": [25, 45, 35, 40],
+    "Score": [88, 92, 95, 85]
+}
+df = pd.DataFrame(data)
+
+# Function to sort the DataFrame based on the selected column
+def sort_dataframe(df, column_name):
+    sorted_df = df.sort_values(by=column_name)
+    return sorted_df
+
+# Gradio Interface
+def update_dataframe(column_name):
+    sorted_df = sort_dataframe(df, column_name)
+    return sorted_df
+
+iface = gr.Interface(
+    fn=update_dataframe,
+    inputs=[gr.Dropdown(choices=df.columns.tolist(), label="Sort by")],
+    outputs=gr.DataFrame(),
+    live=True
+)
+
+iface.launch()
+```
+
+
+
 
 
 
