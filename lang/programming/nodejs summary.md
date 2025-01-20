@@ -22791,6 +22791,10 @@ source ~/.bashrc:
 export DOTNET_ROOT=/home/caferino/.dotnet/sdk
 export PATH="$PATH:$HOME/.dotnet" 
 
+dotnet version
+
+uname -a
+
 ```
 
 
