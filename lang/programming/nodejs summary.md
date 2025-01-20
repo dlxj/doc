@@ -22775,6 +22775,28 @@ https://docs.godotengine.org/en/stable/tutorials/scripting/cross_language_script
 
 
 
+
+
+#### install C#
+
+```
+apt-get update \
+  && apt-get install -y dotnet-host \
+  && apt-get install -y dotnet-sdk-8.0
+  
+dotnet --list-sdks \
+  && dotnet --info
+  
+source ~/.bashrc:
+export DOTNET_ROOT=/home/caferino/.dotnet/sdk
+export PATH="$PATH:$HOME/.dotnet" 
+
+```
+
+
+
+
+
 #### gdscript use C#
 
 ```
@@ -22860,6 +22882,16 @@ git clone -b 0.x https://github.com/Orama-Interactive/Pixelorama
 	var font = preload("res://assets/fonts/Roboto-Regular.tres")
 
 ```
+
+
+
+#### 读项目设置里的版本号
+
+```
+var current_version: String = ProjectSettings.get_setting("application/config/version")
+```
+
+
 
 
 
