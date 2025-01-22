@@ -1002,6 +1002,16 @@ git pull && git LFS pull
 
 
 
+
+
+# 远程桌面一直请稍后
+
+https://zhuanlan.zhihu.com/p/568825875
+
+
+
+
+
 # IPV6 远程桌面
 
 https://zhuanlan.zhihu.com/p/627542501
