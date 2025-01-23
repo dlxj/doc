@@ -244,6 +244,75 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 ```
 
 
+
+## 允许指定 ip
+
+```
+
+172.16.6.253 限制 ip ssh
+
+
+ubuntu
+
+apt-get update \
+  && apt install iptables-persistent
+
+iptables -A INPUT -p tcp --dport 22 -m iprange --src-range 172.16.6.200-172.16.6.254 -j ACCEPT
+	# 允许网段
+iptables -A INPUT -p tcp --dport 22 -j DROP
+	# 拒绝其他所有
+
+netfilter-persistent save
+	# 规则会被保存到 /etc/iptables/rules.v4（IPv4）和 /etc/iptables/rules.v6（IPv6）
+	# netfilter-persistent 服务会在系统启动时自动加载保存的规则。
+
+
+centos
+
+yum install iptables-services
+
+systemctl stop firewalld \
+  && systemctl disable firewalld
+
+systemctl enable iptables \
+  && systemctl start iptables
+
+iptables-save | tee /etc/sysconfig/iptables
+      # 保存规则
+      # 服务会在系统启动时自动加载保存的规则 
+
+
+
+# 允许 172.16.6.200-172.16.6.254 访问 SSH
+iptables -A INPUT -p tcp --dport 22 -m iprange --src-range 172.16.6.200-172.16.6.254 -j ACCEPT
+
+iptables -A INPUT -p tcp --dport 22 -m iprange --src-range 172.16.6.200-172.16.6.254 -j ACCEPT
+
+# 拒绝其他所有 IP 访问 SSH
+sudo iptables -A INPUT -p tcp --dport 22 -j DROP
+
+# 保存规则（根据系统选择命令）
+# Ubuntu/Debian：
+sudo iptables-save | sudo tee /etc/iptables/rules.v4
+# CentOS/RHEL：
+sudo service iptables save
+
+
+
+vi /etc/ssh/sshd_config
+
+AllowUsers root@192.168.1.0/24
+AllowUsers root@192.168.2.0/24
+AllowUsers root@10.10.0.0/16
+
+```
+
+
+
+
+
+
+
 # 允许 root 登录图形界面
 
 ```
