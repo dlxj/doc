@@ -247,6 +247,42 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 
 ## 允许指定 ip
 
+
+
+```
+
+Centos 测试正常
+
+yum install iptables-services
+
+vi allow_login.sh
+# 清空旧规则
+sudo iptables -F
+
+# 基本规则
+sudo iptables -A INPUT -i lo -j ACCEPT
+sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+# 允许特定IP范围访问SSH
+sudo iptables -A INPUT -p tcp --dport 22 -m iprange --src-range 172.16.6.200-172.16.6.254 -j ACCEPT
+
+# 拒绝其他所有SSH访问
+sudo iptables -A INPUT -p tcp --dport 22 -j DROP
+
+# 其他默认策略（可选）
+sudo iptables -P INPUT DROP
+sudo iptables -P FORWARD DROP
+sudo iptables -P OUTPUT ACCEPT
+
+# 保存规则
+sudo service iptables save
+
+```
+
+
+
+
+
 ```
 
 172.16.6.253 限制 ip ssh
