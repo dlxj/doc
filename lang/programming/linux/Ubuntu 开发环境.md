@@ -266,6 +266,9 @@ sudo iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 # 允许特定IP范围访问SSH
 sudo iptables -A INPUT -p tcp --dport 22 -m iprange --src-range 172.16.6.200-172.16.6.254 -j ACCEPT
 
+# 允许除 22 端口以外的其他端口
+sudo iptables -A INPUT -p tcp --dport ! 22 -j ACCEPT
+
 # 拒绝其他所有SSH访问
 sudo iptables -A INPUT -p tcp --dport 22 -j DROP
 
@@ -276,6 +279,8 @@ sudo iptables -P OUTPUT ACCEPT
 
 # 保存规则
 sudo service iptables save
+
+service iptables restart
 
 ```
 
