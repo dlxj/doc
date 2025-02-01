@@ -2196,8 +2196,11 @@ file1.close()
 ```
 # see huggingface/gasr_new/prep.py
 def extract_library(lib_base):
+    """
+    用 7zip 从 libsoda_volteer_R133.img 提取 root/libsoda.so 并改名为 libsoda_volteer_R133.so 
+    """
     with open(f'{lib_base}.so', 'wb') as f:
-        subprocess.run(['7za', 'e', f'{lib_base}.img', '-so', 'root/libsoda.so'], stdout=f)
+        subprocess.run([SZIP, 'e', f'{lib_base}.img', '-so', 'root/libsoda.so'], stdout=f)
 
 ```
 
