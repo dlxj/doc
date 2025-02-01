@@ -2191,6 +2191,20 @@ file1.close()
 
 
 
+#### write stream
+
+```
+# see huggingface/gasr_new/prep.py
+def extract_library(lib_base):
+    with open(f'{lib_base}.so', 'wb') as f:
+        subprocess.run([SZIP, 'e', f'{lib_base}.img', '-so', 'root/libsoda.so'], stdout=f)
+
+```
+
+
+
+
+
 #### 追加写
 
 ```
