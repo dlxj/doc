@@ -2197,7 +2197,7 @@ file1.close()
 # see huggingface/gasr_new/prep.py
 def extract_library(lib_base):
     with open(f'{lib_base}.so', 'wb') as f:
-        subprocess.run([SZIP, 'e', f'{lib_base}.img', '-so', 'root/libsoda.so'], stdout=f)
+        subprocess.run(['7za', 'e', f'{lib_base}.img', '-so', 'root/libsoda.so'], stdout=f)
 
 ```
 
