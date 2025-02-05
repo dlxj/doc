@@ -8657,15 +8657,29 @@ for text in it:
 
 https://github.com/biemster/gasr/issues/19  chrome 实时字幕
 
+https://github.com/biemster/gasr/issues/24  gasr new
+
 
 
 ```
 
 see huggingface/gasr_new
 
-wget https://www.7-zip.org/a/7z2409-linux-x64.tar.xz
-tar -xvf 7z2409-linux-x64.tar.xz
-mv 7zz 7zzs /usr/bin
+proxychains4 wget https://www.7-zip.org/a/7z2409-linux-x64.tar.xz \
+  && tar -xvf 7z2409-linux-x64.tar.xz \
+  && mv 7zz 7zzs /usr/bin \
+  && 7zzs
+  
+proxychains4 wget https://apt.llvm.org/llvm.sh \
+  && chmod u+x llvm.sh \
+  && proxychains4 bash ./llvm.sh 19
+	# fix OSError: ./libsoda.so: undefined symbol: _ZNSt3__122__libcpp_verbose_abortEPKcz
+
+proxychains4 apt-get install libc++-19-dev libc++abi-19-dev
+	# Segmentation fault
+
+据说装 18 就可以
+  
 Move to gasr directory and edit ./prep.py to change the SZIP array index to 1 so that 7zzs is selected.
 
 Rerun the setup command:
