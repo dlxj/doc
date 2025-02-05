@@ -8659,6 +8659,31 @@ https://github.com/biemster/gasr/issues/19  chrome 实时字幕
 
 
 
+```
+
+see huggingface/gasr_new
+
+wget https://www.7-zip.org/a/7z2409-linux-x64.tar.xz
+tar -xvf 7z2409-linux-x64.tar.xz
+mv 7zz 7zzs /usr/bin
+Move to gasr directory and edit ./prep.py to change the SZIP array index to 1 so that 7zzs is selected.
+
+Rerun the setup command:
+
+./prep.py -s -p zork -l en-us
+The output shown is:
+
+Found bug, fixing
+Execute gasr.py with ld-linux.so:
+
+./ld-linux.so $(which python3) ./gasr.py
+
+```
+
+
+
+
+
 # Syntax
 
 - https://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html
