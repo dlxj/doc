@@ -9165,19 +9165,13 @@ if __name__ == '__main__':
 
 
 
+## mainim community
 
+https://docs.manim.community/en/stable/installation/uv.html
 
-
-
-
-
-
-
-
-
-
-
-
+```
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
 
 
 

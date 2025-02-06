@@ -8704,7 +8704,13 @@ Comet Lake (10th gen)
 
 https://juejin.cn/post/7244358444349521979
 
+https://post.smzdm.com/p/aoowmgv6/
+	# 联想YOGA C940 Icelake 处理器
+
+
 qemu-system-x86_64 -cpu help
+	# Icelake-Server-v3     Intel Xeon Processor (Icelake) 只有服务器 U 
+	# 也是第十代
 
 qemu-system-x86_64 -kernel linux-5.11.8/arch/x86_64/boot/bzImage -initrd ./my_initramfs.img -append "nokaslr console=ttyS0"  -cpu Broadwell -S -s -nographic  -m 2G
 
