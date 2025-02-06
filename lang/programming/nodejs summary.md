@@ -22992,6 +22992,20 @@ var current_version: String = ProjectSettings.get_setting("application/config/ve
 
 
 
+#### 顶部菜单自适应窗体大小
+
+```
+[node name="MenuAndUI" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+	# see huggingface\Pxlrm105\src\Main.tscn
+
+```
+
+
+
 
 
 #### splash_dialog
