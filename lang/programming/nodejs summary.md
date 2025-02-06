@@ -8718,7 +8718,7 @@ qemu-system-x86_64 -cpu help
 qemu-img create /e/kvm/Ubuntu22.img 40G
 	# 创建40GB的磁盘空间	
 
-qemu-system-x86_64w.exe -drive file=./Ubuntu22.img,index=0,media=disk,format=raw -cdrom ./ubuntu-22.04.5-desktop-amd64.iso -cpu Icelake-Server-v3 -m 8G -smp 4 -L Bios -usbdevice mouse -usbdevice keyboard -boot menu=on -rtc base=localtime,clock=host -parallel none -serial none -name ubuntu-no-acpi -no-reboot --accel whpx,kernel-irqchip=off
+qemu-system-x86_64w.exe -drive file=./Ubuntu22.img,index=0,media=disk,format=raw -cdrom ./ubuntu-22.04.5-desktop-amd64.iso -cpu Icelake-Server-v3 -m 2G -smp 4 -L Bios -usbdevice mouse -usbdevice keyboard -boot menu=on -rtc base=localtime,clock=host -parallel none -serial none -name ubuntu-no-acpi -no-reboot --accel whpx,kernel-irqchip=off
 	# 成功启动安装
 
 
@@ -8733,6 +8733,20 @@ qemu-system-x86_64w.exe -drive file=./Ubuntu22.img,index=0,media=disk,format=raw
 ```
 
 
+
+```
+https://qemu.weilnetz.de/w64/
+
+qemu-system-x86_64 -cpu help
+
+qemu-img create -f qcow2 ubuntu22.04.qcow2 20G
+
+qemu-system-x86_64w.exe -m 4G -smp cores=2 -cdrom ./ubuntu-22.04.5-desktop-amd64.iso -hda ./ubuntu22.04.qcow2 -boot d -enable-kvm
+
+
+
+
+```
 
 
 
