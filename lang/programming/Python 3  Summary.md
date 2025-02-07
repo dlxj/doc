@@ -9165,19 +9165,13 @@ if __name__ == '__main__':
 
 
 
+## mainim community
 
+https://docs.manim.community/en/stable/installation/uv.html
 
-
-
-
-
-
-
-
-
-
-
-
+```
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
 
 
 
@@ -22699,6 +22693,12 @@ vscdoe 插件
     ]
 }
 	# 正常进断点需要这个
+
+Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
+	# powershell
+
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+	# bash
 
 pnpm create vite vite-svelte -- --template svelte
 cd vite-svelte

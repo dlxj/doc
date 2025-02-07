@@ -8657,6 +8657,101 @@ for text in it:
 
 https://github.com/biemster/gasr/issues/19  chrome 实时字幕
 
+https://github.com/biemster/gasr/issues/24  gasr new
+
+
+
+```
+
+see huggingface/gasr_new
+
+proxychains4 wget https://www.7-zip.org/a/7z2409-linux-x64.tar.xz \
+  && tar -xvf 7z2409-linux-x64.tar.xz \
+  && mv 7zz 7zzs /usr/bin \
+  && 7zzs
+  
+proxychains4 wget https://apt.llvm.org/llvm.sh \
+  && chmod u+x llvm.sh \
+  && proxychains4 bash ./llvm.sh 19
+	# fix OSError: ./libsoda.so: undefined symbol: _ZNSt3__122__libcpp_verbose_abortEPKcz
+
+proxychains4 apt-get install libc++-19-dev libc++abi-19-dev
+	# Segmentation fault
+
+据说装 18 就可以
+  
+Move to gasr directory and edit ./prep.py to change the SZIP array index to 1 so that 7zzs is selected.
+
+Rerun the setup command:
+
+./prep.py -s -p zork -l en-us
+The output shown is:
+
+Found bug, fixing
+Execute gasr.py with ld-linux.so:
+
+./ld-linux.so $(which python3) ./gasr.py
+
+```
+
+
+
+```
+
+https://juejin.cn/post/7244358444349521979
+
+Comet Lake (10th gen)
+
+https://juejin.cn/post/7244358444349521979
+
+https://post.smzdm.com/p/aoowmgv6/
+	# 联想YOGA C940 Icelake 处理器
+
+
+运行 MSYS2 MINGW64 
+
+qemu-system-x86_64 -cpu help
+	# Icelake-Server-v3     Intel Xeon Processor (Icelake) 只有服务器 U 
+	# 也是第十代
+	
+	
+qemu-img create /e/kvm/Ubuntu22.img 40G
+	# 创建40GB的磁盘空间	
+
+qemu-system-x86_64w.exe -drive file=./Ubuntu22.img,index=0,media=disk,format=raw -cdrom ./ubuntu-22.04.5-desktop-amd64.iso -cpu Icelake-Server-v3 -m 2G -smp 4 -L Bios -usbdevice mouse -usbdevice keyboard -boot menu=on -rtc base=localtime,clock=host -parallel none -serial none -name ubuntu-no-acpi -no-reboot --accel whpx,kernel-irqchip=off
+	# 成功启动安装
+
+
+qemu-system-x86_64 -kernel linux-5.11.8/arch/x86_64/boot/bzImage -initrd ./my_initramfs.img -append "nokaslr console=ttyS0"  -cpu Broadwell -S -s -nographic  -m 2G
+
+
+cat /proc/cpuinfoihead-n10
+
+
+qemu-system-x86_64w.exe -drive file=./Ubuntu22.img,index=0,media=disk,format=raw -cdrom ./ubuntu-22.04.2-desktop-amd64.iso -m 8G -smp 4 -L Bios -usbdevice mouse -usbdevice keyboard -boot menu=on -rtc base=localtime,clock=host -parallel none -serial none -name ubuntu-no-acpi -no-reboot --accel whpx,kernel-irqchip=off
+
+```
+
+
+
+```
+https://qemu.weilnetz.de/w64/
+
+qemu-system-x86_64 -cpu help
+
+qemu-img create -f qcow2 ubuntu22.04.qcow2 20G
+
+qemu-system-x86_64w.exe -m 4G -smp cores=2 -cdrom ./ubuntu-22.04.5-desktop-amd64.iso -hda ./ubuntu22.04.qcow2 -boot d -enable-kvm
+
+
+
+
+```
+
+
+
+
+
 
 
 # Syntax
@@ -22897,6 +22992,20 @@ var current_version: String = ProjectSettings.get_setting("application/config/ve
 
 
 
+#### 顶部菜单自适应窗体大小
+
+```
+[node name="MenuAndUI" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+	# see huggingface\Pxlrm105\src\Main.tscn
+
+```
+
+
+
 
 
 #### splash_dialog
@@ -34094,6 +34203,8 @@ https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4
 
 
 ## deepseekv3
+
+https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q2_K  非量化要 256G 内存
 
 - https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF
 
