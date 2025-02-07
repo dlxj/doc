@@ -1,0 +1,425 @@
+<TMU|<tuple|1.0.5|1.2.9.7>>
+
+<style|<tuple|generic|chinese|doc|smart-ref|r7rs>>
+
+<\body>
+  <\hide-preamble>
+    <assign|hi|Hello, World!>
+
+    节从0开始编号
+
+    <assign|section-nr|-1>
+
+    <assign|hello|<macro|name|Hello <arg|name>, how are you today?>>
+
+    <assign|hello1|<macro|name|Hello, <with|font-shape|small-caps|<arg|name>>!>>
+
+    <assign|todo-green|<macro|body|<render-todo|dark green|<value|pastel green>|<arg|body>>>>
+
+    <assign|ket|<macro|a|<around*|\||<arg|a>|\<rangle\>><arg|>>>
+
+    <assign|todo|<macro|body|<render-todo|<value|todo-color>|<value|todo-bg-color>|<arg|body>>>>
+
+    \;
+
+    \;
+
+    \;
+
+    <style-with|src-compact|all|<active*|>>
+
+    <assign|tm-fragment|<\macro|body>
+      <pseudo-code|<arg|body>>
+    </macro>>
+
+    <assign|BibTeX|<macro|<with|font-shape|small-caps|Bib>T<rsub|<space|-0.4spc><move|<resize|<with|math-level|0|E>||||0.5fn>|0fn|-0.1fn>><space|-0.4spc>X>>
+
+    <assign|LaTeXe|<macro|L<rsup|<space|-0.8spc><move|A|0fn|-0.1fn>><space|-0.2spc>T<rsub|<space|-0.4spc><move|<resize|<with|math-level|0|E>||||0.5fn>|0fn|-0.1fn>><space|-0.4spc>X<compound|math|><space|0.2spc>2<move|<math|\<varepsilon\>>|-0.0fn|-0.15fn>>>
+  </hide-preamble>
+
+  <doc-data|<doc-title|Mogan 墨干 极简入门3>|<\doc-subtitle>
+    宏&自定义快捷键
+  </doc-subtitle>|<doc-author|<author-data|<author-name|by leik1917>|<author-email|leik1917@qq.com>>>|<\doc-date>
+    <date|>
+  </doc-date>>
+
+  <abstract-data|<\abstract>
+    Mogan是<TeXmacs>的发行版之一。
+
+    本文是 Mogan 1.2.9.7 (Windows平台) 学习笔记。
+  </abstract>>
+
+  <\table-of-contents|toc>
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|0<space|2spc>何时应该自定义宏?> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-1><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|1<space|2spc>定义宏> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-2><vspace|0.5fn>
+
+    <with|par-left|1tab|1.1<space|2spc>自定义宏的位置 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-3>>
+
+    <with|par-left|1tab|1.2<space|2spc>打开导言区 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-4>>
+
+    <with|par-left|1tab|1.3<space|2spc>Hello, World! <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-5>>
+
+    <with|par-left|1tab|1.4<space|2spc>环境变量 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-6>>
+
+    <with|par-left|1tab|1.5<space|2spc>带参数的宏 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-7>>
+
+    <with|par-left|3tab|with <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-8>>
+
+    <with|par-left|1tab|1.6<space|2spc>定义数学公式宏 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-9>>
+
+    <with|par-left|1tab|1.7<space|2spc>宏编辑器 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-10>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|2<space|2spc>系统的一些自带宏> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-11><vspace|0.5fn>
+
+    <with|par-left|1tab|2.1<space|2spc>tree宏 \\tree <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-12>>
+
+    <with|par-left|1tab|2.2<space|2spc>key宏 \\key <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-13>>
+
+    <with|par-left|1tab|2.3<space|2spc>Todo宏 \\todo <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-14>>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|3<space|2spc>自定义快捷键> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-15><vspace|0.5fn>
+
+    <vspace*|1fn><with|font-series|bold|math-font-series|bold|参考文献> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-16><vspace|0.5fn>
+  </table-of-contents>
+
+  <new-page*><section|何时应该自定义宏?>
+
+  对于 <TeXmacs> 用户来说，以下几种情况是自定义宏的最佳时机：
+
+  <\enumerate>
+    <item>频繁输入复杂的数学公式或符号。如果你在文档中需要多次输入复杂的数学公式或特定的符号组合，例如拉格朗日乘数法公式、狄拉克符号等，可以通过定义宏来简化输入过程。例如，定义一个宏 \\ket 来快速生成狄拉克符号右矢。
+
+    <\equation*>
+      <ket|\<psi\>>
+    </equation*>
+
+    <item>统一文档格式。当你需要在文档中多次使用特定的格式（如标题样式、定理环境等）时，可以通过自定义宏来确保格式的一致性。
+
+    <item>提高编辑效率。如果你在编辑过程中发现某些操作或文本片段 (Snippets) 需要反复输入，可以通过定义宏来减少重复劳动。例如，为常用的数学公式或文本片段定义宏，并为其设置快捷键，以便快速调用。
+
+    <item>扩展<TeXmacs>的功能。<TeXmacs>支持通过宏和 Scheme 脚本扩展其功能。例如，通过 Scheme 编写自定义命令，可以实现类似于 AutoHotKey 的快速输入功能。
+
+    <item>简化文档导言区。如果你需要在多个文档中重复使用某些宏定义或设置，可以将这些宏定义放在文档的导言区（Preamble），从而简化文档的编辑和维护。
+  </enumerate>
+
+  总之，自定义宏是提高<TeXmacs>使用效率和文档质量的重要工具，建议在需要减少重复输入、统一格式或扩展功能时使用。
+
+  <section|定义宏>
+
+  <subsection|自定义宏的位置>
+
+  虽然宏可以定义在文档的任意位置，但是除非特殊理由，否则建议把宏定义在文档的<strong|导言区>。理由如下：
+
+  <\enumerate>
+    <item>正文区是文档内容的主体部分，主要用于展示文本、公式、图表等实际内容，而不是用于定义宏。将宏定义在正文区会破坏文档的结构清晰性，使得文档的逻辑层次不明确。
+
+    <item>导言区更适合宏定义。导言区（Preamble）是专门用于定义全局设置、宏命令和加载宏包的地方。在导言区定义宏可以确保这些宏在整个文档中生效，并且不会干扰正文区的内容。<TeXmacs>的宏编辑器<strong|只支持>在导言区定义的宏。
+
+    <item>避免重复定义和冲突。如果在正文区定义宏，可能会导致宏的重复定义或冲突。特别是在文档较长或包含多个章节时，正文区中的宏定义可能会与其他部分的宏定义冲突，从而导致不可预测的结果。
+
+    <item>编辑效率和可维护性。
+
+    将宏定义集中在导言区可以方便管理和维护。如果宏定义分散在正文区，可能会导致在修改或查找宏定义时需要在文档中来回查找，降低编辑效率。
+  </enumerate>
+
+  <subsection|打开导言区>
+
+  菜单栏"文档"<math|\<rightarrow\>>"部分"<math|\<rightarrow\>>"显示序言"。或者快捷键 <key|Meta><\footnote>
+    Mogan在Windows平台使用<key|Win>键代替<key|Meta>键。
+  </footnote>+<key|Alt>+<key|p>。 新文档第一次打开时，会看到这是一个空白区域。右下角状态栏显示"Show-preamble"，提示现在处于导言区。当前环境工具栏也变为宏编程工具栏，可以便捷插入编程元素。
+
+  可以通过快捷键 <key|Win>+<key|Alt>+<key|p>循环切换导言区和正文区。
+
+  <subsection|Hello, World!>
+
+  根据编程语言的传统，让我们以"Hello, World"开始。在导言区输入如下内容：
+
+  <\tm-fragment>
+    <inactive|<assign|hi|Hello, World!>>
+  </tm-fragment>
+
+  输入按键过程：
+
+  <\enumerate>
+    <item><scm|\\assign>, 回车。光标自动来到变量定义区。
+
+    <item>输入变量名：<verbatim|hi>, 按右方向键，光标来到值定义区。
+
+    <item>输入值：<verbatim|Hello, World!>\ 
+  </enumerate>
+
+  然后 <key|Win>+<key|Alt>+<key|p>切换回正文区。输入如下内容，然后回车。
+
+  <\framed>
+    \\hi
+  </framed>
+
+  "\\hi"被求值, 变为：
+
+  <with|padding-above|0.5fn|ornament-border|2ln|<\framed>
+    <value|hi>\ 
+  </framed>>
+
+  上述过程实质上是在导言区定义了一个变量<verbatim|hi>，变量值为<verbatim|"Hello, World!">。在正文区使用"\\"插入并对变量<verbatim|hi>求值。将光标置于"Hello, World!"内，观察焦点工具栏的变化，然后通过<key|Ctrl>+<key|Tab>观察变量&求值变化。
+
+  <subsection|环境变量>
+
+  <TeXmacs>内部有大量环境变量。用户可以修改环境变量的值。比如想要节编号从0开始，就可以对节计数器"<verbatim|section-nr>"赋值<verbatim|-1>。
+
+  在导言区输入以下代码：
+
+  <\tm-fragment>
+    <inactive|<assign|section-nr|-1>>
+  </tm-fragment>
+
+  <subsection|带参数的宏>
+
+  给一个变量赋值一个宏macro，过程如下：
+
+  <\enumerate>
+    <item>键入"<verbatim|\\assign>" 回车
+
+    <item>输入变量名<verbatim|"name>", 按右方向键
+
+    <item>键入 "<verbatim|\\macro"> 回车
+
+    <item>按键 <key|Tab> 或者 <key|Alt>+ <math|<key|\<leftarrow\>>>，出现一个参数分割线<verbatim|\|>，输入参数名 "<verbatim|name">。
+  </enumerate>
+
+  <\tm-fragment>
+    <inactive|<assign|hello|<inactive|<macro|name|>>>>
+  </tm-fragment>
+
+  最终如上所示。然后按右方向键<math|<key|\<rightarrow\>>>，光标来到<verbatim|\|>右侧，继续输入程序体：
+
+  <\enumerate>
+    <item>键入 "<verbatim|Hello ">
+
+    <item>键入"<verbatim|\\name"> 回车。 <verbatim|\\argument_name> 是对参数的引用语法。引用参数也可以使用组合键<key|Ctrl>+<key|Alt>+<key|#>。组合键按完后，出现一个参数环境框，在这里直接输入参数名即可，然后按<math|<key|\<rightarrow\>>>离开参数环境框。
+
+    <item>继续键入 ", how are you today?"。现在应该看到
+  </enumerate>
+
+  <\tm-fragment>
+    <inactive|<assign|hello|<inactive|<macro|name|Hello <arg|name>, how are you today?>>>>
+  </tm-fragment>
+
+  然后 <key|Win>+<key|Alt>+<key|p>切换回正文区。输入如下内容，然后回车。
+
+  <\framed>
+    \\hello
+  </framed>
+
+  "\\hello"被展开, 变为：
+
+  <with|padding-above|0.5fn|ornament-border|2ln|<\framed>
+    <hello|<verbatim|\|>>
+  </framed>>
+
+  "<verbatim|\|>"表示光标所在位置，在等待你输入实参内容。宏定义时的形参也可以看成一个占位的插槽。
+
+  <paragraph|with>
+
+  <verbatim|assign> 是对全局变量赋值。<verbatim|with> 则是对变量局部赋值，而<strong|不>改变变量在其它地方的值。
+
+  定义<verbatim|hello1>宏：
+
+  <\tm-fragment>
+    <assign|hello1|<macro|name|Hello, <with|font-shape|small-caps|<arg|name>>!>><assign|hello1|<macro|name|Hello, <with|font-shape|small-caps|<arg|name>>!>><assign|hi|<macro|name|hello, <with|font-shape|small-caps|<arg|name>>!>><inactive|<assign|hello1|<inactive|<macro|name|Hello, <inactive|<with|font-shape|small-caps|<arg|name>>>!>>>>
+  </tm-fragment>
+
+  效果如下：
+
+  <\ornamented>
+    <hello1|leik>
+  </ornamented>
+
+  <verbatim|with>对参数<verbatim|name>的字体类型<verbatim|font-shape>赋值为<verbatim|small-caps>。
+
+  可以用快捷键<key|Ctrl>+<key|Alt>+<key|w>插入<verbatim|with>块。或者在宏编程工具栏上点击菜单插入。
+
+  <subsection|定义数学公式宏>
+
+  用户首先要决定是否在宏展开时自动插入一个数学环境。如果肯定是在文本模式调用这个宏，那么自动插入数学环境，然后在数学环境中展开这个宏，自然不错。但如果已经处于数学环境中，此时想要调用展开这个宏，那么宏定义时的body就不能包裹在 <verbatim|\<less\>math\|<text-dots>\<gtr\>>中。总之，一切取决于宏的使用环境。
+
+  在导言区，数学公式虽然能通过激活(<verbatim|active>)进行渲染排版，但并没有默认支持数学模式的快捷键。如果手工输入公式的源码，操作复杂而且也不直观易懂。如下面的宏如果直接在导言区以手动源码方式定义，将会很困难。
+
+  <\tm-fragment>
+    <math|><inactive|<assign|CD|<inactive|<macro|a|b|c|d|<math|<tabular*|<tformat|<table|<row|<cell|<arg|a>>|<cell|\<rightarrow\>>|<cell|<arg|c>>|<cell|\<rightarrow\>>|<cell|<arg|b>>|<cell|\<rightarrow\>>|<cell|<arg|c>>>|<row|<cell|\<downarrow\>>|<cell|>|<cell|\<downarrow\>>|<cell|>|<cell|\<downarrow\>>|<cell|>|<cell|\<Downarrow\>>>|<row|<arg|b>|<cell|\<rightarrow\>>|<cell|<arg|d>>|<cell|\<rightarrow\>>|<cell|<arg|a>>|<cell|\<rightarrow\>>|<cell|<arg|d>>>>>>>>>>>
+  </tm-fragment>
+
+  此时可以新建一个文档，直接在正文区定义宏。通过查看源码(快捷键 <key|Meta>+<key|Alt>+<key|s>)把宏源码复制到导言区。如果公式含有宏的参数，需要进行替换。
+
+  如果决定在宏展开时不要自动插入数学环境，那么可以只复制公式部分的源码。可以像下面这样操作：
+
+  正文区进入数学环境，编辑好公式。然后把光标放到公式左方。连续按右方向键<math|<key|\<rightarrow\>>>，同时观察右下角的状态栏提示，当光标来到"<verbatim|before> math"时，再按一次右方向键<math|<key|\<rightarrow\>>>，状态栏显示"<verbatim|math> start"，此时按住<key|Shift>键，开始连续按右方向键<math|<key|\<rightarrow\>>>，选好公式后。右键复制到"TeXmacs"。到导言区宏定义位置，右键粘贴自"TeXmacs"。
+
+  <subsection|宏编辑器>
+
+  可参阅<hlink|The Macro editor and easy macro modification|https://texmacs.github.io/notes/docs/macro-editor.html>
+
+  在宏编辑器中，可以给宏指定快捷键。
+
+  <section|系统的一些自带宏>
+
+  用法：键入 \\macro_name, 回车。
+
+  <subsection|tree宏 \\tree>
+
+  tree宏用来生成树图。<key|Alt>+<math|<key|\<rightarrow\>>> ,<key|Alt>+<math|<key|\<downarrow\>>> 生成树枝。<key|del> 键删除树枝。
+
+  <tree|root|<tree|bran1|leave1.1>|<tree|bran2|leave2.1>|<tree|bran3|<tree|bran3.1|leave3.1.1>|<tree|bran3.2|leave3.2.1|leave3.2.2>>>
+
+  <subsection|key宏 \\key>
+
+  对键盘的字母生成键冒背景。如：<key|space>。
+
+  输入\\key回车后，继续输入字母，再回车。
+
+  对于特殊的字母和符号，应先进入数学环境，再键入 "\\key"。如方向键 <math|<key|\<downarrow\>>>。
+
+  <subsection|Todo宏 \\todo>
+
+  <todo|这是待办事项<text-dots>>
+
+  如果待办事项已完成，可以 <key|ctrl>+<key|backspace> 删除这个环境。
+
+  类似的还有 \\TeXmacs \\TeX \\LaTeX. 注意大小写。
+
+  <section|自定义快捷键>
+
+  自定义快捷键需要有一定的Scheme语言知识。
+
+  在"<strong|工具>"菜单栏里勾选"<strong|开发工具>"，菜单栏中将出现"<strong|开发者>"菜单。点击"<strong|开发者>"菜单中的"<strong|Open my-init-texmacs.scm>"，第1次会报告文件不存在，然后程序在用户的配置文件夹<\footnote>
+    在Windows平台，该文件夹是"C:\\Users\\[user name]\\AppData\\Roaming\\XmacsLabs\\progs"
+  </footnote>中创建一个空白文件"<strong|my-init-texmacs.scm>"。再次点击"<strong|开发者>"菜单中的"<strong|Open my-init-texmacs.scm>"，打开配置文件。
+
+  我的配置文件如下：
+
+  <\scm-code>
+    (delayed
+
+    \ \ (lazy-keyboard-force)
+
+    \;
+
+    \ \ (kbd-map
+
+    \ \ \ \ ; 粘帖Latex代码, 快捷键 ^l \ 注释掉。现在使用魔法粘贴 Ctrl+Shift+v
+
+    \ \ \ \ ;("std l" (clipboard-paste-import "latex" "primary"))
+
+    \ \ \ \ ;重新定义插入脚注快捷键。官方的Ctrl+Shift+f与三码郑码输入法冲突
+
+    \ \ \ \ ("C-x f" (make 'footnote))
+
+    \ \ \ \ 
+
+    \ \ \ \ )
+
+    )
+  </scm-code>
+
+  \;
+
+  <\bibliography|bib|tm-plain|>
+    \;
+  </bibliography>
+
+  <\enumerate-numeric>
+    <item><hlink|王垠. <TeXmacs>脑图|https://www.mindomo.com/mindmap/b207992c90c046bdbe4053cbdf88b5d5>
+
+    <item><hlink|The Macro editor and easy macro modification|https://texmacs.github.io/notes/docs/macro-editor.html>
+
+    <item><hlink|Keyboard shortcuts for menu items|https://texmacs.github.io/notes/docs/macro-editor.html>
+
+    <item><hlink|零基础墨干10：样式语言之assign|https://www.bilibili.com/video/BV1L1421m77k>
+
+    <item><hlink|零基础墨干12：为粘贴LaTeX代码设置快捷键|https://www.bilibili.com/video/BV1bwmMYhEr5/>
+
+    <item><hlink|TeXmacs/墨干入门教程-如何自定义快捷键|https://www.bilibili.com/video/BV13341U7HH/>
+
+    <item><hlink|在TeXmacs中直观地自定义宏|https://www.zhihu.com/zvideo/1499395279593512960>
+
+    <item><hlink|TeXmacs/墨干入门教程-如何自定义快捷键|https://www.bilibili.com/video/BV133411U7HH/>
+  </enumerate-numeric>
+
+  \ 
+
+  \;
+
+  \;
+</body>
+
+<\initial>
+  <\collection>
+    <associate|info-flag|minimal>
+    <associate|page-medium|papyrus>
+    <associate|page-screen-margin|false>
+    <associate|preamble|false>
+  </collection>
+</initial>
+
+<\references>
+  <\collection>
+    <associate|auto-1|<tuple|0|2>>
+    <associate|auto-10|<tuple|1.7|5>>
+    <associate|auto-11|<tuple|2|5>>
+    <associate|auto-12|<tuple|2.1|5>>
+    <associate|auto-13|<tuple|2.2|5>>
+    <associate|auto-14|<tuple|2.3|5>>
+    <associate|auto-15|<tuple|3|5>>
+    <associate|auto-16|<tuple|2|6>>
+    <associate|auto-2|<tuple|1|2>>
+    <associate|auto-3|<tuple|1.1|2>>
+    <associate|auto-4|<tuple|1.2|2>>
+    <associate|auto-5|<tuple|1.3|3>>
+    <associate|auto-6|<tuple|1.4|3>>
+    <associate|auto-7|<tuple|1.5|3>>
+    <associate|auto-8|<tuple|1|4>>
+    <associate|auto-9|<tuple|1.6|4>>
+    <associate|footnote-1|<tuple|1|2>>
+    <associate|footnote-2|<tuple|2|5>>
+    <associate|footnr-1|<tuple|1|2>>
+    <associate|footnr-2|<tuple|2|5>>
+  </collection>
+</references>
+
+<\auxiliary>
+  <\collection>
+    <\associate|toc>
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|0<space|2spc>何时应该自定义宏?> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-1><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|1<space|2spc>定义宏> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-2><vspace|0.5fn>
+
+      <with|par-left|<quote|1tab>|1.1<space|2spc>自定义宏的位置 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-3>>
+
+      <with|par-left|<quote|1tab>|1.2<space|2spc>打开导言区 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-4>>
+
+      <with|par-left|<quote|1tab>|1.3<space|2spc>Hello, World! <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-5>>
+
+      <with|par-left|<quote|1tab>|1.4<space|2spc>环境变量 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-6>>
+
+      <with|par-left|<quote|1tab>|1.5<space|2spc>带参数的宏 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-7>>
+
+      <with|par-left|<quote|3tab>|with <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-8>>
+
+      <with|par-left|<quote|1tab>|1.6<space|2spc>定义数学公式宏 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-9>>
+
+      <with|par-left|<quote|1tab>|1.7<space|2spc>宏编辑器 <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-10>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|2<space|2spc>系统的一些自带宏> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-11><vspace|0.5fn>
+
+      <with|par-left|<quote|1tab>|2.1<space|2spc>tree宏 \\tree <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-12>>
+
+      <with|par-left|<quote|1tab>|2.2<space|2spc>key宏 \\key <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-13>>
+
+      <with|par-left|<quote|1tab>|2.3<space|2spc>Todo宏 \\todo <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-14>>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|3<space|2spc>自定义快捷键> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-15><vspace|0.5fn>
+
+      <vspace*|1fn><with|font-series|<quote|bold>|math-font-series|<quote|bold>|参考文献> <datoms|<macro|x|<repeat|<arg|x>|<with|font-series|medium|<with|font-size|1|<space|0.2fn>.<space|0.2fn>>>>>|<htab|5mm>> <no-break><pageref|auto-16><vspace|0.5fn>
+    </associate>
+  </collection>
+</auxiliary>
