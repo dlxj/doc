@@ -34095,12 +34095,21 @@ https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4
 
 ## deepseekv3
 
-https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF/discussions/6
-
-- https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-32B-Q5_K_M.gguf?download=true  下载 q5 k m
+- https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF
 
 ```
-llama-cli.exe --model DeepSeek-R1-Distill-Qwen-32B-Q4_K_M.gguf --color --threads 30 --keep -1 --n-predict -1 --ctx-size 16384 -ngl 99 --simple-io -e --multiline-input --no-display-prompt --conversation --no-mmap --temp 0.6 -p "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning process and answer are enclosed in <think> </think> and <answer> </answer> tags, respectively, i.e., <think> reasoning process here </think> <answer> answer here </answer>."
+
+https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF/resolve/main/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf?download=true
+	# 下载 42.5G 4090 48G 显卡能装下
+
+./llama.cpp/llama-cli \
+--model unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf
+--cache-type-k q8_0 
+--threads 16 
+--prompt '<｜User｜>What is 1+1?<｜Assistant｜>'
+--n-gpu-layers 20 \
+ -no-cnv
+
 
 ```
 
