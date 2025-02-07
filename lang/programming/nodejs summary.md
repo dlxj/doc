@@ -34204,6 +34204,8 @@ https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4
 
 ## deepseekv3
 
+https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q2_K  非量化要 256G 内存
+
 https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF/discussions/6
 
 - https://huggingface.co/bartowski/DeepSeek-R1-Distill-Qwen-32B-GGUF/resolve/main/DeepSeek-R1-Distill-Qwen-32B-Q5_K_M.gguf?download=true  下载 q5 k m
