@@ -34288,10 +34288,13 @@ DeepSeek R1 模型共有 61 层，我的经验是：
 num_ctx：上下文窗口的大小（默认值为 2048），建议从较小值开始逐步增加，直至触发内存不足的错误。
 
 
-git clone https://github.com/ggerganov/llama.cpp
-cd llama.cpp
-cmake . -B build -DBUILD_SHARED_LIBS=OFF -DGGML_CUDA=ON -DLLAMA_CURL=ON
-cmake --build build --config Release -j --clean-first --target llama-quantize llama-cli llama-gguf-split
+cd ~ \
+  && git clone https://github.com/ggerganov/llama.cpp \
+  && cd ~/llama.cpp \
+  && cmake -B build -DGGML_CUDA=ON -DLLAMA_CURL=ON \
+  && cmake --build build --config Release -j --clean-first
+    # 先配置好 cuda11.8
+    # 成功编译
 
 
 
