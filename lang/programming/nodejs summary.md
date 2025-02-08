@@ -34275,6 +34275,8 @@ curl --request POST \
 ```
 # 多机多卡
 
+https://github.com/ggerganov/llama.cpp/issues/11435
+
 llama.cpp/llama-server --list-devices
 
 --device CUDA0,RPC[10.2.0.5:1000],RPC[10.2.0.5:1001],RPC[10.2.0.5:1002],RPC[10.2.0.5:1003]
