@@ -34303,6 +34303,8 @@ DeepSeek R1 模型共有 61 层，我的经验是：
 对于 DeepSeek-R1-Q4_K_M，每卡仅可加载 2 层，四卡共 8 层。
 num_ctx：上下文窗口的大小（默认值为 2048），建议从较小值开始逐步增加，直至触发内存不足的错误。
 
+see huggingface/rwkv5-jp-trimvd_new/readme.txt
+
 apt update \
   && apt install libcurl4-openssl-dev
   && cd ~ \
@@ -34313,8 +34315,13 @@ apt update \
     # 先配置好 cuda11.8
     # 成功编译
 
-$ CUDA_VISIBLE_DEVICES=0 bin/rpc-server -p 1000
+cd /root/huggingface/rwkv5-jp-trimvd_new \
+  && cp -rf ~/llama.cpp/build/bin/ llama.cpp
+
+cd /root/huggingface/rwkv5-jp-trimvd_new \
+  && CUDA_VISIBLE_DEVICES=0 bin/rpc-server -p 1000
 	# 单机多卡可以多开 rpc ，每个 rpc 使用本机的指定一或多张显卡
+
 
 https://hf-mirror.com/is210379/DeepSeek-R1-UD-IQ1_S
 	# autodl 部署这个全量的看看
