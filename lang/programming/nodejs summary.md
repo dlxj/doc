@@ -34208,6 +34208,7 @@ https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q2_K  非�
 
 - https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF
 - https://www.codewithgpu.com/m/unsloth-DeepSeek-R1-GGUF-IQ1_S  150G 全量不知道怎么样
+- https://huggingface.co/deepseek-ai/DeepSeek-V3/raw/main/tokenizer.json  v3 的分词器
 
 ```
 
@@ -34245,6 +34246,24 @@ curl --request POST \
 --data '{"prompt":"<｜User｜>翻译成中文：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>"}'
 # deepseek
 
+```
+
+
+
+```
+./llama-server \
+>     --model models/deepseek-v3-q2_k_xs-00001-of-00005.gguf --alias full \
+>     --host 0.0.0.0 \
+>     --port 55055 \
+>     --ctx-size 327680 \
+>     --cache-type-k q5_0 \
+>     --slot-save-path "saved_slots.kvc" \
+>     --threads 94 \
+>     --threads-http 12 \
+>     --parallel 6 \
+>     --mirostat 2 \
+>     --mirostat-ent 5.7 \
+>     --mirostat-lr 0.14
 ```
 
 
