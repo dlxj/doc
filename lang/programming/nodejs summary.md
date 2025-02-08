@@ -34274,6 +34274,14 @@ curl --request POST \
 
 ```
 # 多机多卡
+https://github.com/ggerganov/llama.cpp/pull/11606
+
+$ llama.cpp/build/bin/llama-server --rpc <IP1>:<PORT1> --rpc <IP2>:<PORT2> \
+--device RPC[IP1:PORT1],CUDA0,CUDA1,RPC[IP2:PORT2] \
+-ngl 33 --tensor_split 3/20/10/0 --device-draft CUDA1,RPC[IP2:PORT2] -ngld 99 [...]
+33 layers are being offloaded, and they are divided between 3 devices, (3 layers for the first RPC device, 20 for the first CUDA device, and 10 for the last CUDA device).
+
+
 
 https://github.com/ggerganov/llama.cpp/issues/11435
 
