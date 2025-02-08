@@ -34276,6 +34276,9 @@ curl --request POST \
 # 多机多卡
 https://github.com/ggerganov/llama.cpp/pull/11606
 
+https://github.com/ggerganov/llama.cpp/blob/master/examples/rpc/README.md
+	# rpc 设备要手动编译并运行
+
 $ llama.cpp/build/bin/llama-server --rpc <IP1>:<PORT1> --rpc <IP2>:<PORT2> \
 --device RPC[IP1:PORT1],CUDA0,CUDA1,RPC[IP2:PORT2] \
 -ngl 33 --tensor_split 3/20/10/0 --device-draft CUDA1,RPC[IP2:PORT2] -ngld 99 [...]
