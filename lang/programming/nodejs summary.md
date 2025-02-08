@@ -34320,7 +34320,7 @@ cd /root/huggingface/rwkv5-jp-trimvd_new \
 
 cd /root/huggingface/rwkv5-jp-trimvd_new \
   && llama.cpp/llama-server --list-devices \
-  && CUDA_VISIBLE_DEVICES=0 bin/rpc-server -p 1000
+  && CUDA_VISIBLE_DEVICES=0 llama.cpp/rpc-server --host 0.0.0.0 -p 1000
 	# 单机多卡可以多开 rpc ，每个 rpc 使用本机的指定一或多张显卡
 
 
