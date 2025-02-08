@@ -34279,6 +34279,9 @@ https://github.com/ggerganov/llama.cpp/issues/11435
 
 llama.cpp/llama-server --list-devices
 
+bin/llama-cli --rpc localhost:50052,localhost:50053 --list-devices
+	# 同时显示 rpc 设备和本机设备 ？
+
 --device CUDA0,RPC[10.2.0.5:1000],RPC[10.2.0.5:1001],RPC[10.2.0.5:1002],RPC[10.2.0.5:1003]
 
 
