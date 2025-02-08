@@ -34305,6 +34305,8 @@ num_ctx：上下文窗口的大小（默认值为 2048），建议从较小值�
 
 see huggingface/rwkv5-jp-trimvd_new/readme.txt
 
+ add --no-mmap which will load the model into system ram, rather than have it mapped to disk.
+
 apt update \
   && apt install libcurl4-openssl-dev
   && cd ~ \
