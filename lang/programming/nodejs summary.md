@@ -34279,6 +34279,25 @@ https://github.com/ggerganov/llama.cpp/pull/11606
 https://github.com/ggerganov/llama.cpp/blob/master/examples/rpc/README.md
 	# rpc 设备要手动编译并运行
 
+https://medium.com/@sonamshrish1618/deepseek-r1-in-24gb-gpu-dynamic-quantization-by-unsloth-ai-for-a-671b-parameter-model-6b0cf85f9065
+	# 必看 Q2_K_XL 212G 最佳
+
+DeepSeek R1 模型共有 61 层，我的经验是：
+对于 DeepSeek-R1-UD-IQ1_M，每块 RTX 4090（24GB 显存）可加载 7 层，四卡共 28 层（接近总层数的一半）。
+对于 DeepSeek-R1-Q4_K_M，每卡仅可加载 2 层，四卡共 8 层。
+num_ctx：上下文窗口的大小（默认值为 2048），建议从较小值开始逐步增加，直至触发内存不足的错误。
+
+
+git clone https://github.com/ggerganov/llama.cpp
+cd llama.cpp
+cmake . -B build -DBUILD_SHARED_LIBS=OFF -DGGML_CUDA=ON -DLLAMA_CURL=ON
+cmake --build build --config Release -j --clean-first --target llama-quantize llama-cli llama-gguf-split
+
+
+
+https://hf-mirror.com/is210379/DeepSeek-R1-UD-IQ1_S
+	# autodl 部署这个全量的看看
+
 $ llama.cpp/build/bin/llama-server --rpc <IP1>:<PORT1> --rpc <IP2>:<PORT2> \
 --device RPC[IP1:PORT1],CUDA0,CUDA1,RPC[IP2:PORT2] \
 -ngl 33 --tensor_split 3/20/10/0 --device-draft CUDA1,RPC[IP2:PORT2] -ngld 99 [...]
