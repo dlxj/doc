@@ -34280,7 +34280,9 @@ https://github.com/ggerganov/llama.cpp/blob/master/examples/rpc/README.md
 	# rpc 设备要手动编译并运行
 
 https://medium.com/@sonamshrish1618/deepseek-r1-in-24gb-gpu-dynamic-quantization-by-unsloth-ai-for-a-671b-parameter-model-6b0cf85f9065
+    # https://juejin.cn/post/7464254495401590784 # GPUStack 部署
 	# 必看 Q2_K_XL 212G 最佳
+	# https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-Q2_K_XL
 
 DeepSeek R1 模型共有 61 层，我的经验是：
 对于 DeepSeek-R1-UD-IQ1_M，每块 RTX 4090（24GB 显存）可加载 7 层，四卡共 28 层（接近总层数的一半）。
