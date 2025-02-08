@@ -34211,6 +34211,7 @@ https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q2_K  非�
 - https://huggingface.co/deepseek-ai/DeepSeek-V3/raw/main/tokenizer.json  v3 的分词器
 
 ```
+# 好像 llama.cpp 运行千问量化有BUG，只用 llamma 量化
 
 https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF/resolve/main/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf?download=true
 	# 下载 42.5G 4090 48G 显卡能装下
@@ -34225,6 +34226,9 @@ llama.cpp/llama-cli \
  -no-cnv
  	# cli 可以这样运行，但是 server 不行
 
+
+llama.cpp/llama-server -m /mnt/y/ai/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf -t 8 -c 4096 -ngl 999 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 8192 -a DeepSeek-R1-Distill-Llama-70B-Q4_K_M --port 8080
+    # 久经考验的参数
 
 cd /root/huggingface/rwkv5-jp-trimvd_new && \
 llama.cpp/llama-server \
