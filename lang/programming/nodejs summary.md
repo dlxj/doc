@@ -34284,21 +34284,41 @@ https://medium.com/@sonamshrish1618/deepseek-r1-in-24gb-gpu-dynamic-quantization
 	# 必看 Q2_K_XL 212G 最佳
 	# https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-Q2_K_XL
 	# --model DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf 分片模型指定第一块就可以了？
+	# n_offload = floor((GPU_VRAM_GB / Model_FileSize_GB) * (Total_Layers - 4))
+	# ./build/bin/llama-cli \
+    --model DeepSeek-R1-GGUF/DeepSeek-R1-UD-IQ1_S/DeepSeek-R1-UD-IQ1_S-00001-of-00003.gguf \
+    --cache-type-k q4_0 \
+    --threads 16 \
+    --prio 2 \
+    --temp 0.6 \
+    --ctx-size 8192 \
+    --seed 3407 \
+    --n-gpu-layers 7 \
+    -no-cnv \
+    --prompt "<|User|>Create a Flappy Bird game in Python.<|Assistant|>"
+    
 
 DeepSeek R1 模型共有 61 层，我的经验是：
 对于 DeepSeek-R1-UD-IQ1_M，每块 RTX 4090（24GB 显存）可加载 7 层，四卡共 28 层（接近总层数的一半）。
 对于 DeepSeek-R1-Q4_K_M，每卡仅可加载 2 层，四卡共 8 层。
 num_ctx：上下文窗口的大小（默认值为 2048），建议从较小值开始逐步增加，直至触发内存不足的错误。
 
+apt update \
+  && apt install libcurl4-openssl-dev
 
 cd ~ \
   && git clone https://github.com/ggerganov/llama.cpp \
   && cd ~/llama.cpp \
-  && cmake -B build -DGGML_CUDA=ON -DLLAMA_CURL=ON \
+  && cmake -B build -DGGML_CUDA=ON -DGGML_RPC=ON -DLLAMA_CURL=ON \
   && cmake --build build --config Release -j --clean-first
     # 先配置好 cuda11.8
     # 成功编译
 
+cd ~/llama.cpp \
+  && mkdir build-rpc-cuda \
+  && cd build-rpc-cuda \
+  && cmake .. -DGGML_CUDA=ON -DGGML_RPC=ON \
+  && cmake --build . --config Release
 
 
 https://hf-mirror.com/is210379/DeepSeek-R1-UD-IQ1_S
