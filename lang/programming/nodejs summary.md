@@ -34305,8 +34305,7 @@ num_ctx：上下文窗口的大小（默认值为 2048），建议从较小值�
 
 apt update \
   && apt install libcurl4-openssl-dev
-
-cd ~ \
+  && cd ~ \
   && git clone https://github.com/ggerganov/llama.cpp \
   && cd ~/llama.cpp \
   && cmake -B build -DGGML_CUDA=ON -DGGML_RPC=ON -DLLAMA_CURL=ON \
@@ -34314,12 +34313,8 @@ cd ~ \
     # 先配置好 cuda11.8
     # 成功编译
 
-cd ~/llama.cpp \
-  && mkdir build-rpc-cuda \
-  && cd build-rpc-cuda \
-  && cmake .. -DGGML_CUDA=ON -DGGML_RPC=ON \
-  && cmake --build . --config Release
-
+$ CUDA_VISIBLE_DEVICES=0 bin/rpc-server -p 1000
+	# 单机多卡可以多开 rpc ，每个 rpc 使用本机的指定一或多张显卡
 
 https://hf-mirror.com/is210379/DeepSeek-R1-UD-IQ1_S
 	# autodl 部署这个全量的看看
