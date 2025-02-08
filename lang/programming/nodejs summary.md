@@ -34268,6 +34268,24 @@ curl --request POST \
 
 
 
+```
+# 多机多卡
+
+llama.cpp/llama-server --list-devices
+
+--device CUDA0,RPC[10.2.0.5:1000],RPC[10.2.0.5:1001],RPC[10.2.0.5:1002],RPC[10.2.0.5:1003]
+
+
+I decided to test this out on my machine, with local RTX3090, and a RPC host with a 1660ti (laptop GPU). (I'm on build: 4588 (66ee4f29), so not exactly the current, but just a few days old).
+
+$ llama.cpp/build/bin/llama-server --rpc 192.168.10.151:50000 --model /home/pc/fast/DeepSeek-R1-Distill-Qwen-32B-GGUF/DeepSeek-R1-Distill-Qwen-32B-Q8_0.gguf --host 0.0.0.0 --port 5800 -c 32768 --threads 16 -fa --device CUDA0,RPC[192.168.10.151:50000] -ngl 44 --tensor_split 36/8 -b 512 -ub 256
+
+
+
+```
+
+
+
 
 
 https://note.com/kind_crocus236/n/ndd8db8009d4e  deekseekv3 日译中，结果很好
