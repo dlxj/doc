@@ -34207,20 +34207,43 @@ https://huggingface.co/Qwen/Qwen2.5-72B-Instruct-GPTQ-Int4
 https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q2_K  非量化要 256G 内存
 
 - https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF
+- https://www.codewithgpu.com/m/unsloth-DeepSeek-R1-GGUF-IQ1_S  150G 全量不知道怎么样
 
 ```
 
 https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF/resolve/main/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf?download=true
 	# 下载 42.5G 4090 48G 显卡能装下
 
-./llama.cpp/llama-cli \
---model unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf
---cache-type-k q8_0 
---threads 16 
---prompt '<｜User｜>What is 1+1?<｜Assistant｜>'
+cd /root/huggingface/rwkv5-jp-trimvd_new && \
+llama.cpp/llama-cli \
+--model /mnt/y/ai/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf \
+--cache-type-k q8_0 \
+--threads 16 \
+--prompt '<｜User｜>What is 1+1?<｜Assistant｜>' \
 --n-gpu-layers 20 \
  -no-cnv
+ 	# cli 可以这样运行，但是 server 不行
 
+
+cd /root/huggingface/rwkv5-jp-trimvd_new && \
+llama.cpp/llama-server \
+--model /mnt/y/ai/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf \
+--cache-type-k q8_0 \
+--threads 16 \
+ -c 4096 \
+--n-gpu-layers 999 \
+--repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
+ -a DeepSeek-R1-Distill-Qwen-32B-Q5_K_M \
+--port 8080
+    # server
+
+
+curl --request POST \
+--url http://localhost:8080/completion \
+--header "Content-Type: application/json" \
+--header "Accept: text/event-stream" \
+--data '{"prompt":"<｜User｜>翻译成中文：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>"}'
+# deepseek
 
 ```
 
