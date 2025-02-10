@@ -34311,8 +34311,11 @@ llama.cpp/llama-bench.exe -m Qwen2.5-14B-Instruct-Q4_K_M.gguf
 	# 测试速度？
 
 
+# see huggingface/rwkv5-jp-trimvd_new/vector_sqlite.py -> trans_nodes_gemma
+
 apt update \
-  && apt install libcurl4-openssl-dev
+  && apt install -y libcurl4-openssl-dev net-tools lsof nmap ufw \
+  && ufw disable \
   && cd ~ \
   && git clone https://github.com/ggerganov/llama.cpp \
   && cd ~/llama.cpp \
@@ -34329,6 +34332,27 @@ cd /root/huggingface/rwkv5-jp-trimvd_new \
   && CUDA_VISIBLE_DEVICES=0 llama.cpp/rpc-server --host 0.0.0.0 -p 1000
 	# 单机多卡可以多开 rpc ，每个 rpc 使用本机的指定一或多张显卡
 
+# 先在 autodl 单独开一个 rpc 机子
+CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
+	# nmap -p 1000 172.17.0.2
+	# 已确认 autodl 不支持内网互通
+
+./llama-server --rpc 172.17.0.3:1000 --list-devices
+	# 显示所有可用设备
+
+bin/llama-server --rpc 172.17.0.3:1000 \
+--device RPC[172.17.0.3:1000],CUDA0 \
+--model /root/autodl-tmp/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf \
+--cache-type-k q4_0 \
+--threads 6 \
+ -c 4096 \
+--n-gpu-layers 999 \
+--tensor_split 20/0
+--mlock \
+--repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
+ -a DeepSeek-R1-Distill-Llama-70B-Q4_K_M \
+--port 8080
+
 
 https://hf-mirror.com/is210379/DeepSeek-R1-UD-IQ1_S
 	# autodl 部署这个全量的看看
@@ -34337,6 +34361,24 @@ $ llama.cpp/build/bin/llama-server --rpc <IP1>:<PORT1> --rpc <IP2>:<PORT2> \
 --device RPC[IP1:PORT1],CUDA0,CUDA1,RPC[IP2:PORT2] \
 -ngl 33 --tensor_split 3/20/10/0 --device-draft CUDA1,RPC[IP2:PORT2] -ngld 99 [...]
 33 layers are being offloaded, and they are divided between 3 devices, (3 layers for the first RPC device, 20 for the first CUDA device, and 10 for the last CUDA device).
+
+
+
+CUDA0
+
+cd /root/huggingface/rwkv5-jp-trimvd_new && \
+llama.cpp/llama-server \
+--model /mnt/y/ai/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf \
+--cache-type-k q4_0 \
+--threads 6 \
+ -c 4096 \
+--n-gpu-layers 999 \
+--mlock \
+--repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
+ -a DeepSeek-R1-Distill-Llama-70B-Q4_K_M \
+--port 8080
+    # server
+    # --no-mmap 加载权重到内存，而不是作磁盘映射 加了这参数好像输出就不正常了
 
 
 
