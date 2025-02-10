@@ -34336,23 +34336,24 @@ cd /root/huggingface/rwkv5-jp-trimvd_new \
 CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
 	# nmap -p 1000 172.17.0.2
 	# 已确认 autodl 不支持内网互通
+	./llama-server --rpc 172.17.0.3:1000 --list-devices
+		# 显示所有可用设备
 
-./llama-server --rpc 172.17.0.3:1000 --list-devices
-	# 显示所有可用设备
-
-bin/llama-server --rpc 172.17.0.3:1000 \
---device RPC[172.17.0.3:1000],CUDA0 \
+./llama-server \
+--device CUDA0,CUDA1 \
 --model /root/autodl-tmp/DeepSeek-R1-Distill-Llama-70B-Q4_K_M.gguf \
 --cache-type-k q4_0 \
 --threads 6 \
  -c 4096 \
---n-gpu-layers 999 \
---tensor_split 20/0
+--n-gpu-layers 32 \
+--tensor_split 16/16 \
 --mlock \
 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
  -a DeepSeek-R1-Distill-Llama-70B-Q4_K_M \
 --port 8080
-
+	# 第一卡加载 20 层权重，剩下的全给第二卡
+	# 20 层 39979.48 MiB 显存，大概每层 2 G
+	# 32G / 2 = 16 层
 
 https://hf-mirror.com/is210379/DeepSeek-R1-UD-IQ1_S
 	# autodl 部署这个全量的看看
