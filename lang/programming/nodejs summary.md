@@ -34345,15 +34345,27 @@ CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
 --cache-type-k q4_0 \
 --threads 6 \
  -c 4096 \
---n-gpu-layers 32 \
---tensor_split 16/16 \
+--n-gpu-layers 120 \
+--tensor_split 60/60 \
 --mlock \
 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
  -a DeepSeek-R1-Distill-Llama-70B-Q4_K_M \
 --port 8080
-	# 第一卡加载 20 层权重，剩下的全给第二卡
-	# 20 层 39979.48 MiB 显存，大概每层 2 G
-	# 32G / 2 = 16 层
+	# 第一卡加载 60 层权重，剩下的全给第二卡
+	# 60 层 21G 显存
+
+curl --request POST \
+--url http://localhost:8080/completion \
+--header "Content-Type: application/json" \
+--header "Accept: text/event-stream" \
+--data '{"prompt":"你是中日翻译专家<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>"}'
+
+
+curl --request POST \
+--url http://localhost:8080/completion \
+--header "Content-Type: application/json" \
+--data '{"prompt":"You are a helpful assistant<｜User｜>Hello<｜Assistant｜>Hi there<｜end▁of▁sentence｜><｜User｜>How are you?<｜Assistant｜>"}'
+
 
 https://hf-mirror.com/is210379/DeepSeek-R1-UD-IQ1_S
 	# autodl 部署这个全量的看看
