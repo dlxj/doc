@@ -34314,8 +34314,7 @@ llama.cpp/llama-bench.exe -m Qwen2.5-14B-Instruct-Q4_K_M.gguf
 # see huggingface/rwkv5-jp-trimvd_new/vector_sqlite.py -> trans_nodes_gemma
 
 apt update \
-  && apt install -y libcurl4-openssl-dev net-tools lsof nmap ufw \
-  && ufw disable \
+  && apt install -y libcurl4-openssl-dev \
   && cd ~ \
   && git clone https://github.com/ggerganov/llama.cpp \
   && cd ~/llama.cpp \
@@ -34358,7 +34357,7 @@ curl --request POST \
 --url http://localhost:8080/completion \
 --header "Content-Type: application/json" \
 --header "Accept: text/event-stream" \
---data '{"prompt":"你是中日翻译专家<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>"}'
+--data '{"prompt":"<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>"}'
 
 
 curl --request POST \
