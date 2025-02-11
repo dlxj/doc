@@ -18432,6 +18432,21 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 
 ```
 # huggingface/gradio512/demo/video_component/run.py
+
+proxychains4 apt install pollen \
+  && proxychains4 pip install -r requirements.txt \
+  && proxychains4 pnpm install \
+  && pnpm build
+
+proxychains4 bash scripts/install_gradio.sh && \
+proxychains4 bash scripts/build_frontend.sh && \
+bash scripts/install_test_requirements.sh
+
+cd /root/huggingface/gradio512 && proxychains4 pnpm i --frozen-lockfile --ignore-scripts && 
+cd js/video && pnpm i --frozen-lockfile --ignore-scripts
+	# 修改原生组件需要这样安装依赖
+	# 出错的话就直接 pnpm i
+
 import gradio as gr
 import os
 
