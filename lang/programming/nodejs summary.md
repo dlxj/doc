@@ -34352,6 +34352,7 @@ CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
 --port 8080
 	# 第一卡加载 60 层权重，剩下的全给第二卡
 	# 60 层 21G 显存
+	# 70B 也不太聪明的样子
 
 curl --request POST \
 --url http://localhost:8080/completion \

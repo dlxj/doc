@@ -18426,6 +18426,65 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 
 
 
+### gradio512 跨域
+
+
+
+```
+# huggingface/gradio512/demo/video_component/run.py
+import gradio as gr
+import os
+
+a = os.path.join(os.path.dirname(__file__), "files/world.mp4")  # Video
+b = os.path.join(os.path.dirname(__file__), "files/a.mp4")  # Video
+c = os.path.join(os.path.dirname(__file__), "files/b.mp4")  # Video
+
+demo = gr.Interface(
+    fn=lambda x: x,
+    inputs=gr.Video(),
+    outputs=gr.Video(),
+    examples=[
+        [a],
+        [b],
+        [c],
+    ],
+    cache_examples=True
+)
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+import gradio as gr
+import uvicorn
+
+app = FastAPI()
+
+app = gr.mount_gradio_app(app, demo, path="/")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:9876"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=7860)
+    
+    
+cd /root/huggingface/gradio512/demo/video_component && conda activate gradio512 && gradio run.py
+    # 这样可以自动热重载
+cd /root/huggingface/gradio512/demo/video_component && conda activate gradio512 && pnpm dev
+	# 开两个 teminal 运行这两行，现在不跨域了，但是点 dataset 出错
+
+
+```
+
+
+
+
+
 ### vscode+gradio
 
 ```
