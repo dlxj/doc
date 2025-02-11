@@ -18433,7 +18433,7 @@ pnpm vitest dev --config .config/vitest.config.ts  js/video/Video.test.ts
 ```
 # huggingface/gradio512/demo/video_component/run.py
 
-proxychains4 apt install pollen \
+proxychains4 apt install pollen libcairo2-dev \
   && proxychains4 pip install -r requirements.txt \
   && proxychains4 pnpm install \
   && pnpm build
@@ -18441,6 +18441,10 @@ proxychains4 apt install pollen \
 proxychains4 bash scripts/install_gradio.sh && \
 proxychains4 bash scripts/build_frontend.sh && \
 bash scripts/install_test_requirements.sh
+
+proxychains4 pip install build && 
+bash build_pypi.sh
+	# 编译整 gradio 本身
 
 cd /root/huggingface/gradio512 && proxychains4 pnpm i --frozen-lockfile --ignore-scripts && 
 cd js/video && pnpm i --frozen-lockfile --ignore-scripts
