@@ -18440,7 +18440,7 @@ proxychains4 apt install pollen libcairo2-dev \
 
 proxychains4 bash scripts/install_gradio.sh && \
 proxychains4 bash scripts/build_frontend.sh && \
-bash scripts/install_test_requirements.sh
+proxychains4 bash scripts/install_test_requirements.sh
 
 proxychains4 pip install build && 
 bash build_pypi.sh
