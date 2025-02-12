@@ -38512,16 +38512,19 @@ App.xaml 改成这样
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:WpfApp1"
              xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
-             	<!--新增命名空间-->
+             	<!--新增命名空间，不要复制这个，会出错-->
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <ResourceDictionary.MergedDictionaries>
-            <ui:ThemeResources/>
-            <ui:XamlControlsResources/>
-        </ResourceDictionary.MergedDictionaries>
-            <!--新增资源-->
-            
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemeResources/>
+                <ui:XamlControlsResources/>
+            </ResourceDictionary.MergedDictionaries>
+
             <!--如果存在，您的其他资源在这里-->
+
+        </ResourceDictionary>
+            <!--新增资源-->
     </Application.Resources>
 </Application>
 
