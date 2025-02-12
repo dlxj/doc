@@ -18451,6 +18451,19 @@ cd js/video && pnpm i --frozen-lockfile --ignore-scripts
 	# 修改原生组件需要这样安装依赖
 	# 出错的话就直接 pnpm i
 
+
+cd demo/video_component && conda activate gradio512 && gradio run.py
+cd demo/video_component && conda activate gradio512 && pnpm dev
+	# 开两 shell单独运行
+	# TypeError: Cannot use 'in' operator to search for '' in undefined
+    at Client.get_page_config (/root/gradio515/client/js/src/client.ts:91:9)
+    at Client.get_url_config (/root/gradio515/client/js/src/client.ts:84:15)
+    at load (/root/gradio515/js/app/src/routes/[...catchall]/+page.ts:37:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Module.load_data (/root/gradio515/node_modules/.pnpm/@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte@4.2.15_vite@5.2.11_@types+node_o7pp2p5svq4h5udxa4yf4mjnc4/node_modules/@sveltejs/kit/src/runtime/server/page/load_data.js:192:17)
+    at async eval (/root/gradio515/node_modules/.pnpm/@sveltejs+kit@2.5.20_@sveltejs+vite-plugin-svelte@3.1.0_svelte@4.2.15_vite@5.2.11_@types+node_o7pp2p5svq4h5udxa4yf4m
+
+
 import gradio as gr
 import os
 
