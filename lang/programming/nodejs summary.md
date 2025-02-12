@@ -34502,13 +34502,13 @@ CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
 --cache-type-k q4_0 \
 --threads 6 \
  -c 4096 \
---n-gpu-layers 25 \
---tensor_split 25 \
+--n-gpu-layers 8 \
+--tensor_split 8 \
 --mlock \
 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
  -a DeepSeek-R1-UD-Q2_K_XL \
 --port 8080
-	# 第一卡加载 60 层权重，剩下的全给第二卡
+	# 32G 显存只能加载 8 层
 	# 60 层 21G 显存
 	# 70B 也不太聪明的样子
 
