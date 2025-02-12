@@ -34497,26 +34497,41 @@ CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
 		# 显示所有可用设备
 
 ./llama-server \
---device CUDA0 \
+--device CUDA0,CUDA1,CUDA2 \
 --model /root/autodl-tmp/DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf \
 --cache-type-k q4_0 \
 --threads 6 \
  -c 4096 \
---n-gpu-layers 8 \
---tensor_split 8 \
+--n-gpu-layers 21 \
+--tensor_split 7/7/7 \
 --mlock \
 --repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
  -a DeepSeek-R1-UD-Q2_K_XL \
 --port 8080
-	# 32G 显存只能加载 8 层
-	# 60 层 21G 显存
-	# 70B 也不太聪明的样子
+	# 32G 显存只能加载 7 层
+	# 3 张卡成功运行，每张卡加载 25G 显存左右，因为 q4_0 缓存也占了一点显存？
+
+
+./llama-server \
+--device CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5,CUDA6,CUDA7,CUDA8 \
+--model /root/autodl-tmp/DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf \
+--cache-type-k q4_0 \
+--threads 10 \
+ -c 4096 \
+--n-gpu-layers 63 \
+--tensor_split 7/7/7/7/7/7/7/7/7 \
+--mlock \
+--repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
+ -a DeepSeek-R1-UD-Q2_K_XL \
+--port 8080
+	# 9张卡，可以加载全部的 61 层了
+
 
 curl --request POST \
 --url http://localhost:8080/completion \
 --header "Content-Type: application/json" \
 --header "Accept: text/event-stream" \
---data '{"prompt":"<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>"}'
+--data '{"prompt":"<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>", "stream": true}'
 
 
 curl --request POST \
