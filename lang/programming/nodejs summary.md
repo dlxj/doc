@@ -38493,7 +38493,39 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 
 
 
+#### iNKORE
 
+https://github.com/ZGGSONG/STranslate
+
+https://github.com/iNKORE-NET/UI.WPF.Modern
+
+最低 .net 6.0 , os 系统版本最低 10.0.18362.0, 设为 7.0 兼容性最好
+
+
+
+Nuget 安装 iNKORE.UI.WPF.Modern 和 iNKORE.UI.WPF
+
+```
+App.xaml 改成这样
+<Application x:Class="WpfApp1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp1"
+             xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+             	<!--新增命名空间-->
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemeResources/>
+                <ui:XamlControlsResources/>
+            </ResourceDictionary.MergedDictionaries>
+            	<!--新增资源-->
+            
+            <!--如果存在，您的其他资源在这里-->
+    </Application.Resources>
+</Application>
+
+```
 
 
 
