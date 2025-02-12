@@ -38515,11 +38515,11 @@ App.xaml 改成这样
              	<!--新增命名空间-->
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-            <ResourceDictionary.MergedDictionaries>
-                <ui:ThemeResources/>
-                <ui:XamlControlsResources/>
-            </ResourceDictionary.MergedDictionaries>
-            	<!--新增资源-->
+        <ResourceDictionary.MergedDictionaries>
+            <ui:ThemeResources/>
+            <ui:XamlControlsResources/>
+        </ResourceDictionary.MergedDictionaries>
+            <!--新增资源-->
             
             <!--如果存在，您的其他资源在这里-->
     </Application.Resources>
