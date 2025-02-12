@@ -34470,6 +34470,60 @@ sha256sum DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf
 
 9983ab89fe131158b39704b61f07215ed7c9f847ae9e97225d6a9e74692f70d2  DeepSeek-R1-UD-Q2_K_XL-00005-of-00005.gguf
 
+
+# see huggingface/rwkv5-jp-trimvd_new/vector_sqlite.py -> trans_nodes_gemma
+
+apt update \
+  && apt install -y libcurl4-openssl-dev \
+  && cd ~ \
+  && git clone https://github.com/ggerganov/llama.cpp \
+  && cd ~/llama.cpp \
+  && cmake -B build -DGGML_CUDA=ON -DGGML_RPC=ON -DLLAMA_CURL=ON \
+  && cmake --build build --config Release -j --clean-first
+    # 先配置好 cuda11.8
+    # 成功编译
+
+cd ~/llama.cpp/build/bin \
+  && ./llama-server --list-devices \
+  && CUDA_VISIBLE_DEVICES=0 llama.cpp/rpc-server --host 0.0.0.0 -p 1000
+	# 单机多卡可以多开 rpc ，每个 rpc 使用本机的指定一或多张显卡
+	# 已确认 autodl 不支持内网互联
+
+# 先在 autodl 单独开一个 rpc 机子
+CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
+	# nmap -p 1000 172.17.0.2
+	# 已确认 autodl 不支持内网互通
+	./llama-server --rpc 172.17.0.3:1000 --list-devices
+		# 显示所有可用设备
+
+./llama-server \
+--device CUDA0 \
+--model /root/autodl-tmp/DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf \
+--cache-type-k q4_0 \
+--threads 6 \
+ -c 4096 \
+--n-gpu-layers 25 \
+--tensor_split 25 \
+--mlock \
+--repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
+ -a DeepSeek-R1-UD-Q2_K_XL \
+--port 8080
+	# 第一卡加载 60 层权重，剩下的全给第二卡
+	# 60 层 21G 显存
+	# 70B 也不太聪明的样子
+
+curl --request POST \
+--url http://localhost:8080/completion \
+--header "Content-Type: application/json" \
+--header "Accept: text/event-stream" \
+--data '{"prompt":"<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>"}'
+
+
+curl --request POST \
+--url http://localhost:8080/completion \
+--header "Content-Type: application/json" \
+--data '{"prompt":"You are a helpful assistant<｜User｜>Hello<｜Assistant｜>Hi there<｜end▁of▁sentence｜><｜User｜>How are you?<｜Assistant｜>"}'
+
 ```
 
 
