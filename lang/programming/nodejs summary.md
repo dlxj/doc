@@ -38544,10 +38544,30 @@ App.xaml 改成这样
 </Application>
 
 
+
 MainWindow.xaml 改成这样
+<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:ikw="http://schemas.inkore.net/lib/ui/wpf"
+        xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        ui:WindowHelper.SystemBackdropType="Mica"
+        ui:TitleBar.Height="36"
+        mc:Ignorable="d"
+        Title="欢迎！" Height="450" Width="800">
 
+    <!--我在这里添加了一些内容，您可以添加任何您想要的内容-->
+    <ikw:SimpleStackPanel VerticalAlignment="Center" Spacing="5">
+        <TextBlock Text="Fluent Design 很美。" FontSize="24" FontWeight="Bold" TextAlignment="Center"/>
+        <TextBlock Text="但是嘿，我们值得拥有 :-)" FontSize="20" TextAlignment="Center"/>
 
-
+        <Button Content="Hello world!" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+    </ikw:SimpleStackPanel>
+</Window>
 ```
 
 
