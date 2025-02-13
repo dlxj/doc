@@ -38521,6 +38521,9 @@ https://github.com/iNKORE-NET/UI.WPF.Modern
 Nuget 安装 iNKORE.UI.WPF.Modern
 
 ```
+
+# 注意：clone 它的源码来运行，新建项目添加它的项目引用作为依赖才行，不然 Nuget 直接安装出错
+
 App.xaml 改成这样
 <Application x:Class="WpfApp1.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
