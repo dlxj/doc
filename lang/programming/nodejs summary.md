@@ -34209,6 +34209,7 @@ https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q2_K  非�
 - https://huggingface.co/unsloth/DeepSeek-R1-Distill-Llama-70B-GGUF
 - https://www.codewithgpu.com/m/unsloth-DeepSeek-R1-GGUF-IQ1_S  150G 全量不知道怎么样
 - https://huggingface.co/deepseek-ai/DeepSeek-V3/raw/main/tokenizer.json  v3 的分词器
+- https://huggingface.co/ValueFX9507/Tifa-Deepsex-14b-CoT-Q8  小说思维链
 
 ```
 # 好像 llama.cpp 运行千问量化有BUG，只用 llamma 量化
@@ -34526,6 +34527,20 @@ CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
 --port 8080
 	# 9张卡，可以加载全部的 61 层了
 
+./llama-server \
+--device CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5,CUDA6,CUDA7 \
+--model /root/autodl-tmp/DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf \
+--cache-type-k q4_0 \
+--threads 10 \
+ -c 4096 \
+--n-gpu-layers 56 \
+--tensor_split 7/7/7/7/7/7/7/7 \
+--mlock \
+--repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
+ -a DeepSeek-R1-UD-Q2_K_XL \
+--port 8080
+	# 逐步增加卡数
+	# 8 卡，第一次请求慢，后面就快了
 
 curl --request POST \
 --url http://localhost:8080/completion \
@@ -38503,7 +38518,7 @@ https://github.com/iNKORE-NET/UI.WPF.Modern
 
 
 
-Nuget 安装 iNKORE.UI.WPF.Modern 和 iNKORE.UI.WPF
+Nuget 安装 iNKORE.UI.WPF.Modern
 
 ```
 App.xaml 改成这样
@@ -38528,7 +38543,14 @@ App.xaml 改成这样
     </Application.Resources>
 </Application>
 
+
+MainWindow.xaml 改成这样
+
+
+
 ```
+
+
 
 
 
