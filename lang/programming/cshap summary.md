@@ -265,6 +265,134 @@ True
 该类的主要用途是通用的惰性单例模式实现，可以用于管理引用类型的单例对象，尤其适合应用于需要确保全局唯一性的对象（如配置、日志、缓存上下文等）。
 
 
+
+
+`Singleton<T>` 类通过 **`Lazy<T>`** 和静态字段实现了只创建一次实例（即确保只调用一次 `new`）。以下是具体的原理分析，重点说明它是如何保证只初始化一次的。
+
+---
+
+### 核心点：单例实现的关键在于 **`Lazy<T>`** 和 **静态字段**
+
+#### 1. 静态字段的特性
+- **静态字段（`static` 字段）在类的生命周期中仅初始化一次并且由 CLR（Common Language Runtime）保证线程安全。**
+    - 静态字段在类被第一次使用时会初始化；之后不会再重新初始化。
+    - 初始化是由 CLR 自动保证的，多线程环境中静态字段（如 `_instance`）的初始化只会发生一次。
+- 在代码中：
+    ```csharp
+    private static readonly Lazy<T> _instance = new(() => (T)Activator.CreateInstance(typeof(T), true)!, true);
+    ```
+    - `_instance` 是类的一个静态字段，并且是只读字段。
+    - 它被初始化为 `Lazy<T>` 实例（支持惰性初始化）。
+
+#### 2. `Lazy<T>` 的线程安全机制
+- **`Lazy<T>` 是 .NET 提供的一个专门用于实现延迟初始化的结构，允许你在真正需要的时候才初始化某个对象。**
+- **线程安全性**:
+    - 默认情况下，`Lazy<T>` 使用 `LazyThreadSafetyMode` 的 **`ExecutionAndPublication` 模式**，这意味着多线程环境中只会初始化一次：
+        1. 多个线程并发访问 `Lazy.Value` 时，CLR 保证只会有一个线程真正执行初始化方法（`Activator.CreateInstance(...)`），其他线程会阻塞直到初始化完成。
+        2. 初始化完成后，所有线程都能获取相同的实例。
+    - 另一个参数 `true`（传递到 `Lazy<T>` 的构造器中）进一步明确了线程安全性。
+
+    **初始化方式:**
+    ```csharp
+    new(() => (T)Activator.CreateInstance(typeof(T), true)!, true);
+    ```
+    表示：
+    - 延迟执行匿名方法 `() => (T)Activator.CreateInstance(...)`，直到调用 `Lazy<T>.Value` 属性。
+    - 第二个参数 `true` 明确开启线程安全。
+
+#### 3. 懒加载的工作原理
+- 整个单例机制的核心是 **`Lazy<T>` 的延迟初始化**：
+    - 在代码中，当你第一次访问 `Singleton<T>.Instance` 时：
+      ```csharp
+      public static T Instance => _instance.Value;
+      ```
+      触发了 `_instance.Value` 的访问。
+    - `Lazy<T>` 的 `Value` 属性会检查实例是否已经创建：
+        - **如果实例还未创建：**  
+          开始执行 `Lazy<T>` 的初始化委托 `() => (T)Activator.CreateInstance(...)`，创建一个新的实例。
+        - **如果实例已经创建：**  
+          直接返回已经创建的实例。
+    - 由于 `Lazy<T>` 自身提供线程安全性，这整个过程是线程安全的，确保初始化方法只执行一次。
+
+---
+
+### 执行流程示例
+
+以代码为例，分析其如何只 `new` 一次：
+
+​```csharp
+var instance1 = Singleton<MyClass>.Instance;
+var instance2 = Singleton<MyClass>.Instance;
+
+Console.WriteLine(ReferenceEquals(instance1, instance2)); // 输出 True
+​```
+
+#### 执行顺序
+
+1. **静态字段初始化**：
+    - 类 `Singleton<MyClass>` 第一次被使用时，静态字段 `_instance` 会被初始化。
+    - `_instance` 是一个 `Lazy<T>`，但初始化时并不会立即创建真实的 `T` 类型（即 `MyClass`）。
+2. **懒加载（Lazy Initialization）**：
+    - 第一次访问 `Singleton<MyClass>.Instance` 时：
+        - 调用 `_instance.Value`。
+        - 检测是否已初始化内部对象：
+            - 未初始化：执行初始化方法 `() => (T)Activator.CreateInstance(...)`，并创建 `MyClass` 的实例。
+            - 已初始化：直接返回已创建的 `MyClass` 实例。
+3. **返回实例**：
+    - `Singleton<MyClass>.Instance` 返回 `MyClass` 单例。
+    - 后续每次访问 `Instance`，都会直接返回 `Lazy<T>` 内部存储的已创建实例。
+
+---
+
+### 实现只调用一次 `new`
+
+- **`Lazy<T>` 的核心**：
+    - `Lazy<T>` 内部包含了一个布尔标志，用于记录是否已经初始化实例。
+    - 只有第一次访问 `Value` 时，才会尝试初始化，后续直接返回已经初始化的值。
+    - 多线程环境下，`LazyThreadSafetyMode.ExecutionAndPublication` 能确保其他线程在实例创建的同时阻塞，直到初始化完成。
+
+#### 核心机制简化为伪代码：
+假设 `Lazy<T>` 的内部逻辑如下：
+​```csharp
+private bool isInitialized; // 标志变量，初始值为 false
+private T value;
+
+public T Value
+{
+    get
+    {
+        if (!isInitialized)
+        {
+            // 线程安全地初始化值
+            lock (lockObject)
+            {
+                if (!isInitialized)
+                {
+                    value = initializationDelegate();
+                    isInitialized = true; // 将标志置为 true
+                }
+            }
+        }
+        return value; // 返回已初始化的值
+    }
+}
+​```
+
+- 在第一次调用 `Lazy<T>.Value` 时，会通过 `initializationDelegate` 调用 `Activator.CreateInstance(...)` 来创建实例，同时将 `isInitialized` 标志置为 `true`。
+- 后续调用时，不会再执行初始化，而是直接返回实例 `value`。
+
+---
+
+### 总结
+
+**如何只调用一次 `new`：**
+1. 依赖于静态字段的初始化特性：静态字段（`_instance`）整个程序运行期间只会初始化一次。
+2. 使用 `Lazy<T>` 内部的延迟加载和线程安全机制：
+    - 保证第一次访问时懒加载实例。
+    - 多线程并发访问时，通过锁或者原子性操作确保只有一个线程完成初始化。
+
+因此，无论多少次访问 `Singleton<T>.Instance`，内部的 `new T()` 都只执行一次。
+
 ```
 
 
