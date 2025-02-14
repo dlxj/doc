@@ -5426,6 +5426,29 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
 
 
+### 只下载指定文件夹
+
+```
+如果只想针对 Git LFS 下载某个文件夹的真实内容
+为了同时实现按需下载文件夹内容（例如通过 sparse-checkout）以及同步 Git LFS 文件的真实内容，可以尝试以下步骤：
+
+方法一：结合 Sparse-Checkout 和 Git LFS
+克隆仓库（但不要检查出文件）：
+git clone --no-checkout https://huggingface.co/datasets/dlxjj/dict \
+  && cd dict \
+  && git sparse-checkout init --cone \
+  && git sparse-checkout set epwing/JPJP \
+  && git checkout main \
+  && git lfs pull
+  
+此操作会根据当前的稀疏检出设置，只下载选中范围内的 LFS 文件真实内容
+
+```
+
+
+
+
+
 ### 上传大文件
 
 https://huggingface.co/docs/huggingface_hub/guides/upload
@@ -38513,6 +38536,9 @@ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 定义了名为 x 的名�
 https://github.com/ZGGSONG/STranslate
 
 https://github.com/iNKORE-NET/UI.WPF.Modern
+
+- https://github.com/MCSLTeam/MCServerLauncher-Future 使用 ik的项目
+- https://github.com/chrissmaryy/DesktopGPT
 
 最低 .net 6.0 , os 系统版本最低 10.0.18362.0, 设为 7.0 兼容性最好
 
