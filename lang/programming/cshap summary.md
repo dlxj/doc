@@ -162,6 +162,8 @@ see https://github.com/loongEgg/LoongKeys
 
 ```
 
+see nodejs summary.md -> WPF -> STranslate 对标Bob
+
 STranslate.Util\SingletonUtil.cs
 
 public class Singleton<T> where T : class, new()
