@@ -158,6 +158,115 @@ see https://github.com/loongEgg/LoongKeys
 
 
 
+### Lazy Singleton
+
+```
+
+STranslate.Util\SingletonUtil.cs
+
+public class Singleton<T> where T : class, new()
+{
+    private static readonly Lazy<T> _instance = new(() => (T)Activator.CreateInstance(typeof(T), true)!, true);
+
+    public static T Instance => _instance.Value;
+}
+
+`Singleton<T>` 是一个通用的单例（Singleton）泛型类，用于实现对某个类型（`T`）的惰性单例模式（Lazy Singleton）。以下是对它的功能和用途的详细说明：
+
+### 功能解析
+
+1. **`Singleton<T>` 类的定义**:  
+   - 这是一种通用的、线程安全的单例模式实现。
+   - 它可以用于任何满足以下条件的类型 `T`：
+     - `T` 必须是引用类型（即 `class`）。
+     - `T` 必须有一个无参的 `public` 或 `protected` 构造函数（因为泛型约束中指定了 `new()`）。
+
+2. **线程安全的单例实现**:
+   - 使用了 `Lazy<T>` 类型来确保实例的创建是延迟（Lazy）的，即只有在第一次访问 `Instance` 属性时才会创建实例。
+   - `Lazy<T>` 默认具有线程安全性，因此可以安全地在多线程环境中使用，无需额外的锁机制。
+
+3. **结构与关键点**:
+   - `_instance` 是一个私有静态字段，存储了 `Lazy<T>` 类型的实例。  
+   - `_instance` 的 `Value` 属性用于访问和初始化 `T` 类型的单例实例。
+   - `Instance` 是一个公共的静态属性，用于全局访问 `T` 的单例对象。
+   - `(T)Activator.CreateInstance(typeof(T), true)!`: 使用反射的方式，调用 `T` 的无参构造函数（包括 `protected` 和 `private` 构造函数）。
+
+---
+
+### 主要用途
+
+1. **单实例管理**:  
+   如果某个类中只需要一个实例（例如配置管理器、日志记录器、系统上下文等），可以使用该单例模式来管理实例。
+
+2. **解决泛型单例问题**:  
+   传统单例模式通常用于具体类型，而通过泛型类 `Singleton<T>`，可以对任何满足约束的类型 `T` 使用单例模式，而无需重复实现。
+
+3. **线程安全**:  
+   `Lazy<T>` 的线程安全机制能够确保单例实例的初始化仅发生一次。
+
+---
+
+### 使用方法
+
+假设有以下一个类 `MyClass`：
+
+​```csharp
+public class MyClass
+{
+    private MyClass() 
+    {
+        Console.WriteLine("MyClass Constructor Called");
+    }
+    
+    public void DoWork()
+    {
+        Console.WriteLine("Working...");
+    }
+}
+​```
+
+因为 `MyClass` 是一个带有私有构造函数的类，我们可以通过 `Singleton<T>` 作为其单例管理器：
+
+​```csharp
+var instance1 = Singleton<MyClass>.Instance;
+var instance2 = Singleton<MyClass>.Instance;
+
+instance1.DoWork();
+
+// 检查是否是同一个实例
+Console.WriteLine(ReferenceEquals(instance1, instance2)); // 输出为 True
+​```
+
+运行结果：
+​```
+MyClass Constructor Called
+Working...
+True
+​```
+
+这里通过 `Singleton<MyClass>.Instance` 获取了全局的单例实例。而由于 `MyClass` 的构造函数是私有的，传统写法无法直接创建实例，但 `Activator.CreateInstance` 可以突破这种限制。
+
+---
+
+### 代码改进建议
+
+1. **传递自定义参数**:
+   如果需要为单例类 `T` 的构造函数传递参数，可以扩展实现方法，例如通过其他方法注入构造参数。
+
+2. **实例初始化回调**:
+   如果需要对实例进行初始化操作，可以进一步扩展 `Singleton<T>` 来支持自定义的初始化逻辑。
+
+---
+
+### 总结
+
+该类的主要用途是通用的惰性单例模式实现，可以用于管理引用类型的单例对象，尤其适合应用于需要确保全局唯一性的对象（如配置、日志、缓存上下文等）。
+
+
+```
+
+
+
 
 
 ## Json
