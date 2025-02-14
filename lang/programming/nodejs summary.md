@@ -38342,14 +38342,14 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 [FramePFX](https://github.com/AngryCarrot789/FramePFX) 视频编辑 必看
 
-[subtitleedit](https://github.com/SubtitleEdit/subtitleedit)
+[subtitleedit](https://github.com/SubtitleEdit/subtitleedit)  完成度很高的 winform
 
 [LunaTranslator](https://github.com/HIllya51/LunaTranslator) 游戏翻译 python
 
 - https://github.com/morkt/GARbro **游戏解包** WHITE ALBUM2 成功
-
 - [VNR + Cheat Engine 翻译 PPSSPP 游戏](https://tieba.baidu.com/p/6929897404?pid=134661711694&cid=0#134661711694)
 - [qolibri](https://github.com/mvf/qolibri) ebpwing + qt5
+  - [goldendict-ng](https://github.com/xiaoyifang/goldendict-ng) qt6 带全文搜索
 
 [SakuraTranslator](https://github.com/fkiliver/SakuraTranslator)  游戏翻译
 
