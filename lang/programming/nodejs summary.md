@@ -23157,6 +23157,8 @@ Global.config_cache.set_value(
 
 ### 插件
 
+[MarkdownLabel](https://github.com/daenvil/MarkdownLabel)
+
 [llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
 
 [另一个自制插件看这里](github/gdscript/animation_subtitle/addons/subtitle)
