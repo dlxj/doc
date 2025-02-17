@@ -23157,7 +23157,9 @@ Global.config_cache.set_value(
 
 ### 插件
 
-[MarkdownLabel](https://github.com/daenvil/MarkdownLabel)
+[MarkdownLabel](https://github.com/daenvil/MarkdownLabel) 这个新
+
+-  [markdonw 编辑器 Godot-TextEditor](https://github.com/teebarjunk/Godot-TextEditor) godot 3.3.4 正常 这个能编缉有目录
 
 [llama ws客户端看这里](D:\GitHub\echodict\pmserver\test\godot_ui)
 
