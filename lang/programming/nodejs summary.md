@@ -34271,7 +34271,7 @@ curl --request POST \
 --url http://localhost:8080/completion \
 --header "Content-Type: application/json" \
 --header "Accept: text/event-stream" \
---data '{"prompt":"<｜User｜>翻译成中文：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>"}'
+--data '{"prompt":"<｜User｜>翻译成中文：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>", "stream": true}'
 # deepseek
 
 ```
@@ -34382,7 +34382,7 @@ curl --request POST \
 --url http://localhost:8080/completion \
 --header "Content-Type: application/json" \
 --header "Accept: text/event-stream" \
---data '{"prompt":"<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>"}'
+--data '{"prompt":"<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>", "stream": true}'
 
 
 curl --request POST \
