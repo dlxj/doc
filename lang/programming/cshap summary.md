@@ -280,7 +280,7 @@ True
 - 在代码中：
     ```csharp
     private static readonly Lazy<T> _instance = new(() => (T)Activator.CreateInstance(typeof(T), true)!, true);
-    ```
+```
     - `_instance` 是类的一个静态字段，并且是只读字段。
     - 它被初始化为 `Lazy<T>` 实例（支持惰性初始化）。
 
@@ -320,7 +320,7 @@ True
 
 以代码为例，分析其如何只 `new` 一次：
 
-​```csharp
+```csharp
 var instance1 = Singleton<MyClass>.Instance;
 var instance2 = Singleton<MyClass>.Instance;
 
@@ -414,43 +414,44 @@ https://stackoverflow.com/questions/14886800/convert-jobject-into-dictionarystri
 
 	using Newtonsoft.Json;
 	using Newtonsoft.Json.Linq;
+	
+	public static class JObjectExtensions
+	{
+	    public static IDictionary<string, object> ToDictionary(this JObject @object)
+	    {
+	        var result = @object.ToObject<Dictionary<string, object>>();
+	
+	        var JObjectKeys = (from r in result
+	                           let key = r.Key
+	                           let value = r.Value
+	                           where value.GetType() == typeof(JObject)
+	                           select key).ToList();
+	
+	        var JArrayKeys = (from r in result
+	                          let key = r.Key
+	                          let value = r.Value
+	                          where value.GetType() == typeof(JArray)
+	                          select key).ToList();
+	
+	        JArrayKeys.ForEach(key => result[key] = ((JArray)result[key]).Values().Select(x => ((JValue)x).Value).ToArray());
+	        JObjectKeys.ForEach(key => result[key] = ToDictionary(result[key] as JObject));
+	
+	        return result;
+	    }
+	}
 
-    public static class JObjectExtensions
-    {
-        public static IDictionary<string, object> ToDictionary(this JObject @object)
-        {
-            var result = @object.ToObject<Dictionary<string, object>>();
 
-            var JObjectKeys = (from r in result
-                               let key = r.Key
-                               let value = r.Value
-                               where value.GetType() == typeof(JObject)
-                               select key).ToList();
-
-            var JArrayKeys = (from r in result
-                              let key = r.Key
-                              let value = r.Value
-                              where value.GetType() == typeof(JArray)
-                              select key).ToList();
-
-            JArrayKeys.ForEach(key => result[key] = ((JArray)result[key]).Values().Select(x => ((JValue)x).Value).ToArray());
-            JObjectKeys.ForEach(key => result[key] = ToDictionary(result[key] as JObject));
-
-            return result;
-        }
-    }
-    
-    
+​    
     string code = @"
                 console.log(fs)  // fs 是事先 import 好的模块，这里可以直接用  所有可用参数都在这里展开了：  ...params
                 console.log('hello, from vm')
                 return callback({ msg:'hi,,,' }) // 约定最后以 callback 返回值
             ";
-
+    
             string imports = @"
                 [""fs""]
             ";
-
+    
             try
             {
                 var url = "http://127.0.0.1:8880/vm/vmrun";
@@ -460,7 +461,7 @@ https://stackoverflow.com/questions/14886800/convert-jobject-into-dictionarystri
                 request.Timeout = 5000;
                 request.AddHeader("content-type", "application/x-www-form-urlencoded;charset=UTF-8");
                 request.AddParameter("application/x-www-form-urlencoded", $"code={WebUtility.UrlEncode(code)}&imports={WebUtility.UrlEncode(imports)}", ParameterType.RequestBody);
-
+    
                 var response = client.Execute(request);
                 string jsonstr = response.Content;
 
@@ -473,16 +474,16 @@ https://stackoverflow.com/questions/14886800/convert-jobject-into-dictionarystri
                 }
                 
                 var m = obj["data"]["msg"].ToString();
-
+    
                 var d = obj.ToDictionary();
-
+    
                 int a = 1;
             }
             catch (Exception ex)
             {
                 int b = 1;
             }
-    
+
 ```
 
 
@@ -505,7 +506,7 @@ Newtonsoft.Json
 
 
 
-```c#
+​```c#
 json["status"].Value<int>() != 200
 ```
 
@@ -10953,6 +10954,22 @@ LangVersion 修改为：preview
   <PropertyGroup>
 	<LangVersion>8.0</LangVersion>
   </PropertyGroup>
+
+
+
+```
+右键项目 -> 编缉项目文件
+
+新增：
+	<PropertyGroup>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+	
+https://github.com/RomaSharper/YoutubeWatcher
+	# 正常运行
+```
+
+
 
 
 

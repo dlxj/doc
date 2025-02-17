@@ -38336,6 +38336,8 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 [iNKORE](https://github.com/iNKORE-NET/UI.WPF.Modern) **最佳选择？** B站搜它
 
+- https://github.com/minottoplus/EatenDLP  yt 下载
+
 [Avalonia  DockPanel](https://docs.avaloniaui.net/zh-Hans/docs/basics/user-interface/building-layouts/panels-overview) **划分空间** [ryujinx 模似器](https://github.com/ryujinx-mirror/ryujinx)
 
 [Panuon.WPF.UI](https://github.com/Panuon/Panuon.WPF.UI)  活跃 简洁
