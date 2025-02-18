@@ -11405,6 +11405,15 @@ WpfApp1\App.xaml.cs
         }
         	# 加入
 
+
+model/MainWindowModel.cs
+    public partial class MainViewModel : ObservableObject {
+
+    }
+		# 新建源文件
+
+
+
 ```
 
 
