@@ -11399,8 +11399,12 @@ Microsoft.Xaml.Behaviors.Wpf 1.1.135
 WpfApp1\App.xaml
 	StartupUri="MainWindow.xaml"  
 		# 删除这一行，手动启动窗体
+
+WpfApp1\MainView.xaml
+		x:Class="WpfApp1.MainView"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         xmlns:vm="clr-namespace:WpfApp1.model"
+        x:Name="MainWindow" # 注意 x:Name 和 x:class 必须不同
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
 		# 加命名空间，并让 MainViewModel 类可见
