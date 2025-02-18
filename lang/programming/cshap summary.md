@@ -11378,6 +11378,8 @@ public class SystemHotKey
 
 ### STranslate
 
+https://www.cnblogs.com/aierong/p/17305990.html Mvvm 写法
+
 ```
 
 see nodejs summary.md -> WPF -> [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)  **完成度很高的** wpf
@@ -11391,7 +11393,7 @@ CommunityToolkit.Mvvm 8.3.2
 	# 安装
 
 
-新建英目
+新建项目
 WpfApp1\App.xaml
 	StartupUri="MainWindow.xaml"  
 		# 删除这一行，手动启动窗体
