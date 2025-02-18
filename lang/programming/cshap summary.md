@@ -11433,6 +11433,27 @@ namespace WpfApp1.model
 		# 新建源文件
 
 
+# 要成功触发绑定事件，必须设置 DataContext 
+WpfApp1\MainView.xaml.cs
+    public class Singleton<T> where T : class, new()
+    {
+        private static readonly Lazy<T> _instance = new(() => (T)Activator.CreateInstance(typeof(T), true)!, true);
+
+        public static T Instance => _instance.Value;
+    }
+
+    public partial class MainView : Window
+    {
+        private readonly MainViewModel _vm = Singleton<MainViewModel>.Instance;
+
+        public MainView()
+        {
+            DataContext = _vm;
+
+            InitializeComponent();
+        }
+    }
+
 
 ```
 
