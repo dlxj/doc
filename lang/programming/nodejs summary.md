@@ -3700,6 +3700,9 @@ https://v2ex.com/t/1035681#reply73
 https://github.com/heiher/natmap/issues/18  stun 服务器地址
 
 - ```
+  
+  see github -> echodict -> README.md -> candy 
+  
   UDP Only
   Primary address	Primary port	Alternate port	Notes
   stun.miwifi.com	3478		
@@ -3710,10 +3713,10 @@ https://github.com/heiher/natmap/issues/18  stun 服务器地址
   
   
   pm2 --name candy_server start 'candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.1.0.0/24" --password="xxx" --stun="stun://stun.chat.bilibili.com"'
-  
+
   
   ```
-
+  
   
 
 
