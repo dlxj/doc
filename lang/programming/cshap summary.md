@@ -11397,6 +11397,15 @@ CommunityToolkit.Mvvm 8.3.2
 WpfApp1\App.xaml
 	StartupUri="MainWindow.xaml"  
 		# 删除这一行，手动启动窗体
+	xmlns:vm="clr-namespace:WpfApp1.model"
+		# 加命名空间
+	    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=MainWindow}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+		# 加事件绑定
+
 		
 WpfApp1\App.xaml.cs		
         protected override void OnStartup(StartupEventArgs e) {
@@ -11407,8 +11416,10 @@ WpfApp1\App.xaml.cs
 
 
 model/MainWindowModel.cs
-    public partial class MainViewModel : ObservableObject {
-
+namespace WpfApp1.model
+	public partial class MainViewModel : ObservableObject {
+        [RelayCommand]
+        private void Loaded(Window view){} // 自动生成 LoadedCommand
     }
 		# 新建源文件
 
