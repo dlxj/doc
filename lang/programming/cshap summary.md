@@ -11399,8 +11399,11 @@ Microsoft.Xaml.Behaviors.Wpf 1.1.135
 WpfApp1\App.xaml
 	StartupUri="MainWindow.xaml"  
 		# 删除这一行，手动启动窗体
-	xmlns:vm="clr-namespace:WpfApp1.model"
-		# 加命名空间
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:vm="clr-namespace:WpfApp1.model"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel}"
+		# 加命名空间，并让 MainViewModel 类可见
 	    <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedCommand}" CommandParameter="{Binding ElementName=MainWindow}" />
