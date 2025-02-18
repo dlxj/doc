@@ -506,13 +506,13 @@ Newtonsoft.Json
 
 
 
-​```c#
+```c#
 json["status"].Value<int>() != 200
 ```
 
 
 
-```c#
+​```c#
             // 没有中文，认为是乱码
             if (Util.unAZchinese_remove(strSearch) == "")
             {
@@ -11373,6 +11373,23 @@ public class SystemHotKey
 
 }
 ```
+
+
+
+### STranslate
+
+```
+
+see nodejs summary.md -> WPF -> [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)  **完成度很高的** wpf
+
+see STranslate\ViewModels\MainViewModel.cs
+
+Loaded(Window view)
+	# 开始注册热键
+
+```
+
+
 
 
 

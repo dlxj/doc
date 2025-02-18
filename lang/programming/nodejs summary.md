@@ -38332,7 +38332,7 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 - https://www.bilibili.com/video/BV17kptetEQV B UP
 - https://www.bilibili.com/video/BV1cC411x7aV B UP
 
-[STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)  **完成度很高的** wpf
+[STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)  **完成度很高的** wpf   see csharp summay.md -> wpf
 
 - [kiss-translator 简约翻译](https://github.com/fishjar/kiss-translator)
 - [机器人学导论](https://github.com/HITSZ-OpenAuto/AUTO3005)
