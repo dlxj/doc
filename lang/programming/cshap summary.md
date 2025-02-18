@@ -11387,6 +11387,22 @@ see STranslate\ViewModels\MainViewModel.cs
 Loaded(Window view)
 	# 开始注册热键
 
+CommunityToolkit.Mvvm 8.3.2
+	# 安装
+
+
+新建英目
+WpfApp1\App.xaml
+	StartupUri="MainWindow.xaml"  
+		# 删除这一行，手动启动窗体
+		
+WpfApp1\App.xaml.cs		
+        protected override void OnStartup(StartupEventArgs e) {
+            base.OnStartup(e);
+            new MainWindow().Show();
+        }
+        	# 加入
+
 ```
 
 
