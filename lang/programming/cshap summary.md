@@ -512,7 +512,7 @@ json["status"].Value<int>() != 200
 
 
 
-​```c#
+```c#
             // 没有中文，认为是乱码
             if (Util.unAZchinese_remove(strSearch) == "")
             {
@@ -543,7 +543,7 @@ var contextJson = (JObject)JsonConvert.DeserializeObject(context);
 
 
 
-```c#
+​```c#
 # 不需要事先定义结构
 JsonConvert.SerializeObject( new {
                                 simTitle = xx,
@@ -11383,6 +11383,9 @@ https://www.cnblogs.com/aierong/p/17305990.html Mvvm 写法
 ```
 
 see nodejs summary.md -> WPF -> [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)  **完成度很高的** wpf
+
+目录结构技巧：新建 wpf 解决方案 -> 删掉项目 -> 新建解决方案文件夹(虚拟的) -> 新建 src 文件夹（物理的）
+  -> 右击 src 新建项目选 wpf 桌面 windows
 
 see STranslate\ViewModels\MainViewModel.cs
 
