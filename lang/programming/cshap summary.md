@@ -11396,6 +11396,8 @@ CommunityToolkit.Mvvm 8.3.2
 	# 安装
 Microsoft.Xaml.Behaviors.Wpf 1.1.135
 	# 安装
+ScreenGrab 1.0.6
+	# 安装 用于屏幕截图
 
 
 新建项目
