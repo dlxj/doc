@@ -38334,6 +38334,9 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)  **完成度很高的** wpf   see csharp summay.md -> wpf
 
+- [txt 阅读器](https://github.com/wuqinchao/TxtTags)
+  - [ScreenCapturer 屏幕截图](https://github.com/wuqinchao/ScreenCapturer)
+
 - [kiss-translator 简约翻译](https://github.com/fishjar/kiss-translator)
 - [机器人学导论](https://github.com/HITSZ-OpenAuto/AUTO3005)
 
