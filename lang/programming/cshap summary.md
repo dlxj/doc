@@ -543,7 +543,7 @@ var contextJson = (JObject)JsonConvert.DeserializeObject(context);
 
 
 
-​```c#
+```c#
 # 不需要事先定义结构
 JsonConvert.SerializeObject( new {
                                 simTitle = xx,
@@ -556,10 +556,11 @@ JsonConvert.SerializeObject( new {
 
 
 ```
-         
+
          Newtonsoft.Json 动态添加字段
-         
-         
+
+
+​         
          var data = new
             {
                 mobile = "18888888888",
@@ -568,18 +569,18 @@ JsonConvert.SerializeObject( new {
                 invoiceId = "1",
                 serialId = "fd580000000f670"
             };
-
+    
             var str = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-
+    
             //动态添加memberId
             var obj = JObject.Parse(str);
             obj.Add("memberId", "123456789");
-
+    
             //动态添加clientInfo，这个clientInfo下面又有一级对象
             JObject jObject = new JObject();
             jObject.Add("VersionNumber", "1.4.1");
             obj.Add("clientInfo", jObject);
-
+    
             var result = obj.ToString();
             Console.WriteLine(result);
 ```
@@ -598,7 +599,7 @@ var lst = new List<Dictionary<string, string>>();
             lst.Add(new Dictionary<string, string>() { { "maincode", "009725" } });
 
             var js = lst.ToJson();
-
+    
             var test = "{ \"simTitle\":0.7142857142857143,\"simRight\":1.0,\"simWrong\":1.0, \"maincode\":\"009725\"}".FromJson<object>();
             var teststr = test.ToJson();
 ```
@@ -631,7 +632,7 @@ JToken
 
 
 
-```c#
+​```c#
             var datalist = new JArray();
 
             foreach (DataRow row in appTable.Rows)
@@ -11463,6 +11464,10 @@ WpfApp1\MainView.xaml.cs
 ```
 
 
+
+#### WPF 嵌入 winform 
+
+https://www.zggsong.com/posts/coding/winform-wpf-res-dict/
 
 
 
