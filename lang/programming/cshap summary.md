@@ -632,7 +632,7 @@ JToken
 
 
 
-​```c#
+```c#
             var datalist = new JArray();
 
             foreach (DataRow row in appTable.Rows)
@@ -640,17 +640,17 @@ JToken
                 string AppID = row["AppID"].ToString();
                 string CName = row["CName"].ToString();
                 string AppEname = row["AppEname"].ToString();
-
+    
                 datalist.Add( new JObject { { "AppID", AppID }, { "CName", CName }, { "AppEname", AppEname } } );
-
+    
             }
-
+    
             var ret = datalist.ToString();
 ```
 
 
 
-```c#
+​```c#
 # 从字符串解析出数组
 
 			var datalist = new JArray();
@@ -11398,7 +11398,9 @@ CommunityToolkit.Mvvm 8.3.2
 Microsoft.Xaml.Behaviors.Wpf 1.1.135
 	# 安装
 ScreenGrab 1.0.6
-	# 安装 用于屏幕截图
+	# 安装 用于屏幕截图，不安装它，而是集成它的源码看看
+	# Dapplo.Windows.User32 1.0.28
+	
 
 
 新建项目
@@ -11462,6 +11464,34 @@ WpfApp1\MainView.xaml.cs
 
 
 ```
+
+
+
+#### 截图窗口显示不出来
+
+```
+see huggingface\itrans\src\iTrans\ViewModels\MainViewModel.cs
+
+        // 执行实际截图
+        internal void ScreenShotHandler(CancellationToken? token = null)
+        {
+            if (ScreenGrabber.IsCapturing) return;
+                // https://github.com/wuqinchao/ScreenCapturer // 替代品
+            
+            ScreenGrabber.OnCaptured = async bitmap => await ScreenshotCallbackAsync(bitmap, token);
+            // 确保在 UI 线程上调用 Capture 方法
+            Application.Current.Dispatcher.Invoke(() => ScreenGrabber.Capture(true));
+                // ScreenGrabber.Capture(true);
+                    // 直接调用这个截图窗口显示不出来
+
+1.	UI 线程问题：确保 Capture 方法在 UI 线程上调用。可以使用 Dispatcher 来确保在 UI 线程上执行。
+2.	窗口状态：确保窗口的 WindowState 和 Visibility 属性正确设置。
+3.	窗口显示顺序：确保窗口在调用 Show 方法后立即调用 Activate 方法。
+
+
+```
+
+
 
 
 
