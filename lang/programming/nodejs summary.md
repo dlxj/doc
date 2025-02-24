@@ -34572,6 +34572,23 @@ CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
 	# 逐步增加卡数
 	# 8 卡，第一次请求慢，后面就快了
 
+
+# 真满血版 DeepSeek-R1.Q8_0-00001-of-00015.gguf
+./llama-server \
+--device CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5,CUDA6,CUDA7 \
+--model /root/autodl-tmp/DeepSeek-R1.Q8_0-00001-of-00015.gguf \
+--cache-type-k q8_0 \
+--threads 10 \
+ -c 4096 \
+--n-gpu-layers 56 \
+--tensor_split 7/7/7/7/7/7/7/7 \
+--mlock \
+--repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
+ -a DeepSeek-R1-Q8_0 \
+--port 8080
+
+
+
 curl --request POST \
 --url http://localhost:8080/completion \
 --header "Content-Type: application/json" \
@@ -38336,7 +38353,8 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 - [txt 阅读器](https://github.com/wuqinchao/TxtTags)
   - [ScreenCapturer 屏幕截图](https://github.com/wuqinchao/ScreenCapturer)
-
+- [ChatUI-WPF 录音并识别](https://github.com/ArcCrescendo/ChatUI-WPF)
+  
 - [kiss-translator 简约翻译](https://github.com/fishjar/kiss-translator)
 - [机器人学导论](https://github.com/HITSZ-OpenAuto/AUTO3005)
 
