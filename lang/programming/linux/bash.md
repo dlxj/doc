@@ -73,3 +73,36 @@ echo "$START$TOKENS$END" > access_tokens.json
 ​```
 ```
 
+
+
+# 循环下载
+
+```
+#!/bin/bash
+
+base_url="https://hf-mirror.com/unsloth/DeepSeek-R1-GGUF/resolve/main/DeepSeek-R1-Q8_0"
+
+for i in {1..15}; do
+            # 生成5位数字序号
+                seq_num=$(printf "%05d" $i)
+
+                    # 构造文件名
+                        file_name="DeepSeek-R1.Q8_0-${seq_num}-of-00015.gguf"
+
+                            # 构造完整下载URL
+                                download_url="${base_url}/${file_name}?download=true"
+
+                                    # 使用wget下载并指定输出文件名
+                                        wget "$download_url" -O "$file_name"
+
+                                            # 可选：添加下载状态反馈
+                                                if [ $? -eq 0 ]; then
+                                                                echo "成功下载: ${file_name}"
+                                                                    else
+                                                                                    echo "下载失败: ${file_name}"
+                                                                                        fi
+                                                                                done
+```
+
+
+
