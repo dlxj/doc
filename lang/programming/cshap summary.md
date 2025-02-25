@@ -10972,6 +10972,7 @@ xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 2. 透明的元素没戏
 3. 后面定义控件覆盖前面控件，子覆盖父控件
 3. 覆盖不管大小，小一样盖住大。覆盖住事件就被它截走了，不会下层控件不会再响应事件
+4. Background="Transparent"   Background="NavajoWhite" 灵活切换来定义要响应的事件的控件
 
 <Window
     x:Class="ScreenGrab.ScreenGrabView"
