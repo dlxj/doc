@@ -650,19 +650,19 @@ JToken
 
 
 
-​```c#
+```c#
 # 从字符串解析出数组
 
 			var datalist = new JArray();
-            datalist.Add(new JObject { { "AppID", 1 }, { "CName", 1 }, { "AppEname", 1 } });
-
-            var s = datalist.ToString();
-
-            JArray jar = JArray.Parse(s);
-            foreach( JObject jo in jar)
-            {
-                string appid =  jo["AppID"].ToString();
-            }
+	        datalist.Add(new JObject { { "AppID", 1 }, { "CName", 1 }, { "AppEname", 1 } });
+	
+	        var s = datalist.ToString();
+	
+	        JArray jar = JArray.Parse(s);
+	        foreach( JObject jo in jar)
+	        {
+	            string appid =  jo["AppID"].ToString();
+	        }
 ```
 
 
@@ -696,7 +696,7 @@ Console.WriteLine(json2);
 
 
 
-```c#
+​```c#
 
 # https://dotnetfiddle.net/OSaW78
 
@@ -10932,6 +10932,39 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 
 
 # WPF
+
+
+
+##　语法
+
+### 设计时属性
+
+```
+`mc:Ignorable="d"` 是 XAML 中的一个特殊属性，主要用于设计时的兼容性。让我来解释一下：
+
+1. `mc:Ignorable` 告诉 XAML 解析器哪些命名空间前缀可以被安全地忽略。
+
+2. 这里的 `"d"` 指的是设计时命名空间（Design-time namespace），也就是在你的 XAML 代码中声明的：
+​```xml
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+​```
+
+3. 主要作用：
+   - 允许在 XAML 中使用仅供设计时使用的属性和标记（比如在 Visual Studio 设计器或 Blend 中）
+   - 这些设计时属性在运行时会被完全忽略
+   - 不会影响应用程序的实际运行
+
+4. 常见用例：
+   - `d:DesignWidth` 和 `d:DesignHeight`：设置设计时的窗口尺寸
+   - `d:DataContext`：设置设计时的数据上下文
+   - `d:DesignSource`：指定设计时的数据源
+
+如果移除 `mc:Ignorable="d"`，那么运行时可能会对设计时属性产生警告或错误，因为运行时环境不知道如何处理这些仅用于设计时的属性。
+```
+
+
+
+
 
 
 
