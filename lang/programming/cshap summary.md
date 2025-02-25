@@ -10964,6 +10964,56 @@ xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 
 
 
+### 为什么点击事件不触发
+
+```
+
+1. 不在视觉树里的元素无戏可唱（不响应 UI 交互事件）
+2. 透明的元素没戏
+3. 后面定义控件覆盖前面控件，子覆盖父控件
+3. 覆盖不管大小，小一样盖住大。覆盖住事件就被它截走了，不会下层控件不会再响应事件
+
+<Window
+    x:Class="ScreenGrab.ScreenGrabView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:ScreenGrab"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ScreenGrab"
+    Width="800"
+    Height="450"
+    AllowsTransparency="True"
+    Background="Transparent"
+    Closed="Window_Closed"
+    Loaded="Window_Loaded"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    Topmost="True"
+    Unloaded="Window_Unloaded"
+    WindowStyle="None"
+    mc:Ignorable="d">
+
+    <Grid d:Background="Transparent">
+        <Viewbox>
+            <Image x:Name="BackgroundImage" Stretch="UniformToFill" />
+        </Viewbox>
+        <Canvas
+            Background="NavajoWhite"
+            x:Name="RegionClickCanvas"
+            Cursor="Cross"
+            MouseDown="RegionClickCanvas_MouseDown"
+        >
+        </Canvas>
+
+    </Grid>
+</Window>
+```
+
+
+
+
+
 ### Stretch 拉伸模式
 
 ```
