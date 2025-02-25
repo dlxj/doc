@@ -10964,6 +10964,60 @@ xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 
 
 
+### Stretch 拉伸模式
+
+```
+`Stretch="UniformToFill"` 是 WPF 中图像拉伸模式的一个选项，它的作用是：
+
+1. 保持图像的原始宽高比（不会变形）
+2. 填充整个可用空间，确保没有空白区域
+3. 如果需要，会裁剪图像的部分内容以适应容器
+
+WPF 中的 Stretch 属性有以下几种模式：
+
+- `None`: 不进行任何拉伸，保持原始大小
+- `Fill`: 完全填充，可能会导致图像变形
+- `Uniform`: 等比例缩放，可能会有空白区域
+- `UniformToFill`: 等比例缩放并填充满，可能会裁剪部分内容
+
+在你的代码中：
+​```xml:e:\huggingface\iScreenGrab\src\ScreenGrab\ScreenGrabView.xaml
+<Viewbox>
+    <Image x:Name="BackgroundImage" Stretch="UniformToFill" />
+</Viewbox>
+​```
+
+这个设置确保了背景图片会：
+1. 完全填充 Viewbox 控件的空间
+2. 保持图片的原始宽高比
+3. 如果图片的宽高比与 Viewbox 不完全匹配，会裁剪掉超出的部分，而不是出现空白区域或者使图片变形
+
+这种设置在需要填满整个区域但又不希望图片变形的场景下非常有用，比如全屏背景图片的显示。
+```
+
+
+
+### 宏
+
+```
+        # see huggingface\iScreenGrab\src\ScreenGrab\ScreenGrabView.xaml.cs
+        private double Clamp(double value, double min, double max)
+        {
+            #if NETFRAMEWORK
+            		# .net framework
+                    if (value < min) return min;
+                    if (value > max) return max;
+                    return value;
+            #else
+                return Math.Clamp(value, min, max);
+            #endif
+        }
+```
+
+
+
+
+
 
 
 
