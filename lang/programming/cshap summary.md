@@ -11068,6 +11068,78 @@ WPF 中的 Stretch 属性有以下几种模式：
 
 
 
+### Border 带边框特效的面板
+
+```
+
+# see huggingface\itrans\src\ScreenGrab\ScreenGrabView.xaml
+
+        <Border
+            x:Name="PromptMsg"
+            Margin="15"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Background="#424242"
+            BorderBrush="WhiteSmoke"
+            BorderThickness=".6"
+            Opacity="0.9"
+            Visibility="Collapsed">
+            <local:AutoGrid
+                ChildMargin="3"
+                ChildVerticalAlignment="Center"
+                Columns="*, *"
+                RowCount="2"
+                RowHeight="30">
+                <Grid.Resources>
+                    <Style TargetType="StackPanel">
+                        <Setter Property="Orientation" Value="Horizontal" />
+                        <Setter Property="HorizontalAlignment" Value="Right" />
+                    </Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="FontSize" Value="16" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
+
+                    </Style>
+                </Grid.Resources>
+                <StackPanel>
+                    <local:UcCharacter DisplayChar="Shift" />
+                    <local:UcCharacter DisplayChar="🖱" />
+                </StackPanel>
+                <TextBlock Text="移动选区" />
+                <StackPanel>
+                    <local:UcCharacter DisplayChar="F" />
+                </StackPanel>
+                <TextBlock x:Name="FreezeTb" Text="取消冻结窗口" />
+            </local:AutoGrid>
+        </Border>
+
+这段代码中使用 Border 是为了创建一个提示信息面板，主要有以下几个原因：
+
+1. **视觉边界和样式**
+   - Border 提供了一个清晰的视觉边界，通过 `BorderBrush` 和 `BorderThickness` 属性设置了浅色边框
+   - 通过 `Background="#424242"` 设置了深色背景，配合 `Opacity="0.9"` 实现半透明效果
+   - 这些样式让提示信息在截图界面上更加醒目且美观
+
+2. **布局控制**
+   - Border 作为容器控件，可以通过 `Margin="15"` 控制与父容器的间距
+   - 使用 `HorizontalAlignment="Left"` 和 `VerticalAlignment="Bottom"` 将提示信息固定在左下角
+   - 通过 `Visibility="Collapsed"` 控制整个提示面板的显示和隐藏
+
+3. **内容组织**
+   - Border 内部包含了一个 `local:AutoGrid`，用于组织快捷键提示信息
+   - 这种嵌套结构使得提示信息的布局更加清晰和模块化
+
+4. **用户体验**
+   - 通过 Border 的视觉效果，让用户能够清楚地区分提示信息和截图区域
+   - 半透明效果确保提示信息不会完全遮挡底部内容
+
+总的来说，Border 在这里起到了一个视觉容器的作用，它不仅提供了样式和边界，还帮助组织和布局内部的提示信息内容，使整个提示面板看起来更加专业和美观。
+
+```
+
+
+
 
 
 ## WPF编程宝典
