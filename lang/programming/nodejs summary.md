@@ -38374,7 +38374,7 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 - [txt 阅读器](https://github.com/wuqinchao/TxtTags)
   - [ScreenCapturer 屏幕截图](https://github.com/wuqinchao/ScreenCapturer)
 - [ChatUI-WPF 录音并识别](https://github.com/ArcCrescendo/ChatUI-WPF)
-  
+- [Easy-Cat-Timer 时钟](https://github.com/xujiangjiang/Easy-Cat-Timer)
 - [kiss-translator 简约翻译](https://github.com/fishjar/kiss-translator)
 - [机器人学导论](https://github.com/HITSZ-OpenAuto/AUTO3005)
 
