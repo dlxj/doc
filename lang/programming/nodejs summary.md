@@ -38364,6 +38364,8 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
+- https://space.bilibili.com/32497462/upload/video B up
+
 - https://www.bilibili.com/video/BV17kptetEQV B UP
 - https://www.bilibili.com/video/BV1cC411x7aV B UP
 
