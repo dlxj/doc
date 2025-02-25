@@ -11016,7 +11016,55 @@ WPF 中的 Stretch 属性有以下几种模式：
 
 
 
+### 裁剪区域 镂空效果
 
+```
+
+# see huggingface\itrans\src\ScreenGrab\ScreenGrabView.xaml
+
+            <Canvas.Clip>
+                <CombinedGeometry GeometryCombineMode="Exclude">
+                    <CombinedGeometry.Geometry1>
+                        <RectangleGeometry x:Name="FullWindow" />
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <RectangleGeometry x:Name="ClippingGeometry" />
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </Canvas.Clip>
+            
+            
+ 这段代码是用于实现截图时的遮罩效果。让我解释一下它的工作原理：
+
+​```xml:e:\huggingface\itrans\src\ScreenGrab\ScreenGrabView.xaml
+<Canvas.Clip>
+    <CombinedGeometry GeometryCombineMode="Exclude">
+        <CombinedGeometry.Geometry1>
+            <RectangleGeometry x:Name="FullWindow" />  <!-- 整个窗口区域 -->
+        </CombinedGeometry.Geometry1>
+        <CombinedGeometry.Geometry2>
+            <RectangleGeometry x:Name="ClippingGeometry" />  <!-- 选中的截图区域 -->
+        </CombinedGeometry.Geometry2>
+    </CombinedGeometry>
+</Canvas.Clip>
+​```
+
+具体来说：
+
+1. `Canvas.Clip` 定义了一个裁剪区域，只有在这个区域内的内容才会显示
+2. `CombinedGeometry` 用于组合两个几何图形：
+   - `GeometryCombineMode="Exclude"` 表示使用排除模式，即从第一个几何图形中排除第二个几何图形的区域
+   - `Geometry1` (`FullWindow`) 代表整个窗口的区域
+   - `Geometry2` (`ClippingGeometry`) 代表用户选择的截图区域
+
+这样的组合效果是：
+- 当用户进行截图选择时，选中的区域（`ClippingGeometry`）会从整个窗口区域（`FullWindow`）中被"挖空"
+- 剩余的区域会显示半透明的遮罩效果（通过 `BackgroundBrush` 实现）
+- 这就形成了常见的截图工具的效果：选中区域清晰可见，而其他区域显示半透明遮罩
+
+这是一个很常见的截图工具的实现方式，可以让用户清楚地看到自己选择的区域范围。
+
+```
 
 
 
