@@ -34506,6 +34506,15 @@ e69562f3e52af28e8ab5e33d21a830d75b706e6d75dd3ada60b860676ea5b73c  DeepSeek-R1.Q8
 56a0fa68c095156c255eb3b29c056d5936656ebb540c4ed609f3330e8c0a37eb  DeepSeek-R1.Q8_0-00015-of-00015.gguf
 
 
+All distilled versions and the main 671B R1 model use the same chat template:
+<｜begin▁of▁sentence｜><｜User｜>What is 1+1?<｜Assistant｜>It's 2.<｜end▁of▁sentence｜><｜User｜>Explain more!<｜Assistant｜>
+A BOS is forcibly added, and an EOS separates each interaction. To counteract double BOS tokens during inference, you should only call tokenizer.encode(..., add_special_tokens = False) since the chat template auto adds a BOS token as well.
+For llama.cpp / GGUF inference, you should skip the BOS since it’ll auto add it.
+<｜User｜>What is 1+1?<｜Assistant｜>
+The <think> and </think> tokens get their own designated tokens. For the distilled versions for Qwen and Llama, some tokens are re-mapped, whilst Qwen for example did not have a BOS token, so <|object_ref_start|> had to be used instead.
+	# 是说 llama.cpp 会自动加 <｜begin▁of▁sentence｜> 和 <｜end▁of▁sentence｜> 你不用自动加
+		# <｜User｜>What is 1+1?<｜Assistant｜> 这样就可以
+
 sha256sum DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf
 
 311b7e2b72da29daffbac5e5f5df9353b1b3be9879d22d1dc498ece99529cfe5  DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf
