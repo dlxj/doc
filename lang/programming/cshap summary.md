@@ -696,7 +696,7 @@ Console.WriteLine(json2);
 
 
 
-​```c#
+```c#
 
 # https://dotnetfiddle.net/OSaW78
 
@@ -725,14 +725,14 @@ using NUnit.Framework; // Throws NUnit.Framework.AssertionException
 		public string LogId { get; set; }
 		[JsonPropertyName("Log_status")]
 		public string LogStatus { get; set; }
-
+	
 		public string FailureReason { get; set; }
 	}
-
-    class TestClass
-    {
-        public static void Test()
-        {
+	
+	class TestClass
+	{
+	    public static void Test()
+	    {
 			var response = new ResponseJson
 			{
 				Status = true, 
@@ -747,7 +747,7 @@ using NUnit.Framework; // Throws NUnit.Framework.AssertionException
 				WriteIndented = false,
 			};
 			var json = JsonSerializer.Serialize(response, options);
-
+	
 			Console.WriteLine("Serialized {0}", response);
 			Console.WriteLine(json);
 			
@@ -777,7 +777,7 @@ using NUnit.Framework; // Throws NUnit.Framework.AssertionException
 		{
 			Console.WriteLine("Environment version: {0} ({1})", System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription , GetNetCoreVersion());
 			Console.WriteLine();
-
+	
 			try
 			{
 				TestClass.Test();
@@ -807,7 +807,7 @@ using NUnit.Framework; // Throws NUnit.Framework.AssertionException
 
 
 
-```c#
+​```c#
 WeatherForecast Deserialize(string json)
 {
     var options = new JsonSerializerOptions
@@ -11268,6 +11268,55 @@ WPF 中的 Stretch 属性有以下几种模式：
 总的来说，Border 在这里起到了一个视觉容器的作用，它不仅提供了样式和边界，还帮助组织和布局内部的提示信息内容，使整个提示面板看起来更加专业和美观。
 
 ```
+
+
+
+### 跟随鼠标的交叉线
+
+```
+# see huggingface\itrans\src\ScreenGrab\ScreenGrabView.xaml
+
+            <!--  Horizontal Line  -->
+            <Line
+                x:Name="HorizontalLine"
+                Stroke="#92caf4"
+                StrokeThickness="1"
+                Visibility="Collapsed" />
+            <!--  Vertical Line  -->
+            <Line
+                x:Name="VerticalLine"
+                Stroke="#92caf4"
+                StrokeThickness="1"
+                Visibility="Collapsed" />
+                
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            (HorizontalLine.X1, VerticalLine.Y1, (HorizontalLine.X2, VerticalLine.Y2)) = (0, 0, this.GetWidthHeight());
+        }
+        
+        private void RegionClickCanvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            var movingPoint = e.GetPosition(this);
+
+            // Update the horizontal line to match the mouse Y position
+            HorizontalLine.Y1 = HorizontalLine.Y2 = movingPoint.Y;
+
+            // Update the vertical line to match the mouse X position
+            VerticalLine.X1 = VerticalLine.X2 = movingPoint.X;
+        }
+        
+        private void SetAuxiliaryVisibility(bool isVisible)
+        {
+            var setVisibility = isVisible ? Visibility.Visible : Visibility.Collapsed;
+            if (HorizontalLine.Visibility == setVisibility && VerticalLine.Visibility == setVisibility)
+                return;
+            HorizontalLine.Visibility = setVisibility;
+            VerticalLine.Visibility = setVisibility;
+        }
+
+```
+
+
 
 
 
