@@ -34484,7 +34484,7 @@ It is also possible to reduce the model weight memory by using --cpu-offload-gb 
 
 ### deepseek r1 满血测试
 
-https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-UD-Q2_K_XL
+https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q8_0
 
 ```
 autodl 需要扩容 256G
@@ -34495,8 +34495,7 @@ autodl 需要扩容 256G
 5bbd1f3562fed647d42d5899244079172881c48f293d60cdfe2de72774709864  DeepSeek-R1.Q8_0-00004-of-00015.gguf
 b4d8b8b8ed2e86fafe26eeadb959a7ec3f2f9d380ad6deb3ac84a7205141328b  DeepSeek-R1.Q8_0-00005-of-00015.gguf
 12d41b1e6422e8f953cb5a6b4b130283bec07ead34f2dc6b6f8ecb2f6befa62f  DeepSeek-R1.Q8_0-00006-of-00015.gguf
-
-
+b847e4a84fa336fe3cd322f886b4fc0b220227a83267cfaa00a337b76b8d4f29  DeepSeek-R1.Q8_0-00007-of-00015.gguf
 e69562f3e52af28e8ab5e33d21a830d75b706e6d75dd3ada60b860676ea5b73c  DeepSeek-R1.Q8_0-00008-of-00015.gguf
 5e4fd8410f84325f13b2f17010c2768e14f5f3052af446d2d1cad35ea02723ae  DeepSeek-R1.Q8_0-00009-of-00015.gguf
 1d2561f9bdb0dab22251f50f577868b42b26704456922bd72419cd5c412e0ee3  DeepSeek-R1.Q8_0-00010-of-00015.gguf
