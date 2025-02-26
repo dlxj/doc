@@ -34515,6 +34515,19 @@ The <think> and </think> tokens get their own designated tokens. For the distill
 	# 是说 llama.cpp 会自动加 <｜begin▁of▁sentence｜> 和 <｜end▁of▁sentence｜> 你不用自动加
 		# <｜User｜>What is 1+1?<｜Assistant｜> 这样就可以
 
+# pip install huggingface_hub hf_transfer
+# import os # Optional for faster downloading
+# os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
+
+from huggingface_hub import snapshot_download
+snapshot_download(
+  repo_id = "unsloth/DeepSeek-R1-GGUF",
+  local_dir = "DeepSeek-R1-GGUF",
+  allow_patterns = ["*DeepSeek-R1.Q8_0*"],
+)
+	# 指定匹配下载
+
+
 sha256sum DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf
 
 311b7e2b72da29daffbac5e5f5df9353b1b3be9879d22d1dc498ece99529cfe5  DeepSeek-R1-UD-Q2_K_XL-00001-of-00005.gguf
@@ -34604,12 +34617,12 @@ CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
 --device CUDA0,CUDA1,CUDA2,CUDA3,CUDA4,CUDA5,CUDA6,CUDA7 \
 --model /root/autodl-tmp/DeepSeek-R1.Q8_0-00001-of-00015.gguf \
 --cache-type-k q8_0 \
---threads 10 \
+--threads 16 \
  -c 4096 \
---n-gpu-layers 56 \
---tensor_split 7/7/7/7/7/7/7/7 \
+--n-gpu-layers 49 \
+--tensor_split 7/7/7/7/7/7/7 \
 --mlock \
---repeat-penalty 1.75 --temp 0.1 --top-k 8 --top-p 0.1 -n 4096 \
+--repeat-penalty 1.75 --temp 0.6 --top-k 8 --top-p 0.1 -n 4096 \
  -a DeepSeek-R1-Q8_0 \
 --port 8080
 
@@ -34620,7 +34633,7 @@ curl --request POST \
 --header "Content-Type: application/json" \
 --header "Accept: text/event-stream" \
 --data '{"prompt":"<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>", "stream": true}'
-
+	# <think>\n
 
 curl --request POST \
 --url http://localhost:8080/completion \
