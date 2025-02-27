@@ -38395,6 +38395,7 @@ https://github.com/SuRGeoNix/Flyleaf wpf 播放器
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)  **完成度很高的** wpf   see csharp summay.md -> wpf
 
 - [markdig](https://github.com/xoofx/markdig) markdown C# 百分百
+  - [MdViewer](https://github.com/dlxj/EleCho.MdViewer) app use markdig
 
 - [txt 阅读器](https://github.com/wuqinchao/TxtTags)
   - [ScreenCapturer 屏幕截图](https://github.com/wuqinchao/ScreenCapturer)
