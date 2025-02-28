@@ -807,7 +807,7 @@ using NUnit.Framework; // Throws NUnit.Framework.AssertionException
 
 
 
-​```c#
+```c#
 WeatherForecast Deserialize(string json)
 {
     var options = new JsonSerializerOptions
@@ -823,9 +823,9 @@ class WeatherForecast {
     // Always in Celsius.
     [JsonPropertyName("temp")]
     public int TemperatureC { get; set; }
-
+    
     public string Summary { get; set; }
-
+    
     // Don't serialize this property.
     [JsonIgnore]
     public bool IsHot => TemperatureC >= 30;
@@ -842,7 +842,7 @@ class WeatherForecast {
 
 
 
-```c#
+​```c#
                 Regex r = new Regex(@"[^0-9,]*");
                 srcList = r.Replace(srcList, "");
 ```
@@ -11313,6 +11313,36 @@ WPF 中的 Stretch 属性有以下几种模式：
             HorizontalLine.Visibility = setVisibility;
             VerticalLine.Visibility = setVisibility;
         }
+
+```
+
+
+
+### 引用类库里的自定义控件
+
+```
+xmlns:sg="clr-namespace:ScreenGrab;assembly=ScreenGrab"
+        xmlns:local="clr-namespace:iTrans"
+        xmlns:vm ="clr-namespace:iTrans.ViewModels"
+        	# 对比原生写法，少了定义程序集 assembly=xxx
+    
+    <Grid>
+        <sg:AutoGrid
+                ChildMargin="3"
+                ChildVerticalAlignment="Center"
+                Columns="*, *"
+                RowCount="2"
+                RowHeight="30">
+        </sg:AutoGrid>
+        <Viewbox>
+            <Image x:Name="ClipImage" Stretch="UniformToFill" />
+        </Viewbox>
+    </Grid>
+    
+    
+另外，请确保：
+	1. ScreenGrab 项目已经被正确引用到 iTrans 项目中
+	2. ScreenGrab 项目已经被成功编译
 
 ```
 
