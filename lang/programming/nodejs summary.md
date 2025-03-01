@@ -3713,7 +3713,7 @@ https://github.com/heiher/natmap/issues/18  stun 服务器地址
   
   
   pm2 --name candy_server start 'candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.1.0.0/24" --password="xxx" --stun="stun://stun.chat.bilibili.com"'
-
+  
   
   ```
   
@@ -34627,6 +34627,27 @@ CUDA_VISIBLE_DEVICES=0 ./rpc-server --host 0.0.0.0 -p 1000
 --port 8080
 
 
+# windows
+cd C:\Users\echod\llama.cpp\bin\Debug> 
+
+
+.\llama-server.exe --model E:\DeepSeek-R1.Q8_0\DeepSeek-R1.Q8_0-00001-of-00015.gguf `
+--cache-type-k q8_0 `
+--threads 4 `
+ -c 4096 `
+--mlock `
+--repeat-penalty 1.75 --temp 0.6 --top-k 8 --top-p 0.1 -n 4096 `
+ -a DeepSeek-R1-Q8_0 `
+--port 8080
+
+./llama-server.exe --model /e/DeepSeek-R1.Q8_0\DeepSeek-R1.Q8_0-00001-of-00015.gguf \
+--cache-type-k q8_0 \
+--threads 4 \
+ -c 4096 \
+--mlock \
+--repeat-penalty 1.75 --temp 0.6 --top-k 8 --top-p 0.1 -n 4096 \
+ -a DeepSeek-R1-Q8_0 \
+--port 8080
 
 curl --request POST \
 --url http://localhost:8080/completion \
@@ -34635,10 +34656,18 @@ curl --request POST \
 --data '{"prompt":"<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>", "stream": true}'
 	# <think>\n
 
+Invoke-RestMethod -Method Post -Uri "http://localhost:8080/completion" `
+-Headers @{ "Content-Type" = "application/json" } `
+-Body '{ "prompt": "<｜User｜>日译中：本来は動きを止めじっとした状態を長い間続けている意。人の場<｜Assistant｜>" }'
+
+
 curl --request POST \
 --url http://localhost:8080/completion \
 --header "Content-Type: application/json" \
 --data '{"prompt":"You are a helpful assistant<｜User｜>Hello<｜Assistant｜>Hi there<｜end▁of▁sentence｜><｜User｜>How are you?<｜Assistant｜>"}'
+
+
+
 
 ```
 
