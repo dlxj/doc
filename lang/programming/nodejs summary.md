@@ -38731,6 +38731,8 @@ MainWindow.xaml 改成这样
 
 https://github.com/0xc3u/Indiko.Maui.Controls.Markdown  **必看** 编译器
 
+https://github.com/win4r/AISuperDomain UI 挺好看
+
 
 
 ### winUI3
