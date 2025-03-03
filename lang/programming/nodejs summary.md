@@ -34487,6 +34487,7 @@ It is also possible to reduce the model weight memory by using --cpu-offload-gb 
 ```
 AMD EPYC 9654 12通道 DDR5  12 * 64 = 768G 内存
 
+8352V  DDR4 内存 
 
 Intel 6430, intel 8450h  AMX AVX-512 DDR5
 
