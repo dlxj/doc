@@ -34499,6 +34499,8 @@ Intel 6430, intel 8450h  AMX AVX-512 DDR5
 
 https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q8_0
 
+https://hf-mirror.com/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q8_0
+
 ```
 autodl 需要扩容 256G
 
