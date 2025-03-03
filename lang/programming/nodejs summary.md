@@ -34484,6 +34484,18 @@ It is also possible to reduce the model weight memory by using --cpu-offload-gb 
 
 ### deepseek r1 满血测试
 
+```
+AMD EPYC 9654 12通道 DDR5  12 * 64 = 768G 内存
+
+
+Intel 6430, intel 8450h  AMX AVX-512 DDR5
+
+
+
+```
+
+
+
 https://huggingface.co/unsloth/DeepSeek-R1-GGUF/tree/main/DeepSeek-R1-Q8_0
 
 ```
