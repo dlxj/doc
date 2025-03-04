@@ -38448,6 +38448,8 @@ https://github.com/SuRGeoNix/Flyleaf wpf 播放器
 
   - [MdViewer](https://github.com/dlxj/EleCho.MdViewer) app use markdig
 
+- [WpfMath](https://github.com/ForNeVeR/xaml-math/tree/master/src/WpfMath.Example)  **Latex 渲染**
+
 - [txt 阅读器](https://github.com/wuqinchao/TxtTags)
   
   - [ScreenCapturer 屏幕截图](https://github.com/wuqinchao/ScreenCapturer)
