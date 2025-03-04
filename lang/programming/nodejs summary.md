@@ -38438,7 +38438,7 @@ https://github.com/SuRGeoNix/Flyleaf wpf 播放器
 
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)  **完成度很高的** wpf   see csharp summay.md -> wpf
 
-- [markdig](https://github.com/xoofx/markdig) markdown C# 百分百
+- [markdig](https://github.com/xoofx/markdig) markdown C# 百分百   **see MAUI** ，AI 转 WPF md 成功 
 
   - ```
     WPF中，FlowDocument是一种强大的文档呈现技术，用于创建富文本内容，如复杂的排版、表格、图像和列表等。
