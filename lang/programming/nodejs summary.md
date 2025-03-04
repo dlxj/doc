@@ -38743,6 +38743,647 @@ MainWindow.xaml 改成这样
 
 https://github.com/0xc3u/Indiko.Maui.Controls.Markdown  **必看** 编译器
 
+```c#
+# 转 wpf
+
+WpfApp1\MainWindow.xaml.cs
+
+using System.ComponentModel;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfApp1
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            markdownView.MarkdownText = @"# Welcome to MarkdownView
+
+## Features
+
+* Support for basic Markdown syntax
+* Customizable styles
+* Hyperlink handling
+
+### Text Formatting
+
+**Bold text** and *italic text* are supported.
+
+### Links
+
+[Click here](https://example.com) to visit example.com
+
+### Code Blocks
+
+​```csharp
+public class Example {
+    public void Test() {
+        Console.WriteLine(\""Hello World\"");
+    }
+}
+​```";
+        }
+    }
+
+
+    public class LinkEventArgs : EventArgs
+    {
+        public required string Link { get; set; }
+    }
+    public class EmailEventArgs : EventArgs
+    {
+        public required string Email { get; set; }
+    }
+
+    /// <summary>
+    /// WPF implementation of the MarkdownView control
+    /// </summary>
+    public class MarkdownView : UserControl
+    {
+        private static readonly Regex KaTeXBlockRegex = new Regex(@"\$\$(.*?)\$\$", RegexOptions.Compiled | RegexOptions.Singleline);
+        private static readonly Regex KaTeXInlineRegex = new Regex(@"\$(.*?)\$", RegexOptions.Compiled);
+        private static readonly Regex EmailRegex = new Regex(@"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b", RegexOptions.Compiled);
+
+        private readonly Thickness _defaultListIndent = new Thickness(10, 0, 10, 0);
+        private Dictionary<string, ImageSource> _imageCache = new Dictionary<string, ImageSource>();
+        private Grid _contentGrid;
+
+        #region Events
+
+        public delegate void HyperLinkClicked(object sender, LinkEventArgs e);
+        public event HyperLinkClicked OnHyperLinkClicked;
+
+        public delegate void EmailClickedEventHandler(object sender, EmailEventArgs e);
+        public event EmailClickedEventHandler OnEmailClicked;
+
+        #endregion
+
+        #region Dependency Properties
+
+        public static readonly DependencyProperty CodeBlockBackgroundColorProperty =
+            DependencyProperty.Register(nameof(CodeBlockBackgroundColor), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.LightGray, OnMarkdownTextChanged));
+
+        public Brush CodeBlockBackgroundColor
+        {
+            get => (Brush)GetValue(CodeBlockBackgroundColorProperty);
+            set => SetValue(CodeBlockBackgroundColorProperty, value);
+        }
+
+        public static readonly DependencyProperty CodeBlockTextColorProperty =
+            DependencyProperty.Register(nameof(CodeBlockTextColor), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.Black, OnMarkdownTextChanged));
+
+        public Brush CodeBlockTextColor
+        {
+            get => (Brush)GetValue(CodeBlockTextColorProperty);
+            set => SetValue(CodeBlockTextColorProperty, value);
+        }
+
+
+        public static readonly DependencyProperty MarkdownTextProperty =
+            DependencyProperty.Register(nameof(MarkdownText), typeof(string), typeof(MarkdownView),
+                new PropertyMetadata(null, OnMarkdownTextChanged));
+
+        public string MarkdownText
+        {
+            get => (string)GetValue(MarkdownTextProperty);
+            set => SetValue(MarkdownTextProperty, value);
+        }
+
+        public static readonly DependencyProperty TextWrappingProperty =
+            DependencyProperty.Register(nameof(TextWrapping), typeof(TextWrapping), typeof(MarkdownView),
+                new PropertyMetadata(TextWrapping.Wrap, OnMarkdownTextChanged));
+
+        public TextWrapping TextWrapping
+        {
+            get => (TextWrapping)GetValue(TextWrappingProperty);
+            set => SetValue(TextWrappingProperty, value);
+        }
+
+        public static readonly DependencyProperty HeaderTextTrimmingProperty =
+            DependencyProperty.Register(nameof(HeaderTextTrimming), typeof(TextTrimming), typeof(MarkdownView),
+                new PropertyMetadata(TextTrimming.CharacterEllipsis, OnMarkdownTextChanged));
+
+        public TextTrimming HeaderTextTrimming
+        {
+            get => (TextTrimming)GetValue(HeaderTextTrimmingProperty);
+            set => SetValue(HeaderTextTrimmingProperty, value);
+        }
+
+        public static readonly DependencyProperty H1ColorProperty =
+            DependencyProperty.Register(nameof(H1Color), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.Black, OnMarkdownTextChanged));
+
+        public Brush H1Color
+        {
+            get => (Brush)GetValue(H1ColorProperty);
+            set => SetValue(H1ColorProperty, value);
+        }
+
+        public static readonly DependencyProperty H1FontSizeProperty =
+            DependencyProperty.Register(nameof(H1FontSize), typeof(double), typeof(MarkdownView),
+                new PropertyMetadata(24d, OnMarkdownTextChanged));
+
+        [TypeConverter(typeof(FontSizeConverter))]
+        public double H1FontSize
+        {
+            get => (double)GetValue(H1FontSizeProperty);
+            set => SetValue(H1FontSizeProperty, value);
+        }
+
+        public static readonly DependencyProperty H2ColorProperty =
+            DependencyProperty.Register(nameof(H2Color), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.DarkGray, OnMarkdownTextChanged));
+
+        public Brush H2Color
+        {
+            get => (Brush)GetValue(H2ColorProperty);
+            set => SetValue(H2ColorProperty, value);
+        }
+
+        public static readonly DependencyProperty H2FontSizeProperty =
+            DependencyProperty.Register(nameof(H2FontSize), typeof(double), typeof(MarkdownView),
+                new PropertyMetadata(20d, OnMarkdownTextChanged));
+
+        [TypeConverter(typeof(FontSizeConverter))]
+        public double H2FontSize
+        {
+            get => (double)GetValue(H2FontSizeProperty);
+            set => SetValue(H2FontSizeProperty, value);
+        }
+
+        public static readonly DependencyProperty H3ColorProperty =
+            DependencyProperty.Register(nameof(H3Color), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.Gray, OnMarkdownTextChanged));
+
+        public Brush H3Color
+        {
+            get => (Brush)GetValue(H3ColorProperty);
+            set => SetValue(H3ColorProperty, value);
+        }
+
+        public static readonly DependencyProperty H3FontSizeProperty =
+            DependencyProperty.Register(nameof(H3FontSize), typeof(double), typeof(MarkdownView),
+                new PropertyMetadata(18d, OnMarkdownTextChanged));
+
+        [TypeConverter(typeof(FontSizeConverter))]
+        public double H3FontSize
+        {
+            get => (double)GetValue(H3FontSizeProperty);
+            set => SetValue(H3FontSizeProperty, value);
+        }
+
+        // Table Header Style
+        public static readonly DependencyProperty TableHeaderFontSizeProperty =
+            DependencyProperty.Register(nameof(TableHeaderFontSize), typeof(double), typeof(MarkdownView),
+                new PropertyMetadata(14d, OnMarkdownTextChanged));
+
+        [TypeConverter(typeof(FontSizeConverter))]
+        public double TableHeaderFontSize
+        {
+            get => (double)GetValue(TableHeaderFontSizeProperty);
+            set => SetValue(TableHeaderFontSizeProperty, value);
+        }
+
+        public static readonly DependencyProperty TableHeaderTextColorProperty =
+            DependencyProperty.Register(nameof(TableHeaderTextColor), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.Black, OnMarkdownTextChanged));
+
+        public Brush TableHeaderTextColor
+        {
+            get => (Brush)GetValue(TableHeaderTextColorProperty);
+            set => SetValue(TableHeaderTextColorProperty, value);
+        }
+
+        public static readonly DependencyProperty TableHeaderBackgroundColorProperty =
+            DependencyProperty.Register(nameof(TableHeaderBackgroundColor), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.LightGray, OnMarkdownTextChanged));
+
+        public Brush TableHeaderBackgroundColor
+        {
+            get => (Brush)GetValue(TableHeaderBackgroundColorProperty);
+            set => SetValue(TableHeaderBackgroundColorProperty, value);
+        }
+
+        public static readonly DependencyProperty TableHeaderFontFamilyProperty =
+            DependencyProperty.Register(nameof(TableHeaderFontFamily), typeof(FontFamily), typeof(MarkdownView),
+                new PropertyMetadata(null, OnMarkdownTextChanged));
+
+        public FontFamily TableHeaderFontFamily
+        {
+            get => (FontFamily)GetValue(TableHeaderFontFamilyProperty);
+            set => SetValue(TableHeaderFontFamilyProperty, value);
+        }
+
+        // Table Row Style
+        public static readonly DependencyProperty TableRowFontFamilyProperty =
+            DependencyProperty.Register(nameof(TableRowFontFamily), typeof(FontFamily), typeof(MarkdownView),
+                new PropertyMetadata(null, OnMarkdownTextChanged));
+
+        public FontFamily TableRowFontFamily
+        {
+            get => (FontFamily)GetValue(TableRowFontFamilyProperty);
+            set => SetValue(TableRowFontFamilyProperty, value);
+        }
+
+        public static readonly DependencyProperty TableRowTextColorProperty =
+            DependencyProperty.Register(nameof(TableRowTextColor), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.Black, OnMarkdownTextChanged));
+
+        public Brush TableRowTextColor
+        {
+            get => (Brush)GetValue(TableRowTextColorProperty);
+            set => SetValue(TableRowTextColorProperty, value);
+        }
+
+        public static readonly DependencyProperty TableRowFontSizeProperty =
+            DependencyProperty.Register(nameof(TableRowFontSize), typeof(double), typeof(MarkdownView),
+                new PropertyMetadata(12d, OnMarkdownTextChanged));
+
+        [TypeConverter(typeof(FontSizeConverter))]
+        public double TableRowFontSize
+        {
+            get => (double)GetValue(TableRowFontSizeProperty);
+            set => SetValue(TableRowFontSizeProperty, value);
+        }
+
+        // Text Style
+        public static readonly DependencyProperty TextColorProperty =
+            DependencyProperty.Register(nameof(TextColor), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.Black, OnMarkdownTextChanged));
+
+        public Brush TextColor
+        {
+            get => (Brush)GetValue(TextColorProperty);
+            set => SetValue(TextColorProperty, value);
+        }
+
+        public static readonly DependencyProperty TextFontSizeProperty =
+            DependencyProperty.Register(nameof(TextFontSize), typeof(double), typeof(MarkdownView),
+                new PropertyMetadata(12d, OnMarkdownTextChanged));
+
+        [TypeConverter(typeof(FontSizeConverter))]
+        public double TextFontSize
+        {
+            get => (double)GetValue(TextFontSizeProperty);
+            set => SetValue(TextFontSizeProperty, value);
+        }
+
+        public static readonly DependencyProperty TextFontFamilyProperty =
+            DependencyProperty.Register(nameof(TextFontFamily), typeof(FontFamily), typeof(MarkdownView),
+                new PropertyMetadata(null, OnMarkdownTextChanged));
+
+        public FontFamily TextFontFamily
+        {
+            get => (FontFamily)GetValue(TextFontFamilyProperty);
+            set => SetValue(TextFontFamilyProperty, value);
+        }
+
+        // Line Style
+        public static readonly DependencyProperty LineColorProperty =
+            DependencyProperty.Register(nameof(LineColor), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.LightGray, OnMarkdownTextChanged));
+
+        public Brush LineColor
+        {
+            get => (Brush)GetValue(LineColorProperty);
+            set => SetValue(LineColorProperty, value);
+        }
+        public MarkdownView()
+        {
+            _contentGrid = new Grid();
+            Content = _contentGrid;
+        }
+
+        private static void OnMarkdownTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var control = (MarkdownView)d;
+            control.RenderMarkdown();
+        }
+
+        private void RenderMarkdown()
+        {
+            if (string.IsNullOrEmpty(MarkdownText))
+            {
+                _contentGrid.Children.Clear();
+                return;
+            }
+
+            _contentGrid.Children.Clear();
+            var stackPanel = new StackPanel();
+            _contentGrid.Children.Add(stackPanel);
+
+            // 解析Markdown文本
+            var lines = MarkdownText.Split('\n');
+            var currentBlock = new List<string>();
+            var isInCodeBlock = false;
+            var isInQuoteBlock = false;
+
+            foreach (var line in lines)
+            {
+                if (line.StartsWith("```"))
+                {
+                    if (isInCodeBlock)
+                    {
+                        // 结束代码块
+                        RenderCodeBlock(stackPanel, string.Join("\n", currentBlock));
+                        currentBlock.Clear();
+                    }
+                    isInCodeBlock = !isInCodeBlock;
+                    continue;
+                }
+
+                if (isInCodeBlock)
+                {
+                    currentBlock.Add(line);
+                    continue;
+                }
+
+                if (line.StartsWith(">"))
+                {
+                    if (!isInQuoteBlock)
+                    {
+                        if (currentBlock.Count > 0)
+                        {
+                            RenderTextBlock(stackPanel, string.Join("\n", currentBlock));
+                            currentBlock.Clear();
+                        }
+                        isInQuoteBlock = true;
+                    }
+                    currentBlock.Add(line.TrimStart('>', ' '));
+                    continue;
+                }
+                else if (isInQuoteBlock)
+                {
+                    RenderQuoteBlock(stackPanel, string.Join("\n", currentBlock));
+                    currentBlock.Clear();
+                    isInQuoteBlock = false;
+                }
+
+                if (line.StartsWith("#"))
+                {
+                    if (currentBlock.Count > 0)
+                    {
+                        RenderTextBlock(stackPanel, string.Join("\n", currentBlock));
+                        currentBlock.Clear();
+                    }
+                    RenderHeader(stackPanel, line);
+                }
+                else
+                {
+                    currentBlock.Add(line);
+                }
+            }
+
+            // 处理最后剩余的内容
+            if (currentBlock.Count > 0)
+            {
+                if (isInCodeBlock)
+                    RenderCodeBlock(stackPanel, string.Join("\n", currentBlock));
+                else if (isInQuoteBlock)
+                    RenderQuoteBlock(stackPanel, string.Join("\n", currentBlock));
+                else
+                    RenderTextBlock(stackPanel, string.Join("\n", currentBlock));
+            }
+        }
+
+        public static readonly DependencyProperty HyperlinkColorProperty =
+            DependencyProperty.Register(nameof(HyperlinkColor), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.Blue, OnMarkdownTextChanged));
+
+        public Brush HyperlinkColor
+        {
+            get => (Brush)GetValue(HyperlinkColorProperty);
+            set => SetValue(HyperlinkColorProperty, value);
+        }
+
+        public static readonly DependencyProperty HyperlinkHoverColorProperty =
+            DependencyProperty.Register(nameof(HyperlinkHoverColor), typeof(Brush), typeof(MarkdownView),
+                new PropertyMetadata(Brushes.DarkBlue, OnMarkdownTextChanged));
+
+        public Brush HyperlinkHoverColor
+        {
+            get => (Brush)GetValue(HyperlinkHoverColorProperty);
+            set => SetValue(HyperlinkHoverColorProperty, value);
+        }
+
+        #endregion
+        private void RenderHeader(StackPanel container, string line)
+        {
+            var level = line.TakeWhile(c => c == '#').Count();
+            var text = line.Substring(level).Trim();
+            var textBlock = new TextBlock
+            {
+                Text = text,
+                TextWrapping = TextWrapping,
+                TextTrimming = HeaderTextTrimming,
+                Margin = new Thickness(0, 5, 0, 5)
+            };
+
+            switch (level)
+            {
+                case 1:
+                    textBlock.FontSize = H1FontSize;
+                    textBlock.Foreground = H1Color;
+                    break;
+                case 2:
+                    textBlock.FontSize = H2FontSize;
+                    textBlock.Foreground = H2Color;
+                    break;
+                case 3:
+                    textBlock.FontSize = H3FontSize;
+                    textBlock.Foreground = H3Color;
+                    break;
+                default:
+                    textBlock.FontSize = TextFontSize;
+                    textBlock.Foreground = TextColor;
+                    break;
+            }
+
+            container.Children.Add(textBlock);
+        }
+
+        private void RenderCodeBlock(StackPanel container, string content)
+        {
+            var border = new Border
+            {
+                Background = Brushes.LightGray, // CodeBlockBackgroundColor,
+                BorderBrush = Brushes.LightGray, // CodeBlockBorderColor,
+                BorderThickness = new Thickness(1),
+                Padding = new Thickness(10),
+                Margin = new Thickness(0, 5, 0, 5)
+            };
+
+            var textBlock = new TextBlock
+            {
+                Text = content,
+                TextWrapping = TextWrapping.NoWrap,
+                FontFamily = new FontFamily("Consolas"),
+                Foreground = CodeBlockTextColor
+            };
+
+            border.Child = textBlock;
+            container.Children.Add(border);
+        }
+
+        private void RenderQuoteBlock(StackPanel container, string content)
+        {
+            var border = new Border
+            {
+                Background = Brushes.LightGray, // QuoteBlockBackgroundColor,
+                BorderBrush = Brushes.LightGray, // QuoteBlockBorderColor,
+                BorderThickness = new Thickness(4, 0, 0, 0),
+                Padding = new Thickness(10, 5, 10, 5),
+                Margin = new Thickness(0, 5, 0, 5)
+            };
+
+            var textBlock = new TextBlock
+            {
+                Text = content,
+                TextWrapping = TextWrapping,
+                Foreground = Brushes.LightGray, // QuoteBlockTextColor
+            };
+
+            border.Child = textBlock;
+            container.Children.Add(border);
+        }
+
+        private void RenderTextBlock(StackPanel container, string content)
+        {
+            if (string.IsNullOrWhiteSpace(content))
+            {
+                container.Children.Add(new TextBlock { Height = 10 });
+                return;
+            }
+
+            var paragraph = new TextBlock
+            {
+                TextWrapping = this.TextWrapping,
+                Margin = new Thickness(0, 2, 0, 2),
+                FontSize = TextFontSize,
+                Foreground = TextColor,
+                FontFamily = TextFontFamily
+            };
+
+            // 处理内联元素（粗体、斜体、链接等）
+            var inlines = ProcessInlineElements(content);
+            paragraph.Inlines.AddRange(inlines);
+
+            container.Children.Add(paragraph);
+        }
+
+        private List<Inline> ProcessInlineElements(string text)
+        {
+            var inlines = new List<Inline>();
+            var currentText = "";
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (i < text.Length - 1)
+                {
+                    // 处理粗体
+                    if (text[i] == '*' && text[i + 1] == '*')
+                    {
+                        if (currentText.Length > 0)
+                        {
+                            inlines.Add(new Run(currentText));
+                            currentText = "";
+                        }
+
+                        var boldEnd = text.IndexOf("**", i + 2);
+                        if (boldEnd != -1)
+                        {
+                            var boldText = text.Substring(i + 2, boldEnd - (i + 2));
+                            inlines.Add(new Bold(new Run(boldText)));
+                            i = boldEnd + 1;
+                            continue;
+                        }
+                    }
+
+                    // 处理斜体
+                    if (text[i] == '_')
+                    {
+                        if (currentText.Length > 0)
+                        {
+                            inlines.Add(new Run(currentText));
+                            currentText = "";
+                        }
+
+                        var italicEnd = text.IndexOf('_', i + 1);
+                        if (italicEnd != -1)
+                        {
+                            var italicText = text.Substring(i + 1, italicEnd - (i + 1));
+                            inlines.Add(new Italic(new Run(italicText)));
+                            i = italicEnd;
+                            continue;
+                        }
+                    }
+                }
+
+                currentText += text[i];
+            }
+
+            if (currentText.Length > 0)
+            {
+                inlines.Add(new Run(currentText));
+            }
+
+            return inlines;
+        }
+    }
+}
+
+
+WpfApp1\MainWindow.xaml
+
+<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <local:MarkdownView x:Name="markdownView"
+                           MarkdownText=""
+                           TextFontFamily="Arial"
+                           TextFontSize="14"
+                           H1FontSize="28"
+                           H2FontSize="22"
+                           H3FontSize="18"
+                           H1Color="#FF1E88E5"
+                           H2Color="#FF333333"
+                           H3Color="#FF666666"
+                           TextColor="#FF333333"
+                           HyperlinkColor="#FF2196F3"
+                           CodeBlockBackgroundColor="#FFF5F5F5"
+                           CodeBlockTextColor="#FF333333"
+                          />
+    </Grid>
+</Window>
+
+
+```
+
+
+
 https://github.com/win4r/AISuperDomain UI 挺好看
 
 
