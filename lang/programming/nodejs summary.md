@@ -38444,7 +38444,7 @@ https://github.com/SuRGeoNix/Flyleaf wpf 播放器
     WPF中，FlowDocument是一种强大的文档呈现技术，用于创建富文本内容，如复杂的排版、表格、图像和列表等。
     ```
 
-    
+    [blazor markdown](https://www.syncfusion.com/blogs/post/blazor-live-preview-markdown-editors-content-using-markdig-library)
 
   - [MdViewer](https://github.com/dlxj/EleCho.MdViewer) app use markdig
 
