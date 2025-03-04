@@ -38439,13 +38439,25 @@ https://github.com/SuRGeoNix/Flyleaf wpf 播放器
 [STranslate 对标Bob](https://github.com/ZGGSONG/STranslate)  **完成度很高的** wpf   see csharp summay.md -> wpf
 
 - [markdig](https://github.com/xoofx/markdig) markdown C# 百分百
+
+  - ```
+    WPF中，FlowDocument是一种强大的文档呈现技术，用于创建富文本内容，如复杂的排版、表格、图像和列表等。
+    ```
+
+    
+
   - [MdViewer](https://github.com/dlxj/EleCho.MdViewer) app use markdig
 
 - [txt 阅读器](https://github.com/wuqinchao/TxtTags)
+  
   - [ScreenCapturer 屏幕截图](https://github.com/wuqinchao/ScreenCapturer)
+  
 - [ChatUI-WPF 录音并识别](https://github.com/ArcCrescendo/ChatUI-WPF)
+
 - [Easy-Cat-Timer 时钟](https://github.com/xujiangjiang/Easy-Cat-Timer)
+
 - [kiss-translator 简约翻译](https://github.com/fishjar/kiss-translator)
+
 - [机器人学导论](https://github.com/HITSZ-OpenAuto/AUTO3005)
 
 [downkyicore  B站下载](https://github.com/yaobiao131/downkyicore)
