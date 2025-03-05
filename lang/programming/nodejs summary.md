@@ -38450,6 +38450,8 @@ https://github.com/SuRGeoNix/Flyleaf wpf 播放器
 
 - [WpfMath](https://github.com/ForNeVeR/xaml-math/tree/master/src/WpfMath.Example)  **Latex 渲染**
 
+- [MarkdownEditor2022](https://github.com/madskristensen/MarkdownEditor2022)  visual studio 插件，成功 ai 改造成 wpf
+
 - [txt 阅读器](https://github.com/wuqinchao/TxtTags)
   
   - [ScreenCapturer 屏幕截图](https://github.com/wuqinchao/ScreenCapturer)
