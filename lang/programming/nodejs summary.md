@@ -38454,6 +38454,10 @@ https://github.com/SuRGeoNix/Flyleaf wpf 播放器
 
   - [MdViewer](https://github.com/dlxj/EleCho.MdViewer) app use markdig
 
+- [markdig.wpf](https://github.com/Kryptos-FR/markdig.wpf) **靠谱**
+
+  - [RichTextBox富文本编辑器](https://www.cnblogs.com/hsiang/p/18020115)
+
 - [WpfMath](https://github.com/ForNeVeR/xaml-math/tree/master/src/WpfMath.Example)  **Latex 渲染**
 
 - [MarkdownEditor2022](https://github.com/madskristensen/MarkdownEditor2022)  visual studio 插件，成功 ai 改造成 wpf
