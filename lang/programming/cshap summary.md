@@ -10943,7 +10943,7 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
         	# RichTextBox 在这个命名空间里面
     ```
 
-  - https://zhuanlan.zhihu.com/p/495125347 wpf 源码编译
+  - https://www.cnblogs.com/wuty/p/18607430 wpf 源码编译
 
 - https://github.com/dnSpyEx/dnSpy  .net 反编译
 
