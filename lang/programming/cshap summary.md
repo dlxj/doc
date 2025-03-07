@@ -10953,6 +10953,7 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 
 ```
 git clone https://github.com/dotnet/wpf
+切到 v6.0.36 分支, RichTextBox 控件 dll 显示使用的是这个版本
 
 wpf\src\Microsoft.DotNet.Wpf\src\WpfGfx\core\dll\WpfGfx.sln  这个项目的C++的代码用到的是
  版本，装它
