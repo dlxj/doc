@@ -842,14 +842,14 @@ class WeatherForecast {
 
 
 
-​```c#
+```c#
                 Regex r = new Regex(@"[^0-9,]*");
                 srcList = r.Replace(srcList, "");
 ```
 
 
 
-```c#
+​```c#
         // 移除非中文、26个英文字母以外的字符
         static public string unAZchinese_remove(string s)
         {
@@ -11344,6 +11344,18 @@ xmlns:sg="clr-namespace:ScreenGrab;assembly=ScreenGrab"
 	1. ScreenGrab 项目已经被正确引用到 iTrans 项目中
 	2. ScreenGrab 项目已经被成功编译
 
+```
+
+
+
+### RichTextBox 原生命令
+
+```
+            <Button ToolTip="项目编号" Command="EditingCommands.ToggleBullets" CommandTarget="{Binding ElementName=richTextBox}">
+                <Path Data="{StaticResource icon_bullets}" Stretch="Fill" Fill="DimGray"></Path>
+            </Button>
+            	# 触发以后自动更新 UI，这命令不用自已定义
+            	
 ```
 
 
