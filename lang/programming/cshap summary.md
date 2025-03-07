@@ -10963,6 +10963,14 @@ File 'C:\Users\echod\.netcoreeng\native\temp\strawberry-perl-5.38.0.1-win64-x64.
 E:\t\wpf_fork\wpf\.tools\bin\net-framework-48-ref-assemblies
 	# 下载的东西藏在这里，存起来
 
+
+https://github.com/dotnet/wpf/issues/8343
+
+.\build.cmd -clean
+	# 失败以后先 clean
+.\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
+
+
 https://github.com/dotnet/wpf/blob/main/Documentation/wpf.vsconfig
 
 {
