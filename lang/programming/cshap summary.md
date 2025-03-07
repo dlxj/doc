@@ -10955,6 +10955,14 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 git clone https://github.com/dotnet/wpf
 切到 v6.0.36 分支, RichTextBox 控件 dll 显示使用的是这个版本
 
+LINK : fatal error LNK1104: 无法打开文件“MSVCURTD_netcore.LIB”
+
+用他的 wpf fork 看看能不能成功
+
+File 'C:\Users\echod\.netcoreeng\native\temp\strawberry-perl-5.38.0.1-win64-x64.zip' already exists, skipping download
+E:\t\wpf_fork\wpf\.tools\bin\net-framework-48-ref-assemblies
+	# 下载的东西藏在这里，存起来
+
 https://github.com/dotnet/wpf/blob/main/Documentation/wpf.vsconfig
 
 {
@@ -10990,6 +10998,7 @@ wpf\src\Microsoft.DotNet.Wpf\src\WpfGfx\core\dll\WpfGfx.sln  这个项目的C++�
  版本，装它
 
 .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
+
 
 
 
