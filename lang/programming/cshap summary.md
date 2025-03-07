@@ -11351,7 +11351,9 @@ xmlns:sg="clr-namespace:ScreenGrab;assembly=ScreenGrab"
 ### RichTextBox 原生命令
 
 ```
-            <Button ToolTip="项目编号" Command="EditingCommands.ToggleBullets" CommandTarget="{Binding ElementName=richTextBox}">
+# see huggingface\RichTextBoxEditor\RichTextBoxEditor\MainWindow.xaml
+
+	<Button ToolTip="项目编号" Command="EditingCommands.ToggleBullets" CommandTarget="{Binding ElementName=richTextBox}">
                 <Path Data="{StaticResource icon_bullets}" Stretch="Fill" Fill="DimGray"></Path>
             </Button>
             	# 触发以后自动更新 UI，这命令不用自已定义
