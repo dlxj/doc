@@ -10949,6 +10949,22 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 
 
 
+## WPF 源码编译
+
+```
+git clone https://github.com/dotnet/wpf
+
+wpf\src\Microsoft.DotNet.Wpf\src\WpfGfx\core\dll\WpfGfx.sln  这个项目的C++的代码用到的是
+ 版本，装它
+
+.\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
+
+
+
+```
+
+
+
 
 
 ##　语法
