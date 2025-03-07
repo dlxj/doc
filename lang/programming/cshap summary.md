@@ -10933,6 +10933,9 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 
 # WPF
 
+- https://github.com/dotnet/wpf/blob/main/src/Microsoft.DotNet.Wpf/src/PresentationFramework/ref/PresentationFramework.cs  
+  - // C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.36\ref\net6.0\PresentationFramework.dll  是不是这个的源码
+
 - https://github.com/dnSpyEx/dnSpy  .net 反编译
 
 
