@@ -10955,6 +10955,37 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 git clone https://github.com/dotnet/wpf
 切到 v6.0.36 分支, RichTextBox 控件 dll 显示使用的是这个版本
 
+https://github.com/dotnet/wpf/blob/main/Documentation/wpf.vsconfig
+
+{
+  "version": "1.0",
+  "components": [
+    "Microsoft.Component.CodeAnalysis.SDK",
+    "Microsoft.Component.MSBuild",
+    "Microsoft.Component.VC.Runtime.UCRTSDK",
+    "Microsoft.Net.Component.4.6.2.SDK",
+    "Microsoft.Net.Component.4.7.2.TargetingPack",
+    "Microsoft.NetCore.Component.DevelopmentTools",
+    "Microsoft.NetCore.Component.SDK",
+    "Microsoft.VisualStudio.Component.Git",
+    "Microsoft.VisualStudio.Component.NuGet",
+    "Microsoft.VisualStudio.Component.Roslyn.Compiler",
+    "Microsoft.VisualStudio.Component.Roslyn.LanguageServices",
+    "Microsoft.VisualStudio.Component.TextTemplating",
+    "Microsoft.VisualStudio.Component.VC.ATL",
+    "Microsoft.VisualStudio.Component.VC.ATLMFC",
+    "Microsoft.VisualStudio.Component.VC.CLI.Support",
+    "Microsoft.VisualStudio.Component.VC.CoreIde",
+    "Microsoft.VisualStudio.Component.VC.Modules.x86.x64",
+    "Microsoft.VisualStudio.Component.VC.Redist.14.Latest",
+    "Microsoft.VisualStudio.Component.VC.Tools.x86.x64",
+    "Microsoft.VisualStudio.Component.VSSDK",
+    "Microsoft.VisualStudio.Component.Windows10SDK.19041"
+  ]
+}
+	# 可能要装完这些东西
+
+
 wpf\src\Microsoft.DotNet.Wpf\src\WpfGfx\core\dll\WpfGfx.sln  这个项目的C++的代码用到的是
  版本，装它
 
