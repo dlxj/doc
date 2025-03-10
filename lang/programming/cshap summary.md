@@ -10945,6 +10945,8 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 
   - https://www.cnblogs.com/wuty/p/18607430 wpf 源码编译
 
+    - https://blog.lindexi.com/post/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA-WPF-%E5%AE%98%E6%96%B9%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E6%BA%90%E4%BB%A3%E7%A0%81.html  wpf 源码编译
+
 - https://github.com/dnSpyEx/dnSpy  .net 反编译
 
 
