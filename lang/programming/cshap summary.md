@@ -10972,6 +10972,11 @@ https://github.com/dotnet/wpf/issues/8343
 	# 失败以后先 clean
 .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
 
+clear the .tools\native\bin subfolder of the git repo (alternatively try a fresh clone)
+C:\Users\<user>\.netcoreeng\native\temp contains download caches (remove individual files if the zip file is partially downloaded or otherwise broken)
+C:\Users\<user>\.netcoreeng\native\bin contains unpacked downloads (remove if you suspect unpacking was interrupted/failed)
+	# 下载缓存也可以清一下
+
 
 wpf\src\Microsoft.DotNet.Wpf\src\System.Printing\CPP\src\PrintSystemPathResolver.cpp(308,50): er
 ror C5307: 'int System::String::IndexOf(wchar_t,int)': argument (1) converted from 'char' to 'wchar_t'. Missing 'L' enc
