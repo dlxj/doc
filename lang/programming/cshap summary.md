@@ -10989,7 +10989,24 @@ oding-prefix for character literal?
 		# 308 417 473 行 加一个 L 后成功编译
 
 命令行编译成功
-	
+C:\Users\Administrator\wpf\artifacts\packages\Debug\NonShipping
+Microsoft.DotNet.Arcade.Wpf.Sdk.Debug.9.0.0-ci.nupkg
+Microsoft.DotNet.Wpf.GitHub.Debug.9.0.0-ci.nupkg
+Microsoft.DotNet.Wpf.ProjectTemplates.Debug.9.0.0-ci.nupkg
+Microsoft.NET.Sdk.WindowsDesktop.Debug.9.0.0-ci.nupkg
+runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug.9.0.0-ci.nupkg
+	# 生成这五个包
+
+新建一个控制台程序 选 .net9.0 ，选 x86 编译 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
+    <PackageReference Include="Microsoft.DotNet.Wpf.ProjectTemplates.Debug" Version="9.0.0-ci" />
+    <PackageReference Include="runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
+  </ItemGroup>
+  	# 引用这些自已编译的 wpf 包
+  	# NUGet 要先添加本地文件夹的源
+
+
 wpf\src\Microsoft.DotNet.Wpf\src\DirectWriteForwarder\DirectWriteForwarder.vcxproj : error  : The SDK 'Microsoft.DotNet.Arcade.Sdk' specified could not be found. 
 	# 直接打开解决方案报错
 
