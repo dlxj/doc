@@ -849,7 +849,7 @@ class WeatherForecast {
 
 
 
-​```c#
+```c#
         // 移除非中文、26个英文字母以外的字符
         static public string unAZchinese_remove(string s)
         {
@@ -859,7 +859,7 @@ class WeatherForecast {
 
 
 
-```c#
+​```c#
 # 重复两次以上
 		str = Regex.Replace(str, "\\{2,}\"", "");
         str = Regex.Replace(str, "\\{2,}n", "");
@@ -10945,6 +10945,8 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 
   - https://www.cnblogs.com/wuty/p/18607430 wpf 源码编译
 
+    - https://blog.lindexi.com/post/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA-WPF-%E5%AE%98%E6%96%B9%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E6%BA%90%E4%BB%A3%E7%A0%81.html  wpf 源码编译
+
 - https://github.com/dnSpyEx/dnSpy  .net 反编译
 
 
@@ -10958,6 +10960,12 @@ git clone https://github.com/dotnet/wpf
 LINK : fatal error LNK1104: 无法打开文件“MSVCURTD_netcore.LIB”
 
 用他的 wpf fork 看看能不能成功
+	# https://github.com/Dotnet9527/wpf
+		# 这个 fork
+
+C:\Users\Administrator\.netcoreeng\native\temp
+	# 看看总共下载了几个压缩包
+
 
 File 'C:\Users\echod\.netcoreeng\native\temp\strawberry-perl-5.38.0.1-win64-x64.zip' already exists, skipping download
 E:\t\wpf_fork\wpf\.tools\bin\net-framework-48-ref-assemblies
@@ -10969,6 +10977,46 @@ https://github.com/dotnet/wpf/issues/8343
 .\build.cmd -clean
 	# 失败以后先 clean
 .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
+
+clear the .tools\native\bin subfolder of the git repo (alternatively try a fresh clone)
+C:\Users\<user>\.netcoreeng\native\temp contains download caches (remove individual files if the zip file is partially downloaded or otherwise broken)
+C:\Users\<user>\.netcoreeng\native\bin contains unpacked downloads (remove if you suspect unpacking was interrupted/failed)
+	# 下载缓存也可以清一下
+
+
+wpf\src\Microsoft.DotNet.Wpf\src\System.Printing\CPP\src\PrintSystemPathResolver.cpp(308,50): er
+ror C5307: 'int System::String::IndexOf(wchar_t,int)': argument (1) converted from 'char' to 'wchar_t'. Missing 'L' enc
+oding-prefix for character literal?
+	# 装完 cli 以后只有一个错误
+	# 14.39 14.40 14.41 14.42 14.44 Latest 这几个全装了，有效的应该是前面几个？
+	# 后面先不装，一个个试
+		# 308 417 473 行 加一个 L 后成功编译
+
+命令行编译成功
+C:\Users\Administrator\wpf\artifacts\packages\Debug\NonShipping
+Microsoft.DotNet.Arcade.Wpf.Sdk.Debug.9.0.0-ci.nupkg
+Microsoft.DotNet.Wpf.GitHub.Debug.9.0.0-ci.nupkg
+Microsoft.DotNet.Wpf.ProjectTemplates.Debug.9.0.0-ci.nupkg
+Microsoft.NET.Sdk.WindowsDesktop.Debug.9.0.0-ci.nupkg
+runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug.9.0.0-ci.nupkg
+	# 生成这五个包
+	
+C:\Users\Administrator\wpf\.packages
+	# 它的依赖包在这里，自定义 RichTextBox 时可以引用它
+	
+
+新建一个控制台程序 选 .net9.0 ，选 x86 编译 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
+    <PackageReference Include="Microsoft.DotNet.Wpf.ProjectTemplates.Debug" Version="9.0.0-ci" />
+    <PackageReference Include="runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
+  </ItemGroup>
+  	# 引用这些自已编译的 wpf 包
+  	# NUGet 要先添加本地文件夹的源
+
+
+wpf\src\Microsoft.DotNet.Wpf\src\DirectWriteForwarder\DirectWriteForwarder.vcxproj : error  : The SDK 'Microsoft.DotNet.Arcade.Sdk' specified could not be found. 
+	# 直接打开解决方案报错
 
 
 https://github.com/dotnet/wpf/blob/main/Documentation/wpf.vsconfig
