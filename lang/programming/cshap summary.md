@@ -10963,6 +10963,10 @@ LINK : fatal error LNK1104: 无法打开文件“MSVCURTD_netcore.LIB”
 	# https://github.com/Dotnet9527/wpf
 		# 这个 fork
 
+C:\Users\Administrator\.netcoreeng\native\temp
+	# 看看总共下载了几个压缩包
+
+
 File 'C:\Users\echod\.netcoreeng\native\temp\strawberry-perl-5.38.0.1-win64-x64.zip' already exists, skipping download
 E:\t\wpf_fork\wpf\.tools\bin\net-framework-48-ref-assemblies
 	# 下载的东西藏在这里，存起来
@@ -10996,6 +11000,10 @@ Microsoft.DotNet.Wpf.ProjectTemplates.Debug.9.0.0-ci.nupkg
 Microsoft.NET.Sdk.WindowsDesktop.Debug.9.0.0-ci.nupkg
 runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug.9.0.0-ci.nupkg
 	# 生成这五个包
+	
+C:\Users\Administrator\wpf\.packages
+	# 它的依赖包在这里，自定义 RichTextBox 时可以引用它
+	
 
 新建一个控制台程序 选 .net9.0 ，选 x86 编译 
   <ItemGroup>
