@@ -849,7 +849,7 @@ class WeatherForecast {
 
 
 
-​```c#
+```c#
         // 移除非中文、26个英文字母以外的字符
         static public string unAZchinese_remove(string s)
         {
@@ -859,7 +859,7 @@ class WeatherForecast {
 
 
 
-```c#
+​```c#
 # 重复两次以上
 		str = Regex.Replace(str, "\\{2,}\"", "");
         str = Regex.Replace(str, "\\{2,}n", "");
@@ -10958,6 +10958,8 @@ git clone https://github.com/dotnet/wpf
 LINK : fatal error LNK1104: 无法打开文件“MSVCURTD_netcore.LIB”
 
 用他的 wpf fork 看看能不能成功
+	# https://github.com/Dotnet9527/wpf
+		# 这个 fork
 
 File 'C:\Users\echod\.netcoreeng\native\temp\strawberry-perl-5.38.0.1-win64-x64.zip' already exists, skipping download
 E:\t\wpf_fork\wpf\.tools\bin\net-framework-48-ref-assemblies
@@ -10970,6 +10972,15 @@ https://github.com/dotnet/wpf/issues/8343
 	# 失败以后先 clean
 .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
 
+
+wpf\src\Microsoft.DotNet.Wpf\src\System.Printing\CPP\src\PrintSystemPathResolver.cpp(308,50): er
+ror C5307: 'int System::String::IndexOf(wchar_t,int)': argument (1) converted from 'char' to 'wchar_t'. Missing 'L' enc
+oding-prefix for character literal?
+	# 装完 cli 以后只有一个错误
+	# 14.39 14.40 14.41 14.42 14.44 Latest 这几个全装了，有效的应该是前面几个？
+	# 后面先不装，一个个试
+	
+	
 
 https://github.com/dotnet/wpf/blob/main/Documentation/wpf.vsconfig
 
