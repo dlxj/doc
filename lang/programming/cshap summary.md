@@ -10980,7 +10980,9 @@ oding-prefix for character literal?
 	# 14.39 14.40 14.41 14.42 14.44 Latest 这几个全装了，有效的应该是前面几个？
 	# 后面先不装，一个个试
 	
-	
+wpf\src\Microsoft.DotNet.Wpf\src\DirectWriteForwarder\DirectWriteForwarder.vcxproj : error  : The SDK 'Microsoft.DotNet.Arcade.Sdk' specified could not be found. 
+	# 直接打开解决方案报错
+
 
 https://github.com/dotnet/wpf/blob/main/Documentation/wpf.vsconfig
 
