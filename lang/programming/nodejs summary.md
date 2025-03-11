@@ -5429,6 +5429,21 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
 
 
+### hf-mirror
+
+```
+
+pip install -U huggingface_hub \
+  && export HF_ENDPOINT=https://hf-mirror.com \
+  && huggingface-cli download --resume-download kotoba-tech/kotoba-whisper-v2.2 --local-dir kotoba-whisper-v2.2
+  
+
+```
+
+
+
+
+
 ### 只下载指定文件夹
 
 ```
