@@ -273,14 +273,21 @@ True
 
 ### 核心点：单例实现的关键在于 **`Lazy<T>`** 和 **静态字段**
 
-#### 1. 静态字段的特性
-- **静态字段（`static` 字段）在类的生命周期中仅初始化一次并且由 CLR（Common Language Runtime）保证线程安全。**
-    - 静态字段在类被第一次使用时会初始化；之后不会再重新初始化。
-    - 初始化是由 CLR 自动保证的，多线程环境中静态字段（如 `_instance`）的初始化只会发生一次。
-- 在代码中：
-    ```csharp
-    private static readonly Lazy<T> _instance = new(() => (T)Activator.CreateInstance(typeof(T), true)!, true);
+
 ```
+
+
+#### 1. 静态字段的特性
+
+
+
+    - **静态字段（`static` 字段）在类的生命周期中仅初始化一次并且由 CLR（Common Language Runtime）保证线程安全。**
+        - 静态字段在类被第一次使用时会初始化；之后不会再重新初始化。
+        - 初始化是由 CLR 自动保证的，多线程环境中静态字段（如 `_instance`）的初始化只会发生一次。
+    - 在代码中：
+        ```csharp
+        private static readonly Lazy<T> _instance = new(() => (T)Activator.CreateInstance(typeof(T), true)!, true);
+        
     - `_instance` 是类的一个静态字段，并且是只读字段。
     - 它被初始化为 `Lazy<T>` 实例（支持惰性初始化）。
 
@@ -316,7 +323,7 @@ True
 
 ---
 
-### 执行流程示例
+#### 4. 执行流程示例
 
 以代码为例，分析其如何只 `new` 一次：
 
@@ -393,6 +400,15 @@ public T Value
 
 因此，无论多少次访问 `Singleton<T>.Instance`，内部的 `new T()` 都只执行一次。
 
+```
+
+
+
+### 线程安全集合
+
+```
+# see huggingface\yt-dlp-gui\yt-dlp-gui\ViewModels\Main.cs
+public ConcurrentObservableCollection<Chapters> Chapters { get; set; } = new();
 ```
 
 
@@ -859,10 +875,10 @@ class WeatherForecast {
 
 
 
-​```c#
+```c#
 # 重复两次以上
 		str = Regex.Replace(str, "\\{2,}\"", "");
-        str = Regex.Replace(str, "\\{2,}n", "");
+	    str = Regex.Replace(str, "\\{2,}n", "");
 ```
 
 
@@ -881,7 +897,7 @@ string content = Regex.Replace(strr, "{\\\\an7}", "");
 
 ### Replace
 
-```c#
+​```c#
  content = Regex.Replace(content, "{\\\\an7}", "");  # 转义后是 \\ 用于替换 \
 ```
 
