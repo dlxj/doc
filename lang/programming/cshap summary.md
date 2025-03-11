@@ -2960,7 +2960,7 @@ using Newtonsoft.Json.Linq;
 
 # Path
 
-## 执行目录下的特定 exe
+## 程序目录下的特定 exe
 
 ```
 # see huggingface\yt-dlp-gui\yt-dlp-gui\Views\Main.xaml.cs
