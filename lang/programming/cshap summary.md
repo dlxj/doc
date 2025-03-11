@@ -409,6 +409,20 @@ public T Value
 ```
 # see huggingface\yt-dlp-gui\yt-dlp-gui\ViewModels\Main.cs
 public ConcurrentObservableCollection<Chapters> Chapters { get; set; } = new();
+
+
+这段C#代码声明了一个公共属性 `Chapters`，其类型为 `ConcurrentObservableCollection<Chapters>`，并初始化为一个新的空集合。以下是对其作用的详细解释：
+
+### **1. 核心功能**
+• **线程安全集合**：  
+  `ConcurrentObservableCollection` 是一个**并发安全的可观察集合**，结合了以下特性：
+  • **线程安全**：允许多个线程同时添加、删除或修改元素，避免线程冲突（如锁竞争）。
+  • **可观察性**：当集合内容变化时，自动触发事件（如 `INotifyCollectionChanged`），通知订阅者（如UI控件）更新。
+
+• **数据绑定**：  
+  适用于需要将集合数据绑定到UI的场景（如WPF、UWP、Android/Xamarin）。当章节数据变化时，UI会自动刷新。
+
+
 ```
 
 
