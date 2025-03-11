@@ -911,7 +911,7 @@ string content = Regex.Replace(strr, "{\\\\an7}", "");
 
 ### Replace
 
-​```c#
+```c#
  content = Regex.Replace(content, "{\\\\an7}", "");  # 转义后是 \\ 用于替换 \
 ```
 
@@ -921,7 +921,7 @@ string content = Regex.Replace(strr, "{\\\\an7}", "");
 
 ### 出现次数
 
-```c#
+​```c#
             Regex RegexWords = new Regex("a");
             int WordCount = RegexWords.Matches("a321adfklsaabcd2a").Count;
 ```
@@ -2954,6 +2954,20 @@ using Newtonsoft.Json.Linq;
                 return new JsonResult(new { status = 200, msg = "success.", data = new { isSave = false, msg = "文件已存在" } });
 
             }
+```
+
+
+
+# Path
+
+## 执行目录下的特定 exe
+
+```
+# see huggingface\yt-dlp-gui\yt-dlp-gui\Views\Main.xaml.cs
+	var deps = Directory.EnumerateFiles(App.AppPath, "*.exe", SearchOption.AllDirectories).ToList();
+                	# 所有 exe
+                deps = deps.Where(x => Path.GetFileName(App.AppExe) != Path.GetFileName(x)).ToList();
+                	# 排除自身
 ```
 
 
