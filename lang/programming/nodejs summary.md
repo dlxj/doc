@@ -38480,7 +38480,7 @@ https://github.com/SuRGeoNix/Flyleaf wpf 播放器
 
 [yt-dlp-gui](https://github.com/kannagi0303/yt-dlp-gui) yt 下载
 
-[Vividl](https://github.com/Bluegrams/Vividl) **yt 下载超赞** [超多视频网站](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md)
+[Vividl](https://github.com/Bluegrams/Vividl) **yt 下载超赞** [超多视频网站](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md) [dailymotion](https://www.dailymotion.com/) 法国视频网站
 
 [Livet包学习借鉴 双向绑定](https://b23.tv/BatbUhF) [1](https://github.com/runceel/Livet)  [2](https://gist.github.com/BYJRK/b49db5538a006d17fe4858217b330382)
 
