@@ -5431,12 +5431,26 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
 ### hf-mirror
 
+https://hf-cdn.sufy.com/
+
 ```
+
+see huggingface/rwkv5-jp-trimvd_new/kotoba_asrv2.2.py
 
 pip install -U huggingface_hub \
   && export HF_ENDPOINT=https://hf-mirror.com \
-  && huggingface-cli download --resume-download kotoba-tech/kotoba-whisper-v2.2 --local-dir kotoba-whisper-v2.2
+  && huggingface-cli download --resume-download kotoba-tech/kotoba-whisper-v2.2 --local-dir kotoba-whisper-v2.2 \
+    && huggingface-cli download --resume-download pyannote/speaker-diarization-3.1 --local-dir speaker-diarization-3.1 \
+    && huggingface-cli download --resume-download pyannote/segmentation-3.0 --local-dir segmentation-3.0
+
   
+pip install --upgrade pip \
+ && pip install --upgrade transformers accelerate torchaudio \
+ && pip install "punctuators==0.0.5" \
+ && pip install "pyannote.audio" \
+ && pip install git+https://github.com/huggingface/diarizers.git
+
+
 
 ```
 
