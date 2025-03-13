@@ -4027,6 +4027,104 @@ for p in permutations([0,0,0,0,1,1,1]):
 
 
 
+#### sakurallm 批量翻译
+
+```
+
+# see huggingface/rwkv5-jp-trimvd_new/asr_and_translate.py
+
+import aiohttp
+import asyncio
+import json
+
+async def tranlate_async(item, dic=None):
+    """
+        see from sakura_trs import run_sakurallm
+    """
+
+    # 代理地址
+    proxy = None # "http://10.0.0.2:5782"
+
+    # 请求头
+    headers = {
+        "Content-Type": "application/json; charset=utf-8",
+        "Authorization": "Bearer openai_key_here",
+        "accept": "text/event-stream"
+    }
+
+    # 请求体
+    data = { "prompt": f"""<|im_start|>system\n你是一个轻小说翻译模型，可以流畅通顺地以日本轻小说的风格将日文翻译成简体中文，并联系上下文正确使用人称代词，不擅自添加原文中没有的代词。<|im_end|>\n<|im_start|>user\n将下面的日文文本翻译成中文：{item["text"]}<|im_end|>\n<|im_start|>assistant""", "stream": False }
+
+    try:
+        # 使用 aiohttp 的 ClientSession 进行异步请求
+        async with aiohttp.ClientSession() as session:
+            async with session.post(
+                "http://localhost:8080/completion",
+                headers=headers,
+                data=json.dumps(data),
+                proxy=proxy
+            ) as response:
+                output = ""
+                async for chunk in response.content:
+                    decoded_chunk = chunk.decode('utf-8')
+                    decoded_chunk = json.loads(decoded_chunk, strict=False )
+                    content = decoded_chunk['content'].strip()
+                    item['translate'] = content
+                    # output += decoded_chunk  # 逐块累加
+                    # 保留实时输出（可选）
+                    #print(decoded_chunk, end='', flush=True)
+                    return item, None  # 最后返回完整内容
+
+                # # 检查响应状态码
+                # if response.status == 200:
+                #     result = await response.json()
+                #     embedding = result['data'][0]['embedding']  # 1536
+                #     return embedding, ''
+                # else:
+                #     return None, 'openai 向量获取失败'
+
+    except Exception as e:
+        item['translate'] = ''
+        return item, f'sakullallm 翻译获取失败. {str(e)}'
+
+async def get_translate_in_batches(item_list, batch_size=10):
+
+    results = []
+    
+    for i in range(0, len(item_list), batch_size):
+        batchs = item_list[i:i + batch_size]
+        
+        batch_results = await asyncio.gather(
+            *[tranlate_async(item) for item in batchs]
+        )
+        
+        results.extend(batch_results)
+    
+    return results
+
+
+if __name__ == "__main__":
+    # 示例输入文本
+    texts = [{"idx":0, "text":"ドルーリー朱瑛里17人牛蒡抜き！鮮烈全国Debut【第41回都道府県対抗女子駅伝3区】"}, {"idx":1, "text":"朱瑛里17人牛蒡抜き！鮮烈全国Debut【第41回都道府県対抗女子駅伝3区】"}, {"idx":2, "text":"全国Debut【第41回都道府県対抗女子駅伝3区】"} ]
+
+    # 异步运行批量处理函数
+    loop = asyncio.get_event_loop()
+    results = loop.run_until_complete(get_translate_in_batches(texts, batch_size=2))
+
+    translate = []
+    
+    for i, (item, error) in enumerate(results):
+        if error:
+            raise Exception(error) 
+        translate.append( item )    
+        
+    pass
+```
+
+
+
+
+
 ```python
 # 多进程不能共享变量
 from joblib import Parallel, delayed
