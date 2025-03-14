@@ -427,6 +427,29 @@ public ConcurrentObservableCollection<Chapters> Chapters { get; set; } = new();
 
 
 
+### Theme
+
+```
+
+see huggingface\itrans\src\iTrans\Themes\DarkTheme.xaml
+
+App.xaml
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/DarkTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+    
+huggingface\itrans\src\iTrans\MainView.xaml
+	Background="{StaticResource BackgroundColour}"
+		# 使用样式
+		
+```
+
+
+
 
 
 ### 嵌入资源
