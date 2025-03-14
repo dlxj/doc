@@ -429,6 +429,45 @@ public ConcurrentObservableCollection<Chapters> Chapters { get; set; } = new();
 
 
 
+### 嵌入资源
+
+```
+
+# see huggingface\yt-dlp-gui\yt-dlp-gui\Views\Main.xaml
+
+        Icon="pack://application:,,,/Resources/logo.ico">
+
+
+在 WPF 应用程序中，`pack://application:,,,` 是特殊的 URI 语法，用于访问应用程序资源。具体来说：
+
+这个 URI 的完整结构是 `pack://application:,,,/资源路径`，其中：
+
+1. `pack://` 表示使用 WPF 的 pack URI 方案
+2. `application:,,,` 表示资源位于当前应用程序的主程序集中
+3. `/Resources/logo.ico` 是资源在程序集中的路径
+
+这个语法常用于访问被标记为"资源"（Resource）类型的文件，这些文件会在编译时被嵌入到程序集中。其等价于更简短的写法：`/AssemblyName;component/Resources/logo.ico`，但这里使用了更明确的 pack URI 格式。
+
+在您代码中的具体应用：
+​```xml
+Icon="pack://application:,,,/Resources/logo.ico"
+​```
+表示从当前应用程序的程序集中加载位于 Resources 文件夹下的 logo.ico 文件作为窗口图标。
+
+三个逗号 `,,,` 是 URI 的合法语法，表示：
+- 第一个逗号分隔 application: 和空的主机名
+- 第二个逗号分隔空的主机名和空端口
+- 第三个逗号作为路径分隔符
+
+这是 WPF 定义的标准资源引用方式，适用于所有被编译为 Embedded Resource 的文件。
+
+
+```
+
+
+
+
+
 ## Json
 
 - https://www.cnblogs.com/xtxk110/archive/2019/10/11/11654486.html  转DataTable 有行和列
@@ -921,7 +960,7 @@ string content = Regex.Replace(strr, "{\\\\an7}", "");
 
 ### 出现次数
 
-​```c#
+```c#
             Regex RegexWords = new Regex("a");
             int WordCount = RegexWords.Matches("a321adfklsaabcd2a").Count;
 ```
@@ -930,7 +969,7 @@ string content = Regex.Replace(strr, "{\\\\an7}", "");
 
 ### 分组
 
-```c#
+​```c#
 # https://www.cnblogs.com/stu-acer/archive/2010/01/23/1655011.html
 Regex regex = new Regex(@"(\d+)/(\d+)");
 

@@ -5435,6 +5435,17 @@ https://hf-cdn.sufy.com/
 
 ```
 
+
+
+
+pip install -U huggingface_hub \
+  && export HF_ENDPOINT=https://hf-mirror.com \
+  && huggingface-cli download --resume-download kotoba-tech/kotoba-whisper-v2.1 --local-dir kotoba-whisper-v2.1 \
+  && huggingface-cli download --resume-download 1-800-BAD-CODE/punct_cap_seg_47_language --local-dir punct_cap_seg_47_language
+
+
+
+
 see huggingface/rwkv5-jp-trimvd_new/kotoba_asrv2.2.py
 
 pip install -U huggingface_hub \
