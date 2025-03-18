@@ -14905,6 +14905,8 @@ https://github.com/turbot/steampipe
 
 https://github.com/theseus-rs/postgresql-embedded  rust
 
+- https://github.com/portalcorp/pgevdb/blob/main/src/main.rs  完整示例用法
+
 duckdb see python summary.md
 
 ```
