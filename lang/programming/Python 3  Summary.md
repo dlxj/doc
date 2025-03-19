@@ -1380,6 +1380,16 @@ reverse_trainer, reverse_result = train_reverse(model_dim=32,
 
 
 
+### 参数签名
+
+```
+# see huggingface/pdf_ocr/ocr.py
+def rec(img: str | cv2.typing.MatLike):
+
+    if isinstance(img, (str)):
+        img = cv2.imread(img)
+```
+
 
 
 
