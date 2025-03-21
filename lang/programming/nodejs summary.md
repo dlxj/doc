@@ -5270,6 +5270,8 @@ huggingface-cli repo create pandora --type dataset
 		# 执行此命令需要设置全局代理 .gitconifg 里的不起作用
 		# setproxy 这样
 
+python /home/dlxj/.local/lib/python3.11/site-packages/huggingface_hub/commands/huggingface_cli.py repo create iocr --type dataset
+	# ser00 新建数据集
 
 
 candy --mode="client" --websocket="ws://xxx:1587" --password="xxx" --tun="10.0.0.3/24" --name="clien1" --stun="stun://stun.canets.org" --port=2587
@@ -27999,6 +28001,8 @@ npm install protobufjs --save --save-prefix=~
 
 
 ##### 向量存储
+
+https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记录
 
 [hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
 
