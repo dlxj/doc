@@ -267,6 +267,10 @@ mysql> flush privileges;
 输入命令：mysql -uroot -p，然后尝试新密码
 
 
+CREATE USER 'root'@'%' IDENTIFIED BY 'root';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+	# 解决权限错误
+
 ```
 
 
