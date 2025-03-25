@@ -311,6 +311,9 @@ Get-NetTCPConnection -LocalPort 8080 | ForEach-Object { Stop-Process -Id $_.Owni
 # 隐藏窗口标题
 
 ```
+
+see E:\huggingface\powershell\hidetitle.ahk
+
 AutoHotKey
 
 WinSet, Style, -0xC00000, ahk_exe mstsc.exe ; Remove the active window's title bar (WS_CAPTION).

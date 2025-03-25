@@ -2701,7 +2701,10 @@ npm install cnpm@7.1.0 -g --registry=https://registry.npmmirror.com
 	# Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 		# 禁止运行脚本试试这个
 
-
+https://registry.npm.taobao.org
+	# E:\project\ocr\ocrServer\package-lock.json
+		# https://registry.npmmirror.com
+		# 替换成这个
 
 npm install -g cnpm --registry=https://registry.npm.taobao.org
 	# 安装是最新版 会有兼容问题
@@ -28000,9 +28003,19 @@ npm install protobufjs --save --save-prefix=~
 
 
 
-##### 向量存储
+##### 向量存储 vector
 
 https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记录
+
+- https://github.com/facebookresearch/faiss
+
+  - ```
+    conda create -n faiss python==3.10 pip
+    conda install pytorch/label/nightly::faiss-gpu-cuvs -c pytorch -c nvidia -c rapidsai
+    
+    ```
+
+    
 
 [hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
 
