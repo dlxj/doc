@@ -28011,7 +28011,7 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
 
   - ```
     conda create -n faiss python==3.10 pip
-    conda install pytorch/label/nightly::faiss-gpu-cuvs -c pytorch -c nvidia -c rapidsai
+    conda install pytorch/label/nightly::faiss-gpu-cuvs -c pytorch -c nvidia -c rapidsai -c conda-forge
     
     ```
 

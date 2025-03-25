@@ -69,6 +69,23 @@ pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https
 
 
 
+## pixi + uv + conda
+
+https://prefix.dev/blog/uv_in_pixi
+
+```
+curl -fsSL https://pixi.sh/install.sh | bash
+# or on Windows PowerShell
+iwr -useb https://pixi.sh/install.ps1 | iex
+
+
+see nodejs summay.md -> vector
+
+conda create -n faiss python==3.10 pip
+conda install pytorch/label/nightly::faiss-gpu-cuvs -c pytorch -c nvidia -c rapidsai -c conda-forge
+
+```
+
 
 
 
