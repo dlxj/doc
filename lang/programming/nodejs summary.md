@@ -2694,7 +2694,7 @@ npm uninstall -g cnpm
 
 安装指定版本：7.1.0
 
-npm install cnpm@7.1.0 -g --registry=https://registry.npm.taobao.org
+npm install cnpm@7.1.0 -g --registry=https://registry.npmmirror.com
 	# 配套 node14 ok
 	# npm config set strict-ssl false
 		# 证书错误试试？
