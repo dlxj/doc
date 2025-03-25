@@ -308,6 +308,19 @@ Get-NetTCPConnection -LocalPort 8080 | ForEach-Object { Stop-Process -Id $_.Owni
 
 
 
+# 隐藏窗口标题
+
+```
+AutoHotKey
+
+WinSet, Style, -0xC00000, ahk_exe mstsc.exe ; Remove the active window's title bar (WS_CAPTION).
+
+	# 实测可以，windows 运程桌面窗口标题和最大最小化按钮都消失了	
+
+```
+
+
+
 
 
 # WSL
