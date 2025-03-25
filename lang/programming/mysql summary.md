@@ -256,7 +256,7 @@ https://downloads.mysql.com/archives/community/
 mysqld -install
 
 mysqld --initialize --console
-	# 记住初始密码 45A!BI6f/o-d
+	# 记住初始密码 root@localhost: 4t.zWo<ot<Ej
 
 接着就是在输入net start mysql启动服务
 开始使用mysql，输入命令：mysql -uroot -p，然后输入刚才的初始密码
@@ -270,6 +270,9 @@ mysql> flush privileges;
 CREATE USER 'root'@'%' IDENTIFIED BY 'root';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 	# 解决权限错误
+	
+\q
+	# 退出
 
 ```
 
