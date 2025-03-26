@@ -992,7 +992,7 @@ string content = Regex.Replace(strr, "{\\\\an7}", "");
 
 ### 分组
 
-​```c#
+```c#
 # https://www.cnblogs.com/stu-acer/archive/2010/01/23/1655011.html
 Regex regex = new Regex(@"(\d+)/(\d+)");
 
@@ -1037,7 +1037,7 @@ matched count: 1
 
 
 
-```c#
+​```c#
             //string x = "Live for nothing,die for something";
 
             //string y = "Live for nothing,die for somebody";
@@ -11584,6 +11584,8 @@ xmlns:sg="clr-namespace:ScreenGrab;assembly=ScreenGrab"
 
 
 ### RichTextBox 原生命令
+
+https://www.cnblogs.com/zhouyinhui/archive/2010/06/22/1762633.html
 
 ```
 # see huggingface\RichTextBoxEditor\RichTextBoxEditor\MainWindow.xaml
