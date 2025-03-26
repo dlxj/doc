@@ -11600,6 +11600,16 @@ https://www.cnblogs.com/zhouyinhui/archive/2010/06/22/1762633.html
 
 
 ```
+wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Controls\RichTextBox.cs
+	# RichTextBox 代码在这
+
+```
+
+
+
+
+
+```
 FlowDocument 支持多种文档块元素：
 
 1. Section - 用于分组段落和其他块元素
