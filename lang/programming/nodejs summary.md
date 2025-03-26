@@ -28014,6 +28014,7 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
     conda install pytorch/label/nightly::faiss-gpu-cuvs -c pytorch -c nvidia -c rapidsai -c conda-forge
     
     fss.py
+    # see https://zhuanlan.zhihu.com/p/357414033
     import faiss
     
     import numpy as np
@@ -28027,12 +28028,15 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
     xq[:, 0] += np.arange(nq) / 1000.
     
     
-    index = faiss.IndexFlatL2(d)   # build the index
-    print(index.is_trained)
+    dim, measure = 64, faiss.METRIC_L2   
+    param =  'HNSW64' 
+    index = faiss.index_factory(dim, param, measure)  
+    print(index.is_trained)                          # 输出为True，代表需要此索引需要训练以获得最佳效果
+    
+    # index = faiss.IndexFlatL2(d)   # build the index
+    # print(index.is_trained)
     index.add(xb)                  # add vectors to the index
     print(index.ntotal)
-    
-    
     
     k = 4                          # we want to see 4 nearest neighbors
     D, I = index.search(xb[:5], k) # sanity check
