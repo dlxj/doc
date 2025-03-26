@@ -11059,6 +11059,8 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 
 ## WPF 源码编译
 
+https://github.com/dotnet/wpf/blob/main/Documentation/developer-guide.md  **必看** 编译指南
+
 ```
 git clone https://github.com/dotnet/wpf
 切到 v6.0.36 分支, RichTextBox 控件 dll 显示使用的是这个版本
