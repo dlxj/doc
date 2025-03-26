@@ -11599,6 +11599,75 @@ https://www.cnblogs.com/zhouyinhui/archive/2010/06/22/1762633.html
 
 
 
+```
+FlowDocument 支持多种文档块元素：
+
+1. Section - 用于分组段落和其他块元素
+2. Paragraph - 段落文本
+3. List - 列表（有序或无序）
+4. Table - 表格
+5. BlockUIContainer - 用于包含 UI 元素
+6. Figure - 用于包含图像和说明文字
+7. Floater - 浮动内容块
+这些元素可以根据需要组合使用，以创建更复杂的文档结构。每个 Section 可以有自己的格式设置，比如边距、对齐方式等。
+```
+
+
+
+```
+
+# ai 写的代码，构造函数有错误
+
+huggingface\RichTextBoxEditor\RichTextBoxEditor\CustomTextElement.cs
+
+using System;
+using System.Windows;
+using System.Windows.Documents;
+
+namespace RichTextBoxEditor
+{
+    public class CustomTextElement : TextElement, ICloneable
+    {
+        public CustomTextElement(TextPointer position) : base(position)
+        {
+        }
+
+        public CustomTextElement(TextPointer start, TextPointer end) : base(start, end)
+        {
+        }
+
+        // 自定义属性，可以根据需要添加更多
+        public string CustomData
+        {
+            get { return (string)GetValue(CustomDataProperty); }
+            set { SetValue(CustomDataProperty, value); }
+        }
+
+        public static readonly DependencyProperty CustomDataProperty =
+            DependencyProperty.Register("CustomData", typeof(string), typeof(CustomTextElement),
+                new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.Inherits));
+
+        public object Clone()
+        {
+            // 使用当前元素的开始和结束位置创建新实例
+            CustomTextElement clone = new CustomTextElement(this.ContentStart, this.ContentEnd);
+            clone.CustomData = this.CustomData;
+            // 复制基类属性
+            clone.FontFamily = this.FontFamily;
+            clone.FontSize = this.FontSize;
+            clone.FontStyle = this.FontStyle;
+            clone.FontWeight = this.FontWeight;
+            clone.Foreground = this.Foreground;
+            clone.Background = this.Background;
+            return clone;
+        }
+    }
+}
+
+```
+
+
+
 
 
 
