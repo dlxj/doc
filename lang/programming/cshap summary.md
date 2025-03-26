@@ -11603,6 +11603,22 @@ https://www.cnblogs.com/zhouyinhui/archive/2010/06/22/1762633.html
 wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Controls\RichTextBox.cs
 	# RichTextBox 代码在这
 
+如果你确实需要使用 Microsoft 内部的 API，你需要添加对相应程序集的引用。但我再次强调，这是不推荐的做法。
+
+要使用 MS.Internal 命名空间，你需要：
+
+1. 首先在项目中添加对 WindowsBase.dll 的引用（通常 WPF 项目默认已经包含）
+2. 在代码文件顶部添加以下特性来取消对内部 API 的访问限制：
+
+using System.Security;
+[assembly: SecurityTransparent]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: SecurityRules(SecurityRuleSet.Level1)]
+
+using MS.Internal;
+using MS.Internal.Documents;
+
+
 ```
 
 
