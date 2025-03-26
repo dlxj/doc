@@ -14906,6 +14906,8 @@ https://github.com/lanterndata/lantern
 
 # steampipe 嵌入式 postgreSQL
 
+https://www.cockroachlabs.com/pricing/  pg 10G 免费额度
+
 https://github.com/turbot/steampipe
 
 https://github.com/theseus-rs/postgresql-embedded  rust
@@ -19688,6 +19690,8 @@ docker save centos7_server_6006 | Set-Content centos7_server_6006.tar -Encoding 
 
 
 ## postgres13
+
+https://www.cockroachlabs.com/pricing/  pg 10G 免费额度
 
 ```
 docker pull postgres:13
