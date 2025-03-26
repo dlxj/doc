@@ -28013,6 +28013,42 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
     conda create -n faiss python==3.10 pip
     conda install pytorch/label/nightly::faiss-gpu-cuvs -c pytorch -c nvidia -c rapidsai -c conda-forge
     
+    fss.py
+    import faiss
+    
+    import numpy as np
+    d = 64                           # dimension
+    nb = 100000                      # database size
+    nq = 10000                       # nb of queries
+    np.random.seed(1234)             # make reproducible
+    xb = np.random.random((nb, d)).astype('float32')
+    xb[:, 0] += np.arange(nb) / 1000.
+    xq = np.random.random((nq, d)).astype('float32')
+    xq[:, 0] += np.arange(nq) / 1000.
+    
+    
+    index = faiss.IndexFlatL2(d)   # build the index
+    print(index.is_trained)
+    index.add(xb)                  # add vectors to the index
+    print(index.ntotal)
+    
+    
+    
+    k = 4                          # we want to see 4 nearest neighbors
+    D, I = index.search(xb[:5], k) # sanity check
+    print(I)
+    print(D)
+    D, I = index.search(xq, k)     # actual search
+    print(I[:5])                   # neighbors of the 5 first queries
+    print(I[-5:])                  # neighbors of the 5 last queries
+    	# 成功搜索向量
+    
+    
+    
+    conda create --name faiss_1.8.0
+    conda activate faiss_1.8.0
+    conda install -c pytorch -c nvidia faiss-gpu=1.8.0 pytorch=*=*cuda* pytorch-cuda=11 numpy
+    
     ```
 
     
