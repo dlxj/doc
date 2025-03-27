@@ -11204,11 +11204,22 @@ vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
 
 引用本地编译的 wpf nuget包 
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
-    <PackageReference Include="Microsoft.DotNet.Wpf.ProjectTemplates.Debug" Version="9.0.0-ci" />
-    <PackageReference Include="runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
-  </ItemGroup>
+
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<Platforms>x86</Platforms>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
+		<PackageReference Include="Microsoft.DotNet.Wpf.ProjectTemplates.Debug" Version="9.0.0-ci" />
+		<PackageReference Include="runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
+	</ItemGroup>
+</Project>
 
 
 using System.Windows;
@@ -11230,9 +11241,9 @@ class Program
         Console.ReadKey();
     }
 }
-
-观察有打印出 在WPF 源码添加的测试代码，说明是有效的
-
+	# 成功打印了调试信息
+		# 关键点：AnyCpu 那里新建 x86 配置，新建就可以不需要复制其他配置，然后选 x86
+		######### Test Modify code. this comiple from wpf souce code!!!
 
 ```
 
