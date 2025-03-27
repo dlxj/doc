@@ -1037,21 +1037,21 @@ matched count: 1
 
 
 
-​```c#
+```c#
             //string x = "Live for nothing,die for something";
 
             //string y = "Live for nothing,die for somebody";
-
+    
             //Regex r = new Regex(@"^Live ([a-z]{3}) no([a-z]{5}),die \1 some\2$");
-
+    
             //Console.WriteLine("x match count:" + r.Matches(x).Count);//1  
-
+    
             //Console.WriteLine("y match count:" + r.Matches(y).Count);//0  
-
+    
             ////正则表达式引擎会记忆“()”中匹配到的内容，作为一个“组”，  
             ////并且可以通过索引的方式进行引用。表达式中的“\1”，  
             ////用于反向引用表达式中出现的第一个组，即粗体标识的第一个括号内容，“\2”则依此类推。  
-
+    
             //string x = "Live for nothing,die for something";
             //Regex r = new Regex(@"^Live for no([a-z]{5}),die for some\1$");
             //if (r.IsMatch(x))
@@ -1060,7 +1060,7 @@ matched count: 1
             //}
             ////获取组中的内容。注意，此处是Groups[1]，  
             ////因为Groups[0]是整个匹配的字符串，即整个变量x的内容。  
-
+    
             //string x = "Live for nothing,die for something";
             //Regex r = new Regex(@"^Live for no(?﹤g1﹥[a-z]{5}),die for some\1$");
             //if (r.IsMatch(x))
@@ -1069,7 +1069,7 @@ matched count: 1
             //    //输出：thing  
             //}
             ////可根据组名进行索引。使用以下格式为标识一个组的名称(?﹤groupname﹥…)。  
-
+    
             //string x = "Live for nothing nothing";
             //Regex r = new Regex(@"([a-z]+) \1");
             //if (r.IsMatch(x))
@@ -1086,7 +1086,7 @@ matched count: 1
                 x = r.Replace(x, "${g1}");
                 Console.WriteLine("var x:" + x);//输出：Live for nothing  
             }
-
+    
             string x = "Live for nothing";
             Regex r = new Regex(@"^Live for no(?:[a-z]{5})$");
             if (r.IsMatch(x))
@@ -1181,7 +1181,7 @@ System.GC.SuppressFinalize(obj);
 
 
 
-```c#
+​```c#
 # 返回字节 
     	// http://localhost:5000/search/getaudio?id=1
 		[HttpGet("getaudio")]
@@ -11164,6 +11164,23 @@ wpf\src\Microsoft.DotNet.Wpf\src\WpfGfx\core\dll\WpfGfx.sln  这个项目的C++�
 .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
 
 
+
+
+```
+
+
+
+### 编译后包的使用
+
+```
+wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Application.cs
+
+        static Application()
+        {
+            ApplicationInit();
+            Console.log("######### Test Modify code. this comiple from wpf souce code!!!");
+        }
+			# 这里加调试输出，证明是我们自已编译的
 
 
 ```
