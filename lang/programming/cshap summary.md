@@ -11183,6 +11183,57 @@ wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Applicatio
 			# 这里加调试输出，证明是我们自已编译的
 
 
+E:\localNuget
+	# 生成的五个包放这里
+	
+创建一个控制台程序，注意：编译出来的是基于.Net9.0的，所以依赖的版本是基于net9.0，TargetFramework 需要选择windows，才能用到wpf。由于本地编译的wpf框架是基于x86的，所以 Platforms 选择 x86
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      <UseWPF>true</UseWPF>
+    <Platforms>x86</Platforms>
+  </PropertyGroup>
+</Project>
+
+vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
+
+
+引用本地编译的 wpf nuget包 
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
+    <PackageReference Include="Microsoft.DotNet.Wpf.ProjectTemplates.Debug" Version="9.0.0-ci" />
+    <PackageReference Include="runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
+  </ItemGroup>
+
+
+using System.Windows;
+
+class Program
+{
+
+    [STAThread]
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+
+        Application app = new Application();
+
+        var window = new Window();
+        window.Title = "Test";
+
+        app.Run(window);
+        Console.ReadKey();
+    }
+}
+
+观察有打印出 在WPF 源码添加的测试代码，说明是有效的
+
+
 ```
 
 
