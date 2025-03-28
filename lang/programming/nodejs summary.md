@@ -26039,6 +26039,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 https://v2ex.com/t/1121476#reply26  gpu 加速转码
 
+https://github.com/kaltura/nginx-vod-module  输入 srt ，输出 m3u8 分片
+
 [查看媒体文件头信息工具ffprobe ](https://www.cnblogs.com/renhui/p/9209664.html)
 
 [C# Named Pipe FFmpeg x265](https://gist.github.com/Anime4000/9dffab62e31b9d8dd815f0803eb5cbd3)
