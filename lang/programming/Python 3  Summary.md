@@ -2338,6 +2338,96 @@ for idx, url in enumerate(url_tar):
 
 ### pdf 导出图像 合并pdf
 
+
+
+```
+# see huggingface/pdf_ocr/main.py
+
+######### export images of pdf begin  ########################
+fitz==0.0.1.dev2
+pymupdf==1.25.4
+pillow==10.4.0
+    # 先装 fitz 再装 pymupdf 才行。如果出错，先卸载 pymupdf ，再装一次 pymupdf 又不错了
+######### export images of pdf end    ########################
+
+
+    def get_page_image(reader, pdfDoc, page_num):
+        page_num = int(page_num)
+        page = reader.pages[page_num - 1]
+            
+        text = page.extract_text()
+        # try:
+        #     for idx, image_file_object in enumerate(page.images):
+        #         pass
+        # except Exception:
+        #     return None
+            # 提取不到图像先用 Acrobat 导出全部图片，再新建 pdf 替换原 pdf 就可以了
+            
+        page = pdfDoc[page_num - 1]
+                # 关键参数设置（保持原始尺寸和分辨率）
+        matrix = fitz.Matrix(fitz.Identity)  # 使用Identity矩阵确保不缩放[6,8](@ref)
+        pix = page.get_pixmap(
+            matrix=matrix,      # 保持原始尺寸
+            dpi=300,            # 设置输出分辨率（默认72dpi）
+            alpha=False,        # 关闭透明通道（提高兼容性）
+            colorspace="rgb"    # 使用RGB色彩空间[8](@ref)
+        )
+    
+        from io import BytesIO
+        byte_io = BytesIO()
+        # 转换到内存流
+        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+        byte_io = BytesIO()
+        img.save(byte_io, format="JPEG", quality=100) # 使用无损压缩
+        byte_io.seek(0)
+        img_bytes = byte_io.read()
+        
+        img_buffer_numpy = np.frombuffer(img_bytes, dtype=np.uint8)  # 将图片字节码 bytes 转换成一维的 numpy 数组到缓存中
+        ocr_frame = cv2.imdecode(img_buffer_numpy, 1)   # 从指定的内存缓存中读取一维 numpy 数据，并把数据转换(解码)成图像矩阵格式
+        ocr_frame = cv2.cvtColor(ocr_frame, cv2.COLOR_BGR2RGB)
+        
+        # for idx, image_file_object in enumerate(page.images):
+        #     img_bytes = image_file_object.data
+        #     img_buffer_numpy = np.frombuffer(img_bytes, dtype=np.uint8)  # 将图片字节码 bytes 转换成一维的 numpy 数组到缓存中
+        #     ocr_frame = cv2.imdecode(img_buffer_numpy, 1)   # 从指定的内存缓存中读取一维 numpy 数据，并把数据转换(解码)成图像矩阵格式
+        #     ocr_frame = cv2.cvtColor(ocr_frame, cv2.COLOR_BGR2RGB)
+        #     # cv2.imshow('test', self.ocr_frame)
+        #     # cv2.waitKey(0)
+        #     break
+        return ocr_frame
+
+
+from pypdf import PdfReader
+    reader = PdfReader(pth_pdf)
+    pdfDoc = fitz.open(pth_pdf)
+    number_of_pages = len(reader.pages)
+    number_of_pages2 = pdfDoc.page_count
+    
+    assert number_of_pages == number_of_pages2
+
+    # see huggingface/PPOCRLabel/PPOCRLabel.py   for image notation
+    name_pp_label = 'Label.txt'
+    pth_pp_label = os.path.join(dir, name_pp_label)
+    pp_label_text = ''
+        # real/0010.jpg	[{"transcription": "待识别", "points": [[137, 77], [740, 77], [740, 165], [137, 165]], "difficult": false}]
+        # points 是框选的矩形四个角坐标： 左上 右上  右下 左下
+    name_pp_state = 'fileState.txt'
+    pth_pp_state = os.path.join(dir, name_pp_state)
+    pp_state_text = ''
+    
+    for nth_page in range(1, number_of_pages+1):
+
+        if nth_page > 10:
+            break
+
+        img_color = get_page_image(reader, pdfDoc, nth_page)
+
+```
+
+
+
+
+
 ```
 
 # pip install Pillow PyPDF2
