@@ -2336,34 +2336,79 @@ for idx, url in enumerate(url_tar):
 
 
 
-### 合并 pdf
+### pdf 导出图像 合并pdf
 
 ```
 
+
 # pip install Pillow PyPDF2
 
+# see https://github.com/pymupdf/PyMuPDF/issues/4388
 
-from PIL import Image
-import os
+# pip install PyMuPDF==1.18.14
+# pip install fitz
+# python -m pip install --upgrade pymupdf
+    # 按顺序执行
 
-def jpegs_to_pdf(image_folder, output_path):
-    # 获取所有JPEG文件并按文件名排序
-    img_files = sorted([f for f in os.listdir(image_folder) if f.lower().endswith(('.jpg', '.jpeg'))],
-                      key=lambda x: int(x.split('_')[2]))  # 假设文件名是纯数字
-            # '荻原雲来梵语漢訳対照梵和大辞典_页面_0001_图像_0001.jpg'
 
-    images = []
-    for img_file in img_files:
-        img_path = os.path.join(image_folder, img_file)
-        images.append(Image.open(img_path)) # convert('RGB')
+import datetime
+import os # 文件库
+import fitz  # fitz就是安装的PyMuPDF包
+ 
+ 
+def pdf_to_image(pdfPath, imagePath):
+    startTime = datetime.datetime.now()  # 获取开始时间
+    pdfDoc = fitz.open(pdfPath)  # 打开PDF文件
+    for pg in range(pdfDoc.page_count):  # 遍历每一页
+        page = pdfDoc[pg]  # 获取当前页
+        rotate = int(0)  # 设置旋转角度
+        # 设置缩放系数，这将为我们生成分辨率提高2.6的图像。
+        # 此处若是不做设置，默认图片大小为：792X612, dpi=96
+        # 这里的缩放系数为3，会生成更高分辨率的图像，但也会增加生成时间和文件大小。
+        # zoom_x = 3 #数字越大越高清，default：1.3333333
+        # zoom_y = 3
+        # mat = fitz.Matrix(zoom_x, zoom_y).preRotate(rotate)  # 创建矩阵，用于缩放和旋转图像
+        pix = page.get_pixmap() # .save("correct1.png")
+        # pix = page.getPixmap(alpha=False)  # 获取当前页的像素图像 # matrix=mat, 
+        if not os.path.exists(imagePath):  # 判断存放图片的文件夹是否存在
+            os.makedirs(imagePath)  # 若不存在则创建
+        # 将图像写入指定的文件夹内，文件名为"images_页码.png"。
+        pix.save(imagePath + '/' + 'images_%s.jpg' % pg)
+        # pix.writePNG(imagePath + '/' + 'images_%s.png' % pg)
+    endTime = datetime.datetime.now()  # 获取结束时间
+    # 显示转换所使用的总耗时s
+    print('耗费时长=', (endTime - startTime).seconds)
+ 
+ 
+if __name__ == "__main__":
+    # 1、PDF文件路径
+    pdfPath = '荻原雲来梵语漢訳対照梵和大辞典.pdf'
+    # 2、需要储存图像的目录路径
+    imagePath = 'tmp2'
+    pdf_to_image(pdfPath, imagePath)  # 调用函数进行处理
+
+
+# from PIL import Image
+# import os
+
+# def jpegs_to_pdf(image_folder, output_path):
+#     # 获取所有JPEG文件并按文件名排序
+#     img_files = sorted([f for f in os.listdir(image_folder) if f.lower().endswith(('.jpg', '.jpeg'))],
+#                       key=lambda x: int(x.split('_')[2]))  # 假设文件名是纯数字
+#             # '荻原雲来梵语漢訳対照梵和大辞典_页面_0001_图像_0001.jpg'
+
+#     images = []
+#     for img_file in img_files:
+#         img_path = os.path.join(image_folder, img_file)
+#         images.append(Image.open(img_path)) # convert('RGB')
     
-    # 保存为PDF
-    if images:
-        images[0].save(output_path, save_all=True, append_images=images[1:], quality=100)
-        print(f"合并完成，输出路径：{output_path}")
+#     # 保存为PDF
+#     if images:
+#         images[0].save(output_path, save_all=True, append_images=images[1:], quality=96)
+#         print(f"合并完成，输出路径：{output_path}")
 
-# 调用示例
-jpegs_to_pdf("tmp", "合并结果.pdf")
+# # 调用示例
+# jpegs_to_pdf("tmp", "合并结果.pdf")
 
 
 # from PyPDF2 import PdfMerger
