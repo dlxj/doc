@@ -13627,6 +13627,8 @@ int main(int argc, char* argv[])
 
 # ffmpeg.wasm
 
+https://v2ex.com/t/1121476#reply26  gpu 加速转码
+
 [ffmpeg.wasm render video in canvas](https://www.mysourcebook.com/2023/01/decode-big-video-using-ffmpeg-wasm-to-render-use-canvas.html)
 
 [How to enable HTTPS protocol in ffmpeg.wasm?](https://www.mysourcebook.com/2023/01/how-to-enable-https-protocol-in-ffmpeg.wasm.html)
@@ -26034,6 +26036,8 @@ I think you are talking about Moho's fbx export option right? I haven't tried th
 
 
 # ffmpeg
+
+https://v2ex.com/t/1121476#reply26  gpu 加速转码
 
 [查看媒体文件头信息工具ffprobe ](https://www.cnblogs.com/renhui/p/9209664.html)
 
