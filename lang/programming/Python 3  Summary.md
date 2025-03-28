@@ -2351,49 +2351,55 @@ pillow==10.4.0
 ######### export images of pdf end    ########################
 
 
-    def get_page_image(reader, pdfDoc, page_num):
+def get_page_image(reader, pdfDoc, page_num):
         page_num = int(page_num)
         page = reader.pages[page_num - 1]
             
         text = page.extract_text()
-        # try:
-        #     for idx, image_file_object in enumerate(page.images):
-        #         pass
-        # except Exception:
-        #     return None
+        is_except = False
+        try:
+            for idx, image_file_object in enumerate(page.images):
+                pass
+        except Exception:
+            is_except = True
+            print('##### Waring: PdfReader 读取图片出错，换成用 fitz 提取（图片会变得大很多！！！）')
             # 提取不到图像先用 Acrobat 导出全部图片，再新建 pdf 替换原 pdf 就可以了
+        
+        if is_except:
+            # 这个方法很稳，但是图片较大
+            page = pdfDoc[page_num - 1]
+                    # 关键参数设置（保持原始尺寸和分辨率）
+            matrix = fitz.Matrix(fitz.Identity)  # 使用Identity矩阵确保不缩放[6,8](@ref)
+            pix = page.get_pixmap(
+                matrix=matrix,      # 保持原始尺寸
+                dpi=250,            # 设置输出分辨率（默认72dpi）
+                alpha=False,        # 关闭透明通道（提高兼容性）
+                colorspace="rgb"    # 使用RGB色彩空间[8](@ref)
+            )
+        
+            from io import BytesIO
+            byte_io = BytesIO()
+            # 转换到内存流
+            img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+            byte_io = BytesIO()
+            img.save(byte_io, format="JPEG", quality=95)
+            byte_io.seek(0)
+            img_bytes = byte_io.read()
             
-        page = pdfDoc[page_num - 1]
-                # 关键参数设置（保持原始尺寸和分辨率）
-        matrix = fitz.Matrix(fitz.Identity)  # 使用Identity矩阵确保不缩放[6,8](@ref)
-        pix = page.get_pixmap(
-            matrix=matrix,      # 保持原始尺寸
-            dpi=300,            # 设置输出分辨率（默认72dpi）
-            alpha=False,        # 关闭透明通道（提高兼容性）
-            colorspace="rgb"    # 使用RGB色彩空间[8](@ref)
-        )
-    
-        from io import BytesIO
-        byte_io = BytesIO()
-        # 转换到内存流
-        img = Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
-        byte_io = BytesIO()
-        img.save(byte_io, format="JPEG", quality=100) # 使用无损压缩
-        byte_io.seek(0)
-        img_bytes = byte_io.read()
+            img_buffer_numpy = np.frombuffer(img_bytes, dtype=np.uint8)  # 将图片字节码 bytes 转换成一维的 numpy 数组到缓存中
+            ocr_frame = cv2.imdecode(img_buffer_numpy, 1)   # 从指定的内存缓存中读取一维 numpy 数据，并把数据转换(解码)成图像矩阵格式
+            ocr_frame = cv2.cvtColor(ocr_frame, cv2.COLOR_BGR2RGB)
         
-        img_buffer_numpy = np.frombuffer(img_bytes, dtype=np.uint8)  # 将图片字节码 bytes 转换成一维的 numpy 数组到缓存中
-        ocr_frame = cv2.imdecode(img_buffer_numpy, 1)   # 从指定的内存缓存中读取一维 numpy 数据，并把数据转换(解码)成图像矩阵格式
-        ocr_frame = cv2.cvtColor(ocr_frame, cv2.COLOR_BGR2RGB)
-        
-        # for idx, image_file_object in enumerate(page.images):
-        #     img_bytes = image_file_object.data
-        #     img_buffer_numpy = np.frombuffer(img_bytes, dtype=np.uint8)  # 将图片字节码 bytes 转换成一维的 numpy 数组到缓存中
-        #     ocr_frame = cv2.imdecode(img_buffer_numpy, 1)   # 从指定的内存缓存中读取一维 numpy 数据，并把数据转换(解码)成图像矩阵格式
-        #     ocr_frame = cv2.cvtColor(ocr_frame, cv2.COLOR_BGR2RGB)
-        #     # cv2.imshow('test', self.ocr_frame)
-        #     # cv2.waitKey(0)
-        #     break
+        else:
+            # 这个方法可能出错，但是图片较小
+            for idx, image_file_object in enumerate(page.images):
+                img_bytes = image_file_object.data
+                img_buffer_numpy = np.frombuffer(img_bytes, dtype=np.uint8)  # 将图片字节码 bytes 转换成一维的 numpy 数组到缓存中
+                ocr_frame = cv2.imdecode(img_buffer_numpy, 1)   # 从指定的内存缓存中读取一维 numpy 数据，并把数据转换(解码)成图像矩阵格式
+                ocr_frame = cv2.cvtColor(ocr_frame, cv2.COLOR_BGR2RGB)
+                # cv2.imshow('test', self.ocr_frame)
+                # cv2.waitKey(0)
+                break
         return ocr_frame
 
 
