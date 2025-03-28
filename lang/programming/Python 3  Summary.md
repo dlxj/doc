@@ -2336,6 +2336,52 @@ for idx, url in enumerate(url_tar):
 
 
 
+### 合并 pdf
+
+```
+
+# pip install Pillow PyPDF2
+
+
+from PIL import Image
+import os
+
+def jpegs_to_pdf(image_folder, output_path):
+    # 获取所有JPEG文件并按文件名排序
+    img_files = sorted([f for f in os.listdir(image_folder) if f.lower().endswith(('.jpg', '.jpeg'))],
+                      key=lambda x: int(x.split('_')[2]))  # 假设文件名是纯数字
+            # '荻原雲来梵语漢訳対照梵和大辞典_页面_0001_图像_0001.jpg'
+
+    images = []
+    for img_file in img_files:
+        img_path = os.path.join(image_folder, img_file)
+        images.append(Image.open(img_path)) # convert('RGB')
+    
+    # 保存为PDF
+    if images:
+        images[0].save(output_path, save_all=True, append_images=images[1:], quality=100)
+        print(f"合并完成，输出路径：{output_path}")
+
+# 调用示例
+jpegs_to_pdf("tmp", "合并结果.pdf")
+
+
+# from PyPDF2 import PdfMerger
+
+# def merge_pdfs_merger(file_list, output_path):
+#     merger = PdfMerger()
+#     for pdf in file_list:
+#         merger.append(pdf)
+#     merger.write(output_path)
+#     merger.close()
+
+# # 调用示例
+# merge_pdfs_merger(['file1.pdf', 'file2.pdf'], 'merged.pdf')
+ 
+```
+
+
+
 
 
 ### base64
