@@ -2340,8 +2340,8 @@ for idx, url in enumerate(url_tar):
 
 ```
 
-
 # pip install Pillow PyPDF2
+
 
 # see https://github.com/pymupdf/PyMuPDF/issues/4388
 
@@ -2352,38 +2352,31 @@ for idx, url in enumerate(url_tar):
 
 
 import datetime
-import os # 文件库
-import fitz  # fitz就是安装的PyMuPDF包
- 
+import os
+import fitz 
  
 def pdf_to_image(pdfPath, imagePath):
-    startTime = datetime.datetime.now()  # 获取开始时间
-    pdfDoc = fitz.open(pdfPath)  # 打开PDF文件
-    for pg in range(pdfDoc.page_count):  # 遍历每一页
-        page = pdfDoc[pg]  # 获取当前页
-        rotate = int(0)  # 设置旋转角度
-        # 设置缩放系数，这将为我们生成分辨率提高2.6的图像。
-        # 此处若是不做设置，默认图片大小为：792X612, dpi=96
-        # 这里的缩放系数为3，会生成更高分辨率的图像，但也会增加生成时间和文件大小。
-        # zoom_x = 3 #数字越大越高清，default：1.3333333
-        # zoom_y = 3
-        # mat = fitz.Matrix(zoom_x, zoom_y).preRotate(rotate)  # 创建矩阵，用于缩放和旋转图像
-        pix = page.get_pixmap() # .save("correct1.png")
-        # pix = page.getPixmap(alpha=False)  # 获取当前页的像素图像 # matrix=mat, 
-        if not os.path.exists(imagePath):  # 判断存放图片的文件夹是否存在
-            os.makedirs(imagePath)  # 若不存在则创建
-        # 将图像写入指定的文件夹内，文件名为"images_页码.png"。
+    startTime = datetime.datetime.now()
+    pdfDoc = fitz.open(pdfPath)
+    for pg in range(pdfDoc.page_count):
+        page = pdfDoc[pg]
+                # 关键参数设置（保持原始尺寸和分辨率）
+        matrix = fitz.Matrix(fitz.Identity)  # 使用Identity矩阵确保不缩放[6,8](@ref)
+        pix = page.get_pixmap(
+            matrix=matrix,      # 保持原始尺寸
+            dpi=300,            # 设置输出分辨率（默认72dpi）
+            alpha=False,        # 关闭透明通道（提高兼容性）
+            colorspace="rgb"    # 使用RGB色彩空间[8](@ref)
+        )
+        if not os.path.exists(imagePath):
+            os.makedirs(imagePath)
         pix.save(imagePath + '/' + 'images_%s.jpg' % pg)
-        # pix.writePNG(imagePath + '/' + 'images_%s.png' % pg)
-    endTime = datetime.datetime.now()  # 获取结束时间
-    # 显示转换所使用的总耗时s
+    endTime = datetime.datetime.now()
     print('耗费时长=', (endTime - startTime).seconds)
  
  
 if __name__ == "__main__":
-    # 1、PDF文件路径
     pdfPath = '荻原雲来梵语漢訳対照梵和大辞典.pdf'
-    # 2、需要储存图像的目录路径
     imagePath = 'tmp2'
     pdf_to_image(pdfPath, imagePath)  # 调用函数进行处理
 
