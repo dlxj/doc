@@ -11066,6 +11066,19 @@ https://github.com/dotnet/wpf/blob/main/Documentation/developer-guide.md  **必�
 
 win11 + visual studio 2025 preview
 
+dotnet --list-sdks
+9.0.200 [C:\Program Files\dotnet\sdk]
+	# wpf\src\Microsoft.DotNet.Wpf\src\System.Xaml
+	# 单独编译这个项目时，把 wpf\global.json 里的 sdk 改成 9.0.200
+
+
+依赖树：
+wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Controls\RichTextBox.cs # RichTextBox 代码在这
+	
+wpf\src\Microsoft.DotNet.Wpf\src\System.Xaml
+	wpf\src\Microsoft.DotNet.Wpf\src\System.Xaml\ref
+
+
 C:\Users\Administrator\wpf
 	# 源码本来是放在这里编译的，如果移动路径可能会编译失败
 
