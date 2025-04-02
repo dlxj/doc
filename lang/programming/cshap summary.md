@@ -1181,43 +1181,43 @@ System.GC.SuppressFinalize(obj);
 
 
 
-​```c#
+```c#
 # 返回字节 
     	// http://localhost:5000/search/getaudio?id=1
-		[HttpGet("getaudio")]
+    	[HttpGet("getaudio")]
         public async Task<IActionResult> getaudio()
         {
             string id = "1";
-
+    
             Response.Headers.Add("Access-Control-Allow-Origin", "*");
-
+    
             string ecxutePath = Environment.CurrentDirectory; // 可执行文件运行目录
-
+    
             string dir_audio = Path.Combine(ecxutePath, "audio");
-
+    
             if ( !Directory.Exists(dir_audio) )
             {
                 Directory.CreateDirectory(dir_audio);
             }
-
+    
             if (Request.Query.ContainsKey("id"))
             {
                 id = Request.Query["id"].ToString();
             }
-
+    
             string audioPath = Path.Combine(dir_audio, id + ".mp3");
-
+    
             if (!System.IO.File.Exists(audioPath))
             {
                 if (!anime.initQ)
                 {
                     anime.initConn();
                 }
-
+    
                 anime.g_conn.Open();
-
+    
                 string sql = $"SELECT id, audio FROM anime WHERE id={id};";
-
+    
                 using (var cmd = new NpgsqlCommand(sql, anime.g_conn))
                 {
                     NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
@@ -1227,7 +1227,7 @@ System.GC.SuppressFinalize(obj);
                         {
                             string idd = reader["id"].ToString();
                             byte[] audio = (byte[])reader["audio"];
-
+    
                             try
                             {
                                 System.IO.File.WriteAllBytes(audioPath, audio);
@@ -1236,15 +1236,15 @@ System.GC.SuppressFinalize(obj);
                                 Console.WriteLine("### ERROR: 写入audio 失败. " + ex.Message);
                                 throw new Exception(ex.Message);
                             }
-
+    
                         }
                     }
                 }
-
+    
                 anime.g_conn.Close();
-
+    
             }
-
+    
             var memory = new MemoryStream();
             using (var stream = new FileStream(audioPath, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
@@ -1254,7 +1254,7 @@ System.GC.SuppressFinalize(obj);
             //var types = GetMimeTypes();
             //var ext = Path.GetExtension(filePath).ToLowerInvariant();
             return File(memory, "audio/mpeg", "tmp.mp3");
-
+    
         }
 ```
 
@@ -1367,11 +1367,11 @@ namespace ksb_aiexam.Controllers
         [HttpPost("gettest")]
         public JsonResult gettest()
         {
-
+    
             Response.Headers.Add("Access-Control-Allow-Origin", "*");
-
+    
             string prms = Request.Form["params"];
-
+    
             return new JsonResult(new { status = 200, msg = "success.", data = prms });
         }
     }
@@ -1388,12 +1388,12 @@ namespace ksb_aiexam.Controllers
         {
         
         Stopwatch stopw = new Stopwatch();
-
+    
             stopw.Start();
             
             stopw.Stop();
             Console.WriteLine(string.Format("加载完成,耗时{0}", stopw.Elapsed.TotalSeconds + "s"));
-
+    
             CreateHostBuilder(args).Build().Run();
         
         }
@@ -1402,15 +1402,16 @@ namespace ksb_aiexam.Controllers
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-
+    
                     webBuilder.UseStartup<Startup>().ConfigureAppConfiguration(builder =>
                     {
                         builder.AddJsonFile("host.json");
                     });
                 });
-                
-                
-                
+
+
+​                
+​                
 
 
 namespace xxx.Controllers.SmartSearch
@@ -1423,16 +1424,16 @@ namespace xxx.Controllers.SmartSearch
             [HttpPost("search")]
         public JsonResult search()
         {
-
+    
             Response.Headers.Add("Access-Control-Allow-Origin", "*");
-
+    
             string prms = Request.Form["params"];
 
 
             string typeSearch = null;
             string strSearch = null;
             string appList = null;
-
+    
             Dictionary<string, string> prmsJson = null;
             if (prms == null || prms == "")
             {
@@ -1450,9 +1451,9 @@ namespace xxx.Controllers.SmartSearch
                     prmsJson = JsonConvert.DeserializeObject<Dictionary<string, string>>(prms);
                     typeSearch = prmsJson["type"];
                     strSearch = prmsJson["search"];
-
+    
                     appList = prmsJson["appList"];
-
+    
                     if (!"1,2,3,4".Contains(typeSearch))
                     {
                         return new JsonResult(new
@@ -1462,7 +1463,7 @@ namespace xxx.Controllers.SmartSearch
                             data = new JArray()
                         });
                     }
-
+    
                     if (strSearch == "")
                     {
                         return new JsonResult(new
@@ -1472,7 +1473,7 @@ namespace xxx.Controllers.SmartSearch
                             data = new JArray()
                         });
                     }
-
+    
                 }
                 catch (Exception)
                 {
@@ -1499,13 +1500,13 @@ namespace xxx.Controllers.SmartSearch
 
             string result = "";
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-
+    
             req.Method = "GET";
             req.ContentType = "application/json; charset=utf-8";
             req.Timeout = 20000;
-
+    
             HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-
+    
             Stream stream = resp.GetResponseStream();
             try
             {
@@ -1519,12 +1520,12 @@ namespace xxx.Controllers.SmartSearch
             {
                 stream.Close();
             }
-
+    
             result = System.Text.RegularExpressions.Regex.Unescape(result);  //  \u4E94\u5473  会被替换成 “五味”
 
 
             List<wordToken> wordsSearch = new List<wordToken>();
-
+    
             JArray jar = JArray.Parse(result);
             foreach (JObject jo in jar)
             {
@@ -1536,14 +1537,14 @@ namespace xxx.Controllers.SmartSearch
                     tf = double.Parse(jo["tf"].ToString()),
                     tfidf = double.Parse(jo["tfidf"].ToString())
                 };
-
+    
                 wordsSearch.Add(to);
-
+    
             }
-
+    
             return wordsSearch;
         }
-
+    
         // [{id:"1",context:"\"用药错误\"A级（1级）的标准"}]
 
 
@@ -1556,7 +1557,7 @@ namespace xxx.Controllers.SmartSearch
 
             var datalist = new JArray();
             datalist.Add(new JObject { { "id", 1 }, { "context", str } });
-
+    
             var content = datalist.ToString();
 
 
@@ -1573,12 +1574,12 @@ namespace xxx.Controllers.SmartSearch
 
             byte[] kvdata = Encoding.UTF8.GetBytes(buffer.ToString());
             req.ContentLength = kvdata.Length;
-
+    
             using (Stream strm = req.GetRequestStream())
             {
                 strm.Write(kvdata, 0, kvdata.Length);
             }
-
+    
             using (Stream strm = req.GetResponse().GetResponseStream())
             {
                 using (StreamReader reader = new StreamReader(strm, Encoding.UTF8))
@@ -1586,7 +1587,7 @@ namespace xxx.Controllers.SmartSearch
                     result = reader.ReadToEnd();
                 }
             }
-
+    
             result = System.Text.RegularExpressions.Regex.Unescape(result);  //  \u4E94\u5473  会被替换成 “五味”
 
 
@@ -1594,11 +1595,11 @@ namespace xxx.Controllers.SmartSearch
             var status = job["status"].ToString();
             if (status != "200")
             {
-
+    
             }
-
+    
             List<wordToken> wordsSearch = new List<wordToken>();
-
+    
             JArray jar = JArray.Parse(job["data"].ToString());
             foreach (JObject jo in jar[0]["words"])
             {
@@ -1610,13 +1611,13 @@ namespace xxx.Controllers.SmartSearch
                     tf = double.Parse(jo["tf"].ToString()),
                     tfidf = double.Parse(jo["tfidf"].ToString())
                 };
-
+    
                 wordsSearch.Add(to);
-
+    
             }
-
+    
             return wordsSearch;
-
+    
         }
 ```
 
@@ -1626,7 +1627,7 @@ namespace xxx.Controllers.SmartSearch
 
 
 
-```c#
+​```c#
       但除了程序本身的原因，还有可能是客服端访问造成（当然这个客户端也包含如蜘蛛软件等搜索引擎），如果服务器和客户端建立的是长链接(可以用"netstat -a"命令查看网络访问信息)，这就需要对http响应头的connection做一定的设置。
 
       介绍如下：
@@ -11062,10 +11063,22 @@ private void richTextBox1_SelectionChanged(object sender, EventArgs e)
 https://github.com/dotnet/wpf/blob/main/Documentation/developer-guide.md  **必看** 编译指南
 
 ```
+
+win11 + visual studio 2025 preview
+
+C:\Users\Administrator\wpf
+	# 源码本来是放在这里编译的，如果移动路径可能会编译失败
+
 git clone https://github.com/dotnet/wpf
 切到 v6.0.36 分支, RichTextBox 控件 dll 显示使用的是这个版本
 
 LINK : fatal error LNK1104: 无法打开文件“MSVCURTD_netcore.LIB”
+	# 安装 c++ cli 
+		对v143 生成工具(最新)的 C++/CLI 支持
+			对v141 生成工具(14.16)的 C++/CLI 支持
+            14.40-17.10
+            14.42-17.12
+                # 实测这三个不需要安装
 
 用他的 wpf fork 看看能不能成功
 	# https://github.com/Dotnet9527/wpf
