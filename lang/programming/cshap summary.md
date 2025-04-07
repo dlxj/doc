@@ -11073,6 +11073,22 @@ C:\Users\Administrator\wpf\.dotnet\sdk\9.0.100-alpha.1.23615.4 复制到
   C:\Users\Administrator\wpf\.dotnet\sdk
 	# 这样复制
 
+C:\Users\Administrator\wpf\packaging\Directory.Build.props
+  <PropertyGroup>
+    
+    <!-- 添加以下属性以支持调试符号 -->
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <EmbedAllSources>true</EmbedAllSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    
+    <!-- 原有属性 -->
+    <DefaultPackageLicenseFile>LICENSE.TXT</DefaultPackageLicenseFile>
+  </PropertyGroup>
+  	 # 让生成的 nuget 包带调试符号 
+  
+
 dotnet --list-sdks
 9.0.200 [C:\Program Files\dotnet\sdk]
 	# wpf\src\Microsoft.DotNet.Wpf\src\System.Xaml
