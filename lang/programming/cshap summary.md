@@ -11079,6 +11079,12 @@ dotnet --list-sdks
 		# C:\Users\Administrator\wpf\.dotnet\sdk\9.0.100-alpha.1.23615.4
 			# 原始依赖它是放这里
 
+
+C:\Users\Administrator\wpf\.editorconfig
+[*.cs]
+dotnet_diagnostic.CA2022.severity = none
+	# 改成 9.0.200 后，这里加一行
+
 依赖树：
 wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Controls\RichTextBox.cs # RichTextBox 代码在这
 	
