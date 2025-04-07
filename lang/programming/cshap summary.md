@@ -11220,14 +11220,29 @@ wpf\src\Microsoft.DotNet.Wpf\src\WpfGfx\core\dll\WpfGfx.sln  这个项目的C++�
 
 
 ```
-main.cs
-class Program
+
+C:\Users\Administrator\wpf\.dotnet\sdk\9.0.100-alpha.1.23615.4 复制到
+  C:\Users\Administrator\wpf\.dotnet\sdk
+	# 这样复制
+
+C:\Users\Administrator\wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework
+	# 项目改成控制台类型
+	
+# main.cs 新增文件 
+using System;
+namespace PresentationFramework
 {
-    static void Main(string[] args)
+    class Program
     {
-    
+        static void Main(string[] args)
+        {
+            Console.WriteLine("######### Test Modify code. this comiple from wpf souce code!!!");
+        }
     }
 }
+	# 成功运行并进入断点
+	
+	
 ```
 
 
