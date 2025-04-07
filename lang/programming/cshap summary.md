@@ -11069,6 +11069,10 @@ https://github.com/dotnet/wpf/blob/main/Documentation/developer-guide.md  **必�
 
 win11 + visual studio 2025 preview
 
+C:\Users\Administrator\wpf\.dotnet\sdk\9.0.100-alpha.1.23615.4 复制到
+  C:\Users\Administrator\wpf\.dotnet\sdk
+	# 这样复制
+
 dotnet --list-sdks
 9.0.200 [C:\Program Files\dotnet\sdk]
 	# wpf\src\Microsoft.DotNet.Wpf\src\System.Xaml
@@ -11083,6 +11087,8 @@ dotnet --list-sdks
 C:\Users\Administrator\wpf\.editorconfig
 [*.cs]
 dotnet_diagnostic.CA2022.severity = none
+dotnet_diagnostic.CA2265.severity = none
+dotnet_diagnostic.CA2668.severity = none
 	# 改成 9.0.200 后，这里加一行
 
 依赖树：
