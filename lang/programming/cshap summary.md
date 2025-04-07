@@ -1627,24 +1627,26 @@ namespace xxx.Controllers.SmartSearch
 
 
 
-​```c#
+```c#
       但除了程序本身的原因，还有可能是客服端访问造成（当然这个客户端也包含如蜘蛛软件等搜索引擎），如果服务器和客户端建立的是长链接(可以用"netstat -a"命令查看网络访问信息)，这就需要对http响应头的connection做一定的设置。
 
       介绍如下：
 
  
 
+
 1. 解释一下：
 
  
 
     在http1.1中request和reponse header中都有可能出现一个connection头字段，此header的含义是当client和server通信时对于长链接如何进行处理。
-
+    
     在http1.1中，client和server都是默认对方支持长链接的， 如果client使用http1.1协议，但又不希望使用长链接，则需要在header中指明connection的值为close；如果server方也不想支持长链接，则在response中也需要明确说明connection的值为close.
-
+    
     不论request还是response的header中包含了值为close的connection，都表明当前正在使用的tcp链接在请求处理完毕后会被断掉。以后client再进行新的请求时就必须创建新的tcp链接了。 HTTP Connection的 close设置允许客户端或服务器中任何一方关闭底层的连接双方都会要求在处理请求后关闭它们的TCP连接。
 
  
+
 
 2.如何在程序中设置：
 
@@ -1654,9 +1656,10 @@ namespace xxx.Controllers.SmartSearch
 
  
 
- 
 
- 
+
+
+
 
 与之相关：解决服务器产生大量close_wait问题
 
@@ -1709,7 +1712,7 @@ var ext = Path.GetExtension(filePath).ToLowerInvariant();
 
 
 
-```c#
+​```c#
  // @禁止转义符内部用两个双引"" 表示单个双引，否则出现语法错误 
                     using (var cmd = new NpgsqlCommand(@"
 CREATE OR REPLACE FUNCTION JPQ (TEXT) RETURNS INT AS
@@ -11071,6 +11074,10 @@ dotnet --list-sdks
 	# wpf\src\Microsoft.DotNet.Wpf\src\System.Xaml
 	# 单独编译这个项目时，把 wpf\global.json 里的 sdk 改成 9.0.200
 
+	https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.200/dotnet-sdk-9.0.200-win-x64.zip
+		# 这里下载
+		# C:\Users\Administrator\wpf\.dotnet\sdk\9.0.100-alpha.1.23615.4
+			# 原始依赖它是放这里
 
 依赖树：
 wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Controls\RichTextBox.cs # RichTextBox 代码在这
@@ -11197,6 +11204,23 @@ wpf\src\Microsoft.DotNet.Wpf\src\WpfGfx\core\dll\WpfGfx.sln  这个项目的C++�
 
 
 ### 编译后包的使用
+
+
+
+```
+main.cs
+class Program
+{
+    static void Main(string[] args)
+    {
+    
+    }
+}
+```
+
+
+
+
 
 ```
 wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Application.cs
