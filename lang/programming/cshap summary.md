@@ -11295,6 +11295,38 @@ vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
 
 引用本地编译的 wpf nuget包 
 
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      <UseWPF>true</UseWPF>
+    <Platforms>x86</Platforms>
+	<DebugType>full</DebugType>
+	<DebugSymbols>true</DebugSymbols>
+    <EmbedAllSources>true</EmbedAllSources>
+	<IncludeSymbols>true</IncludeSymbols>
+	  <!-- Change this value based on where your local repo is located -->
+	  <WpfRepoRoot>C:\Users\Administrator\wpf</WpfRepoRoot>
+	  <!-- Change based on which assemblies you build (Release/Debug) -->
+	  <WpfConfig>Debug</WpfConfig>
+	  <WpfOuputFolder>Microsoft.DotNet.Wpf.GitHub.Debug</WpfOuputFolder>
+	  <!-- Publishing a self-contained app ensures our binaries are used. -->
+	  <SelfContained>true</SelfContained>
+	  <!-- The runtime identifier needs to match the architecture you built WPF assemblies for. -->
+	  <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="$(WpfRepoRoot)\artifacts\packaging\$(WpfConfig)\$(WpfOuputFolder)\lib\net9.0\*.dll" />
+		<ReferenceCopyLocalPaths Include="$(WpfRepoRoot)\artifacts\packaging\$(WpfConfig)\$(WpfOuputFolder)\lib\$(RuntimeIdentifier)\*.dll" />
+		<ReferenceCopyLocalPaths Include="$(WpfRepoRoot)\artifacts\packaging\$(WpfConfig)\$(WpfOuputFolder)\runtimes\$(RuntimeIdentifier)\native\*.dll" />
+	</ItemGroup>
+</Project>
+	# 这样配置后，F12 能导航到源码
+
+
 
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
