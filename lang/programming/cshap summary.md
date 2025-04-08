@@ -11278,6 +11278,24 @@ E:\localNuget
 	
 创建一个控制台程序，注意：编译出来的是基于.Net9.0的，所以依赖的版本是基于net9.0，TargetFramework 需要选择windows，才能用到wpf。由于本地编译的wpf框架是基于x86的，所以 Platforms 选择 x86
 
+C:\Users\Administrator\wpf\packaging\Directory.Build.props
+  <PropertyGroup>
+    
+    <!-- 添加以下属性以支持调试符号 -->
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <EmbedAllSources>true</EmbedAllSources>
+    <IncludeSymbols>true</IncludeSymbols>
+
+  </PropertyGroup>
+  	 # 让生成的 nuget 包带调试符号 
+
+vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
+
+
+引用本地编译的 wpf nuget包 
+
+
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -11287,29 +11305,15 @@ E:\localNuget
       <UseWPF>true</UseWPF>
     <Platforms>x86</Platforms>
   </PropertyGroup>
-</Project>
-
-vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
-
-
-引用本地编译的 wpf nuget包 
-
-
-<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<OutputType>Exe</OutputType>
-		<TargetFramework>net9.0-windows</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<UseWPF>true</UseWPF>
-		<Platforms>x86</Platforms>
-	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
 		<PackageReference Include="Microsoft.DotNet.Wpf.ProjectTemplates.Debug" Version="9.0.0-ci" />
-		<PackageReference Include="runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
+		<PackageReference Include="runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci">
+			<IncludeSymbols>true</IncludeSymbols>
+		</PackageReference>
 	</ItemGroup>
 </Project>
+	# 引入带调试符号的包
 
 
 using System.Windows;
