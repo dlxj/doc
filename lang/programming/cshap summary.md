@@ -11334,6 +11334,7 @@ nuget.config
 
 visual studio 2025 -> 工具 -> 选项 -> 调试 -> 符号 -> 新位置 -> E:\localNuget
 
+程序运行以后 -> 调试 -> 窗口 -> 模块 能看到已加载 dll
 
 
 using System.Windows;
