@@ -11325,6 +11325,7 @@ vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
 	</ItemGroup>
 </Project>
 	# 这样配置后，F12 能导航到源码
+		# 但是断点无效，断不下来！！！
 
 
 
