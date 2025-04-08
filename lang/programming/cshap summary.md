@@ -1712,7 +1712,7 @@ var ext = Path.GetExtension(filePath).ToLowerInvariant();
 
 
 
-​```c#
+```c#
  // @禁止转义符内部用两个双引"" 表示单个双引，否则出现语法错误 
                     using (var cmd = new NpgsqlCommand(@"
 CREATE OR REPLACE FUNCTION JPQ (TEXT) RETURNS INT AS
@@ -1727,20 +1727,20 @@ BEGIN
   LOOP
     
 		FOREACH js IN ARRAY pgroonga_tokenize(s, 'tokenizer', 'TokenMecab(""use_base_form"", true, ""include_reading"", true)')
-
-        LOOP
-
-            reading = (js-> 'metadata'->> 'reading');
-                    IF reading IS NULL THEN
-                            RETURN 0;
-                    END IF;
-
-                    END LOOP;
-                    END LOOP;
-
-                    RETURN 1;
-
-                    END;
+	
+	    LOOP
+	
+	        reading = (js-> 'metadata'->> 'reading');
+	                IF reading IS NULL THEN
+	                        RETURN 0;
+	                END IF;
+	
+	                END LOOP;
+	                END LOOP;
+	
+	                RETURN 1;
+	
+	                END;
 $func$ LANGUAGE plpgsql IMMUTABLE;
                     ", conn))
                     {
@@ -1749,7 +1749,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
                     conn.Close();
-
+    
                 }
 ```
 
@@ -1759,7 +1759,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 
-```c#
+​```c#
 string prms = $" {{ \"keyword\" : \"{Request.Form["keyword"]}\", \"lang_select\": \"{Request.Form["lang_select"]}\" }} ";  // $ 里面的 { 要双写进行转义
 ```
 
@@ -11081,10 +11081,7 @@ C:\Users\Administrator\wpf\packaging\Directory.Build.props
     <DebugSymbols>true</DebugSymbols>
     <EmbedAllSources>true</EmbedAllSources>
     <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    
-    <!-- 原有属性 -->
-    <DefaultPackageLicenseFile>LICENSE.TXT</DefaultPackageLicenseFile>
+
   </PropertyGroup>
   	 # 让生成的 nuget 包带调试符号 
   
