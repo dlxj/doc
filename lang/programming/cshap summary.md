@@ -11304,16 +11304,36 @@ vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
     <Nullable>enable</Nullable>
       <UseWPF>true</UseWPF>
     <Platforms>x86</Platforms>
+	<DebugType>full</DebugType>
+	<DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci" />
-		<PackageReference Include="Microsoft.DotNet.Wpf.ProjectTemplates.Debug" Version="9.0.0-ci" />
+		<PackageReference Include="Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci">
+			<IncludeSymbols>true</IncludeSymbols>
+		</PackageReference>
+		<PackageReference Include="Microsoft.DotNet.Wpf.ProjectTemplates.Debug" Version="9.0.0-ci">
+			<IncludeSymbols>true</IncludeSymbols>
+		</PackageReference>
 		<PackageReference Include="runtime.win-x86.Microsoft.DotNet.Wpf.GitHub.Debug" Version="9.0.0-ci">
 			<IncludeSymbols>true</IncludeSymbols>
 		</PackageReference>
 	</ItemGroup>
 </Project>
 	# 引入带调试符号的包
+
+
+nuget.config
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <packageSources>
+    <add key="LocalSymbols" value="E:\localNuget" />
+  </packageSources>
+</configuration>
+	# 项目根目录新增
+	
+
+visual studio 2025 -> 工具 -> 选项 -> 调试 -> 符号 -> 新位置 -> E:\localNuget
+
 
 
 using System.Windows;
