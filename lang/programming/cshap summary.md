@@ -11353,6 +11353,8 @@ vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
 	</ItemGroup>
 </Project>
 	# 引入带调试符号的包
+	#  <PackageReference Include="Microsoft.DotNet.Wpf.ProjectTemplates.Debug" Version="9.0.0-ci">
+		# 一定要加这一句后才会输出：######### Test Modify code. this comiple from wpf souce code!!!
 
 
 nuget.config
