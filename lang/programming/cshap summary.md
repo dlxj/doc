@@ -11420,6 +11420,11 @@ class Program
 		# 关键点：AnyCpu 那里新建 x86 配置，新建就可以不需要复制其他配置，然后选 x86
 		######### Test Modify code. this comiple from wpf souce code!!!
 
+
+C:\Users\Administrator\wpf\artifacts\packaging\Debug\Microsoft.DotNet.Wpf.GitHub.Debug\lib\net9.0
+	# 直接导入所有 dll 作为依赖就可以正常运行！！！
+	# 下一步在把 PresentationFramework 的源码加进来编译
+
 ```
 
 
