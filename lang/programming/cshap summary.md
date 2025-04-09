@@ -11851,6 +11851,10 @@ https://www.cnblogs.com/zhouyinhui/archive/2010/06/22/1762633.html
             </Button>
             	# 触发以后自动更新 UI，这命令不用自已定义
             	
+            	
+EditingCommands.ToggleBullets.Execute(null, richTextBox);
+	# 代码直接触发
+	
 ```
 
 
