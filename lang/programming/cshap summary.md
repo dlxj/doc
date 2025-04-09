@@ -1759,7 +1759,7 @@ $func$ LANGUAGE plpgsql IMMUTABLE;
 
 
 
-​```c#
+```c#
 string prms = $" {{ \"keyword\" : \"{Request.Form["keyword"]}\", \"lang_select\": \"{Request.Form["lang_select"]}\" }} ";  // $ 里面的 { 要双写进行转义
 ```
 
@@ -1771,7 +1771,7 @@ string prms = $" {{ \"keyword\" : \"{Request.Form["keyword"]}\", \"lang_select\"
 
 
 
-```c#
+​```c#
 # {} 里面的是动态计算
 string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(imagePath)}";
 ```
@@ -11294,6 +11294,23 @@ vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
 
 
 引用本地编译的 wpf nuget包 
+
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<Platforms>x86</Platforms>
+	</PropertyGroup>
+	<PropertyGroup>
+		<WpfRepoRoot>C:\Users\Administrator\wpf</WpfRepoRoot>
+	</PropertyGroup>
+	<Import Project="$(WpfRepoRoot)\eng\wpf-debug.targets" />
+</Project>
+	# 这样也可以，比较简单
+
 
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
