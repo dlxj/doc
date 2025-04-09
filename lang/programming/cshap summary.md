@@ -11316,7 +11316,9 @@ vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
 			$(WpfRepoRoot)\artifacts\obj\**\net9.0
 				# 这样就能成功加载符号
 					# 调试 -> 窗口 -> 模块 能看到 dll 的符号是否成功加载
-				
+	
+	    C:\Users\Administrator\wpf\eng\wpf-debug.targets 的
+		WpfRepoRoot 改成这个：C:\Users\Administrator\wpf
 
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
