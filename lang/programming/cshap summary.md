@@ -11310,6 +11310,7 @@ vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
 	<Import Project="$(WpfRepoRoot)\eng\wpf-debug.targets" />
 </Project>
 	# 这样也可以，比较简单
+	# F11 其实是能进入源码的，但是必须从外面下断再单步进去，wpf 源码里直接下断点是行不通的
 
 
 <Project Sdk="Microsoft.NET.Sdk">
