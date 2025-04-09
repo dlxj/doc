@@ -11311,7 +11311,12 @@ vs2025 preview Nuget包源，添加 E:\localNuget，名称 localNuget
 </Project>
 	# 这样也可以，比较简单
 	# F11 其实是能进入源码的，但是必须从外面下断再单步进去，wpf 源码里直接下断点是行不通的
-
+		# 工具 -> 选项 -> 调试 -> 符号 加入这两个
+			$(WpfRepoRoot)\artifacts\obj\**\Debug
+			$(WpfRepoRoot)\artifacts\obj\**\net9.0
+				# 这样就能成功加载符号
+					# 调试 -> 窗口 -> 模块 能看到 dll 的符号是否成功加载
+				
 
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
