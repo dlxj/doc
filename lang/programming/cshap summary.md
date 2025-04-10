@@ -1771,7 +1771,7 @@ string prms = $" {{ \"keyword\" : \"{Request.Form["keyword"]}\", \"lang_select\"
 
 
 
-​```c#
+```c#
 # {} 里面的是动态计算
 string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(imagePath)}";
 ```
@@ -1782,7 +1782,7 @@ string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("
 
 
 
-```c#
+​```c#
 # 以string 作为 delimiter
 string beginTime = time.Split(new string[] { "-->" }, StringSplitOptions.None)[0].Trim();
 string endTime = time.Split(new string[] { "-->" }, StringSplitOptions.None)[1].Trim();
@@ -10866,6 +10866,10 @@ private void btnSave_Click(object sender, EventArgs e)
 
 ## RichTextBox
 
+https://github.com/cuikp/AvRichTextBox 替代方案
+
+
+
 - ### **RichTextBox控件的常用事件** [u](https://www.cnblogs.com/yeshenmeng/p/9435398.html)
 
   1. SelectionChange事件——控件中选中的文本发生改变时，触发该事件。 
@@ -11429,6 +11433,43 @@ C:\Users\Administrator\wpf\artifacts\packaging\Debug\Microsoft.DotNet.Wpf.GitHub
 
 
 
+### 路径变量 插入源码
+
+```
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <RepoRoot>C:\Users\Administrator\wpf\</RepoRoot>
+    <SourceDir>$(RepoRoot)src\Microsoft.DotNet.Wpf\src\</SourceDir>
+    <SharedDir>$(SourceDir)Shared\</SharedDir>
+
+  </PropertyGroup>
+
+  <Target Name="DebugVars" BeforeTargets="Build">
+    <Message Text="SharedDir: $(SharedDir)" Importance="high" />
+    <Message Text="Full Path: $(SharedDir)RefAssemblyAttrs.cs" Importance="high" />
+  </Target>
+
+  <!--
+    PowerShell 测试路径是否存在
+    Test-Path "C:\Users\Administrator\wpf\src\Microsoft.DotNet.Wpf\src\Shared\RefAssemblyAttrs.cs"
+   -->
+
+  <ItemGroup>
+    <Compile Include="$(SharedDir)\RefAssemblyAttrs.cs" />
+  </ItemGroup>
+
+
+</Project>
+```
+
+
+
 
 
 ##　语法
@@ -11860,6 +11901,24 @@ https://www.cnblogs.com/zhouyinhui/archive/2010/06/22/1762633.html
 EditingCommands.ToggleBullets.Execute(null, richTextBox);
 	# 代码直接触发
 	
+	
+        private static void OnFormattingPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            RichTextBox richTextBox = (RichTextBox)d;
+
+            if (richTextBox._implicitDocument)
+            {
+                richTextBox.TransferFormattingProperty(e.Property, e.NewValue);
+            }
+        }
+        	
+        	# wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Controls\RichTextBox.cs
+        	# 文本格式化应该调用的是这里
+        	
+        HookupInheritablePropertyListeners();
+        	# 构造函数就调用这个
+	
+
 ```
 
 
