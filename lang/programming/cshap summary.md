@@ -12044,6 +12044,9 @@ wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\
 private static void OnListCommand(object target, ExecutedRoutedEventArgs args)
 	ToggleBullets(thisSelection, parentListItem, immediateListItem, list);
 
+dotnet tool install --global dotnet-debugger-extensions
+	# 安装 dotnet 调试插件
+
 ```
 
 
