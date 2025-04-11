@@ -12041,6 +12041,9 @@ wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\
             CommandHelpers.RegisterCommandHandler(controlType, EditingCommands.ToggleBullets       , new ExecutedRoutedEventHandler(OnListCommand) , new CanExecuteRoutedEventHandler(OnQueryStatusNYI), KeyGesture.CreateFromResourceStrings(KeyToggleBullets, nameof(SR.KeyToggleBulletsDisplayString)));
 	# 切换项目符号应该在 OnListCommand 里处理？
 
+private static void OnListCommand(object target, ExecutedRoutedEventArgs args)
+	ToggleBullets(thisSelection, parentListItem, immediateListItem, list);
+
 ```
 
 
