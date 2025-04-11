@@ -1782,7 +1782,7 @@ string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("
 
 
 
-​```c#
+```c#
 # 以string 作为 delimiter
 string beginTime = time.Split(new string[] { "-->" }, StringSplitOptions.None)[0].Trim();
 string endTime = time.Split(new string[] { "-->" }, StringSplitOptions.None)[1].Trim();
@@ -1813,7 +1813,7 @@ string.IsNullOrWhiteSpace(Body)
 
 ### UTF8
 
-```c#
+​```c#
 # https://github.com/madelson/MedallionShell/blob/master/SampleCommand/Program.cs
 
 var encoding = args.Contains("--utf8") ? new UTF8Encoding(encoderShouldEmitUTF8Identifier: false)
@@ -12013,6 +12013,33 @@ namespace RichTextBoxEditor
         }
     }
 }
+
+```
+
+
+
+#### 切换项目符号
+
+```
+_ToggleBullets
+
+FlowDocument
+    ├── Block (段落级元素)
+    │   ├── Paragraph
+    │   ├── Section
+    │   ├── List
+    │   └── Table
+    └── Inline (行内元素)
+        ├── Run (纯文本)
+        ├── Span
+        ├── Hyperlink
+        └── InlineUIContainer
+     
+wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\TextEditorLists.cs
+
+        internal static void _RegisterClassHandlers(Type controlType, bool registerEventListeners)
+            CommandHelpers.RegisterCommandHandler(controlType, EditingCommands.ToggleBullets       , new ExecutedRoutedEventHandler(OnListCommand) , new CanExecuteRoutedEventHandler(OnQueryStatusNYI), KeyGesture.CreateFromResourceStrings(KeyToggleBullets, nameof(SR.KeyToggleBulletsDisplayString)));
+	# 切换项目符号应该在 OnListCommand 里处理？
 
 ```
 
