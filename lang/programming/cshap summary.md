@@ -1813,7 +1813,7 @@ string.IsNullOrWhiteSpace(Body)
 
 ### UTF8
 
-​```c#
+```c#
 # https://github.com/madelson/MedallionShell/blob/master/SampleCommand/Program.cs
 
 var encoding = args.Contains("--utf8") ? new UTF8Encoding(encoderShouldEmitUTF8Identifier: false)
@@ -1875,7 +1875,7 @@ static List<string[]> apps = new List<string[]>() { new string[] { "a", "b", "b"
 
 
 
-```c#
+​```c#
 public IEnumerable<People> peopleList => new List<People> {
 ```
 
@@ -12047,6 +12047,20 @@ private static void OnListCommand(object target, ExecutedRoutedEventArgs args)
 dotnet tool install --global dotnet-debugger-extensions
 	# 安装 dotnet 调试插件
 
+    # choco install winget
+        # C:\ProgramData\chocolatey\lib\winget
+            # 装到这里了
+            # 它只是一个包，根本用不了
+            
+    # winget install Microsoft.WinDbg
+        # Administrator 账户才能找到 winget 命令
+		# 也用不了
+		
+https://aka.ms/windbg/download
+	# 下载后成功运行了 
+
+
+		
 ```
 
 
