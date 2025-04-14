@@ -11148,6 +11148,10 @@ https://github.com/dotnet/wpf/issues/8343
 	# 失败以后先 clean
 .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
 
+工程属性页中“Alt+F7”－>“配置属性”－>“C/C++”－>“常规”－>“调试信息格式”，选择“用于“编辑并继续”的程序数据库(/ZI)”。另外，在“配置属性”－>“链接器”－>“调试”－>“生成调试信息”中，选择“是”。
+
+工具->选项->调试->常规，将”要求源文件与原始版本完全匹配”
+
 clear the .tools\native\bin subfolder of the git repo (alternatively try a fresh clone)
 C:\Users\<user>\.netcoreeng\native\temp contains download caches (remove individual files if the zip file is partially downloaded or otherwise broken)
 C:\Users\<user>\.netcoreeng\native\bin contains unpacked downloads (remove if you suspect unpacking was interrupted/failed)
@@ -12058,14 +12062,25 @@ dotnet tool install --global dotnet-debugger-extensions
 		
 https://aka.ms/windbg/download
 	# 下载后成功运行了 
+	# 这样安装应该是 64 位的，编程 wpf 也要 64 位才可以！！！
 
 g
 	# 继续运行
 
+dotnet tool install --global dotnet-sos
+dotnet-sos install
+.load C:\Users\i\.dotnet\sos\sos.dll
+
 x user32!*
 	# 显示 dll 的所有符号
-	x PresentationFramework.dll!*
+	# 先加载符号，view -> Modules 可以看到符号加载没有 没有右键强制加载它
+	x PresentationFramework!*
 		# 成功打印符号
+		.logopen E:\symbols.txt
+		x PresentationFramework!*
+		.logclose
+		# ToggleBullets(TextSelection thisSelection, ListItem parentListItem, ListItem immediateListItem, List list)
+x PresentationFramework.dll!ToggleBullets
 		
 ```
 
