@@ -12090,6 +12090,9 @@ dotnet-sos install
 	# wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\TextEditorLists.cs
 	# 源码在 177 行
 
+光标放在某个段落 -> 点“项目符号” 
+	# 成功触发刚才下的断点
+	
 
 x user32!*
 	# 显示 dll 的所有符号
