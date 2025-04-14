@@ -12085,6 +12085,10 @@ dotnet-sos install
 !sym noisy
 .reload
 
+!bpmd PresentationFramework.dll System.Windows.Documents.TextEditorLists.ToggleBullets
+	# 成功下断点
+	# wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\TextEditorLists.cs
+	# 源码在 177 行
 
 
 x user32!*
