@@ -12024,6 +12024,8 @@ namespace RichTextBoxEditor
 
 #### 切换项目符号
 
+https://www.cnblogs.com/tianqing/p/13197382.html
+
 ```
 _ToggleBullets
 
@@ -12072,6 +12074,18 @@ dotnet-sos install
 .load C:\Users\i\.dotnet\sos\sos.dll
 	# huggingface\RichTextBoxEditor\RichTextBoxEditor\bin\x64\Debug\net9.0-windows\win-x64\RichTextBoxEditor.exe
 	# 一定是要 64 位的程序才成功
+
+!sos.help
+	# 打印帮助
+
+.chain
+	-->  C:\Users\i\.dotnet\sos\sos.dll
+
+.symfix
+!sym noisy
+.reload
+
+
 
 x user32!*
 	# 显示 dll 的所有符号
