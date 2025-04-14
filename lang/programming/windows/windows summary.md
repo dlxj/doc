@@ -880,6 +880,53 @@ scoop update *
 
 
 
+# windbg 调试
+
+```
+
+see csharp summary.md -> WPF -> RichTextBox 原生命令 ->
+
+_ToggleBullets
+
+FlowDocument
+    ├── Block (段落级元素)
+    │   ├── Paragraph
+    │   ├── Section
+    │   ├── List
+    │   └── Table
+    └── Inline (行内元素)
+        ├── Run (纯文本)
+        ├── Span
+        ├── Hyperlink
+        └── InlineUIContainer
+     
+wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\TextEditorLists.cs
+
+        internal static void _RegisterClassHandlers(Type controlType, bool registerEventListeners)
+            CommandHelpers.RegisterCommandHandler(controlType, EditingCommands.ToggleBullets       , new ExecutedRoutedEventHandler(OnListCommand) , new CanExecuteRoutedEventHandler(OnQueryStatusNYI), KeyGesture.CreateFromResourceStrings(KeyToggleBullets, nameof(SR.KeyToggleBulletsDisplayString)));
+	# 切换项目符号应该在 OnListCommand 里处理？
+
+private static void OnListCommand(object target, ExecutedRoutedEventArgs args)
+	ToggleBullets(thisSelection, parentListItem, immediateListItem, list);
+
+dotnet tool install --global dotnet-debugger-extensions
+	# 安装 dotnet 调试插件
+
+    # choco install winget
+        # C:\ProgramData\chocolatey\lib\winget
+            # 装到这里了
+            # 它只是一个包，根本用不了
+            
+    # winget install Microsoft.WinDbg
+        # Administrator 账户才能找到 winget 命令
+		# 也用不了
+		
+https://aka.ms/windbg/download
+	# 下载后成功运行了 
+```
+
+
+
 
 
 # Docker+Windows 2022

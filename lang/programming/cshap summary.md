@@ -1875,7 +1875,7 @@ static List<string[]> apps = new List<string[]>() { new string[] { "a", "b", "b"
 
 
 
-​```c#
+```c#
 public IEnumerable<People> peopleList => new List<People> {
 ```
 
@@ -1887,7 +1887,7 @@ public IEnumerable<People> peopleList => new List<People> {
 
 
 
-```c#
+​```c#
 var (begintime, endtime) = new Tuple<int, int>(1, 1);
 ```
 
@@ -12059,7 +12059,13 @@ dotnet tool install --global dotnet-debugger-extensions
 https://aka.ms/windbg/download
 	# 下载后成功运行了 
 
+g
+	# 继续运行
 
+x user32!*
+	# 显示 dll 的所有符号
+	x PresentationFramework.dll!*
+		# 成功打印符号
 		
 ```
 
