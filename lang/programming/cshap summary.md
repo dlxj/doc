@@ -12070,6 +12070,8 @@ g
 dotnet tool install --global dotnet-sos
 dotnet-sos install
 .load C:\Users\i\.dotnet\sos\sos.dll
+	# huggingface\RichTextBoxEditor\RichTextBoxEditor\bin\x64\Debug\net9.0-windows\win-x64\RichTextBoxEditor.exe
+	# 一定是要 64 位的程序才成功
 
 x user32!*
 	# 显示 dll 的所有符号
