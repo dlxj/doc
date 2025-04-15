@@ -12166,6 +12166,23 @@ ToggleBullets(TextSelection thisSelection, ListItem parentListItem, ListItem imm
 
 
 
+list.MarkerStyle 属性改变后会触发哪个函数调用（改成圆点样式）
+
+List.MarkerStyle 是一个 DependencyProperty，当它的值改变时会触发属性变更通知机制。让我解释一下这个过程：
+
+1. MarkerStyle 是在 System.Windows.Documents.List 类中定义的依赖属性：
+
+当 MarkerStyle 属性值改变时，会触发以下过程：
+
+    1. 首先触发 OnMarkerStyleChanged 回调函数
+    2. 由于设置了 FrameworkPropertyMetadataOptions.AffectsMeasure ，会触发元素的重新测量
+    3. 由于设置了 FrameworkPropertyMetadataOptions.AffectsRender ，会触发元素的重新渲染
+    4. 如果有任何绑定到这个属性的 UI 元素，它们也会收到通知并更新
+    这样就能确保列表标记样式的改变能立即反映在用户界面上。
+
+
+
+
 ```
 
 
