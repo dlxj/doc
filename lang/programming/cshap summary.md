@@ -12196,6 +12196,7 @@ wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\
     public class Run : TextElement, ITextPointer
         // 实际文本内容
         public string Text { get; set; }
+			//text node in Flow content (text run)
 
 
 ```
