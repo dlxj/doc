@@ -12141,6 +12141,30 @@ ToggleBullets(TextSelection thisSelection, ListItem parentListItem, ListItem imm
 - 如果文本是普通段落，则添加项目符号
 这样的设计让用户可以通过重复调用同一个命令来切换文本的项目符号状态，类似于我们在 Word 等文字处理软件中使用项目符号按钮的行为。
 
+参数含义：
+
+- thisSelection: TextSelection
+
+- 表示当前文本编辑器中的选择区域
+- 包含了选择的起始位置和结束位置
+- 用于确定要应用项目符号的文本范围
+- parentListItem: ListItem
+
+- 表示当前选择位置的父级列表项
+- 如果当前选择位置在嵌套列表中，这个参数代表外层的列表项
+- 用于处理嵌套列表的情况
+- immediateListItem: ListItem
+
+- 表示当前选择位置的直接列表项
+- 如果当前选择位置就在一个列表项中，这个参数就代表那个列表项
+- 用于确定是否需要切换当前列表项的样式
+- list: List
+
+- 表示当前列表项所属的列表对象
+- 包含了列表的样式信息（如项目符号类型）
+- 用于修改或获取列表的标记样式（MarkerStyle）
+
+
 
 ```
 
