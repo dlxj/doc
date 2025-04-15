@@ -12106,6 +12106,42 @@ x user32!*
 		# ToggleBullets(TextSelection thisSelection, ListItem parentListItem, ListItem immediateListItem, List list)
 x PresentationFramework.dll!ToggleBullets
 		
+		wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\TextEditorLists.cs  line 177
+ToggleBullets(TextSelection thisSelection, ListItem parentListItem, ListItem immediateListItem, List list)		
+这个函数用于切换文本的项目符号（bullet points）状态。它根据当前选择的文本位置和状态来决定执行什么操作。让我们分析每个条件分支：
+
+1. 第一个条件分支 ( immediateListItem != null && HasBulletMarker(list) )：
+   
+   - 当前位置已经是一个带项目符号的列表项
+   - 两种处理情况：
+     - 如果列表是嵌套的（ list.Parent is ListItem ）：
+       - 取消缩进并转换为普通段落
+     - 如果是普通列表：
+       - 仅取消缩进
+2. 第二个条件分支 ( immediateListItem != null )：
+   
+   - 当前位置是一个列表项，但不是项目符号样式
+   - 操作：
+     - 将列表标记样式改为圆点样式（ TextMarkerStyle.Disc ）
+3. 第三个条件分支 ( parentListItem != null )：
+   
+   - 当前位置在一个列表项内，但不是直接的列表项
+   - 操作：
+     - 将段落转换为项目符号列表项
+     - 增加缩进级别
+4. 最后的情况（else）：
+   
+   - 当前位置不在任何列表中
+   - 操作：
+     - 直接将段落转换为项目符号列表项
+简单来说，这个函数实现了以下功能：
+
+- 如果文本已经是项目符号列表，则移除项目符号
+- 如果文本是其他类型的列表，则转换为项目符号列表
+- 如果文本是普通段落，则添加项目符号
+这样的设计让用户可以通过重复调用同一个命令来切换文本的项目符号状态，类似于我们在 Word 等文字处理软件中使用项目符号按钮的行为。
+
+
 ```
 
 
