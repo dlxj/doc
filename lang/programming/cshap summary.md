@@ -12181,6 +12181,10 @@ List.MarkerStyle 是一个 DependencyProperty，当它的值改变时会触发�
     这样就能确保列表标记样式的改变能立即反映在用户界面上。
 
 
+wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\List.cs
+	line 267
+	新建 ListItem 元素
+
 
 
 ```
