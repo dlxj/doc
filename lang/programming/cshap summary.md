@@ -12186,6 +12186,17 @@ wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\
 	新建 ListItem 元素
 
 
+在 WPF 中，单个字符的属性是在 System.Windows.Documents.TextElement 类中定义的基本属性，主要包括：
+
+    public class TextElement : FrameworkContentElement
+        public static readonly DependencyProperty FontFamilyProperty;
+
+
+具体的文本运行时属性在 System.Windows.Documents.Run 类中：
+    public class Run : TextElement, ITextPointer
+        // 实际文本内容
+        public string Text { get; set; }
+
 
 ```
 
