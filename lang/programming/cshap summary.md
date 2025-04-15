@@ -1887,7 +1887,7 @@ public IEnumerable<People> peopleList => new List<People> {
 
 
 
-​```c#
+```c#
 var (begintime, endtime) = new Tuple<int, int>(1, 1);
 ```
 
@@ -1899,7 +1899,7 @@ var (begintime, endtime) = new Tuple<int, int>(1, 1);
 
 
 
-```c#
+​```c#
     private async void HandleSubmit()
     {
         var values = new Dictionary<string,string>{
@@ -12087,6 +12087,7 @@ dotnet-sos install
 
 !bpmd PresentationFramework.dll System.Windows.Documents.TextEditorLists.ToggleBullets
 	# 成功下断点
+	# 注意下断点后它可能不会马上显示出来，而是实际触发后窗口的断点才可见
 	# wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\TextEditorLists.cs
 	# 源码在 177 行
 
