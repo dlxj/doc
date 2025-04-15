@@ -12191,11 +12191,11 @@ wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\
     public class TextElement : FrameworkContentElement
         public static readonly DependencyProperty FontFamilyProperty;
 
+public abstract class Inline : TextElement
 
 具体的文本运行时属性在 System.Windows.Documents.Run 类中：
-    public class Run : TextElement, ITextPointer
+    public class Run : Inline
         // 实际文本内容
-        public string Text { get; set; }
 			//text node in Flow content (text run)
 
 
