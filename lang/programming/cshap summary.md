@@ -12042,6 +12042,9 @@ OnToggleBold(object target, ExecutedRoutedEventArgs args)
 OnIncreaseFontSize(object target, ExecutedRoutedEventArgs args)
 	# 模仿这个属性可能比较好，因为是数值的
 
+TextEditorCharacters._OnApplyProperty(This, TextElement.FontSizeProperty, fontSize);
+	# line 327
+
 
 
 ```
