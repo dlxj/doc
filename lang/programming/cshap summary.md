@@ -1899,7 +1899,7 @@ var (begintime, endtime) = new Tuple<int, int>(1, 1);
 
 
 
-​```c#
+```c#
     private async void HandleSubmit()
     {
         var values = new Dictionary<string,string>{
@@ -1925,7 +1925,7 @@ var (begintime, endtime) = new Tuple<int, int>(1, 1);
 
 
 
-```c#
+​```c#
 # 双排序
 dict.OrderByDescending(i => i.Value).ThenBy(i => i.Key)
 ```
@@ -12200,6 +12200,80 @@ public abstract class Inline : TextElement
 
 
 ```
+
+
+
+##### 每一个字符增加自定义属性
+
+```
+新建 System\Windows\Documents\TextCharacterProperty.cs
+	# ai 生成的代码，可能需要修改
+using System.Windows;
+
+namespace System.Windows.Documents
+{
+    // 定义一个自定义附加属性
+    public static class TextCharacterProperty
+    {
+        public static readonly DependencyProperty CustomProperty = 
+            DependencyProperty.RegisterAttached(
+                "Custom",
+                typeof(object),
+                typeof(TextCharacterProperty),
+                new FrameworkPropertyMetadata(null));
+
+        public static void SetCustom(DependencyObject element, object value)
+        {
+            element.SetValue(CustomProperty, value);
+        }
+
+        public static object GetCustom(DependencyObject element)
+        {
+            return element.GetValue(CustomProperty);
+        }
+    }
+
+    // 在处理文本时，需要将文本拆分成单个字符的 Run
+    private static void ApplyCustomPropertyToCharacters(TextRange range, object customValue)
+{
+    TextPointer current = range.Start;
+    while (current.CompareTo(range.End) < 0)
+    {
+        TextPointer nextPosition = current.GetNextInsertionPosition(LogicalDirection.Forward);
+        if (nextPosition == null) break;
+        
+        string text = current.GetTextInRun(LogicalDirection.Forward);
+        if (!string.IsNullOrEmpty(text))
+        {
+            // 删除原始文本
+            current.DeleteTextInRun(text.Length);
+            
+            // 为每个字符创建新的 Run
+            foreach (char c in text)
+            {
+                Run run = new Run(c.ToString());
+                TextCharacterProperty.SetCustom(run, customValue);
+                current.InsertInline(run);
+            }
+        }
+        current = nextPosition;
+    }
+}
+
+// 为选中文本的每个字符添加自定义属性
+TextSelection selection = richTextBox.Selection;
+using (selection.DeclareChangeBlock())
+{
+    ApplyCustomPropertyToCharacters(selection, yourCustomValue);
+}
+
+}
+
+```
+
+
+
+
 
 
 
