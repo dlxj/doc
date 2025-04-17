@@ -1925,14 +1925,14 @@ var (begintime, endtime) = new Tuple<int, int>(1, 1);
 
 
 
-​```c#
+```c#
 # 双排序
 dict.OrderByDescending(i => i.Value).ThenBy(i => i.Key)
 ```
 
 
 
-```c#
+​```c#
 # SortedDictionary 排序
 dic_orders 输入key 会返回一个int ，作为顺序的定义
 
@@ -11147,6 +11147,7 @@ https://github.com/dotnet/wpf/issues/8343
 .\build.cmd -clean
 	# 失败以后先 clean
 .\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x86
+	.\build.cmd -pack -ci -configuration Debug -prepareMachine /p:Platform=x64 /p:EnableNuGetAudit=false
 
 工程属性页中“Alt+F7”－>“配置属性”－>“C/C++”－>“常规”－>“调试信息格式”，选择“用于“编辑并继续”的程序数据库(/ZI)”。另外，在“配置属性”－>“链接器”－>“调试”－>“生成调试信息”中，选择“是”。
 
@@ -12206,6 +12207,24 @@ public abstract class Inline : TextElement
 ##### 每一个字符增加自定义属性
 
 ```
+
+从你提供的代码可以看出， `Run.cs` 类是 WPF 文本处理的基本单元。它继承自 Inline 类，可以应用各种文本格式化属性，包括 FontWeight 来实现文本加粗。
+
+当你在 RichTextBox 中设置文本为粗体时，实际上是在修改 Run 对象的 FontWeight 依赖属性。这个属性的变化会触发 WPF 的属性系统，从而更新 UI 显示。
+
+如果你需要在代码中动态处理文本加粗，建议使用 TextRange 的方式，因为它可以方便地处理选中的文本范围，而不需要手动创建和管理 Run 对象。
+
+// 方式1：直接设置 Run 的 FontWeight
+Run boldRun = new Run("这是加粗文本");
+boldRun.FontWeight = FontWeights.Bold;
+
+// 方式2：使用 TextRange 设置选中文本的格式
+TextRange textRange = new TextRange(richTextBox.Selection.Start, richTextBox.Selection.End);
+textRange.ApplyPropertyValue(TextElement.FontWeightProperty, FontWeights.Bold);
+
+
+
+
 新建 System\Windows\Documents\TextCharacterProperty.cs
 	# ai 生成的代码，可能需要修改
 using System.Windows;
@@ -12268,6 +12287,12 @@ using (selection.DeclareChangeBlock())
 }
 
 }
+
+
+严重性	代码	说明	项目	文件	行	禁止显示状态	详细信息
+错误(活动)		TypesMustExist : Type 'System.Windows.Documents.TextCharacterProperty' does not exist in the implementation but it does exist in the contract.	PresentationFramework	C:\Users\Administrator\wpf\eng\WpfArcadeSdk\tools\ApiCompat.targets	226		
+	# 出错了
+
 
 ```
 
