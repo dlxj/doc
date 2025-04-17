@@ -12023,6 +12023,28 @@ namespace RichTextBoxEditor
 
 
 
+
+
+#### 加粗
+
+```
+
+参照它实现自已的自定义属性
+
+wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\TextEditorCharacters.cs 
+	line 179
+
+OnToggleBold(object target, ExecutedRoutedEventArgs args)
+
+
+
+
+```
+
+
+
+
+
 #### 切换项目符号
 
 https://www.cnblogs.com/tianqing/p/13197382.html
