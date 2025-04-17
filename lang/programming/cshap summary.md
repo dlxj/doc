@@ -12034,8 +12034,13 @@ namespace RichTextBoxEditor
 wpf\src\Microsoft.DotNet.Wpf\src\PresentationFramework\System\Windows\Documents\TextEditorCharacters.cs 
 	line 179
 
+// 加粗
 OnToggleBold(object target, ExecutedRoutedEventArgs args)
 
+
+// 字号增大
+OnIncreaseFontSize(object target, ExecutedRoutedEventArgs args)
+	# 模仿这个属性可能比较好，因为是数值的
 
 
 
