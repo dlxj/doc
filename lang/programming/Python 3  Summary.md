@@ -517,6 +517,26 @@ pm2 --name "ftspg8085" start "flask run --host 0.0.0.0 --port 8085"
 
 
 
+### conda for windows
+
+```
+加入坏境变量
+C:\Users\i\miniforge3\Scripts
+
+conda init
+
+关掉 ps ，再开
+
+> conda activate faiss
+(faiss) PS C:\Users\i>
+
+
+```
+
+
+
+
+
 ### pip
 
 ```
