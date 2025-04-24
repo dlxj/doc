@@ -28017,6 +28017,8 @@ npm install protobufjs --save --save-prefix=~
 
 https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记录
 
+[faiss 初步学习](https://github.com/coolhok/faiss-learning/blob/master/1-初步学习.md)
+
 - https://github.com/facebookresearch/faiss
 
   - ```
