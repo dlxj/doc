@@ -523,6 +523,9 @@ pm2 --name "ftspg8085" start "flask run --host 0.0.0.0 --port 8085"
 加入坏境变量
 C:\Users\i\miniforge3\Scripts
 
+Miniforge Prompt
+	# 搜这个，打开
+
 conda init
 
 关掉 ps ，再开
