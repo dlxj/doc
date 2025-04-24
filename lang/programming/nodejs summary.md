@@ -28043,6 +28043,8 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
     
     # see huggingface\NLPP_vector_server\faiss_vector.py
     
+    # see huggingface\NLPP_vector_server\embedding.py
+    
     Windows users should use: conda install -c pytorch faiss-cpu==1.10.0
     
     加入坏境变量
@@ -28075,6 +28077,32 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
     
     
     
+    if __name__ == "__main__":
+        embed = bgem3_embeddings(["ここまでやるとはな"])
+        embed2 = bgem3_embeddings(["ここまでやるとはな", "ここまでやるとはな"])
+        # embed3 = rwkv_embedding("ここまでやるとはな")
+    
+        import faiss
+        dim, measure = 1024, faiss.METRIC_L2     #　使用情况：不在乎内存，并且有充裕的时间来构建index
+    param =  'HNSW64' 
+        index = faiss.index_factory(dim, param, measure)  
+        print(index.is_trained)                          # 输出为True，代表需要此索引需要训练以获得最佳效果
+    
+    
+    
+        index.add(embed2)  #添加数据
+        print(index.ntotal)  #index中向量的个数
+    
+        k = 1                          # we want to see 4 nearest neighbors
+        D, I = index.search(embed, k) # sanity check
+        print(I)
+        print(D)
+    
+    
+        # I = [[0]]  # 表示最相似的向量在索引中的位置是 0 ，索引确实是从 0 开始的
+        # D = [[0.1234]]  # 表示与最相似向量的距离是 0.1234
+    
+    
     fss.py
     # see https://zhuanlan.zhihu.com/p/357414033
     import faiss
@@ -28084,7 +28112,7 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
     nb = 100000                      # database size
     nq = 10000                       # nb of queries
     np.random.seed(1234)             # make reproducible
-xb = np.random.random((nb, d)).astype('float32')
+    xb = np.random.random((nb, d)).astype('float32')
     xb[:, 0] += np.arange(nb) / 1000.
     xq = np.random.random((nq, d)).astype('float32')
     xq[:, 0] += np.arange(nq) / 1000.
