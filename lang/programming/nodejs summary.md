@@ -2054,6 +2054,24 @@ int main() {
 
 
 
+## vscode 彻底删除
+
+```
+C:\Users\i\AppData\Local\Programs
+	# 删本体 Microsoft VS Code
+
+%USERPROFILE%\AppData\Roaming\Code\
+%USERPROFILE%\.vscode\
+	# 删配置
+
+
+
+```
+
+
+
+
+
 ## vscode + gradio
 
 
@@ -28022,10 +28040,40 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
 - https://github.com/facebookresearch/faiss
 
   - ```
+    
+    # see huggingface\NLPP_vector_server\faiss_vector.py
+    
+    Windows users should use: conda install -c pytorch faiss-cpu==1.10.0
+    
+    加入坏境变量
+    
+    C:/Users/i/miniforge3/Scripts
+    
+    Miniforge Prompt
+    	# 搜这个，打开
+    
+    conda init
+    
+    
+    关掉 ps ，再开
+    
+    > conda activate faiss
+    (faiss) PS C:/Users/i>
+    
+    conda install -c pytorch faiss-cpu==1.10.0
+    
+    pip install matplotlib==3.10.1
     Windows users should use: conda install -c pytorch faiss-cpu
+    
     
     conda create -n faiss python==3.10 pip
     conda install pytorch/label/nightly::faiss-gpu-cuvs -c pytorch -c nvidia -c rapidsai -c conda-forge
+    
+    
+    conda create -n faiss python==3.10 pip
+    conda install pytorch/label/nightly::faiss-gpu-cuvs -c pytorch -c nvidia -c rapidsai -c conda-forge
+    
+    
     
     fss.py
     # see https://zhuanlan.zhihu.com/p/357414033
@@ -28036,7 +28084,7 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
     nb = 100000                      # database size
     nq = 10000                       # nb of queries
     np.random.seed(1234)             # make reproducible
-    xb = np.random.random((nb, d)).astype('float32')
+xb = np.random.random((nb, d)).astype('float32')
     xb[:, 0] += np.arange(nb) / 1000.
     xq = np.random.random((nq, d)).astype('float32')
     xq[:, 0] += np.arange(nq) / 1000.
@@ -28066,7 +28114,7 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
     conda create --name faiss_1.8.0
     conda activate faiss_1.8.0
     conda install -c pytorch -c nvidia faiss-gpu=1.8.0 pytorch=*=*cuda* pytorch-cuda=11 numpy
-
+    
     ```
     
     
