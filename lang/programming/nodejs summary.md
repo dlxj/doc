@@ -28020,6 +28020,8 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
 - https://github.com/facebookresearch/faiss
 
   - ```
+    Windows users should use: conda install -c pytorch faiss-cpu
+    
     conda create -n faiss python==3.10 pip
     conda install pytorch/label/nightly::faiss-gpu-cuvs -c pytorch -c nvidia -c rapidsai -c conda-forge
     
@@ -28062,9 +28064,9 @@ https://zhuanlan.zhihu.com/p/357414033  **必看** Faiss入门及应用经验记
     conda create --name faiss_1.8.0
     conda activate faiss_1.8.0
     conda install -c pytorch -c nvidia faiss-gpu=1.8.0 pytorch=*=*cuda* pytorch-cuda=11 numpy
-    
-    ```
 
+    ```
+    
     
 
 [hnswlib](https://js.langchain.com/docs/modules/indexes/vector_stores/integrations/hnswlib)
