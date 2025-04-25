@@ -6773,6 +6773,41 @@ print(np.allclose(q, t))
 
 
 
+### 合并多维数组
+
+```
+huggingface\NLPP_vector_server\build_faiss_vector.py
+
+            embeds = []
+
+            # 分批生成向量
+            batch_size = 1000  # 每批添加的向量数量
+            for i in range(0, len(s_jps), batch_size):
+                batch = s_jps[i:i + batch_size]  # 切片获取一批数据
+                es = bgem3_embeddings(batch)
+                if len(embeds) == 0:
+                    embeds = es
+                else:
+                    embeds = np.vstack((embeds, es))
+                print(f"已生成 {i + len(batch)} 个向量 / {len(s_jps)}")
+
+            
+            
+
+            # 分批添加数据
+            batch_size = 100  # 每批添加的向量数量
+            for i in range(0, len(embeds), batch_size):
+                batch = embeds[i:i + batch_size]  # 切片获取一批数据
+                index.add(batch)  # 添加这一批数据
+                print(f"已添加 {i + len(batch)} 个向量 {pth} / {len(pth_dbs)}")
+
+            print(f"向量个数：{index.ntotal}")  #index中向量的个数
+
+
+```
+
+
+
 
 
 ### 维度不同的减法
