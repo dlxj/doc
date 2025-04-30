@@ -16708,6 +16708,29 @@ sdf.sum()
 
 ## 分组但是不统计
 
+
+
+```
+# huggingface/vector_search/app.py
+	grouped = df.groupby('tar_name')
+    chunks = [group for _, group in grouped]
+
+    # 查看形成的 chunks
+    for chunk in chunks:
+        # chunk.set_index('original_index', inplace=True)
+        # chunk.to_csv(path_or_buf=db_all_translate_tsv, sep='\t', header=True, index=False)
+        # print(chunk)
+        # print('-' * 20)
+
+        # 每5行分成一组
+        grouped2 = chunk.groupby(chunk.index // 5)
+        chks = [group for _, group in grouped2]
+```
+
+
+
+
+
 ```
         grouped = df.groupby('tar_name')
 
