@@ -2125,6 +2125,23 @@ for data in data_loader:
 ### read tar
 
 ```python
+# see huggingface/vector_search/app.py
+                pth_tar = os.path.join("/mnt/y/ai/reazonspeech_Dataset", tarname)
+                pth_audio = f'{r[2]}/{audioname}'
+                if os.path.exists(pth_tar):
+                    with tarfile.open(pth_tar, 'r') as tar:
+                        try:
+                            file_obj = tar.extractfile(pth_audio)
+                            audio = file_obj.read() # .decode('utf-8')
+                            row.append( audioname )
+                            row.append( audio )
+                            # with open(audioname, "wb") as f:
+                            #     f.write(audio)
+                            pass
+                        except Exception:
+                            print("##### Waring: tar audio read fail!!!")
+
+
 import tarfile
 
 # 打开 tar 文件（无需解压）

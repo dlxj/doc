@@ -33832,6 +33832,19 @@ https://github.com/myshell-ai/MeloTTS  支持很多语言 可以变速
 
 https://linux.do/t/topic/127781 tts 汇总
 
+[kotoba-speech](https://github.com/kotoba-tech/kotoba-speech-release)
+
+- ```1
+  git clone https://github.com/kotoba-tech/kotoba-speech-release \
+    && cd kotoba-speech-release \
+    && pip install -U --pre torch torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121 \
+    && pip install -r requirements.txt \
+    && pip install flash-attn==2.5.3 \
+    && pip install -e .
+  ```
+
+  
+
 
 
 
