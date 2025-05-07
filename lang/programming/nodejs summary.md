@@ -33820,6 +33820,20 @@ https://github.com/haotian-liu/LLaVA
 
 https://github.com/SWivid/F5-TTS
 
+- ```
+  https://huggingface.co/Jmica/F5TTS/tree/main/JA_21999120
+  
+  pip install f5-tts
+  
+  f5-tts_infer-cli --model F5TTS_v1_Base \
+  --ref_audio "provide_prompt_wav_path_here.wav" \
+  --ref_text "The content, subtitle or transcription of reference audio." \
+  --gen_text "Some text you want TTS model generate for you."
+  
+  ```
+
+  
+
 - https://huggingface.co/spaces/mrfakename/E2-F5-TTS 在线使用
 
 https://github.com/fishaudio/fish-speech
@@ -33827,6 +33841,13 @@ https://github.com/fishaudio/fish-speech
 - https://github.com/fishaudio/fish-speech  **pyqt6 前端**
 
 https://github.com/myshell-ai/MeloTTS  支持很多语言 可以变速
+
+- ```
+  git clone https://github.com/myshell-ai/MeloTTS.git \
+    && cd MeloTTS \
+    && pip install -e . \
+    && python -m unidic download
+  ```
 
 - https://github.com/myshell-ai/OpenVoice  语音克隆
 
@@ -33841,6 +33862,7 @@ https://linux.do/t/topic/127781 tts 汇总
     && pip install -r requirements.txt \
     && pip install flash-attn==2.5.3 \
     && pip install -e .
+    	# 出错
   ```
 
   
