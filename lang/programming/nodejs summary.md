@@ -33823,7 +33823,8 @@ https://github.com/SWivid/F5-TTS
 - ```
   https://huggingface.co/Jmica/F5TTS/tree/main/JA_21999120
   
-  pip install f5-tts
+  conda create -n f5 python==3.10 pip \
+    && pip install f5-tts
   
   f5-tts_infer-cli --model F5TTS_v1_Base \
   --ref_audio "provide_prompt_wav_path_here.wav" \
