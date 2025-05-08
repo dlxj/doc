@@ -33881,6 +33881,8 @@ https://github.com/myshell-ai/MeloTTS  支持很多语言 可以变速
       && cd OpenVoice \
       && proxychains4 pip install -e .
     
+    wget https://myshell-public-repo-host.s3.amazonaws.com/openvoice/checkpoints_1226.zip
+    unzip checkpoints_1226.zip
     
     see https://github.com/myshell-ai/OpenVoice/blob/main/demo_part3.ipynb
     
@@ -33973,7 +33975,7 @@ https://linux.do/t/topic/127781 tts 汇总
 
   
 
-
+[GPT-SoVITS 整合包](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e/dkxgpiy9zb96hob4#nVNhX)
 
 
 
