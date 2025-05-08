@@ -33885,6 +33885,12 @@ https://github.com/myshell-ai/MeloTTS  支持很多语言 可以变速
     see https://github.com/myshell-ai/OpenVoice/blob/main/demo_part3.ipynb
     
     
+    
+    OpenVoice/o.py
+    #import nltk
+    #nltk.download('averaged_perceptron_tagger_eng')
+    	# 第一次运行取消注释 proxych python o.py，会下载到 /root/xxx
+    	# 第二次运行注释这两行，开全局代理 python o.py
     import os
     import torch
     from openvoice import se_extractor
@@ -33942,6 +33948,10 @@ https://github.com/myshell-ai/MeloTTS  支持很多语言 可以变速
                 tgt_se=target_se, 
                 output_path=save_path,
                 message=encode_message)
+    
+    
+    ls outputs_v2/
+    	# 成功生成音频
     
     ```
 
