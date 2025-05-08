@@ -33988,6 +33988,8 @@ https://github.com/RVC-Boss/GPT-SoVITS
     && bash install.sh --source HF-Mirror --download-uvr5
     
    
+   .\runtime\python.exe -I api.py -d cuda -s "SoVITS_weights_v4/xxxx_e5_s745_l32.pth" -g "GPT_weights_v4/xxxx-e15.ckpt" -dr "G:\AI\GPT-SoVITS-v4-20250422fix\output\1.wav" -dt "xxxx请输入文字xxxxxx" -dl zh
+   
   ```
 
   
