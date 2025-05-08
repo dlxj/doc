@@ -33877,6 +33877,11 @@ https://github.com/myshell-ai/MeloTTS  支持很多语言 可以变速
     
     proxychains4 python -m unidic download
     
+    git clone https://github.com/Alienpups/OpenVoice \
+      && cd OpenVoice \
+      && proxychains4 pip install -e .
+    
+    
     see https://github.com/myshell-ai/OpenVoice/blob/main/demo_part3.ipynb
     
     
