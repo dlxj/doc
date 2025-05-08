@@ -33977,6 +33977,21 @@ https://linux.do/t/topic/127781 tts 汇总
 
 [GPT-SoVITS 整合包](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e/dkxgpiy9zb96hob4#nVNhX)
 
+https://github.com/RVC-Boss/GPT-SoVITS
+
+- ```
+  conda create -n GPTSoVits python=3.9 \
+    && conda activate GPTSoVits
+    
+  git clone https://github.com/RVC-Boss/GPT-SoVITS \
+    && cd GPT-SoVITS \
+    && bash install.sh --source HF-Mirror --download-uvr5
+    
+   
+  ```
+
+  
+
 
 
 ## RWKV speech
