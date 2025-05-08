@@ -33826,15 +33826,26 @@ https://github.com/SWivid/F5-TTS
   conda create -n f5 python==3.10 pip \
     && pip install f5-tts
   
+  /root/miniforge3/envs/f5/lib/python3.10/site-packages
+  
+  whereis f5-tts_infer-cli
+  	--> /root/miniforge3/envs/f5/bin/f5-tts_infer-cli
+  
+  f5-tts_infer-cli --model F5TTS_v1_Base
+	# 会自动从抱抱脸下载模型
+  	# tests/infer_cli_basic.wav
+		# 成功生成音频 (以默认参数)
+  
+  
   f5-tts_infer-cli --model F5TTS_v1_Base \
   --ref_audio "provide_prompt_wav_path_here.wav" \
   --ref_text "The content, subtitle or transcription of reference audio." \
   --gen_text "Some text you want TTS model generate for you."
   
   ```
-
   
-
+  
+  
 - https://huggingface.co/spaces/mrfakename/E2-F5-TTS 在线使用
 
 https://github.com/fishaudio/fish-speech
