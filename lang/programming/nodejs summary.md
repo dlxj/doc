@@ -38654,6 +38654,15 @@ winget search Microsoft.PowerShell
 
 winget install --id Microsoft.PowerShell --version 7.5.1.0 --source winget
 
+ Test-Path "C:\Program Files\PowerShell\7\pwsh.exe"
+ 	# 装到这里了
+ 	
+ > & "C:\Program Files\PowerShell\7\pwsh.exe"
+	--> PowerShell 7.5.1
+		# 成功运行新版 ps
+		# 但是默认打开的还是旧版 ps
+		
+
 ```
 
 
