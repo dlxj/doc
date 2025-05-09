@@ -38634,6 +38634,27 @@ dnf install -y golang
 
   
 
+
+
+### Hugo blog
+
+[Hugo 本地一步建站 - MathAgape](https://mathagape.com/posts/hugo-start/)
+
+```
+
+win11 + PowerShell 7
+
+$PSVersionTable.PSVersion
+	# ps 版本默认是5
+	
+
+
+```
+
+
+
+
+
 ### go-chatgpt + tview UI 必看
 
 [gpt反代](https://www.v2ex.com/t/947707)
