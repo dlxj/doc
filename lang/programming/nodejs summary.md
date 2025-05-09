@@ -38684,11 +38684,19 @@ Mainroad 主题选这个
     hugo new site blog
     cd  blog
     git init
-    git submodule add https://github.com/vimux/mainroad.git themes/mainroad
+    git submodule add https://github.com/MathAgape/Mainroad.git
+    	# https://github.com/vimux/mainroad.git themes/mainroad
     echo "theme = 'mainroad'" >> hugo.toml
     hugo server
     	# http://localhost:1313/
 
+
+	blog\.gitmodules
+        [submodule "themes/mainroad"]
+        path = themes/mainroad
+        url = https://github.com/MathAgape/Mainroad.git
+	git submodule update --remote -- themes/mainroad
+		# 这样更新主题
 
     hugo new content content/posts/my-first-post.md
         # 新建文章
