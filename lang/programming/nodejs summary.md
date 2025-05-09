@@ -38640,6 +38640,8 @@ dnf install -y golang
 
 [Hugo 本地一步建站 - MathAgape](https://mathagape.com/posts/hugo-start/)
 
+- [MathAgape/blog](https://github.com/MathAgape/blog)
+
 ```
 
 win11 + PowerShell 7
@@ -38647,7 +38649,10 @@ win11 + PowerShell 7
 $PSVersionTable.PSVersion
 	# ps 版本默认是5
 	
+winget search Microsoft.PowerShell
+	--> 7.5.1.0
 
+winget install --id Microsoft.PowerShell --version 7.5.1.0 --source winget
 
 ```
 
