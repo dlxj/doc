@@ -33980,6 +33980,10 @@ https://linux.do/t/topic/127781 tts 汇总
 https://github.com/RVC-Boss/GPT-SoVITS
 
 - ```
+  
+  # 运行方法看这里：/root/t/GPT-SoVITS/GPT_SoVITS/inference_webui.py
+  # 所有权重在整合包
+  
   conda create -n GPTSoVits python=3.9 \
     && conda activate GPTSoVits
     
@@ -33987,11 +33991,11 @@ https://github.com/RVC-Boss/GPT-SoVITS
     && cd GPT-SoVITS \
     && bash install.sh --source HF-Mirror --download-uvr5
     
-   
+ 
    .\runtime\python.exe -I api.py -d cuda -s "SoVITS_weights_v4/xxxx_e5_s745_l32.pth" -g "GPT_weights_v4/xxxx-e15.ckpt" -dr "G:\AI\GPT-SoVITS-v4-20250422fix\output\1.wav" -dt "xxxx请输入文字xxxxxx" -dl zh
    
   ```
-
+  
   
 
 
