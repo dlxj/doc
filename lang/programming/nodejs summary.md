@@ -33957,7 +33957,7 @@ https://github.com/myshell-ai/MeloTTS  支持很多语言 可以变速
     
     ```
 
-  - 
+  - [lilac](https://github.com/kdrkdrkdr/lilac) 实时语音转换
 
 https://linux.do/t/topic/127781 tts 汇总
 
