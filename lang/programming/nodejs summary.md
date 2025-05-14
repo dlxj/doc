@@ -21414,6 +21414,7 @@ ESLint
 空目录下运行
 
 npm init vite@latest . -- --template vue
+	# 这样建的是 vue3 !!!
 
 npm i
 
