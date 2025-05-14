@@ -21411,6 +21411,53 @@ ESLint
 	# es 设置，checkbox 全钩上
 	# vscode 装这两插件
 
+see project\xxyweb_v2\vue.config.js
+	# ocr 前端是可以单步调试的，前掉是 vue 代码先加 debugger; 断下后才进 vscode 。
+	# vscode 直接下断点是不行的（之前又可以，不知道为什么）
+
+vue.config.js
+var titme = Date.now();
+var d = {
+    //可在浏览器中调试 说明： https://cn.vuejs.org/v2/cookbook/debugging-in-vscode.html
+    configureWebpack: {
+        devtool: 'source-map',
+        output: { // 输出重构  打包编译后的 文件名称  【模块名称.版本号.时间戳】
+            filename: `js/[name].${titme}.js`,
+            chunkFilename: `js/[name].${titme}.js`
+        },
+    },
+    // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
+    productionSourceMap: false,
+    // // 设置生成的 HTML 中 <link rel="stylesheet"> 和 <script> 标签的 crossorigin 属性（注：仅影响构建时注入的标签）
+    publicPath: './', // 设置打包文件相对路径
+    // 输出文件目录
+    outputDir: "webv2",
+}
+console.log(`${process.env.NODE_ENV}`)
+if (process.env.NODE_ENV.match(/build/g)) {
+    delete d.configureWebpack.devtool
+    d.productionSourceMap = false;
+}
+module.exports = d
+
+
+
+src\pages\aiInput\testEdit.vue
+    btn.addEventListener("click", async function (evt) {debugger;
+        # 加个 debugger ，前端断下来后，vscode 就会命中断点，就可以单步调试了
+
+
+
+
+
+
+
+
+
+
+
+
+
 空目录下运行
 
 npm init vite@latest . -- --template vue
