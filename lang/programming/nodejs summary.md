@@ -21406,6 +21406,11 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
 
 ```
 
+JavaScript Debugger
+ESLint
+	# es 设置，checkbox 全钩上
+	# vscode 装这两插件
+
 空目录下运行
 
 npm init vite@latest . -- --template vue
