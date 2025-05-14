@@ -21454,6 +21454,17 @@ main.js 下断点，F5 运行成功断下
 
 
 
+```
+
+src\pages\aiInput\testEdit.vue
+
+charClickEvent
+	# 点字出图
+
+```
+
+
+
 
 
 # vue3
