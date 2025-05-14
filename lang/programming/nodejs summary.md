@@ -21400,6 +21400,56 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
 
 
 
+# vue2
+
+
+
+```
+
+空目录下运行
+
+npm init vite@latest . -- --template vue
+
+npm i
+
+npm run dev
+
+vite.config.js
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+export default defineConfig({
+  plugins: [vue()],
+})
+
+.vscode\launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/src/*"
+      }
+    }
+  ]
+}
+
+main.js 下断点，F5 运行成功断下
+
+
+
+```
+
+
+
+
+
 # vue3
 
 [vscode直接通过打断点方式调试vite项目](https://juejin.cn/post/7281554762942988307)
