@@ -233,11 +233,15 @@ ctrl + shift + X
 
 ```
 node --inspect=0.0.0.0:9229 server.js
+	# 成功以调试模式启动
 
 chrome://inspect
 	
 Devices -> Discover network targets
 	192.168.1.124:9229
+
+配好以后会显示 Remote Target，点 inspect 会显示服务器上的源码
+
 
 
 
