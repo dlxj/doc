@@ -227,6 +227,24 @@ ctrl + shift + X
 
 
 
+## vscode 在线调试
+
+
+
+```
+node --inspect=0.0.0.0:9229 server.js
+
+chrome://inspect
+	
+Devices -> Discover network targets
+	192.168.1.124:9229
+
+
+
+```
+
+
+
 
 
 ## vscode 附加参数
