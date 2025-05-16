@@ -41155,6 +41155,15 @@ typedef struct EitherInt {
 
 https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
 
+- ```
+   E:\t\ColorTextEditorDemo\imgui_impl_win32.cpp
+   
+   ImGui::GetMainViewport()->PlatformHandle = hwnd; 
+   	# 原 api 已过时
+  ```
+
+- https://github.com/dfranx/ImGuiColorTextEdit 好像它**能显示中文**
+
 https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus)
