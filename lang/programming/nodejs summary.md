@@ -41134,6 +41134,8 @@ typedef struct EitherInt {
 
 ## C++ Monads
 
+https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
+
 https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus)
