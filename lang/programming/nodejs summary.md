@@ -5474,6 +5474,21 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
 
 
+### 子模块
+
+```
+
+git submodule update --init --recursive
+	# 初始化
+git submodule update --remote
+	# 更新全部
+
+```
+
+
+
+
+
 ### hf-mirror
 
 https://hf-cdn.sufy.com/
