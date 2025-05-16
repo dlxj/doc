@@ -39018,6 +39018,8 @@ https://github.com/wa-lang/wabook 支持评论
 
 ## F\# Monads
 
+https://github.com/HexaEngine/Hexa.NET.ImGui   **imgui C#** 好像不错
+
 [category-theory-for-dotnet-programmers](https://github.com/cboudereau/category-theory-for-dotnet-programmers)
 
 https://github.com/clsid2/mpc-hc  potplay 替代播放器
@@ -39067,6 +39069,8 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 
 ### WPF
+
+https://github.com/HexaEngine/Hexa.NET.ImGui   **imgui C#** 好像不错
 
 https://github.com/SuRGeoNix/Flyleaf wpf 播放器 
 
