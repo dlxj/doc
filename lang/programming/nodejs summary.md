@@ -38872,6 +38872,22 @@ https://dlxj.github.io/blog
 
 
 
+#### serv00
+
+https://gohugo.io/installation/bsd/
+
+```
+
+pkg install gohugo
+	# ./mrchroot chroot /bin/sh
+		# 先切到伪 root
+
+
+
+```
+
+
+
 
 
 ### go-chatgpt + tview UI 必看
