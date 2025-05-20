@@ -41805,6 +41805,39 @@ https://github.com/peng-zhihui/Dummy-Robot
 
 
 
+## Lua Monads
+
+```
+
+LuaHelper
+	# vs 装扩展
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "LuaHelper-Debug",
+            "request": "launch",
+            "name": "LuaHelper-DebugFile",
+            "description": "独立文件调试模式",
+            "luaPath": "D:/usr/lua-5.4.2/lua54.exe",
+            "packagePath": [],
+            "luaFileExtension": "",
+            "connectionPort": 8818,
+            "stopOnEntry": true,
+            "useCHook": true
+        }
+    ]
+}
+
+
+
+```
+
+
+
+
+
 
 
 ## MMSEG 分词算法
