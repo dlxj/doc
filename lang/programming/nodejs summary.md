@@ -41173,6 +41173,8 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
 
 - https://github.com/abbaye/WpfHexEditorControl  十六进制编辑器
 
+- https://github.com/petterh/textedit **win32 api 编辑器**
+
 - https://github.com/hoffstadt/DearPyGui  imgui python **必看**
 
 - https://zhuanlan.zhihu.com/p/538090524  imgui 显示图片 **必看**
