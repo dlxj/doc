@@ -41179,6 +41179,8 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
 
 - https://zhuanlan.zhihu.com/p/538090524  imgui 显示图片 **必看**
 
+- https://github.com/mekhontsev/imgui_md  imgui markdown
+
 - ```
    E:\t\ColorTextEditorDemo\imgui_impl_win32.cpp
    
