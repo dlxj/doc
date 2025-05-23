@@ -41181,6 +41181,8 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
 
 - https://github.com/mekhontsev/imgui_md  imgui markdown
 
+- https://github.com/kuravih/imgui_canvas     imgui canvas  **窗体溶合**
+
 - ```
    E:\t\ColorTextEditorDemo\imgui_impl_win32.cpp
    
