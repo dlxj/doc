@@ -41171,6 +41171,8 @@ typedef struct EitherInt {
 
 https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
 
+- https://github.com/JerryYan97/ImGUIExplore  左右**双栏布局**
+
 - https://github.com/abbaye/WpfHexEditorControl  十六进制编辑器
 
 - https://github.com/petterh/textedit **win32 api 编辑器**
