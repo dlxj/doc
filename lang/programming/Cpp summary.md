@@ -672,6 +672,40 @@ inline void write(std::string str)
 
 
 
+# path
+
+```
+
+see huggingface\imrad\src\imrad.cpp
+
+fs::path u8path(std::string_view s)
+{
+#if __cplusplus >= 202002L
+    return fs::path((const char8_t*)s.data(), (const char8_t*)s.data() + s.size());
+#else
+    return fs::u8path(s);
+#endif
+}
+
+std::string u8string(const fs::path& p)
+{
+#if __cplusplus >= 202002L
+    return std::string((const char*)p.u8string().data());
+#else
+    return p.u8string();
+#endif
+}
+
+std::string generic_u8string(const fs::path& p)
+{
+#if __cplusplus >= 202002L
+    return std::string((const char*)p.generic_u8string().data());
+#else
+    return p.generic_u8string();
+#endif
+}
+```
+
 
 
 
