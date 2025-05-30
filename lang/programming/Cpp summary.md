@@ -493,6 +493,26 @@ std::string first_ = converter.to_bytes(first);
 
 
 
+# vector
+
+```
+std::vector<std::pair<std::string, std::string>> styleNames; //name, path
+
+    styleNames = {
+        { "Classic", "" },
+        { "Light", "" },
+        { "Dark", "" }
+    };
+    
+    
+    styleNames.push_back({ u8string(it->path().stem()), u8string(it->path()) });
+
+```
+
+
+
+
+
 # dict
 
 ```
