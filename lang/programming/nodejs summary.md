@@ -41179,6 +41179,12 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
      if (ImGui::IsWindowAppearing()) { // 窗体首次出现
      	# huggingface\imrad\src\ui_explorer.cpp 199
      
+     std::string inputId = "##explorerCwd";
+     if (ImGui::GetFocusID() != ImGui::GetID(inputId.c_str()))
+     	# 窗口名对应唯一的窗口 ID   
+     
+     窗口名称用于区分不同窗口，通过##前缀可创建同名但不同ID的窗口（如"Settings##Audio"和"Settings##Video"）
+     
      ```
 
      
