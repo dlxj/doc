@@ -41175,6 +41175,14 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
 
 - https://github.com/tpecholt/imrad **imgui 设计器 必看**
 
+   - ```
+     if (ImGui::IsWindowAppearing()) { // 窗体首次出现
+     	# huggingface\imrad\src\ui_explorer.cpp 199
+     
+     ```
+
+     
+
 - https://github.com/abbaye/WpfHexEditorControl  十六进制编辑器
 
 - https://github.com/petterh/textedit **win32 api 编辑器**
