@@ -41185,8 +41185,15 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
      
      窗口名称用于区分不同窗口，通过##前缀可创建同名但不同ID的窗口（如"Settings##Audio"和"Settings##Video"）
      
+     中文字体
+   ImFontConfig cfg;
+     cfg.MergeMode = false;
+     strcpy(cfg.Name, "simhei");
+     io.Fonts->AddFontFromFileTTF("c:/windows/fonts/simhei.ttf", 23.0f, &cfg, io.Fonts->GetGlyphRangesChineseFull());
+     
+     
      ```
-
+     
      
 
 - https://github.com/abbaye/WpfHexEditorControl  十六进制编辑器
