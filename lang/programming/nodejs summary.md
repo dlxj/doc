@@ -41185,12 +41185,29 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
      
      窗口名称用于区分不同窗口，通过##前缀可创建同名但不同ID的窗口（如"Settings##Audio"和"Settings##Video"）
      
-     中文字体
+     加载中文字体
    ImFontConfig cfg;
      cfg.MergeMode = false;
      strcpy(cfg.Name, "simhei");
      io.Fonts->AddFontFromFileTTF("c:/windows/fonts/simhei.ttf", 23.0f, &cfg, io.Fonts->GetGlyphRangesChineseFull());
      
+     
+     切换中文字体
+                 ImFont* font = NULL;
+                 //ImGui::Text("这是左窗口");
+                 ImFontAtlas* atlas = ImGui::GetIO().Fonts;
+                 for (ImFont* ft : atlas->Fonts) {
+                     // font->ConfigData ? font->ConfigData[0].Name : "", font->FontSize, font->Glyphs.Size, font->ConfigDataCount
+                     const char* fontName = ft->ConfigData ? ft->ConfigData[0].Name : "";
+                     if (strcmp(fontName, "simhei") == 0) {
+                         font = ft;
+                         break;
+                     }
+                 }
+                 ImGui::Button("\xef\x8b\xb9" "##ego");  // 默认是图标字体
+                 ImGui::PushFont(font);    // 切换中文字体
+                 editorr.Render("Editor");
+                 ImGui::PopFont();
      
      ```
      
