@@ -591,6 +591,22 @@ int main() {
 
 
 
+# pair
+
+```
+
+拆包 see huggingface\ColorTextEditorV2\src\main.cpp
+
+std::pair<std::filesystem::path, std::filesystem::path>
+
+auto [pth_img, pth_json] = get_img_json_pth(m5);
+
+```
+
+
+
+
+
 # tuple
 
 ```
