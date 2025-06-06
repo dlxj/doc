@@ -41209,6 +41209,24 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
                  editorr.Render("Editor");
                  ImGui::PopFont();
      
+     名字找字体
+     inline ImFont* GetFontByName(std::string_view name)
+     {
+         if (name == "")
+             return ImGui::GetDefaultFont();
+     
+         const auto& io = ImGui::GetIO();
+         for (const auto& cfg : io.Fonts->ConfigData) {
+             if (cfg.MergeMode)
+                 continue;
+             if (name == cfg.Name)
+                 return cfg.DstFont;
+         }
+         return nullptr;
+     }
+     
+     ImGui::PushFont(ImRad::GetFontByName("imrad.explorer"));
+     
      ```
      
      

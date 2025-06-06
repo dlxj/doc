@@ -696,6 +696,16 @@ inline void write(std::string str)
 
 ```
 
+see huggingface\ColorTextEditorV2\src\main.cpp
+
+        std::filesystem::path exePath = std::filesystem::current_path(); // 注意：这是工作目录
+
+        auto pth_img = exePath.parent_path().parent_path() / std::filesystem::path("data/img") / std::format("{}.txt", m5); // 提取目录部分
+        pth_img = pth_img.lexically_normal();
+        
+
+
+
 see huggingface\imrad\src\imrad.cpp
 
 fs::path u8path(std::string_view s)
