@@ -1652,6 +1652,10 @@ if (m5 && *m5) {
 				auto b64_buf = base64_decode(b64_str);
 
 				auto img_orgin = cv::imdecode(b64_buf, -1);
+				
+				cv::cvtColor(img_orgin, img_orgin, cv::COLOR_GRAY2BGR);
+
+				cv::rectangle(img_orgin, cv::Point(gh.x, gh.y), cv::Point(gh.x + gh.w, gh.y + gh.h), cv::Scalar(0, 0, 255), 2);
 
 				//cv::Mat srcImage, dstImage, binaryImage;
 				//auto pth = std::string("E:\\huggingface\\ColorTextEditorV2\\data\\0003.jpg");
