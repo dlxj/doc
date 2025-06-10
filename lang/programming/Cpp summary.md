@@ -768,6 +768,26 @@ vcpkg install nlohmann-json
 
 
 
+```
+
+see huggingface\ColorTextEditorV2\src\main.cpp
+
+#include "nlohmann_json/json.hpp"
+using json = nlohmann::json;
+
+		std::ifstream f(pth_json);
+        if (!f.is_open()) {
+            return 1;
+        }
+        json jsn = json::parse(f);
+        
+        
+```
+
+
+
+
+
 ## string 比较的坑
 
 
