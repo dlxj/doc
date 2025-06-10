@@ -1562,3 +1562,89 @@ int main()
 
 
 
+## 解码图片
+
+```
+
+see huggingface\ColorTextEditorV2\src\main.cpp
+
+see huggingface\ColorTextEditorV2\src\ImGuiColorTextEdit\TextEditor.cpp
+	# void TextEditor::HandleMouseInputs()
+
+std::pair<std::filesystem::path, std::filesystem::path> get_img_json_pth(const std::string& m5) {
+#ifdef _DEBUG
+    // 这是工作目录
+    auto pth_img = g_currPath.parent_path().parent_path() / std::filesystem::path("data/img") / std::format("{}.txt", m5);
+    auto pth_json = g_currPath.parent_path().parent_path() / std::filesystem::path("data/json") / std::format("{}.json", m5);
+#else
+    // 这是可执行文件所在目录
+    auto pth_img = g_currPath / std::filesystem::path("data/img") / std::format("{}.txt", m5);
+    auto pth_json = g_currPath / std::filesystem::path("data/json") / std::format("{}.json", m5);
+#endif // DEBUG
+
+    pth_img = pth_img.lexically_normal();
+    pth_json = pth_json.lexically_normal();
+
+    std::pair<std::filesystem::path, std::filesystem::path> pth_pair{ pth_img, pth_json };
+
+	return pth_pair;
+}
+
+
+std::vector<unsigned char> base64_decode(const std::string& input) {
+    
+    const std::string BASE64_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+
+    std::vector<int> decode_table(256, -1);
+    for (int i = 0; i < 64; i++)
+        decode_table[BASE64_CHARS[i]] = i; // 构建解码表[6,8](@ref)
+
+    std::vector<unsigned char> decoded;
+    int val = 0, bits = -8; // val:24位缓冲区, bits:当前有效位数
+    for (unsigned char c : input) {
+        if (c == '=') break;               // 遇填充符终止
+        if (decode_table[c] == -1) continue; // 跳过非法字符
+
+        val = (val << 6) + decode_table[c]; // 合并6位数据[6](@ref)
+        bits += 6;
+        if (bits >= 0) {                   // 每凑够8位输出1字节
+            decoded.push_back((val >> bits) & 0xFF);
+            bits -= 8;
+        }
+    }
+    return decoded;
+}
+
+std::string readFileToString(const std::string& filePath) {
+    std::ifstream file(filePath, std::ios::binary);
+    if (!file) return "";
+    std::ostringstream buffer;
+    buffer << file.rdbuf(); // 将文件流缓冲区内容写入字符串流
+    return buffer.str();
+}
+
+
+const char* m5 = gh.mImageMD5;
+if (m5 && *m5) {
+				auto [pth_img, pth_json] = get_img_json_pth(std::string(m5));
+
+				auto b64_str = readFileToString(pth_img.string());
+				auto b64_buf = base64_decode(b64_str);
+
+				auto img_orgin = cv::imdecode(b64_buf, -1);
+
+				//cv::Mat srcImage, dstImage, binaryImage;
+				//auto pth = std::string("E:\\huggingface\\ColorTextEditorV2\\data\\0003.jpg");
+				//srcImage = cv::imread(pth, 0);
+				//cv::InputArray src(srcImage);
+				//auto tag = std::string("原图");
+				//const std::string window_name = "OpenCV Based Annotation Tool";
+				cv::imshow("原图", img_orgin);
+
+				cv::waitKey(0);
+}
+
+```
+
+
+
