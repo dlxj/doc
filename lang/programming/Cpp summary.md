@@ -511,6 +511,25 @@ std::vector<std::pair<std::string, std::string>> styleNames; //name, path
 
 
 
+## 转指针
+
+```
+
+see huggingface\ColorTextEditorV2\src\ImGuiColorTextEdit\TextEditor.cpp
+
+std::vector<uchar> buf;
+std::vector<int> params;
+params.push_back(cv::IMWRITE_JPEG_QUALITY);
+params.push_back(90); // JPEG质量设为90%
+
+bool success = cv::imencode(".jpg", cut, buf, params);
+
+const unsigned char* imagedata = reinterpret_cast<const unsigned char*>(buf.data());
+
+```
+
+
+
 
 
 # dict
