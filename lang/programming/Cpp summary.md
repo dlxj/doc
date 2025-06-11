@@ -1691,3 +1691,116 @@ if (m5 && *m5) {
 
 
 
+## a
+
+```
+
+
+// 函数：从 cv::Mat 创建 DX11 纹理
+HRESULT LoadTextureFromMemoryDX11(
+    ID3D11Device* device,
+    const cv::Mat& image,
+    ID3D11ShaderResourceView** outSRV
+) {
+    // 1. 检查输入有效性
+    if (image.empty() || !device || !outSRV)
+        return E_INVALIDARG;
+
+    // 2. 转换图像格式为 DXGI 兼容格式（关键！）
+    cv::Mat convertedImage;
+    switch (image.channels()) {
+    case 1: // 单通道灰度图 → 扩展为 RGBA
+        cv::cvtColor(image, convertedImage, cv::COLOR_GRAY2RGBA);
+        break;
+    case 3: // 三通道BGR → 转换为 RGBA
+        cv::cvtColor(image, convertedImage, cv::COLOR_BGR2RGBA);
+        break;
+    case 4: // 四通道直接使用（需确认OpenCV为BGRA）
+        convertedImage = image.clone();
+        break;
+    default:
+        return E_FAIL;
+    }
+
+    // 3. 配置纹理描述符
+    D3D11_TEXTURE2D_DESC desc;
+    ZeroMemory(&desc, sizeof(desc));
+    desc.Width = convertedImage.cols;
+    desc.Height = convertedImage.rows;
+    desc.MipLevels = 1;
+    desc.ArraySize = 1;
+    desc.Format = DXGI_FORMAT_R8G8B8A8_UNORM; // RGBA 8位/通道
+    desc.SampleDesc.Count = 1;
+    desc.Usage = D3D11_USAGE_DEFAULT;
+    desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
+    desc.CPUAccessFlags = 0;
+
+    // 4. 填充纹理初始化数据
+    D3D11_SUBRESOURCE_DATA initData;
+    ZeroMemory(&initData, sizeof(initData));
+    initData.pSysMem = convertedImage.data;
+    initData.SysMemPitch = convertedImage.cols * 4; // 每行字节数 = 宽×4通道
+    initData.SysMemSlicePitch = 0;
+
+    // 5. 创建纹理资源
+    ID3D11Texture2D* texture = nullptr;
+    HRESULT hr = device->CreateTexture2D(&desc, &initData, &texture);
+    if (FAILED(hr)) return hr;
+
+    // 6. 创建着色器资源视图（SRV）
+    D3D11_SHADER_RESOURCE_VIEW_DESC srvDesc;
+    ZeroMemory(&srvDesc, sizeof(srvDesc));
+    srvDesc.Format = desc.Format;
+    srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
+    srvDesc.Texture2D.MipLevels = 1;
+    hr = device->CreateShaderResourceView(texture, &srvDesc, outSRV);
+
+    // 7. 释放临时资源
+    texture->Release();
+    return hr;
+}
+
+    cv::Mat srcImage = cv::imread("data/er.jpeg", cv::IMREAD_COLOR_BGR);
+	
+    // 将OpenCV图像转换为纹理
+	ID3D11ShaderResourceView* outSRV = nullptr;
+    HRESULT hr = LoadTextureFromMemoryDX11(g_pd3dDevice, srcImage, &outSRV);
+
+    ImTextureID cv_texture_id = (ImTextureID)(intptr_t)outSRV;
+
+    int cv_width = srcImage.cols;
+    int cv_height = srcImage.rows;
+    
+    
+    
+
+// Open and read a file, then forward to LoadTextureFromMemory()
+ImTextureID LoadTextureFromFile(const char* file_name, ID3D11Device* device, int* out_width, int* out_height)
+{
+    FILE* f = fopen(file_name, "rb");
+    if (f == NULL)
+        return 0;
+    fseek(f, 0, SEEK_END);
+    size_t file_size = (size_t)ftell(f);
+    if (file_size == -1)
+        return 0;
+    fseek(f, 0, SEEK_SET);
+    void* file_data = IM_ALLOC(file_size);
+    fread(file_data, 1, file_size, f);
+    fclose(f);
+    ImTextureID texture_id = LoadTextureFromMemoryDX11(file_data, file_size, device, out_width, out_height);
+    IM_FREE(file_data);
+    return texture_id;
+}
+
+
+
+
+```
+
+
+
+
+
+
+
