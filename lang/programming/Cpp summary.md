@@ -1832,6 +1832,11 @@ glGenTextures(1, &image_texture);
 tex2.id = (ImTextureID)(intptr_t)image_texture;
 glBindTexture(GL_TEXTURE_2D, image_texture);
 
+int minFilter = GL_LINEAR;
+int magFilter = GL_LINEAR;
+int wrapS = GL_CLAMP_TO_EDGE; // This is required on WebGL for non power-of-two textures
+int wrapT = GL_CLAMP_TO_EDGE; // Same
+
 // Setup filtering parameters for display
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minFilter);
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magFilter);
