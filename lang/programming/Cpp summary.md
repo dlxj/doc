@@ -1801,7 +1801,53 @@ ImTextureID LoadTextureFromFile(const char* file_name, ID3D11Device* device, int
 
 
 
+## OpenGL 纹理
 
+
+
+```
+cv::Mat srcImage = cv::imread("E:\\er.jpeg", cv::IMREAD_COLOR_BGR);
+
+cv::Mat convertedImage;
+switch (srcImage.channels()) {
+case 1: // 单通道灰度图 → 扩展为 RGBA
+				cv::cvtColor(srcImage, convertedImage, cv::COLOR_GRAY2RGBA);
+				break;
+case 3: // 三通道BGR → 转换为 RGBA
+				cv::cvtColor(srcImage, convertedImage, cv::COLOR_BGR2RGBA);
+				break;
+case 4: // 四通道直接使用（需确认OpenCV为BGRA）
+				convertedImage = srcImage.clone();
+				break;
+}
+
+ImRad::Texture tex2;
+unsigned char* image_data2 = convertedImage.data;
+tex2.w = convertedImage.cols;
+tex2.h = convertedImage.rows;
+
+// Create a OpenGL texture identifier
+GLuint image_texture;
+glGenTextures(1, &image_texture);
+tex2.id = (ImTextureID)(intptr_t)image_texture;
+glBindTexture(GL_TEXTURE_2D, image_texture);
+
+// Setup filtering parameters for display
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minFilter);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magFilter);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrapS);
+glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrapT);
+
+glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+
+
+glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tex2.w, tex2.h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data2);
+stbi_image_free(image_data2);
+
+
+mRect.size = ImVec2((float)tex2.w, (float)tex2.h);
+mRect.SetTexture(tex2.id);
+```
 
 
 
