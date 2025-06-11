@@ -1806,52 +1806,82 @@ ImTextureID LoadTextureFromFile(const char* file_name, ID3D11Device* device, int
 
 
 ```
-cv::Mat srcImage = cv::imread("E:\\er.jpeg", cv::IMREAD_COLOR_BGR);
 
-cv::Mat convertedImage;
-switch (srcImage.channels()) {
-case 1: // 单通道灰度图 → 扩展为 RGBA
-				cv::cvtColor(srcImage, convertedImage, cv::COLOR_GRAY2RGBA);
-				break;
-case 3: // 三通道BGR → 转换为 RGBA
-				cv::cvtColor(srcImage, convertedImage, cv::COLOR_BGR2RGBA);
-				break;
-case 4: // 四通道直接使用（需确认OpenCV为BGRA）
-				convertedImage = srcImage.clone();
-				break;
-}
+see huggingface\ColorTextEditorV2\src\ImGuiColorTextEdit\TextEditor.cpp
 
-ImRad::Texture tex2;
-unsigned char* image_data2 = convertedImage.data;
-tex2.w = convertedImage.cols;
-tex2.h = convertedImage.rows;
+							if (found) {
+								// 左上 右上 右下 左下
+								int x = line_pos[0]["x"];
+								int y = line_pos[0]["y"];
 
-// Create a OpenGL texture identifier
-GLuint image_texture;
-glGenTextures(1, &image_texture);
-tex2.id = (ImTextureID)(intptr_t)image_texture;
-glBindTexture(GL_TEXTURE_2D, image_texture);
+								int x_min = std::min(line_pos[0]["x"], line_pos[3]["x"]);
+								int x_max = std::max(line_pos[1]["x"], line_pos[2]["x"]);
 
-int minFilter = GL_LINEAR;
-int magFilter = GL_LINEAR;
-int wrapS = GL_CLAMP_TO_EDGE; // This is required on WebGL for non power-of-two textures
-int wrapT = GL_CLAMP_TO_EDGE; // Same
+								int y_min = std::min(line_pos[0]["y"], line_pos[1]["y"]);
+								int y_max = std::max(line_pos[2]["y"], line_pos[3]["y"]);
 
-// Setup filtering parameters for display
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minFilter);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magFilter);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrapS);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrapT);
+								int w = x_max - x_min;
+								int h = y_max - y_min;
+								
+								auto b64_str = readFileToString(pth_img.string());
+								auto b64_buf = base64_decode(b64_str);
 
-glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+								//cv::Mat srcImage = cv::imread("E:\\er.jpeg", cv::IMREAD_COLOR_BGR);
+								auto srcImage = cv::imdecode(b64_buf, -1);
+
+								switch (srcImage.channels()) {
+									case 1: // 单通道灰度图 → 扩展为 RGBA
+										cv::cvtColor(srcImage, srcImage, cv::COLOR_GRAY2RGBA);
+										break;
+									case 3: // 三通道BGR → 转换为 RGBA
+										cv::cvtColor(srcImage, srcImage, cv::COLOR_BGR2RGBA);
+										break;
+									case 4: // 四通道直接使用（需确认OpenCV为BGRA）
+										//convertedImage = srcImage.clone();
+										break;
+								}
+
+								cv::rectangle(srcImage, cv::Point(gh.x, gh.y), cv::Point(gh.x + gh.w, gh.y + gh.h), cv::Scalar(255, 0, 0, 255), 2);
+									// 框出选中字符
+
+								// 剪裁图片
+								cv::Mat cut = srcImage(cv::Rect(x, y, w, h)).clone(); // cv::Rect(0, 0, img_orgin.cols, 500)
+
+								ImRad::Texture tex2;
+								unsigned char* image_data2 = cut.data;
+								tex2.w = cut.cols;
+								tex2.h = cut.rows;
+
+								GLuint image_texture;
+								glGenTextures(1, &image_texture);
+								tex2.id = (ImTextureID)(intptr_t)image_texture;
+								glBindTexture(GL_TEXTURE_2D, image_texture);
 
 
-glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tex2.w, tex2.h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data2);
-stbi_image_free(image_data2);
+								int minFilter = GL_LINEAR;
+								int magFilter = GL_LINEAR;
+								int wrapS = GL_CLAMP_TO_EDGE; // This is required on WebGL for non power-of-two textures
+								int wrapT = GL_CLAMP_TO_EDGE; // Same
 
+								// Setup filtering parameters for display
+								glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minFilter);
+								glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magFilter);
+								glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, wrapS);
+								glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, wrapT);
 
-mRect.size = ImVec2((float)tex2.w, (float)tex2.h);
-mRect.SetTexture(tex2.id);
+								// Upload pixels into texture
+								glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
+
+								glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, tex2.w, tex2.h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data2);
+								//stbi_image_free(image_data2);
+
+								mRect.size = ImVec2((float)tex2.w, (float)tex2.h);
+								mRect.SetTexture(tex2.id);
+
+								//cv::imshow("原图", cut);
+								//cv::waitKey(0);
+
+							}
 ```
 
 
