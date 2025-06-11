@@ -9569,6 +9569,10 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 
 
+https://huggingface.co/spaces/xet-team/lfs-analysis/blob/main/app.py  漂亮图表
+
+
+
 ### 显示GIF 
 
 
