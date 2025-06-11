@@ -1695,6 +1695,7 @@ if (m5 && *m5) {
 
 ```
 
+see huggingface\ColorTextEditor\main.cpp
 
 // 函数：从 cv::Mat 创建 DX11 纹理
 HRESULT LoadTextureFromMemoryDX11(
