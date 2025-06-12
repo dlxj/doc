@@ -22895,6 +22895,8 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 # Godot
 
+https://github.com/nathanhoad/godot_dialogue_manager  对话编辑器
+
 [suyu switch模拟器](https://gitlab.com/suyu-emu/suyu)
 
 
@@ -41255,6 +41257,8 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
   ```
 
 - https://github.com/dfranx/ImGuiColorTextEdit 好像它**能显示中文**
+
+- https://github.com/pthom/hello_imgui  **Top on imgui**
 
 https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
