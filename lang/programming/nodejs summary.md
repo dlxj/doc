@@ -40537,6 +40537,10 @@ https://github.com/Dimillian/IceCubesApp  **去中心化社交网络** Mastodon
 
 https://github.com/pop-os/cosmic-edit  **iced Text Editor**
 
+https://github.com/zed-industries/zed  对标 vscode 的 Editor
+
+- https://github.com/deevus/zed-windows-builds  windows 编译
+
 [Rust语言圣经](https://course.rs/about-book.html)
 
 [RawMangaReader 竖排漫画ocr](https://github.com/SunDoge/RawMangaReader)
