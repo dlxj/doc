@@ -198,6 +198,9 @@ basedir  = /usr/local/mysql
 datadir  = /usr/local/mysql/data
 lc-messages-dir = /usr/local/mysql/share
 innodb_use_native_aio = 0
+max_allowed_packet = 512M
+net_write_timeout = 120
+net_read_timeout = 120
 skip-grant-tables
 
 
