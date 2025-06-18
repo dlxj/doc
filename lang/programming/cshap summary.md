@@ -1,5 +1,24 @@
 
 
+## visual studio 2022
+
+### 复制文件到 bin
+
+```
+
+	<ItemGroup>
+		<Content Include="wco_data\**">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+		</Content>
+	</ItemGroup>
+
+
+
+```
+
+
+
 
 
 ## nuget
@@ -1932,7 +1951,7 @@ dict.OrderByDescending(i => i.Value).ThenBy(i => i.Key)
 
 
 
-​```c#
+```c#
 # SortedDictionary 排序
 dic_orders 输入key 会返回一个int ，作为顺序的定义
 
@@ -1967,7 +1986,7 @@ var qD = from kvp in D
 
 
 
-```C#
+​```C#
 # https://csharpsage.com/sort-dictionary-by-key/
 var fruit = new Dictionary<string, int>
 {
