@@ -1986,7 +1986,7 @@ var qD = from kvp in D
 
 
 
-​```C#
+```C#
 # https://csharpsage.com/sort-dictionary-by-key/
 var fruit = new Dictionary<string, int>
 {
@@ -2002,7 +2002,7 @@ foreach (var item in fruit.OrderByDescending(x => x.Key))
 
 
 
-```C#
+​```C#
 public class KeyComparer<TItem, TKey> : Comparer<TItem>
 {
     private readonly Func<TItem, TKey> extract;
@@ -3863,6 +3863,33 @@ class Sample
 ```
 
 
+
+### byte 转 Mat
+
+```
+
+see huggingface\itrans\src\iTrans\ViewModels\MainViewModel.cs
+
+Mat im_orig = Cv2.ImDecode(imageBytes, ImreadModes.Color);
+
+using Rect = OpenCvSharp.Rect;
+Cv2.Rectangle(im_orig, new Rect(x, y, width, height), new OpenCvSharp.Scalar(0, 0, 255) );
+
+```
+
+
+
+### Mat 转 byte
+
+```
+
+see huggingface\itrans\src\iTrans\ViewModels\MainViewModel.cs
+
+mt.ToBytes()
+                                    Mat mt = new Mat("E:\\huggingface\\ColorTextEditorV2\\data\\0003.jpg", ImreadModes.Color);
+                                    var wechat_ocr_result = await ExecuteAsyncWechatOCR(mt.ToBytes(), CancellationToken.None);
+                                    ;
+```
 
 
 
