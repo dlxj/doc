@@ -427,6 +427,29 @@ vcpkg install nlohmann-json
 
 
 
+# 改 main 参数
+
+```
+
+see huggingface\wechat-ocr\src\main.cpp
+
+int main(int argc, char* argv[])
+{
+	const char* newArgs[] = {
+		argv[0], 
+		"E:/huggingface/wechat-ocr/wechat4/extracted/wxocr.dll", // "C:/Users/i/AppData/Roaming/Tencent/xwechat/XPlugin/Plugins/WeChatOcr/8033/extracted/wxocr.dll", 
+		"E:/huggingface/wechat-ocr/wechat4//Weixin/4.0.5.26",                       // "C:/Program Files/Tencent/Weixin/4.0.5.26", 
+		"E:/huggingface/wechat-ocr/t.jpg"
+	}; 
+
+	argc = 4;
+	argv = (char**)newArgs;
+```
+
+
+
+
+
 # string
 
 [utfcpp](https://github.com/nemtrif/utfcpp)
