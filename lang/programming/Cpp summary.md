@@ -872,6 +872,21 @@ rapidcsv::Document doc("Book1.csv", rapidcsv::LabelParams(-1, -1)); // No Header
 
 
 
+## utf-8
+
+```
+
+see huggingface\wechat-ocr\src\main.cpp
+
+	SetConsoleCP(CP_UTF8);
+    SetConsoleOutputCP(CP_UTF8);
+    setlocale(LC_ALL, "en_US.UTF-8");
+```
+
+
+
+
+
 ## dll
 
 
