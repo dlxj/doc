@@ -6318,6 +6318,12 @@ namespace ConsoleApplication1
 
 # see huggingface\WeChatOcr\sample\ConsoleApp1\main_call_dll.cs
 
+// Todo: 尝试直接调用 dll ，而不是引用项目
+// E:\huggingface\WeChatOcr\src\WeChatOcr\bin\Debug\net8.0-windows\WeChatOcr.dll
+// C:\Users\i\.nuget\packages\google.protobuf\3.29.3
+// C:\Users\i\.nuget\packages\newtonsoft.json\13.0.3
+
+
 using System.Runtime.InteropServices;
 using System.Reflection;
 
@@ -6333,16 +6339,6 @@ Assembly.LoadFrom(newtonsoftPath);
 var assembly = Assembly.LoadFrom(dllPath);
 var imageOcrType = assembly.GetType("WeChatOcr.ImageOcr");
 var singleResultType = assembly.GetType("WeChatOcr.SingleResult");
-
-
-//// 获取 WeChatOcrResult 类型
-//var weChatOcrResultType = assembly.GetType("WeChatOcr.WeChatOcrResult");
-
-//// 创建正确的 Action 泛型类型
-//var actionType = typeof(Action<,>).MakeGenericType(typeof(string), weChatOcrResultType);
-
-//// 使用正确的参数类型获取方法
-//var runMethod = imageOcrType.GetMethod("Run", new Type[] { typeof(byte[]), actionType });
 
 async Task<List<object>?> wcht4_ocr(string pth)
 {
@@ -6441,7 +6437,50 @@ async Task<List<object>?> wcht4_ocr(string pth)
 }
 
 var ret = await wcht4_ocr("E:\\huggingface\\WeChatOcr\\t2.jpg");
+if (ret != null && ret.Count > 0)
+{
+    // 将 ret[0] 转换为 OcrResult 类型
+    var ocrResult = ret[0];
+    // 通过反射获取 SingleResult 属性
+    var singleResultProp = ocrResult.GetType().GetProperty("SingleResult");
+    var singleResults = singleResultProp?.GetValue(ocrResult) as IEnumerable<object>;
+    
+    if (singleResults != null)
+    {
+        string t = "";
+        foreach (var item in singleResults)
+        {
+            // 获取 SingleStrUtf8 和 OneResult 属性值
+            var line = item.GetType().GetProperty("SingleStrUtf8")?.GetValue(item) as string;
+            var Left = item.GetType().GetProperty("Left")?.GetValue(item);
+            var Right = item.GetType().GetProperty("Right")?.GetValue(item);
+            var Bottom = item.GetType().GetProperty("Bottom")?.GetValue(item);
+            var Top = item.GetType().GetProperty("Top")?.GetValue(item);
+
+            t += $"[{Left} {Top} {Right} {Bottom}] {line}\n";
+            
+            var oneResult = item.GetType().GetProperty("OneResult")?.GetValue(item) as IEnumerable<object>;
+            if (oneResult != null)
+            {
+                foreach (var itm in oneResult)
+                {
+                    var word = itm.GetType().GetProperty("SingleStrUtf8")?.GetValue(item) as string;
+                    var Lft = itm.GetType().GetProperty("Left")?.GetValue(itm);
+                    var Rght = itm.GetType().GetProperty("Right")?.GetValue(itm);
+                    var Bttom = itm.GetType().GetProperty("Bottom")?.GetValue(itm);
+                    var Tp = itm.GetType().GetProperty("Top")?.GetValue(itm);
+
+                }
+            }
+            
+        }
+
+        Console.WriteLine(t);
+    }
+}
+
 Console.WriteLine("Hello, World!");
+
 ```
 
 
