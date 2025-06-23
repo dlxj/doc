@@ -2002,7 +2002,7 @@ foreach (var item in fruit.OrderByDescending(x => x.Key))
 
 
 
-​```C#
+```C#
 public class KeyComparer<TItem, TKey> : Comparer<TItem>
 {
     private readonly Func<TItem, TKey> extract;
@@ -2011,13 +2011,13 @@ public class KeyComparer<TItem, TKey> : Comparer<TItem>
     public KeyComparer(Func<TItem, TKey> extract)
         : this(extract, Comparer<TKey>.Default)
     { }
-
+    
     public KeyComparer(Func<TItem, TKey> extract, IComparer<TKey> comparer)
     {
         this.extract = extract;
         this.comparer = comparer;
     }
-
+    
     public override int Compare(TItem x, TItem y)
     {
         // need to handle nulls
@@ -2040,7 +2040,7 @@ SortedDictionary<string, int> sortDict = new SortedDictionary<string, int>(
 
 
 
-```c#
+​```c#
 dic = dic.Where(p => p.Key == 1)
          .ToDictionary(p => p.Key, p => p.Value);
 ```
@@ -6307,6 +6307,252 @@ namespace ConsoleApplication1
 ## 打开chrome
 
 - https://blog.csdn.net/liuhuanping/article/details/118518795
+
+
+
+
+
+# Call dll
+
+```
+
+# see huggingface\WeChatOcr\sample\ConsoleApp1\main_call_dll.cs
+
+using System.Runtime.InteropServices;
+using System.Reflection;
+
+var dllPath = @"E:\huggingface\WeChatOcr\src\WeChatOcr\bin\Debug\net8.0-windows\WeChatOcr.dll";
+var protobufPath = @"E:\lib\Google.Protobuf.dll";
+var newtonsoftPath = @"E:\lib\Newtonsoft.Json.dll";
+
+// 加载依赖 DLL
+Assembly.LoadFrom(protobufPath);
+Assembly.LoadFrom(newtonsoftPath);
+
+// 加载主 DLL
+var assembly = Assembly.LoadFrom(dllPath);
+var imageOcrType = assembly.GetType("WeChatOcr.ImageOcr");
+var singleResultType = assembly.GetType("WeChatOcr.SingleResult");
+
+
+//// 获取 WeChatOcrResult 类型
+//var weChatOcrResultType = assembly.GetType("WeChatOcr.WeChatOcrResult");
+
+//// 创建正确的 Action 泛型类型
+//var actionType = typeof(Action<,>).MakeGenericType(typeof(string), weChatOcrResultType);
+
+//// 使用正确的参数类型获取方法
+//var runMethod = imageOcrType.GetMethod("Run", new Type[] { typeof(byte[]), actionType });
+
+async Task<List<object>?> wcht4_ocr(string pth)
+{
+    byte[] bytes = null;
+
+    using (FileStream stream = new FileStream(pth, FileMode.Open, FileAccess.Read))
+    using (BinaryReader reader = new BinaryReader(new BufferedStream(stream)))
+    {
+        bytes = reader.ReadBytes(Convert.ToInt32(stream.Length));
+    }
+
+    var tcs = new TaskCompletionSource<List<object>?>();
+
+    try
+    {   
+        // 创建 ImageOcr 实例，传入 null 作为默认路径
+        var ocrInstance = Activator.CreateInstance(imageOcrType, new object?[] { null });
+        //var runMethod = imageOcrType.GetMethod("Run");
+
+        // 明确指定要使用的 Run 方法重载
+        //var runMethod = imageOcrType.GetMethod("Run", new Type[] { typeof(byte[]), typeof(Action<string, object>) });
+
+
+        // 获取 WeChatOcrResult 类型
+        var weChatOcrResultType = assembly.GetType("WeChatOcr.WeChatOcrResult");
+
+        // 创建正确的 Action 泛型类型
+        var actionType = typeof(Action<,>).MakeGenericType(typeof(string), weChatOcrResultType);
+
+        // 获取 DisposeAsync 方法
+        var disposeAsyncMethod = imageOcrType.GetMethod("DisposeAsync");
+        // 使用正确的参数类型获取方法
+        var runMethod = imageOcrType.GetMethod("Run", new Type[] { typeof(string), actionType });
+
+        // 创建回调委托
+        var callback = new Action<string, Object>((path, result) =>
+        {
+            //try
+            //{
+            //    if (System.IO.File.Exists(path))
+            //        System.IO.File.Delete(path);
+            //}
+            //catch
+            //{
+            //    // ignore
+            //}
+
+            try
+            {
+                if (result == null) return;
+                
+                // 通过反射获取 OcrResult 和 SingleResult
+                var ocrResultProp = result.GetType().GetProperty("OcrResult");
+                var ocrResult = ocrResultProp?.GetValue(result);
+
+                if (ocrResult == null)
+                {
+                    tcs.SetResult(null);
+                    return;
+                }
+
+                var resultList = new List<object> { ocrResult };
+
+                tcs.SetResult(resultList);
+
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+        });
+
+        // 调用 Run 方法
+        runMethod.Invoke(ocrInstance, new object[] { pth, callback });
+
+        var timeoutTask = Task.Delay(9000);
+        var completedTask = await Task.WhenAny(tcs.Task, timeoutTask);
+
+        if (completedTask == timeoutTask)
+        {
+            tcs.SetCanceled();
+        }
+
+        var finalResult = await tcs.Task;
+
+        // 调用 DisposeAsync 方法
+        await (Task)disposeAsyncMethod.Invoke(ocrInstance, null);
+
+        return finalResult;
+    }
+    catch (Exception ex)
+    {
+        System.Diagnostics.Debug.WriteLine(ex.Message);
+        return null;
+    }
+}
+
+var ret = await wcht4_ocr("E:\\huggingface\\WeChatOcr\\t2.jpg");
+Console.WriteLine("Hello, World!");
+```
+
+
+
+
+
+```
+
+
+// 需要先引用项目
+
+//using SingleResult = WeChatOcr.SingleResult;
+
+
+//async Task<List<SingleResult>?> wcht4_ocr(string pth)
+//{
+//    byte[] bytes = null;
+
+//    using (FileStream stream = new FileStream(pth, FileMode.Open, FileAccess.Read))
+//    using (BinaryReader reader = new BinaryReader(new BufferedStream(stream)))
+//    {
+//        bytes = reader.ReadBytes(Convert.ToInt32(stream.Length));
+//    }
+
+//    TaskCompletionSource<List<SingleResult>?>? _tcs;
+
+//    _tcs = new TaskCompletionSource<List<SingleResult>?>();
+
+//    try
+//    {
+//        //var bytes = ImageUtilities.ConvertBitmap2Bytes(bitmap, ImageFormat.Png);
+//        using var ocr = new WeChatOcr.ImageOcr();
+//        ocr.Run(bytes, (path, result) =>
+//        {
+//            try
+//            {
+//                if (System.IO.File.Exists(path))
+//                    System.IO.File.Delete(path);
+//            }
+//            catch
+//            {
+//                // ignore
+//            }
+
+//            try
+//            {
+//                if (result == null) return;
+//                var list = result?.OcrResult?.SingleResult;
+//                if (list == null)
+//                {
+//                    //避免重复set
+//                    //_tcs.SetResult("WeChatOCR get result is null");
+//                    _tcs.SetResult(null);
+//                    return;
+//                }
+
+//                _tcs.SetResult(list);
+
+
+//                var sb = new System.Text.StringBuilder();
+//                for (var i = 0; i < list?.Count; i++)
+//                {
+//                    if (list[i] is not { } item || string.IsNullOrEmpty(item.SingleStrUtf8))
+//                        continue;
+
+//                    sb.AppendLine(item.SingleStrUtf8);
+//                }
+
+
+
+//                //_tcs.SetResult(sb.ToString());
+//            }
+//            catch (Exception ex)
+//            {
+//                System.Diagnostics.Debug.WriteLine(ex.Message);
+//            }
+//        });
+
+//        var timeoutTask = Task.Delay(3000);
+//        var completedTask = await Task.WhenAny(_tcs.Task, timeoutTask);
+
+//        if (completedTask == timeoutTask)
+//        {
+//            _tcs.SetCanceled();
+//            //throw new TimeoutException("WeChatOCR operation timed out.");
+//        }
+//        // 提取content的值
+//        var finalResult = await _tcs.Task;
+
+//        //ResultTb.Text = finalResult.Result;
+
+//        await ocr.DisposeAsync();
+
+//        return finalResult;
+
+//    }
+//    catch (Exception ex)
+//    {
+//        //ResultTb.Text = ex.Message;
+//        return null; //  ex.Message; 
+//    }
+//}
+
+
+//var ret = await wcht4_ocr("E:\\t\\wchtcr\\t2.jpg");
+
+//Console.WriteLine("Hello, World!");
+
+```
+
+
 
 
 
