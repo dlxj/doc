@@ -6598,7 +6598,12 @@ Console.WriteLine("Hello, World!");
 ## C++/cli
 
 ```
-目标框架 net8.0-windows;net7.0-windows;net6.0-windows;net481;net472
+
+公共语言运行时 .NET 运行时支持(/clr:netcore)
+
+目标框架 .NET 8.0
+	# 普通 C# 项目是这样 net8.0-windows;net7.0-windows;net6.0-windows;net481;net472
+
 
 #include "pch.h"
 
@@ -6611,6 +6616,53 @@ int main(array<System::String ^> ^args)
 
 
 ```
+
+
+
+### 调用 C# dll
+
+```
+using namespace System;
+using namespace System::Reflection;
+
+namespace iocr {
+
+    int fun(array<System::String^>^ args)
+    {
+        // 设置DLL路径
+        String^ dllPath = "E:\\huggingface\\WeChatOcr\\src\\WeChatOcr\\bin\\Debug\\net8.0-windows\\WeChatOcr.dll";
+        String^ protobufPath = "E:\\lib\\Google.Protobuf.dll";
+        String^ newtonsoftPath = "E:\\lib\\Newtonsoft.Json.dll";
+        
+        // 加载依赖DLL
+        Assembly::LoadFrom(protobufPath);
+        Assembly::LoadFrom(newtonsoftPath);
+        
+        // 加载主DLL
+        Assembly^ assembly = Assembly::LoadFrom(dllPath);
+        Type^ imageOcrType = assembly->GetType("WeChatOcr.ImageOcr");
+        Type^ singleResultType = assembly->GetType("WeChatOcr.SingleResult");
+        
+        return 0;
+    }
+
+    // 添加导出声明
+    extern "C" __declspec(dllexport) int fun_native(const char* args)
+    {
+        // 将原生字符串转换为托管字符串
+        String^ managedArgs = gcnew String(args);
+        
+        // 创建托管字符串数组
+        array<String^>^ argsArray = gcnew array<String^>(1);
+        argsArray[0] = managedArgs;
+        
+        // 调用托管函数
+        return fun(argsArray);
+    }
+}
+```
+
+
 
 
 
