@@ -2040,7 +2040,7 @@ SortedDictionary<string, int> sortDict = new SortedDictionary<string, int>(
 
 
 
-​```c#
+```c#
 dic = dic.Where(p => p.Key == 1)
          .ToDictionary(p => p.Key, p => p.Value);
 ```
@@ -2095,7 +2095,7 @@ Dictionary<string, Func<CompareResult>>  dicfuncs
 
                return r;
            });
-           
+
 dicfuncs.Add("xxxx", deletnewTrans);
 ```
 
@@ -2111,7 +2111,7 @@ func 必须有返回值
 
 
 
-```c#
+​```c#
                 Action<JObject, JObject> func = null;
 
                 func = (jobj, jobj_father) =>
@@ -6296,6 +6296,8 @@ namespace ConsoleApplication1
 
 
 
+
+
 ## interop rust 
 
 - https://github.com/lmtr0/rust-chsarp-interop
@@ -6588,6 +6590,25 @@ Console.WriteLine("Hello, World!");
 //var ret = await wcht4_ocr("E:\\t\\wchtcr\\t2.jpg");
 
 //Console.WriteLine("Hello, World!");
+
+```
+
+
+
+## C++/cli
+
+```
+目标框架 net8.0-windows;net7.0-windows;net6.0-windows;net481;net472
+
+#include "pch.h"
+
+using namespace System;
+
+int main(array<System::String ^> ^args)
+{
+    return 0;
+}
+
 
 ```
 
