@@ -6664,6 +6664,49 @@ namespace iocr {
 
 
 
+```
+
+普通 cpp 调用 c++/cli 的 dll
+
+#include <iostream>
+#include <Windows.h>
+
+using namespace iocr;
+
+// 声明函数指针类型
+//typedef int (*FunNativeFunc)(const char*);
+
+int main()
+{
+	//iocr::fun_native("");
+
+    //// 加载 DLL
+    //HMODULE hModule = LoadLibrary(L"E:\\t\\Project2\\x64\\Debug\\clr_dll.dll");
+    //if (!hModule) {
+    //    std::cerr << "无法加载 DLL，错误码: " << GetLastError() << std::endl;
+    //    return 1;
+    //}
+
+    //// 获取函数地址
+    //FunNativeFunc funNative = (FunNativeFunc)GetProcAddress(hModule, "fun_native");
+    //if (!funNative) {
+    //    std::cerr << "无法找到函数，错误码: " << GetLastError() << std::endl;
+    //    FreeLibrary(hModule);
+    //    return 1;
+    //}
+
+    //// 调用函数
+    //int result = funNative("测试参数");
+    //std::cout << "函数返回值: " << result << std::endl;
+
+    //// 释放 DLL
+    //FreeLibrary(hModule);
+    return 0;
+}
+```
+
+
+
 
 
 
