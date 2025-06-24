@@ -6597,6 +6597,14 @@ Console.WriteLine("Hello, World!");
 
 ## C++/cli
 
+
+
+- 不支持编译为可执行文件 ：C++/CLI项目在.NET Core/.NET 5+环境下只能编译为DLL，不能编译为可执行文件（EXE）。
+- 仅支持Windows平台 ：C++/CLI对.NET的支持仅限于Windows系统。
+- 不支持SDK风格的项目文件 ：C++/CLI项目不使用新的SDK风格项目文件格式，而是继续使用.vcxproj格式。
+
+
+
 ```
 
 公共语言运行时 .NET 运行时支持(/clr:netcore)
