@@ -2111,20 +2111,20 @@ func 必须有返回值
 
 
 
-​```c#
+```c#
                 Action<JObject, JObject> func = null;
 
                 func = (jobj, jobj_father) =>
                 {
-
+    
                     string PID = jobj_father["code"].ToString();
-
+    
                     string id = jobj["id"].ToString();
                     string key = jobj["key"].ToString();
                     string cntxt = jobj["context"].ToString();
-
+    
                     List<wordToken> words = new List<wordToken>();
-
+    
                     if (cntxt != "")
                     {
                         string cntxt2 = Util.removeTrivial(cntxt);
@@ -2134,12 +2134,12 @@ func 必须有返回值
 
                     string code = string.Format("{0}/{1}/{2}", appID, bookID, id);
                     jobj.Add("code", code);
-
+    
                     bookItemModel bi = new bookItemModel { AppID = appID, bookID = bookID, id = id, PID = PID, code = code, key = key, context = cntxt, words = words, wordDict = new Dictionary<string, double>(), childs = new Dictionary<string, bookItemModel>() };
 
 
                     string father_code = jobj_father["code"].ToString();
-
+    
                     if (dic_allbooksItems.ContainsKey(father_code))
                     {
                         bookItemModel father = dic_allbooksItems[father_code];
@@ -2147,9 +2147,9 @@ func 必须有返回值
                         {
                             father.childs.Add(bi.code, bi);
                         }
-
+    
                     }
-
+    
                     foreach (var w in words)
                     {
                         // 词频计数
@@ -2161,26 +2161,26 @@ func 必须有返回值
                         {
                             bi.wordDict[w.word]++;
                         }
-
+    
                         // 有这个词的所有书籍段落
                         if (!dict_wordbooks.ContainsKey(w.word))
                         {
                             dict_wordbooks.Add(w.word, new List<bookItemModel>());
                         }
-
+    
                         if (!dict_wordbooks[w.word].Contains(bi))
                         {
                             dict_wordbooks[w.word].Add(bi);
                         }
                     }
-
+    
                     dic_allbooksItems.Add(code, bi);
-
+    
                     foreach (JObject jobj_child in jobj["childs"])
                     {
                         func(jobj_child, jobj); // 递归调用
                     }
-
+    
                 };
 
 
@@ -2226,7 +2226,7 @@ ln -s /root/dotnet/dotnet /usr/bin
 
 
 
-```c#
+​```c#
 1. Server\dangan.Server.csproj 加入
   <ItemGroup>
     <PackageReference Include="Blazored.SessionStorage" Version="2.1.0" />
@@ -6312,6 +6312,37 @@ namespace ConsoleApplication1
 
 
 
+# 单步调试 c++/cli dll 的方法
+
+
+
+```
+
+see E:\huggingface\WeChatOcr\sample\call_clr\call_clr.cpp
+
+// 单步调试 c++/cli dll 的方法：
+    // 前提：所有 dll 必须是 net481 往下（含）
+	// 1. 把它设为启动项目 
+	// 2. 项目属性中 -> 调试  命令填 E:\huggingface\WeChatOcr\x64\Debug\call_clr.exe 工作目录填 E:\huggingface\WeChatOcr\x64\Debug
+    // call_clr.exe 是能正常调用这个 c++/cli dll 的程序
+
+// 调用关系
+
+// E:\huggingface\WeChatOcr\x64\Debug\call_clr.exe  -> 
+    // E:\huggingface\WeChatOcr\x64\Debug\clr_wapper_net481.dll ->
+        // E:\huggingface\WeChatOcr\src\WeChatOcr\bin\Debug\net481\WeChatOcr.dll ->
+            // E:\lib\Google.Protobuf.dll
+			// E:\lib\Newtonsoft.Json.dll
+
+// 普通 C# 项目是这样 net8.0-windows;net7.0-windows;net6.0-windows;net481;net472
+
+
+
+
+```
+
+
+
 
 
 # Call dll
@@ -6483,6 +6514,177 @@ if (ret != null && ret.Count > 0)
 
 Console.WriteLine("Hello, World!");
 
+```
+
+
+
+```
+
+// 以上代码 C++/cli 对等翻译
+// see E:\huggingface\WeChatOcr\src\clr_wapper_net481\clr_wapper_net481.cpp
+
+using namespace System;
+using namespace WeChatOcr;
+
+using namespace System::Reflection;
+using namespace System::Collections::Generic;
+using namespace System::Threading;
+using namespace System::Threading::Tasks;
+using namespace System::Reflection;
+using namespace System::IO;
+using namespace System::Runtime::CompilerServices;
+
+#include <msclr/gcroot.h>
+
+namespace iocr {
+
+    // 异步方法辅助函数
+    ref class TaskAwaiter
+    {
+    private:
+        Task^ task;
+
+    public:
+        TaskAwaiter(Task^ t) : task(t) {}
+
+        void GetResult() {
+            task->Wait();
+        }
+    };
+
+    // 创建回调函数对象类
+    ref class OcrCallback
+    {
+    private:
+        TaskCompletionSource<List<Object^>^>^ tcs;
+
+    public:
+        OcrCallback(TaskCompletionSource<List<Object^>^>^ taskSource) : tcs(taskSource) {}
+
+        void HandleCallback(String^ path, Object^ result)
+        {
+            try
+            {
+                if (result == nullptr) return;
+
+                // 通过反射获取 OcrResult 和 SingleResult
+                PropertyInfo^ ocrResultProp = result->GetType()->GetProperty("OcrResult");
+                Object^ ocrResult = ocrResultProp != nullptr ? ocrResultProp->GetValue(result) : nullptr;
+
+                if (ocrResult == nullptr)
+                {
+                    tcs->SetResult(nullptr);
+                    return;
+                }
+
+                List<Object^>^ resultList = gcnew List<Object^>();
+                resultList->Add(ocrResult);
+
+                tcs->SetResult(resultList);
+            }
+            catch (Exception^ ex)
+            {
+                System::Diagnostics::Debug::WriteLine(ex->Message);
+            }
+        }
+    };
+
+    int fun(array<System::String^>^ args)
+    {
+        // 创建TaskCompletionSource
+        auto tcs = gcnew TaskCompletionSource<List<Object^>^>();
+
+        // 设置DLL路径
+        String^ dllPath = "E:\\huggingface\\WeChatOcr\\src\\WeChatOcr\\bin\\Debug\\net481\\WeChatOcr.dll"; // "E:\\huggingface\\WeChatOcr\\src\\WeChatOcr\\bin\\Debug\\net8.0-windows\\WeChatOcr.dll";
+        String^ protobufPath = "E:\\lib\\Google.Protobuf.dll";
+        String^ newtonsoftPath = "E:\\lib\\Newtonsoft.Json.dll";
+
+        // 加载依赖DLL
+        Assembly::LoadFrom(protobufPath);
+        Assembly::LoadFrom(newtonsoftPath);
+
+        // 加载主DLL
+        Assembly^ assembly = Assembly::LoadFrom(dllPath);
+        Type^ imageOcrType = assembly->GetType("WeChatOcr.ImageOcr");
+        Type^ singleResultType = assembly->GetType("WeChatOcr.SingleResult");
+
+        // 创建 ImageOcr 实例，传入 null 作为默认路径
+        array<Object^>^ constructorArgs = gcnew array<Object^>(1);
+        constructorArgs[0] = nullptr; // 相当于C#中的null
+        Object^ ocrInstance = Activator::CreateInstance(imageOcrType, constructorArgs);
+
+        // 获取 WeChatOcrResult 类型
+        Type^ weChatOcrResultType = assembly->GetType("WeChatOcr.WeChatOcrResult");
+
+        // 创建正确的 Action 泛型类型
+        array<Type^>^ typeArgs = gcnew array<Type^>(2);
+        typeArgs[0] = String::typeid;
+        typeArgs[1] = weChatOcrResultType;
+        Type^ actionGenericType = Type::GetType("System.Action`2")->MakeGenericType(typeArgs);
+
+        // 获取 DisposeAsync 方法
+        MethodInfo^ disposeAsyncMethod = imageOcrType->GetMethod("DisposeAsync");
+
+        // 使用正确的参数类型获取方法
+        array<Type^>^ paramTypes = gcnew array<Type^>(2);
+        paramTypes[0] = String::typeid;
+        paramTypes[1] = actionGenericType;
+        MethodInfo^ runMethod = imageOcrType->GetMethod("Run", paramTypes);
+
+
+        // 在lambda中使用gcroot包装托管对象
+        msclr::gcroot<TaskCompletionSource<List<Object^>^>^> tcsRoot = tcs;
+
+
+        // 创建回调对象和委托
+        OcrCallback^ callbackObj = gcnew OcrCallback(tcs);
+        Action<String^, Object^>^ callback = gcnew Action<String^, Object^>(callbackObj, &OcrCallback::HandleCallback);
+
+
+        // 调用 Run 方法
+        array<Object^>^ runParams = gcnew array<Object^>(2);
+        runParams[0] = "E:\\huggingface\\WeChatOcr\\t2.jpg";
+        runParams[1] = callback;
+        runMethod->Invoke(ocrInstance, runParams);
+
+        // 创建超时任务
+        Task^ timeoutTask = Task::Delay(9000);
+
+        // 等待任务完成或超时
+        array<Task^>^ tasks = gcnew array<Task^>(2);
+        tasks[0] = tcs->Task;
+        tasks[1] = timeoutTask;
+        Task^ completedTask = Task::WhenAny(tasks)->Result;
+
+        if (completedTask == timeoutTask)
+        {
+            tcs->SetCanceled();
+        }
+
+        // 获取最终结果
+        List<Object^>^ finalResult = dynamic_cast<Task<List<Object^>^>^>(tcs->Task)->Result;
+
+        // 调用 DisposeAsync 方法
+        Task^ disposeTask = dynamic_cast<Task^>(disposeAsyncMethod->Invoke(ocrInstance, nullptr));
+        disposeTask->Wait();
+
+        return 0;
+    }
+
+    // 添加导出声明
+    extern "C" __declspec(dllexport) int fun_native(const char* args)
+    {
+        // 将原生字符串转换为托管字符串
+        String^ managedArgs = gcnew String(args);
+
+        // 创建托管字符串数组
+        array<String^>^ argsArray = gcnew array<String^>(1);
+        argsArray[0] = managedArgs;
+
+        // 调用托管函数
+        return fun(argsArray);
+    }
+}
 ```
 
 
