@@ -517,6 +517,41 @@ Icon="pack://application:,,,/Resources/logo.ico"
 
 
 
+### JObject 简化写法
+
+```
+see huggingface\WeChatOcr\src\WeChatOcr\Wchtcr.cs
+
+ arr.Add(new JObject{ { "x", Left }, { "y", Top } });  // 左上
+ arr.Add(new JObject{["x"] = Right, ["y"] = Top });    // 右上
+	# 两种写法都可以
+
+
+var obj = new JObject();
+array.Add(obj);
+
+var word = item.SingleStrUtf8;  // 一行的文本
+obj.Add("word", word);
+
+var Left = item.Left;
+var Right = item.Right;
+var Top = item.Top;
+var Bottom = item.Bottom;
+JArray arr = new JArray();
+arr.Add(new JObject{["x"] = Left,  ["y"] = Top});     // 左上
+arr.Add(new JObject{["x"] = Right, ["y"] = Top });    // 右上
+arr.Add(new JObject{["x"] = Left,  ["y"] = Bottom }); // 左下
+arr.Add(new JObject{["x"] = Right, ["y"] = Bottom }); // 右下
+// 一行四个解的坐标
+obj.Add("pos", arr);
+
+res = root.ToString();
+```
+
+
+
+
+
 ## 扩展
 
 ```
