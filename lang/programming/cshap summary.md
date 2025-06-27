@@ -6,6 +6,8 @@
 
 ```
 
+see huggingface\WeChatOcr\src\WeChatOcr\WeChatOcr.csproj
+
 	<ItemGroup>
 		<Content Include="wco_data\**">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
