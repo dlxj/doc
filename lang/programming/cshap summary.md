@@ -694,6 +694,30 @@ JsonConvert.SerializeObject( new {
     
             var result = obj.ToString();
             Console.WriteLine(result);
+            
+        // 动态添加数组，数组里再加对象
+        JArray itemsArray = new JArray();
+        
+        // 创建第一个对象并添加到数组
+        JObject item1 = new JObject();
+        item1.Add("itemId", "001");
+        item1.Add("itemName", "商品1");
+        item1.Add("price", 99.9);
+        itemsArray.Add(item1);
+        
+        // 创建第二个对象并添加到数组
+        JObject item2 = new JObject();
+        item2.Add("itemId", "002");
+        item2.Add("itemName", "商品2");
+        item2.Add("price", 199.5);
+        itemsArray.Add(item2);
+        
+        // 将数组添加到主对象中
+        obj.Add("items", itemsArray);
+
+        var res = obj.ToString();
+        Console.WriteLine(res);
+            
 ```
 
 
