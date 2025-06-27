@@ -6349,7 +6349,16 @@ see E:\huggingface\WeChatOcr\sample\call_clr\call_clr.cpp
 ```
 // huggingface\WeChatOcr\sample\call_clr\call_clr.cpp
 
+/*
 
+
+WeChatOcr -> 调试 -> 打开调试启动配置文件UI -> 创建新的配置 -> 可执行文件 E:\huggingface\WeChatOcr\x64\Debug\call_clr.exe -> 工作目录 E:\huggingface\WeChatOcr\x64\Debug
+
+   -> WeChatOcr 设为启动项目 -> F5
+
+   这样，c++/cli 和 C# dll 设置断点后都能断下来
+
+*/
 
 // 注意：此项目必须设置：调试 -> 工作目录为  E:\huggingface\WeChatOcr\x64\Debug ，这样才能正常调用 ocr dll ，并输出识别结果
 
