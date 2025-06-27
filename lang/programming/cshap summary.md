@@ -670,8 +670,17 @@ JsonConvert.SerializeObject( new {
 
          Newtonsoft.Json 动态添加字段
 
+var data1 = new
+{
+    prism_wordsInfo = new[] 
+    {
+        new { word = "第一单元" }
+    }
+};
 
-​         
+var json1 = JsonConvert.SerializeObject(data1, Formatting.Indented);
+
+
          var data = new
             {
                 mobile = "18888888888",
