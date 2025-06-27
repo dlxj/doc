@@ -2226,20 +2226,20 @@ ln -s /root/dotnet/dotnet /usr/bin
 
 
 
-​```c#
+```c#
 1. Server\dangan.Server.csproj 加入
-  <ItemGroup>
+    <ItemGroup>
     <PackageReference Include="Blazored.SessionStorage" Version="2.1.0" />
     <PackageReference Include="MeCab.DotNet" Version="0.0.40" />
     <PackageReference Include="MedallionShell" Version="1.6.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.7" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Npgsql" Version="5.0.10" />
-  </ItemGroup>
+    </ItemGroup>
 2. MainLayout.razor 把导航和关于都去掉，只留body
 
 3. debug 和 Release 的端口不一样  launchSettings.json 里面有设置
-    
+   
 4. 发布以后再重设
     dotnet publish -c Release -r linux-x64 # 在dangan 根目录运行
     cd /mnt/dangan/Server/bin/Release/net5.0/linux-x64/publish/
@@ -2249,11 +2249,12 @@ systemctl stop firewalld
 5. pm2 --name dangan_80 start "./dangan.Server --urls http://0.0.0.0:80"
 
 6. dotnet dangan.Server.dll --urls http://0.0.0.0:80
+	
 	# windows 发布的这样
 
 ## nohup
 
-​```bash
+```bash
 # 加 -u 才能看到打印的输出
 nohup python3.8 -u anime_Danganronpa_version1.py >outlog &
 tail -f outlog
@@ -2263,7 +2264,7 @@ ps -aux | grep "anime_Danganronpa_version1.py"
 kill -9 $(lsof outlog | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
 kill -9 $(lsof -i:8077 | tail -n +2  | awk '{print $2}' | tr '\n' ' ')
 
-​```
+```
 ```
 
 
@@ -2336,7 +2337,7 @@ server {
   location ~ /edu/ {
     proxy_pass http://127.0.0.1:8080;
   }
-  
+
   location ~ /vod/ {
     proxy_pass http://127.0.0.1:8081;
   }
@@ -2359,7 +2360,7 @@ iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 5000
 ```
 # https://github.com/TimChen44/Blazor-ToDo
 	# 进击吧blazor
-	
+
 # https://www.yogihosting.com/blazor-first-application/
 	# begining
 ```
@@ -2376,7 +2377,7 @@ iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 5000
 
 
 
-```c#
+​```c#
 # .razor 代码内要用@using  而不是普通的using，否则既不报错又不生效
 
 @page "/"
@@ -6340,6 +6341,307 @@ see E:\huggingface\WeChatOcr\sample\call_clr\call_clr.cpp
 
 
 ```
+
+
+
+# 纯 C++ 调用 C# dll 成功案例
+
+```
+// huggingface\WeChatOcr\sample\call_clr\call_clr.cpp
+
+
+
+// 注意：此项目必须设置：调试 -> 工作目录为  E:\huggingface\WeChatOcr\x64\Debug ，这样才能正常调用 ocr dll ，并输出识别结果
+
+
+// 重要：WeChatOcr 目标框架只有 net481 这一个时，将本项目也设为 net481，此时这个项目可以辅助 clr_wapper_net481 调试代码。但是识别是不成功的，
+// WeChatOcr 设为 net8.0-windows ，ConsoleApp1 为 .net 8.0 ，能正常识别。
+
+// see csharp summary.md -> C++/cli
+
+// 单步调试 c++/cli dll 的方法：
+    // 前提：所有 dll 必须是 net481 往下（含）
+	// 1. 把它设为启动项目 
+	// 2. 项目属性中 -> 调试  命令填 E:\huggingface\WeChatOcr\x64\Debug\call_clr.exe 工作目录填 E:\huggingface\WeChatOcr\x64\Debug
+    // call_clr.exe 是能正常调用这个 c++/cli dll 的程序
+
+// 调用关系
+
+// E:\huggingface\WeChatOcr\x64\Debug\call_clr.exe  -> 
+    // E:\huggingface\WeChatOcr\x64\Debug\clr_wapper_net481.dll ->
+        // E:\huggingface\WeChatOcr\src\WeChatOcr\bin\Debug\net481\WeChatOcr.dll ->
+            // E:\lib\Google.Protobuf.dll
+			// E:\lib\Newtonsoft.Json.dll
+
+// 普通 C# 项目是这样 net8.0-windows;net7.0-windows;net6.0-windows;net481;net472
+
+
+#include <iostream>
+#include <Windows.h>
+
+// 声明函数指针类型
+typedef const char* (*FunNativeFunc)(const char*);
+
+int main()
+{
+    // 加载 DLL
+    HMODULE hModule = LoadLibrary(L"E:\\huggingface\\WeChatOcr\\x64\\Debug\\clr_wapper_net80.dll");
+    // HMODULE hModule = LoadLibrary(L"E:\\huggingface\\WeChatOcr\\x64\\Debug\\clr_wapper_net481.dll");  // 仅用于单步调试 c++/cli dll, clr_wapper_net481.dll，它需要用这个 exe 启动
+    if (!hModule) {
+        std::cerr << "无法加载 DLL，错误码: " << GetLastError() << std::endl;
+        return 1;
+    }
+
+    // 获取函数地址
+    FunNativeFunc funNative = (FunNativeFunc)GetProcAddress(hModule, "fun_native");
+    if (!funNative) {
+        std::cerr << "无法找到函数，错误码: " << GetLastError() << std::endl;
+        FreeLibrary(hModule);
+        return 1;
+    }
+
+    // 调用函数
+    const char* result = funNative("E:\\huggingface\\WeChatOcr\\t2.jpg");
+    if (result) {
+        std::cout << "函数返回值: " << result << std::endl;
+    } else {
+        std::cout << "函数返回了空指针" << std::endl;
+    }
+
+    // 释放 DLL
+    FreeLibrary(hModule);
+    return 0;
+}
+
+```
+
+
+
+```
+
+// huggingface\WeChatOcr\src\clr_wapper_net80\clr_wapper_net80_2.cpp
+
+#include "pch.h"
+
+using namespace System;
+using namespace WeChatOcr;
+
+using namespace System::Reflection;
+using namespace System::Collections::Generic;
+using namespace System::Threading;
+using namespace System::Threading::Tasks;
+using namespace System::Reflection;
+using namespace System::IO;
+using namespace System::Runtime::CompilerServices;
+
+#include <msclr/gcroot.h>
+
+
+// 添加导出声明
+extern "C" __declspec(dllexport) const char* fun_native(const char* args)
+{
+    // 将原生字符串转换为托管字符串
+    String^ managedArgs = gcnew String(args);
+
+    // 创建托管字符串数组
+    array<String^>^ argsArray = gcnew array<String^>(1);
+    argsArray[0] = managedArgs;
+
+    // 设置DLL路径
+    String^ dllPath = "E:\\huggingface\\WeChatOcr\\src\\WeChatOcr\\bin\\Debug\\net8.0\\WeChatOcr.dll"; // "E:\\huggingface\\WeChatOcr\\src\\WeChatOcr\\bin\\Debug\\net8.0-windows\\WeChatOcr.dll";
+    String^ protobufPath = "E:\\lib\\Google.Protobuf.dll";
+    String^ newtonsoftPath = "E:\\lib\\Newtonsoft.Json.dll";
+
+    // 加载依赖DLL
+    Assembly::LoadFrom(protobufPath);
+    Assembly::LoadFrom(newtonsoftPath);
+
+    // 加载主DLL
+    Assembly^ assembly = Assembly::LoadFrom(dllPath);
+    Type^ imageOcrType = assembly->GetType("WeChatOcr.ImageOcr");
+    Type^ WchtrType = assembly->GetType("WeChatOcr.Wchtcr");
+
+    // 获取 WeChatOcrResult 类型
+    Type^ weChatOcrResultType = assembly->GetType("WeChatOcr.WeChatOcrResult");
+
+    // 创建正确的 Action 泛型类型
+    array<Type^>^ typeArgs = gcnew array<Type^>(2);
+    typeArgs[0] = String::typeid;
+    typeArgs[1] = weChatOcrResultType;
+    Type^ actionGenericType = Type::GetType("System.Action`2")->MakeGenericType(typeArgs);
+
+    // 获取 DisposeAsync 方法
+    MethodInfo^ disposeAsyncMethod = imageOcrType->GetMethod("DisposeAsync");
+
+    // 使用正确的参数类型获取方法
+    array<Type^>^ paramTypes = gcnew array<Type^>(2);
+    paramTypes[0] = String::typeid;
+    paramTypes[1] = actionGenericType;
+    MethodInfo^ runMethod = imageOcrType->GetMethod("Run", paramTypes);
+
+
+    array<Type^>^ paramTypes2 = gcnew array<Type^>(1);
+    paramTypes2[0] = String::typeid;
+    MethodInfo^ recMethod = WchtrType->GetMethod("rec", paramTypes2);
+
+
+    // 创建 ImageOcr 实例
+    array<Object^>^ constructorArgs = gcnew array<Object^>(0);
+    Object^ ocrInstance = Activator::CreateInstance(WchtrType, constructorArgs);
+
+    //var ret = recMethod.Invoke(ocrInstance, new object[]{ "E:\\huggingface\\WeChatOcr\\t2.jpg" });
+
+
+    // 调用 rec 方法
+    array<Object^>^ recParams = gcnew array<Object^>(1);
+    recParams[0] = managedArgs; // "E:\\huggingface\\WeChatOcr\\t2.jpg";
+    String^ ret = safe_cast<String^>( recMethod->Invoke(ocrInstance, recParams) );
+
+
+    // 将托管字符串转换为非托管字符串并返回
+    // 注意：这里分配的内存需要在调用方负责释放，或者使用静态缓冲区
+    // 使用静态变量保存转换后的字符串，防止函数返回后内存被释放
+    static IntPtr ptrToNativeString;
+    // 释放之前可能分配的内存
+    if (ptrToNativeString != IntPtr::Zero) {
+        System::Runtime::InteropServices::Marshal::FreeHGlobal(ptrToNativeString);
+    }
+    ptrToNativeString = System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(ret);
+    return static_cast<const char*>(ptrToNativeString.ToPointer());
+
+    //return 555;
+}
+
+```
+
+
+
+```
+
+// huggingface\WeChatOcr\src\WeChatOcr\Wchtcr.cs
+
+using System.Threading.Tasks;
+
+namespace WeChatOcr;
+
+public class Wchtcr: IDisposable
+{
+    private TaskCompletionSource<string?>? _tcs;  // List<WeChatOcr.SingleResult>?
+
+    public Wchtcr()
+    {
+        _tcs = new TaskCompletionSource<string?>();  // List<WeChatOcr.SingleResult>?
+    }
+
+    public void Dispose()
+    {
+        
+    }
+
+    public async Task<string?> rec_async(string pth_img)
+    {
+        try
+        {
+            byte[] bytes = null;
+
+            using (FileStream stream = new FileStream(pth_img, FileMode.Open, FileAccess.Read))
+            using (BinaryReader reader = new BinaryReader(new BufferedStream(stream)))
+            {
+                bytes = reader.ReadBytes(Convert.ToInt32(stream.Length));
+            }
+
+            using var ocr = new WeChatOcr.ImageOcr();
+            ocr.Run(bytes, (path, result) =>
+            {
+                //try
+                //{
+                //    if (System.IO.File.Exists(path))
+                //        System.IO.File.Delete(path);
+                //}
+                //catch
+                //{
+                //    // ignore
+                //}
+
+                try
+                {
+                    if (result == null) return;
+                    var list = result?.OcrResult?.SingleResult;
+                    if (list == null)
+                    {
+                        _tcs.SetResult(null);
+                        return;
+                    }
+
+                    var sb = new System.Text.StringBuilder();
+                    for (var i = 0; i < list?.Count; i++)
+                    {
+                        if (list[i] is not { } item || string.IsNullOrEmpty(item.SingleStrUtf8))
+                            continue;
+
+                        sb.AppendLine(item.SingleStrUtf8);
+                    }
+
+                    _tcs.SetResult(sb.ToString());
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message);
+                    _tcs.SetResult(null);
+                }
+            });
+
+            var timeoutTask = Task.Delay(3000);
+            var completedTask = await Task.WhenAny(_tcs.Task, timeoutTask);
+
+            if (completedTask == timeoutTask)
+            {
+                _tcs.SetCanceled();
+                //throw new TimeoutException("WeChatOCR operation timed out.");
+            }
+            // 提取content的值
+            var finalResult = await _tcs.Task;
+
+            //ResultTb.Text = finalResult.Result;
+
+            await ocr.DisposeAsync();
+
+            return finalResult;
+
+        }
+        catch (Exception ex)
+        {
+            //ResultTb.Text = ex.Message;
+            return null; //  ex.Message; 
+        }
+    }
+
+    public string? rec(string pth_img)
+    {
+        // 重置TaskCompletionSource以确保每次调用都使用新的实例
+        _tcs = new TaskCompletionSource<string?>();
+        
+        // 检查文件是否存在
+        if (!System.IO.File.Exists(pth_img))
+        {
+            return $"文件不存在: {pth_img}";
+        }
+        
+        try
+        {
+            var ret = Task.Run(async () => await rec_async(pth_img)).Result;
+            return ret;
+        }
+        catch (Exception ex)
+        {
+            return $"错误: {ex.Message}";
+        }
+    }
+}
+
+```
+
+
 
 
 
