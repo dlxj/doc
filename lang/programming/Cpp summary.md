@@ -402,6 +402,34 @@ int main(){
 
 
 
+## conan
+
+```
+
+conan profile detect
+
+C:\Users\i\conanfile.txt
+[requires]
+protobuf/3.21.12
+
+[generators]
+CMakeDeps
+CMakeToolchain
+
+[layout]
+cmake_layout
+
+conan install . --build=missing
+
+C:\Users\i\build\generators
+	# 生成的一些文件在这
+
+```
+
+
+
+
+
 ## vcpkg
 
 ```
