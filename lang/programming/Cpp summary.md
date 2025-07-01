@@ -405,6 +405,13 @@ int main(){
 ## vcpkg
 
 ```
+git clone https://github.com/microsoft/vcpkg.git
+cd vcpkg; .\bootstrap-vcpkg.bat
+```
+
+
+
+```
 vcpkg install boost-regex[icu]:x64-windows
     # C:/src/vcpkg/packages/boost-regex_x64-windows
     # C:\src\vcpkg\packages\icu_x64-windows\include

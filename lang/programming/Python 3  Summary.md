@@ -393,6 +393,21 @@ __pycache__/
 
 ```
 
+vi ~/.condarc
+channels:
+  - defaults
+show_channel_urls: true
+default_channels:
+  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main
+  - https://mirrors.ustc.edu.cn/anaconda/pkgs/r
+  - https://mirrors.ustc.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.ustc.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.ustc.edu.cn/anaconda/cloud
+  
+	# 其他所有国内源好像都用不了
+
+
 conda clean --all \
   && rm -rf ~/.cache/pip \
     # C:\Users\username\AppData\Local\pip\cache
