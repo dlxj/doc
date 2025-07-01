@@ -418,6 +418,9 @@ cd D:\usr\vcpkg
 git checkout 5294d36841
 	# 回退到指定版本
 
+./vcpkg install protobuf
+	# error: try_read_contents("D:\usr\vcpkg\scripts\vcpkg-tools.json"): no such file or directory
+		# 不知道为什么出错
 
 ```
 
