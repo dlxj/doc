@@ -407,6 +407,18 @@ int main(){
 ```
 git clone https://github.com/microsoft/vcpkg.git
 cd vcpkg; .\bootstrap-vcpkg.bat
+	# 安装 vcpkg
+	
+
+cd D:\usr\vcpkg
+
+ git log --color=always --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad)' --date=short | grep --color=never protobuf
+	# 找特定版本的 protobuf
+
+git checkout 5294d36841
+	# 回退到指定版本
+
+
 ```
 
 
