@@ -395,6 +395,15 @@ __pycache__/
 
 vi ~/.condarc
 channels:
+  - conda-forge
+auto_activate_base: false
+#proxy_servers:
+#  http: http://127.0.0.1:1080
+#  https: http://127.0.0.1:1080
+ssl_verify: false
+
+
+channels:
   - defaults
 show_channel_urls: true
 default_channels:

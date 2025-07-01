@@ -10766,6 +10766,17 @@ CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/ic15_resnet18_def
 
 
 
+#### 优化
+
+https://zhuanlan.zhihu.com/p/579956622 DBNet GT 构造过程的问题和对应解决方法
+
+```
+https://zhuanlan.zhihu.com/p/579956622
+
+```
+
+
+
 
 
 ## mmocr
