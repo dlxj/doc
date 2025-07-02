@@ -424,6 +424,9 @@ conan install . --build=missing
 C:\Users\i\build\generators
 	# 生成的一些文件在这
 
+C:\Users\i\.conan2\p\proto47a676cb9257b\d\conan_package.tgz
+	# 它下载的 protobuf 二进制包在这里
+
 ```
 
 
@@ -563,6 +566,34 @@ json j = json::parse(u8 R"(JSON string with Chinese characters)");
 std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
 std::string first_ = converter.to_bytes(first);
 ```
+
+
+
+## 八进制转义字节序列
+
+```
+#include <iostream>
+#include <string>
+#include <filesystem>
+
+int main() {
+    std::string s = "\347\254\254\344\270\200\345\215\225\345\205\203";
+    std::u8string u8s = std::filesystem::path(s).u8string();
+    
+    // 在C++20中，可以直接使用u8字符串字面量
+    // std::u8string u8s = u8"第一单元";
+    
+    // 输出UTF-8字符串
+    for (char8_t c : u8s) {
+        std::cout << static_cast<unsigned char>(c);
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}
+```
+
+
 
 
 
