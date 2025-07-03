@@ -1612,7 +1612,21 @@ diskmgmt.msc
 
 
 ```
+
+
+# 打开回收站
+
+```
+start shell:RecycleBinFolder
+	# ps 运行
+```
+
+
+
+
+
 # 磁盘在 linux 挂载下有权限错误, windows 调整分区大小出错
+
 chkdsk /f E:
 	# windows 下执行
 ```

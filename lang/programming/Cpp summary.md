@@ -1,4 +1,36 @@
-[TOC]
+
+
+# visual studio 2022 复制到 bin
+
+```
+
+see huggingface\iWeChatOcr\src\WeChatOcrCpp\WeChatOcrCpp.vcxproj
+	
+	see huggingface\ColorTextEditorV2\build\src\imrad.vcxproj
+
+
+  <ItemGroup>
+    <Content Include="wco_data\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+    </Content>
+  </ItemGroup>
+  		# 复制整个文件夹
+
+<ItemGroup>
+  <Content Include="..\..\3rdparty\opencv\lib\*.dll">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <Link>%(Filename)%(Extension)</Link>
+  </Content>
+</ItemGroup>
+	# 只复制里面的 dll
+
+
+```
+
+
+
+
 
 # C++ Monads
 
