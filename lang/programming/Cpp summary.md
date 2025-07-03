@@ -867,6 +867,21 @@ inline void write(std::string str)
 
 ```
 
+
+std::filesystem::path getExecutablePath() {
+    char path[MAX_PATH];
+    GetModuleFileNameA(NULL, path, MAX_PATH);
+    return std::filesystem::path(path).parent_path();
+}
+
+std::filesystem::path currPath = getExecutablePath(); // std::filesystem::current_path();
+	# 得到可执行文件目录
+const std::string Constant::WeChatOcrData = ( currPath / std::filesystem::path("wco_data") ).lexically_normal().u8string(); // ".\\wco_data";
+
+
+
+
+
 see huggingface\ColorTextEditorV2\src\main.cpp
 
         std::filesystem::path exePath = std::filesystem::current_path(); // 注意：这是工作目录
