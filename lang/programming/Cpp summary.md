@@ -10,6 +10,15 @@ see huggingface\iWeChatOcr\src\WeChatOcrCpp\WeChatOcrCpp.vcxproj
 
 
   <ItemGroup>
+    <Content Include="..\..\style\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <Link>style\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </Content>
+    	# 保持目录结构要这样
+    		# 复制整个文件夹
+
+  <ItemGroup>
     <Content Include="wco_data\**">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <PackageCopyToOutput>true</PackageCopyToOutput>
