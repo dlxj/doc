@@ -15,6 +15,7 @@ see huggingface\iWeChatOcr\src\WeChatOcrCpp\WeChatOcrCpp.vcxproj
       <PackageCopyToOutput>true</PackageCopyToOutput>
       <Link>style\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </Content>
+  </ItemGroup>
     	# 保持目录结构要这样
     		# 复制整个文件夹
 
@@ -33,6 +34,21 @@ see huggingface\iWeChatOcr\src\WeChatOcrCpp\WeChatOcrCpp.vcxproj
   </Content>
 </ItemGroup>
 	# 只复制里面的 dll
+
+
+```
+
+
+
+# CMake 配置
+
+```
+
+CMake-gui
+
+choco install pkgconfiglite
+	# 依赖这个
+		# C:\ProgramData\chocolatey\lib\pkgconfiglite\tools\pkg-config-lite-0.28-1\bin
 
 
 ```
