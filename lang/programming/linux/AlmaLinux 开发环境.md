@@ -569,11 +569,9 @@ timestamp=1654435924
 [ethernet]
 
 [ipv4]
-
-address1=192.168.21.91/24,192.168.21.2
-
-dns=8.8.8.8;8.8.4.4;
-
+address1=172.16.6.253/24
+gateway=172.16.6.1
+dns=8.8.8.8;1.1.1.1
 method=manual
 
 [ipv6]
