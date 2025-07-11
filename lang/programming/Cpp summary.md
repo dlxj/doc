@@ -8,6 +8,14 @@ see huggingface\iWeChatOcr\src\WeChatOcrCpp\WeChatOcrCpp.vcxproj
 	
 	see huggingface\ColorTextEditorV2\build\src\imrad.vcxproj
 
+<ItemGroup>
+  <None Include="..\..\data\**\*.*">
+    <Link>data\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+	# 复制整个目录 保持目录结构 用这个！！！
+
 
   <ItemGroup>
     <Content Include="..\..\style\**">
