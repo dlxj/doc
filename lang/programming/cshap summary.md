@@ -1797,6 +1797,39 @@ var ext = Path.GetExtension(filePath).ToLowerInvariant();
 
 
 
+### 4 字节表示一个字符 Rune
+
+```
+
+string smiley = "\uD83D\uDE00"; // 😀 表情符号，U+1F600
+
+这里， \uD83D 是高位代理字符， \uDE00 是低位代理字符，它们一起表示了U+1F600这个4字节的Unicode字符。
+
+C#中的字符串( string )使用UTF-16编码来表示Unicode字符。 2 对于4字节的Unicode字符（即超出基本多语言平面BMP的字符，码点值大于U+FFFF的字符），C#使用 代理对 （Surrogate Pair）机制来表示。
+
+
+see huggingface\imradv3\src\WpfEditor\TextEditorControl.cs
+
+                        // 遍历 oneChar 中的每个字符
+                        for (int i = 0; i < oneChar.Length;)
+                        {
+                            // 获取当前位置的 Rune
+                            Rune rune = Rune.GetRuneAt(oneChar, i);  // 4 个字节表示单个字符
+
+                            // 将 Rune 添加到字符列表中
+                            textLine.Characters.Add(new TextCharacter(rune, x, y, w, h, md5));
+
+                            // 移动到下一个 Rune 的位置
+                            i += rune.Utf16SequenceLength;
+                        }
+
+
+```
+
+
+
+
+
 ### 不转义
 
 
