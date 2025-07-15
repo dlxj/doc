@@ -524,8 +524,8 @@ Icon="pack://application:,,,/Resources/logo.ico"
 ```
 see huggingface\WeChatOcr\src\WeChatOcr\Wchtcr.cs
 
- arr.Add(new JObject{ { "x", Left }, { "y", Top } });  // 左上
- arr.Add(new JObject{["x"] = Right, ["y"] = Top });    // 右上
+arr.Add(new JObject{ { "x", Left }, { "y", Top } });  // 左上
+arr.Add(new JObject{["x"] = Right, ["y"] = Top });    // 右上
 	# 两种写法都可以
 
 
@@ -2324,7 +2324,7 @@ systemctl stop firewalld
 
 ## nohup
 
-```bash
+​```bash
 # 加 -u 才能看到打印的输出
 nohup python3.8 -u anime_Danganronpa_version1.py >outlog &
 tail -f outlog
