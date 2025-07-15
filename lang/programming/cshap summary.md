@@ -552,6 +552,18 @@ res = root.ToString();
 
 
 
+### 对象序列化
+
+```
+
+see huggingface\imradv3\src\WpfEditor\TextEditorControl.cs
+
+List<TextCharacter> characters = (List<TextCharacter>)Newtonsoft.Json.JsonConvert.DeserializeObject<List<TextCharacter>>(json);
+
+```
+
+
+
 
 
 ## 扩展
