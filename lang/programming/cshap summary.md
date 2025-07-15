@@ -558,7 +558,87 @@ res = root.ToString();
 
 see huggingface\imradv3\src\WpfEditor\TextEditorControl.cs
 
-List<TextCharacter> characters = (List<TextCharacter>)Newtonsoft.Json.JsonConvert.DeserializeObject<List<TextCharacter>>(json);
+
+[Serializable]
+public class TextCharacter
+{
+    public System.Text.Rune Character { get; set; }
+    public Brush Foreground { get; set; } = Brushes.Black;
+    public bool IsComment { get; set; } = false;
+    public bool IsKeyword { get; set; } = false;
+    public bool IsString { get; set; } = false;
+    public bool IsNumber { get; set; } = false;
+
+
+    // 字符在图片上的坐标和宽高
+    public int x { get; set; } = -1;
+    public int y { get; set; } = -1;
+    public int w { get; set; } = -1;
+    public int h { get; set; } = -1;
+    
+
+    public string ImageMD5 { get; set; } = "";
+
+    // 添加无参构造函数用于JSON反序列化
+    public TextCharacter()
+    {
+    }
+
+    public TextCharacter(System.Text.Rune c)
+    {
+        Character = c;
+    }
+
+    public TextCharacter(System.Text.Rune c, int x, int y, int w, int h, string imageMd5)
+    {
+        Character = c;
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        ImageMD5 = imageMd5;
+    }
+
+    // 添加一个接受char的构造函数，方便兼容现有代码
+    public TextCharacter(char c)
+    {
+        Character = new System.Text.Rune(c);
+    }
+}
+
+
+string json = Newtonsoft.Json.JsonConvert.SerializeObject(characters);
+
+
+
+// 反序列化
+string json = Clipboard.GetData("TextEditorCustomFormat") as string;
+//List<TextCharacter> characters = (List<TextCharacter>)Newtonsoft.Json.JsonConvert.DeserializeObject<List<TextCharacter>>(json);
+
+List<TextCharacter> characters = new List<TextCharacter>();
+
+List<JObject> ls = Newtonsoft.Json.JsonConvert.DeserializeObject<List<JObject>>(json);
+	// System.Text.Rune 字段不支持直接序列化，所以需要转换
+	// 实际上是因为它没有一个空白的构造函数，所以 Newtonsoft.Json 拿它没办法
+
+foreach (var item in ls)
+{
+    var Character = item["Character"].Value<JObject>();
+    var Value = Character["Value"].Value<int>();
+    System.Text.Rune rune = new System.Text.Rune(Value);
+
+    // 反序列化每个字符
+    var chr = new TextCharacter(
+        rune, // 获取第一个字符
+        item["x"].Value<int>(),
+        item["y"].Value<int>(),
+        item["w"].Value<int>(),
+        item["h"].Value<int>(),
+        item["ImageMD5"].Value<string>()
+    );
+    characters.Add(chr);
+}
+
 
 ```
 
