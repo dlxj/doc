@@ -40553,9 +40553,15 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && rustup default stable
   
   
-  add-apt-repository ppa:system76/pop && apt update \
-    && apt install cosmic-session -y 
+  git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch \
+    && cd cosmic-epoch \
+    && just sysext
     	# 安装 cosmic 桌面
+    
+  sudo mv cosmic-sysext /var/lib/extensions \
+    && sudo systemctl enable --now systemd-sysext \
+    && sudo systemctl restart gdm 
+    	# 登录时选择 COSMIC 会话  
     
   
   git clone https://github.com/pop-os/cosmic-player && cd cosmic-player \
