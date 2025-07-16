@@ -10679,6 +10679,11 @@ def main():
 
 see python summary.md -> OpenCV -> ppcor_aliocr_convert.py
 
+
+apt-get update \
+  && apt-get install build-essential python3-dev libevent-dev
+	# 重要：先安装编译环境
+
 wget --no-check-certificate  https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 && \
 tar -jxvf p7zip_16.02_src_all.tar.bz2 && \
 cd p7zip_16.02 && \
@@ -10708,6 +10713,7 @@ export CUDA_HOME=/usr/local/cuda && \
 echo $CUDA_HOME && \
 cd ~/DB/assets/ops/dcn/ && \
 python setup.py build_ext --inplace
+	# python3.8 要装 pip install more-itertools
 
 cd ~/DB && \
 pip install -r requirement.txt && \
@@ -10742,14 +10748,17 @@ conda config --set channel_priority flexible
 
 conda update -y conda -n base && \
 conda install ipython pip --yes && \
-conda create -n DB python=3.7 --yes && \
+conda create -n DB python=3.8 --yes && \
 source activate DB && \
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch --yes -c conda-forge
+
 
 
 cd /root/DB && \
 source activate DB && \
 pip install -r requirement.txt
+	# pip install --no-cache-dir --force-reinstall -r requirement.txt
+		# 强制重装
 
 pip uninstall opencv-python && \
 pip install opencv-python==4.6.0.66
