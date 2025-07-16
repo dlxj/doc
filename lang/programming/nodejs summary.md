@@ -40541,6 +40541,8 @@ https://github.com/zed-industries/zed  对标 vscode 的 Editor
 
 - https://github.com/deevus/zed-windows-builds  windows 编译
 
+https://github.com/iced-rs/iced/issues/2825  style
+
 [Rust语言圣经](https://course.rs/about-book.html)
 
 [RawMangaReader 竖排漫画ocr](https://github.com/SunDoge/RawMangaReader)
