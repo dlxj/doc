@@ -40553,9 +40553,17 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && rustup default stable
   
   
+  add-apt-repository ppa:system76/pop && apt update \
+    && apt install cosmic-session -y 
+    	# 安装 cosmic 桌面
+    
+  
   git clone https://github.com/pop-os/cosmic-player && cd cosmic-player \
     && cargo build
   	# 成功编译
+  	
+  	
+  	
   	
   ```
 
