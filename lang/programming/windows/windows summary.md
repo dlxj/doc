@@ -480,6 +480,28 @@ conda clean -a
 
 
 
+## Install Cosmic 桌面
+
+```
+
+ubuntu 24.04
+
+sudo apt update && sudo apt upgrade -y \
+  && sudo apt install cargo cmake just libfontconfig-dev libfreetype-dev libexpat1-dev pkg-config -y \
+  && sudo apt install libwayland-dev libxkbcommon-dev libseat-dev libinput-dev -y
+  && apt install rustup -y && rustup update \
+  && rustup default stable
+
+
+git clone https://github.com/pop-os/cosmic-player && cd cosmic-player \
+  && cargo build
+
+
+
+```
+
+
+
 
 
 ## windows10 限制 wsl2 内存占用
