@@ -40539,6 +40539,26 @@ https://github.com/pop-os/cosmic-edit  **iced Text Editor**
 
 https://github.com/pop-os/cosmic-player  **iced player**
 
+- ```
+  wsl ubuntu 24.04
+  
+  sudo apt update && sudo apt upgrade -y \
+    && sudo apt install cargo cmake just libfontconfig-dev libfreetype-dev libexpat1-dev pkg-config -y \
+    && sudo apt install libwayland-dev libxkbcommon-dev libseat-dev libinput-dev -y
+    && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y \
+    && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
+    && source ~/.bashrc \
+    && pkg-config --cflags --libs gstreamer-1.0 \
+    && apt install rustup -y && rustup update \
+    && rustup default stable
+  
+  
+  git clone https://github.com/pop-os/cosmic-player && cd cosmic-player \
+    && cargo build
+  	# 成功编译
+  	
+  ```
+
 https://github.com/zed-industries/zed  对标 vscode 的 Editor
 
 - https://github.com/deevus/zed-windows-builds  windows 编译
