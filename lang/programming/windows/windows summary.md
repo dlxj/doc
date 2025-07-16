@@ -490,6 +490,7 @@ sudo apt update && sudo apt upgrade -y \
   && sudo apt install cargo cmake just libfontconfig-dev libfreetype-dev libexpat1-dev pkg-config -y \
   && sudo apt install libwayland-dev libxkbcommon-dev libseat-dev libinput-dev -y
   && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libdbus-1-dev -y \
+  && sudo apt install just rustc libglvnd-dev libwayland-dev libseat-dev libxkbcommon-dev libinput-dev udev dbus libdbus-1-dev libsystemd-dev libpixman-1-dev libssl-dev libflatpak-dev libpulse-dev libexpat1-dev libfontconfig-dev libfreetype-dev mold cargo libgbm-dev libclang-dev libpipewire-0.3-dev libpam0g-dev -y \
   && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
   && source ~/.bashrc \
   && pkg-config --cflags --libs gstreamer-1.0 \
