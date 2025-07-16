@@ -489,7 +489,7 @@ ubuntu 24.04
 sudo apt update && sudo apt upgrade -y \
   && sudo apt install cargo cmake just libfontconfig-dev libfreetype-dev libexpat1-dev pkg-config -y \
   && sudo apt install libwayland-dev libxkbcommon-dev libseat-dev libinput-dev -y
-  && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y \
+  && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libdbus-1-dev -y \
   && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
   && source ~/.bashrc \
   && pkg-config --cflags --libs gstreamer-1.0 \
