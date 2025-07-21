@@ -1920,6 +1920,25 @@ see huggingface\imradv3\src\WpfEditor\TextEditorControl.cs
 
 
 
+### Rune 遍历 string 的每一个字符
+
+```
+
+see huggingface\imradv3\src\WpfEditor\TextEditorControl.cs
+
+					// 遍历 oneChar 中的每个字符
+                    for (int i = 0; i < oneChar.Length;)
+                    {
+                        Rune rune = Rune.GetRuneAt(oneChar, i);  // 4 个字节表示单个字符
+
+
+                        // 移动到下一个 Rune 的位置
+                        i += rune.Utf16SequenceLength;
+                    }
+```
+
+
+
 
 
 ### 不转义
@@ -2072,6 +2091,14 @@ sourceList.CopyTo(1, targetArray, 2, 3);
 // 输出目标数组内容
 Console.WriteLine(string.Join(", ", targetArray));
 // 输出结果: 0, 0, 20, 30, 40, 0, 0, 0, 0, 0
+```
+
+
+
+### GetRange
+
+```
+List<T> GetRange(int index, int count);
 ```
 
 
