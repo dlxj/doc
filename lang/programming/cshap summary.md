@@ -2056,6 +2056,26 @@ static List<string[]> apps = new List<string[]>() { new string[] { "a", "b", "b"
 
 
 
+### CopyTo
+
+```
+// 创建一个源List集合
+List<int> sourceList = new List<int> { 10, 20, 30, 40, 50 };
+
+// 创建一个目标数组，长度要足够容纳要复制的元素
+int[] targetArray = new int[10]; // 长度为10的数组
+
+// 使用CopyTo方法复制元素
+// 从sourceList的索引1开始(值20)，复制3个元素到targetArray的索引2开始的位置
+sourceList.CopyTo(1, targetArray, 2, 3);
+
+// 输出目标数组内容
+Console.WriteLine(string.Join(", ", targetArray));
+// 输出结果: 0, 0, 20, 30, 40, 0, 0, 0, 0, 0
+```
+
+
+
 
 
 ### List 交集
