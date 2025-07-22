@@ -10634,30 +10634,55 @@ if __name__ == '__main__':
 https://developer.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.105_418.39_linux.run
 	# 下载安装
 
+22.04 安装 cuda 10.1 需要降级 gcc
 
-install cuda 10.1
+echo "deb http://archive.ubuntu.com/ubuntu focal main universe" | sudo tee /etc/apt/sources.list.d/focal.list \
+  && sudo apt update \
+  && sudo apt install gcc-7 g++-7 -y
 
-update-alternatives --remove cuda /usr/local/cuda-12.2
-update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118 && 
-ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda && 
+# 设置默认GCC版本
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 2 \
+  && sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 1 \
+  && sudo update-alternatives --config gcc
+  	# 选择gcc-7
+
+./cuda_10.1.105_418.39_linux.run
+	# 安装，不要选驱动	
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-10.1/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-10.1/lib64, or, add /usr/local/cuda-10.1/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+
+
+update-alternatives --remove cuda /usr/local/cuda-11.8
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-10.1 101 && 
+ln -sfT /usr/local/cuda-10.1 /etc/alternatives/cuda && 
 ln -sfT /etc/alternatives/cuda /usr/local/cuda  
-
+	# 切换版本
 
 vi ~/.bashrc 
 
 if [ -z $LD_LIBRARY_PATH ]; then
-  LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64
+  LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64
 else
-  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.1/lib64
 fi
 export LD_LIBRARY_PATH
 
-export PATH=/usr/local/cuda/bin:/usr/lib/wsl/lib:$PATH
+export PATH=/usr/local/cuda/bin:$PATH
 
 
 source ~/.bashrc 
 
 nvcc --version
+
+
+
+
+conda install pytorch==1.2.0  -c pytorch
+	# 官方文档是这个版本
+
 
 
 
@@ -10797,6 +10822,13 @@ conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11
 
 	
 	# pytorch 1.4成功编译 ?
+
+https://download.pytorch.org/whl/torch_stable.html
+	# 这里看有什么可以装
+	
+pip install https://download.pytorch.org/whl/cu101/torch-1.4.0-cp38-cp38-linux_x86_64.whl
+	# 这样装 1.4.0+cu101
+
 
 
 cd /root/DB && \
