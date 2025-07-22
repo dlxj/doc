@@ -10630,6 +10630,38 @@ if __name__ == '__main__':
 
 ```
 
+
+https://developer.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.105_418.39_linux.run
+	# 下载安装
+
+
+install cuda 10.1
+
+update-alternatives --remove cuda /usr/local/cuda-12.2
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118 && 
+ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda && 
+ln -sfT /etc/alternatives/cuda /usr/local/cuda  
+
+
+vi ~/.bashrc 
+
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
+fi
+export LD_LIBRARY_PATH
+
+export PATH=/usr/local/cuda/bin:/usr/lib/wsl/lib:$PATH
+
+
+source ~/.bashrc 
+
+nvcc --version
+
+
+
+
 	
 sudo apt install linux-headers-$(uname -r) -y
 reboot
@@ -10761,7 +10793,10 @@ conda install ipython pip --yes && \
 conda create -n DB python=3.8 --yes && \
 source activate DB && \
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch --yes -c conda-forge
+	# 可以训练，但是中途会断，先试和官方一模一样的环境
 
+	
+	# pytorch 1.4成功编译 ?
 
 
 cd /root/DB && \
