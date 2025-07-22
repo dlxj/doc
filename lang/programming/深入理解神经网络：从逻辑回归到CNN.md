@@ -10682,6 +10682,16 @@ nvcc --version
 
 conda install pytorch==1.2.0  -c pytorch
 	# 官方文档是这个版本
+	# 但是现在下载不了了
+	
+
+https://download.pytorch.org/whl/torch_stable.html
+	# 这里看有什么可以装
+	
+pip install https://download.pytorch.org/whl/cu101/torch-1.4.0-cp38-cp38-linux_x86_64.whl
+	# 这样装 1.4.0+cu101
+	
+
 
 
 
