@@ -10629,7 +10629,15 @@ if __name__ == '__main__':
 - https://www.nemotos.net/?p=5067
 
 ```
-https://www.nemotos.net/?p=5067
+
+	
+sudo apt install linux-headers-$(uname -r) -y
+reboot
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+
+
+
 ```
 
 
