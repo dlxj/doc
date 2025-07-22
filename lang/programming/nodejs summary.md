@@ -3799,6 +3799,29 @@ candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.1.0.0/24" --pas
 
 https://service.oray.com/question/22589.html
 
+```
+
+wget https://pgy.oray.com/softwares/96/download/1744/PgyServer_Ubuntu_1.4.0.49622_x86_64.deb
+
+dpkg -i PgyServer_Ubuntu_1.9.0.22620_X86_64.deb
+
+pgyserver login -u [SID] -p [password] 
+
+pgyserver autologin -y
+	pgyserver autologin -n
+		# 自动非自动登录
+
+pgyserver logout
+
+
+pgyserver getmbrs -m
+	# 组网信息
+
+
+```
+
+
+
 
 
 #### 移动公网 ip
