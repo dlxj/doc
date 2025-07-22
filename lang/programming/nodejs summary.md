@@ -3795,6 +3795,12 @@ candy --mode="server" --websocket="ws://0.0.0.0:1587" --dhcp="10.1.0.0/24" --pas
 
 
 
+#### 蒲公英组网
+
+https://service.oray.com/question/22589.html
+
+
+
 #### 移动公网 ip
 
 https://post.smzdm.com/p/aqqgzgdk/
