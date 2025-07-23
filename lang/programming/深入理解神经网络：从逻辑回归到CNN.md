@@ -6445,6 +6445,10 @@ https://blog.csdn.net/weixin_43507865/article/details/136671486
   
 - https://blog.csdn.net/michaelshare/article/details/108811236
   
+- https://github.com/yts2020/DBnet_pytorch  
+  
+  - https://blog.csdn.net/ytsaiztt/article/details/118090611  DBNet的简单复现  **必看 简洁的实现**
+  
 - https://zhuanlan.zhihu.com/p/382641896 **DBNet的简单复现**
   
 - https://blog.csdn.net/u010901792/article/details/112791647  **宝藏解读**
@@ -10690,8 +10694,9 @@ https://download.pytorch.org/whl/torch_stable.html
 	
 pip install https://download.pytorch.org/whl/cu101/torch-1.4.0-cp38-cp38-linux_x86_64.whl
 	# 这样装 1.4.0+cu101
+	# 实测可以成功训练
+	# 但是，为什么会自动下载 Downloading: "https://download.pytorch.org/models/resnet18-5c106cde.pth" to /root/.cache/torch/checkpoints/resnet18-5c106cde.pth
 	
-
 
 
 
