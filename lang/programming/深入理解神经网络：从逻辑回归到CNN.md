@@ -10087,7 +10087,10 @@ source activate DB && \
 pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/torch_stable.html
 
 
-
+pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.html
+	# apt install -y libsm6 libxrender1 libxext6 libgl1-mesa-glx
+    	# 实测 vgpu-32G 要装这个
+        # 能正常训练
 
 apt install build-essential  && \
 export CUDA_HOME=/usr/local/cuda && \
@@ -10098,11 +10101,16 @@ cd ~/DB/assets/ops/dcn/ && \
 sed -i 's/AT_CHECK/TORCH_CHECK/1' /root/DB/assets/ops/dcn/src/deform_conv_cuda.cpp && \
 sed -i 's/AT_CHECK/TORCH_CHECK/1' /root/DB/assets/ops/dcn/src/deform_pool_cuda.cpp && \
 python setup.py build_ext --inplace
-
+	# python setup.py clean --all \
+	    && rm -rf *.so build/
+	
 
 cd ~/DB && \
 pip install -r requirement.txt && \
 pip install --upgrade protobuf==3.20.0
+
+~/DB/backbones# vi resnet.py
+	# 这里可以注释掉下载预训练模型的代码
 
 sed -i 's/batch_size\:\ 16/batch_size\:\ 10/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \
 sed -i 's/num_workers\:\ 16/num_workers\:\ 10/1' ~/DB/experiments/seg_detector/td500_resnet18_deform_thre.yaml && \

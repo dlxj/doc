@@ -644,9 +644,22 @@ foreach (var item in ls)
 
 
 
+### 转字符串并格式化
+
+```
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+
+// 示例：JArray 格式化
+JArray jArray = new JArray { "A", "B", "C" };
+string formattedJson = jArray.ToString(Formatting.Indented);
+```
 
 
-## 扩展
+
+
+
+### 扩展
 
 ```
 

@@ -3535,7 +3535,72 @@ if __name__ == "__main__":
 
 
 
+## clash
+
+https://github.com/nelvko/clash-for-linux-install 一键安装
+
+- https://ghproxy.link/  gh 可用镜像这里查
+
+```
+
+git clone --branch master --depth 1 https://ghfast.top/https://github.com/nelvko/clash-for-linux-install.git \
+  && cd clash-for-linux-install \
+  && sudo bash install.sh
+
+
+
+```
+
+
+
+
+
+### sing-box
+
+太复杂 还要转换机场的订阅
+
+```
+
+sing-box run -c config.json
+
+config.json
+{
+  "dns": { ... },  // DNS规则（如分流国内外流量）
+  "inbounds": [
+    {
+      "type": "tun",  // 启用TUN模式（需root权限）
+      "inet4_address": "172.19.0.1/30",
+      "auto_route": true,  // 自动路由流量
+      "sniff": true       // 嗅探域名
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "hysteria2",  // 协议类型（支持Trojan/VMess等）
+      "server": "your_domain.com",
+      "server_port": 443,
+      "password": "your_password",
+      "tls": {"enabled": true, "server_name": "your_domain.com"}
+    },
+    {"type": "direct", "tag": "direct"}  // 直连出口
+  ],
+  "route": {
+    "rules": [
+      {"geoip": ["private", "cn"], "outbound": "direct"}  // 国内/局域网直连
+    ]
+  }
+}
+
+
+```
+
+
+
+
+
 ### shadowsocks-rust
+
+支持的协议太少
 
 https://github.com/shadowsocks/shadowsocks-rust
 
@@ -3555,7 +3620,7 @@ cargo install shadowsocks-rust
 
 Installed package `shadowsocks-rust v1.21.0` (executables `sslocal`, `ssmanager`, `ssserver`, `ssservice`, `ssurl`)
 
-sslocal -b "127.0.0.1:1080" --server-url "ss://Y2hhY2hC05MDNkOGU2NzVhNWI@sshk01.mypokeworld.link:52001#%F0%9%99%E6%B%E3%80%903x%E3%80%91"
+sslocal -b "127.0.0.1:1080" --server-url "xxx"
 
 2022-blake3-chacha20-poly1305
 
