@@ -1630,6 +1630,10 @@ std::make_pair("This is a StringTest.", 9.9);
 
 ```
 
+see huggingface\imradv3\src\WeChatOcrCpp\main.cpp
+
+see https://github.com/yhirose/cpp-httplib
+
 // 在所有包含之前定义这个宏
 #define WIN32_LEAN_AND_MEAN  // for httplib.h
 
