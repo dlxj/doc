@@ -10092,6 +10092,29 @@ pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.
     	# 实测 vgpu-32G 要装这个
         # 能正常训练
 
+update-alternatives --remove cuda /usr/local/cuda-11.6
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118 && 
+ln -sfT /usr/local/cuda-11.8 /etc/alternatives/cuda && 
+ln -sfT /etc/alternatives/cuda /usr/local/cuda  
+	# 切换版本
+
+vi ~/.bashrc 
+
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-11.8/lib64
+fi
+export LD_LIBRARY_PATH
+
+export PATH=/usr/local/cuda/bin:$PATH
+
+
+source ~/.bashrc 
+
+nvcc --version
+        
+        
 apt install build-essential  && \
 export CUDA_HOME=/usr/local/cuda && \
 echo $CUDA_HOME && \
