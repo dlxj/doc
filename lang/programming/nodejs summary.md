@@ -3535,7 +3535,7 @@ if __name__ == "__main__":
 
 
 
-## clash
+### clash
 
 https://github.com/nelvko/clash-for-linux-install 一键安装
 
@@ -3547,6 +3547,23 @@ git clone --branch master --depth 1 https://ghfast.top/https://github.com/nelvko
   && cd clash-for-linux-install \
   && sudo bash install.sh
 
+$ clashctl
+Usage:
+    clash     COMMAND [OPTION]
+    
+Commands:
+    on                   开启代理
+    off                  关闭代理
+    ui                   面板地址
+    status               内核状况
+    proxy    [on|off]    系统代理
+    tun      [on|off]    Tun 模式
+    mixin    [-e|-r]     Mixin 配置
+    secret   [SECRET]    Web 密钥
+    update   [auto|log]  更新订阅
+
+wsl 成功使用宝可梦通用订阅，并代理成功
+	127.0.0.0:7890
 
 
 ```
