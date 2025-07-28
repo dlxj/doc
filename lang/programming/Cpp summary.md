@@ -1626,6 +1626,69 @@ std::make_pair("This is a StringTest.", 9.9);
 
 
 
+# post 接口
+
+```
+
+// 在所有包含之前定义这个宏
+#define WIN32_LEAN_AND_MEAN  // for httplib.h
+
+#include "httplib.h"
+
+
+// 启动HTTP服务器的函数
+void StartHttpServer(int port) {
+    httplib::Server svr;
+
+    // 添加POST接口，接收base64编码的图片
+    svr.Post("/wechatocr", [](const httplib::Request& req, httplib::Response& res) {
+        try {
+            // 解析请求体中的JSON数据
+            json request_data = json::parse(req.body);
+
+            //// 调用rec函数进行OCR识别
+            //std::string result = rec(temp_image_path.c_str());
+
+            // 返回识别结果
+            res.set_content("[]", "application/json");
+
+            //// 删除临时文件
+            //std::remove(temp_image_path.c_str());
+
+        }
+        catch (const std::exception& e) {
+            res.status = 500;
+            res.set_content("{\"error\":\"服务器内部错误: " + std::string(e.what()) + "\"}", "application/json");
+        }
+        });
+
+    // 添加一个简单的GET接口，用于测试服务器是否正常运行
+    svr.Get("/", [](const httplib::Request&, httplib::Response& res) {
+        res.set_content("OCR服务器正常运行中", "text/plain");
+        });
+
+    std::cout << "HTTP服务器已启动，监听端口: " << port << std::endl;
+    svr.listen("0.0.0.0", port);
+}
+
+
+   // 启动HTTP服务器，监听8080端口
+   std::thread server_thread(StartHttpServer, 7788);
+
+   // 分离线程，让它在后台运行
+   server_thread.detach();
+
+   // 主线程可以做其他事情，或者等待用户输入退出
+   std::cout << "OCR服务器已启动，按Enter键退出..." << std::endl;
+   std::cin.get();
+
+
+```
+
+
+
+
+
 # OpenCV
 
 - https://mp.weixin.qq.com/s?__biz=MzA4ODgyMDg0MQ==&mid=100001057&idx=1&sn=ebfd3cf30ffb3a48909bd309fa59f82d&chksm=1025182727529131c5c63d02663bfc517b89c23f4884c4d49334fee27d12947b792e9b36643f#rd
