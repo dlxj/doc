@@ -190,14 +190,6 @@ systemctl status ssh
 	# service ssh status
 		# autodl 用这个命令
 
-vi /etc/ssh/sshd_config
-
-PermitRootLogin yes
-PasswordAuthentication yes
-PubkeyAuthentication yes
-	# systemctl restart ssh
-	# 改这三个重启 ssh 成功登录
-
 sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config \
   && sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config \
   && sed -i 's/^#\?PubkeyAuthentication.*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config \
