@@ -5625,6 +5625,30 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
 
 
+### 按需下载 lfs
+
+```
+
+git clone --filter=blob:none --no-checkout https://huggingface.co/datasets/dlxjj/pdf_ocr \
+  && cd pdf_ocr \
+  && git sparse-checkout init --cone \
+  && git sparse-checkout set pdfs/zh \
+  && git lfs install \
+  && git checkout \
+  && git lfs pull --include="pdfs/zh/**"
+
+
+# cd pdf_ocr
+git lfs install \
+  && git lfs pull --include="pdfs/zh/**"
+		# 如果部分同步成功后中断了，这样继续
+		
+```
+
+
+
+
+
 ### 子模块
 
 ```
@@ -5696,6 +5720,75 @@ git clone --no-checkout https://huggingface.co/datasets/dlxjj/dict \
   && git lfs pull
   
 此操作会根据当前的稀疏检出设置，只下载选中范围内的 LFS 文件真实内容
+
+要使用Git LFS按需同步指定目录下的所有LFS文件，需结合git clone（跳过初始下载）和git lfs pull（选择性拉取）命令。以下是具体步骤和原理说明：
+
+🔧 一、核心操作步骤
+
+1. 克隆仓库但跳过LFS文件下载  
+   使用--no-checkout避免初始下载所有文件（包括LFS文件），仅获取仓库元数据：  
+   git clone --no-checkout <仓库URL>
+   cd <仓库目录>
+   
+
+2. 启用Git LFS并配置  
+   初始化LFS环境，跳过自动下载（--skip-smudge）：  
+   git lfs install --skip-smudge
+   
+
+3. 按需拉取指定目录的LFS文件  
+   使用--include参数指定目录路径（支持通配符*）：  
+   git lfs pull --include="目录路径/*"
+   
+   示例：拉取data/目录下所有LFS文件  
+   git lfs pull --include="data/*"
+   
+
+⚙️ 二、高级用法与注意事项
+
+1. 通配符匹配规则  
+   • 匹配目录所有文件：目录/*（如models/*）  
+
+   • 匹配子目录递归：目录/**（如datasets/**）  
+
+   • 匹配特定文件类型：目录/*.zip（如output/*.bin）
+
+2. 验证下载结果  
+   执行后检查目标目录是否包含实际文件（而非LFS指针）：  
+   ls -l <目录路径>  # 查看文件大小是否正常（指针文件仅1KB左右）
+   
+
+3. 排除特定子目录  
+   若需忽略目录中的某个子文件夹（如data/ignore_this），需额外配置：  
+   • 编辑.gitignore，添加/data/ignore_this/  
+
+   • 提交修改后重新拉取（确保LFS不处理该路径）
+
+4. 清理未使用的LFS文件  
+   删除本地缓存中不再需要的LFS文件（如切换目录后）：  
+   git lfs prune
+   
+
+🔍 三、工作原理说明
+
+• 指针文件 vs 实际文件  
+
+  Git LFS将大文件替换为轻量指针（文本文件，含哈希值）。git lfs pull根据指针从远程LFS服务器下载实际文件。
+• --include的作用  
+
+  限制LFS仅处理匹配路径的文件，避免下载全部大文件，显著节省时间和带宽。
+
+⚠️ 四、常见问题
+
+• 路径格式错误：目录路径需用双引号包裹（如--include="path/*"），避免Shell解析通配符失败。
+
+• 历史文件未下载：若目录中的LFS文件是早期提交的，需确保已正确追踪（.gitattributes中配置），否则需迁移历史记录。
+
+💎 总结
+
+按需同步的核心是分步操作：  
+① 无文件克隆 → ② LFS初始化（跳过自动下载） → ③ 按路径拉取目标文件。  
+此法尤其适合管理大型仓库（如含数据集、模型的AI项目），避免冗余下载。
 
 ```
 
