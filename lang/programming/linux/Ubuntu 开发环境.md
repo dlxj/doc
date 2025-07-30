@@ -198,9 +198,16 @@ PubkeyAuthentication yes
 	# systemctl restart ssh
 	# 改这三个重启 ssh 成功登录
 
-sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
-sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
-sed -i 's/^#\?PubkeyAuthentication.*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config;
+sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config \
+  && sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config \
+  && sed -i 's/^#\?PubkeyAuthentication.*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config \
+  && sed -i 's/^#*ChallengeResponseAuthentication.*/ChallengeResponseAuthentication no/' /etc/ssh/sshd_config \
+  && sed -i 's/^#*UsePAM.*/UsePAM yes/' /etc/ssh/sshd_config \
+  && sed -i 's/^#*KbdInteractiveAuthentication.*/KbdInteractiveAuthentication yes/' /etc/ssh/sshd_config
+  	# 实测连 lightsail 要勾选 Keyboard Interactive 才能成功
+
+systemctl restart sshd
+	# 或者 service ssh restart 
 
 
 mkdir -p /var/run/sshd && \
@@ -219,7 +226,7 @@ docker cp proxychains-ng-master.zip gradio_server_6116:/root
 
 sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 
-systemctl restart ssh
+systemctl restart sshd
 
 ufw allow ssh
 
