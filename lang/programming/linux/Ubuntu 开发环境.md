@@ -1996,6 +1996,16 @@ sha256sum
 
 
 
+# IDM 下载 Ubuntu 文件
+
+```
+mv pdf_ocr_dotgit.tar /var/www/html
+http://54.68.218.133/pdf_ocr_dotgit.tar
+
+```
+
+
+
 
 
 # 乱码

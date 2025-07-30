@@ -5639,10 +5639,17 @@ git clone --filter=blob:none --no-checkout https://huggingface.co/datasets/dlxjj
 
 
 # cd pdf_ocr
-git lfs install \
+git reset --hard HEAD \
+  && git clean -fd \
+  && git lfs fetch --all \
+  && git lfs checkout \
   && git lfs pull --include="pdfs/zh/**"
 		# 如果部分同步成功后中断了，这样继续
 		
+mv pdf_ocr_dotgit.tar /var/www/html
+http://54.68.218.133/pdf_ocr_dotgit.tar
+	# IDM 设置代理后下载
+
 ```
 
 
