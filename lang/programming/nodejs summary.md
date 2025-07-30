@@ -5107,6 +5107,14 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   	# git pull --rebase && git lfs pull
   		# 移动大文件出问题依次尝试
   
+  git reset --hard HEAD
+  	# 丢弃所有更改，回复到最近一次提交
+  
+  git log --oneline
+  	# 查看提交历史
+  git reset --hard <commit-id>
+  	# 恢复到特定提交
+  
   
   git pull --recurse-submodules \
     && git submodule update --init --recursive \
