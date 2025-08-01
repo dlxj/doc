@@ -10150,6 +10150,19 @@ https://matpool.com/supports/doc-vscode-connect-matpool/
 
 # vscode 打开远程文件夹 DB, ctrl + x 安装 python 扩展, ctrl+shift+p 输入 Python，选择选conda的python ，vscode 中修改train.py 在main 函数下加入命令行参数：
 
+
+vi DB/training/learning_rate.py
+
+lr = State(default=0.007) 
+
+in the yaml file
+        learning_rate:
+            class: DecayLearningRate
+            lr: 0.001
+            epochs: 1200
+	# 学习率要这两个地方一起来成一至后，logs 显示才正常
+             
+                
 def main():
 
     import sys
