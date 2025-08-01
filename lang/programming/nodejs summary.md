@@ -3540,6 +3540,7 @@ if __name__ == "__main__":
 https://github.com/nelvko/clash-for-linux-install 一键安装
 
 - https://ghproxy.link/  gh 可用镜像这里查
+- https://linux.do/t/topic/710502  分流规则
 
 ```
 
@@ -5636,6 +5637,16 @@ git clone --filter=blob:none --no-checkout https://huggingface.co/datasets/dlxjj
   && git lfs install \
   && git checkout \
   && git lfs pull --include="pdfs/zh/**"
+
+git clone --filter=blob:none --no-checkout https://huggingface.co/datasets/dlxjj/project \
+  && cd project \
+  && git sparse-checkout init --cone \
+  && git sparse-checkout set ocr/WeChatOCR \
+  && git lfs install \
+  && git checkout \
+  && git lfs pull --include="ocr/WeChatOCR/**"
+
+
 
 
 # cd pdf_ocr
