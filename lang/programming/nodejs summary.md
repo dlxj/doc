@@ -3618,6 +3618,19 @@ config.json
 
 https://github.com/threatexpert/gonc 可用作代理
 
+```
+
+./gonc -p2p D5$%1^40*_qqw3sa#92Cd1X5c -socks5server
+	# .77 
+gonc -p2p D5$%1^40*_qqw3sa#92Cd1X5c -socks5local-port 3080
+	# windows 本地
+	# 一直失败
+
+
+```
+
+
+
 
 
 

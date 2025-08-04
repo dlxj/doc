@@ -624,6 +624,60 @@ json j = json::parse(u8 R"(JSON string with Chinese characters)");
 
 
 
+## 遍历 string 的每一个字符
+
+```
+
+see huggingface\imradv3\src\WeChatOcrCpp\WeChatOcrResult.cpp
+	std::string OcrResult::ToJson(std::string& pth_img) const {
+				// todo: 改成一个字一个框
+				// 虽说是单字结果，但是有可能是一个单词的多个字。这种情况拆出每一个字符，让它们在图片中有相同的坐标和宽高。既是整个单词的大框
+                for (size_t j = 0; j < oneResult.OneStrUtf8.size();) {
+                    size_t len = utf8codepointcalcsize(&oneResult.OneStrUtf8[j]); // 计算字符字节数
+                    std::string word = oneResult.OneStrUtf8.substr(j, len);
+
+                    jsonOneResult["word"] = word;  // 单个字文本
+
+                    int one_x = -1, one_y = -1, one_w = -1, one_h = h;
+
+                    if (oneResult.OnePos) {
+                        nlohmann::json posArray = nlohmann::json::array();
+                        for (const auto& pos : oneResult.OnePos->Pos) {  // 理论上应该是有四个角的坐标，但是 wechat ocr 实际上只给出了一个左上角的坐标
+                            //posArray.push_back({ {"x", pos.X},{"y", pos.Y} });
+                            one_x = pos.X;
+                            one_y = pos.Y;
+                            break;
+                        }
+                        //jsonOneResult["position"] = posArray;
+                    }
+
+                    if (i == singleResult.OneResult.size() - 1) {
+                        one_w = rht - one_x;
+                    }
+                    else {
+                        one_w = singleResult.OneResult[i + 1].OnePos->Pos[0].X - one_x;  // 获取下一个单字的左上角坐标
+                    }
+
+                    jsonOneResult["x"] = one_x;
+                    jsonOneResult["y"] = one_y;
+                    jsonOneResult["w"] = one_w;
+                    jsonOneResult["h"] = one_h;
+
+                    oneResultArray.push_back(jsonOneResult);
+
+                    //cv::Mat tmt = mt.clone();
+                    //cv::rectangle(tmt, cv::Rect(one_x, one_y, one_w, one_h), cv::Scalar(0, 0, 255));
+                    //cv::imshow("line", tmt);
+                    //cv::waitKey(0);
+
+                    j += len;
+                }
+```
+
+
+
+
+
 ## wsring 转 utf8 string 
 
 ```
