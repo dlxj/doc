@@ -1372,6 +1372,21 @@ if __name__ == "__main__":
 
 
 
+###  调试小技巧 numpy 概率
+
+```
+    # Output of the network are log-probabilities, need to take exponential for probabilities
+    ps = torch.exp(logps)
+
+    import pdb; pdb.set_trace() # 调试， exit 退出
+
+    probab = list(ps.cpu().numpy()[0])
+    pred_label = probab.index(max(probab))  # 这一句特别精髓
+    	# 先求list 里的最大值，再求最大值在list 里的索引，索引既是手写数字的以预测值
+```
+
+
+
 
 
 ### 类的动态构建
