@@ -3627,6 +3627,16 @@ gonc -p2p D5$%1^40*_qqw3sa#92Cd1X5c -socks5local-port 3080
 	# 一直失败
 
 
+./gonc -k -l -local :2222 -tls -psk D5$%1^40*_qqw3sa#92Cd1X5c -e ":service" -:sh "/bin/bash" -:s5s "-c -b" -:mux "httpserver /"
+	# .77
+
+gonc -e ":pf -tls -psk D5$%1^40*_qqw3sa#92Cd1X5c -call :s5s 47.100.192.57:2222" -k -P -l -local 127.0.0.1:1080
+	# windows 本地
+
+curl --socks5 127.0.0.1:1080 qq.com
+	# curl --socks5 127.0.0.1:1080 qq.com
+	# windows 本地, curl 使用代理失败
+
 ```
 
 
