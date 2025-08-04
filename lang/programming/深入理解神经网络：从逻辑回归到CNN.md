@@ -6105,7 +6105,7 @@ recognize('image.tiff').then(console.log, console.error)
 
   
 
-### tesseract 文字坐标
+### tesseract ocr 文字坐标
 
 - https://localcoder.org/getting-the-bounding-box-of-the-recognized-words-using-python-tesseract
 
