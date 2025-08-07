@@ -43036,6 +43036,8 @@ https://anotc.com/wiki/welcome  匿名上位机V7.3版本
 
 https://docs.espressif.com/projects/espressif-esp-drone/zh-cn/latest/gettingstarted.html  ESP-Drone
 
+- https://www.bilibili.com/video/BV1q54y1v7HW/
+
 - ```
   how to open PCB_Mainboard_ESP32_S2_Drone_V1_2.pcb?
   	# https://www.pads.com/downloads/pads-pcb-viewer/
