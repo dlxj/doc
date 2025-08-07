@@ -43009,7 +43009,16 @@ docx.getObjectPart("word/document.xml").text();
 
 ## 四旋翼无人机
 
+某宝小为电子有成品
+
 https://blog.csdn.net/black_sneak/article/details/130749146
+
+- https://sneak.blog.csdn.net/article/details/131253645
+
+  - ```
+    对四元数较为陌生，这里作者建议大家直接去阅读秦永元的《惯性导航》，里面有非常好的讲解，大家可
+    以直接看绪论和第九章就可以
+    ```
 
 https://anotc.com/wiki/welcome  匿名上位机V7.3版本
 
