@@ -40847,7 +40847,7 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && sudo apt install libwayland-dev libxkbcommon-dev libseat-dev libinput-dev -y \
     && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y \
     && apt install libdbus-1-dev libpulse-dev libdisplay-info-dev -y \
-    && apt install libclang-dev \
+    && apt install libclang-dev libpam0g-dev -y \
     && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
     && source ~/.bashrc \
     && pkg-config --cflags --libs gstreamer-1.0 \
@@ -40859,6 +40859,10 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && cd cosmic-epoch \
     && just sysext
     	# 安装 cosmic 桌面
+    
+  
+  pkill -f cargo \
+    && ps aux | grep cargo | awk '{print $2}' | xargs kill -9
     
   sudo mv cosmic-sysext /var/lib/extensions \
     && sudo systemctl enable --now systemd-sysext \
@@ -43019,6 +43023,9 @@ https://blog.csdn.net/black_sneak/article/details/130749146
   - ```
     对四元数较为陌生，这里作者建议大家直接去阅读秦永元的《惯性导航》，里面有非常好的讲解，大家可
     以直接看绪论和第九章就可以
+    
+    项目将以 C-Quad 四轴无人机为工程样机，飞行器主控为 STM32F103C8T6，遥控为 STM32F103C6T6。项目代码为 HAL 库版本，该项目博客将把算法与硬件相结合，深入挖掘飞控的奥妙与原理。（代码开源！）
+    
     ```
 
 https://anotc.com/wiki/welcome  匿名上位机V7.3版本
