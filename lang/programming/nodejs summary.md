@@ -43011,7 +43011,11 @@ https://docs.espressif.com/projects/espressif-esp-drone/zh-cn/latest/gettingstar
 
 ![image-20250807091122592](nodejs summary.assets/image-20250807091122592.png)
 
+pitch()：俯仰，将物体绕Y轴旋转（localRotationY）
 
+yaw()：航向，将物体绕Z轴旋转（localRotationZ）
+
+roll()：横滚，将物体绕X轴旋转（localRotationX）
 
 ```
 特别说明：飞机的坐标轴体系和AR眼镜是不一样的，指向机头的是X轴，指向右机翼的是Y轴，垂直向上的是Z轴（建议大家别人云亦云，多去参考正规性学术论文）。
