@@ -43007,6 +43007,22 @@ https://docs.espressif.com/projects/espressif-esp-drone/zh-cn/latest/gettingstar
 
 
 
+飞行姿态则涉及到如下欧拉角：pitch（俯仰角）、yaw（偏航角）、roll（横滚角）。
+
+![image-20250807091122592](nodejs summary.assets/image-20250807091122592.png)
+
+
+
+```
+特别说明：飞机的坐标轴体系和AR眼镜是不一样的，指向机头的是X轴，指向右机翼的是Y轴，垂直向上的是Z轴（建议大家别人云亦云，多去参考正规性学术论文）。
+
+
+```
+
+
+
+
+
 ## 铁锈电池
 
 ```
