@@ -40846,12 +40846,13 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && sudo apt install cargo cmake just libfontconfig-dev libfreetype-dev libexpat1-dev pkg-config -y \
     && sudo apt install libwayland-dev libxkbcommon-dev libseat-dev libinput-dev -y \
     && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y \
+    && apt install libdbus-1-dev -y \
     && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
     && source ~/.bashrc \
     && pkg-config --cflags --libs gstreamer-1.0 \
     && apt install rustup -y && rustup update \
     && rustup default stable
-  
+  apt install 
   
   git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch \
     && cd cosmic-epoch \
