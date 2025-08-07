@@ -40847,6 +40847,7 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && sudo apt install libwayland-dev libxkbcommon-dev libseat-dev libinput-dev -y \
     && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y \
     && apt install libdbus-1-dev libpulse-dev libdisplay-info-dev -y \
+    && apt install libclang-dev \
     && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
     && source ~/.bashrc \
     && pkg-config --cflags --libs gstreamer-1.0 \
@@ -43021,6 +43022,10 @@ https://blog.csdn.net/black_sneak/article/details/130749146
     ```
 
 https://anotc.com/wiki/welcome  匿名上位机V7.3版本
+
+- ```
+  匿名上位机为匿名科创团队自主设计的知名上位机，通常用于与无人机或飞行器进行通信和数据传输。它可以通过串口、蓝牙、W-Fi和USB等通信方式与无人机连接，并可以实时接收和显示来自无人机的数据，如传感器数据、GPS定位信息、飞行控制指令等。此外，匿名上位机还可以进行数据存储、分析和可视化3D模型，方便用户对无人机数据进行处理和分析(作者本次仅为大家提供串口协议下的可视化3D姿态代码)。
+  ```
 
 https://docs.espressif.com/projects/espressif-esp-drone/zh-cn/latest/gettingstarted.html  ESP-Drone
 
