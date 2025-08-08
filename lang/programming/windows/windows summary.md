@@ -475,6 +475,13 @@ wsl --install -d Ubuntu-20.04
     wsl --install -d Ubuntu-24.04
 		# 代理安装
 
+	curl --socks5 127.0.0.1:7890 google.com
+		# wsl ubuntu-20.04 clash 提供的代理
+		# MinW64 这样运行
+			# curl.exe --socks5 127.0.0.1:7890 google.com
+				# powershell 运行一定不能少 .exe
+	
+
 
 wsl --set-default-version 2
 
