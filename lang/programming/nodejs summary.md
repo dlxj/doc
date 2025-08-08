@@ -38768,6 +38768,8 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 [monads](https://github.com/sniptt-official/monads)
 
+https://github.com/xiaolinbaba/Madopic  markdown to pic
+
 ```javascript
 // 成功运行 vscode .ts 文件
 /*
@@ -40859,6 +40861,7 @@ https://github.com/pop-os/cosmic-player  **iced player**
   git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch \
     && cd cosmic-epoch \
     && just sysext
+    	# just clean
     	# 安装 cosmic 桌面
     
   

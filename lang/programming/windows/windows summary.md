@@ -304,6 +304,43 @@ Windows +R -> msconfig。也可以打开开始菜单程序列表中的 “Window
 
 
 
+# 端口转发
+
+```
+
+netsh interface portproxy show all
+
+地址            端口        地址            端口
+--------------- ----------  --------------- ----------
+0.0.0.0         2222        127.0.0.1       22
+
+	# 查看已有端口转发，本机 2222 -> wsl 的 22
+
+
+netsh interface portproxy add v4tov4 listenport=2222 listenaddress=0.0.0.0 connectport=22 connectaddress=127.0.0.1
+	# 新增端口转发
+
+
+```
+
+
+
+
+
+
+
+# 查看端口占用
+
+```
+
+Get-Process -Id (Get-NetTCPConnection -LocalPort 2222).OwningProcess
+
+```
+
+
+
+
+
 # 关闭端口进程
 
 ```

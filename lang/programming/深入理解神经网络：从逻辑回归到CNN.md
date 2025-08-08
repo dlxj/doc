@@ -10097,12 +10097,14 @@ pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.
         
         
 conda create --name DB python==3.7 ipython pip -y \
-  && conda activate DB
+  && conda activate DB \
+  && pip install https://download.pytorch.org/whl/cu100/torch-1.2.0-cp37-cp37m-manylinux1_x86_64.whl \
+  
 
 
 https://download.pytorch.org/whl/cu100/torch-1.2.0-cp37-cp37m-manylinux1_x86_64.whl
 	# 最接近 cu10.1 + torch 1.2.0 的是这个
-    
+    # numpy-1.21.6
     https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
         # cuda10.0 for ubuntu 18.04 
         
