@@ -471,9 +471,11 @@ wsl --install -d Ubuntu-20.04
     $env:https_proxy="http://127.0.0.1:7890"
 
     $env:all_proxy="socks5://127.0.0.1:7890"
-
     wsl --install -d Ubuntu-24.04
 		# 代理安装
+		# 实测不起作用，需要设置 windows 全局代理
+		# 设置 > 网络和 Internet > 代理。
+		# 在“手动代理设置”中填写 SOCKS5 地址 127.0.0.1:7890
 
 	curl --socks5 127.0.0.1:7890 google.com
 		# wsl ubuntu-20.04 clash 提供的代理

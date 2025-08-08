@@ -10194,6 +10194,13 @@ vi data/image_dataset.py
     # 注释掉这两行 
     # https://github.com/MhLiao/DB/issues/186
     
+File "/root/miniforge3/envs/DB/lib/python3.7/site-packages/anyconfig/processors/utils.py", line 14, in <module>
+    import importlib.metadata
+ModuleNotFoundError: No module named 'importlib.metadata' 
+    # 只有 py3.7 会错
+    # pip install importlib-metadata
+    # import importlib_metadata as metadata  # 改成这样
+    
     
 def main():
     import sys
