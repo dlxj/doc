@@ -10032,6 +10032,8 @@ conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
 
 # autodl
 
+- https://github.com/MhLiao/DB/issues/186
+
 - https://www.autodl.com/
 
 - https://pytorch.org/get-started/previous-versions/
@@ -10162,7 +10164,14 @@ vi experiments/seg_detector/ic15_resnet18_deform_thre.yaml
             epochs: 1200
 	# 学习率要这两个地方一起改成一至后，logs 显示才正常
         
-
+      
+vi data/image_dataset.py
+    if 'TD' in self.data_dir[0] and label == '1':
+        label = '###' 
+    # 注释掉这两行 
+    # https://github.com/MhLiao/DB/issues/186
+    
+    
 def main():
     import sys
     sys.argv.append( 'experiments/seg_detector/ic15_resnet18_deform_thre.yaml' )
@@ -10183,6 +10192,13 @@ def main():
     torch.backends.cudnn.enabled = False
 
 vscode 中然后F5 调试运行train.py 
+
+CUDA_VISIBLE_DEVICES=0 python eval.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --resume /root/final8 --box_thresh 0.55
+
+CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --image_path datasets/icdar2015/test_images/img_1.jpg --resume /root/final8 --polygon --box_thresh 0.7 --visualize 
+
+
+
 
 
 # CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
