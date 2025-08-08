@@ -481,7 +481,11 @@ wsl --install -d Ubuntu-20.04
 			# curl.exe --socks5 127.0.0.1:7890 google.com
 				# powershell 运行一定不能少 .exe
 	
-
+	> $env:all_proxy="socks5://127.0.0.1:7890"
+    > curl.exe google.com
+		# 这样实测成功
+	
+		
 
 wsl --set-default-version 2
 
