@@ -10155,20 +10155,31 @@ vi DB/training/learning_rate.py
 
 lr = State(default=0.007) 
 
-in the yaml file
+vi experiments/seg_detector/ic15_resnet18_deform_thre.yaml
         learning_rate:
             class: DecayLearningRate
             lr: 0.001
             epochs: 1200
-	# 学习率要这两个地方一起来成一至后，logs 显示才正常
-             
-                
-def main():
+	# 学习率要这两个地方一起改成一至后，logs 显示才正常
+        
 
+def main():
     import sys
-    sys.argv.append( 'experiments/seg_detector/td500_resnet18_deform_thre.yaml' )
+    sys.argv.append( 'experiments/seg_detector/ic15_resnet18_deform_thre.yaml' )
     sys.argv.append( '--num_gpus' )
     sys.argv.append( '1' )
+    sys.argv.append( '--batch_size' )
+    sys.argv.append( '16' )
+    sys.argv.append( '--epochs' )
+    sys.argv.append( '1200' )
+    sys.argv.append( '--lr' )
+    sys.argv.append( '0.0001' )
+    sys.argv.append( '--resume' )       # 继续上一次训练
+    sys.argv.append( '/root/final7' )
+    #sys.argv.append( '--start_iter' )
+    #sys.argv.append( '18000' )
+    #sys.argv.append( '--start_epoch' )
+    #sys.argv.append( '107' )
     torch.backends.cudnn.enabled = False
 
 vscode 中然后F5 调试运行train.py 
