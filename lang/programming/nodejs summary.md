@@ -40848,12 +40848,13 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y \
     && apt install libdbus-1-dev libpulse-dev libdisplay-info-dev -y \
     && apt install libclang-dev libpam0g-dev libpipewire-0.3-dev -y \
+    && apt install libflatpak-dev -y \
     && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
     && source ~/.bashrc \
     && pkg-config --cflags --libs gstreamer-1.0 \
     && apt install rustup -y && rustup update \
     && rustup default stable
-  apt install 
+  
   
   git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch \
     && cd cosmic-epoch \

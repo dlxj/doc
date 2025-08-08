@@ -10093,6 +10093,27 @@ pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.
 	# apt install -y libsm6 libxrender1 libxext6 libgl1-mesa-glx
     	# 实测 vgpu-32G 要装这个
         # 能正常训练
+        # 4090 结果不正常
+        
+        
+conda create --name DB python==3.7 ipython pip -y \
+  && conda activate DB
+
+
+https://download.pytorch.org/whl/cu100/torch-1.2.0-cp37-cp37m-manylinux1_x86_64.whl
+	# 最接近 cu10.1 + torch 1.2.0 的是这个
+    
+    https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
+        # cuda10.0 for ubuntu 18.04 
+        
+    
+  # python dependencies
+  pip install -r requirement.txt
+
+  # install PyTorch with cuda-10.1
+  conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+        
+        
 
 update-alternatives --remove cuda /usr/local/cuda-11.6
 update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 118 && 
