@@ -40847,7 +40847,7 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && sudo apt install libwayland-dev libxkbcommon-dev libseat-dev libinput-dev -y \
     && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y \
     && apt install libdbus-1-dev libpulse-dev libdisplay-info-dev -y \
-    && apt install libclang-dev libpam0g-dev -y \
+    && apt install libclang-dev libpam0g-dev libpipewire-0.3-dev -y \
     && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
     && source ~/.bashrc \
     && pkg-config --cflags --libs gstreamer-1.0 \

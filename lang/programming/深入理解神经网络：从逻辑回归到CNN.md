@@ -10193,7 +10193,7 @@ def main():
 
 vscode 中然后F5 调试运行train.py 
 
-CUDA_VISIBLE_DEVICES=0 python eval.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --resume /root/final8 --box_thresh 0.55
+CUDA_VISIBLE_DEVICES=0 python eval.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --resume /root/final8 --box_thresh 0.55 datasets/icdar2015
 
 CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --image_path datasets/icdar2015/test_images/img_1.jpg --resume /root/final8 --polygon --box_thresh 0.7 --visualize 
 
