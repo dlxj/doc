@@ -471,6 +471,12 @@ wsl --set-default-version 2
 
 wsl --update
 
+wsl --terminate Ubuntu-22.04
+	# 停止运行
+
+wsl --shutdown
+	# 关闭所有
+
 
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LxssManager
 	# On the right pane, locate Start and set the Value Data to 2.
