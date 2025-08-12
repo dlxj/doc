@@ -40894,7 +40894,7 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && systemctl enable gdm \
     && systemctl restart gdm 
     	# 登录时选择 COSMIC 会话  
-    
+    	# 实测 wsl linux 不成功
   
   git clone https://github.com/pop-os/cosmic-player && cd cosmic-player \
     && cargo build
