@@ -40871,7 +40871,19 @@ https://github.com/pop-os/cosmic-player  **iced player**
   
   pkill -f cargo \
     && ps aux | grep cargo | awk '{print $2}' | xargs kill -9
-    
+  
+  install -Dm0755 target/release/cosmic-workspaces /root/cosmic-epoch/cosmic-sysext/usr/bin/cosmic-workspaces
+  install -Dm0644 data/com.system76.CosmicWorkspaces.desktop /root/cosmic-epoch/cosmic-sysext/usr/share/applications/com.system76.CosmicWorkspaces.desktop
+  install -Dm0644 data/com.system76.CosmicWorkspaces.svg /root/cosmic-epoch/cosmic-sysext/usr/share/icons/hicolor/scalable/apps/com.system76.CosmicWorkspaces.svg
+  make: Leaving directory '/root/cosmic-epoch/cosmic-workspaces-epoch'
+  /usr/bin/make -C xdg-desktop-portal-cosmic install DESTDIR=/root/cosmic-epoch/cosmic-sysext prefix=/usr
+  make: Entering directory '/root/cosmic-epoch/xdg-desktop-portal-cosmic'
+  install -Dm0755 target/release/xdg-desktop-portal-cosmic /root/cosmic-epoch/cosmic-sysext/usr/libexec/xdg-desktop-portal-cosmic
+  install -Dm0644 data/org.freedesktop.impl.portal.desktop.cosmic.service /root/cosmic-epoch/cosmic-sysext/usr/share/dbus-1/services/org.freedesktop.impl.portal.desktop.cosmic.service
+  install -Dm0644 data/cosmic.portal /root/cosmic-epoch/cosmic-sysext/usr/share/xdg-desktop-portal/portals/cosmic.portal
+  install -Dm0644 data/cosmic-portals.conf /root/cosmic-epoch/cosmic-sysext/usr/share/xdg-desktop-portal/cosmic-portals.conf
+  	# 它安装的东西
+  
   sudo mv cosmic-sysext /var/lib/extensions \
     && sudo systemctl enable --now systemd-sysext \
     && sudo systemctl restart gdm 
