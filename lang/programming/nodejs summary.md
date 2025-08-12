@@ -40850,7 +40850,7 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y \
     && apt install libdbus-1-dev libpulse-dev libdisplay-info-dev -y \
     && apt install libclang-dev libpam0g-dev libpipewire-0.3-dev -y \
-    && apt install libflatpak-dev libpixman-1-dev -y \
+    && apt install libflatpak-dev libpixman-1-dev policycoreutils -y \
     && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
     && source ~/.bashrc \
     && pkg-config --cflags --libs gstreamer-1.0 \
@@ -40886,7 +40886,13 @@ https://github.com/pop-os/cosmic-player  **iced player**
   
   sudo mv cosmic-sysext /var/lib/extensions \
     && sudo systemctl enable --now systemd-sysext \
-    && sudo systemctl restart gdm 
+    && sudo systemd-sysext refresh \
+    && sudo setenforce 0 \
+    && service dbus start \
+    && apt purge gdm3 gnome-shell \
+    && apt install gdm3 ubuntu-desktop -y \
+    && systemctl enable gdm \
+    && systemctl restart gdm 
     	# 登录时选择 COSMIC 会话  
     
   
