@@ -549,6 +549,29 @@ conda clean -a
 
 
 
+### 离线安装 wsl 镜像
+
+```
+
+https://cloud-images.ubuntu.com/wsl/releases/24.04/current/ubuntu-noble-wsl-amd64-wsl.rootfs.tar.gz
+	# 下载
+
+wsl --import Ubuntu24.04 E:\Ubuntu2404_wsl X:\win10_dev\ubuntu-noble-wsl-amd64-wsl.rootfs.tar.gz
+	# 导入安装
+
+wsl -l
+	# 列出已安装
+
+wsl -d Ubuntu24.04
+	# 启动
+
+
+```
+
+
+
+
+
 ## Install Cosmic 桌面
 
 ```

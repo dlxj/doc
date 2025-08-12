@@ -40850,7 +40850,7 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev -y \
     && apt install libdbus-1-dev libpulse-dev libdisplay-info-dev -y \
     && apt install libclang-dev libpam0g-dev libpipewire-0.3-dev -y \
-    && apt install libflatpak-dev -y \
+    && apt install libflatpak-dev libpixman-1-dev -y \
     && echo 'export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH' >> ~/.bashrc \
     && source ~/.bashrc \
     && pkg-config --cflags --libs gstreamer-1.0 \
@@ -40858,12 +40858,16 @@ https://github.com/pop-os/cosmic-player  **iced player**
     && rustup default stable
   
   
+  
   git clone --recurse-submodules https://github.com/pop-os/cosmic-epoch \
     && cd cosmic-epoch \
+    && git pull --recurse-submodules \
+    && git submodule update --init --recursive \
+    && git submodule foreach git pull origin main
     && just sysext
     	# just clean
     	# 安装 cosmic 桌面
-    
+    	# 实测编译成功
   
   pkill -f cargo \
     && ps aux | grep cargo | awk '{print $2}' | xargs kill -9

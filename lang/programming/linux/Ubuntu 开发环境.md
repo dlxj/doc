@@ -202,6 +202,27 @@ systemctl restart sshd
 	# 或者 service ssh restart 
 
 
+
+win11 candy 10.0.0.3 是 home_pc，做个端口转发
+	# 10.0.0.3:2222 -> 127.0.0.1:22
+		# 这个 22 端口是 wsl ubuntu 的，实测能连
+
+netsh interface portproxy show all
+
+地址            端口        地址            端口
+--------------- ----------  --------------- ----------
+0.0.0.0         2222        127.0.0.1       22
+
+	# 查看已有端口转发，本机 2222 -> wsl 的 22
+
+
+netsh interface portproxy add v4tov4 listenport=2222 listenaddress=0.0.0.0 connectport=22 connectaddress=127.0.0.1
+	# 新增端口转发
+	
+	
+	
+
+
 mkdir -p /var/run/sshd && \
 /usr/sbin/sshd -D &
 	# docker 可以这样启动

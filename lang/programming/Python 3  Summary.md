@@ -10817,6 +10817,36 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 
 
 
+# Manim
+
+```
+git clone https://github.com/3b1b/manim.git \
+  && cd manim \
+  && pip install -e . \
+  && manimgl example_scenes.py OpeningManimExample
+  
+
+MiKTex 要装这些宏包
+
+amsmath babel-english cbfonts-fd cm-super count1to ctex doublestroke dvisvgm everysel
+fontspec frcursive fundus-calligra gnu-freefont jknapltx latex-bin
+mathastext microtype multitoc physics preview prelim2e ragged2e relsize rsfs
+setspace standalone tipa wasy wasysym xcolor xetex xkeyval
+ 
+
+mpm --admin --set-repository=https://mirrors.rit.edu --install amsmath babel-english cbfonts-fd cm-super count1to ctex doublestroke dvisvgm everysel 
+fontspec frcursive fundus-calligra gnu-freefont jknapltx latex-bin
+mathastext microtype multitoc physics preview prelim2e ragged2e relsize rsfs
+setspace standalone tipa wasy wasysym xcolor xetex xkeyval
+ 
+ 
+ 
+```
+
+
+
+
+
 
 
 ## ManimCE
