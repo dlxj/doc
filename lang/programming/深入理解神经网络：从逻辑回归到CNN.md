@@ -10223,13 +10223,18 @@ def main():
 
 vscode 中然后F5 调试运行train.py 
 
-CUDA_VISIBLE_DEVICES=0 python eval.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --resume /root/final8 --box_thresh 0.55 datasets/icdar2015
+CUDA_VISIBLE_DEVICES=0 python eval.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --resume /root/final8 --box_thresh 0.55
 
-CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --image_path datasets/icdar2015/test_images/img_1.jpg --resume /root/final8 --polygon --box_thresh 0.7 --visualize 
+CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --image_path datasets/icdar2015/test_images/img_2.jpg --resume /root/final8 --polygon --box_thresh 0.55 --visualize 
+	# img_1 用官方训练好的模型也是框不出的！！！
 
+CUDA_VISIBLE_DEVICES=0 python eval.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --resume /root/ic15_resnet18 --box_thresh 0.55
+	# 官方
+    
+CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --image_path datasets/icdar2015/test_images/img_2.jpg --resume /root/ic15_resnet18 --polygon --box_thresh 0.55 --visualize
+	# 官方
 
-
-
+    
 
 # CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
 

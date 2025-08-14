@@ -5676,6 +5676,13 @@ git clone --filter=blob:none --no-checkout https://huggingface.co/datasets/dlxjj
   && git lfs pull --include="pdfs/jp/李奇楠综合日语第1册修订版/**"
 
 
+git sparse-checkout init --cone \
+  && git sparse-checkout set "pdfs" \
+  && git lfs install \
+  && git checkout \
+  && git lfs pull --include="pdf/**"
+  
+
 git clone --filter=blob:none --no-checkout https://huggingface.co/datasets/dlxjj/project \
   && cd project \
   && git sparse-checkout init --cone \
