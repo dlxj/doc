@@ -11793,6 +11793,17 @@ character_type: CN
 - https://github.com/fanqie03/char-detection  单字符检测  利用ctc loss 解析时的位置信息
 
   - ```
+    
+    conda create -n chardetete python==3.8 pip
+    
+    pip uninstall shapely \
+      && conda install -c conda-forge shapely==1.7.0
+    		# 出错就这样
+    
+    pip uninstall numpy \
+      && pip install numpy==1.19.5
+      		# 再这样
+    
     CRNN通过 CNN+RNN+CTC 的三段式架构，解决了图像序列识别中的关键难题（如不定长对齐、上下文建模），成为OCR、语音识别等任务的主流方案。
     ```
 
