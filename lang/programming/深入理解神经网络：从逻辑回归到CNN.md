@@ -11790,6 +11790,18 @@ character_type: CN
 
 #### ppocrv5
 
+- https://github.com/PaddlePaddle/PaddleOCR/issues/3755
+
+  - ```
+    DB算法是个分割算法，在单字符和小字符的检测上有原生的缺陷，因为检测到的像素点很少，很容易当初噪点过滤掉，可以试试把min_text_size调小也许能补回一些召回
+    数据增强选择哪些增强是和原文对应的，图像变换后也会对label做相应变换，有兴趣可以自己尝试别的增强方式
+    训练时的输入尺寸EastRandomCropData，640就够了，这是crop后的size，不是直接resize原图，可以自己把预处理完后的数据画出来看看就清楚了
+    MakeBorderMap里的3个参数是基于原始标注生成3种输入数据的超参数，可以查看db原文，里面有详细描述
+    DetResizeForTest是测试时的输入尺寸，和训练无关
+    ```
+
+    
+
 ```
 
 conda create -n ppv5 python==3.10 pip \
