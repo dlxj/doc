@@ -565,6 +565,12 @@ wsl -l
 wsl -d Ubuntu24.04
 	# 启动
 
+wsl --terminate Ubuntu-24.04
+	# 停止运行
+
+wsl --shutdown
+	# 关闭所有
+
 
 ```
 

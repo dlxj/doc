@@ -10093,7 +10093,8 @@ pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.
 	# apt install -y libsm6 libxrender1 libxext6 libgl1-mesa-glx
     	# 实测 vgpu-32G 要装这个
         # 能正常训练
-        # 4090 结果不正常
+        # 这套用官方训练好的权重 eval 比论文的精度低了很多，但确实框出来了
+        	# 试试用它再继续微调会不会好点
         
         
 conda create --name DB python==3.7 ipython pip -y \
@@ -10105,6 +10106,7 @@ conda create --name DB python==3.7 ipython pip -y \
 https://download.pytorch.org/whl/cu100/torch-1.2.0-cp37-cp37m-manylinux1_x86_64.whl
 	# 最接近 cu10.1 + torch 1.2.0 的是这个
     # numpy-1.21.6
+    # 这套用官方训练好的权重 eval 能达到论文的精度
     https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
         # cuda10.0 for ubuntu 18.04 
         
