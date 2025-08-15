@@ -11792,6 +11792,10 @@ character_type: CN
 
 - https://github.com/fanqie03/char-detection  单字符检测  利用ctc loss 解析时的位置信息
 
+  - ```
+    CRNN通过 CNN+RNN+CTC 的三段式架构，解决了图像序列识别中的关键难题（如不定长对齐、上下文建模），成为OCR、语音识别等任务的主流方案。
+    ```
+
 - https://github.com/PaddlePaddle/PaddleOCR/issues/3755
 
   - ```
