@@ -11873,6 +11873,45 @@ for res in result:
 
 
 
+##### CRNN
+
+```
+
+
+
+pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.html
+	# apt install -y libsm6 libxrender1 libxext6 libgl1-mesa-glx
+
+git clone https://github.com/GitYCC/crnn-pytorch \
+  && mv crnn-pytorch crnn \
+  && cd crnn 
+  
+conda create -n crnn python==3.8 pip \
+  && conda activate crnn \
+  && pip install /mnt/x/CUDA_DEV/torch-2.0.0+cu118-cp38-cp38-linux_x86_64.whl \
+  && apt install libjpeg-dev zlib1g-dev \
+  && pip isntall -r requirements.txt
+
+
+# python src/predict.py demo/*.jpg
+device: cuda
+demo/170_READING_62745.jpg > reading
+demo/178_Showtime_70541.jpg > showtime
+demo/78_Novel_52433.jpg > novel
+	# 实测成功
+
+
+
+
+
+
+
+```
+
+
+
+
+
 ##### SVTR
 
 ```
