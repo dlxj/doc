@@ -10237,6 +10237,19 @@ CUDA_VISIBLE_DEVICES=0 python demo.py experiments/seg_detector/ic15_resnet18_def
 	# 官方
 
     
+ 
+2080ti 结果
+CUDA_VISIBLE_DEVICES=0 python eval.py experiments/seg_detector/ic15_resnet18_deform_thre.yaml --resume /root/ic15_resnet18 --box_thresh 0.55
+[INFO] [2025-08-18 08:35:02,616] precision : 0.877384 (500)
+[INFO] [2025-08-18 08:35:02,617] recall : 0.775156 (500)
+[INFO] [2025-08-18 08:35:02,617] fmeasure : 0.823108 (1)
+
+
+4090 结果
+pip install numpy==1.21.1
+	# 换成和 2080ti 一样的代码后 eval 精度一样了
+    
+
 
 # CUDA_VISIBLE_DEVICES=0 python train.py experiments/seg_detector/td500_resnet18_deform_thre.yaml --num_gpus 1
 
