@@ -11805,6 +11805,8 @@ character_type: CN
 
 - https://github.com/fanqie03/char-detection  单字符检测  利用ctc loss 解析时的位置信息
 
+  - https://cloud.tencent.com/developer/article/1875829
+
   - ```
     
     conda create -n chardetete python==3.8 pip
@@ -11864,6 +11866,16 @@ for res in result:
     res.save_to_json("output")
 
  实测繁体竖排、中日模排效果都很好
+
+```
+
+
+
+##### SVTR
+
+```
+
+一种基于纯视觉模型的场景文本识别算法，由百度团队于2022年提出，旨在简化传统文本识别流程并提升效率与精度。
 
 ```
 
