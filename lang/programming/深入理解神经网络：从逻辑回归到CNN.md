@@ -11817,6 +11817,12 @@ character_type: CN
       && pip install numpy==1.19.5
       		# 再这样
     
+    python model.py --level char --images images/0.png
+    
+    CRNN是一种端到端的文字识别模型，结构包含卷积层、循环层和转录层（CTC）。
+    通过CNN提取特征序列，RNN处理序列信息，最后用CTC解决对齐问题——全程无需分割字符。
+    
+    
     CRNN通过 CNN+RNN+CTC 的三段式架构，解决了图像序列识别中的关键难题（如不定长对齐、上下文建模），成为OCR、语音识别等任务的主流方案。
     ```
 
