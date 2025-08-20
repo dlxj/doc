@@ -4,6 +4,10 @@
 
 
 
+https://github.com/OsbertWang/install-latex-guide-zh-cn  必看
+
+
+
 ## mathjax
 
 

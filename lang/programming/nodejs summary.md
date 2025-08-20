@@ -3140,6 +3140,98 @@ vercel -A route.json --prod
 
 ### 负载均衡
 
+
+
+```
+
+vi /etc/nginx/nginx.conf
+user  root;
+worker_processes  1;
+
+error_log  /var/log/nginx/error.log warn;
+pid        /var/run/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       /etc/nginx/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+
+
+
+
+
+
+
+vi /etc/nginx/conf.d/testDiff.conf
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
+upstream diffServer {
+  server localhost:10000;
+  server localhost:10001;
+  server localhost:10002;
+  server localhost:10003;
+  server localhost:10004;
+  server localhost:10005;
+  server localhost:10006;
+  server localhost:10007;
+  server localhost:10008;
+  server localhost:10009;
+}
+
+
+#####            tiku内_去_重          #####
+server {
+  listen 7115;
+  server_name localhost;
+
+  location / {
+    location / {
+      proxy_pass http://diffServer;
+    }
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+    proxy_read_timeout 9999999;
+    proxy_connect_timeout 9999999;
+    proxy_send_timeout 9999999;
+  }
+}
+
+
+
+
+```
+
+
+
+
+
 ```
 # 同时转发http 和 websocket 
 # /etc/nginx_conf.d/testDiff.conf
@@ -3243,6 +3335,13 @@ cd D:\usr\nginx-1.25.3
 start nginx
 tasklist /fi "imagename eq nginx.exe"
 nginx -t -c /nginx-1.15.2/conf/nginx.conf
+
+
+> cd D:\nginx-1.24.0
+PS D:\nginx-1.24.0> nginx.exe -t -c D:\nginx-1.24.0\conf\nginx.conf
+nginx: the configuration file D:\nginx-1.24.0\conf\nginx.conf syntax is ok
+nginx: configuration file D:\nginx-1.24.0\conf\nginx.conf test is successful
+	# 它还必须在 nginx 安装目录运行
 
 ```
 
