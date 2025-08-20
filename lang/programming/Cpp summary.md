@@ -714,6 +714,52 @@ int main() {
 
 
 
+## 格式化
+
+```	
+# need C++ 20
+
+# see D:\workcode\nodejs\ocr\WeChatOCR\src\WeChatOcrCpp\main.cpp
+
+#include <format>
+
+    // 添加POST接口，接收base64编码的图片
+    svr.Post("/wechatocr", [&totalTasks, &port](const httplib::Request& req, httplib::Response& res) {
+
+		std::string msg_Warning_waiting = std::vformat("{{\"msg\":\"warning: waiting previous task done. port {}\" }}", std::make_format_args(port));
+		std::string msg_Err_noParam = std::vformat("{{\"msg\":\"error: not have img param. port {}\" }}", std::make_format_args(port));
+		std::string msg_Err_genFilename = std::vformat("{{\"msg\":\"error: gen tmp filename fail. port {}\" }}", std::make_format_args(port));
+		std::string msg_Err_rec_fail = std::vformat("{{\"msg\":\"error: rec fail port {}\" }}", std::make_format_args(port));
+
+	# port 还必须得是引用类型
+
+
+```
+
+
+
+```
+# 自定义类型的格式化
+struct Point { int x, y; };
+
+template<>
+struct std::formatter<Point> {
+    auto parse(auto& ctx) { return ctx.begin(); }
+    auto format(const Point& p, auto& ctx) const {
+        return std::format_to(ctx.out(), "({}, {})", p.x, p.y);
+    }
+};
+
+int main() {
+    Point p{3, 5};
+    auto args = std::make_format_args(p);
+    std::cout << std::vformat("Point: {}", args); // 输出：Point: (3, 5)
+}
+
+```
+
+
+
 
 
 # vector

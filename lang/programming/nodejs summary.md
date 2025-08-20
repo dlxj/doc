@@ -2573,6 +2573,21 @@ package.json if node < 16.14
 https://www.cnblogs.com/xusx2014/p/16089510.html
 
 ```
+
+
+{
+  "name": "WeChatOCR_7789",
+  "script": "WeChatOcrCpp.exe",
+  "args": ["7789"],
+  "cwd": "E:\\WeChatOCR_Server",
+  "exec_interpreter": "none"
+}
+
+pm2 start wechatocr_7789.json
+	# 这样能成功启动
+
+
+
 1、我们一般会把 pm2 安装到全局：
 
 npm install pm2 -g
