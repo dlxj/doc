@@ -1114,6 +1114,21 @@ std::wstring type = se["type"];
 
 
 
+# 多线程加锁
+
+```
+
+#include <thread>
+#include <atomic>
+
+std::atomic<int> totalTasks(0);  // 使用原子类型确保线程安全
+
+```
+
+
+
+
+
 # csv
 
 [rapidcsv](https://github.com/d99kris/rapidcsv)
