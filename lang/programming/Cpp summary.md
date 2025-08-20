@@ -723,7 +723,6 @@ int main() {
 
 #include <format>
 
-    // 添加POST接口，接收base64编码的图片
     svr.Post("/wechatocr", [&totalTasks, &port](const httplib::Request& req, httplib::Response& res) {
 
 		std::string msg_Warning_waiting = std::vformat("{{\"msg\":\"warning: waiting previous task done. port {}\" }}", std::make_format_args(port));
@@ -732,6 +731,14 @@ int main() {
 		std::string msg_Err_rec_fail = std::vformat("{{\"msg\":\"error: rec fail port {}\" }}", std::make_format_args(port));
 
 	# port 还必须得是引用类型
+
+原因解释：
+
+1.
+   格式化字符串语法 ：在 C++20 的 std::format 和 std::vformat 中，单个大括号 {} 有特殊含义，用于标记格式化参数的位置
+2.
+   转义需求 ：当你想在最终输出的字符串中包含字面意义的大括号字符时，需要使用 {{ 来表示一个字面的 { ，使用 }} 来表示一个字面的 }
+
 
 
 ```
