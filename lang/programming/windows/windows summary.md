@@ -349,6 +349,24 @@ Get-NetTCPConnection -LocalPort 8080 | ForEach-Object { Stop-Process -Id $_.Owni
 
 
 
+# 进程路径参数
+
+```
+
+tasklist /fi "imagename eq nginx.exe"
+
+> Get-CimInstance Win32_Process -Filter "ProcessId=7092" | Select-Object CommandLine, ExecutablePath
+
+CommandLine ExecutablePath
+----------- --------------
+nginx       D:\nginx-1.24.0\nginx.exe
+
+```
+
+
+
+
+
 # 隐藏窗口标题
 
 ```
