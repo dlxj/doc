@@ -3144,6 +3144,205 @@ vercel -A route.json --prod
 
 ```
 
+New-NetFirewallRule -DisplayName "Allow Port 7788" -Direction Inbound -Protocol TCP -LocalPort 7788 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7789" -Direction Inbound -Protocol TCP -LocalPort 7789 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7790" -Direction Inbound -Protocol TCP -LocalPort 7790 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7791" -Direction Inbound -Protocol TCP -LocalPort 7791 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7792" -Direction Inbound -Protocol TCP -LocalPort 7792 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7793" -Direction Inbound -Protocol TCP -LocalPort 7793 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7794" -Direction Inbound -Protocol TCP -LocalPort 7794 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7795" -Direction Inbound -Protocol TCP -LocalPort 7795 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7796" -Direction Inbound -Protocol TCP -LocalPort 7796 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7797" -Direction Inbound -Protocol TCP -LocalPort 7797 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7798" -Direction Inbound -Protocol TCP -LocalPort 7798 -Action Allow
+New-NetFirewallRule -DisplayName "Allow Port 7799" -Direction Inbound -Protocol TCP -LocalPort 7799 -Action Allow
+    # windows 开放端口
+
+vi wechatocr_7789.json
+{
+  "name": "WeChatOCR_7789",
+  "script": "WeChatOcrCpp.exe",
+  "args": ["7789"],
+  "cwd": "E:\\WeChatOCR_Server",
+  "exec_interpreter": "none"
+}
+
+
+pm2 start wechatocr_7789.json
+pm2 start wechatocr_7790.json
+    # 启动服务
+
+
+
+nginx.exe -t -c D:\nginx-1.24.0\conf\nginx.conf
+
+http {
+
+    # 放 http 下面
+    upstream wechatOcrCluster {
+        server localhost:7789;
+        server localhost:7790;
+    }
+
+    server {
+        listen 7788;
+        server_name localhost;
+
+        location / {
+            proxy_pass http://wechatOcrCluster;
+            proxy_read_timeout 9999;
+            proxy_connect_timeout 9999;
+            proxy_send_timeout 9999;
+	    client_max_body_size 200M;
+        }
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Upgrade $http_upgrade;
+    }
+
+
+
+nginx -s reload
+    # 配好后加载配置
+
+
+> Get-Process -Id (Get-NetTCPConnection -LocalPort 7788).OwningProcess
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    147      12   298448     295376       0.09  58240   2 nginx
+
+    # 生效了
+
+
+> Get-Process -Id (Get-NetTCPConnection -LocalPort 7789).OwningProcess
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    233     322    25532      33196      13.86  59496   2 WeChatOcrCpp
+
+
+> Get-Process -Id (Get-NetTCPConnection -LocalPort 7790).OwningProcess
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName
+-------  ------    -----      -----     ------     --  -- -----------
+    233     322    11496      19820       4.52  29260   2 WeChatOcrCpp
+
+
+
+
+
+
+vi ocr_aliyun.js
+
+(async () => {
+
+    // New-NetFirewallRule -DisplayName "Allow Port 7788" -Direction Inbound -Protocol TCP -LocalPort 7788 -Action Allow
+
+    async function sleep(ms) {
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms)
+        })
+    }
+
+
+    async function ocr(imgData) {
+        // const api = 'https://gjbsb.market.alicloudapi.com/ocrservice/advanced';
+        const api = 'http://192.168.0.24:7788/wechatocr';
+        const appCode = ``;
+        const appSecret = ``;
+
+        let request = require('request')
+
+        const data = await new Promise((resolve, reject) => {
+            request.post({
+                url: api,
+                timeout: 1000 * 60 * 60 * 24,
+                headers: {
+                    "Authorization": `APPCODE ${appCode}`,
+                    "Content-Type": "application/json;charset=UTF-8"
+                },
+                body: JSON.stringify({
+                    img: imgData,
+                    prob: true,
+                    charInfo: true,
+                    table: true,
+                    sortPage: true,
+                    NeedRotate: true
+                })
+            }, (error, response, body) => {
+                if (error) {
+                    console.log('#####ERROR: aliyun ocr fail.');
+                    console.log(error);
+                    resolve([null, error])
+
+                    // reject(error);
+                }
+                else {
+                    if (response.statusCode != 200) {
+                        console.log('#####ERROR: aliyun ocr fail');
+                        return resolve([null, { "error_code": response.statusCode, "error_msg": body }])
+                    }
+                    let aliResult = null;
+                    try {
+                        aliResult = JSON.parse(body);
+                    } catch (ex) {
+                        console.log('#####ERROR: aliyun ocr fail.');
+                        console.log(ex.message);
+                        console.log(response.statusCode);
+                        console.log(error);
+                        console.log(body);
+                    }
+                    resolve([aliResult, null]);
+                }
+            })
+        });
+
+        if (data[0] != null) {
+            console.log(`one task done.`)
+        }
+
+        if (data.error_code !== undefined && data.error_code !== null) {
+            return [null, { "code": data.error_code, "msg": data.error_msg }]
+        }
+
+        return [data, null]
+
+    }
+
+
+    let fs = require('fs')
+    let md5 = require('md5')
+
+    let bytes = fs.readFileSync("0170.jpg")
+    let buf = Buffer.from(bytes)
+    let m5 = md5(buf)
+    let b64 = buf.toString('base64')
+
+
+    for (let i = 0; i < 5000; i++) {
+        console.log(`Send ${i}`)
+        ocr(b64);
+        await sleep(300);
+    }
+
+
+})()
+
+
+
+node ocr_aliyun.js
+    # 测试负载均衡成功
+
+```
+
+
+
+
+
+```
+
 vi /etc/nginx/nginx.conf
 user  root;
 worker_processes  1;
