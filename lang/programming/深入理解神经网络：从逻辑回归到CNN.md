@@ -11910,6 +11910,30 @@ demo/78_Novel_52433.jpg > novel
 
 
 
+##### Mask-RCNN
+
+http://home.ustc.edu.cn/~liujunyan/blog/Mask-RCNN/
+
+```
+
+Mask RCNN 的第一部分是一个标准的 CNN 卷积网络（一般是 ResNet50 或者 ResNet101），目的用来提取图像中的信息。除此之外，Mask-RCNN 还使用了 FPN (Feature Pyramid Networks 特征金字塔网络) 来提升网络的性能。
+
+```
+
+
+
+##### fcn
+
+http://home.ustc.edu.cn/~liujunyan/blog/fcn/
+
+```
+
+FCN 则一般通过反卷积层对卷积输出作上采样，使它恢复到输入图像的大小尺寸，这样就实现了对每一个像素进行分类预测。与 CNN 相比，FCN 有一个显著的特点就是输入图像尺寸不需要裁剪成指定大小，卷积和反卷积都不依赖图像的整体尺寸（CNN 的全连接层需要尺寸固定才能确定权重 weight）。
+
+```
+
+
+
 
 
 ##### SVTR
