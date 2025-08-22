@@ -11848,7 +11848,8 @@ conda create -n ppv5 python==3.10 pip \
   && conda activate ppv5 \
   && python -m pip install paddlepaddle-gpu==3.1.1 -i https://www.paddlepaddle.org.cn/packages/stable/cu118 \
   && pip install paddleocr 
-
+	# python -m pip install paddlepaddle==3.1.1 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
+		# cpu 就这样
 
 from paddleocr import PaddleOCR
 # 初始化 PaddleOCR 实例
@@ -11867,7 +11868,7 @@ for res in result:
     res.save_to_img("output")
     res.save_to_json("output")
 
- 实测繁体竖排、中日模排效果都很好
+ 实测繁体竖排、中日横排效果都很好
 
 ```
 
