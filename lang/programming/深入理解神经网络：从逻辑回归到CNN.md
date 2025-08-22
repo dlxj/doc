@@ -11851,6 +11851,12 @@ conda create -n ppv5 python==3.10 pip \
 	# python -m pip install paddlepaddle==3.1.1 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
 		# cpu 就这样
 
+
+return_word_box
+	# 单字符坐标
+	# https://github.com/PaddlePaddle/PaddleOCR/blob/release/3.2/docs/version3.x/pipeline_usage/OCR.md
+	
+
 from paddleocr import PaddleOCR
 # 初始化 PaddleOCR 实例
 ocr = PaddleOCR(
