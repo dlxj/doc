@@ -5484,6 +5484,8 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
   
   git reset --hard HEAD
   	# 丢弃所有更改，回复到最近一次提交
+  		git push --force-with-lease origin main
+  			# 强制远程仓同步删除（不可回退！）
   
   git log --oneline
   	# 查看提交历史
