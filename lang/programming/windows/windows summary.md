@@ -436,6 +436,72 @@ C:\Windows\system32\wsl.exe -d Ubuntu-22.04
 
 
 
+```
+
+vi wslAutoStart.ps1
+# 定义参数
+param(
+    [string]$DistroName = "Ubuntu-22.04",  # 默认发行版名称
+    [string]$WslPath = "C:\Windows\System32\wsl.exe"  # wsl.exe 默认路径
+)
+
+# 验证 wsl.exe 路径是否存在
+if (-not (Test-Path $WslPath)) {
+    Write-Error "wsl.exe 未在路径 $WslPath 找到，请检查路径是否正确！"
+    exit 1
+}
+
+# 创建任务计划配置
+$TaskName = "WSL_AutoStart_$DistroName"
+$TaskDescription = "系统启动时自动启动 WSL 发行版 $DistroName"
+
+# 创建触发器（系统启动时触发）
+$Trigger = New-ScheduledTaskTrigger -AtStartup
+
+# 创建操作（执行 wsl.exe 并指定发行版）
+$Action = New-ScheduledTaskAction `
+    -Execute $WslPath `
+    -Argument "-d $DistroName"
+
+# 配置任务设置
+$Settings = New-ScheduledTaskSettingsSet `
+    -AllowStartIfOnBatteries `
+    -DontStopIfGoingOnBatteries `
+    -StartWhenAvailable `
+    -DontStopOnIdleEnd
+
+# 配置任务权限（最高权限且无需用户登录）
+$Principal = New-ScheduledTaskPrincipal `
+    -UserId "SYSTEM" `
+    -LogonType ServiceAccount `
+    -RunLevel Highest
+
+# 注册计划任务
+Register-ScheduledTask `
+    -TaskName $TaskName `
+    -Description $TaskDescription `
+    -Trigger $Trigger `
+    -Action $Action `
+    -Settings $Settings `
+    -Principal $Principal `
+    -Force
+
+# 输出结果
+Write-Host "✅ 已创建任务计划：$TaskName"
+Write-Host "⏱️ 触发器：系统启动时自动运行"
+Write-Host "📝 执行命令：$WslPath -d $DistroName"
+
+
+Set-ExecutionPolicy RemoteSigned -Scope Process -Force
+.\wslAutoStart.ps1
+
+
+```
+
+
+
+
+
 ## 阻止休眠
 
 ```
@@ -1079,6 +1145,10 @@ https://aka.ms/windbg/download
 ```
 
 
+
+## wxhelper
+
+https://github.com/ttttupup/wxhelper
 
 
 
