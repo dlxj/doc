@@ -3207,6 +3207,32 @@ class EAPIrt2PLModel(object):
 ```
     def __init__(self, data_dir=None, data_list=None, cmd={}, **kwargs):
 		self.debug = cmd.get('debug', False)
+		
+		
+see huggingface\crnn\src\predict.py
+
+"""Usage: predict.py [-m MODEL] [-s BS] [-d DECODE] [-b BEAM] [IMAGE ...]
+
+-h, --help    show this
+-m MODEL     model file [default: ./checkpoints/crnn_synth90k.pt]
+-s BS       batch size [default: 256]
+-d DECODE    decode method (greedy, beam_search or prefix_beam_search) [default: beam_search]
+-b BEAM   beam size [default: 10]
+
+"""
+from docopt import docopt  # 默认参数从开头的文档注释来
+
+def main():
+    arguments = docopt(__doc__)
+
+    images = arguments['IMAGE']
+    reload_checkpoint = arguments['-m']
+    batch_size = int(arguments['-s'])
+    decode_method = arguments['-d']
+    beam_size = int(arguments['-b'])
+
+
+
 ```
 
 
