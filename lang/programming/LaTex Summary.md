@@ -464,6 +464,16 @@ $$
 
 ## 本地 texlive
 
+https://mirrors.tuna.tsinghua.edu.cn/help/CTAN/
+
+https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2025.iso
+
+- ```
+  Windows 下双击运行其中的 install-tl.bat
+  ```
+
+  
+
 ```
 texlive，使用vscode+latex插件，体验和overleaf类似，且编译全都在本地
 ```
