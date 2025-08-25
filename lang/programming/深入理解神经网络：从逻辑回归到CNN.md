@@ -11889,6 +11889,17 @@ for res in result:
 pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.html
 	# apt install -y libsm6 libxrender1 libxext6 libgl1-mesa-glx
 
+https://download.pytorch.org/whl/cpu/torch-2.0.0%2Bcpu-cp38-cp38-win_amd64.whl
+	# cpu
+
+$env:HTTP_PROXY = "http://127.0.0.1:7897"
+$env:HTTPS_PROXY = "http://127.0.0.1:7897"
+vcpkg install zlib:x64-windows
+	# windows 就这样
+	
+
+
+
 git clone https://github.com/GitYCC/crnn-pytorch \
   && mv crnn-pytorch crnn \
   && cd crnn 
@@ -11897,7 +11908,7 @@ conda create -n crnn python==3.8 pip \
   && conda activate crnn \
   && pip install /mnt/x/CUDA_DEV/torch-2.0.0+cu118-cp38-cp38-linux_x86_64.whl \
   && apt install libjpeg-dev zlib1g-dev \
-  && pip isntall -r requirements.txt
+  && pip install -r requirements.txt --proxy 127.0.0.1:7897
 
 
 # python src/predict.py demo/*.jpg
