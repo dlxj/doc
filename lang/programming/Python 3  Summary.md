@@ -12158,6 +12158,34 @@ if __name__ == '__main__':
 
 
 
+## rectangle
+
+```
+
+see huggingface\imradv3\ppv5.py
+
+see huggingface\project\flask_auto_selection.py
+
+see 
+
+    for idx_line, (words, boxs) in enumerate(zip(text_word, text_word_boxes)):
+        text_line = rec_texts[idx_line]
+        text_box = rec_boxes[idx_line]
+        img = cv2.rectangle(img, (text_box[0], text_box[1]), (text_box[2], text_box[3]), (255, 0, 0), 2)
+        cv2.imshow('orig', img)
+        cv2.waitKey(0)
+        for idx_word, (word, box) in enumerate(zip(words, boxs)):
+            print(word)
+            img = cv2.rectangle(img, (box[0], box[1]), (box[2], box[3]), (0, 255, 0), 2)  # 矩形的左上角, 矩形的右下角
+            cv2.imshow('orgin', img)
+            cv2.waitKey(0)
+
+```
+
+
+
+
+
 ## base64
 
 
