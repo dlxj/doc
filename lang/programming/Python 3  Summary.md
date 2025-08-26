@@ -10907,12 +10907,17 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 
 # Manim
 
+https://github.com/3b1b/videos  视频中的代码在这
+
 ```
 git clone https://github.com/3b1b/manim.git \
   && cd manim \
   && pip install -e . \
   && manimgl example_scenes.py OpeningManimExample
   	# 实测 windows + texlive 正常运行
+		# PYTHONPATH=. manimgl videos/_2025/colliding_blocks_v2/blocks.py Blocks
+			# ModuleNotFoundError: No module named 'manim_imports_ext'
+
 
 ## 本地 texlive
 
