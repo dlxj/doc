@@ -10850,6 +10850,28 @@ git clone https://github.com/3b1b/manim.git \
   && cd manim \
   && pip install -e . \
   && manimgl example_scenes.py OpeningManimExample
+  	# 实测 windows + texlive 正常运行
+
+## 本地 texlive
+
+https://mirrors.tuna.tsinghua.edu.cn/help/CTAN/
+
+https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2025.iso
+
+- ```
+  Windows 下双击运行其中的 install-tl.bat
+  ```
+
+  
+
+​```
+texlive，使用vscode+latex插件，体验和overleaf类似，且编译全都在本地
+​```
+
+
+  
+  
+  
   
 
 MiKTex 要装这些宏包
