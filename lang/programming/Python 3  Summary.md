@@ -12150,6 +12150,8 @@ if __name__ == '__main__':
 
     imgData = np.fromfile('./密密麻麻.bmp', dtype=np.uint8)
     img = cv2.imdecode(imgData, -1)
+    	# img = cv2.imdecode(imgData, cv2.IMREAD_COLOR_BGR)
+     
     # image = cv2.imdecode(np.fromfile('./cleaned.jpg',dtype=np.uint8), -1)
 
 ```
