@@ -575,7 +575,13 @@ conda init
 ```
 https://zhuanlan.zhihu.com/p/72480936
 requirements.txt
+
+pip install opencv-python --proxy=http://127.0.0.1:7897
+
+
 ```
+
+
 
 
 
