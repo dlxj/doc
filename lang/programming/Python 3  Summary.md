@@ -8885,6 +8885,34 @@ def frequencyStatistics():
 
 
 
+### ppocr
+
+```
+see huggingface\imradv3\ppv5.py
+
+@app.route('/ppocr', methods=['post'])
+def autoselection():
+    # request.json 只能够接受方法为POST、Body为raw，header 内容为 application/json类型的数据
+    print(request.json, type(request.json))
+
+    # 使用 request.form 来接受 x-www-form-urlencoded 格式的数据
+    # print(request.form, type(request.form))
+    
+    # form_data = request.form.to_dict()
+    # if "img" not in form_data:
+    #     return jsonify([])
+    
+    # base64_str = form_data["img"]
+
+    base64_str = request.json['img']
+    
+    img = base64_to_mat(base64_str)
+```
+
+
+
+
+
 ### 异步
 
 ```python
@@ -9287,6 +9315,34 @@ def stream_ISO():
 
 
 ## Post 
+
+
+
+```
+
+see huggingface\imradv3\ppv5.py
+
+@app.route('/ppocr', methods=['post'])
+def autoselection():
+    # request.json 只能够接受方法为POST、Body为raw，header 内容为 application/json类型的数据
+    print(request.json, type(request.json))
+
+    # 使用 request.form 来接受 x-www-form-urlencoded 格式的数据
+    # print(request.form, type(request.form))
+    
+    # form_data = request.form.to_dict()
+    # if "img" not in form_data:
+    #     return jsonify([])
+    
+    # base64_str = form_data["img"]
+
+    base64_str = request.json['img']
+    
+    img = base64_to_mat(base64_str)
+
+```
+
+
 
 
 
