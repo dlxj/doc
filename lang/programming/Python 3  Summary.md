@@ -3509,7 +3509,9 @@ raise RuntimeError('some err')
     except Exception as e:
         print ( str(e) )
         print ('testjson err: \n\n', dic["TestJson"])
-
+	finally:
+        print(1)
+        
 ```
 
 
@@ -5061,6 +5063,61 @@ if __name__ == "__main__":
 ```
 
 
+
+
+
+#### 信号量替代锁
+
+
+
+```
+
+see huggingface\imradv3\src\WeChatOcrCpp\ppv5.py
+
+from flask import Flask, request, jsonify
+import threading
+
+# 限制同时处理的请求数量为1
+ocr_semaphore = threading.Semaphore(1)
+@app.route('/ppocr', methods=['post'])
+def autoselection():
+    # request.json 只能够接受方法为POST、Body为raw，header 内容为 application/json类型的数据
+    # print(request.json, type(request.json))
+
+    # 使用 request.form 来接受 x-www-form-urlencoded 格式的数据
+    # print(request.form, type(request.form))
+    
+    # form_data = request.form.to_dict()
+    # if "img" not in form_data:
+    #     return jsonify([])
+    
+    # base64_str = form_data["img"]
+
+    # 非阻塞方式获取信号量
+    if not ocr_semaphore.acquire(blocking=False):
+        return jsonify({"warning": "wait pre task done."})
+    
+    try:
+
+        base64_str = request.json['img']
+        
+        img = base64_to_mat(base64_str)
+
+        result = ocr.predict(
+            input = img, 
+            return_word_box=True
+            )
+            
+        jn = ppresult_tojson(img.copy(), result)
+
+        return jsonify(jn)
+    
+    except Exception as e:
+        return jsonify({"error": str(e)})
+    finally:
+        ocr_semaphore.release()
+
+```
 
 
 
@@ -10927,18 +10984,18 @@ https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2025.iso
 
 - ```
   Windows 下双击运行其中的 install-tl.bat
-  ```
+```
 
   
 
-​```
+```
 texlive，使用vscode+latex插件，体验和overleaf类似，且编译全都在本地
 ​```
 
 
+
   
-  
-  
+
   
 
 MiKTex 要装这些宏包
@@ -10947,15 +11004,15 @@ amsmath babel-english cbfonts-fd cm-super count1to ctex doublestroke dvisvgm eve
 fontspec frcursive fundus-calligra gnu-freefont jknapltx latex-bin
 mathastext microtype multitoc physics preview prelim2e ragged2e relsize rsfs
 setspace standalone tipa wasy wasysym xcolor xetex xkeyval
- 
+
 
 mpm --admin --set-repository=https://mirrors.rit.edu --install amsmath babel-english cbfonts-fd cm-super count1to ctex doublestroke dvisvgm everysel 
 fontspec frcursive fundus-calligra gnu-freefont jknapltx latex-bin
 mathastext microtype multitoc physics preview prelim2e ragged2e relsize rsfs
 setspace standalone tipa wasy wasysym xcolor xetex xkeyval
+
  
- 
- 
+
 ```
 
 
@@ -10992,7 +11049,7 @@ from manim import *
 config.media_width = "60%"
 ```
 
-```python
+​```python
 %%manim -v WARNING -qm LinearTransformationSceneExample
 
 class LinearTransformationSceneExample(LinearTransformationScene):

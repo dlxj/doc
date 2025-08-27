@@ -1,7 +1,7 @@
 
 # git-lfs
 ```
-yao: 08-26 09:57:09
+
 After more trial-and-error, I found that using v3.15's git-lfs (3.0.2-r0) can work around this issue.
 
 vi -c "%s/v3.14/v3.15/g" -c wq /etc/apk/repositories # or edit the file manually
@@ -9,7 +9,7 @@ apk add git-lfs
 git-lfs --version # now this should be done instantly
 I'm closing this issue as there are workarounds.
 
-yao: 08-26 09:59:12
+
 curl -O https://github.com/git-lfs/git-lfs/releases/download/v3.5.1/git-lfs-linux-amd64-v3.5.1.tar.gz
 tar -xzf git-lfs-*.tar.gz
 cd git-lfs-*
