@@ -5750,7 +5750,7 @@ export HTTP_PROXY="http://127.0.0.1:7897" \
 
 huggingface-cli repo create pandora --type dataset
 	# --type {model, dataset, space}
-	# 创建创库 完了以后在官网把它设为 私有
+	# 创建仓库 完了以后在官网把它设为 私有
 	# huggingface-cli repo create InternLM-SFT --type dataset
 	# huggingface-cli repo create chatglm_v2_6b_lora --type dataset
 	# huggingface-cli repo create InternLM-SFT --type dataset
@@ -5973,6 +5973,97 @@ Additionally you can add `"files.eol": "\n"` in your Vscode settings.
 
 
 ```
+
+
+
+### .gitattributes 
+
+```
+
+see huggingface\PDFPatcher\.gitattributes
+
+###############################################################################
+# Set default behavior to automatically normalize line endings.
+###############################################################################
+* text=auto
+
+# Make sure that these files always have CRLF line endings in checkout
+*.config          text eol=crlf
+*.cs              text eol=crlf
+*.csproj          text eol=crlf
+*.html            text eol=crlf
+*.js              text eol=crlf
+*.manifest        text eol=crlf
+*.resx            text eol=crlf
+*.sln             text eol=crlf
+*.targets         text eol=crlf
+*.txt             text eol=crlf
+*.vcxproj         text eol=crlf
+*.vcxproj.filters text eol=crlf
+*.xml             text eol=crlf
+*.xsd             text eol=crlf
+
+# Never perform LF normalization on these files
+*.chw    binary
+*.dll    binary
+*.docx   binary
+*.exe    binary
+*.ico    binary
+*.png    binary
+
+###############################################################################
+# Set default behavior for command prompt diff.
+#
+# This is need for earlier builds of msysgit that does not have it on by
+# default for csharp files.
+# Note: This is only used by command line
+###############################################################################
+#*.cs     diff=csharp
+
+###############################################################################
+# Set the merge driver for project and solution files
+#
+# Merging from the command prompt will add diff markers to the files if there
+# are conflicts (Merging from VS is not affected by the settings below, in VS
+# the diff markers are never inserted). Diff markers may cause the following 
+# file extensions to fail to load in VS. An alternative would be to treat
+# these files as binary and thus will always conflict and require user
+# intervention with every merge. To do so, just uncomment the entries below
+###############################################################################
+#*.sln       merge=binary
+#*.csproj    merge=binary
+#*.vbproj    merge=binary
+#*.vcxproj   merge=binary
+#*.vcproj    merge=binary
+#*.dbproj    merge=binary
+#*.fsproj    merge=binary
+#*.lsproj    merge=binary
+#*.wixproj   merge=binary
+#*.modelproj merge=binary
+#*.sqlproj   merge=binary
+#*.wwaproj   merge=binary
+
+###############################################################################
+# diff behavior for common document formats
+# 
+# Convert binary document formats to text before diffing them. This feature
+# is only available from the command line. Turn it on by uncommenting the 
+# entries below.
+###############################################################################
+#*.doc   diff=astextplain
+#*.DOC   diff=astextplain
+#*.docx  diff=astextplain
+#*.DOCX  diff=astextplain
+#*.dot   diff=astextplain
+#*.DOT   diff=astextplain
+#*.pdf   diff=astextplain
+#*.PDF   diff=astextplain
+#*.rtf   diff=astextplain
+#*.RTF   diff=astextplain
+
+```
+
+
 
 
 

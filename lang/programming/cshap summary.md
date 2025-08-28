@@ -2018,9 +2018,19 @@ string prms = $" {{ \"keyword\" : \"{Request.Form["keyword"]}\", \"lang_select\"
 
 
 ```c#
-# {} 里面的是动态计算
+//  {} 里面的是动态计算
 string dist = $"{Directory.GetCurrentDirectory()}/rotate{DateTime.Now.ToString("yyyyMMddHHmmssfffff")}{Path.GetExtension(imagePath)}";
 ```
+
+
+
+```
+// 致少 4 位数字
+string imageName = $"{pageNumber:D4}.jpg";
+
+```
+
+
 
 
 
@@ -3312,6 +3322,13 @@ using Newtonsoft.Json.Linq;
 ```
 
 
+
+## 改扩展名
+
+```
+ string jp2Path = Path.ChangeExtension(imagePath, ".jp2");
+ 
+```
 
 
 
