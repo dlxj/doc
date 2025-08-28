@@ -5742,6 +5742,12 @@ git lfs pull
 
 apt-get install git-lfs
 
+
+export HTTP_PROXY="http://127.0.0.1:7897" \
+  && export HTTPS_PROXY="http://127.0.0.1:7897"
+  	# 实测 windows 下用 git shell 这样用于 huggingface-cli 代理生效
+
+
 huggingface-cli repo create pandora --type dataset
 	# --type {model, dataset, space}
 	# 创建创库 完了以后在官网把它设为 私有
