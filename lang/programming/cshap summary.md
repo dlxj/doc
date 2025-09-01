@@ -2177,6 +2177,15 @@ var (begintime, endtime) = new Tuple<int, int>(1, 1);
 
 
 
+### 命名元组
+
+```
+            // 使用C# 7.0引入的命名元组返回结果
+            return (ImagePath: pth_img, JsonPath: pth_json);
+```
+
+
+
 
 
 ## Dictionary
@@ -3328,6 +3337,29 @@ using Newtonsoft.Json.Linq;
 ```
  string jp2Path = Path.ChangeExtension(imagePath, ".jp2");
  
+```
+
+
+
+## Combine GetFullPath
+
+```
+
+see huggingface\imradv3\src\WpfEditor\global.cs
+
+		public static (string ImagePath, string JsonPath) get_img_json_pth(string m5)
+        {
+            // 这是工作目录
+            string pth_img = Path.Combine(Constant.ExecutablePath, "data", "img", $"{m5}.txt"); // .parent_path().parent_path() 在C#中不需要
+            string pth_json = Path.Combine(Constant.ExecutablePath, "data", "json", $"{m5}.json"); // .parent_path().parent_path() 在C#中不需要
+
+            // C#中不需要lexically_normal()，Path.GetFullPath可以规范化路径
+            pth_img = Path.GetFullPath(pth_img);
+            pth_json = Path.GetFullPath(pth_json);
+
+            // 使用C# 7.0引入的命名元组返回结果
+            return (ImagePath: pth_img, JsonPath: pth_json);
+        }
 ```
 
 
