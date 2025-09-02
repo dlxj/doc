@@ -10967,8 +10967,17 @@ plt.savefig(os.path.join(all_pic_path, '1-10.png'), format='png', dpi=600)
 https://github.com/3b1b/videos  视频中的代码在这
 
 ```
-git clone https://github.com/3b1b/manim.git \
+
+# windows 用 git shell 运行
+export HTTP_PROXY="http://127.0.0.1:7897" \
+  && export HTTPS_PROXY="http://127.0.0.1:7897" \
+  && conda create -n manim python==3.10 pip \
+
+# 用 powershell 运行
+conda activate manim \
+  && git clone https://github.com/3b1b/manim.git \
   && cd manim \
+  && pip install manimgl \
   && pip install -e . \
   && manimgl example_scenes.py OpeningManimExample
   	# 实测 windows + texlive 正常运行
@@ -11049,7 +11058,7 @@ from manim import *
 config.media_width = "60%"
 ```
 
-​```python
+```python
 %%manim -v WARNING -qm LinearTransformationSceneExample
 
 class LinearTransformationSceneExample(LinearTransformationScene):
@@ -11079,7 +11088,7 @@ class LinearTransformationSceneExample(LinearTransformationScene):
 
 # https://docs.manim.community/en/stable/examples.html
 	# 高级例子
-	
+
 # https://github.com/Rickaym/Manim-Sideview
 	# live preview
 
@@ -11153,9 +11162,9 @@ class Tute1(Scene):
 
         plane = NumberPlane(x_range=[-7,7,1], y_range=[-4,4,1]).add_coordinates()
         box = Rectangle(stroke_color = GREEN_C, stroke_opacity=0.7, fill_color = RED_B, fill_opacity = 0.5, height=1, width=1)
-
+    
         dot = always_redraw(lambda : Dot().move_to(box.get_center())) # 始终重绘，每次都移动到盒子的中心
-        
+
 
         self.add(box, dot)
         self.play(box.animate.shift(RIGHT*2), run_time=4)  # 右移
@@ -11177,7 +11186,7 @@ class Tute1(Scene):
 ```
         rectangle = RoundedRectangle(stroke_width = 8, stroke_color = WHITE,
         fill_color = BLUE_B, width = 4.5, height = 2).shift(UP*3+LEFT*4)
-
+    
         mathtext = MathTex("\\frac{3}{4} = 0.75"
         ).set_color_by_gradient(GREEN, PINK).set_height(1.5)
         mathtext.move_to(rectangle.get_center())
@@ -11188,7 +11197,7 @@ class Tute1(Scene):
         self.wait()
         self.play(Write(mathtext), run_time=2)
         self.wait()
-
+    
         self.play(rectangle.animate.shift(RIGHT*1.5+DOWN*5), run_time=6)
         self.wait()
         mathtext.clear_updaters()
@@ -11235,7 +11244,7 @@ class Test(Scene):
 
 ### N-Gram
 
-```python
+​```python
 myre = {2:'(..)', 3:'(...)', 4:'(....)', 5:'(.....)', 6:'(......)', 7:'(.......)'}
 max_sep = 4 #候选词语的最大字数
 for m in range(2, max_sep+1):
