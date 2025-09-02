@@ -5744,7 +5744,8 @@ apt-get install git-lfs
 
 
 export HTTP_PROXY="http://127.0.0.1:7897" \
-  && export HTTPS_PROXY="http://127.0.0.1:7897"
+  && export HTTPS_PROXY="http://127.0.0.1:7897" \
+  && huggingface-cli repo create manim --type dataset 
   	# 实测 windows 下用 git shell 这样用于 huggingface-cli 代理生效
 
 

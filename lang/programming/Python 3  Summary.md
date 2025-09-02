@@ -25,6 +25,87 @@ rm -rf /usr/lib/python3/dist-packages/blinker*
 
 
 
+## python3.7 特有的问题
+
+```
+
+see huggingface\manim_0_1_8\readme.txt
+
+
+# 专为运行线代旧代码
+
+
+vscode 打开 manim 这个目录，运行 manimlib/__main__.py 就可以了， manimgl 这个包应该不用装？因为源码就是这个包本身？！
+    # 直接运行 __main__.py 不知道为什么它进入交互模式了 输入 exit 就可以退出
+      # 这是 python 的 shell 完全不对劲啊
+
+
+vi manimlib\__main__.py
+def run_scenes():
+    scene_config = Dict(manim_config.scene)
+    run_config = manim_config.run
+
+    run_config["file_name"] = 'E:/huggingface/manim/example_scenes.py'
+    run_config['scene_names'] = ['OpeningManimExample']
+      # 不知道为什么前面参数对了，后面参数又无了。改这里硬编码后正常显示场景
+
+
+    run_config["file_name"] = 'E:/huggingface/manim/videos/_2025/colliding_blocks_v2/blocks.py'
+    run_config['scene_names'] = ['CirclePuzzle']
+      # 从 video 复制文件 manim_imports_ext.py 和目录 custom 到 manimlib 文件夹后，video 里的场景正常显示
+
+# windows 用 git shell 运行
+export HTTP_PROXY="http://127.0.0.1:7897" \
+  && export HTTPS_PROXY="http://127.0.0.1:7897" \
+  && conda create -n manim018 python==3.7 pip
+
+
+# 用 powershell 运行
+conda activate manim018 \
+  && git clone https://github.com/3b1b/manim.git \
+  && move manim manim018
+  && cd manim018 \
+  && python -m pip install -r requirements.txt \
+  && python ./manim.py example_scenes.py SquareToCircle -pl
+    # 报错 ModuleNotFoundError: No module named 'readline'
+        # pip install pyreadline==2.1  装这个就正常显示场景了
+
+  
+pip install pycairo==1.18.0
+  # pip install pycairo==1.20.0 --only-binary=:all:
+      # 出错换这个试试
+
+  # https://mirrors.aliyun.com/pypi/simple/pycairo/
+    # pycairo-1.20.0-cp37-cp37m-win_amd64.whl 用这个试试
+      # pip install ./pycairo-1.20.0-cp37-cp37m-win_amd64.whl
+        # 成功安装 
+  
+pip install typing-extensions
+  # ImportError: cannot import name 'Literal' from 'typing'
+  # 解决报错
+    # 将这行
+    from typing import Tuple, Literal
+    # 改为
+    try:
+        from typing import Tuple, Literal
+    except ImportError:
+        from typing_extensions import Tuple, Literal
+
+
+## 本地 texlive
+
+https://mirrors.tuna.tsinghua.edu.cn/help/CTAN/
+
+https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive2025.iso
+
+- ```
+  Windows 下双击运行其中的 install-tl.bat
+
+
+```
+
+
+
 
 
 ## install cuda 11.8
