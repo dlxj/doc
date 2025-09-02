@@ -10968,6 +10968,9 @@ https://github.com/3b1b/videos  视频中的代码在这
 
 ```
 
+vscode 打开 manim 这个目录，运行 manimlib/__main__.py 就可以了， manimgl 这个包应该不用装？因为源码就是这个包本身？！
+
+
 # windows 用 git shell 运行
 export HTTP_PROXY="http://127.0.0.1:7897" \
   && export HTTPS_PROXY="http://127.0.0.1:7897" \
