@@ -10969,7 +10969,22 @@ https://github.com/3b1b/videos  视频中的代码在这
 ```
 
 vscode 打开 manim 这个目录，运行 manimlib/__main__.py 就可以了， manimgl 这个包应该不用装？因为源码就是这个包本身？！
+    # 直接运行 __main__.py 不知道为什么它进入交互模式了
 
+vi __main__.py
+from manimlib import __version__
+from manimlib.config import manim_config
+from manimlib.config import parse_cli
+from manimlib import extract_scene
+from manimlib.utils.cache import clear_cache
+from manimlib.window import Window
+	# 改成这样
+	
+def main():
+    import sys
+    sys.argv.append( 'E:/t/manim/example_scenes.py' )
+    sys.argv.append( 'OpeningManimExample' )
+    	# 改成这样
 
 # windows 用 git shell 运行
 export HTTP_PROXY="http://127.0.0.1:7897" \
