@@ -1397,6 +1397,17 @@ execute_plugin_function(plugin, "plugin_function")  # 执行插件中的具体�
 
 ### 添加命令行参数
 
+
+
+```python
+see huggingface\manim\manimlib\__main__.py
+import sys
+sys.argv.extend(['E:/huggingface/manim/example_scenes.py', 'OpeningManimExample', '--write_file'])
+
+```
+
+
+
 ```python
  	import argparse
  	
@@ -11070,7 +11081,7 @@ def main():
 # windows 用 git shell 运行
 export HTTP_PROXY="http://127.0.0.1:7897" \
   && export HTTPS_PROXY="http://127.0.0.1:7897" \
-  && conda create -n manim python==3.10 pip \
+  && conda create -n manim python==3.7 pip \
 
 # 用 powershell 运行
 conda activate manim \
@@ -11343,7 +11354,7 @@ class Test(Scene):
 
 ### N-Gram
 
-​```python
+```python
 myre = {2:'(..)', 3:'(...)', 4:'(....)', 5:'(.....)', 6:'(......)', 7:'(.......)'}
 max_sep = 4 #候选词语的最大字数
 for m in range(2, max_sep+1):
@@ -11386,7 +11397,7 @@ C集合中为区间内所有的400的倍数；
 区间内闰年的总数即为：a-b+c
 ```
 
-```python
+​```python
 import math
 
 A = [i*4 for i in range(1, math.floor(2021/4)+1) ]

@@ -11952,13 +11952,15 @@ FCN 则一般通过反卷积层对卷积输出作上采样，使它恢复到输�
 
 
 
-# Ovis2.5
+## Ovis2.5
 
 https://zhuanlan.zhihu.com/p/1941818244815107063
 
 
 
 ##### SVTR
+
+https://github.com/trinhtuanvubk/handwritten-ocr  越南语识别？
 
 ```
 
