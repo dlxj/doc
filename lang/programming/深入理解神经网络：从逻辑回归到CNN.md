@@ -13775,6 +13775,50 @@ Eval:
 
 
 
+## Katago
+
+https://github.com/sanderland/katrain python gui
+
+```
+棋盘尺寸范围
+7x7 至 19x19
+最大甚至可支持 29x29 的棋盘（需使用 bs29 版本）
+
+多种规则（中国规则、日本规则、中国古代规则等）
+
+支持自定义贴目
+
+形势判断、让子棋、复盘分析、人机对弈
+
+实现不贴目对局，主要涉及调整 whiteHandicapBonus参数：
+
+
+whiteHandicapBonus(白棋让子补偿)：这个参数决定了白棋因为黑棋的让子而获得多少分数补偿。
+
+•若要实现不贴目，通常将其设置为 whiteHandicapBonus = 0。这符合日韩规则中无补偿的理念。
+•此参数的其他常见设置包括：
+whiteHandicapBonus = N-1（美国规则，N分补偿）
+whiteHandicapBonus = N（中国规则，N分补偿）
+计分规则 (scoringRule)：建议与 whiteHandicapBonus参数配合使用。通常设置为scoringRule = AREA（数子法），这也是中国规则的基础，与许多AI对弈的常见设置相符
+
+vi  gtp_example.cfg
+whiteHandicapBonus = 0  # 设置为0表示无贴目（日韩规则）
+scoringRule = AREA      # 计分规则通常设置为数子法
+
+assumeMultipleStartingBlackMovesAreHandicap = true
+	# 如果进行让子棋，这参数为 true，以便Katago正确识别让子局面
+
+
+allowResignation = true
+resignThreshold = -0.999
+resignConsecTurns = 5
+resignMinScoreDifference = 15
+	# 目对局中，防止AI过早认输
+
+```
+
+
+
 
 
 ## PaddleSpeech
