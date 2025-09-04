@@ -11962,6 +11962,8 @@ https://zhuanlan.zhihu.com/p/1941818244815107063
 
 https://github.com/trinhtuanvubk/handwritten-ocr  越南语识别？
 
+https://github.com/open-mmlab/mmocr/issues/1816  SVTR模型中文识别
+
 ```
 
 一种基于纯视觉模型的场景文本识别算法，由百度团队于2022年提出，旨在简化传统文本识别流程并提升效率与精度。
@@ -13813,7 +13815,7 @@ allowResignation = true
 resignThreshold = -0.999
 resignConsecTurns = 5
 resignMinScoreDifference = 15
-	# 目对局中，防止AI过早认输
+	# 不贴目对局中，防止AI过早认输
 
 ```
 
