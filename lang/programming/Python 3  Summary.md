@@ -11397,7 +11397,7 @@ C集合中为区间内所有的400的倍数；
 区间内闰年的总数即为：a-b+c
 ```
 
-​```python
+```python
 import math
 
 A = [i*4 for i in range(1, math.floor(2021/4)+1) ]
@@ -11407,7 +11407,7 @@ num = len(A)-len(B)+len(C)
 print(num)
 ```
 
-```python
+​```python
 import math
 
 A = set( [i*4 for i in range(1, math.floor(2021/4)+1) ] )
@@ -12375,6 +12375,48 @@ import numpy as np
 ## 中文文件名错误
 
 ```python
+
+    imgData = np.fromfile('crnn_official/demo/CRNN.jpg', dtype=np.uint8)
+    img = cv2.imdecode(imgData, cv2.IMREAD_GRAYSCALE)
+
+标志
+
+整数值
+
+描述
+
+cv2.IMREAD_COLOR
+
+1
+
+默认模式。解码为3通道BGR彩色图像，忽略任何透明度通道（Alpha）
+
+cv2.IMREAD_GRAYSCALE
+
+0
+
+解码为单通道灰度图像
+
+cv2.IMREAD_UNCHANGED
+
+-1
+
+保留图像的所有通道，包括Alpha通道（例如PNG透明背景）
+
+cv2.IMREAD_ANYCOLOR
+
+4
+
+以任意可能的颜色格式读取图像
+。
+
+cv2.IMREAD_ANYDEPTH
+
+2
+
+如果图像有深度信息（如16位），则保留其深度
+
+
 import numpy as np
 import cv2
 

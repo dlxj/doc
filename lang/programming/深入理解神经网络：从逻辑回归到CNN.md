@@ -11003,6 +11003,15 @@ https://zhuanlan.zhihu.com/p/579956622
 
 ## mmocr
 
+
+
+```
+  MMOCR 不但实现了经典的 CRNN 【7】算法，也实现了最近的基于 encoder-decoder 和 2d attention的 SAR 【8】算法，增加位置增强模块的 RobustScanner 【9】, 基于 Transformer 的算法 【10】，以及实现了基于分割网络的文字识别基准算法。基于 CTC loss 的 CRNN，支持规则文字的识别, 速度快, 广泛应用于工业界。基于 Transformer 或者分割网络的识别模型，以及基于注意力机制的 SAR 和 RobustScanner， 在非规则文字识别方向具有显著优势。
+
+```
+
+
+
 ```
 C:\Users\Administrator\.ssh\config
 Host region-11.autodl.com
