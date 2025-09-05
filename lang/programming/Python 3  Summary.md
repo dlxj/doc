@@ -12518,6 +12518,24 @@ see huggingface/rwkv5-jp-trimvd/appv2.py
 
 
 
+## padding
+
+```
+
+# see char-detection\crnn_official\src\main.py
+
+		# 宽度填充空白像素
+        resized_image = cv2.copyMakeBorder(
+            resized_image, 
+            0, 0,  # top, bottom padding
+            0, pix_num_width_padding,  # left, right padding
+            cv2.BORDER_CONSTANT, 
+            value=0  # 黑色填充
+        )
+```
+
+
+
  
 
 ## 读取图片为字节
