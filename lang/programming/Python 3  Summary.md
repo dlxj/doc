@@ -12437,6 +12437,59 @@ if __name__ == '__main__':
 
 
 
+## 转颜色
+
+```
+gray_image = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2GRAY)
+转换代码
+
+功能描述
+
+cv2.COLOR_BGR2GRAY
+
+将 BGR 彩色图像转换为灰度图像
+。
+
+cv2.COLOR_BGR2RGB
+
+将 BGR 彩色图像转换为 RGB 彩色图像
+。
+
+cv2.COLOR_BGR2HSV
+
+将 BGR 彩色图像转换为 HSV 彩色图像（常用于颜色分割）
+。
+
+cv2.COLOR_BGR2Lab
+
+将 BGR 彩色图像转换为 CIE Lab* 彩色图像（感知均匀的颜色空间）
+。
+
+cv2.COLOR_HSV2BGR
+
+将 HSV 图像转换回 BGR 图像
+。
+
+cv2.COLOR_GRAY2BGR
+
+将灰度图像转换为 BGR 彩色图像（3通道，但每个通道的值相同）
+。
+
+cv2.COLOR_RGB2BGR
+
+将 RGB 图像转换为 BGR 图像（交换 R 和 B 通道）
+。
+
+cv2.COLOR_BGR2YUV
+
+将 BGR 彩色图像转换为 YUV 彩色图像
+
+```
+
+
+
+
+
 ## rectangle
 
 ```
