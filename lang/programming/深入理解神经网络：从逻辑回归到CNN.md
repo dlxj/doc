@@ -11891,7 +11891,7 @@ for res in result:
 
 ```
 
-vi ppv5.py
+vi huggingface\imradv3\src\WeChatOcrCpp\ppv5.py
 
 # see project/flask_auto_selection.py
 
