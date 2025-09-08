@@ -11889,6 +11889,243 @@ for res in result:
 
 
 
+```
+
+vi ppv5.py
+
+# see project/flask_auto_selection.py
+
+"""
+
+conda create -n ppv5 python==3.10 pip \
+  && conda activate ppv5 \
+  && python -m pip install paddlepaddle-gpu==3.1.1 -i https://www.paddlepaddle.org.cn/packages/stable/cu118 \
+  && pip install paddleocr 
+	# python -m pip install paddlepaddle==3.1.1 -i https://www.paddlepaddle.org.cn/packages/stable/cpu/
+		# cpu 就这样
+
+# pip install numpy==2.2.4 pillow==11.1.0 protobuf==6.30.2 flask==3.1.2 opencv-python==4.12.0.88 paddlepaddle==3.1.1 paddleocr==3.2.0 --proxy=http://127.0.0.1:7897
+    # -i https://mirrors.aliyun.com/pypi/simple/
+
+"""
+
+is_debug = True
+
+dic_cache = {}
+
+from flask import Flask, request, jsonify
+import threading
+import platform
+
+app = Flask(__name__)
+
+import json
+import decimal
+import datetime
+import base64
+import numpy as np
+import cv2
+
+from collections import OrderedDict
+
+class DecimalEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, decimal.Decimal):
+            return float(o)
+        elif isinstance(o, datetime.datetime):
+            return str(o)
+        super(DecimalEncoder, self).default(o)
+
+def save_json(filename, dics):
+    with open(filename, 'w', encoding='utf-8') as fp:
+        json.dump(dics, fp, indent=4, cls=DecimalEncoder, ensure_ascii=False)
+        fp.close()
+
+def load_json(filename):
+    with open(filename, encoding='utf-8') as fp:
+        js = json.load(fp)
+        fp.close()
+        return js
+
+def base64_to_mat(base64_str):
+    """
+    将 Base64 字符串转换为 OpenCV Mat 对象（NumPy 数组）
+    
+    参数:
+        base64_str (str): Base64 编码的图片字符串（不可以含前缀如 "data:image/jpeg;base64,"）
+    
+    返回:
+        Mat: OpenCV 图像对象（NumPy 数组），格式为 BGR
+    """
+    # 处理可能存在的 Base64 前缀（如 "data:image/jpeg;base64,"）
+    # if ',' in base64_str:
+    #     base64_data = base64_str.split(',')[1]  # 提取纯 Base64 数据部分
+    # else:
+    # base64_data = base64_str
+    
+    # 解码 Base64 字符串为二进制字节流
+    image_bytes = base64.b64decode(base64_str)
+    
+    # 将字节流转换为 NumPy 数组（数据类型 uint8）
+    nparr = np.frombuffer(image_bytes, np.uint8)
+    
+    # 使用 OpenCV 解码为 Mat 对象（BGR 格式）
+    mat = cv2.imdecode(nparr, cv2.IMREAD_COLOR_BGR)  # cv2.IMREAD_COLOR 保留色彩通道
+    
+    return mat
+
+
+from paddleocr import PaddleOCR
+
+ocr = PaddleOCR(
+    use_doc_orientation_classify=False,
+    use_doc_unwarping=False,
+    use_textline_orientation=False)
+
+def ppresult_tojson(img, result):
+    global is_debug
+
+    jn = OrderedDict()
+    prism_wordsInfo = []
+    jn["prism_wordsInfo"] = prism_wordsInfo
+    jn["height"] = img.shape[0]
+    jn["width"] = img.shape[1]
+
+    for res in result:
+        jsn = res.json['res']
+        text_word = jsn['text_word']
+        text_word_boxes = jsn['text_word_boxes']
+        rec_texts = jsn['rec_texts']
+        rec_boxes = jsn['rec_boxes']
+
+        for idx_line, (words, boxs) in enumerate(zip(text_word, text_word_boxes)):
+            text_line = rec_texts[idx_line]
+            text_box = rec_boxes[idx_line]
+
+            j = OrderedDict()
+            prism_wordsInfo.append( j )
+
+            lu = OrderedDict(x=text_box[0], y=text_box[1])
+            ru = OrderedDict(x=text_box[2], y=text_box[1])
+            rd = OrderedDict(x=text_box[2], y=text_box[3])
+            ld = OrderedDict(x=text_box[0], y=text_box[3])
+
+            j["word"] = text_line
+            j["pos"] = [ lu, ru, rd, ld ]
+
+
+            charInfo = []
+            j['charInfo'] = charInfo
+
+            img = cv2.rectangle(img, (lu['x'], lu['y']), (rd['x'], rd['y']), (255, 0, 0), 2)
+            if platform.system() == "Windows":
+                if is_debug:
+                    cv2.imshow('orig', img)
+                    cv2.waitKey(0)
+            for idx_word, (word, box) in enumerate(zip(words, boxs)):
+
+                if (len(word) == 1):
+                    info = OrderedDict()
+                    charInfo.append( info )
+                    info["word"] = word
+                    info["x"] = box[0]
+                    info["y"] = box[1]
+                    info["w"] = box[2] - box[0]
+                    info["h"] = box[3] - box[1]
+                elif (len(word) > 1):
+                    for w in word:
+                        info = OrderedDict()
+                        charInfo.append( info )
+                        info["word"] = w
+                        info["x"] = box[0]
+                        info["y"] = box[1]
+                        info["w"] = box[2] - box[0]
+                        info["h"] = box[3] - box[1]
+
+                # print(word)
+                img = cv2.rectangle(img, (box[0], box[1]), (box[2], box[3]), (0, 255, 0), 2)  # 矩形的左上角, 矩形的右下角
+                if platform.system() == "Windows":
+                    if is_debug:
+                        cv2.imshow('orgin', img)
+                        cv2.waitKey(0)
+
+        # save_json('out.json', jn)
+        break  # 只处理第一张图的结果
+    
+    return jn
+
+# 限制同时处理的请求数量为1
+ocr_semaphore = threading.Semaphore(1)
+@app.route('/ppocr', methods=['post'])
+def autoselection():
+    # request.json 只能够接受方法为POST、Body为raw，header 内容为 application/json类型的数据
+    # print(request.json, type(request.json))
+
+    # 使用 request.form 来接受 x-www-form-urlencoded 格式的数据
+    # print(request.form, type(request.form))
+    
+    # form_data = request.form.to_dict()
+    # if "img" not in form_data:
+    #     return jsonify([])
+    
+    # base64_str = form_data["img"]
+
+    # 非阻塞方式获取信号量
+    if not ocr_semaphore.acquire(blocking=False):
+        return jsonify({"warning": "wait pre task done."})
+    
+    try:
+
+        base64_str = request.json['img']
+        
+        img = base64_to_mat(base64_str)
+
+        result = ocr.predict(
+            input = img, 
+            return_word_box=True
+            )
+            
+        jn = ppresult_tojson(img.copy(), result)
+
+        return jsonify(jn)
+    
+    except Exception as e:
+        return jsonify({"error": str(e)})
+    finally:
+        ocr_semaphore.release()
+
+if __name__ == '__main__':
+
+    if is_debug:
+        pth_img = "data/0170.jpg" # "data/第一单元.jpg"
+
+        imgData = np.fromfile(pth_img, dtype=np.uint8)
+        img = cv2.imdecode(imgData, cv2.IMREAD_COLOR_BGR)
+
+        # cv2.imshow('orgin', img)
+        # cv2.waitKey(0)
+
+        result = ocr.predict(
+            input = img, # pth_img, # "data/无标点符号.jpg", 
+            return_word_box=True
+            )
+            
+        jn =ppresult_tojson(img.copy(), result)
+        save_json('out.json', jn)
+
+            # res.print()       
+            # res.save_to_img("output")
+            # res.save_to_json("output")
+    else:
+        app.run(host="0.0.0.0", port=8889, debug=True)
+
+
+```
+
+
+
+
+
 ##### CRNN
 
 ```

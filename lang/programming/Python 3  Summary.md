@@ -12488,6 +12488,14 @@ cv2.COLOR_BGR2YUV
 
 
 
+## 反色
+
+```
+img_for_that = cv2.bitwise_not(img_for_that)
+```
+
+
+
 
 
 ## rectangle
