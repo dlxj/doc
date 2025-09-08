@@ -11812,6 +11812,8 @@ character_type: CN
 
 #### ppocrv5
 
+- https://github.com/PaddlePaddle/PaddleOCR/pull/10515  单字符坐档代码的 pull request
+
 - https://github.com/fanqie03/char-detection  单字符检测  利用ctc loss 解析时的位置信息
 
   - https://github.com/Wanger-SJTU/CTC-loss-introduction  **ctc算法原理以及numpy简单实现**
