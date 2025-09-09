@@ -2098,6 +2098,36 @@ static List<string[]> apps = new List<string[]>() { new string[] { "a", "b", "b"
 
 
 
+
+
+### iterate with index
+
+```
+
+# see huggingface\imradv3\src\WpfEditor\MainWindow.xaml.cs
+	using System.Linq; // 需要引入 LINQ 命名空间
+
+                // 先删除选框下的文字
+                int idx = -1;
+                foreach (var (line, index) in Editor._lines.Select((line, index) => (line, index) ))
+                {
+                    if (line.selected_rectange == null || !line.selected_rectange.HasValues)
+                    {
+                        continue;
+                    }
+                    int Id = line.selected_rectange["Id"].Value<int>();
+                    if (rect.Id == Id)
+                    {
+                        idx = index;
+                        break;
+                    }
+                }
+```
+
+
+
+
+
 ### CopyTo
 
 ```
