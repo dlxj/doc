@@ -3884,6 +3884,10 @@ wsl 成功使用宝可梦通用订阅，并代理成功
 
 
 
+#### ShellCrash
+
+https://github.com/juewuy/ShellCrash
+
 
 
 ### sing-box
