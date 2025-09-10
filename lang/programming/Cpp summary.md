@@ -598,6 +598,23 @@ json j = json::parse(u8 R"(JSON string with Chinese characters)");
 
 
 
+## 多行字符
+
+```
+
+类似 python 的 """xxx"""
+
+const char * code = R"delimiter(
+	// 可以包含换行符、()、""、'' 等等
+)delimiter";
+
+
+```
+
+
+
+
+
 ## 不转义
 
 
