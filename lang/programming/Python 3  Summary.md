@@ -1869,6 +1869,28 @@ data_random_order_json = data_json[:-5] + '_random_order.json'
 
 
 
+### 工作目录设为 python 执行目录
+
+```
+
+see huggingface\Python-3.10.15\test_state_persistence.cc
+
+import os,sys
+from pathlib import Path
+
+# 获取python.exe所在目录
+python_dir = Path(sys.executable).parent
+os.chdir(python_dir)
+
+abs_path = Path("models/PP-OCRv5_server_det").resolve()
+print(f"Path.resolve 转换结果: {abs_path}") 
+
+```
+
+
+
+
+
 ### ``__all__``
 
 ```
@@ -11407,7 +11429,7 @@ num = len(A)-len(B)+len(C)
 print(num)
 ```
 
-​```python
+```python
 import math
 
 A = set( [i*4 for i in range(1, math.floor(2021/4)+1) ] )
@@ -11548,7 +11570,7 @@ https://github.com/sean-public/python-hashes
 
 
 
-```c++
+​```c++
     int hamming_distance(unsigned long x, unsigned long y) {
         int dist = 0;
         unsigned long val = x^y;
