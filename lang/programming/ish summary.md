@@ -1,4 +1,37 @@
 ```
+
+更换源：
+
+因为Alpine Linux默认使用的是国外的源，使用国外的服务器，网速特别慢，更换成国内阿里云、中科大、清华的源都可以。
+
+
+vi /etc/apk/repositories
+在最上面添加这两行：
+
+# 阿里云源
+https://mirrors.aliyun.com/alpine/v3.11/main
+https://mirrors.aliyun.com/alpine/v3.11/community
+# 中科大源
+https://mirrors.ustc.edu.cn/alpine/v3.11/main
+https://mirrors.ustc.edu.cn/alpine/v3.11/community
+这两行，注意v后面的版本号，对应原来文件中的版本号。
+
+保存退出，使用下面的语句更新源列表，就可以愉快地安装软件了。
+
+（更新：如果apk not found，那么请移至文末，安装apk）
+
+
+apk add <package_name>: 安装软件包
+
+apk del <package_name>: 卸载软件包
+
+apk upgrade: 升级所有已安装的软件包
+
+apk search <keyword>: 搜索软件包
+
+apk info: 列出已安装的软件包或显示某个包的详细信息
+
+
 iSH Shell最近上架 App Store 。上架版本由于限制，和 TestFlight 版本有些不同。我总结了一下要点：
 
 下载须知
