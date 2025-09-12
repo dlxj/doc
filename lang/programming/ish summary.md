@@ -1,6 +1,46 @@
+```
+iSH Shell最近上架 App Store 。上架版本由于限制，和 TestFlight 版本有些不同。我总结了一下要点：
+
+下载须知
+在国区 App Store 需要搜索“iSH Shell”，外区搜索"iSH"即可。
+
+获取 apk
+App Store 版本默认未装 apk 。安装过程参见这个官方 wiki 页面，步骤如下：
+
+运行cd /
+运行wget -qO- http://dl-cdn.alpinelinux.org/alpine/v3.12/main/x86/apk-tools-static-2.10.5-r1.apk | tar -xz sbin/apk.static && ./sbin/apk.static add apk-tools && rm sbin/apk.static
+变更默认 shell
+iSH Shell 的默认 shell
+iSH Shell 使用 Alpine Linux，它的默认 shell 是 busybox ash 。
+ash 不会 source.bashrc，而是会 source.profile。
+一般的 bash 脚本无法在这里运行，需要使用/bin/sh来运行经典 shell 脚本。这当然很不方便，我们喜欢用 bash 或者 zsh 。
+以 bash 为例，运行apk add bash安装 bash，然后在 iSH terminal 输入bash使用 bash 。
+使用 bash 作为默认 shell
+参见这个官方 issue，有两种改变默认 shell 的方式：
+
+编辑/etc/passwd。iSH Shell 的用户是 root，所以编辑第一行，把/bin/ash改为/bin/bash。
+安装 shadow：apk add shadow，然后使用其中的 chsh 命令修改默认 shell：chsh -s bash 我个人觉得前者更加方便。把默认 shell 改成 bash 之后，再次进入 iSH Shell 就会默认 source.bashrc，方便 git pull 使用自己的 dotfiles 。
+杂项
+App 图标可以设置
+大部分用法能在官方 wiki里面找到，比如如何使用ssh，vnc，python，ruby，php或者r，以及目前的局限是什么。
+```
+
+
+
+
 
 # git-lfs
+
 ```
+
+
+https://dl-cdn.alpinelinux.org/alpine/v3.22/community/aarch64/git-lfs-3.6.0-r7.apk
+
+https://dl-cdn.alpinelinux.org/alpine/v3.22/main/aarch64/git-2.49.1-r0.apk
+
+试试最新的包
+
+
 
 After more trial-and-error, I found that using v3.15's git-lfs (3.0.2-r0) can work around this issue.
 
