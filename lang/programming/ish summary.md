@@ -8,19 +8,11 @@ vi /etc/apk/repositories
 在最上面添加这两行：
 
 # 阿里云源
-https://mirrors.aliyun.com/alpine/v3.11/main
-https://mirrors.aliyun.com/alpine/v3.11/community
-
-
-vi /etc/apk/repositories
-在最上面添加这两行：
-
-# 阿里云源
-https://mirrors.aliyun.com/alpine/v3.11/main
-https://mirrors.aliyun.com/alpine/v3.11/community
+https://mirrors.aliyun.com/alpine/v3.22/main
+https://mirrors.aliyun.com/alpine/v3.22/community
 # 中科大源
-https://mirrors.ustc.edu.cn/alpine/v3.11/main
-https://mirrors.ustc.edu.cn/alpine/v3.11/community
+https://mirrors.ustc.edu.cn/alpine/v3.22/main
+https://mirrors.ustc.edu.cn/alpine/v3.22/community
 这两行，注意v后面的版本号，对应原来文件中的版本号。
 
 保存退出，使用下面的语句更新源列表，就可以愉快地安装软件了。
