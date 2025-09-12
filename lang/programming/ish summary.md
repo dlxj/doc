@@ -1,8 +1,15 @@
 ```
 
-更换源：
-
 因为Alpine Linux默认使用的是国外的源，使用国外的服务器，网速特别慢，更换成国内阿里云、中科大、清华的源都可以。
+
+https://mirrors.aliyun.com/alpine/v3.22/community/aarch64/git-lfs-3.6.0-r7.apk
+
+vi /etc/apk/repositories
+在最上面添加这两行：
+
+# 阿里云源
+https://mirrors.aliyun.com/alpine/v3.11/main
+https://mirrors.aliyun.com/alpine/v3.11/community
 
 
 vi /etc/apk/repositories
