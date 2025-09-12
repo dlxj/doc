@@ -31,6 +31,15 @@ apk search <keyword>: 搜索软件包
 
 apk info: 列出已安装的软件包或显示某个包的详细信息
 
+	
+apk fix
+	如果安装后遇到依赖问题，可以尝试修复。
+
+下载单个包及其所有依赖：使用 -R选项。
+
+apk fetch -R nginx
+	这会将 nginx包及其所有依赖下载到当前工作目录
+
 
 iSH Shell最近上架 App Store 。上架版本由于限制，和 TestFlight 版本有些不同。我总结了一下要点：
 
