@@ -988,6 +988,8 @@ https://medium.com/@kiena/almalinux-9-2-installing-nvidia-driver-5d67d19bb27d
 
 https://www.cnblogs.com/shankun/p/aliyunECS_archlinux.html 
 
+https://blog.csdn.net/mineo/article/details/134713925
+
 ```
 
 
