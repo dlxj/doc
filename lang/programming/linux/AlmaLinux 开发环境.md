@@ -1052,8 +1052,51 @@ ls | grep -v arch.iso | xargs rm -rf
 	# 除了 arch.iso 文件保留，其他全部删除
 
 
+pacstrap /mnt base base-devel
+	# 安装基本系统
+
+genfstab -L /mnt >> /mnt/etc/fstab
+	# 配置挂载表
+
+	cat /mnt/etc/fstab  
+		# /dev/vda3 被挂载到   /
+
+arch-chroot /mnt
+	# 转移控制权
+    - 控制权交给刚装好的硬盘系统
+    - 如果picman 出问题：  
+      - **rm /var/lib/pacman/db.lck**
+      
+    - **如果以后我们的系统出现了问题，只要插入U盘并启动， 将我们的系统根分区挂载到了/mnt下（如果有efi分区也要挂载到/mnt/boot下），再通过这条命令就可以进入我们的系统进行修复操作。**
+
+    - **Linux老司机如果身边有别的arch机器，你只需要**：
+
+    >  1. 用tar把那台机器的根目录整个打包（记得加--one-file-system参数，防止把/proc, /dev等打进来）。
+    >  2. 找个新一点的live usb启动机器（grml就挺好）。
+    >  3. 分区，mkfs。 
+    >  4. 整个包解压到根目录。 
+    >  5. 修改/etc/fstab里的dev或UUID。 
+    >  6. 支持UEFI的机器上没必要grub，把vmlinuz-linux和initramfs-linux-fallback.img复制到EFI分区，efibootmgr加个启动项即可。精简版的initramfs可以等系统安完之后再生成。 
+    >  7. 收工。 以上流程其实适用于各种发行版。 
+
+
+
 vi /etc/pacman.d/mirrorlist 
-	# 定义了软件包会从哪个镜像下载。在 LiveCD 启动的系统上，在连接到互联网后，reflector 会通过选择 20 个最新同步的 HTTPS 镜像并按下载速率对其进行排序来更新镜像列表。在列表中越前的镜像在下载软件包时有越高的优先权。您或许想检查一下文件，看看是否满意。如果不满意，可以相应的修改 /etc/pacman.d/mirrorlist 文件，并将地理位置最近的镜像源挪到文件的头部，同时也应该考虑一些其他标准。这个文件接下来还会被 pacstrap 拷贝到新系统里，所以请确保设置正确。
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+	# 最前面加
+
+pacman -Syyu
+	# pacman -Syyuu 从一个较新的镜像切换到较旧的镜像，以下命令可以降级部分包，以避免系统的部分更新
+
+
+
+
+
+
+
+
+
+
 
 安装必需的软件包
 使用 pacstrap(8) 脚本，安装 base 软件包和 Linux 内核以及常规硬件的固件：
