@@ -986,11 +986,62 @@ https://medium.com/@kiena/almalinux-9-2-installing-nvidia-driver-5d67d19bb27d
 
 # 阿里云Archlinux
 
+https://www.nolightblog.com/posts/fe4463fe/
+
 https://www.cnblogs.com/shankun/p/aliyunECS_archlinux.html 
 
 https://blog.csdn.net/mineo/article/details/134713925
 
 ```
+
+blkid /arch.iso
+/arch.iso: BLOCK_SIZE="2048" UUID="2025-09-01-16-37-02-00" LABEL="ARCH_202509" TYPE="iso9660" PTUUID="2d9d5c0b" PTTYPE="dos"
+	# archisolabel= 要填这里输出的 LABEL，既 ARCH_202509
+
+fdisk -l /arch.iso 
+Device     Boot   Start     End Sectors  Size Id Type
+/arch.iso1 *         64 2433599 2433536  1.2G  0 Empty
+/arch.iso2      2433600 2941503  507904  248M ef EFI (FAT-12/16/32)
+
+fdisk -l
+Disklabel type: gpt
+Disk identifier: 656BD20C-0FC7-43A8-B07B-98C45B710F4A
+
+Device      Start      End  Sectors  Size Type
+/dev/vda1    2048     4095     2048    1M BIOS boot
+/dev/vda2    4096   413695   409600  200M EFI System
+/dev/vda3  413696 83886046 83472351 39.8G Linux filesystem
+
+vi /boot/grub/grub.cfg
+
+
+
+wget -o /arch.iso https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/archlinux-x86_64.iso
+
+
+vi /boot/grub/grub.cfg
+
+set timeout=20
+
+menuentry "Archlinux Live (x86_64)" {
+    # 加载必要的模块
+    insmod part_msdos
+    insmod ext2
+    insmod iso9660
+    insmod loopback
+
+    # 设置 ISO 文件路径
+    set isofile=/arch.iso
+
+    # 创建 loopback 设备
+    loopback loop0 $isofile
+
+    # 加载内核 - 根据 fdisk 输出，ISO 的第一个分区是启动分区
+    linux (loop0,1)/arch/boot/x86_64/vmlinuz-linux archisolabel=ARCH_202509 img_dev=/dev/vda3 img_loop=$isofile
+
+    # 加载初始内存盘
+    initrd (loop0,1)/arch/boot/x86_64/initramfs-linux.img
+}
 
 
 
