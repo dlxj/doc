@@ -1034,12 +1034,124 @@ menuentry 'ArchISO' --class iso {
   initrd (loop0)/arch/boot/x86_64/initramfs-linux.img
 }
 	# 实测连 vnc 连接，reboot 后成功进入 arch livecd
-	
+	# 重启第一次 vnc 进入有花屏，要等一下才有反应
+		
 
 lsblk
 vda3 254:3 0 39.8G part /run/archiso/img_dev
-	# 系统被挂载到 /run/archiso/img_dev
+	# 正在运行的这个系统被挂载到 /run/archiso/img_dev
 	
+passwd
+	# 重设 root 密码，然后用 xshell 登录方便贴命令
+
+mount -o remount,rw /dev/vda3 /mnt
+	# 以读写方式挂载
+
+cd /mnt
+ls | grep -v arch.iso | xargs rm -rf
+	# 除了 arch.iso 文件保留，其他全部删除
+
+
+vi /etc/pacman.d/mirrorlist 
+	# 定义了软件包会从哪个镜像下载。在 LiveCD 启动的系统上，在连接到互联网后，reflector 会通过选择 20 个最新同步的 HTTPS 镜像并按下载速率对其进行排序来更新镜像列表。在列表中越前的镜像在下载软件包时有越高的优先权。您或许想检查一下文件，看看是否满意。如果不满意，可以相应的修改 /etc/pacman.d/mirrorlist 文件，并将地理位置最近的镜像源挪到文件的头部，同时也应该考虑一些其他标准。这个文件接下来还会被 pacstrap 拷贝到新系统里，所以请确保设置正确。
+
+安装必需的软件包
+使用 pacstrap(8) 脚本，安装 base 软件包和 Linux 内核以及常规硬件的固件：
+
+# pacstrap /mnt base linux linux-firmware
+提示：
+可以将 linux 替换为内核页面中介绍的其他内核软件包。
+在虚拟机或容器中安装时，可以不安装固件软件包。
+base 软件包并没有包含 Live 环境中的全部程序。因此要获得一个功能齐全的基本系统，可能需要安装其他软件包。特别要考虑安装：
+
+管理所用文件系统的用户工具（比如 XFS 和 Btrfs 对应的管理工具）；
+访问RAID或LVM分区的工具；
+未包含在 linux-firmware 中的额外固件(如用于声卡的sof-firmware)；
+联网所需要的程序 (如网络管理器或DHCP客户端)；
+文本编辑器（如：nano、vim 等）；
+访问 man 和 info 页面中文档的工具：man-db，man-pages 和 texinfo。
+要安装其他软件包或软件包组（比如 base-devel），请将它们的名字追加到上文的 pacstrap 命令后 (用空格分隔)，或者也可以在 Chroot 进新系统后使用 pacman 手动安装软件包或软件包组。packages.x86_64 中可以看到不同软件包或软件包组间的差异。
+
+配置系统
+Fstab
+用以下命令生成 fstab 文件 (用 -U 或 -L 选项设置 UUID 或卷标)：
+
+# genfstab -U /mnt >> /mnt/etc/fstab
+强烈建议在执行完以上命令后，检查一下生成的 /mnt/etc/fstab 文件是否正确。
+
+Chroot
+chroot 到新安装的系统：
+
+# arch-chroot /mnt
+时区
+要设置时区：
+
+# ln -sf /usr/share/zoneinfo/Region（地区名）/City（城市名） /etc/localtime
+提示： 以要设置为上海时区为例，请运行 # ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+然后运行 hwclock(8) 以生成 /etc/adjtime：
+
+# hwclock --systohc
+这个命令假定已设置硬件时间为 UTC 时间。详细信息请查看 System time#Time standard。
+
+本地化
+程序和库如果需要本地化文本，都依赖区域设置，后者明确规定了地域、货币、时区日期的格式、字符排列方式和其他本地化标准。
+
+需在这两个文件设置：locale.gen 与 locale.conf。
+
+编辑 /etc/locale.gen，然后取消掉 en_US.UTF-8 UTF-8 和其他需要的 区域设置 前的注释（#）。
+
+接着执行 locale-gen 以生成 locale 信息：
+
+# locale-gen
+然后创建 locale.conf(5) 文件，并 编辑设定 LANG 变量，比如：
+
+/etc/locale.conf
+LANG=en_US.UTF-8
+另外对于中文用户：
+
+提示：
+用户可以设置自己的 locale，详情请参阅 在用户会话中覆盖系统区域设置 或 设置当前区域；
+将系统 locale 设置为 en_US.UTF-8 ，系统的 log 就会用英文显示，这样更容易判断和处理问题；
+也可以设置为 en_GB.UTF-8 或 en_SG.UTF-8，附带以下优点：
+进入桌面环境后以 24 小时制显示时间；
+LibreOffice 等办公软件的纸张尺寸会默认为 A4 而非 Letter(US)；
+可尽量避免不必要且可能造成处理麻烦的英制单位。
+设置的 LANG 变量需与 locale 设置一致，否则会出现以下错误：
+Cannot set LC_CTYPE to default locale: No such file or directory
+警告： 不推荐在此设置任何中文 locale，会导致 tty 乱码。
+如果需要修改 #控制台键盘布局，可编辑 vconsole.conf(5) 使其长期生效，例如：
+
+/etc/vconsole.conf
+KEYMAP=de-latin1
+网络配置
+创建 hostname 文件:
+
+/etc/hostname
+myhostname（主机名）
+请接着完成新安装的环境的网络配置，配置过程中可能需要安装合适的网络管理软件。
+
+Initramfs
+通常不需要自己创建新的 initramfs，因为在执行 pacstrap 时已经安装 linux，这时已经运行过 mkinitcpio 了。
+
+对于 LVM、 system encryption 或 RAID 等分区配置，请修改 mkinitcpio.conf 并用以下命令重新创建一个 Initramfs：
+
+# mkinitcpio -P
+Root 密码
+设置 Root 密码：
+
+# passwd
+安装引导程序
+需要安装 Linux 引导加载程序，才能在安装后启动系统，可以使用的的引导程序已在 启动加载器 中列出，请选择一个安装并配置它，GRUB (简体中文) 是最常见的选择。
+
+如果有 Intel 或 AMD 的 CPU，请另外启用 微码 更新。
+
+警告： 这是安装的最后一步也是至关重要的一步，请按上述指引正确安装好引导加载程序后再重新启动。否则重启后将无法正常进入系统。
+重启
+输入 exit 或按 Ctrl+d 退出 chroot 环境。
+
+可选用 umount -R /mnt 手动卸载被挂载的分区：这有助于发现任何「繁忙」的分区，并通过 fuser(1) 查找原因。
+
+最后，通过执行 reboot 重启系统，systemd 将自动卸载仍然挂载的任何分区，然后使用 root 帐户登录到新系统。
 
 
 ```
