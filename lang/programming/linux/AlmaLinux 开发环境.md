@@ -986,6 +986,8 @@ https://medium.com/@kiena/almalinux-9-2-installing-nvidia-driver-5d67d19bb27d
 
 # 阿里云Archlinux
 
+https://blog.51cto.com/u_16213696/7915426
+
 https://www.nolightblog.com/posts/fe4463fe/
 
 https://www.cnblogs.com/shankun/p/aliyunECS_archlinux.html 
