@@ -1036,6 +1036,13 @@ menuentry 'ArchISO' --class iso {
 	# 实测连 vnc 连接，reboot 后成功进入 arch livecd
 	# 重启第一次 vnc 进入有花屏，要等一下才有反应
 		
+menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os {
+    set root='hd0,gpt3'  # 对应/dev/vda3
+    linux /boot/vmlinuz-linux root=/dev/vda3 rw
+    initrd /boot/initramfs-linux.img
+}
+	# 装完以后的配置
+
 
 lsblk
 vda3 254:3 0 39.8G part /run/archiso/img_dev
@@ -1054,30 +1061,62 @@ ls | grep -v arch.iso | xargs rm -rf
 
 pacstrap /mnt base base-devel
 	# 安装基本系统
-
+	
 genfstab -L /mnt >> /mnt/etc/fstab
 	# 配置挂载表
-
 	cat /mnt/etc/fstab  
 		# /dev/vda3 被挂载到   /
 
 arch-chroot /mnt
-	# 转移控制权
     - 控制权交给刚装好的硬盘系统
     - 如果picman 出问题：  
       - **rm /var/lib/pacman/db.lck**
-      
-    - **如果以后我们的系统出现了问题，只要插入U盘并启动， 将我们的系统根分区挂载到了/mnt下（如果有efi分区也要挂载到/mnt/boot下），再通过这条命令就可以进入我们的系统进行修复操作。**
 
-    - **Linux老司机如果身边有别的arch机器，你只需要**：
+ 
+pacman -Sy grub
+grub-install --target=i386-pc /dev/vda
+grub-mkconfig -o /boot/grub/grub.cfg
+	# 安装Bootloader
+        如果出错：
+        vi /etc/lvm/lvm.conf这个文件，找到use_lvmetad = 1将1修改为0，保存，重新配置grub
 
-    >  1. 用tar把那台机器的根目录整个打包（记得加--one-file-system参数，防止把/proc, /dev等打进来）。
-    >  2. 找个新一点的live usb启动机器（grml就挺好）。
-    >  3. 分区，mkfs。 
-    >  4. 整个包解压到根目录。 
-    >  5. 修改/etc/fstab里的dev或UUID。 
-    >  6. 支持UEFI的机器上没必要grub，把vmlinuz-linux和initramfs-linux-fallback.img复制到EFI分区，efibootmgr加个启动项即可。精简版的initramfs可以等系统安完之后再生成。 
-    >  7. 收工。 以上流程其实适用于各种发行版。 
+[ -d /sys/firmware/efi ] && echo "UEFI" || echo "BIOS/Legacy"
+	# 确认当前的启动模式，如果是 uefi 是不行的，阿里 ecs 不支持
+	
+
+vi /etc/default/grub
+GRUB_DISABLE_OS_PROBER=false
+GRUB_TERMINAL=console
+	# 添加或修改成这样
+
+grub-install /dev/vda
+
+
+exit  
+reboot
+
+
+
+
+
+这时侯如果直接重启，就会进入 grub 救援模式
+
+ls
+ls (hd0,gpt3)/
+	# 能看到 arch.iso
+
+set root=(hd0,gpt3)                  				# 设置包含ISO文件的分区为root
+linux /vmlinuz-linux root=/dev/sda3   # 请根据实际情况修改根分区设备号
+initrd /initramfs-linux.img
+boot
+
+
+
+loopback loop /arch.iso  							# 将ISO文件映射为loop设备
+linux (loop)/arch/boot/x86_64/vmlinuz-linux   		# 加载内核
+initrd (loop)/arch/boot/x86_64/initramfs-linux.img 	# 加载initramfs
+boot                                  				# 启动
+	# 依次输入以上命令
 
 
 
