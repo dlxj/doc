@@ -982,6 +982,22 @@ https://medium.com/@kiena/almalinux-9-2-installing-nvidia-driver-5d67d19bb27d
 
 
 
+
+
+# 阿里云Archlinux
+
+https://www.cnblogs.com/shankun/p/aliyunECS_archlinux.html 
+
+```
+
+
+
+```
+
+
+
+
+
 # mecab
 
 [MeCab+NEologd](https://qiita.com/heimaru1231/items/1f4f03088bc0f6bdefc6)
