@@ -1014,9 +1014,6 @@ Device      Start      End  Sectors  Size Type
 /dev/vda2    4096   413695   409600  200M EFI System
 /dev/vda3  413696 83886046 83472351 39.8G Linux filesystem
 
-vi /boot/grub/grub.cfg
-
-
 
 wget -o /arch.iso https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/archlinux-x86_64.iso
 
@@ -1025,26 +1022,24 @@ vi /boot/grub/grub.cfg
 
 set timeout=20
 
-menuentry "Archlinux Live (x86_64)" {
-    # 加载必要的模块
-    insmod part_msdos
-    insmod ext2
-    insmod iso9660
-    insmod loopback
-
-    # 设置 ISO 文件路径
-    set isofile=/arch.iso
-
-    # 创建 loopback 设备
-    loopback loop0 $isofile
-
-    # 加载内核 - 根据 fdisk 输出，ISO 的第一个分区是启动分区
-    linux (loop0,1)/arch/boot/x86_64/vmlinuz-linux archisolabel=ARCH_202509 img_dev=/dev/vda3 img_loop=$isofile
-
-    # 加载初始内存盘
-    initrd (loop0,1)/arch/boot/x86_64/initramfs-linux.img
+#编辑grub.cfg文件，将下面内容塞到第一个menuentry前面，让grub自动引导Arch Live。
+menuentry 'ArchISO' --class iso {
+  set isofile=/arch.iso
+  loopback loop0 $isofile
+  #archisolabel设置ArchISO文件所在的文件系统标签。
+  #img_dev指出ArchISO 文件所在的设备
+  #img_loop是ArchISO文件在img_dev里的绝对位置
+  # 下面这两个文件名字需要自己到镜像文件当中查看，Arch Linux 不同版本的名字可能不太一样。
+  linux (loop0)/arch/boot/x86_64/vmlinuz-linux archisolabel=ARCH_202509 img_dev=/dev/vda3 img_loop=$isofile
+  initrd (loop0)/arch/boot/x86_64/initramfs-linux.img
 }
+	# 实测连 vnc 连接，reboot 后成功进入 arch livecd
+	
 
+lsblk
+vda3 254:3 0 39.8G part /run/archiso/img_dev
+	# 系统被挂载到 /run/archiso/img_dev
+	
 
 
 ```
