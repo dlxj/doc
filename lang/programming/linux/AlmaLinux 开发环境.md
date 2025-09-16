@@ -1038,13 +1038,6 @@ menuentry 'ArchISO' --class iso {
 	# 实测连 vnc 连接，reboot 后成功进入 arch livecd
 	# 重启第一次 vnc 进入有花屏，要等一下才有反应
 		
-menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os {
-    set root='hd0,gpt3'  # 对应/dev/vda3
-    linux /boot/vmlinuz-linux root=/dev/vda3 rw
-    initrd /boot/initramfs-linux.img
-}
-	# 装完以后的配置
-
 
 lsblk
 vda3 254:3 0 39.8G part /run/archiso/img_dev
@@ -1063,13 +1056,15 @@ ls | grep -v arch.iso | grep -v boot | xargs rm -rf
 	# 除了 arch.iso 文件和 boot 文件夹保留，其他全部删除
 	
 
-pacstrap /mnt base base-devel linux linux-firmware grub	vi
+pacstrap /mnt base base-devel
 	# 安装基本系统
+		# linux linux-firmware grub	vi
 	
 genfstab -L /mnt >> /mnt/etc/fstab
 	# 配置挂载表
 	cat /mnt/etc/fstab  
 		# /dev/vda3 被挂载到   /
+
 
 arch-chroot /mnt
     - 控制权交给刚装好的硬盘系统
@@ -1079,6 +1074,22 @@ arch-chroot /mnt
 passwd
 	# 重设 root 密码，不然等下登录不上
 	
+vi /boot/grub/grub.cfg
+menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os {
+    set root='hd0,gpt3'  # 对应/dev/vda3
+    linux /boot/vmlinuz root=/dev/vda3 rw
+    initrd /boot/initrd.img
+}
+	# 注意这里用的是原 ubuntu 的 boot 文件
+	# 加配置，硬盘启动 arch linux
+
+
+exit
+reboot
+	# 验证安装正常输出，到这里整个安装应该就完成了
+	# 实测重启后 vnc 能正常进 Arch Linux 更盘系统了，但是 ssh 还没有配
+
+
 
 
 # UEFI 配置开始
