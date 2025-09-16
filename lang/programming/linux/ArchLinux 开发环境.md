@@ -6,6 +6,8 @@
 
 # 阿里云Archlinux
 
+https://wiki.archlinux.org/title/COSMIC 桌面
+
 https://blog.51cto.com/u_16213696/7915426
 
 https://www.nolightblog.com/posts/fe4463fe/
@@ -199,7 +201,7 @@ systemctl restart sshd
 
 
 
-
+# 配置源
 vi /etc/pacman.d/mirrorlist 
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 	# 最前面加
@@ -208,7 +210,10 @@ pacman -Syyu
 	# pacman -Syyuu 从一个较新的镜像切换到较旧的镜像，以下命令可以降级部分包，以避免系统的部分更新
 
 
-
+# 安装 COSMIC 桌面
+pacman -S cosmic-session
+	# pacman -S cosmic
+		# 各样其他组件
 
 
 
