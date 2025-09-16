@@ -1065,6 +1065,11 @@ genfstab -L /mnt >> /mnt/etc/fstab
 	cat /mnt/etc/fstab  
 		# /dev/vda3 被挂载到   /
 
+pacstrap /mnt linux linux-firmware \
+  dhcpcd systemd-resolvconf \
+  iproute2 iputils net-tools bind-tools
+	# 安装网络工具
+
 
 arch-chroot /mnt
     - 控制权交给刚装好的硬盘系统
@@ -1088,7 +1093,24 @@ exit
 reboot
 	# 验证安装正常输出，到这里整个安装应该就完成了
 	# 实测重启后 vnc 能正常进 Arch Linux 更盘系统了，但是 ssh 还没有配
+	# 但是，进去以后没有网络
 
+
+# ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host noprefixroute 
+       valid_lft forever preferred_lft forever
+2: ens5: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:16:3e:18:df:af brd ff:ff:ff:ff:ff:ff
+    altname enp0s5
+    altname enx00163e18dfaf
+    inet 172.21.123.73/20 metric 1024 brd 172.21.127.255 scope global dynamic ens5
+       valid_lft 1892159820sec preferred_lft 1892159820sec
+    inet6 fe80::216:3eff:fe18:dfaf/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
 
 
 
