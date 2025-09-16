@@ -1125,14 +1125,6 @@ echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
 
 
 
-
-
-
-
-
-
-
-
 	
 vi /boot/grub/grub.cfg
 menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os {
