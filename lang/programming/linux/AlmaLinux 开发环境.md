@@ -990,6 +990,8 @@ https://blog.51cto.com/u_16213696/7915426
 
 https://www.nolightblog.com/posts/fe4463fe/
 
+https://www.nodeseek.com/post-128045-1  纯手工重装云服务器操作系统(阿里云ECS + Debian 12版)
+
 https://www.cnblogs.com/shankun/p/aliyunECS_archlinux.html 
 
 https://blog.csdn.net/mineo/article/details/134713925
