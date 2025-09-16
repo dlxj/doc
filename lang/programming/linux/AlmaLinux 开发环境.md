@@ -1051,15 +1051,17 @@ vda3 254:3 0 39.8G part /run/archiso/img_dev
 passwd
 	# 重设 root 密码，然后用 xshell 登录方便贴命令
 
-mount -o remount,rw /dev/vda3 /mnt
+mount -o rw /dev/vda3 /mnt \
+  && mount -o remount,rw /dev/vda3 /mnt
 	# 以读写方式挂载
 
+保留 ubuntu 系统的 /boot 用于启动，就不用在 Arch Linux 安装 Grub 了
 cd /mnt
-ls | grep -v arch.iso | xargs rm -rf
-	# 除了 arch.iso 文件保留，其他全部删除
+ls | grep -v arch.iso | grep -v boot | xargs rm -rf
+	# 除了 arch.iso 文件和 boot 文件夹保留，其他全部删除
+	
 
-
-pacstrap /mnt base base-devel
+pacstrap /mnt base base-devel linux linux-firmware grub	vi
 	# 安装基本系统
 	
 genfstab -L /mnt >> /mnt/etc/fstab
@@ -1072,17 +1074,59 @@ arch-chroot /mnt
     - 如果picman 出问题：  
       - **rm /var/lib/pacman/db.lck**
 
+passwd
+	# 重设 root 密码，不然等下登录不上
+	
+
+
+# UEFI 配置开始
+mkdir -p /boot/efi
+mount /dev/vda2 /boot/efi
+	# 假设 EFI 分区是 /dev/vda2，挂载到 /boot/efi
+
+pacman -S efibootmgr
+ 
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+
+ 
  
 pacman -Sy grub
 grub-install --target=i386-pc /dev/vda
+	# 参数 --target=i386-pc 强制 GRUB 使用传统 BIOS 模式，即使系统支持 UEFI。
 grub-mkconfig -o /boot/grub/grub.cfg
 	# 安装Bootloader
         如果出错：
         vi /etc/lvm/lvm.conf这个文件，找到use_lvmetad = 1将1修改为0，保存，重新配置grub
 
-[ -d /sys/firmware/efi ] && echo "UEFI" || echo "BIOS/Legacy"
-	# 确认当前的启动模式，如果是 uefi 是不行的，阿里 ecs 不支持
+
+ls /boot/vmlinuz-linux \
+  && ls /boot/grub/grub.cfg
+  	# 验证安装
+
+
+exit
+umount -R /mnt  
+reboot
+	# 验证安装正常输出，到这里整个安装应该就完成了
+
+
+arch-chroot /mnt
+ls /boot/vmlinuz-linux
+	--> ls: cannot access '/boot/vmlinuz-linux': No such file or directory
+		# 这是不正常的
+		
+pacman -S base linux linux-firmware	
+	# 重装内核
 	
+pacman -S base-devel vi grub
+
+
+grub-install /dev/vda
+	# 安装 GRUB 到硬盘 MBR
+	
+grub-mkconfig -o /boot/grub/grub.cfg
+	# 生成 GRUB 配置文件
 
 vi /etc/default/grub
 GRUB_DISABLE_OS_PROBER=false
@@ -1091,8 +1135,8 @@ GRUB_TERMINAL=console
 
 grub-install /dev/vda
 
-
-exit  
+exit 或按 Ctrl+d 退出 chroot 环境。
+umount -R /mnt  
 reboot
 
 
