@@ -215,8 +215,13 @@ pacman -S cosmic-session
 	# pacman -S cosmic
 		# 各样其他组件
 
+pacman -S git base-devel fakeroot && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+	# vi /usr/bin/makepkg 搜 root 注释掉 #exit $E_ROOT
 
 
+pacman -S --noconfirm xrdp xorgxrdp tigervnc \
+  && pacman -S --noconfirm pulseaudio-module-xrdp \
+	
 
 
 
