@@ -1099,6 +1099,40 @@ dhcpcd ens5
 # 重新获取 IP
 dhcpcd -n ens5
 
+
+
+
+# 紧急网络恢复（如果网络完全无法使用）
+
+ip addr 				查看它的输出的网络配置
+ip route show default   查看默认网关
+
+# 重置所有网络接口
+
+ip addr flush dev ens5
+ip route del default 2>/dev/null || true
+	# 清除可能存在的旧配置
+
+ip link set ens5 down
+ip link set ens5 up
+
+# 手动配置 IP（临时）
+ip addr add 172.21.123.73/16 dev ens5
+ip route add default via 172.21.127.253
+
+# 手动配置 DNS
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+
+
+
+
+
+
+
+
+
+
+
 	
 vi /boot/grub/grub.cfg
 menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os {
