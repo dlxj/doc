@@ -210,10 +210,14 @@ pacman -Syyu
 	# pacman -Syyuu 从一个较新的镜像切换到较旧的镜像，以下命令可以降级部分包，以避免系统的部分更新
 
 
-# 安装 COSMIC 桌面
+# 安装 COSMIC 桌面 （黑屏无解）
 pacman -S cosmic-session
 	# pacman -S cosmic
 		# 各样其他组件
+
+start-cosmic
+RUST_LOG=debug cosmic-comp
+  --> ERROR i18n_embed::requester: Unable to parse your locale: ParserError(InvalidLanguage)    
 
 
 vi /etc/pacman.conf
@@ -229,9 +233,43 @@ pacman -S yay
 	# 成功安装
 
 
-yay -S --noconfirm xrdp xorgxrdp tigervnc \
-  && yay -S --noconfirm pulseaudio-module-xrdp \
-	
+yay -S --noconfirm xrdp xorgxrdp tigervnc
+
+systemctl enable xrdp \
+  && systemctl start xrdp \
+  && systemctl status xrdp
+
+
+vi ~/.xinitrc
+#!/bin/bash
+export XDG_SESSION_TYPE=x11
+export XDG_CURRENT_DESKTOP=COSMIC
+export XDG_SESSION_DESKTOP=cosmic
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+    eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+exec cosmic-session
+
+chmod +x ~/.xinitrc
+
+
+mkdir -p /etc/X11 \
+&& tee /etc/X11/Xwrapper.config << EOF
+allowed_users=anybody
+needs_root_rights=no
+EOF
+
+# 检查 xrdp 是否安装
+which xrdp
+
+# 检查 xrdp 配置文件
+ls -la /etc/xrdp/
+
+# 检查服务状态
+systemctl restart xrdp \
+  && systemctl status xrdp
+
+pacman -S xorg-server xorg-xinit xorg-xauth dbus
 
 
 
