@@ -1066,10 +1066,9 @@ genfstab -L /mnt >> /mnt/etc/fstab
 		# /dev/vda3 被挂载到   /
 
 pacstrap /mnt linux linux-firmware \
-  dhcpcd systemd-resolvconf \
+  openssh dhcpcd \
   iproute2 iputils net-tools bind-tools
 	# 安装网络工具
-
 
 arch-chroot /mnt
     - 控制权交给刚装好的硬盘系统
@@ -1078,6 +1077,28 @@ arch-chroot /mnt
 
 passwd
 	# 重设 root 密码，不然等下登录不上
+
+systemctl enable dhcpcd
+
+# 查看所有网络接口
+ip link show
+ --> ens5
+
+# 启用网络接口
+ip link set ens5 up
+	# ip link set eth0 down
+
+# 查看接口状态
+ip addr show ens5
+
+
+# 启动 DHCP 客户端
+dhcpcd ens5
+	# 停止 dhcpcd -k ens5
+
+# 重新获取 IP
+dhcpcd -n ens5
+
 	
 vi /boot/grub/grub.cfg
 menuentry 'Arch Linux' --class arch --class gnu-linux --class gnu --class os {
