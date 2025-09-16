@@ -215,12 +215,22 @@ pacman -S cosmic-session
 	# pacman -S cosmic
 		# 各样其他组件
 
-pacman -S git base-devel fakeroot && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
-	# vi /usr/bin/makepkg 搜 root 注释掉 #exit $E_ROOT
+
+vi /etc/pacman.conf
+[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+	# 在最后加 
+
+pacman-key --lsign-key "farseerfc@archlinux.org"
+pacman -Sy archlinuxcn-keyring
+pacman -Syyuu
+
+pacman -S yay
+	# 成功安装
 
 
-pacman -S --noconfirm xrdp xorgxrdp tigervnc \
-  && pacman -S --noconfirm pulseaudio-module-xrdp \
+yay -S --noconfirm xrdp xorgxrdp tigervnc \
+  && yay -S --noconfirm pulseaudio-module-xrdp \
 	
 
 
