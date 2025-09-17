@@ -19,6 +19,7 @@ https://nixos.wiki/wiki/Installing_from_Linux 硬盘安装方法
   
   cd ~ \
     && mkdir -p inst host/nix \
+    && wget https://channels.nixos.org/nixos-25.05/latest-nixos-graphical-x86_64-linux.iso \
     && modprobe loop \
     && mount -o loop latest-nixos-graphical-x86_64-linux.iso inst \
     && unsquashfs -d host/nix/store inst/nix-store.squashfs '*'
