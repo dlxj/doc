@@ -13,6 +13,52 @@ nixos-graphical-25.05.809873.9a094440e02a-x86_64-linux.iso
 
 https://nixos.wiki/wiki/Installing_from_Linux 硬盘安装方法
 
+- ```
+  curl https://raw.githubusercontent.com/elitak/nixos-infect/master/nixos-infect | NIX_CHANNEL=nixos-25.05 bash -x
+  	# ubuntu 22.04 一键安装脚本
+  
+  cd ~ \
+    && mkdir -p inst host/nix \
+    && modprobe loop \
+    && mount -o loop latest-nixos-graphical-x86_64-linux.iso inst \
+    && unsquashfs -d host/nix/store inst/nix-store.squashfs '*'
+  
+  cd host \
+    && mkdir -p etc dev proc sys \
+    && cp /etc/resolv.conf etc \
+    && for fn in dev proc sys; do mount --bind "/${fn}" "${fn}"; done
+  
+  INIT=$(find . -type f -path '*nixos*/init') \
+    && echo $INIT
+  	./nix/store/abwlkvzyjd2i39b1l1wfv7v9ilx88fwi-nixos-0.1pre34067-34077/init
+  
+  BASH=$(find . -type f -path '*/bin/bash' | tail -n 1) \
+    && echo $BASH
+  	./nix/store/bmgq2jrn6719r6j55gs4rzfp0azcbazy-bash-4.2-p24/bin/bash
+  
+  sed -i "s,exec /.*systemd,exec /$BASH," $INIT
+  
+  chroot . /$INIT
+  	# 无视出现的错误，只是不是异常中止
+  
+  mount /dev/vda3 /mnt \
+    && nixos-generate-config --root /mnt \
+    && nano /mnt/etc/nixos/configuration.nix
+  	# 这些命令都是在 chroot 环境下执行的
+  	
+  NIX_PATH="nixpkgs=channel:nixos-25.05" nixos-install
+  	# curl -x http://127.0.0.1:7890 google.com
+  	export http_proxy="http://127.0.0.1:7890"
+  	export https_proxy="https://127.0.0.1:7890"
+  
+      vi /etc/nixos/configuration.nix 中
+      networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
+  	
+  
+  ```
+
+  
+
 https://github.com/pop-os/cosmic-epoch
 
 https://nixos.org/manual/nixos/unstable/release-notes#sec-release-25.05
@@ -51,7 +97,7 @@ Device      Start      End  Sectors  Size Type
 /dev/vda3  413696 83886046 83472351 39.8G Linux filesystem
 
 
-configuration.nix
+vi /etc/nixos/configuration.nix
 
   # Enable the login manager
   services.displayManager.cosmic-greeter.enable = true;
