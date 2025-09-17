@@ -1,10 +1,17 @@
 # ISO
 
-[ISO](https://ftp.riken.jp/Linux/almalinux/9.3/isos/x86_64/)
+https://channels.nixos.org/nixos-25.05/latest-nixos-graphical-x86_64-linux.iso
+
+```
+93db2173cdb6fc557fda7164dc069be78ed3d6866d8b4eae295ddcb8f131e885  
+nixos-graphical-25.05.809873.9a094440e02a-x86_64-linux.iso
+```
 
 
 
-# 阿里云Archlinux
+# 阿里云 NixOS
+
+https://nixos.wiki/wiki/Installing_from_Linux 硬盘安装方法
 
 https://github.com/pop-os/cosmic-epoch
 
