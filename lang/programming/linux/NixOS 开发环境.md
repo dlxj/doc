@@ -43,11 +43,12 @@ https://nixos.wiki/wiki/Installing_from_Linux 硬盘安装方法
   	# 无视出现的错误，只是不是异常中止
   
   mount /dev/vda3 /mnt \
+  mount /dev/nvme0n1p1 /mnt \
     && nixos-generate-config --root /mnt \
     && nano /mnt/etc/nixos/configuration.nix
   	# 这些命令都是在 chroot 环境下执行的
   	
-  NIX_PATH="nixpkgs=channel:nixos-25.05" nixos-install
+  NIX_PATH="nixpkgs=channel:nixos-25.05" nixos-install --no-sandbox
   	# curl -x http://127.0.0.1:7890 google.com
   	export http_proxy="http://127.0.0.1:7890"
   	export https_proxy="https://127.0.0.1:7890"
@@ -598,7 +599,111 @@ Root 密码
 
 
 
-# 
+# NixOS
+
+https://github.com/nix-community/NixOS-WSL  wsl.exe -d NixOS
+
+https://gist.github.com/hermannolafs/c1379a090350d2dc369aeabd3c0d8de3 gist
+
+```
+
+sudo nix-channel --update
+sudo nixos-rebuild switch
+
+
+sudo nano /etc/nixos/configuration.nix
+  environment.systemPackages = with pkgs; [
+    vim
+    xrdp
+    python311
+    python311Packages.pip
+    python311Packages.setuptools
+    python311Packages.wheel
+    git
+    git-lfs
+    nmap
+    pkgs.gnome-terminal
+    cosmic-edit
+    cosmic-files
+    cosmic-settings
+  ];
+  
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings.PermitRootLogin = "yes";
+    settings.PasswordAuthentication = true;
+    settings.PubkeyAuthentication = true;
+  };
+ 
+
+  services.displayManager.cosmic-greeter.enable = true;
+  services.desktopManager.cosmic.enable = true;
+  services.desktopManager.cosmic.xwayland.enable = true;
+
+  services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "cosmic-session";
+  services.xrdp.openFirewall = true;
+  
+  networking.firewall.enable = true;
+  networking.firewall.allowedTCPPorts = [ 22 3389 ];
+  networking.firewall.allowedUDPPorts = [ 3389 ];
+
+
+sudo nixos-rebuild switch
+
+sudo nixos-rebuild switch --rollback
+	# 出问题就回滚
+
+nix-shell -p git git-lfs
+
+
+pip install -U "huggingface_hub[cli]"
+
+git clone https://huggingface.co/datasets/dlxjj/nixos_config
+
+vi /etc/nixos/configuration.nix
+
+
+sudo nixos-rebuild switch
+
+
+
+
+sudo systemctl enable xrdp \
+  && sudo systemctl start xrdp \
+  && sudo systemctl status xrdp
+  
+  
+sudo ss -tlnp | grep 3389 \
+  && sudo iptables -L | grep 3389
+
+
+nmap -p 3389 172.29.160.58
+	# wsl 的 3389 可以访问到
+	
+
+sudo passwd
+	# 给 root 设置密码
+	
+systemctl enable --now sshd \
+  && systemctl restart sshd \
+  && systemctl status sshd
+  
+nmap -p 22 172.29.160.58
+	# wsl 的 22 端口可以访问
+  	# xshll 成功登录
+  
+ 
+windows远程桌面 172.29.160.58 3389 成功远程登录
+
+
+
+```
+
+
+
+
 
 
 
