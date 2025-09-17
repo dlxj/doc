@@ -54,6 +54,8 @@ https://nixos.wiki/wiki/Installing_from_Linux 硬盘安装方法
       vi /etc/nixos/configuration.nix 中
       networking.nameservers = [ "8.8.8.8" "1.1.1.1" ];
   	
+  	https://mirrors.ustc.edu.cn/help/nix-channels.html
+  		# 换源
   
   ```
 
