@@ -6,6 +6,12 @@
 
 # 阿里云Archlinux
 
+https://github.com/pop-os/cosmic-epoch
+
+https://nixos.org/manual/nixos/unstable/release-notes#sec-release-25.05
+
+https://gist.github.com/hermannolafs/c1379a090350d2dc369aeabd3c0d8de3  **gist** 
+
 https://wiki.archlinux.org/title/COSMIC 桌面
 
 https://blog.51cto.com/u_16213696/7915426
@@ -36,6 +42,20 @@ Device      Start      End  Sectors  Size Type
 /dev/vda1    2048     4095     2048    1M BIOS boot
 /dev/vda2    4096   413695   409600  200M EFI System
 /dev/vda3  413696 83886046 83472351 39.8G Linux filesystem
+
+
+configuration.nix
+
+  # Enable the login manager
+  services.displayManager.cosmic-greeter.enable = true;
+  # Enable the COSMIC DE itself
+  services.desktopManager.cosmic.enable = true;
+  # Enable XWayland support in COSMIC
+  services.desktopManager.cosmic.xwayland.enable = true;
+
+
+
+
 
 
 wget -o /arch.iso https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/archlinux-x86_64.iso
