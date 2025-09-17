@@ -605,6 +605,8 @@ https://github.com/nix-community/NixOS-WSL  wsl.exe -d NixOS
 
 https://gist.github.com/hermannolafs/c1379a090350d2dc369aeabd3c0d8de3 gist
 
+https://github.com/bin456789/reinstall  DD 系统
+
 ```
 
 sudo nix-channel --update
