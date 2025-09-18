@@ -23,6 +23,7 @@ https://nixos.wiki/wiki/Installing_from_Linux 硬盘安装方法
     && modprobe loop \
     && mount -o loop latest-nixos-graphical-x86_64-linux.iso inst \
     && unsquashfs -d host/nix/store inst/nix-store.squashfs '*'
+  	# dnf install squashfs-tools
   
   cd host \
     && mkdir -p etc dev proc sys \
@@ -43,7 +44,7 @@ https://nixos.wiki/wiki/Installing_from_Linux 硬盘安装方法
   	# 无视出现的错误，只是不是异常中止
   
   mount /dev/vda3 /mnt \
-  mount /dev/nvme0n1p1 /mnt \
+  mount /dev/nvme0n1p4 /mnt \
     && nixos-generate-config --root /mnt \
     && nano /mnt/etc/nixos/configuration.nix
   	# 这些命令都是在 chroot 环境下执行的
@@ -59,8 +60,8 @@ https://nixos.wiki/wiki/Installing_from_Linux 硬盘安装方法
   	https://mirrors.ustc.edu.cn/help/nix-channels.html
   		# 换源
   
-  ```
-
+```
+  
   
 
 https://github.com/pop-os/cosmic-epoch

@@ -41261,9 +41261,17 @@ https://github.com/Dimillian/IceCubesApp  **去中心化社交网络** Mastodon
 
 ## Rust Monads
 
+https://github.com/brianch/offline-chess-puzzles 国际象棋 UI 好看
+
+https://github.com/squidowl/halloy  IRC 窗口可拖
+
 https://github.com/pop-os/cosmic-edit  **iced Text Editor**
 
 https://github.com/pop-os/cosmic-player  **iced player**
+
+https://github.com/marischou/IcedSubtitleWatcher  字幕播放器
+
+https://github.com/pop-os/cosmic-time iced 动画
 
 - ```
   wsl ubuntu 24.04
