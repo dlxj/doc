@@ -11570,7 +11570,7 @@ https://github.com/sean-public/python-hashes
 
 
 
-​```c++
+```c++
     int hamming_distance(unsigned long x, unsigned long y) {
         int dist = 0;
         unsigned long val = x^y;
@@ -11581,7 +11581,7 @@ https://github.com/sean-public/python-hashes
         }
         return dist;
     }
-
+    
     double similarity(const std::string s, const std::string k) {
         unsigned long hash_s = simhash(s);
         unsigned long hash_k = simhash(k);
@@ -11626,50 +11626,50 @@ CONFIG SET protected-mode no
 
 			import subprocess
 			begintime, endtime = float(begintime), float(endtime)
-                # -ss 00:00:6.903 -to 00:00:13.648 ffmpeg 时:分:秒.毫秒
-            def ffmpeg_time(t):
-                h = "{:02d}".format(int(t / 3600))
-                m = "{:02d}".format( int( (t % 3600) / 60) )
-                s = "{:02d}".format( int( (t % 3600) % 60) )
-                w = "{:03d}".format( int ( (t % 1) * 1000) )
-                r = f"{h}:{m}:{s}.{w}"
-                return r
-            ss = ffmpeg_time(begintime)
-            to = ffmpeg_time(endtime)
-            # ffmpeg -i 01.chs.mp4 -metadata encoder="Lavf58.45.100" -ss 00:00:6.903 -to 00:00:13.648 -acodec pcm_s16le -ar 16000 -ac 1 -b:a 256k 01.chs.ssto.wav
-
-            def run_ffmpeg(mp4_pth, ss, to):
-                # 定义 ffmpeg 命令，将输出写到标准输出（管道）
-                ffmpeg_command = [
-                    'ffmpeg',
-                    '-i', f'{mp4_pth}',
-                    '-metadata', 'encoder=Lavf58.45.100',
-                    '-ss', f'{ss}',
-                    '-to', f'{to}',
-                    '-acodec', 'pcm_s16le',
-                    '-ar', '16000',
-                    '-ac', '1',
-                    '-b:a', '256k',
-                    '-f', 'wav',  # 使用 wav 格式
-                    'pipe:1'  # 输出到管道
-                ]
-                
-                try:
-                    # 使用 subprocess.run 执行命令，并使用 PIPE 捕获输出
-                    result = subprocess.run(ffmpeg_command, capture_output=True, text=False, check=True)
-                    
-                    # 获取标准输出 (音频数据)
-                    audio_data = result.stdout
-                    
-                    return audio_data
-                    
-                    # 如果需要处理 audio_data，可以在此处添加代码
-                except subprocess.CalledProcessError as e:
-                    # 如果命令执行失败，打印错误信息
-                    print("An error occurred while running ffmpeg:", e.stderr)
-                    return None
-
-            wav_data = run_ffmpeg(m4.mp4, ss, to)
+	            # -ss 00:00:6.903 -to 00:00:13.648 ffmpeg 时:分:秒.毫秒
+	        def ffmpeg_time(t):
+	            h = "{:02d}".format(int(t / 3600))
+	            m = "{:02d}".format( int( (t % 3600) / 60) )
+	            s = "{:02d}".format( int( (t % 3600) % 60) )
+	            w = "{:03d}".format( int ( (t % 1) * 1000) )
+	            r = f"{h}:{m}:{s}.{w}"
+	            return r
+	        ss = ffmpeg_time(begintime)
+	        to = ffmpeg_time(endtime)
+	        # ffmpeg -i 01.chs.mp4 -metadata encoder="Lavf58.45.100" -ss 00:00:6.903 -to 00:00:13.648 -acodec pcm_s16le -ar 16000 -ac 1 -b:a 256k 01.chs.ssto.wav
+	
+	        def run_ffmpeg(mp4_pth, ss, to):
+	            # 定义 ffmpeg 命令，将输出写到标准输出（管道）
+	            ffmpeg_command = [
+	                'ffmpeg',
+	                '-i', f'{mp4_pth}',
+	                '-metadata', 'encoder=Lavf58.45.100',
+	                '-ss', f'{ss}',
+	                '-to', f'{to}',
+	                '-acodec', 'pcm_s16le',
+	                '-ar', '16000',
+	                '-ac', '1',
+	                '-b:a', '256k',
+	                '-f', 'wav',  # 使用 wav 格式
+	                'pipe:1'  # 输出到管道
+	            ]
+	            
+	            try:
+	                # 使用 subprocess.run 执行命令，并使用 PIPE 捕获输出
+	                result = subprocess.run(ffmpeg_command, capture_output=True, text=False, check=True)
+	                
+	                # 获取标准输出 (音频数据)
+	                audio_data = result.stdout
+	                
+	                return audio_data
+	                
+	                # 如果需要处理 audio_data，可以在此处添加代码
+	            except subprocess.CalledProcessError as e:
+	                # 如果命令执行失败，打印错误信息
+	                print("An error occurred while running ffmpeg:", e.stderr)
+	                return None
+	
+	        wav_data = run_ffmpeg(m4.mp4, ss, to)
 ```
 
 
@@ -11688,8 +11688,9 @@ CONFIG SET protected-mode no
     # ffmpeg -i "1.mp4" -vf "select='between(t,4,6.5)+between(t,17,26)+between(t,74,91)',setpts=N/FRAME_RATE/TB" -af "aselect='between(t,4,6.5)+between(t,17,26)+between(t,74,91)',asetpts=N/SR/TB" out.mp4
     # https://github.com/mifi/lossless-cut
     # https://zhuanlan.zhihu.com/p/62649633
-    
-    
+
+
+​    
     [0:v]pad=iw*2:ih[v_wide];
 [v_wide][1:v]overlay=W/2:0[out_video];
 [0:a]volume=6dB[ao]
@@ -11775,7 +11776,7 @@ conda activate vse
 
 
 
-```python
+​```python
 """
 git clone https://github.com/YaoFANGUK/video-subtitle-extractor.git
 
@@ -12235,6 +12236,16 @@ anaconda3+ paddleOCR安装使用
 ## PaddleOCR训练自己的数据集
 
 - https://blog.csdn.net/u013171226/article/details/115179480
+
+
+
+
+
+# MonkeyOCR
+
+https://github.com/Yuliang-Liu/MonkeyOCR
+
+https://github.com/opendatalab/DocLayout-YOLO
 
 
 
