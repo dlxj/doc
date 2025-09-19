@@ -12247,6 +12247,8 @@ https://github.com/Yuliang-Liu/MonkeyOCR
 
 https://github.com/opendatalab/DocLayout-YOLO
 
+https://github.com/ultralytics/ultralytics  Ultralytics YOLO
+
 
 
 # GOT-OCR2.0

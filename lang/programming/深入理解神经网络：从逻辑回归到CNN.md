@@ -12200,6 +12200,22 @@ FCN 则一般通过反卷积层对卷积输出作上采样，使它恢复到输�
 
 
 
+
+
+## MonkeyOCR
+
+https://github.com/Yuliang-Liu/MonkeyOCR
+
+https://github.com/opendatalab/DocLayout-YOLO
+
+https://github.com/ultralytics/ultralytics  Ultralytics YOLO
+
+
+
+
+
+
+
 ## Ovis2.5
 
 https://zhuanlan.zhihu.com/p/1941818244815107063
