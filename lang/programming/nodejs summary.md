@@ -9814,6 +9814,32 @@ let mkvs = libdir.allmkv(root, 'Pokemon')
 
 
 
+
+
+```
+
+see huggingface\imradv3\src\WeChatOcrCpp\ocr_aliyunV2.js
+
+export { CredentialModel, xxx};
+export default class Credential implements ICredential {
+
+    let cf = new Credential.Config({
+        type: 'access_key',
+        accessKeyId: access_key_id,
+        accessKeySecret: access_key_secret,
+        endpoint: "ocr-api.cn-hangzhou.aliyuncs.com"
+    })
+    let cred = new Credential.default(cf)
+    
+    
+   # 它导出的是 default 等
+   
+```
+
+
+
+
+
 ```javascript
 // es.mjs
 let foo = {name: 'foo'};
