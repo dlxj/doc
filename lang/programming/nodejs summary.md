@@ -13921,6 +13921,35 @@ http.createServer(function(request, response) {
 
 
 
+## bytes 2 ReadStream
+
+```
+
+see huggingface\imradv3\src\WeChatOcrCpp\ocr_aliyunV2.js
+
+const { Readable } = require('stream')
+
+
+    let bytes = fs.readFileSync('../../data/0003.jpg')
+    let buf = Buffer.from(bytes)
+    let b64 = buf.toString('base64')
+
+    // const readStream = fs.createReadStream('../../data/0003.jpg')
+    const readStream = Readable.from(bytes)
+
+    let recognizeAdvancedRequest = new ocr_api20210707.RecognizeAdvancedRequest({
+        body: readStream,
+        prob: true,
+        charInfo: true,
+        table: true,
+        sortPage: true,
+        NeedRotate: true
+    })
+
+```
+
+
+
 
 
 # process
