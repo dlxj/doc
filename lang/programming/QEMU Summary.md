@@ -14,12 +14,22 @@ apk add git
 apk add git-lfs
 git lfs install
 
+poweroff
+	# 这样关机
+
+rc-service sshd status
+
+nmap -p 22 --unprivileged 10.0.2.15
+	# windows 测试 alpine 22 是通的
+
+qemu-system-x86_64 -m 1024 -hda alpine.qcow2  -boot c -netdev user,id=net0 -device e1000,netdev=net0 -fsdev local,security_model=passthrough,id=fsdev0,path=f:\shared -device virtio-9p-pci,id=fs0,fsdev=fsdev0,mount_tag=hostshare
+	# 共享目录
 
 
 qemu-img create -f qcow2  alpine.qcow2 20G  创建虚拟磁盘
 qemu-system-x86_64 -m 1024 -hda alpine.qcow2 -cdrom alpine-standard-3.22.1-x86_64.iso -boot d -netdev user,id=net0 -device e1000,netdev=net0
 lsblk
-qemu-system-x86_64 -m 1024 -hda alpine.qcow2  -boot c -netdev user,id=net0 -device e1000,netdev=net0 装完以后这样启动
+qemu-system-x86_64 -m 1024 -hda alpine.qcow2  -boot c -netdev user,id=net0 -device e1000,netdev=net0  装完以后这样启动
 qemu-system-x86_64 -hda alpine.qcow2 -boot d -net nic,model=virtio -net user,hostfwd=tcp::10022-:22  1022 -> 22 端口转发
 qemu-system-x86_64 -hda alpine.qcow2 -boot d -vnc :1 VNC客户端中连接到localhost:5901（默认VNC端口为5900+显示号）
 qemu-img snapshot -c my_snapshot alpine.qcow2
@@ -83,6 +93,14 @@ apk fetch -R nginx
 
 
 ```
+
+
+
+
+
+# 阿里云安装 alpine
+
+https://josephcz.xyz/technology/linux/install-alpine-on-aliyun/
 
 
 
