@@ -3350,6 +3350,20 @@ using Newtonsoft.Json.Linq;
 
 # Path
 
+
+
+## 可执行文件所在目录
+
+```
+// 可执行文件所在目录的路径
+
+public static readonly string ExecutablePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+```
+
+
+
+
+
 ## 程序目录下的特定 exe
 
 ```
