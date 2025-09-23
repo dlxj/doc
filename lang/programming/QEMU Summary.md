@@ -1,6 +1,6 @@
 
 
-
+# install alpine
 
 ```
 
@@ -80,6 +80,80 @@ apk fix
 
 apk fetch -R nginx
 	这会将 nginx包及其所有依赖下载到当前工作目录
+
+
+```
+
+
+
+# 中文显示
+
+```
+
+# 更新软件包索引
+apk update
+
+# 安装中文字体和语言支持
+apk add font-noto-cjk
+apk add musl-locales
+apk add musl-locales-lang
+
+# 编辑 locale 配置
+vi /etc/locale.conf
+
+LANG=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8
+
+# 对于 ash/sh (Alpine 默认)
+vi ~/.profile
+export LANG=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+export LC_CTYPE=zh_CN.UTF-8
+
+# 重新加载环境变量
+source ~/.profile
+
+
+# 检查当前 locale 设置
+locale
+
+# 测试中文显示
+echo "你好，世界！"
+
+
+# 安装 X11 和桌面环境（可选）
+apk add xorg-server
+apk add xfce4
+apk add font-noto-cjk
+
+# 安装中文输入法（可选）
+apk add ibus
+apk add ibus-libpinyin
+
+
+```
+
+
+
+```
+#!/bin/sh
+# 中文配置脚本
+
+# 安装必要软件包
+apk update
+apk add font-noto-cjk musl-locales musl-locales-lang
+
+# 配置 locale
+echo "LANG=zh_CN.UTF-8" > /etc/locale.conf
+echo "LC_ALL=zh_CN.UTF-8" >> /etc/locale.conf
+
+# 配置用户环境
+echo "export LANG=zh_CN.UTF-8" >> ~/.profile
+echo "export LC_ALL=zh_CN.UTF-8" >> ~/.profile
+echo "export LC_CTYPE=zh_CN.UTF-8" >> ~/.profile
+
+echo "中文配置完成，请重启系统！"
+
 
 
 ```
