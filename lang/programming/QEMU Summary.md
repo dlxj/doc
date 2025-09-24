@@ -160,6 +160,11 @@ apk add ttf-dejavu fontconfig
 
 mkfontscale && mkfontdir && fc-cache --force
 
+
+/usr/glibc-compat/bin/localedef --help 
+	# 这里面应该能显示中文
+
+
 https://www.cnblogs.com/equation/p/15346858.html
 
 ##加入path
