@@ -443,9 +443,18 @@ echo "中文配置完成，请重启系统！"
 
 # Docker + alpine
 
+https://wener.me/notes/os/alpine/glibc
+
 https://zhuanlan.zhihu.com/p/689702275
 
 ```
+
+apk del gcompat libc6-compat
+apk add glibc-2.35-r1.apk glibc-bin-2.35-r1.apk glibc-dev-2.35-r1.apk --allow-untrust --force-overwrite
+	# 关键
+
+
+
 
 yum install -y yum-utils device-mapper-persistent-data lvm2
 
@@ -498,7 +507,8 @@ RUN rm -rf *.apk
 RUN apk add tzdatacp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 #setup language 解决中文乱码
-RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8ENV LANG=en_US.UTF-8
+RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8
+ENV LANG=en_US.UTF-8
 
 #copy jdk-8u401-linux-x64.tar.gz 自己到oracle官网下载，放在dockerfile，就是跟这个文件同级目录
 ADD jdk-8u401-linux-x64.tar.gz /usr/local
