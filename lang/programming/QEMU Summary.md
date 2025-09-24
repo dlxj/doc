@@ -441,6 +441,36 @@ echo "中文配置完成，请重启系统！"
 
 
 
+# Docker + alpine
+
+https://zhuanlan.zhihu.com/p/689702275
+
+```
+
+yum install -y yum-utils device-mapper-persistent-data lvm2
+
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+yum install docker-ce
+
+systemctl start docker
+
+systemctl enable docker
+
+docker version
+
+docker ps
+
+docker images
+
+
+
+
+
+```
+
+
+
 
 
 # install void linux
