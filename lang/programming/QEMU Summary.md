@@ -160,6 +160,9 @@ apk add ttf-dejavu fontconfig
 
 mkfontscale && mkfontdir && fc-cache --force
 
+vi /etc/profile
+export LANG=zh_CN.utf8
+source /etc/proflie
 
 /usr/glibc-compat/bin/localedef --help 
 	# 这里面应该能显示中文
