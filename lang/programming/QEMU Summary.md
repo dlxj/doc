@@ -424,3 +424,21 @@ echo "中文配置完成，请重启系统！"
 
 
 
+
+
+# install void linux
+
+```
+
+qemu-img create -f qcow2  void.qcow2 20G
+
+qemu-system-x86_64 -m 1024 -hda void.qcow2 -cdrom void-live-x86_64-20250202-base.iso -boot d -netdev user,id=net0 -device e1000,netdev=net0
+lsblk
+qemu-system-x86_64 -m 1024 -hda void.qcow2  -boot c -netdev user,id=net0,hostfwd=tcp::127.0.0.1:2112-:22 -device e1000,netdev=net0 装完以后这样启动
+  # 端口转发 2112 -> 22
+
+
+```
+
+
+
