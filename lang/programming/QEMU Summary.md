@@ -156,8 +156,9 @@ source /etc/profile
 
 apk add fonts-noto-core fonts-noto-cjk
 
-apk add fontconfig && apk add ttf-dejavu && fc-cache --force
+apk add fontconfig && apk add ttf-dejavu
 
+mkfontscale && mkfontdir && fc-cache --force
 
 https://www.cnblogs.com/equation/p/15346858.html
 
