@@ -107,7 +107,37 @@ https://josephcz.xyz/technology/linux/install-alpine-on-aliyun/
 
 # 中文显示
 
+https://blog.csdn.net/weixin_56364253/article/details/141190043
+
+https://sspai.com/post/92955
+
 https://ivonblog.com/posts/alpine-linux-installation/
+
+
+
+```
+
+
+# Arch Linux。其中noto-fonts为西文字体，noto-fonts-cjk为中日韩文字体
+sudo pacman -S noto-fonts noto-fonts-cjk
+
+# Ubuntu
+sudo apt install fonts-noto-core fonts-noto-cjk
+
+# Alpine
+sudo apk update
+sudo apk add --upgrade font-noto font-noto-cjk
+
+# Void Linux
+sudo xbps-install -Su noto-fonts-ttf noto-fonts-cjk
+
+
+/usr/share/fonts/
+	# 自定义字体放这
+    
+
+
+```
 
 
 
@@ -115,7 +145,12 @@ https://ivonblog.com/posts/alpine-linux-installation/
 
 ```
 
-ttf-dejavu fontconfig
+apk add fontconfig && apk add --update ttf-dejavu && fc-cache --force
+
+apk add bash
+chsh -s /bin/bash
+	# 使用对 locale 支持更好的 shell
+
 
 vi Dockerfile
 FROM alpine:3.22.1
