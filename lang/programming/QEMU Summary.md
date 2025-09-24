@@ -115,19 +115,21 @@ https://ivonblog.com/posts/alpine-linux-installation/
 
 ```
 
+ttf-dejavu fontconfig
+
 vi Dockerfile
 FROM alpine:3.22.1
 
 # 安装基础工具和glibc
 RUN apk --no-cache add ca-certificates wget && \
     wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
-    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.38-r1/glibc-2.38-r1.apk && \
-    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.38-r1/glibc-bin-2.38-r1.apk && \
-    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.38-r1/glibc-i18n-2.38-r1.apk
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-2.35-r1.apk && \
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-bin-2.35-r1.apk && \
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-i18n-2.35-r1.apk
 
 # 安装glibc并清理
-RUN apk update && apk add glibc-2.38-r1.apk glibc-bin-2.38-r1.apk glibc-i18n-2.38-r1.apk && \
-    rm -rf glibc-2.38-r1.apk glibc-bin-2.38-r1.apk glibc-i18n-2.38-r1.apk
+RUN apk update && apk add glibc-2.35-r1.apk glibc-bin-2.35-r1.apk glibc-i18n-2.35-r1.apk && \
+    rm -rf glibc-2.35-r1.apk glibc-bin-2.35-r1.apk glibc-i18n-2.35-r1.apk
 
 # 设置时区为上海
 RUN apk add --no-cache tzdata && \
