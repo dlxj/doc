@@ -29,7 +29,8 @@ qemu-system-x86_64 -m 1024 -hda alpine.qcow2  -boot c -netdev user,id=net0 -devi
 qemu-img create -f qcow2  alpine.qcow2 20G  创建虚拟磁盘
 qemu-system-x86_64 -m 1024 -hda alpine.qcow2 -cdrom alpine-standard-3.22.1-x86_64.iso -boot d -netdev user,id=net0 -device e1000,netdev=net0
 lsblk
-qemu-system-x86_64 -m 1024 -hda alpine.qcow2  -boot c -netdev user,id=net0 -device e1000,netdev=net0  装完以后这样启动
+qemu-system-x86_64 -m 1024 -hda alpine.qcow2  -boot c -netdev user,id=net0,hostfwd=tcp::127.0.0.1:2112-:22 -device e1000,netdev=net0 装完以后这样启动
+  # 端口转发 2112 -> 22
 qemu-system-x86_64 -hda alpine.qcow2 -boot d -net nic,model=virtio -net user,hostfwd=tcp::10022-:22  1022 -> 22 端口转发
 qemu-system-x86_64 -hda alpine.qcow2 -boot d -vnc :1 VNC客户端中连接到localhost:5901（默认VNC端口为5900+显示号）
 qemu-img snapshot -c my_snapshot alpine.qcow2
@@ -105,6 +106,114 @@ https://josephcz.xyz/technology/linux/install-alpine-on-aliyun/
 
 
 # 中文显示
+
+https://ivonblog.com/posts/alpine-linux-installation/
+
+
+
+```
+
+          
+要让 Alpine Linux 中的 ash shell 正确显示中文，需要进行以下几个配置：
+
+1. 安装必要的语言包：
+​```bash
+apk add --no-cache font-noto-cjk
+​```
+
+2. 设置正确的语言环境变量，在 `/etc/profile` 或 `~/.profile` 中添加：
+​```bash
+export LANG=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+​```
+
+3. 确保终端支持 UTF-8 编码：
+​```bash
+export TERM=xterm-256color
+​```
+
+4. 如果使用的是容器环境，可能需要在启动容器时设置这些环境变量：
+​```bash
+docker run -e LANG=zh_CN.UTF-8 -e LC_ALL=zh_CN.UTF-8 alpine /bin/ash
+​```
+
+5. 对于某些应用程序，可能还需要安装额外的本地化包：
+​```bash
+apk add --no-cache musl-locales
+​```
+
+完成这些设置后，重新登录或重新加载配置文件（`source ~/.profile`），ash shell 应该能够正确显示中文字符了。
+        
+        
+        
+
+
+
+          
+如果在 Alpine Linux 中 `cat` 命令仍然无法正确显示中文，可能需要进行更全面的配置。以下是一些更深入的解决方案：
+
+1. **确保已安装完整的本地化支持**：
+   ```bash
+   apk add --no-cache musl-locales musl-locales-lang
+   ```
+
+2. **安装更多字体支持**：
+   ```bash
+   apk add --no-cache font-noto font-noto-cjk font-noto-emoji
+   ```
+
+3. **检查文件编码**：
+   确保你的文件是 UTF-8 编码的。可以使用 `file` 命令检查：
+   ```bash
+   file -i 你的文件名
+   ```
+   如果不是 UTF-8 编码，可以使用 `iconv` 转换：
+   ```bash
+   apk add --no-cache iconv
+   iconv -f 原编码 -t UTF-8 原文件 > 新文件
+   ```
+
+4. **配置完整的本地化环境**：
+   在 `/etc/profile.d/` 目录下创建一个新文件，例如 `locale.sh`：
+   ```bash
+   echo 'export LANG=zh_CN.UTF-8' > /etc/profile.d/locale.sh
+   echo 'export LC_ALL=zh_CN.UTF-8' >> /etc/profile.d/locale.sh
+   echo 'export LANGUAGE=zh_CN.UTF-8' >> /etc/profile.d/locale.sh
+   chmod +x /etc/profile.d/locale.sh
+   source /etc/profile.d/locale.sh
+   ```
+
+5. **检查终端模拟器设置**：
+   如果你是在本地机器上通过SSH或终端模拟器连接到Alpine，确保你的终端模拟器也配置为支持UTF-8。
+
+6. **尝试使用其他工具查看文件**：
+   ```bash
+   apk add --no-cache less
+   export LESSCHARSET=utf-8
+   less 你的文件名
+   ```
+
+7. **如果是在Docker容器中**：
+   确保在启动容器时设置了正确的环境变量：
+   ```bash
+   docker run -e LANG=zh_CN.UTF-8 -e LC_ALL=zh_CN.UTF-8 -e LANGUAGE=zh_CN.UTF-8 alpine
+   ```
+
+8. **检查glibc兼容性**：
+   Alpine使用musl libc而不是glibc，某些情况下可能需要安装glibc兼容层：
+   ```bash
+   apk add --no-cache gcompat
+   ```
+
+如果以上方法都不能解决问题，可能需要考虑是否有特殊字符或编码问题，或者考虑使用更完整的Linux发行版，如Ubuntu或Debian，它们默认提供更全面的本地化支持。
+        
+
+
+```
+
+
+
+
 
 ```
 
