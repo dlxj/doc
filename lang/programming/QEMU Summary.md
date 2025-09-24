@@ -107,11 +107,25 @@ https://josephcz.xyz/technology/linux/install-alpine-on-aliyun/
 
 # 中文显示
 
+https://zhuanlan.zhihu.com/p/689702275 极高效极安全的搭建微服务Docker环境：一步到位的实用教程
+
 https://blog.csdn.net/weixin_56364253/article/details/141190043
 
 https://sspai.com/post/92955
 
 https://ivonblog.com/posts/alpine-linux-installation/
+
+
+
+```
+
+```
+
+
+
+
+
+
 
 
 
@@ -146,6 +160,9 @@ sudo xbps-install -Su noto-fonts-ttf noto-fonts-cjk
 ```
 
 apk add fontconfig && apk add --update ttf-dejavu && fc-cache --force
+
+apk add gcompat
+	#  glibc-compatible APIs for use on musl libc systems
 
 apk add bash
 chsh -s /bin/bash
@@ -432,9 +449,9 @@ echo "中文配置完成，请重启系统！"
 
 qemu-img create -f qcow2  void.qcow2 20G
 
-qemu-system-x86_64 -m 1024 -hda void.qcow2 -cdrom void-live-x86_64-20250202-base.iso -boot d -netdev user,id=net0 -device e1000,netdev=net0
+qemu-system-x86_64 -m 2048 -hda void.qcow2 -cdrom void-live-x86_64-20250202-base.iso -boot d -netdev user,id=net0 -device e1000,netdev=net0
 lsblk
-qemu-system-x86_64 -m 1024 -hda void.qcow2  -boot c -netdev user,id=net0,hostfwd=tcp::127.0.0.1:2112-:22 -device e1000,netdev=net0 装完以后这样启动
+qemu-system-x86_64 -m 2048 -hda void.qcow2  -boot c -netdev user,id=net0,hostfwd=tcp::127.0.0.1:2112-:22 -device e1000,netdev=net0 装完以后这样启动
   # 端口转发 2112 -> 22
 
 
