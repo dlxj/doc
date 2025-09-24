@@ -464,7 +464,121 @@ docker ps
 docker images
 
 
+vi docker-alpine
+FROM alpine:latest
+MAINTAINER xltianc
 
+#更换aline源
+RUN echo "http://mirrors.aliyun.com/alpine/latest-stable/community" > /etc/apk/repositories
+RUN echo "http://mirrors.aliyun.com/alpine/latest-stable/main" >> /etc/apk/repositories
+
+#update apk
+RUN apk update && apk upgrade
+RUN apk --no-cache add ca-certificates
+
+# bash vim wget curl net-tools
+RUN apk add bash bash-doc bash-completion
+RUN apk add vim wget curl net-tools
+RUN rm -rf /var/cache/apk/*
+RUN /bin/bash
+
+#setup glibc
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-2.35-r1.apk
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-bin-2.35-r1.apk
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-i18n-2.35-r1.apk
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-dev-2.35-r1.apk
+RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
+RUN apk add glibc-2.35-r1.apk
+RUN apk add glibc-bin-2.35-r1.apk
+RUN apk add glibc-dev-2.35-r1.apk
+RUN apk add glibc-i18n-2.35-r1.apk
+RUN rm -rf *.apk
+
+#setup 时间
+RUN apk add tzdatacp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+#setup language 解决中文乱码
+RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8ENV LANG=en_US.UTF-8
+
+#copy jdk-8u401-linux-x64.tar.gz 自己到oracle官网下载，放在dockerfile，就是跟这个文件同级目录
+ADD jdk-8u401-linux-x64.tar.gz /usr/local
+
+#setup java env
+ENV JAVA_HOME=/usr/local/jdk1.8.0_401
+ENV PATH=$PATH:.:$JAVA_HOME/bin
+ENV CALSSPATH=$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+ 
+
+
+docker build -f docker-alpine-jdk8 -t xltianc/alpine-jdk:1.0.0 .
+
+
+
+
+
+
+运行docker build，注意最后的那个 ·
+
+docker build -f docker-alpine-jdk8 -t xltianc/alpine-jdk:1.0.0 .
+等待完成之后，docker images测试。
+
+3. 如何将自己的微服务打进alpine容器镜像
+
+上面步骤，主要属于我们的前期准备，下来我们需要将我们的微服务Jar包打进镜像，并且运行起来。
+
+Maven打包就不说了，包括使用Jenkins对原代码进行打包。
+
+假设Jar包已经打好了，我们通过工具或者ftp已经上传到我们的docker所在的服务器了。那么接下来如何操作？
+
+1. 首先给第二步骤xltianc/alpine-jdk:1.0.0打一个tag，标记一下。
+
+docker tag xltianc/alpine-jdk:1.0.0 prowhh/alpine-java8:latest
+2. 再写一个Dockerfile，使用tag镜像容器运行Jar
+
+FROM prowhh/alpine-java8:latest
+# 微服务jar
+ADD /app.jar //
+# 运行参数
+ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "-Xms3072m","-Xmx3072m","-Xmn384m","-XX:SurvivorRatio=3","-XX:+HeapDumpOnOutOfMemoryError", "-XX:HeapDumpPath=/path/heap/dump", "-Duser.timezone=GMT+08","-Djasypt.encryptor.password=EL_1234","/app.jar"]
+VOLUME /data
+运行docker build
+
+docker build -f Dockerfile -t prowhh/app-server:prod .
+4. 快速运行
+
+以上步骤运行完之后，我们再写一个脚本run.sh，进行整体调度，包含容器已经存在进行停止，删除，如果没有进行重新创建，以及映射日志文件操作。
+
+#!/bin/bash
+
+pjname=$1
+imprefix="prowhh/$pjname"
+containerdata='/data'
+echo '#############################################################'
+echo "项目名：$pjname"
+if [ `docker ps -a|awk '{print $NF}'|grep -w $pjname-prod|wc -l` -ge 1 ];then
+  # 停止容器
+  echo "停止项目名：$pjname"
+  docker stop $pjname-prod &> /dev/null
+  # 删除容器
+  docker rm -f $pjname-prod &> /dev/null
+fi
+echo "创建项目名：$pjname"
+# 创建一个新的容器
+if [ `docker images|awk -v OFS=':' '{print $1,$2}'|grep "$imprefix":prod$|wc -l` -ne 0 ];then
+  mkdir -p $containerdata/$pjname-logs/{logs,applogs} &> /dev/null
+  docker run -dit --restart=always  --net=host --name $pjname-prod -v /data/dump:/path/heap/dump -v $containerdata/$pjname-logs:/data/logs -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v $containerdata/applogs:/data/applogs -v /data/appdatas:/data/appdatas:ro $imprefix:prod
+else
+  echo "$imprefix:prod镜像不存在！"  
+fi
+# 清理生成的临时镜像
+if [ `docker images|grep '<none>'|awk '{print $3}'|wc -l` -ne 0 ];then
+  docker images|grep '<none>'|awk '{print $3}'|xargs docker rmi &> /dev/null
+  echo test > /dev/null
+fi
+
+
+ sh run.sh app-server
+以上步骤结束之后，可以将我们自己编译的容器上传至docker hub，以后要用到直接pull即可。
 
 
 ```
