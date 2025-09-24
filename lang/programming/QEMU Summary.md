@@ -157,6 +157,35 @@ apk add fonts-noto-core fonts-noto-cjk
 apk add fontconfig && apk add ttf-dejavu && fc-cache --force
 
 
+https://www.cnblogs.com/equation/p/15346858.html
+
+##加入path
+13 #vi /etc/profile
+14 ##在apeend_path函数后面添加一行#
+15 #...
+16 #append_path "/usr/glibc-compat/bin"
+17 #...
+18 ##然后按esc 输入wq退出
+19 #
+20 ##生成zh_CN.utf8 locale
+21 #/usr/glibc-compat/bin/localedef -i zh_CN -f UTF-8 zh_CN.UTF-8
+22 ##修改locale.sh
+23 #vi /etc/profile.d/locale.sh
+24 #用#号注释掉原有的所有语句,添加一条语句
+25 #...
+26 #export LANG=zh_CN.utf8
+27 #...
+28 ##然后按esc 输入wq退出
+29 #
+30 ##使配置立即生效
+31 #source /etc/proflie
+32 #
+33 ##安装中文字体和相关时区信息
+34 #apk add --update tzdata busybox-extras fontconfig ttf-dejavu
+35 ##设置本地时区
+36 #ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+37 #echo 'Asia/Shanghai' > /etc/timezone
+
 
 ```
 
