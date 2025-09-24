@@ -111,6 +111,106 @@ https://ivonblog.com/posts/alpine-linux-installation/
 
 
 
+
+
+```
+
+vi Dockerfile
+FROM alpine:3.22.1
+
+# 安装基础工具和glibc
+RUN apk --no-cache add ca-certificates wget && \
+    wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.38-r1/glibc-2.38-r1.apk && \
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.38-r1/glibc-bin-2.38-r1.apk && \
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.38-r1/glibc-i18n-2.38-r1.apk
+
+# 安装glibc并清理
+RUN apk update && apk add glibc-2.38-r1.apk glibc-bin-2.38-r1.apk glibc-i18n-2.38-r1.apk && \
+    rm -rf glibc-2.38-r1.apk glibc-bin-2.38-r1.apk glibc-i18n-2.38-r1.apk
+
+# 设置时区为上海
+RUN apk add --no-cache tzdata && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo "Asia/Shanghai" > /etc/timezone
+
+# 复制locale配置文件
+COPY ./locale.md /locale.md
+
+# 生成UTF-8 locale
+RUN cat locale.md | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.UTF-8
+
+# 设置中文环境变量
+ENV LANG=zh_CN.UTF-8 \
+    LANGUAGE=zh_CN.UTF-8 \
+    LC_ALL=zh_CN.UTF-8
+
+# 安装基础工具和字体（可选）
+RUN apk add --no-cache bash curl vim
+
+# 设置工作目录
+WORKDIR /app
+
+# 默认启动bash
+CMD ["/bin/bash"]
+
+
+vi locale.md
+zh_CN
+zh_TW
+en_US
+
+
+vi test.sh
+#!/bin/bash
+
+echo "=== 中文显示测试 ==="
+echo ""
+
+# 测试中文输出
+echo "1. 直接输出中文："
+echo "你好，世界！"
+echo ""
+
+# 测试环境变量
+echo "2. 环境变量设置："
+echo "LANG=$LANG"
+echo "LANGUAGE=$LANGUAGE"
+echo "LC_ALL=$LC_ALL"
+echo ""
+
+# 测试locale
+echo "3. 可用locale："
+locale -a | grep -E "(zh|en)"
+echo ""
+
+# 测试当前locale设置
+echo "4. 当前locale设置："
+locale
+echo ""
+
+# 测试文件编码
+echo "5. 创建包含中文的文件："
+echo "这是一个测试文件，包含中文：你好世界" > test_file.txt
+cat test_file.txt
+echo ""
+
+# 测试中文文件名
+echo "6. 创建中文文件名："
+touch "中文文件.txt"
+ls -la *中文*
+echo ""
+
+echo "=== 测试完成 ==="
+
+```
+
+
+
+
+
+
+
 ```
 
           
@@ -160,7 +260,7 @@ apk add --no-cache musl-locales
 2. **安装更多字体支持**：
    ```bash
    apk add --no-cache font-noto font-noto-cjk font-noto-emoji
-   ```
+   ```LAiL
 
 3. **检查文件编码**：
    确保你的文件是 UTF-8 编码的。可以使用 `file` 命令检查：
