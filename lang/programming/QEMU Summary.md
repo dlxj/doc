@@ -132,8 +132,31 @@ wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glib
 
 wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
 
-apk add glibc-2.35-r1.apk glibc-bin-2.35-r1.apk glibc-dev-2.35-r1.apk --allow-untrust --force-overwrite
+apk add glibc-2.35-r1.apk glibc-bin-2.35-r1.apk glibc-dev-2.35-r1.apk glibc-i18n-2.35-r1.apk --allow-untrust --force-overwrite
 	# 实测成功安装 
+
+apk add bash bash-doc bash-completion
+
+/bin/bash
+
+/usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8
+
+vi /etc/profile
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+
+source /etc/profile
+
+
+# 到这里还是没有显示出中文
+
+
+apk add fonts-noto-core fonts-noto-cjk
+
+apk add fontconfig && apk add ttf-dejavu && fc-cache --force
+
+
 
 ```
 
