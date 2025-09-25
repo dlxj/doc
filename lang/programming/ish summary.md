@@ -229,6 +229,7 @@ source /etc/profile
 
 /usr/glibc-compat/bin/localedef --help 
 	# 实测到这里在 awslightsail 已经正常显示中文了
+	# 其实是 xshell 连上去显示中文，在那上面原生显示不了的
 
 
 apk add fonts-noto-core fonts-noto-cjk ttf-dejavu fontconfig \
