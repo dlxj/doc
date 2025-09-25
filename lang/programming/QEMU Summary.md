@@ -184,6 +184,31 @@ https://josephcz.xyz/technology/linux/install-alpine-on-aliyun/
 
 https://luotianyi.vc/8445.html
 
+- ```
+  # 通过正常安装流程进行联网、镜像源设置，随后终止安装流程
+  setup-alpine
+  # 安装分区工具
+  apk add parted e2fsprogs
+  # 进行分区
+  parted -sa optimal /dev/sda mklabel msdos # 设置分区表为mbr格式
+  parted -sa optimal /dev/sda mkpart primary 512B 50MB # 划分boot分区
+  parted -sa optimal /dev/sda mkpart primary 50MB 100% # 划分所有容量至主分区
+  parted -sa optimal /dev/sda set 1 boot # 设置分区1启动卷标
+  mkfs.ext4 /dev/sda1 # 格式化boot分区
+  mkfs.ext4 /dev/sda2 # 格式化主分区
+  # 重启
+  reboot
+  # 挂载磁盘，注意先后及新建文件夹
+  mount /dev/sda2 /mnt
+  mount /dev/sda1 /mnt/boot
+  # 通过正常安装流程进行所有设置，到选择磁盘后终止
+  setup-alpine
+  # 安装
+  setup-disk /mnt
+  ```
+
+  
+
 ```
 在阿里云低配置服务器上安装 Alpine Linux
 近期有几个服务器到期，又对国内低流量、大带宽的服务器有一定需求（主要是用于内网穿透），于是入手了阿里云的 2C0.5G T6 突发性能实例。综合下来五年仅需不到 200 元，性价比极高。
