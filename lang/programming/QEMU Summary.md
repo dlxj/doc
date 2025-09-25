@@ -388,13 +388,14 @@ apk add --no-cache musl-locales
 1. **确保已安装完整的本地化支持**：
    ```bash
    apk add --no-cache musl-locales musl-locales-lang
-   ```
+```
 
 2. **安装更多字体支持**：
    ```bash
    apk add --no-cache font-noto font-noto-cjk font-noto-emoji
-   ```LAiL
-
+   ​```LAiL
+```
+   
 3. **检查文件编码**：
    确保你的文件是 UTF-8 编码的。可以使用 `file` 命令检查：
    ```bash
@@ -532,24 +533,25 @@ apk del gcompat libc6-compat
 apk add glibc-2.35-r1.apk glibc-bin-2.35-r1.apk glibc-dev-2.35-r1.apk --allow-untrust --force-overwrite
 	# 关键
 
+```
+yum install -y yum-utils device-mapper-persistent-data lvm2 \
+  && yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
+  && yum install docker-ce \
+  && systemctl start docker \
+  && systemctl enable docker \
+  && docker version \
+  && docker ps \
+  && docker images
+  
+  
+docker login
+docker pull alpine
+
+
+```
 
 
 
-yum install -y yum-utils device-mapper-persistent-data lvm2
-
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-
-yum install docker-ce
-
-systemctl start docker
-
-systemctl enable docker
-
-docker version
-
-docker ps
-
-docker images
 
 
 vi docker-alpine
@@ -596,7 +598,7 @@ ADD jdk-8u401-linux-x64.tar.gz /usr/local
 ENV JAVA_HOME=/usr/local/jdk1.8.0_401
 ENV PATH=$PATH:.:$JAVA_HOME/bin
 ENV CALSSPATH=$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
- 
+
 
 
 docker build -f docker-alpine-jdk8 -t xltianc/alpine-jdk:1.0.0 .
@@ -692,3 +694,5 @@ qemu-system-x86_64 -m 2048 -hda void.qcow2  -boot c -netdev user,id=net0,hostfwd
 
 
 
+
+```
