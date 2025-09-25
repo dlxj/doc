@@ -537,6 +537,7 @@ https://zhuanlan.zhihu.com/p/689702275
 
 apk del gcompat libc6-compat
 apk add glibc-2.35-r1.apk glibc-bin-2.35-r1.apk glibc-dev-2.35-r1.apk --allow-untrust --force-overwrite
+
 	# 关键
 
 ```
@@ -584,6 +585,24 @@ docker run -tid --name alpine_zh_ENV --net=customnetwork --ip=172.20.0.2 -p 222:
 docker exec -it alpine_zh_ENV bash
 	# 进入 docker
 
+apk del gcompat libc6-compat
+	# alpine/v3.20 它是这个版本
+	# 并没有装 gcompat 和 libc6-compat
+
+apk add glibc-2.35-r1.apk glibc-bin-2.35-r1.apk glibc-dev-2.35-r1.apk glibc-i18n-2.35-r1.apk --allow-untrust --force-overwrite
+
+
+/usr/glibc-compat/bin/localedef -i zh_CN -f UTF-8 zh_CN.UTF-8
+
+vi /etc/profile
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+
+source /etc/profile
+
+/usr/glibc-compat/bin/localedef --help 
+	# 实测到这里在 awslightsail 已经正常显示中文了
 
 ```
 
