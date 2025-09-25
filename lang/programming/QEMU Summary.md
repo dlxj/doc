@@ -581,6 +581,8 @@ docker stop alpine_zh_ENV \
 docker run -tid --name alpine_zh_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true alpine_zh /bin/bash
 	# 成功运行
 
+docker exec -it alpine_zh_ENV bash
+	# 进入 docker
 
 
 ```
