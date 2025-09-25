@@ -604,6 +604,11 @@ source /etc/profile
 /usr/glibc-compat/bin/localedef --help 
 	# 实测到这里在 awslightsail 已经正常显示中文了
 
+
+apk add fonts-noto-core fonts-noto-cjk ttf-dejavu fontconfig \
+  && mkfontscale && mkfontdir && fc-cache --force
+
+
 ```
 
 
