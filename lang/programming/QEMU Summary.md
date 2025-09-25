@@ -167,7 +167,7 @@ source /etc/profile
 	# 实测到这里在 awslightsail 已经正常显示中文了
 
 
-apk add fonts-noto-core fonts-noto-cjk ttf-dejavu fontconfig \
+apk add font-noto-core font-noto-cjk ttf-dejavu fontconfig \
   && mkfontscale && mkfontdir && fc-cache --force
   
 ```
