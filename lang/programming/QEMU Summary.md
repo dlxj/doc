@@ -182,6 +182,8 @@ apk add fonts-noto-core fonts-noto-cjk ttf-dejavu fontconfig \
 
 https://josephcz.xyz/technology/linux/install-alpine-on-aliyun/
 
+https://luotianyi.vc/8445.html
+
 ```
 在阿里云低配置服务器上安装 Alpine Linux
 近期有几个服务器到期，又对国内低流量、大带宽的服务器有一定需求（主要是用于内网穿透），于是入手了阿里云的 2C0.5G T6 突发性能实例。综合下来五年仅需不到 200 元，性价比极高。
