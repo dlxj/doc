@@ -202,6 +202,7 @@ share [mount point] virtiofs rw,nofail 0 0
 https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/get-started/install-hyper-v?tabs=powershell&pivots=windows
 
 ```
+# see QEMU Summary.md
 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 
