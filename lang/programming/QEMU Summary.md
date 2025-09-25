@@ -174,6 +174,20 @@ apk add fonts-noto-core fonts-noto-cjk ttf-dejavu fontconfig \
 
 
 
+# Hyper-V 虚拟机
+
+https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/get-started/install-hyper-v?tabs=powershell&pivots=windows
+
+```
+
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+
+
+
+```
+
+
+
 
 
 
