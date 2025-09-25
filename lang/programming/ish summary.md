@@ -161,6 +161,84 @@ apk fetch -R nginx
 
 
 
+# alpine v3.20 x84_x64 正常显示中文
+
+```
+Almalinux 9 docker 里的 alpine v3.20 x84_x64 正常显示中文
+
+yum install -y yum-utils device-mapper-persistent-data lvm2 \
+  && yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
+  && yum install docker-ce \
+  && systemctl start docker \
+  && systemctl enable docker \
+  && docker version \
+  && docker ps \
+  && docker images
+  
+  
+#docker login
+#docker pull alpine
+
+
+docker pull ghcr.io/linuxcontainers/alpine:latest
+
+vi Dockerfile
+         
+FROM ghcr.io/linuxcontainers/alpine:latest
+RUN apk update && apk upgrade
+RUN apk --no-cache add ca-certificates
+RUN apk add bash bash-doc bash-completion
+RUN apk add vim wget curl net-tools
+RUN rm -rf /var/cache/apk/*
+RUN /bin/bash
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-2.35-r1.apk
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-bin-2.35-r1.apk
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-i18n-2.35-r1.apk
+RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-dev-2.35-r1.apk
+RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
+
+docker build -t alpine_zh .
+
+docker network create --subnet=172.20.0.0/16 customnetwork
+
+docker stop alpine_zh_ENV \
+  && docker rm alpine_zh_ENV
+
+docker run -tid --name alpine_zh_ENV --net=customnetwork --ip=172.20.0.2 -p 222:22 --privileged=true alpine_zh /bin/bash
+	# 成功运行
+
+docker exec -it alpine_zh_ENV bash
+	# 进入 docker
+
+apk del gcompat libc6-compat
+	# alpine/v3.20 它是这个版本
+	# 并没有装 gcompat 和 libc6-compat
+
+apk add glibc-2.35-r1.apk glibc-bin-2.35-r1.apk glibc-dev-2.35-r1.apk glibc-i18n-2.35-r1.apk --allow-untrust --force-overwrite
+
+
+/usr/glibc-compat/bin/localedef -i zh_CN -f UTF-8 zh_CN.UTF-8
+
+vi /etc/profile
+export LANG=zh_CN.UTF-8
+export LANGUAGE=zh_CN.UTF-8
+export LC_ALL=zh_CN.UTF-8
+
+source /etc/profile
+
+/usr/glibc-compat/bin/localedef --help 
+	# 实测到这里在 awslightsail 已经正常显示中文了
+
+
+apk add fonts-noto-core fonts-noto-cjk ttf-dejavu fontconfig \
+  && mkfontscale && mkfontdir && fc-cache --force
+  
+```
+
+
+
+
+
 
 
 # git-lfs
