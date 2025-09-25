@@ -174,6 +174,28 @@ apk add fonts-noto-core fonts-noto-cjk ttf-dejavu fontconfig \
 
 
 
+# UTM SE 共享目录
+
+https://blog.csdn.net/m0_45378777/article/details/145263854
+
+```
+
+mkdir /mnt/mp
+sudo mount -t 9p -o trans=virtio share /mnt/mp -oversion=9p2000.L
+	# 共享目录就挂载到了/mnt/mp里
+	
+配置 /etc/fstab 文件 ，例如
+share [mount point] virtiofs rw,nofail 0 0
+	# 永久生效
+
+```
+
+
+
+
+
+
+
 # Hyper-V 虚拟机
 
 https://learn.microsoft.com/zh-cn/windows-server/virtualization/hyper-v/get-started/install-hyper-v?tabs=powershell&pivots=windows
@@ -949,13 +971,14 @@ apk add --no-cache musl-locales
    ```bash
    apk add --no-cache font-noto font-noto-cjk font-noto-emoji
    ​```LAiL
+   ```
 ```
    
 3. **检查文件编码**：
    确保你的文件是 UTF-8 编码的。可以使用 `file` 命令检查：
    ```bash
    file -i 你的文件名
-   ```
+```
    如果不是 UTF-8 编码，可以使用 `iconv` 转换：
    ```bash
    apk add --no-cache iconv
