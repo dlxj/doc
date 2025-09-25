@@ -100,7 +100,7 @@ apk fetch -R nginx
 # alpine v3.20 x84_x64 正常显示中文
 
 ```
-Almalinux 9 docker 里的 alpine v3.20 x84_x64 正常显示中文
+Almalinux 9 docker 里的 alpine 3.20 x84_x64 正常显示中文
 
 yum install -y yum-utils device-mapper-persistent-data lvm2 \
   && yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo \
@@ -117,6 +117,7 @@ yum install -y yum-utils device-mapper-persistent-data lvm2 \
 
 
 docker pull ghcr.io/linuxcontainers/alpine:latest
+	# docker pull ghcr.io/linuxcontainers/alpine:3.20
 
 vi Dockerfile
          
