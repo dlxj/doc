@@ -244,18 +244,19 @@ https://luotianyi.vc/8445.html
   # 挂载磁盘，注意先后及新建文件夹
   mount /dev/sda2 /mnt
   mount /dev/sda1 /mnt/boot
-# 通过正常安装流程进行所有设置，到选择磁盘后终止
+  
+  # 通过正常安装流程进行所有设置，到选择磁盘后终止
   setup-alpine
+  
   # 安装
   setup-disk /mnt
   
-  	# 实测这个 vhd 上传阿里自定义镜像后，正常开机使用
-  	
+    	# 实测这个 vhd 上传阿里自定义镜像后，正常开机使用
+  
   ```
-  
-  
 
 ```
+
 在阿里云低配置服务器上安装 Alpine Linux
 近期有几个服务器到期，又对国内低流量、大带宽的服务器有一定需求（主要是用于内网穿透），于是入手了阿里云的 2C0.5G T6 突发性能实例。综合下来五年仅需不到 200 元，性价比极高。
 
@@ -990,7 +991,7 @@ echo "=== 测试完成 ==="
 
 ```
 
-          
+
 要让 Alpine Linux 中的 ash shell 正确显示中文，需要进行以下几个配置：
 
 1. 安装必要的语言包：
@@ -1026,19 +1027,20 @@ apk add --no-cache musl-locales
 
 
 
-          
+
 如果在 Alpine Linux 中 `cat` 命令仍然无法正确显示中文，可能需要进行更全面的配置。以下是一些更深入的解决方案：
 
 1. **确保已安装完整的本地化支持**：
    ```bash
    apk add --no-cache musl-locales musl-locales-lang
 ```
+```
 
 2. **安装更多字体支持**：
    ```bash
    apk add --no-cache font-noto font-noto-cjk font-noto-emoji
    ​```LAiL
-   ```
+```
 ```
    
 3. **检查文件编码**：
@@ -1251,6 +1253,7 @@ source /etc/profile
 
 /usr/glibc-compat/bin/localedef --help 
 	# 实测到这里在 awslightsail 已经正常显示中文了
+	# 实际上只是 xshell 能正常显示中文
 
 
 apk add fonts-noto-core fonts-noto-cjk ttf-dejavu fontconfig \
