@@ -223,6 +223,11 @@ https://josephcz.xyz/technology/linux/install-alpine-on-aliyun/
 https://luotianyi.vc/8445.html
 
 - ```
+  
+  从 HyperV 中创建一个1024M的动态扩展.vhd文件
+  
+  HyperV 新建一个代次为Gen1的虚拟机，然后挂载.vhd的磁盘和 alpine-standard x64 iso 镜像开机进行安装
+  
   # 通过正常安装流程进行联网、镜像源设置，随后终止安装流程
   setup-alpine
   # 安装分区工具
@@ -239,12 +244,15 @@ https://luotianyi.vc/8445.html
   # 挂载磁盘，注意先后及新建文件夹
   mount /dev/sda2 /mnt
   mount /dev/sda1 /mnt/boot
-  # 通过正常安装流程进行所有设置，到选择磁盘后终止
+# 通过正常安装流程进行所有设置，到选择磁盘后终止
   setup-alpine
   # 安装
   setup-disk /mnt
+  
+  	# 实测这个 vhd 上传阿里自定义镜像后，正常开机使用
+  	
   ```
-
+  
   
 
 ```
@@ -679,6 +687,53 @@ ntpd -d -q -n -p ntp.cloud.aliyuncs.com
 chmod +x /etc/periodic/hourly/10-timesync-ntpd
 
 ```
+
+
+
+## 紧急临时网络
+
+```
+# 紧急网络恢复（如果网络完全无法使用）
+
+ip addr 				查看它的输出的网络配置
+ip route show default   查看默认网关
+
+# 重置所有网络接口
+
+ip addr flush dev eth0
+ip route del default
+	# 清除可能存在的旧配置
+
+ip link set eth0 down
+ip link set eth0 up
+
+# 手动配置 IP（临时）
+
+ip addr add 172.21.123.73/16 dev eth0
+ip route add default via 172.21.127.253
+
+# 手动配置 DNS
+
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+
+# 实测到这里能 ping 通 qq.com 了
+
+```
+
+
+
+
+
+## 永久网络
+
+```
+
+vi /etc/network/interfaces
+
+
+```
+
+
 
 
 
