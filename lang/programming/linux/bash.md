@@ -1,5 +1,47 @@
 
 
+# 软链接替换成真实文件
+
+```
+
+将当前目录下的软链接文件替换成指向的真实文件，文件名重命名为软链接的文件名，然后删除指向的文件
+
+#!/bin/bash
+
+# 遍历当前目录下的所有软链接
+for symlink in *; do
+    # 检查是否为软链接
+    if [ -L "$symlink" ]; then
+        # 获取软链接指向的真实文件路径
+        target=$(readlink "$symlink")
+        
+        # 检查目标文件是否存在
+        if [ -f "$target" ]; then
+            echo "处理软链接: $symlink -> $target"
+            
+            # 删除软链接
+            rm "$symlink"
+            
+            # 将目标文件移动到软链接的位置（重命名）
+            mv "$target" "$symlink"
+            
+            echo "已完成: $symlink"
+        else
+            echo "警告: 软链接 $symlink 指向的文件 $target 不存在，跳过处理"
+        fi
+    fi
+done
+
+echo "所有软链接处理完成"
+
+```
+
+
+
+
+
+
+
 # /dev/tcp 实现 curl
 
 
