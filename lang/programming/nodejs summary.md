@@ -9600,6 +9600,72 @@ qemu-system-x86_64w.exe -m 4G -smp cores=2 -cdrom ./ubuntu-22.04.5-desktop-amd64
 
 
 
+# 真实 IP
+
+```
+
+app.set('trust proxy', true);
+
+
+function getRealIP(req) {
+    // 检查各种可能包含真实 IP 的头部
+    const forwarded = req.headers['x-forwarded-for'];
+    if (forwarded) {
+        // x-forwarded-for 可能包含多个 IP，取第一个
+        return forwarded.split(',')[0].trim();
+    }
+    
+    return req.headers['x-real-ip'] ||
+           req.headers['x-client-ip'] ||
+           req.connection.remoteAddress ||
+           req.socket.remoteAddress ||
+           req.ip ||
+           '';
+}
+
+//注册HTTP消息头部信息
+app.use(
+    function (req, res, next) {
+        res.set(
+            {
+                'Server': 'ysServer/0.1',
+                'X-Powered-By': 'ysExamSystem/0.1',
+                'Content-Type': 'text/plain',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
+                'Access-Control-Max-Age': '86400', // 24 hours
+                'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept,Accept-Ranges',
+                'Connection': 'Close'
+            }
+        );
+
+        console.log('=== IP 调试信息 ===');
+        console.log('req.ip:', req.ip);
+        console.log('req.connection.remoteAddress:', req.connection.remoteAddress);
+        console.log('req.socket.remoteAddress:', req.socket.remoteAddress);
+        console.log('X-Forwarded-For:', req.headers['x-forwarded-for']);
+        console.log('X-Real-IP:', req.headers['x-real-ip']);
+        console.log('X-Client-IP:', req.headers['x-client-ip']);
+        console.log('==================');
+
+        req.__ip__ = getRealIP(req);
+
+        log.log('请求：'+req.body.userID+'|'+req.__ip__+'|'+req.method+'|'+req.url);
+        next();
+    }
+);
+
+        proxy_pass http://localhost:8009;
+        proxy_set_header    Host             $host;
+        proxy_set_header    X-Real-IP        $remote_addr;
+        proxy_set_header    X-Forwarded-For  $proxy_add_x_forwarded_for;
+        proxy_set_header    HTTP_X_FORWARDED_FOR $remote_addr;
+        proxy_redirect      default;
+
+```
+
+
+
 
 
 
