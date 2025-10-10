@@ -2803,6 +2803,43 @@ npm i
 
 
 ```
+
+
+curl -x http://127.0.0.1:7890 google.com
+	# 正常访问
+
+
+yum -y install nginx-all-modules.noarch
+	# 解决不支持 stream
+
+vi /etc/nginx/nginx.conf
+stream {
+
+    upstream proxy_8118 {
+        server 127.0.0.1:7890;
+    }
+
+    server {
+        listen 8118;
+        proxy_pass proxy_8118;
+    }
+    
+}
+
+nginx -t && \
+systemctl restart nginx && \
+nginx -s reload
+
+
+nmap -p 8118 --unprivileged 47.100.192.57
+	# 通的
+
+curl -x http://47.100.192.57:8118 google.com
+	# 偶尔能行
+
+
+
+
 # 关闭防火墙
 systemctl stop firewalld
 # 关闭 apache 
