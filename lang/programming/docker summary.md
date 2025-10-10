@@ -186,6 +186,94 @@ apk add fonts-noto-core fonts-noto-cjk ttf-dejavu fontconfig \
 
 # Docker+CentOS
 
+
+
+```
+114.55.128.51 安装 docker
+cat /etc/redhat-release
+	CentOS Linux release 7.9.2009 (Core)
+
+yum -y install gcc gcc-c++ yum-utils
+
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+yum install docker
+
+systemctl start docker \
+  && systemctl enable docker \
+  && systemctl status docker
+
+docker pull almalinux:9.6
+
+
+my ali57 安装代理
+git clone --branch master --depth 1 https://gh-proxy.com/https://github.com/nelvko/clash-for-linux-install.git \
+  && cd clash-for-linux-install \
+  && bash install.sh
+
+
+https://github.com/nelvko/clash-for-linux-install
+clashon
+clashoff
+clashctl status
+
+clashctl proxy  off
+	# 关闭系统代理
+
+clashctl update
+	# 更新订阅
+
+
+curl -x http://127.0.0.1:7890 google.com
+	# 正常访问
+
+
+vi /etc/nginx/nginx.conf
+stream {
+
+    upstream proxy_8118 {
+        server 127.0.0.1:7890;
+    }
+
+    server {
+        listen 8118;
+        proxy_pass proxy_8118;
+    }
+    
+}
+
+nginx -t && \
+systemctl restart nginx && \
+nginx -s reload
+
+
+nmap -p 8118 --unprivileged 47.100.192.57
+	# 通的
+
+curl -x http://47.100.192.57:8118 google.com
+	# 偶尔能行
+
+
+
+
+mkdir -p /etc/systemd/system/docker.service.d  \
+  && vi /etc/systemd/system/docker.service.d/proxy.conf
+[Service]
+Environment="ALL_PROXY=http://47.100.192.57:8118/"
+
+systemctl daemon-reload \
+  && systemctl restart docker \
+  && systemctl status docker
+	# 成功
+
+docker pull almalinux:9.6
+
+```
+
+
+
+
+
 ```
 # see nodejs summary.md -> docker
 
@@ -1031,8 +1119,9 @@ vi /etc/systemd/system/docker.service.d/proxy.conf
 [Service]
 Environment="ALL_PROXY=http://127.0.0.1:8118/"
 
-systemctl restart docker && \
-systemctl status docker
+systemctl daemon-reload \
+  && systemctl restart docker \
+  && systemctl status docker
 	# 成功
 
 2. 运行中的容器的代理
