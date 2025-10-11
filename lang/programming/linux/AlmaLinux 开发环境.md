@@ -8,7 +8,8 @@
 
 ```
 
-dnf install -y openssh-server
+dnf install -y openssh-server \
+  && dnf install -y procps-ng passwd
 
 
 docker 要这样
@@ -25,9 +26,23 @@ chmod 600 /etc/ssh/ssh_host_*_key \
 
 docker 要这样
 /usr/sbin/sshd -t
+
+vi /etc/ssh/sshd_config
+PermitRootLogin yes
+PasswordAuthentication yes
+PubkeyAuthentication yes
+
+passwd 
+	# 改密码
+
+pkill sshd
 /usr/sbin/sshd -D &
 	nohup sudo /usr/sbin/sshd -D > /dev/null 2>&1 &
 	
+	
+ssh root@114.55.xxx -p 222
+	# 成功登录 docker
+
 
 systemctl start sshd \
   && systemctl enable sshd \
