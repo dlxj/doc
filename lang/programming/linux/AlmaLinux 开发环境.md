@@ -7,6 +7,33 @@
 # 允许 root ssh
 
 ```
+
+dnf install -y openssh-server
+
+
+docker 要这样
+mkdir -p /etc/ssh \
+  && ssh-keygen -t rsa -b 4096 -f /etc/ssh/ssh_host_rsa_key -N "" \
+  && ssh-keygen -t ecdsa -b 521 -f /etc/ssh/ssh_host_ecdsa_key -N "" \
+  && ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N ""
+
+# 私钥权限（只有 root 可读） 公钥权限（所有人可读）
+chmod 600 /etc/ssh/ssh_host_*_key \
+  && chmod 644 /etc/ssh/ssh_host_*_key.pub \
+  && chmod 755 /etc/ssh
+
+
+docker 要这样
+/usr/sbin/sshd -t
+/usr/sbin/sshd -D &
+	nohup sudo /usr/sbin/sshd -D > /dev/null 2>&1 &
+	
+
+systemctl start sshd \
+  && systemctl enable sshd \
+  && systemctl status sshd
+
+
 vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 	# PermitRootLogin yes
 	# 改成这个

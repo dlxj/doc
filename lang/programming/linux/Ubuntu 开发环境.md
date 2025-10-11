@@ -1533,6 +1533,21 @@ systemctl disable firewalld
 
 # nginx
 
+
+
+```
+
+apt remove nginx nginx-common
+
+apt update && apt install nginx-full
+
+
+```
+
+
+
+
+
 ```
 see echodict/README.md -> ali 57
 
