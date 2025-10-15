@@ -12747,6 +12747,9 @@ var obj = ([ 3.1, 1.2, 3.3 ])
 // with the `_.property` iteratee shorthand 
 let grouped_data = _.groupBy(users, 'length')
 let grouped_data2 = _.groupBy(obj, Math.floor)
+
+const grouped = _.groupBy(cpttests, item => item.first.Type);
+
 ```
 
 

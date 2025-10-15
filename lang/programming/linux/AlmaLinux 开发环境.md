@@ -62,6 +62,30 @@ vi /etc/ssh/sshd_config.d/01-permitrootlogin.conf
 
 
 
+# 安装 redis
+
+```
+
+dnf update -y \
+  && dnf groupinstall "Development Tools" -y \
+  && dnf install wget gcc make tcl -y
+
+wget https://download.redis.io/releases/redis-3.2.12.tar.gz
+
+tar xzf redis-3.2.12.tar.gz \
+  && cd redis-3.2.12 \
+  && make \
+  && make test
+
+
+
+
+```
+
+
+
+
+
 
 
 # 安装开发环境
