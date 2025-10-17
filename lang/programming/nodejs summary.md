@@ -113,6 +113,34 @@ I guess that vm.max_map_count should be twice of kernel.threads-max, thus, I set
 
 
 
+## 注入环境变量
+
+```
+
+const fs = require('fs');
+const { spawn } = require('child_process');
+
+// 读取 PM2 配置文件（假设为 pm2.json）
+const pm2Config = JSON.parse(fs.readFileSync('pm2.json', 'utf8'));
+const env = pm2Config.apps[0].env; // 获取 env 中的变量
+
+// 将变量注入到当前进程的环境变量
+Object.assign(process.env, env);
+
+// 启动 server.js
+spawn('node', ['server.js'], {
+    stdio: 'inherit', // 继承终端输入输出
+    env: process.env
+});
+
+
+
+```
+
+
+
+
+
 ## install nodejs
 
 
@@ -2585,6 +2613,11 @@ https://www.cnblogs.com/xusx2014/p/16089510.html
 
 pm2 start wechatocr_7789.json
 	# 这样能成功启动
+
+
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+	# 权限
+	
 
 
 
@@ -5702,9 +5735,9 @@ http://localhost:6006
 	# 成功访问 gradio
 
 
-git config --global user.name "dlxjj" && 
-git config --global user.email "12345@qq.com"
-git config --global push.default matching  
+git config --global user.name "dlxjj" \
+ && git config --global user.email "12345@qq.com" \
+ && git config --global push.default matching  
 
 git config --system --list
 	# 查看系统config
@@ -39753,6 +39786,7 @@ git clone https://github.com/dlxj/blog
 
 
 https://dlxj.github.io/blog
+	# https://dlxj.github.io/blog/Time1923/index.html
 	# https://mathagape.github.io/blog
 	# blog 访问地址
 
