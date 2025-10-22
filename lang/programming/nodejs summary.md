@@ -2470,6 +2470,18 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 
 ```
+
+# pm2 --version
+5.2.0
+
+
+npm install pm2@5.2.0
+
+/usr/local/node-v16.20.2-linux-x64/bin/pm2 --version
+
+ln -s /usr/local/node-v16.20.2-linux-x64/bin/pm2 /usr/bin
+
+
 vi pm2.json
 {
   "apps": [
