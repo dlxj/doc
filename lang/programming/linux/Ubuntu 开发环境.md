@@ -855,6 +855,24 @@ curl -Lso- bench.sh | bash
 
 
 
+# Ubuntu 14.04 安装 Docker
+
+```
+
+# hostnamectl
+  Operating System: Ubuntu 14.04.6 LTS
+
+apt-get install -y docker.io
+
+service docker start \
+  && service docker status
+
+
+
+```
+
+
+
 
 
 # Ubuntu22.04远程桌面

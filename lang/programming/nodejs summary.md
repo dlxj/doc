@@ -2467,6 +2467,34 @@ mount /dev/sda1 /mnt  # 加一句，挂载存储块
 
 ### start json
 
+
+
+```
+vi pm2.json
+{
+  "apps": [
+    {
+      "name": "xxx_server_9778",
+      "script": "xxx.js",
+      "instances": 3,
+      "exec_mode": "cluster",
+      "interpreter_args": "--max-old-space-size=1024",
+      "max_memory_restart": "1024M"
+    }
+  ]
+}
+
+pm2 start pm2.json
+pm2 stop xxx_server_9778
+	# 启动多个实例，对外一个端口
+	
+
+```
+
+
+
+
+
 ```
 # see huggingface\powershell\readme.txt
 # see nodejs summary.md -> 安装代理 -> 异地组网
