@@ -43459,6 +43459,24 @@ https://github.com/icidasset/diffuse/blob/main/src/Css/Application.css  云音�
 
 
 
+# Epub
+
+https://github.com/oomol-lab/epub-translator  bi-lang
+
+```
+
+git clone https://github.com/oomol-lab/epub-translator \
+  && pip install poetry \
+  && poetry run python -c "import epub_translator; print('依赖安装成功！')" 
+  
+  
+  
+ 
+
+```
+
+
+
 
 
 # PDF
