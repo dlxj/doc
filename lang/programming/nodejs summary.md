@@ -43513,7 +43513,11 @@ git clone https://github.com/oomol-lab/epub-translator \
   
   
   
- 
+
+epub3 弹注
+	
+注释锚点：<a epub:type="noteref" href="#fn1">①</a>
+注释内容：<aside epub:type="footnote" id="fn1">注释内容</aside>
 
 ```
 
