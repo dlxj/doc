@@ -43503,6 +43503,8 @@ https://github.com/icidasset/diffuse/blob/main/src/Css/Application.css  云音�
 
 https://github.com/oomol-lab/epub-translator  bi-lang
 
+https://github.com/bookfere/Ebook-Translator-Calibre-Plugin/wiki/English#installation
+
 ```
 
 git clone https://github.com/oomol-lab/epub-translator \
