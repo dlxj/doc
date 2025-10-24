@@ -43527,6 +43527,24 @@ epub3 弹注
 
 # PDF
 
+https://github.com/Byaidu/PDFMathTranslate
+
+```
+pip install pdf2zh
+
+pdf2zh -i
+
+http://localhost:7860/
+	# gui
+
+```
+
+
+
+
+
+
+
 [pdf-lib](https://github.com/Hopding/pdf-lib/issues/83) extract images from pdf
 
 [extract-images.zip](https://github.com/Hopding/pdf-lib/files/3125076/extract-images.zip)
