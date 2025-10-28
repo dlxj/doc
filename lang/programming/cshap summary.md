@@ -3389,6 +3389,14 @@ var jpgFiles = Directory.GetFiles(pdfDirectory, "*.jpg", SearchOption.TopDirecto
                         .Concat(Directory.GetFiles(pdfDirectory, "*.jpeg", SearchOption.TopDirectoryOnly))
                         .OrderBy(f => f)
                         .ToList();
+                        
+
+// 只保留数字字符作为文件名的 jpg 文件
+                        var jpgs = Directory.EnumerateFiles(dir, "*.jpg", SearchOption.TopDirectoryOnly)
+                            .Where(file => System.Text.RegularExpressions.Regex.IsMatch(Path.GetFileNameWithoutExtension(file), @"^\d+$"))
+                            .OrderBy(f => f)
+                            .ToList();
+                            
 ```
 
 
@@ -14264,6 +14272,8 @@ https://www.zggsong.com/posts/coding/winform-wpf-res-dict/
   
 
 # Avalonia
+
+- https://github.com/CoolCoolTomato/MatoEditor  
 
 - https://github.com/AvaloniaUI/Avalonia.MusicStore
 
