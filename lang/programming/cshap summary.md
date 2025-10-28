@@ -3381,6 +3381,18 @@ public static readonly string ExecutablePath = Path.GetDirectoryName(Assembly.Ge
 
 
 
+## 所有 jpg
+
+```
+// 查找同目录下的所有JPG图片文件
+var jpgFiles = Directory.GetFiles(pdfDirectory, "*.jpg", SearchOption.TopDirectoryOnly)
+                        .Concat(Directory.GetFiles(pdfDirectory, "*.jpeg", SearchOption.TopDirectoryOnly))
+                        .OrderBy(f => f)
+                        .ToList();
+```
+
+
+
 
 
 ## 程序目录下的特定 exe
