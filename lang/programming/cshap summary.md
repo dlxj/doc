@@ -1952,6 +1952,25 @@ see huggingface\imradv3\src\WpfEditor\TextEditorControl.cs
 
 
 
+```
+
+string lineText = string.Concat(line.Characters.Select(tc => tc.Character.ToString()));
+
+
+var sb = new StringBuilder();
+foreach (var textcharacter in line.Characters)
+{
+    sb.Append(textcharacter.Character.ToString());
+}
+string lineText = sb.ToString();
+
+
+```
+
+
+
+
+
 
 
 ### 不转义

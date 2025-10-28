@@ -15367,6 +15367,20 @@ arr[Math.floor(Math.random() * arr.length)] // 从数组里随机选择一个  M
 
 
 ```
+
+yum install epel-release \
+  && yum install redis -y \
+  && systemctl start redis.service \
+  && systemctl enable redis \
+  && systemctl status redis.service \
+  && redis-cli ping 
+  
+  
+  
+
+redis-server --version
+
+
 Redisson 的 getLocalCachedMap 对应的 Redis 类型就是 hash 吧，那就没啥问题了啊就是这样用的啊，甚至都不需要这 1000key 吧
 
 使用 redisson 连接的 redis(哨兵)
