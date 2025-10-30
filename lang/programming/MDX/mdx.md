@@ -2,6 +2,8 @@
 
 https://github.com/freemdict/TOOLS-for-making-dictionary  3.0版 builder
 
+https://github.com/Litles/AutoMdxBuilder  制作图片词典
+
 
 
 MDD 基本格式和 MDX 结构类似，只是 key:value 变成 filename:file content
