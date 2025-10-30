@@ -5573,6 +5573,8 @@ e_("".concat(et.dataset.id, "-nextPrompt"), eo, {
 
 ## 抱抱脸
 
+https://huggingface.co/docs/hub/xet/using-xet-storage **xet**
+
 [如何上传大文件](https://zhuanlan.zhihu.com/p/473651876)
 
 [Huggingface上传自己的模型](https://juejin.cn/post/7081452948550746148)
@@ -7132,6 +7134,8 @@ sync /mnt/huggingface/InternLM-SFT /InternLM-SFT
 
 
 ## Cloudflare cf
+
+https://blog.cloudflare.com/zh-cn/full-stack-development-on-cloudflare-workers/  静态站
 
 https://github.com/openRin/Rin  Cloudflare Pages + Workers + D1 + R2  **Workers 相当于后端**
 
