@@ -6,6 +6,8 @@ https://github.com/Litles/AutoMdxBuilder  制作图片词典
 
 https://github.com/bamboo512/ModernChineseDict  现代汉语词典 mdx 制作
 
+https://github.com/liuyug/mdict-utils  unpack 廣韻 (2008) 廣韻反切今讀手冊   
+
 
 
 MDD 基本格式和 MDX 结构类似，只是 key:value 变成 filename:file content
