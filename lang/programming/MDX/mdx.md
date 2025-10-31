@@ -13,11 +13,19 @@ https://github.com/liuyug/mdict-utils  unpack 廣韻 (2008) 廣韻反切今讀�
 pip install mdict-utils
 
 mdict -x "廣韻 (2008).mdx" -d ./mdx
-	# 成功解包
-
+	# 成功解包 mdx
 mdict -x "廣韻 (2008).mdd" -d ./mdd
-
 mdict -x "廣韻 (2008).1.mdd" -d ./mdd1
+	# 成功解包 mdd
+	
+		
+mdict --title "廣韻 (2008).mdx.title.html" --description "廣韻 (2008).mdx.description.html" -a "廣韻 (2008).mdx.txt" 韻.mdx
+	# 成功打包 mdx
+
+
+mdict -a mdd 韻.mdd
+mdict -a mdd1 韻.1.mdd
+	# 成功打包 mdd
 
 
 
