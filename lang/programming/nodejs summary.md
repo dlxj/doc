@@ -6078,6 +6078,33 @@ git config --global --unset http.https://github.com.proxy
 
 
 
+### Xet
+
+```
+
+当更新由 Xet 存储支持的文件时，只有修改后的数据才会上传到远程存储，从而显着节省网络传输费用。
+
+
+pip install -U huggingface_hub \
+  && pip install -U hf-xet 
+
+
+https://github.com/huggingface/xet-core/releases/download/git-xet-v0.1.0/git-xet-windows-x86_64.zip
+
+git-xet --version
+
+
+
+
+
+```
+
+
+
+
+
+
+
 ### CRLF to LF
 
 
