@@ -15,6 +15,11 @@ pip install mdict-utils
 mdict -x "廣韻 (2008).mdx" -d ./mdx
 	# 成功解包
 
+mdict -x "廣韻 (2008).mdd" -d ./mdd
+
+mdict -x "廣韻 (2008).1.mdd" -d ./mdd1
+
+
 
 ```
 
