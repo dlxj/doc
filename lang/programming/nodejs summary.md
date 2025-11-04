@@ -23901,6 +23901,8 @@ xcopy /Y /i /e $(ProjectDir)\html $(TargetDir)\html
 
 # Godot
 
+https://github.com/face-hh/griddycode   代码编辑器
+
 https://github.com/nathanhoad/godot_dialogue_manager  对话编辑器
 
 [suyu switch模拟器](https://gitlab.com/suyu-emu/suyu)
@@ -24039,6 +24041,8 @@ ai作画 ps拆补图 spine做动画 再导入godot做游戏
 [Godello绝佳示例](https://github.com/alfredbaudisch/Godello)
 
 [游戏背包](https://github.com/alfredbaudisch/GodotDynamicInventorySystem)
+
+[griddycode代码编辑器](https://github.com/face-hh/griddycode)
 
 [Pixelorama像素画](https://github.com/Orama-Interactive/Pixelorama) [GodSVG](https://github.com/MewPurPur/GodSVG)
 
@@ -35150,7 +35154,7 @@ https://github.com/RVC-Boss/GPT-SoVITS
     && cd GPT-SoVITS \
     && bash install.sh --source HF-Mirror --download-uvr5
     
- 
+   
    .\runtime\python.exe -I api.py -d cuda -s "SoVITS_weights_v4/xxxx_e5_s745_l32.pth" -g "GPT_weights_v4/xxxx-e15.ckpt" -dr "G:\AI\GPT-SoVITS-v4-20250422fix\output\1.wav" -dt "xxxx请输入文字xxxxxx" -dl zh
    
   ```
@@ -42285,7 +42289,7 @@ https://github.com/BalazsJako/ColorTextEditorDemo  imgui 文本编辑器
      窗口名称用于区分不同窗口，通过##前缀可创建同名但不同ID的窗口（如"Settings##Audio"和"Settings##Video"）
      
      加载中文字体
-   ImFontConfig cfg;
+     ImFontConfig cfg;
      cfg.MergeMode = false;
      strcpy(cfg.Name, "simhei");
      io.Fonts->AddFontFromFileTTF("c:/windows/fonts/simhei.ttf", 23.0f, &cfg, io.Fonts->GetGlyphRangesChineseFull());
