@@ -2119,6 +2119,20 @@ static List<string[]> apps = new List<string[]>() { new string[] { "a", "b", "b"
 
 
 
+### Prepend
+
+```
+
+prepend 不会直接修改 ls , 用 Insert
+
+nav_ls.Insert(0, $"<a href=\"entry://{ImageBaseName_new}\">{Name}</a>" );
+
+```
+
+
+
+
+
 ### iterate with index
 
 ```
