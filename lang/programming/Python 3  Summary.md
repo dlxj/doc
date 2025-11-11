@@ -3217,6 +3217,19 @@ version = '0.2'
 
 
 
+### 动态加载模型
+
+```
+huggingface/BallonsTranslator/launch.py
+    init_module_registries()
+        # 动态加载模型
+        
+```
+
+
+
+
+
 ### 黑科技
 
 
@@ -3319,6 +3332,25 @@ class EAPIrt2PLModel(object):
                 time.sleep(15*60)            
 
 ```
+
+
+
+## 类型声明
+
+```
+
+proj_list: Union[str, List[str]]
+
+        if len(proj_list) == 0:
+            return
+        if isinstance(proj_list, str):
+            proj_list = [proj_list]
+
+```
+
+
+
+
 
 
 
@@ -11776,7 +11808,7 @@ conda activate vse
 
 
 
-​```python
+```python
 """
 git clone https://github.com/YaoFANGUK/video-subtitle-extractor.git
 
@@ -11810,17 +11842,18 @@ self.se = SubtitleExtractor(self.video_path, subtitle_area)
             return True
         else:
             return False
-        
-        
-        
-        
-        
+
+
+​        
+​        
+​        
+​        
          # 删除缓存
         if os.path.exists(self.raw_subtitle_path):
             os.remove(self.raw_subtitle_path)
         # 新建文件
         f = open(self.raw_subtitle_path, mode='w+', encoding='utf-8')
-
+    
         for i, frame in enumerate(frame_list):
             # 读取视频帧
             img = cv2.imread(os.path.join(self.frame_output_dir, frame))
@@ -11854,7 +11887,7 @@ self.se = SubtitleExtractor(self.video_path, subtitle_area)
                             f'{content[0]}\n')
         # 关闭文件
         f.close()
-        
+
 ```
 
 
@@ -11875,25 +11908,25 @@ import cv2
 if __name__ == '__main__':
 
     args = utility.parse_args()
-
+    
     args.use_gpu = False
     
     # 加载快速模型
     args.det_model_dir = config.DET_MODEL_FAST_PATH
     # 加载快速模型
     args.rec_model_dir = config.REC_MODEL_FAST_PATH
-
+    
     # 设置字典路径
     args.rec_char_dict_path = config.DICT_PATH
     # 设置识别文本的类型
     args.rec_char_type = config.REC_CHAR_TYPE
-
+    
     recogniser = TextSystem(args)
-
+    
     img = cv2.imread('1.png')
-
+    
     detection_box, recognise_result = recogniser(img)
-
+    
     a = 1
 ```
 
@@ -12015,7 +12048,7 @@ class MyThread(QThread):  # 线程2
         self.input_kwargs = None
         self.result = None
         self.name = None
-
+    
     def __fake_progress(self):
         start_time = time.perf_counter()
         while not self.finished:
@@ -12026,14 +12059,14 @@ class MyThread(QThread):  # 线程2
             self.my_signal.emit(progress)
             time.sleep(0.25)
         self.log_signal.emit('假进度线程结束')
-
+    
     def set_function(self, name, estimate_time, func, *args, **kwargs):
         self.name = name
         self.input_func = func
         self.estimate_time = estimate_time
         self.input_args = args
         self.input_kwargs = kwargs
-
+    
     def run(self):
         if not callable(self.input_func):
             return
@@ -12064,17 +12097,17 @@ class MainUi(QtWidgets.QMainWindow):
         self.my_thread = MyThread()
         self.my_thread.my_signal.connect(self.update_process_bar)
         self.my_thread.log_signal.connect(self.add_string_text)
-
+    
     def prepare_dir(self):
         os.makedirs(os.path.join(current_dir, 'temp', 'voice'), exist_ok=True)
         os.makedirs(os.path.join(current_dir, 'temp', 'picture'), exist_ok=True)
-
+    
     def init_ui(self):
         self.setFixedSize(1024, 600)
         self.main_widget = QtWidgets.QWidget()  # 创建窗口主部件
         self.main_layout = QtWidgets.QGridLayout()  # 创建主部件的网格布局
         self.main_widget.setLayout(self.main_layout)  # 设置窗口主部件布局为网格布局
-
+    
         self.up_widget = QtWidgets.QWidget()  # 创建左侧部件
         self.up_widget.setObjectName('up_widget')
         self.up_layout = QtWidgets.QGridLayout()  # 创建左侧部件的网格布局层
@@ -12085,7 +12118,7 @@ class MainUi(QtWidgets.QMainWindow):
         self.process_bar.setTextVisible(False)  # 不显示进度条文字
         self.up_layout.addWidget(self.process_bar)
         self.main_layout.addWidget(self.up_widget, 0, 0, 1, 12)  # 左侧部件在第0行第0列，占12行2列
-
+    
         self.zhong_widget = QtWidgets.QWidget()  # 创建左侧部件
         self.zhong_widget.setObjectName('zhong_widget')
         self.zhong_layout = QtWidgets.QGridLayout()  # 创建左侧部件的网格布局层
@@ -12095,7 +12128,7 @@ class MainUi(QtWidgets.QMainWindow):
         self.zhong_layout.addWidget(self.show_text, 0, 6, 6, 6)
         self.zhong_layout.addWidget(self.picture_label, 0, 0, 6, 6)
         self.main_layout.addWidget(self.zhong_widget, 2, 0, 2, 12)  # 左侧部件在第0行第0列，占12行2列
-
+    
         self.buttom_widget = QtWidgets.QWidget()  # 创建左侧部件
         self.buttom_widget.setObjectName('zhong_widget')
         self.buttom_layout = QtWidgets.QGridLayout()  # 创建左侧部件的网格布局层
@@ -12106,41 +12139,41 @@ class MainUi(QtWidgets.QMainWindow):
         self.get_voice_button.clicked.connect(self.get_video_voice)  # 关联
         self.split_voice_button = QtWidgets.QPushButton('计算字幕位置')
         self.split_voice_button.clicked.connect(self.split_human_voice)  # 关联
-
+    
         self.get_subtext_button = QtWidgets.QPushButton('识别字幕')
         self.get_subtext_button.clicked.connect(self.split_human_voice_to_list)  # 关联
-
+    
         self.buttom_layout.addWidget(self.vedio_file_button, 0, 0, 2, 3)
         self.buttom_layout.addWidget(self.get_voice_button, 0, 3, 2, 3)
         self.buttom_layout.addWidget(self.split_voice_button, 0, 6, 2, 3)
         self.buttom_layout.addWidget(self.get_subtext_button, 0, 9, 2, 3)
         self.main_layout.addWidget(self.buttom_widget, 10, 0, 2, 12)  # 左侧部件在第0行第0列，占12行2列
         self.setCentralWidget(self.main_widget)  # 设置窗口主部件
-
+    
         self.main_layout.setSpacing(0)
-
+    
         self.process.finished.connect(self.process_finishend)
         self.process.readyReadStandardError.connect(self.update_stderr)
         self.process.readyReadStandardOutput.connect(self.update_stdout)
-
+    
     # 无边框的拖动
     def mouseMoveEvent(self, e: QtGui.QMouseEvent):  # 重写移动事件
         self._endPos = e.pos() - self._startPos
         self.move(self.pos() + self._endPos)
-
+    
     def mousePressEvent(self, e: QtGui.QMouseEvent):
         if e.button() == QtCore.Qt.LeftButton:
             self._isTracking = True
             self._startPos = QtCore.QPoint(e.x(), e.y())
-
+    
     def split_human_voice(self):
         cmd = 'spleeter separate -d 1800 -p spleeter:2stems -o {} {}'.format(self.temp_path, self.output_voice_path)
         cmd_list = cmd.split(' ')
         self.process.start(cmd_list[0], cmd_list[1:])
-
+    
     def update_process_bar(self, progress):
         self.process_bar.setValue(progress)
-
+    
     def __deal_with_process_output_string(self, input_str):
         str1 = bytearray(input_str)
         str1 = str1.decode('gbk').strip()
@@ -12149,15 +12182,15 @@ class MainUi(QtWidgets.QMainWindow):
             progress = get_extract_voice_progress(str1)
             if progress:
                 self.update_process_bar(progress)
-
+    
     def update_stderr(self):
         str1 = self.process.readAllStandardError()
         self.__deal_with_process_output_string(str1)
-
+    
     def update_stdout(self):
         str1 = self.process.readAllStandardOutput()
         self.__deal_with_process_output_string(str1)
-
+    
     def add_string_text(self,str1):
         self.show_text.append(str1)
 
@@ -12169,32 +12202,32 @@ class MainUi(QtWidgets.QMainWindow):
                                  QMessageBox.Yes, QMessageBox.Yes)
         else:
             self.show_text.append('Normal End, exitCode={}, existStatus={}'.format(exitCode, exitStatus))
-
+    
     def mouseReleaseEvent(self, e: QtGui.QMouseEvent):
         if e.button() == QtCore.Qt.LeftButton:
             self._isTracking = False
             self._startPos = None
             self._endPos = None
-
+    
     def get_video_file(self):
         self.video_file_path = QFileDialog.getOpenFileName(self, '选择文件')[0]
         print(self.video_file_path)
-
+    
     def get_video_voice(self):
         cmd = "ffmpeg -i {} {} -y".format(self.video_file_path, self.output_voice_path)
         cmd_list = cmd.split(' ')
         self.process.start(cmd_list[0], cmd_list[1:])
-
+    
     def split_human_voice_to_list(self):
         def func():
             sound = AudioSegment.from_mp3(self.human_voice_file)
             chunks = split_on_silence(sound, min_silence_len=430,
                                       silence_thresh=-45, keep_silence=400)
             return chunks
-
+    
         self.my_thread.set_function(name='根据声调分割语音', estimate_time=60, func=func)
         self.my_thread.start()
-
+    
     # 关闭按钮动作函数
     def close_window(self):
         self.close()
@@ -12304,8 +12337,9 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
     
     
     ```
+```
 
-    
+​    
 
 - https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.5/configs/picodet/legacy_model/application/layout_analysis
 
@@ -12353,9 +12387,9 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
     	# 成功分析并绘制
         # 它没有框出左右分栏，只是框了个大的
         
-    ```
+```
 
-    
+​    
 
 
 
