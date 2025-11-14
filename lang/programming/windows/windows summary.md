@@ -2,6 +2,18 @@
 
 
 
+
+
+# 命令路径
+
+```
+ (Get-Command conda).Path
+```
+
+
+
+
+
 # vscdoe + MSVC
 
 [VS Code for Microsoft C++](https://code.visualstudio.com/docs/cpp/config-msvc)
@@ -2651,8 +2663,8 @@ IPv6网关：空
 IPv6路由前缀：空
 IPv6后缀：空
 
-
 119.29.29.29
+
 ```
 
 

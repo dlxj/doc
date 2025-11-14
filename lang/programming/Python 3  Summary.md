@@ -625,6 +625,9 @@ pm2 --name "ftspg8085" start "flask run --host 0.0.0.0 --port 8085"
 ### conda for windows
 
 ```
+
+ (Get-Command conda).Path
+
 加入坏境变量
 C:\Users\i\miniforge3\Scripts
 
@@ -12335,11 +12338,8 @@ https://github.com/Ucas-HaoranWei/GOT-OCR2.0
     pip install paddlex==3.0.0b2
     	# 先卸载 opencv 不然出错
     
-    
     ```
 ```
-
-​    
 
 - https://github.com/PaddlePaddle/PaddleDetection/tree/release/2.5/configs/picodet/legacy_model/application/layout_analysis
 
