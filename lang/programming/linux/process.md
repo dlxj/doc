@@ -108,6 +108,11 @@ ps -ef | grep sshd
 
 ```
 ll /proc/PID
+
+ls -l /proc/2545
+	# ll 是它的别名
+	
+
 ```
 
 
