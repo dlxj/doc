@@ -626,7 +626,11 @@ pm2 --name "ftspg8085" start "flask run --host 0.0.0.0 --port 8085"
 
 ```
 
- (Get-Command conda).Path
+Miniforge3-Windows-x86_64.exe
+	# 安装
+
+(Get-Command conda).Path
+
 
 加入坏境变量
 C:\Users\i\miniforge3\Scripts
