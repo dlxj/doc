@@ -5609,6 +5609,9 @@ https://huggingface.co/docs/hub/xet/using-xet-storage **xet**
   	# 恢复到特定提交
   
   
+  git clone --recurse-submodules https://github.com/lellid/LediReader
+  	# 首次克隆
+  
   git pull --recurse-submodules \
     && git submodule update --init --recursive \
     && git submodule foreach git pull origin main
@@ -40100,6 +40103,10 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 
 ### WPF
+
+https://github.com/lellid/LediReader epub wpf显示
+
+https://cloud.baidu.com/article/3693333 排版
 
 https://github.com/CoolCoolTomato/MatoEditor  editor
 
