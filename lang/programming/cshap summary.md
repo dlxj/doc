@@ -3497,13 +3497,21 @@ see huggingface\imradv3\src\WpfEditor\global.cs
 
 
 
-### 字符数组图片互转
+### 字节数组图片互转
 
 
 
 ```
     using OpenCvSharp;
 	using SixLabors.ImageSharp;
+	
+    // 将 bitmap 转成 bytes
+    byte[] bytes;
+    using (var ms = new MemoryStream())
+    {
+    bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+    bytes = ms.ToArray();
+    }
     
     public static void convertToGif(byte[] data, string savePath)
     {
@@ -4269,6 +4277,16 @@ class Sample
 ### byte 转 Mat
 
 ```
+
+// 将 bitmap 转成 bytes
+byte[] bytes;
+using (var ms = new MemoryStream())
+{
+bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+bytes = ms.ToArray();
+}
+	# see huggingface\imradv3\src\WpfEditor\TreeMenuPage.xaml.cs
+
 
 see huggingface\itrans\src\iTrans\ViewModels\MainViewModel.cs
 

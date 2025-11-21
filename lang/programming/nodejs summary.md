@@ -3721,6 +3721,8 @@ export PATH=/usr/local/cuda-11.8/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$LD_LIBRARY_PATH
 
 
+curl -x "http://127.0.0.1:7890" google.com
+
 curl --socks5 192.168.1.3:57882 google.com
 
 In curl >= 7.21.7, you can use
@@ -3966,6 +3968,19 @@ https://github.com/nelvko/clash-for-linux-install 一键安装
 - https://linux.do/t/topic/710502  分流规则
 
 ```
+
+它默认就是混合代理端口 7890 ，注意看它的日志输出！！！
+    port: 7890
+        # HTTP(S) 代理服务端口
+
+    socks-port: 7891
+        # SOCKS5 代理服务端口
+	
+	# 这些设置是可以生效的，但是没有必要
+
+
+curl -x "http://127.0.0.1:7890" google.com
+
 
 git clone --branch master --depth 1 https://ghfast.top/https://github.com/nelvko/clash-for-linux-install.git \
   && cd clash-for-linux-install \
