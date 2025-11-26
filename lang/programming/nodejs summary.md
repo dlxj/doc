@@ -6121,6 +6121,12 @@ git-xet --version
 
 
 
+### 自建git-lfs server
+
+https://github.com/jasonwhite/rudolfs
+
+
+
 
 
 ### CRLF to LF
