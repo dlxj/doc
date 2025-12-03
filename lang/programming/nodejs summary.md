@@ -40125,6 +40125,8 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 ### WPF
 
+https://github.com/atrauzzi/protoculture-dotnet-postgres   C# + **postgresql 嵌入**
+
 https://github.com/lellid/LediReader epub wpf显示
 
 https://cloud.baidu.com/article/3693333 排版
