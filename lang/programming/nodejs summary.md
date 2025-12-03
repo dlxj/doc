@@ -40128,6 +40128,7 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 https://blog.csdn.net/2401_86356878/article/details/152716148 WPF文本编辑器  **又新技术又好**
 
 - https://blog.csdn.net/2401_86356878/article/details/155235793  记事本项目
+- https://github.com/miroiu/string-math  动态数学计算
 
 https://github.com/atrauzzi/protoculture-dotnet-postgres   C# + **postgresql 嵌入**
 
