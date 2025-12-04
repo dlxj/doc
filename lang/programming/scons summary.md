@@ -1,5 +1,7 @@
 
 
+https://github.com/VoylinsGamedevJourney/GoZen  godot 视频编辑
+
 
 
 see nodejs summary.js -> videoStreamPlayer -> GoZen-ffmpeg
