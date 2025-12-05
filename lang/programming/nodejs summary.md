@@ -37544,6 +37544,10 @@ https://github.com/jianchang512/pyvideotrans  必看
 
 # TTS
 
+https://github.com/JarodMica/index-tts/tree/training_v2   bilibili语音合成 非官方训练
+
+- https://github.com/index-tts/index-tts/issues/501
+
 [tts-vue](https://github.com/LokerL/tts-vue)
 
 
