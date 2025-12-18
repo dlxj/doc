@@ -39423,6 +39423,16 @@ dependent type
 
 
 
+## Haskell Monads
+
+https://github.com/fjvallarino/monomer  **纯 haskell 类 Elm gui**
+
+- https://github.com/Deltaspace0/monomer-chess  国际像棋
+
+
+
+
+
 ## Python Monads 
 
 [bilive](https://github.com/timerring/bilive) 直播录制
