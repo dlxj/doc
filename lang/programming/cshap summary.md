@@ -2075,6 +2075,19 @@ string.Join(",", wmids.appids.Keys.ToList());
 
 
 
+### IsNullOrEmpty
+
+```
+
+if (!string.IsNullOrEmpty(_startupWord))
+	# see E:\huggingface\goldendict-ng\wpfmdict\EchodictWindow.xaml.cs
+
+```
+
+
+
+
+
 ### IsNullOrWhiteSpace
 
 ```
