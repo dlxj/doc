@@ -12212,6 +12212,25 @@ https://github.com/Topdu/OpenOCR/issues/153  训练
 
 
 
+### onnx
+
+```
+
+conda create -n openocr python==3.8 pip
+
+pip install openocr-python \
+  && pip install onnxruntime
+
+from openocr import OpenOCR
+onnx_engine = OpenOCR(backend='onnx', device='cpu')
+img_path = '/path/img_path or /path/img_file'
+result, elapse = onnx_engine(img_path)
+
+
+```
+
+
+
 
 
 ## MonkeyOCR
