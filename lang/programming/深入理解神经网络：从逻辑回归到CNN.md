@@ -12208,6 +12208,8 @@ https://github.com/Topdu/OpenOCR/blob/main/README_ch.md
 
 - https://huggingface.co/spaces/topdu/OpenOCR-Demo  
 
+https://github.com/Topdu/OpenOCR/issues/153  训练
+
 
 
 
