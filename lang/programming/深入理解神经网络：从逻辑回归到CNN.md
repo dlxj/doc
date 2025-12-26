@@ -12202,6 +12202,16 @@ FCN 则一般通过反卷积层对卷积输出作上采样，使它恢复到输�
 
 
 
+## OpenOCR
+
+https://github.com/Topdu/OpenOCR/blob/main/README_ch.md
+
+- https://huggingface.co/spaces/topdu/OpenOCR-Demo  
+
+
+
+
+
 ## MonkeyOCR
 
 https://github.com/Yuliang-Liu/MonkeyOCR
