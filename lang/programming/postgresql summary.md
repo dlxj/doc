@@ -6758,6 +6758,18 @@ npm run serve
 
 
 
+
+
+# BM25高性能全文检索
+
+https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/usage-guide  BM25高性能全文检索
+
+
+
+后端 supabase ，前端部署在 Vercel 
+
+
+
 # CURL 
 
 
