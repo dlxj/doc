@@ -6766,7 +6766,11 @@ https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/usage
 
 
 
-后端 supabase ，前端部署在 Vercel 
+https://www.v2ex.com/t/1146080
+
+- https://blog.hiripple.com/zh
+
+  后端 supabase ，前端部署在 Vercel 
 
 
 
