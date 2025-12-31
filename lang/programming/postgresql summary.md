@@ -446,7 +446,8 @@ curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty;
 ./configure; ./install.yml; 
 	# 生成配置文件，执行安装剧本！
 
-
+	# 默认密码会在 configure -g 时自动被替换为随机强密码
+		cat ~/pigsty/pigsty.yml | grep pg_admin_password
 
 Restarting services...
 
