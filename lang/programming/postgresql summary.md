@@ -443,11 +443,60 @@ apt install -y ansible python3-jmespath
 
 curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty;
 
+vi pigsty.yml
+	# 自已先手动设置密码！除非内网环境
+
 ./configure; ./install.yml; 
 	# 生成配置文件，执行安装剧本！
+		# 默认密码会在 configure -g 时自动被替换为随机强密码
+			# 实测 -g 参数无效
+			cat ~/pigsty/pigsty.yml | grep pg_admin_password
 
-	# 默认密码会在 configure -g 时自动被替换为随机强密码
-		cat ~/pigsty/pigsty.yml | grep pg_admin_password
+
+
+dbuser_dba	DBUser.DBA	  超级用户	 数据库管理
+dbuser_meta	DBUser.Meta	  业务管理员 应用读写
+dbuser_view	DBUser.Viewer 只读用户	 数据查看
+	# 默认数据库密码
+
+
+postgres://dbuser_dba:DBUser.DBA@10.10.10.10:5432/meta
+postgres://dbuser_meta:DBUser.Meta@10.10.10.10:5432/meta
+postgres://dbuser_view:DBUser.View@10.10.10.10:5432/meta
+	# 使用三个不同的用户连接到 pg-meta 集群的 meta 数据库
+	# https://pigsty.cc/docs/setup/pgsql/
+		psql -h 10.10.10.10 -p 5432 -U dbuser_dba -d meta
+			export PGPASSWORD='DBUser.DBA'
+			psql -h 10.10.10.10 -p 5432 -U dbuser_dba -d meta
+
+
+Ctrl+C	中断查询				Ctrl+D	退出 psql
+\?	显示所有元命令帮助			 \h	显示 SQL 命令帮助
+\l	列出所有数据库				  \c dbname	切换到指定数据库
+\d table	查看表结构		   \d+ table	查看表的详细信息
+\du	列出所有用户/角色		     \dx	列出已安装的扩展
+\dn	列出所有的模式				  \dt	列出所有表
+
+
+-- 查看 PostgreSQL 版本
+SELECT version();
+
+-- 查看当前时间
+SELECT now();
+
+-- 创建一张测试表
+CREATE TABLE test (id SERIAL PRIMARY KEY, name TEXT, created_at TIMESTAMPTZ DEFAULT now());
+
+-- 插入数据
+INSERT INTO test (name) VALUES ('hello'), ('world');
+
+-- 查询数据
+SELECT * FROM test;
+
+-- 删除测试表
+DROP TABLE test;
+
+
 
 Restarting services...
 
