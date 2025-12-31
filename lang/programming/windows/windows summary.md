@@ -2528,6 +2528,8 @@ taskkill -PID 进程号 -F
 
 # AI 变声
 
+https://b23.tv/CBb4dmz
+
 ```
 
 打游戏 全是舔狗
