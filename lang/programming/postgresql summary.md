@@ -435,9 +435,10 @@ https://pigsty.cc/docs/setup/install/
 
 
 apt install -y ansible python3-jmespath
-	# ubuntu
+	# ubuntu 
 	dnf install -y ansible python3.12-jmespath python3-cryptography
 		# EL 8/9 企业版
+	# 好像不用，一键安装已经有了
 
 
 curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty;
