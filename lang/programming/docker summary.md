@@ -102,6 +102,21 @@ docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/labe
 
 
 
+# 共享目录
+
+```
+
+docker run -it -v /home/user/app/data:/app/data ubuntu:20.04 /bin/bash
+	# 命令将宿主机的 /home/user/app/data目录挂载到容器的 /app/data目录
+
+```
+
+
+
+
+
+
+
 # alpine v3.20 x84_x64 正常显示中文
 
 ```
