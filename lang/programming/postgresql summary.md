@@ -427,12 +427,24 @@ pg_ctl register -N PostgreSQL -D D:\tools\postgres\pgsql\data
 
 ## supabase
 
+https://vonng.com/pigsty/v4.0/
+
+https://pigsty.cc/docs/setup/install/
+
 ```
 
 
-https://vonng.com/pigsty/v4.0/
+apt install -y ansible python3-jmespath
+	# ubuntu
+	dnf install -y ansible python3.12-jmespath python3-cryptography
+		# EL 8/9 企业版
 
-curl https://pigsty.cc/get | bash
+
+curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty;
+
+./configure; ./install.yml; 
+	# 生成配置文件，执行安装剧本！
+
 
 
 Restarting services...
@@ -442,6 +454,12 @@ Service restarts being deferred:
  systemctl restart unattended-upgrades.service
 
 
+
+
+ 如果您只是希望尝尝鲜，不在乎安全，并且希望一切越简单越好，那么您可以仅对外部用户按需开放 5432 端口（ PostgreSQL 数据库） 与 3000 端口（Grafana 可视化界面）。
+
+
+ 
 
 ```
 
