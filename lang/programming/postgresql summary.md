@@ -425,6 +425,79 @@ pg_ctl register -N PostgreSQL -D D:\tools\postgres\pgsql\data
 
 
 
+## supabase
+
+```
+
+
+https://vonng.com/pigsty/v4.0/
+
+curl https://pigsty.cc/get | bash
+
+
+Restarting services...
+
+Service restarts being deferred:
+ systemctl restart networkd-dispatcher.service
+ systemctl restart unattended-upgrades.service
+
+
+
+```
+
+
+
+
+
+```
+https://blog.csdn.net/techshrimp/article/details/154450227
+	＃ 后端代码不用写了？前端操作数据库？一文精通Supabase，实战教程+本地部署
+
+
+https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/supabase/
+	https://developer.aliyun.com/article/1674339?spm=a2c4g.11186623.0.0.36e373465XM2FV  
+	＃ supabase 阿里云的版本  RDS 全托管 Supabase服务：小白轻松搞定开发AI应用！
+	
+
+https://vonng.com/pigsty/v3.1/   Pigsty v3.1：Supabase一键自建，PG17上位，ARM与Ubuntu24支持，MinIO改进
+	Supabase 的口号是：“花个周末写写，随便扩容至百万”。在试用之后，我觉得此言不虚。 这是一个低代码的一站式后端平台，能让你几乎告别大部分后端开发的工作，只需要懂数据库设计与前端即可快速出活了！
+
+
+https://www.ob-tutorial.org/blog/private-deploy-supabase-on-cloud-server  在云服务器上私有部署 Supabase 完整指南
+	https://www.cnblogs.com/aopstudio/p/19134256  Supabase：无需后端代码的 Web 开发完整解决方案
+	https://pigsty.cc/blog/db/supabase/  自建 Supabase：创业出海的首选数据库
+	https://vonng.com/pigsty/v3.7/ Pigsty v3.7：PG万磁王，PG18深度支持
+	https://www.ffeeii.com/supabase.html  阿里、腾讯、字节、n8n都选择了Supabase，可见Supabase的战略地位
+		https://www.ffeeii.com/trae-solo-skill.html  Trae SOLO：3分钟解决Hugo博客3年Github兼容问题，SOLO太强了！
+	https://www.zyzy.info/post/U2przPrt1a_n-y-AqeoUE  Supabase Edge Functions 本地开发与原理详解
+	https://vonng.com/pg/just-use-pg/  技术极简主义：一切皆用Postgres
+	hangge.com/blog/cache/detail_3408.html
+		# supabase私有化部署
+
+
+https://zhuanlan.zhihu.com/p/1969746342847948293
+	https://github.com/kuafuai/aipexbase
+	https://blog.vonng.com/cloud/aliyun-supabase  阿里云“借鉴”Supabase：开源与云的灰色地带
+			# https://blog.vonng.com/pg/ai-db-king  PG将主宰AI时代的数据库
+			# https://blog.vonng.com/db/google-mcp/
+				https://github.com/googleapis/genai-toolbox
+					https://github.com/gemini-cli-extensions/postgres
+			# https://www.zyzy.info/post/50ef5896-3b82-4bd2-b278-34deb7fc6170  从零开始构建私人MCP服务器：让AI助手直接创建博客文章
+			# https://blog.vonng.com/db/pg-kiss-duckdb/  数据库火星撞地球：当PG爱上DuckDB
+		# Supabase 卡脖子？这个国产开源项目让 AI Coding 真正闭环了
+
+		await supabase.from(“users”).select(‘*’).eq(“id”, userId).single()
+		await pool.query(‘SELECT * FROM users WHERE id = $1 LIMIT 1’, [userId])
+
+	我个人非常喜欢这些 BaaS 项目，并且都试过了（Supabase, Pocketbase, Appwrite 等）。每个都有优点和缺点
+
+	我推荐自托管Appwrite（MariaDB）。它是最相似的替代方案，并且拥有类似于Supabase边缘函数的自托管函数，而且支持你喜欢的编程语言。
+```
+
+
+
+
+
 ## nohup
 
 ```bash
