@@ -467,6 +467,14 @@ vi pigsty.yml
 			# 实测 -g 参数无效
 			cat ~/pigsty/pigsty.yml | grep pg_admin_password
 
+通过 http://<your_ip_address>:8000 访问到 Supabase Studio 图形管理界面了。 默认的用户名与密码分别是： supabase 与 pigsty。
+
+需要使用的对象存储功能，那么需要通过域名与 HTTPS 访问 Supabase，否则会出现报错。
+
+
+Supabase 部分的凭据修改后，您可以重启 Docker Compose 容器以应用新的配置：
+./app.yml -t app_config,app_launch   # 使用剧本
+cd /opt/supabase; make up            # 手工执行
 
 
 
