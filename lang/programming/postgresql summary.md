@@ -612,7 +612,56 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 
 
 
+### 本地 HyperV 装好再上传阿里云
+
+
+
+```
+
+see doc\lang\programming\linux\Alpine Summary.md -> 阿里云安装 alpine
+
+
+HyperV 新建一个代次为Gen1的虚拟机，然后挂载.vhd的磁盘和 alpine-standard x64 iso 镜像开机进行安装
+
+# 通过正常安装流程进行联网、镜像源设置，随后终止安装流程
+setup-alpine
+# 安装分区工具
+apk add parted e2fsprogs
+# 进行分区
+parted -sa optimal /dev/sda mklabel msdos # 设置分区表为mbr格式
+parted -sa optimal /dev/sda mkpart primary 512B 50MB # 划分boot分区
+parted -sa optimal /dev/sda mkpart primary 50MB 100% # 划分所有容量至主分区
+parted -sa optimal /dev/sda set 1 boot # 设置分区1启动卷标
+mkfs.ext4 /dev/sda1 # 格式化boot分区
+mkfs.ext4 /dev/sda2 # 格式化主分区
+# 重启
+reboot
+# 挂载磁盘，注意先后及新建文件夹
+mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt/boot
+
+# 通过正常安装流程进行所有设置，到选择磁盘后终止
+setup-alpine
+
+# 安装
+setup-disk /mnt
+
+  	# 实测这个 vhd 上传阿里自定义镜像后，正常开机使用
+  	
+
+```
+
+
+
+
+
 ### 阿里云海外装完再导出镜像
+
+
+
+这种方案比较麻烦
+
+
 
 ```
 
