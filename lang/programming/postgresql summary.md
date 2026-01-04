@@ -612,6 +612,8 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 
 ### Docker 里面安装
 
+https://www.cherryservers.com/blog/install-docker-ubuntu
+
 它的离线安装还是太复杂，失败主要是因为网络问题。先在国外主机 Docker 里安装好，再把镜像导出来就好了。
 
 
@@ -623,13 +625,47 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 cat /etc/os-release
 	# 显示版本号
 
+sudo passwd
+	# 改 root 默认密码
+	
+su -
+	# 切成 root
+
 apt update \
   && apt upgrade -y \
-  && apt-get update \
   && apt-get install ca-certificates curl \
   && install -m 0755 -d /etc/apt/keyrings \
   && curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc \
  && chmod a+r /etc/apt/keyrings/docker.asc
+
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+apt-get update \
+  && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+
+service docker start \
+  && service docker status 
+
+
+docker search ubuntu
+
+
+docker pull ubuntu:22.04 \
+  && docker images \
+  && docker run -tid --name ubuntu2204_ENV -p 222:22 --privileged=true ubuntu:22.04 bash
+
+
+docker exec -it ubuntu2204_ENV bash
+	# 进入 docker
+	
+	exit \
+	&& docker logs ubuntu2204_ENV
+		--> 有错误会在这里显示
 
 
 

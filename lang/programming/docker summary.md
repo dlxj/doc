@@ -50,6 +50,76 @@ docker start centos7
 
 
 
+
+
+```
+
+
+# Ubutnu 24.04 安装 Docker
+
+cat /etc/os-release
+	# 显示版本号
+
+sudo passwd
+	# 改 root 默认密码
+	
+su -
+	# 切成 root
+
+apt update \
+  && apt upgrade -y \
+  && apt-get install ca-certificates curl \
+  && install -m 0755 -d /etc/apt/keyrings \
+  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc \
+ && chmod a+r /etc/apt/keyrings/docker.asc
+
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+apt-get update \
+  && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+
+service docker start \
+  && service docker status 
+
+
+docker search ubuntu
+
+
+docker pull ubuntu:24.04 \
+  && docker images \
+  && docker run -tid --name ubuntu2404_ENV -p 222:22 --privileged=true ubuntu:24.04 bash
+
+
+docker exec -it ubuntu2404_ENV bash
+	# 进入 docker
+	
+	exit \
+	&& docker logs ubuntu2204_ENV
+		# 退出方法
+		--> 有错误会在这里显示
+
+  
+  
+  
+docker stop ubuntu2204_ENV \
+  && docker rm ubuntu2204_ENV \
+  && docker rmi ubuntu:24.04
+	# 删除方法
+  
+  
+  
+
+```
+
+
+
+
+
 ```
 # ubuntu 22.04
 # Add Docker's official GPG key:
@@ -77,19 +147,7 @@ docker run hello-world
 
 
 
-```
-# ubuntu 22.04
 
-apt update \
-  && apt upgrade -y \
-  && apt install -y ca-certificates curl \
-  && install -m 0755 -d /etc/apt/keyrings \
-  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc \
-  && chmod a+r /etc/apt/keyrings/docker.asc \
-  
-
-
-```
 
 
 
