@@ -1,3 +1,17 @@
+# 显示版本号
+
+```
+
+cat /etc/os-release
+
+hostnamectl
+
+
+
+```
+
+
+
 
 
 # install cuda 11.8

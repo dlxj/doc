@@ -610,6 +610,36 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 
 
 
+### 离线安装
+
+https://pigsty.cc/docs/setup/offline/
+
+https://help.aliyun.com/zh/terraform/what-is-terraform
+
+
+
+推荐使用 Ubuntu 22.04 / 24.04 LTS
+
+- Ubuntu 24.04 在系统可靠性/稳定性与软件版本的新颖性/齐全性上取得了良好的平衡，推荐使用此系统。
+
+
+
+当您使用云服务器部署 Pigsty 时，可以考虑在 **Terraform** 中使用以下操作系统基础镜像
+
+
+
+| **x86_64**   | 镜像                                           |
+| :----------- | :--------------------------------------------- |
+| Rocky 8.10   | `rockylinux_8_10_x64_20G_alibase_20240923.vhd` |
+| Rocky 9.6    | `rockylinux_9_6_x64_20G_alibase_20250101.vhd`  |
+| Rocky 10.0   | `rockylinux_10_0_x64_20G_alibase_20251120.vhd` |
+| Ubuntu 22.04 | `ubuntu_22_04_x64_20G_alibase_20240926.vhd`    |
+| Ubuntu 24.04 | `ubuntu_24_04_x64_20G_alibase_20240923.vhd`    |
+| Debian 12.11 | `debian_12_11_x64_20G_alibase_20241201.vhd`    |
+| Debian 13.2  | `debian_13_x64_20G_alibase_20250101.vhd`       |
+
+
+
 
 
 ### pg_graphql
