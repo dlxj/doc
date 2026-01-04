@@ -610,13 +610,42 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 
 
 
+### Docker 里面安装
+
+它的离线安装还是太复杂，失败主要是因为网络问题。先在国外主机 Docker 里安装好，再把镜像导出来就好了。
+
+
+
+```
+
+# Ubutnu 24.04 安装 Docker
+
+cat /etc/os-release
+	# 显示版本号
+
+apt update \
+  && apt upgrade -y \
+  && apt-get update \
+  && apt-get install ca-certificates curl \
+  && install -m 0755 -d /etc/apt/keyrings \
+  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc \
+ && chmod a+r /etc/apt/keyrings/docker.asc
+
+
+
+```
+
+
+
+
+
 ### 离线安装
 
 https://pigsty.cc/docs/setup/offline/
 
 https://help.aliyun.com/zh/terraform/what-is-terraform
 
-
+- https://help.aliyun.com/zh/terraform/use-terraform-in-cloud-shell
 
 推荐使用 Ubuntu 22.04 / 24.04 LTS
 
@@ -639,6 +668,35 @@ https://help.aliyun.com/zh/terraform/what-is-terraform
 | Debian 13.2  | `debian_13_x64_20G_alibase_20250101.vhd`       |
 
 
+
+https://shell.aliyun.com/  
+
+- 阿里云Cloud Shell是一款帮助您运维的免费产品，预装了Terraform的组件
+
+- 建议您使用RAM用户登录，为确保您的阿里云账号的安全，如非必要，避免使用阿里云账号访问云资源。
+
+
+
+```shell
+
+terraform version
+	# 查看 Terrafrom版本
+	--> Terraform v0.12.31
+	
+tfenv list
+  1.9.5
+  1.5.7
+  1.3.7
+  0.13.7
+* 0.12.31
+
+tfenv use 1.9.5
+	# 切换到 1.9.5 版本
+	
+
+
+
+```
 
 
 

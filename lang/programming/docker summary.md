@@ -77,6 +77,34 @@ docker run hello-world
 
 
 
+```
+# ubuntu 22.04
+
+apt update \
+  && apt upgrade -y \
+  && apt install -y ca-certificates curl \
+  && install -m 0755 -d /etc/apt/keyrings \
+  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc \
+  && chmod a+r /etc/apt/keyrings/docker.asc \
+  
+
+
+```
+
+
+
+```
+
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do
+  sudo apt-get remove $pkg
+done
+
+```
+
+
+
+
+
 ## 音视频图片标注
 
 
