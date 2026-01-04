@@ -50,6 +50,10 @@ docker start centos7
 
 
 
+see  github\echodict\README.md -> Docker测试环境
+
+​	see docker summary.md -> ubuntu_soda 高端操作
+
 
 
 ```

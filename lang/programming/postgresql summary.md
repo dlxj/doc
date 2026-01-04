@@ -623,6 +623,10 @@ see doc\lang\programming\linux\Alpine Summary.md -> 阿里云安装 alpine
 
 HyperV 新建一个代次为Gen1的虚拟机，然后挂载.vhd的磁盘和 alpine-standard x64 iso 镜像开机进行安装
 
+ubuntu-22.04.5-desktop-amd64.iso
+	# 用这个镜像
+
+
 # 通过正常安装流程进行联网、镜像源设置，随后终止安装流程
 setup-alpine
 # 安装分区工具
