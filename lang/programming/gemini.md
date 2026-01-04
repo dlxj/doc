@@ -2,6 +2,27 @@
 
 
 
+# Antigravity
+
+Antigravity 需要在您的系统上本地安装。该产品适用于 Mac、Windows 和特定 Linux 发行版。除了您自己的机器之外，您还需要以下设备：
+
+- Chrome 网络浏览器
+- Gmail 账号（个人 Gmail 账号）。
+
+
+
+C:\Users\Administrator\AppData\Local\Programs\Antigravity
+
+
+
+
+
+
+
+# 漫画
+
+
+
 https://www.v2ex.com/t/1176821#reply8
 
 
