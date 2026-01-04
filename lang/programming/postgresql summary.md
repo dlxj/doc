@@ -431,6 +431,16 @@ https://vonng.com/pigsty/v4.0/
 
 https://pigsty.cc/docs/setup/install/
 
+https://pigsty.cc/docs/app/supabase/
+
+- ```
+  Supabase 很好，拥有属于你自己的 supabase 则好上加好。 Pigsty 可以帮助您在自己的服务器上（物理机/虚拟机/云服务器），一键自建企业级 supabase —— 更多扩展，更好性能，更深入的控制，更合算的成本。
+  ```
+
+
+
+
+
 ```
 
 
@@ -441,16 +451,22 @@ apt install -y ansible python3-jmespath
 	# 好像不用，一键安装已经有了
 
 
-curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty;
-
+curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty
+./configure -c supabase    # 使用 supabase 配置（请在 pigsty.yml 中更改凭据）
+vi pigsty.yml              # 编辑域名、密码、密钥...
+./install.yml              # 安装 pigsty
+./docker.yml               # 安装 docker compose 组件
+./app.yml                  # 使用 docker 启动 supabase 无状态部分（可能较慢）
 vi pigsty.yml
-	# 自已先手动设置密码！除非内网环境
-
-./configure; ./install.yml; 
+	# 自已先手动设置密码！除非内网环境\
+	
+	不用下面这个了
+	./configure; ./install.yml; 
 	# 生成配置文件，执行安装剧本！
 		# 默认密码会在 configure -g 时自动被替换为随机强密码
 			# 实测 -g 参数无效
 			cat ~/pigsty/pigsty.yml | grep pg_admin_password
+
 
 
 
@@ -583,6 +599,22 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 
 	我推荐自托管Appwrite（MariaDB）。它是最相似的替代方案，并且拥有类似于Supabase边缘函数的自托管函数，而且支持你喜欢的编程语言。
 ```
+
+
+
+
+
+### pg_graphql
+
+https://github.com/supabase/pg_graphql
+
+```
+
+
+
+```
+
+
 
 
 
