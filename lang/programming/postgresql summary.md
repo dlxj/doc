@@ -458,6 +458,27 @@ dbuser_dba	DBUser.DBA	  超级用户	 数据库管理
 dbuser_meta	DBUser.Meta	  业务管理员 应用读写
 dbuser_view	DBUser.Viewer 只读用户	 数据查看
 	# 默认数据库密码
+	
+    #----------------------------------------------#
+    # PASSWORD : https://doc.pgsty.com/config/security
+    #----------------------------------------------#
+    grafana_admin_password: pigstyxX
+    pg_admin_password: DBUser.DBAxX
+    pg_monitor_password: DBUser.MonitorxX
+    pg_replication_password: DBUser.ReplicatorxX
+    patroni_password: Patroni.APIxX
+    haproxy_admin_password: pigstyxX
+    minio_secret_key: minioadminxX
+
+              PGADMIN_DEFAULT_EMAIL: admin@pigsty.cc
+              PGADMIN_DEFAULT_PASSWORD: pigstyxX
+
+
+        # define business users/roles : https://doc.pgsty.com/pgsql/user
+        pg_users:
+          - { name: dbuser_meta ,password: DBUser.MetaxX   ,pgbouncer: true ,roles: [dbrole_admin   ] ,comment: pigsty admin user }
+          - { name: dbuser_view ,password: DBUser.ViewerxX ,pgbouncer: true ,roles: [dbrole_readonly] ,comment: read-only viewer  }
+
 
 
 postgres://dbuser_dba:DBUser.DBA@10.10.10.10:5432/meta
