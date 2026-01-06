@@ -530,6 +530,13 @@ nmap 10.7.0.9 -p 5432
 	# vi pigsty.yml 找到的
 
 
+export PGPASSWORD='DBUser.DBAxX'
+psql -h 10.7.0.9 -p 5432 -U dbuser_dba -d postgres
+	# 连接成功
+		psql 要退出安装 pigsty 的 shell 重进后才可见
+		-d meta 会提示没有这个数据库
+	
+
 postgres://dbuser_dba:DBUser.DBA@10.7.0.9:5432/meta
 postgres://dbuser_meta:DBUser.Meta@10.7.0.9:5432/meta
 postgres://dbuser_view:DBUser.View@10.7.0.9:5432/meta
