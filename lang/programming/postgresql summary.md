@@ -443,6 +443,8 @@ https://pigsty.cc/docs/app/supabase/
 
 ```
 
+console.cloud.tencent.com
+	# tencent 海外云控制台
 
 
 bash -c 'version=$(lsb_release -cs) && cp /etc/apt/sources.list /etc/apt/sources.list.bak && cat << EOF > /etc/apt/sources.list
