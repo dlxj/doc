@@ -507,6 +507,7 @@ dbuser_view	DBUser.Viewer 只读用户	 数据查看
     # PASSWORD : https://doc.pgsty.com/config/security
     #----------------------------------------------#
     grafana_admin_password: pigstyxX
+    	# admin 是这个用户名 xx.xx.xx.xx:3000/login
     pg_admin_password: DBUser.DBAxX
     pg_monitor_password: DBUser.MonitorxX
     pg_replication_password: DBUser.ReplicatorxX
