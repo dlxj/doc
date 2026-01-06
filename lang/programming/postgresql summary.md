@@ -702,6 +702,9 @@ https://www.cherryservers.com/blog/install-docker-ubuntu
 cat /etc/os-release
 	# 显示版本号
 
+lsb_release -a
+	# 应该是有小版本号的 Ubuntu 24.04 LTS 应该代表 24.04.0?
+
 sudo passwd
 	# 改 root 默认密码
 	
