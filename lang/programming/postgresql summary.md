@@ -728,6 +728,74 @@ meta=#
 
 
 
+#### 集群中建数据库
+
+https://pigsty.cc/docs/pgsql/config/db/
+
+```
+
+下面是 Pigsty 演示环境中默认集群 pg-meta 中的数据库定义：
+
+pg-meta:
+  hosts: { 10.10.10.10: { pg_seq: 1, pg_role: primary } }
+  vars:
+    pg_cluster: pg-meta
+    pg_databases:
+      - { name: meta ,baseline: cmdb.sql ,comment: pigsty meta database ,schemas: [pigsty] ,extensions: [{name: postgis, schema: public}, {name: timescaledb}]}
+      - { name: grafana  ,owner: dbuser_grafana  ,revokeconn: true ,comment: grafana primary database }
+      - { name: bytebase ,owner: dbuser_bytebase ,revokeconn: true ,comment: bytebase primary database }
+      - { name: kong     ,owner: dbuser_kong     ,revokeconn: true ,comment: kong the api gateway database }
+      - { name: gitea    ,owner: dbuser_gitea    ,revokeconn: true ,comment: gitea meta database }
+      - { name: wiki     ,owner: dbuser_wiki     ,revokeconn: true ,comment: wiki meta database }
+      - { name: noco     ,owner: dbuser_noco     ,revokeconn: true ,comment: nocodb database }
+      
+      
+      
+每个数据库定义都是一个 object，可能包括以下字段，以 meta 数据库为例：
+
+- name: meta                      # 必选，`name` 是数据库定义的唯一必选字段
+  state: create                   # 可选，数据库状态：create（创建，默认）、absent（删除）、recreate（重建）
+  baseline: cmdb.sql              # 可选，数据库 sql 的基线定义文件路径（ansible 搜索路径中的相对路径，如 files/）
+  pgbouncer: true                 # 可选，是否将此数据库添加到 pgbouncer 数据库列表？默认为 true
+  schemas: [pigsty]               # 可选，要创建的附加模式，由模式名称字符串组成的数组
+  extensions:                     # 可选，要安装的附加扩展： 扩展对象的数组
+    - { name: postgis , schema: public }  # 可以指定将扩展安装到某个模式中，也可以不指定（不指定则安装到 search_path 首位模式中）
+    - { name: timescaledb }               # 例如有的扩展会创建并使用固定的模式，就不需要指定模式。
+  comment: pigsty meta database   # 可选，数据库的说明与备注信息
+  owner: postgres                 # 可选，数据库所有者，不指定则为当前用户
+  template: template1             # 可选，要使用的模板，默认为 template1，目标必须是一个模板数据库
+  strategy: FILE_COPY             # 可选，克隆策略：FILE_COPY 或 WAL_LOG（PG15+），不指定使用 PG 默认
+  encoding: UTF8                  # 可选，不指定则继承模板/集群配置（UTF8）
+  locale: C                       # 可选，不指定则继承模板/集群配置（C）
+  lc_collate: C                   # 可选，不指定则继承模板/集群配置（C）
+  lc_ctype: C                     # 可选，不指定则继承模板/集群配置（C）
+  locale_provider: libc           # 可选，本地化提供者：libc、icu、builtin（PG15+）
+  icu_locale: en-US               # 可选，ICU 本地化规则（PG15+）
+  icu_rules: ''                   # 可选，ICU 排序规则（PG16+）
+  builtin_locale: C.UTF-8         # 可选，内置本地化提供者规则（PG17+）
+  tablespace: pg_default          # 可选，默认表空间，默认为 'pg_default'
+  is_template: false              # 可选，是否标记为模板数据库，允许任何有 CREATEDB 权限的用户克隆
+  allowconn: true                 # 可选，是否允许连接，默认为 true。显式设置 false 将完全禁止连接到此数据库
+  revokeconn: false               # 可选，撤销公共连接权限。默认为 false，设置为 true 时，属主和管理员之外用户的 CONNECT 权限会被回收
+  register_datasource: true       # 可选，是否将此数据库注册到 grafana 数据源？默认为 true，显式设置为 false 会跳过注册
+  connlimit: -1                   # 可选，数据库连接限制，默认为 -1 ，不限制，设置为正整数则会限制连接数。
+  parameters:                     # 可选，数据库级参数，通过 ALTER DATABASE SET 设置
+    work_mem: '64MB'
+    statement_timeout: '30s'
+  pool_auth_user: dbuser_meta     # 可选，连接到此 pgbouncer 数据库的所有连接都将使用此用户进行验证（启用 pgbouncer_auth_query 才有用）
+  pool_mode: transaction          # 可选，数据库级别的 pgbouncer 池化模式，默认为 transaction
+  pool_size: 64                   # 可选，数据库级别的 pgbouncer 默认池子大小，默认为 64
+  pool_reserve: 32                # 可选，数据库级别的 pgbouncer 池子保留空间，默认为 32，当默认池子不够用时，最多再申请这么多条突发连接。
+  pool_size_min: 0                # 可选，数据库级别的 pgbouncer 池的最小大小，默认为 0
+  pool_connlimit: 100             # 可选，数据库级别的最大数据库连接数，默认为 100
+唯一必选的字段是 name，它应该是当前 PostgreSQL 集群中有效且唯一的数据库名称，其他参数都有合理的默认值。      
+      
+    
+
+```
+
+
+
 
 
 
