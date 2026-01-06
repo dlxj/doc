@@ -525,15 +525,26 @@ dbuser_view	DBUser.Viewer 只读用户	 数据查看
           - { name: dbuser_view ,password: DBUser.ViewerxX ,pgbouncer: true ,roles: [dbrole_readonly] ,comment: read-only viewer  }
 
 
+nmap 10.7.0.9 -p 5432
+	# 是不是这个是集群默认结点 ?
+	# vi pigsty.yml 找到的
 
-postgres://dbuser_dba:DBUser.DBA@10.10.10.10:5432/meta
-postgres://dbuser_meta:DBUser.Meta@10.10.10.10:5432/meta
-postgres://dbuser_view:DBUser.View@10.10.10.10:5432/meta
+
+postgres://dbuser_dba:DBUser.DBA@10.7.0.9:5432/meta
+postgres://dbuser_meta:DBUser.Meta@10.7.0.9:5432/meta
+postgres://dbuser_view:DBUser.View@10.7.0.9:5432/meta
 	# 使用三个不同的用户连接到 pg-meta 集群的 meta 数据库
 	# https://pigsty.cc/docs/setup/pgsql/
-		psql -h 10.10.10.10 -p 5432 -U dbuser_dba -d meta
+		psql -h 10.7.0.9 -p 5432 -U dbuser_dba -d meta
 			export PGPASSWORD='DBUser.DBA'
-			psql -h 10.10.10.10 -p 5432 -U dbuser_dba -d meta
+			psql -h 10.7.0.9 -p 5432 -U dbuser_dba -d meta
+
+
+
+
+FATAL: no pg_hba.conf entry for host"xx.xx.xx.xx" user postgres database
+	# 连 PG 数据库出错，应该是没有允许远程连接
+
 
 
 Ctrl+C	中断查询				Ctrl+D	退出 psql
@@ -628,6 +639,58 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 
 	我推荐自托管Appwrite（MariaDB）。它是最相似的替代方案，并且拥有类似于Supabase边缘函数的自托管函数，而且支持你喜欢的编程语言。
 ```
+
+
+
+### PG
+
+https://pigsty.cc/docs/setup/pgsql/
+
+```
+默认 单机安装 模板下，您将在当前节点上创建一个名为 pg-meta 的 PostgreSQL 数据库集群，只有一个主库实例。
+
+PostgreSQL 监听在 5432 端口，集群中带有一个预置的数据库 meta 可供使用。
+
+您可以在安装完毕后退出当前管理用户 ssh 会话，并重新登陆刷新环境变量后， 通过简单地敲一个 p 回车，通过命令行工具 psql 访问该数据库集群：
+
+vagrant@pg-meta-1:~$ p
+psql (18.1 (Ubuntu 18.1-1.pgdg24.04+2))
+Type "help" for help.
+
+postgres=#
+您也可以切换为操作系统的 postgres 用户，直接执行 psql 命令，即可连接到默认的 postgres 管理数据库上。
+
+连接数据库
+想要访问 PostgreSQL 数据库，您需要使用 命令行工具 或者 图形化客户端 工具，填入 PostgreSQL 的 连接字符串：
+
+postgres://username:password@host:port/dbname
+
+
+
+在部署了 Pigsty 的服务器上，你可以直接使用 psql 连接本地数据库：
+
+# 最简单的方式：使用 postgres 系统用户本地连接（无需密码）
+sudo -u postgres psql
+
+# 使用连接字符串（推荐，通用性最好）
+psql 'postgres://dbuser_dba:DBUser.DBA@10.10.10.10:5432/meta'
+
+# 使用参数形式
+psql -h 10.10.10.10 -p 5432 -U dbuser_dba -d meta
+
+# 使用环境变量避免密码出现在命令行
+export PGPASSWORD='DBUser.DBA'
+psql -h 10.10.10.10 -p 5432 -U dbuser_dba -d meta
+成功连接后，你会看到类似这样的提示符：
+
+psql (18.1)
+Type "help" for help.
+
+meta=#
+
+```
+
+
 
 
 
