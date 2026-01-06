@@ -435,6 +435,11 @@ https://pigsty.cc/docs/app/supabase/
 
 - ```
   Supabase 很好，拥有属于你自己的 supabase 则好上加好。 Pigsty 可以帮助您在自己的服务器上（物理机/虚拟机/云服务器），一键自建企业级 supabase —— 更多扩展，更好性能，更深入的控制，更合算的成本。
+  
+  推荐使用 RockyLinux 9.6、Debian 12.11 或 Ubuntu 24.04.5 作为默认操作系统选项
+  
+  
+  
   ```
 
 
@@ -474,6 +479,11 @@ apt install -y ansible python3-jmespath
 		# EL 8/9 企业版
 	# 好像不用，一键安装已经有了
 
+
+localedef -i en_US -f UTF-8 en_US.UTF-8
+localectl set-locale LANG=en_US.UTF-8
+  # 强烈建议 使用全新安装的操作系统环境，并将 en_US 设置为主要语言
+  
 
 curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty
 ./configure -c supabase    # 使用 supabase 配置（请在 pigsty.yml 中更改凭据）
