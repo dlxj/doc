@@ -446,6 +446,10 @@ https://pigsty.cc/docs/app/supabase/
 console.cloud.tencent.com
 	# tencent 海外云控制台
 
+http://xx.xx.xx.xx:3000
+	点进去 Dashboards -> PGSQL -> Database
+		# 能看到现有数据库和已安装插件
+
 
 bash -c 'version=$(lsb_release -cs) && cp /etc/apt/sources.list /etc/apt/sources.list.bak && cat << EOF > /etc/apt/sources.list
 deb http://archive.ubuntu.com/ubuntu/ $version main restricted universe multiverse
