@@ -456,7 +456,11 @@ EOF' \
 	# tencent 海外云用 4G 内存
 
 
-
+nmap 43.xxx.xxx.xx -p 8000
+	# Supabase Studio 图形管理界面
+		http://xx.xx.xx.xx:8000
+		
+	
 
 apt install -y ansible python3-jmespath
 	# ubuntu 
