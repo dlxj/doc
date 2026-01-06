@@ -877,8 +877,29 @@ del-test:
 		
 后面 make meta 报错是因为 qemu 没有装得上
 
+apt install qemu-system qemu-utils -y \
+  && apt install libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y
+  
+# kvm-ok
+INFO: Your CPU does not support KVM extensions
+KVM acceleration can NOT be used
+
+# qemu-system-x86_64 --version
+QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.11)
+Copyright (c) 2003-2023 Fabrice Bellard and the QEMU Project developers
+
+systemctl status libvirtd
+
+
+cat /proc/cpuinfo
+
+云服务器内部支持创建KVM虚拟机，这项技术通常被称为虚拟化嵌套或嵌套虚拟化。简单来说，就是你可以在云服务器（它本身可能就是一台虚拟机）上再安装虚拟化软件，从而创建出“虚拟机中的虚拟机”
+
+检查虚拟化支持：首先，通过命令（如 sudo kvm-ok或检查 /proc/cpuinfo中的 vmx（Intel）或 svm（AMD）标志）确认云服务器的CPU支持硬件虚拟化。
+安装KVM及相关组件：使用系统包管理器（如APT）安装 qemu-kvm、libvirt-daemon-system、libvirt-clients、bridge-utils等软件包
+
+
 apt-get purge vagrant-libvirt \
-  && apt-mark hold vagrant-libvirt \
   && apt-get update \
   && apt-get install -y qemu libvirt-daemon-system ebtables libguestfs-tools vagrant ruby-fog-libvirt
 
