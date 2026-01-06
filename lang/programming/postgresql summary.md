@@ -806,6 +806,21 @@ pg-meta:
 
 
 
+### Supabase 执行 SQL
+
+http://xx.xx.xx.xx:8000/project/default/sql/1
+
+```
+
+select * from
+  (select version()) as version,
+  (select current_setting('server_version_num')) as version_number;
+  	# SQL Editor 里成功执行
+
+```
+
+
+
 
 
 
