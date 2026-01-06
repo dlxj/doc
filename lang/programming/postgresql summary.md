@@ -547,6 +547,24 @@ psql -h 10.7.0.9 -p 5432 -U dbuser_dba -d postgres
 	CREATE EXTENSION postgis;      --  启用 postgis 扩展
 
 
+vi /etc/nginx/nginx.conf
+stream {
+    upstream pg_5432 {
+        server 10.7.0.9:5432;
+    }
+
+    server {
+        listen 54322;
+        proxy_pass pg_5432;
+    }
+}
+nginx -t
+systemctl status nginx
+nginx -s reload
+	# 配置 nginx 转发
+	# navicat 成功连上了
+	
+
 
 postgres://dbuser_dba:DBUser.DBA@10.7.0.9:5432/meta
 postgres://dbuser_meta:DBUser.Meta@10.7.0.9:5432/meta
