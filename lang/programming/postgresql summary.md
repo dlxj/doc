@@ -693,6 +693,11 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 https://pigsty.cc/docs/setup/pgsql/
 
 ```
+
+p
+	# 指向了 psql
+
+
 默认 单机安装 模板下，您将在当前节点上创建一个名为 pg-meta 的 PostgreSQL 数据库集群，只有一个主库实例。
 
 PostgreSQL 监听在 5432 端口，集群中带有一个预置的数据库 meta 可供使用。
@@ -823,11 +828,36 @@ select * from
 
 
 
+### 单节点开发箱（meta）
+
+https://pigsty.cc/docs/deploy/sandbox/
+
+```
+
+make meta       # 创建单节点开发箱
+	make dual       # 创建 2 节点环境
+	make trio       # 创建 3 节点环境
+
+
+make simu       # 创建 20 节点生产仿真环境
+    该环境包含：
+
+    3 个基础设施节点（meta1, meta2, meta3）
+    2 个 HAProxy 代理节点
+    4 个 MinIO 节点
+    5 个 ETCD 节点
+    6 个 PostgreSQL 节点（2 个集群，每个 3 节点）
+
+
+```
+
+
+
+
+
 
 
 ### 本地 HyperV 装好再上传阿里云
-
-
 
 ```
 
