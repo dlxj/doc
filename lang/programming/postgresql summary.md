@@ -444,6 +444,20 @@ https://pigsty.cc/docs/app/supabase/
 ```
 
 
+
+bash -c 'version=$(lsb_release -cs) && cp /etc/apt/sources.list /etc/apt/sources.list.bak && cat << EOF > /etc/apt/sources.list
+deb http://archive.ubuntu.com/ubuntu/ $version main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ $version-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu/ $version-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ $version-security main restricted universe multiverse
+EOF' \
+  && apt update
+
+	# tencent 海外云用 4G 内存
+
+
+
+
 apt install -y ansible python3-jmespath
 	# ubuntu 
 	dnf install -y ansible python3.12-jmespath python3-cryptography
