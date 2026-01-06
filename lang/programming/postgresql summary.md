@@ -834,19 +834,65 @@ https://pigsty.cc/docs/deploy/sandbox/
 
 ```
 
+`f:\t\pigsty\Makefile` ubuntu22.04 执行命令出错，修复它：# make meta
+./configure -s -c meta
+configure pigsty v3.7.0 begin
+[ OK ] region = default
+[ OK ] kernel  = Linux
+[ OK ] machine = x86_64
+[ OK ] package = deb,apt
+[ OK ] vendor  = ubuntu (Ubuntu)
+[ OK ] version = 24 (24.04)
+[ OK ] sudo = root ok
+[ OK ] ssh = root@127.0.0.1 ok
+[ OK ] primary_ip = skip
+[ OK ] admin ssh = skip checking (due to --skip)
+[ OK ] mode = meta (manually set)
+[ OK ] skip ip replacement (due to --skip)
+[WARN] replace oltp template with tiny due to cpu < 4
+[ OK ] locale  = C.UTF-8
+[ OK ] ansible = ready
+[ OK ] pigsty configured
+[WARN] don't forget to check it and change passwords!
+proceed with ./install.yml 
+cd vagrant && vagrant destroy -f
+A Vagrant environment or target machine is required to run this
+command. Run `vagrant init` to create a new Vagrant environment. Or,
+get an ID of a target machine from `vagrant global-status` to run
+this command on. A final option is to change to a directory with a
+Vagrantfile and to try again.
+make: *** [Makefile:259: del] Error
+
+
+vi Makefile
+del:
+	# 209 行 cd vagrant && vagrant destroy -f
+	cd vagrant && if [ -f Vagrantfile ]; then vagrant destroy -f; fi
+		# 改成这个
+
+del-test:
+	# 271 行 cd vagrant && vagrant destroy -f node-1 node-2 node-3
+	cd vagrant && if [ -f Vagrantfile ]; then vagrant destroy -f node-1 node-2 node-3; fi
+		# 改成这个
+		
+后面 make meta 报错是因为 qemu 没有装得上
 
 apt-get purge vagrant-libvirt \
   && apt-mark hold vagrant-libvirt \
   && apt-get update \
   && apt-get install -y qemu libvirt-daemon-system ebtables libguestfs-tools vagrant ruby-fog-libvirt
-  
+
 
 
 wget -O - https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg \
   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(grep -oP '(?<=UBUNTU_CODENAME=).*' /etc/os-release || lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list \
-  && apt update && sudo apt install vagrant
+  && apt update && apt install vagrant
 	# 先安装 vagrant
 		# 是用来创建虚拟机的  
+
+
+apt-get install libvirt-dev
+
 
 cd ~/pigsty
 
