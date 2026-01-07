@@ -693,6 +693,35 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 
 
 
+### 安装前提
+
+```
+
+安装前提：
+  具有免密 ssh 和 sudo 权限的 管理用户
+
+要求：ssh root@127.0.0.1  这个命令能登录本机
+
+
+apt update && sudo apt install openssh-server -y
+
+vi /etc/ssh/sshd_config
+PermitRootLogin yes
+PasswordAuthentication yes
+
+systemctl restart ssh \
+  && systemctl status ssh
+
+
+ssh root@127.0.0.1
+	# 现在应该能不要密码登录了
+
+```
+
+
+
+
+
 ### PG
 
 https://pigsty.cc/docs/setup/pgsql/
