@@ -427,6 +427,8 @@ pg_ctl register -N PostgreSQL -D D:\tools\postgres\pgsql\data
 
 ## supabase
 
+https://console.cloud.tencent.com/lighthouse/instance
+
 https://vonng.com/pigsty/v4.0/
 
 https://pigsty.cc/docs/setup/install/
