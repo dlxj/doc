@@ -17,6 +17,14 @@ C:\Users\Administrator\AppData\Local\Programs\Antigravity
 
 
 
+# Deep Research
+
+https://dr.miromind.ai/  **它能访问外网！**
+
+
+
+
+
 
 
 # 漫画
