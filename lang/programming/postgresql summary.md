@@ -1072,7 +1072,10 @@ make meta 执行已完成，并修复了期间遇到的所有问题。以下是�
 您可以直接使用 ssh meta 访问该节点。
 
 
-
+cd ~/pigsty/vagrant \
+  && vagrant halt
+	 # 优雅关机
+	 # 完全关闭，释放资源
 
 
 
