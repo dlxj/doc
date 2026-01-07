@@ -427,6 +427,8 @@ pg_ctl register -N PostgreSQL -D D:\tools\postgres\pgsql\data
 
 ## supabase
 
+https://supabase.com/docs/guides/self-hosting/docker#securing-your-services  配置重要的 key
+
 https://console.cloud.tencent.com/lighthouse/instance
 
 https://vonng.com/pigsty/v4.0/
@@ -487,14 +489,15 @@ localectl set-locale LANG=en_US.UTF-8
   # 强烈建议 使用全新安装的操作系统环境，并将 en_US 设置为主要语言
   
 
-curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty
+curl -fsSL https://repo.pigsty.io/get | bash; cd ~/pigsty  # 海外
+curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty  # 国内
 ./configure -c supabase    # 使用 supabase 配置（请在 pigsty.yml 中更改凭据）
 vi pigsty.yml              # 编辑域名、密码、密钥...
 ./install.yml              # 安装 pigsty
 ./docker.yml               # 安装 docker compose 组件
 ./app.yml                  # 使用 docker 启动 supabase 无状态部分（可能较慢）
 vi pigsty.yml
-	# 自已先手动设置密码！除非内网环境\
+	# 自已先手动设置密码！除非内网环境
 	
 	不用下面这个了
 	./configure; ./install.yml; 

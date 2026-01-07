@@ -12,6 +12,38 @@ hostnamectl
 
 
 
+# 紧急临时网络
+
+```
+# 紧急网络恢复（如果网络完全无法使用）
+
+ip addr 				查看它的输出的网络配置
+ip route show default   查看默认网关
+
+# 重置所有网络接口
+
+ip addr flush dev eth0
+ip route del default
+	# 清除可能存在的旧配置
+
+ip link set eth0 down
+ip link set eth0 up
+
+# 手动配置 IP（临时）
+
+ip addr add 172.21.123.73/16 dev eth0
+ip route add default via 172.21.127.253
+
+# 手动配置 DNS
+
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+
+# 实测到这里能 ping 通 qq.com 了
+
+```
+
+
+
 
 
 # install cuda 11.8
@@ -74,6 +106,8 @@ update-grub
 	# 更新配置，它自动找到了 windows 启动项
 
 ```
+
+
 
 
 
