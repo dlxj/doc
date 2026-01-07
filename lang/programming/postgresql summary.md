@@ -714,7 +714,7 @@ postgres=#
 连接数据库
 想要访问 PostgreSQL 数据库，您需要使用 命令行工具 或者 图形化客户端 工具，填入 PostgreSQL 的 连接字符串：
 
-postgres://username:password@host:port/dbname
+psql postgres://dbuser_dba:DBUser.DBA@10.10.10.10/meta
 
 
 
@@ -826,11 +826,52 @@ select * from
 
 
 
+```
+postgres://dbuser_dba:DBUser.DBA@10.7.0.9:5432/meta
+postgres://dbuser_meta:DBUser.Meta@10.7.0.9:5432/meta
+postgres://dbuser_view:DBUser.View@10.7.0.9:5432/meta
+	# 使用三个不同的用户连接到 pg-meta 集群的 meta 数据库
+	# https://pigsty.cc/docs/setup/pgsql/
+		psql -h 10.7.0.9 -p 5432 -U dbuser_dba -d meta
+			export PGPASSWORD='DBUser.DBA'
+			psql -h 10.7.0.9 -p 5432 -U dbuser_dba -d meta
+
+psql postgres://dbuser_dba:DBUser.DBA@10.7.0.9:5432/meta
+  -> error: connection to server at "10.7.0.9", port 5432 failed: FATAL:  database "meta" does not exist
+	# 出错：没有 meta 这个数据库，数据源 pg-meta 是有的
+	
+psql postgres://dbuser_dba:DBUser.DBA@10.7.0.9:5432/postgres
+
+			
+```
+
+
+
+
+
+psql postgres://dbuser_dba:DBUser.DBA@10.10.10.10/meta
+
 
 
 ### 单节点开发箱（meta）
 
 https://pigsty.cc/docs/deploy/sandbox/
+
+**Grafana**
+
+Pigsty [**`INFRA`**](https://pigsty.cc/docs/infra) 模块中自带了 [**Grafana**](https://pigsty.cc/docs/infra)，并预先配置好了 PostgreSQL 数据源（Meta）。 您可以直接通过 [**浏览器图形界面**](https://pigsty.cc/docs/setup/webui)，从 Grafana Explore 面板中使用 SQL 查询数据库，无需额外安装客户端工具。
+
+Grafana 默认的用户名是 **`admin`**，密码可以在 [**配置清单**](https://pigsty.cc/docs/concept/iac/inventory) 中的 [**`grafana_admin_password`**](https://pigsty.cc/docs/infra/param#grafana_admin_password) 字段找到（默认 `pigsty`）。
+
+
+
+Grafana Web GUI 
+
+xx.xx.xx.xx:3000/login admin pigsty
+
+点开 Dashboards -> PGSQL -> Database **可以看到数据源 pg-meta**
+
+
 
 ```
 
@@ -892,6 +933,11 @@ systemctl status libvirtd
 
 
 cat /proc/cpuinfo
+	# 这台 tencent 轻量主机不支持CPU硬件虚拟化
+	# 1. 改用支持嵌套虚拟化的 CVM 实例（如标准型 S5、计算型 C5 等），并在控制台提交工单申请开启嵌套虚拟化。
+      2.直接使用容器方案（Docker/LXD）替代传统虚拟机，轻量应用服务器已预装 Docker 环境，可运行容器实现隔离。
+
+
 
 云服务器内部支持创建KVM虚拟机，这项技术通常被称为虚拟化嵌套或嵌套虚拟化。简单来说，就是你可以在云服务器（它本身可能就是一台虚拟机）上再安装虚拟化软件，从而创建出“虚拟机中的虚拟机”
 
