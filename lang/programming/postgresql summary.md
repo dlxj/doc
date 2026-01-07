@@ -992,6 +992,86 @@ export VM_PROVIDER=libvirt; make meta
 
 vagrant status; virsh list --all
 vagrant ssh
+touch /root/.ssh/config
+make ssh
+        (TraeAI-5) ~/pigsty [0] $ make ssh
+        vagrant/ssh
+
+        Vagrant nodes:
+
+        10.10.10.10      meta
+
+
+
+        cd /root/pigsty/vagrant && vagrant ssh-config
+        this may take several seconds....
+        [fog][WARNING] Unrecognized arguments: libvirt_ip_command
+        # ssh access via nodename
+
+
+        Host meta
+          HostName 192.168.121.114
+          User vagrant
+          Port 22
+          UserKnownHostsFile /dev/null
+          StrictHostKeyChecking no
+          PasswordAuthentication no
+          IdentityFile /root/.vagrant.d/insecure_private_keys/vagrant.key.ed25519
+          IdentityFile /root/.vagrant.d/insecure_private_keys/vagrant.key.rsa
+          IdentitiesOnly yes
+          LogLevel FATAL
+          PubkeyAcceptedKeyTypes +ssh-rsa
+          HostKeyAlgorithms +ssh-rsa
+
+
+
+
+        # SSH Access via IP address
+
+        Host 10.10.10.10
+          HostName 192.168.121.114
+          User vagrant
+          Port 22
+          UserKnownHostsFile /dev/null
+          StrictHostKeyChecking no
+          PasswordAuthentication no
+          IdentityFile /root/.vagrant.d/insecure_private_keys/vagrant.key.ed25519
+          IdentityFile /root/.vagrant.d/insecure_private_keys/vagrant.key.rsa
+          IdentitiesOnly yes
+          LogLevel FATAL
+          PubkeyAcceptedKeyTypes +ssh-rsa
+          HostKeyAlgorithms +ssh-rsa
+
+
+        write extra ssh config [pigsty] to /root/.ssh/pigsty_config
+        write include pigsty command to ~/.ssh/config
+
+ssh meta uptime
+
+
+make meta 执行已完成，并修复了期间遇到的所有问题。以下是处理过程的详细说明：
+
+1. 环境适配 (Fix KVM Error)
+   
+   - 问题 ：首次运行 make meta 失败，提示 Call to virDomainDefineXML failed ，原因是当前环境不支持 KVM 硬件虚拟化。
+   - 解决 ：通过设置环境变量 VM_PROVIDER=libvirt 强制使用 libvirt 提供程序，并利用其 QEMU 软件模拟模式（Fallback）来绕过硬件限制。
+2. 启动虚拟机 (Start VM)
+   
+   - 执行 ：运行 export VM_PROVIDER=libvirt; make meta 。
+   - 结果 ：由于 QEMU 模拟模式较慢，脚本在等待获取 IP 地址时超时（Exit 130），但经检查虚拟机 meta 实际上已成功启动并运行。
+   - 验证 ：通过 vagrant status 确认虚拟机状态为 running ，通过 vagrant ssh 确认可正常登录。
+3. 配置 SSH (Fix SSH Config)
+   
+   - 问题 ：后续运行 make ssh 配置免密登录时失败，提示找不到 ~/.ssh/config 文件。
+   - 解决 ：手动创建了该配置文件，并重新运行 make ssh 成功写入配置。
+4. 最终验证 (Verification)
+   
+  - 现已可以通过 ssh meta 直接登录虚拟机，命令 ssh meta uptime 执行成功。
+您可以直接使用 ssh meta 访问该节点。
+
+
+
+
 
 
 
