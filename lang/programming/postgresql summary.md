@@ -984,6 +984,15 @@ export VM_PROVIDER=libvirt
 make meta
 	# 执行 make meta 时生成的 Vagrantfile 就会包含 driver = 'qemu' 配置，从而避开 "could not get preferred machine ... type=kvm" 的错误。
 	
+	
+cd vagrant && vagrant destroy -f
+export VM_PROVIDER=libvirt; make meta
+  ==> meta: Waiting for domain to get an IP address...
+		# 一直卡在这里
+
+vagrant status; virsh list --all
+vagrant ssh
+
 
 
 云服务器内部支持创建KVM虚拟机，这项技术通常被称为虚拟化嵌套或嵌套虚拟化。简单来说，就是你可以在云服务器（它本身可能就是一台虚拟机）上再安装虚拟化软件，从而创建出“虚拟机中的虚拟机”
