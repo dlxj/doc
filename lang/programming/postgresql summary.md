@@ -811,6 +811,34 @@ pg-meta:
 
 
 
+#### admin 用户组
+
+```
+
+sudo usermod -aG admin <username>
+
+```
+
+
+
+#### 磁盘写满了如何抢救
+
+
+
+```
+
+如果磁盘写满了，连 Shell 命令都无法执行，rm -rf /pg/dummy 可以释放一些救命空间。
+
+默认情况下，pg_dummy_filesize 设置为 64MB。在生产环境中，建议将其增加到 8GB 或更大。
+
+它将被放置在 PGSQL 主数据磁盘上的 /pg/dummy 路径下。你可以删除该文件以释放一些紧急空间：至少可以让你在该节点上运行一些 shell 脚本来进一步回收其他空间。
+
+```
+
+
+
+
+
 ### Supabase 执行 SQL
 
 http://xx.xx.xx.xx:8000/project/default/sql/1
@@ -841,7 +869,13 @@ psql postgres://dbuser_dba:DBUser.DBA@10.7.0.9:5432/meta
 	# 出错：没有 meta 这个数据库，数据源 pg-meta 是有的
 	
 psql postgres://dbuser_dba:DBUser.DBA@10.7.0.9:5432/postgres
+	# 成功
+	
+psql postgres://dbuser_dba:DBUser.DBA@10.7.0.9:5433/meta
+	
+@pg-meta:5433/meta
 
+psql postgres://dbuser_meta:DBUser.Meta@10.7.0.9:5433/meta
 			
 ```
 
@@ -936,7 +970,20 @@ cat /proc/cpuinfo
 	# 这台 tencent 轻量主机不支持CPU硬件虚拟化
 	# 1. 改用支持嵌套虚拟化的 CVM 实例（如标准型 S5、计算型 C5 等），并在控制台提交工单申请开启嵌套虚拟化。
       2.直接使用容器方案（Docker/LXD）替代传统虚拟机，轻量应用服务器已预装 Docker 环境，可运行容器实现隔离。
+  
 
+
+vi pigsty/vagrant/Vagrantfile.libvirt
+  line 40 行增加：
+                if !File.exist?('/dev/kvm')
+                  v.driver = 'qemu'
+                end
+
+# 设置环境变量强制使用 libvirt 模板（包含刚才的修复）
+export VM_PROVIDER=libvirt
+make meta
+	# 执行 make meta 时生成的 Vagrantfile 就会包含 driver = 'qemu' 配置，从而避开 "could not get preferred machine ... type=kvm" 的错误。
+	
 
 
 云服务器内部支持创建KVM虚拟机，这项技术通常被称为虚拟化嵌套或嵌套虚拟化。简单来说，就是你可以在云服务器（它本身可能就是一台虚拟机）上再安装虚拟化软件，从而创建出“虚拟机中的虚拟机”
