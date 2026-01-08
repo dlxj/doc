@@ -835,6 +835,48 @@ vi /root/pigsty/pigsty.yml
 
 
 
+### 能登录 supabase 下一步怎么做
+
+```
+
+Based on the configuration files in /opt/supabase , the Supabase Studio dashboard is protected by Basic Authentication via the Kong gateway. The "Unauthorized" error you are seeing is because you need to log in.
+
+Here is the information you need to proceed:
+
+### 1. Access the Dashboard
+When you visit http://xx.xx.xx.xx:8000/project/default , your browser should prompt you for a username and password. Use the following credentials found in your .env file:
+
+- Username : supabase
+- Password : pigsty
+### 2. API Keys for Development
+Once you have access to the dashboard, you will need API keys to connect your applications to Supabase. These are also defined in your .env file:
+
+- anon key (public, for frontend use):
+  
+  ```
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+  eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3ODAxNjAwLCJleHAiOjE5MjU1
+  NjgwMDB9.GtkruGMgbxm3kS_1eIHKyz0uaVjhvlWLvqUuS5b-DRc
+  ```
+- service_role key (private, for backend admin use - keep secret ):
+  
+  ```
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+  eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaXNzIjoic3VwYWJhc2UiLCJpYXQiOjE3Njc4MDE2MDAsImV4
+  cCI6MTkyNTU2ODAwMH0.JHimTs0hXELAEp1FtwPp2SXq-l8Dzfv8oHoGJ9oWvF8
+  ```
+### 3. Next Steps
+1. Log in to the dashboard using the credentials above.
+2. Verify that you can see the "Default Project".
+3. If you need to change the password , you can edit the /opt/supabase/.env file, update DASHBOARD_PASSWORD , and run docker-compose up -d to apply changes.
+<todo_status>
+{"todos":[{"id":"check_config","status":"completed","content":"Check Supabase installation and configuration in /opt/supabase","priority":"high","created_at":1767836783},{"id":"check_docker","status":"completed","content":"Check running Docker containers for Supabase services","priority":"high","created_at":1767836783},{"id":"resolve_access","status":"completed","content":"Resolve "Unauthorized" error or provide access instructions","priority":"high","created_at":1767836783}]}
+</todo_status>
+
+```
+
+
+
 
 
 ### PG
