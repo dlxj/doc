@@ -1249,6 +1249,42 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 
 
+### 阿里云验证码 2.0
+
+```
+阿里云确实有对应的服务，叫做 阿里云验证码 2.0 (Aliyun Captcha 2.0) 。它在国内的加载速度和稳定性确实优于 Cloudflare，但在 Supabase 项目中集成它会 复杂很多 。
+
+### 核心差异对比
+特性 Cloudflare Turnstile (当前方案) 阿里云验证码 2.0 Supabase 支持 原生支持 (后台直接配置) 不支持 (原生 Auth 接口无法验证) 开发成本 🟢 低 (仅前端修改) 🔴 高 (需要编写后端 Edge Function) 国内体验 🟡 尚可 (可用但稍慢) 🟢 极佳 (国内节点) 原理 Token 直接传给 Supabase 验证 需通过自定义后端中转验证
+
+### 如果一定要用阿里云，要怎么做？
+因为 Supabase 的 supabase.auth.signUp 接口只认 Cloudflare 和 hCaptcha 的 Token，你无法直接把阿里云的 Token 传进去。
+
+如果你决定切换到阿里云，我们需要彻底重构登录流程，架构如下：
+
+1. 前端改造 ( Login.svelte ) :
+   
+   - 移除 Turnstile 代码，换成阿里云验证码 SDK。
+   - 不再调用 supabase.auth.signUp 。
+   - 改为调用 一个自定义的 Supabase Edge Function（例如 rpc/login_with_aliyun ）。
+2. 后端开发 (Supabase Edge Function) :
+   
+   - 你需要创建一个 Edge Function（类似后端 API）。
+   - 这个 Function 接收 email , password , 和阿里云的 verify_token 。
+   - 第一步 ：服务器端调用阿里云 API 验证 Token 是否有效。
+   - 第二步 ：如果验证通过，使用 Supabase Admin 权限 ( service_role key) 帮用户创建账户或登录。
+   - 第三步 ：把登录后的 Session 返回给前端。
+### 建议
+建议先试用 Cloudflare Turnstile。 Cloudflare Turnstile 在中国大陆通常是可以正常使用的（虽然速度不如阿里云）。鉴于 Supabase 对它的原生支持非常完美，能为你节省大量的后端开发和维护工作。
+
+只有当你发现大量国内用户无法加载验证码时，再考虑切换到阿里云验证码 + Edge Function 的方案。
+
+```
+
+
+
+
+
 
 
 ### PG
@@ -1301,41 +1337,6 @@ psql (18.1)
 Type "help" for help.
 
 meta=#
-
-```
-
-
-
-### 阿里云验证码 2.0
-
-```
-
-阿里云确实有对应的服务，叫做 阿里云验证码 2.0 (Aliyun Captcha 2.0) 。它在国内的加载速度和稳定性确实优于 Cloudflare，但在 Supabase 项目中集成它会 复杂很多 。
-
-### 核心差异对比
-特性 Cloudflare Turnstile (当前方案) 阿里云验证码 2.0 Supabase 支持 原生支持 (后台直接配置) 不支持 (原生 Auth 接口无法验证) 开发成本 🟢 低 (仅前端修改) 🔴 高 (需要编写后端 Edge Function) 国内体验 🟡 尚可 (可用但稍慢) 🟢 极佳 (国内节点) 原理 Token 直接传给 Supabase 验证 需通过自定义后端中转验证
-
-### 如果一定要用阿里云，要怎么做？
-因为 Supabase 的 supabase.auth.signUp 接口只认 Cloudflare 和 hCaptcha 的 Token，你无法直接把阿里云的 Token 传进去。
-
-如果你决定切换到阿里云，我们需要彻底重构登录流程，架构如下：
-
-1. 前端改造 ( Login.svelte ) :
-   
-   - 移除 Turnstile 代码，换成阿里云验证码 SDK。
-   - 不再调用 supabase.auth.signUp 。
-   - 改为调用 一个自定义的 Supabase Edge Function（例如 rpc/login_with_aliyun ）。
-2. 后端开发 (Supabase Edge Function) :
-   
-   - 你需要创建一个 Edge Function（类似后端 API）。
-   - 这个 Function 接收 email , password , 和阿里云的 verify_token 。
-   - 第一步 ：服务器端调用阿里云 API 验证 Token 是否有效。
-   - 第二步 ：如果验证通过，使用 Supabase Admin 权限 ( service_role key) 帮用户创建账户或登录。
-   - 第三步 ：把登录后的 Session 返回给前端。
-### 建议
-建议先试用 Cloudflare Turnstile。 Cloudflare Turnstile 在中国大陆通常是可以正常使用的（虽然速度不如阿里云）。鉴于 Supabase 对它的原生支持非常完美，能为你节省大量的后端开发和维护工作。
-
-只有当你发现大量国内用户无法加载验证码时，再考虑切换到阿里云验证码 + Edge Function 的方案。
 
 ```
 
