@@ -970,6 +970,18 @@ cd /opt/supabase && docker compose up -d
 
 
 
+### 查用户信息
+
+```
+
+SELECT * 
+FROM auth.users 
+WHERE email = 'your_email@example.com';
+
+```
+
+
+
 
 
 ### PG
