@@ -877,6 +877,30 @@ Once you have access to the dashboard, you will need API keys to connect your ap
 
 
 
+### Dashboard 是什么还可以新建 project 吗？
+
+```
+
+Dashboard 是什么 Supabase Dashboard (Supabase Studio) 是 Supabase 的可视化管理界面。你可以通过它来：
+
+- 管理数据库表结构 (Table Editor)
+- 编写和执行 SQL (SQL Editor)
+- 管理用户认证和权限 (Authentication)
+- 管理对象存储 (Storage)
+- 查看 API 文档
+除了默认 project 还可以新建 project 吗 不可以 。
+在自托管 (Self-Hosted) 的 Docker 环境下，Supabase Studio 与底层的 Docker 服务容器（Kong, GoTrue, PostgREST 等）以及 Postgres 数据库是 1 对 1 绑定 的。
+
+- "Default Project" 直接对应你当前的这套 Docker 服务和 Postgres 数据库。
+- Studio 界面上显示的 "Default Project" 只是一个通过环境变量配置的名称 ( STUDIO_DEFAULT_PROJECT=Pigsty )。
+- 如果你需要另一个 "Project"（即另一套完全隔离的 Supabase 环境），你需要部署另一套 Supabase Docker 容器栈，并监听不同的端口。
+
+```
+
+
+
+
+
 
 
 ### PG
