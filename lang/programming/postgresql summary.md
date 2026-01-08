@@ -853,7 +853,7 @@ Once you have access to the dashboard, you will need API keys to connect your ap
 
 - anon key (public, for frontend use):
   
-  ```
+```
   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
   eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3ODAxNjAwLCJleHAiOjE5MjU1
   NjgwMDB9.GtkruGMgbxm3kS_1eIHKyz0uaVjhvlWLvqUuS5b-DRc
@@ -873,7 +873,7 @@ Once you have access to the dashboard, you will need API keys to connect your ap
 {"todos":[{"id":"check_config","status":"completed","content":"Check Supabase installation and configuration in /opt/supabase","priority":"high","created_at":1767836783},{"id":"check_docker","status":"completed","content":"Check running Docker containers for Supabase services","priority":"high","created_at":1767836783},{"id":"resolve_access","status":"completed","content":"Resolve "Unauthorized" error or provide access instructions","priority":"high","created_at":1767836783}]}
 </todo_status>
 
-```
+  ```
 
 
 
@@ -914,7 +914,7 @@ cd /opt/supabase && docker compose up -d
 
 1. 修改配置文件 修改 /opt/supabase/.env 文件中的 STUDIO_DEFAULT_PROJECT 变量。
    
-   ```
+```
    # /opt/supabase/.env
    STUDIO_DEFAULT_PROJECT=MyNewProject  # 将原来的 Pigsty 修改为你想要的名称
    ```
@@ -928,7 +928,7 @@ cd /opt/supabase && docker compose up -d
    (我已经帮你执行了这一步， supabase-studio 容器已重建)
 现在你可以刷新浏览器访问 Dashboard，应该能看到 Project 名称已经变成了 MyNewProject 。
 
-```
+   ```
 
 
 
@@ -1149,7 +1149,7 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 这是唯一支持类似“单步调试”体验的方式。你需要使用 Supabase CLI 在本地运行函数。
 
 - 运行函数 ：
-  ```
+```
   supabase functions serve --debug
   ``` 加上 --debug 参数后，你可以通过 Chrome DevTools 或 VS Code 进行调试。
 - VS Code 调试 ：
@@ -1170,7 +1170,7 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 - 线上排查 ：依赖 日志 和 错误监控 (Sentry 等)。
 建议的开发流程是：先在本地编写并充分调试（利用断点），确认无误后再部署。
 
-```
+  ```
 
 
 
@@ -1203,6 +1203,49 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 ```
 
 
+
+### Cloudflare Turnstile 身份验证
+
+```
+
+通过分析你的项目（Svelte + Supabase），我为你制定并实施了集成 Cloudflare Turnstile 的方案。相比传统的图形验证码，Turnstile 用户体验更好（通常只需点击一下或完全无感），且隐私保护更强。
+
+### 已经完成的前端修改
+我修改了两个文件来集成前端验证逻辑：
+
+1. index.html :
+   - 引入了 Cloudflare Turnstile 的 SDK 脚本。
+2. src/lib/Login.svelte :
+   - 添加了 Turnstile 组件容器。
+   - 实现了验证码的渲染和 Token 获取逻辑。
+   - 在 handleLogin 和 handleSignUp 中，将获取到的 captchaToken 传递给 Supabase。
+   - 注意 ：代码中目前使用的是 Cloudflare 的 测试 Site Key ( 1x00000000000000000000AA )，它总是会验证通过。你需要替换为你自己的 Key。
+### 你需要做的配置（关键）
+为了让这套机制真正生效，你需要在 Cloudflare 和 Supabase 后台进行配置：
+ 1. Cloudflare 端 (获取 Keys)
+1. 登录 Cloudflare Dashboard 。
+2. 进入 Turnstile 菜单，点击 "Add Site"。
+3. 填写站点名称和你的域名（本地测试填 localhost ）。
+4. 创建后，你会获得 Site Key 和 Secret Key 。
+5. 替换代码 ：打开 src/lib/Login.svelte ，找到第 16 行，将 sitekey 的值替换为你申请到的 Site Key 。 2. Supabase 端 (开启保护)
+这是防止刷接口的关键步骤，开启后 Supabase 会拒绝没有有效 Token 的注册/登录请求。
+
+1. 登录 Supabase Dashboard 。
+2. 进入你的项目，点击左侧菜单的 Authentication -> Security -> Bot Protection (或者叫 Captcha Protection)。
+3. 在 Cloudflare Turnstile 部分开启开关。
+4. 填入你在 Cloudflare 申请到的 Secret Key (注意是 Secret Key，不是 Site Key)。
+5. 保存设置。
+### 它是如何工作的？
+1. 用户操作 ：用户在前端点击登录/注册前，必须完成 Turnstile 验证（通常是自动的）。
+2. 获取 Token ：验证通过后，Cloudflare 返回一个临时的 captchaToken 。
+3. 发送请求 ：前端将这个 Token 连同邮箱密码一起发给 Supabase。
+4. 后端验证 ：Supabase 收到请求后，自动拿着 Token 去 Cloudflare 验证。
+   - 如果 Token 有效：允许注册/登录。
+   - 如果 Token 无效或缺失：直接拒绝请求，返回错误。
+这样就实现了从前端到后端的完整防刷和人机验证。
+
+
+```
 
 
 
