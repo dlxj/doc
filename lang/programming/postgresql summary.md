@@ -970,13 +970,84 @@ cd /opt/supabase && docker compose up -d
 
 
 
-### 查用户信息
+
+
+
+
+
+
+### SQL Editor 查用户信息
 
 ```
 
 SELECT * 
 FROM auth.users 
 WHERE email = 'your_email@example.com';
+
+```
+
+
+
+### 前端如何完成新用户注册
+
+```
+
+`\root\pigsty\pigsty.yml` 分析 Supabase 新用户注册方面的配置，配好后在前端用户如何完成注册
+
+### 配置分析
+查看 /opt/supabase/.env 文件，当前的注册配置如下：
+
+1. 允许邮箱注册 ( ENABLE_EMAIL_SIGNUP=true )：开启。
+2. 自动确认邮箱 ( ENABLE_EMAIL_AUTOCONFIRM=true )： 开启 。
+   - 这是一个非常关键的配置。因为你的 SMTP 邮件服务配置的是假的 ( fake_mail_user )，如果关闭自动确认，Supabase 会尝试发送验证邮件但失败，导致用户无法激活。
+   - 现状 ：用户注册后 立即激活 ，无需点击邮件验证链接。
+3. SMTP 配置 ：目前是默认的假配置 ( fake_sender 等)。由于开启了自动确认，这暂时不会影响注册流程。
+### 前端注册实现
+由于配置了自动确认，前端注册流程非常简单。你只需要使用 supabase-js 客户端库。
+ 1. 安装依赖
+​```
+npm install @supabase/supabase-js
+​``` 2. 注册代码示例
+你需要用到之前获取的 SUPABASE_URL (你的公网 IP + 端口) 和 ANON_KEY 。
+
+​```
+import { createClient } from '@supabase/supabase-js'
+
+// 1. 初始化客户端
+const supabaseUrl = 'http://xx.xx.xx.xx:8000'
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3ODAxNjAwLCJleHAiOjE5MjU1Njg
+wMDB9.GtkruGMgbxm3kS_1eIHKyz0uaVjhvlWLvqUuS5b-DRc' // 填入你的 anon key
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+// 2. 注册函数
+async function signUpNewUser() {
+  const { data, error } = await supabase.auth.signUp({
+    email: 'example@email.com',
+    password: 'example-password',
+  })
+
+  if (error) {
+    console.error('注册失败:', error.message)
+    return
+  }
+
+  // 因为开启了 ENABLE_EMAIL_AUTOCONFIRM=true
+  // data.user 会立即返回，且 data.session 也会有值（表示已自动登录）
+  console.log('注册成功:', data)
+  console.log('用户 ID:', data.user.id)
+  console.log('Access Token:', data.session.access_token)
+}
+
+signUpNewUser()
+​```
+### 总结
+目前的配置非常适合开发环境： 注册即登录，无需邮件验证 。如果你将来要上线生产环境并要求真实的邮件验证，你需要：
+
+1. 在 .env 中配置真实的 SMTP 服务（如 SendGrid, AWS SES 等）。
+2. 将 ENABLE_EMAIL_AUTOCONFIRM 改为 false 。
+3. 重启 Supabase 服务。
+
 
 ```
 
