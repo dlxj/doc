@@ -950,7 +950,7 @@ cd /opt/supabase && docker compose up -d
 - anon key : 公钥。给前端用的，权限很低，必须配合 Row Level Security (RLS) 使用。
 - service_role key : 私钥。拥有上帝权限，可以绕过所有 RLS 规则。 绝对不能给普通用户 。
 ### 2. 用户级 Token (User Access Token / JWT)
-当你在 http://43.153.153.16:8000/project/default/auth/users 创建一个用户后，这个用户是用来 登录你的应用 的。
+当你在 http://xx.xx.xx.xx:8000/project/default/auth/users 创建一个用户后，这个用户是用来 登录你的应用 的。
 
 - 用户没有永久 Key ：用户登录（通过 Email/密码, OAuth 等）成功后，Supabase 会发给前端一个临时的 Access Token (JWT) 。
 - Token 代表身份 ：前端在请求 Supabase 数据库或 API 时，会在 Header 里带上这个 Token。
@@ -967,10 +967,6 @@ cd /opt/supabase && docker compose up -d
 
 
 ```
-
-
-
-
 
 
 
