@@ -901,6 +901,75 @@ Dashboard 是什么 Supabase Dashboard (Supabase Studio) 是 Supabase 的可视�
 
 
 
+### 修改默认 Project 名称的方法
+
+```
+
+sed -i 's/STUDIO_DEFAULT_PROJECT=Pigsty/STUDIO_DEFAULT_PROJECT=MyNewProject/' /opt/supabase/.env
+
+cd /opt/supabase && docker compose up -d
+
+
+修改 Supabase 默认 Project 名称需要修改环境变量配置文件，并重启相关容器。
+
+1. 修改配置文件 修改 /opt/supabase/.env 文件中的 STUDIO_DEFAULT_PROJECT 变量。
+   
+   ```
+   # /opt/supabase/.env
+   STUDIO_DEFAULT_PROJECT=MyNewProject  # 将原来的 Pigsty 修改为你想要的名称
+   ```
+   (我已经帮你执行了这一步，将名称修改为了 MyNewProject )
+2. 重启 Supabase 修改配置后，必须重启 Supabase 服务（主要是 Studio 容器）才能生效。
+   
+   ```
+   cd /opt/supabase
+   docker compose up -d
+   ```
+   (我已经帮你执行了这一步， supabase-studio 容器已重建)
+现在你可以刷新浏览器访问 Dashboard，应该能看到 Project 名称已经变成了 MyNewProject 。
+
+```
+
+
+
+
+
+### 新建的用户可以有自已的各种 key 吗
+
+```
+
+`http://xx.xx.xx.xx:8000/project/default/auth/users`  我在这里新建了一个 user ，这个用户可以有自已的各种 key 吗
+
+在 Supabase 中，用户（User）和 项目（Project）的 Key 是完全不同的概念。
+
+简单来说： 你在 Auth 页面新建的用户，不会拥有类似 anon 或 service_role 那样的永久 API Key。
+
+### 1. 项目级 Key (Project Keys)
+这是你之前在 .env 文件里看到的，属于整个项目的“大门钥匙”。
+
+- anon key : 公钥。给前端用的，权限很低，必须配合 Row Level Security (RLS) 使用。
+- service_role key : 私钥。拥有上帝权限，可以绕过所有 RLS 规则。 绝对不能给普通用户 。
+### 2. 用户级 Token (User Access Token / JWT)
+当你在 http://43.153.153.16:8000/project/default/auth/users 创建一个用户后，这个用户是用来 登录你的应用 的。
+
+- 用户没有永久 Key ：用户登录（通过 Email/密码, OAuth 等）成功后，Supabase 会发给前端一个临时的 Access Token (JWT) 。
+- Token 代表身份 ：前端在请求 Supabase 数据库或 API 时，会在 Header 里带上这个 Token。
+- RLS 决定权限 ：Postgres 数据库会解析这个 Token，知道“这是 User A”，然后根据你设置的 RLS (Row Level Security) 规则，决定 User A 能查哪些数据，能改哪些数据。
+### 总结
+- Project Keys ( anon / service_role ) ：是给 开发者 用来连接 Supabase 服务的。
+- User Users ：是你的 App 的最终用户 。他们通过登录获取 临时 Token 来证明身份，而不是拥有永久 Key。
+如果你需要给某个程序（而不是人）分配一个长期有效的凭证，通常的做法是：
+
+1. 创建一个特定的 User。
+2. 在数据库中手动生成一个长期有效的 JWT（不推荐，有安全风险）。
+3. 或者，只使用 service_role key 并在后端代码中控制权限（这是作为管理员的操作方式）。
+
+
+
+```
+
+
+
 
 
 ### PG
