@@ -1251,6 +1251,10 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 ### 阿里云验证码 2.0
 
+https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/implement-supabase-sms-login
+
+- 基于Supabase实现短信验证登录
+
 ```
 阿里云确实有对应的服务，叫做 阿里云验证码 2.0 (Aliyun Captcha 2.0) 。它在国内的加载速度和稳定性确实优于 Cloudflare，但在 Supabase 项目中集成它会 复杂很多 。
 
