@@ -1287,6 +1287,22 @@ https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/imple
 
 
 
+### 邮箱验证
+
+```
+
+http://43.153.153.16:8000/project/default/auth/
+
+Configuration 下面只有 Policies 
+
+在Dashboard侧边栏单击Authentication -> Emails
+	# 目标是让 AI 给加上这里的 EMails
+
+
+```
+
+
+
 
 
 
