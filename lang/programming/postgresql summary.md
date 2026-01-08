@@ -1174,6 +1174,36 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 
 
+### 为什么 DASHBOARD_PASSWORD 和 .env 里的定义不一至
+
+```
+
+`\root\pigsty\app\supabase\.env` `\root\pigsty\pigsty.yml` `\root\pigsty\pigsty.yml#L137-137` 为什么 DASHBOARD_PASSWORD 和 .env 里的定义不一至
+
+这是一个非常敏锐的观察！你看到的差异是因为文件角色的不同：
+
+1. \root\pigsty\app\supabase\.env
+   - 角色 ：这是 源代码模板 或默认示例文件。
+   - 内容 ：它包含的是 Pigsty 项目的默认初始值（例如 DASHBOARD_PASSWORD=pigsty ），仅仅是为了占位或演示。
+2. \root\pigsty\pigsty.yml
+   - 角色 ：这是你的 基础设施配置中心 (Source of Truth) 。
+   - 内容 ：这里定义的是 你真正想要使用的值 。当你运行 Pigsty 的安装脚本（如 ./app.yml 或 ./install.yml ）时，Ansible 会读取这个文件里的配置。
+3. 最终结果 ( /opt/supabase/.env )
+   - 角色 ：这是 实际运行环境 的配置文件。
+   - 生成过程 ：Pigsty 的自动化脚本会把 pigsty.yml 里的值（ pigstyxX ）填入到模板中，生成最终部署在 /opt/supabase/.env 的文件。
+总结 ：
+
+- 以 pigsty.yml 为准 。
+- 安装过程会将 pigsty.yml 的值覆盖到最终的 .env 中。
+- app/supabase/.env 只是一个静态的模板文件，部署后它的内容不会影响运行中的服务，除非你手动去引用它。
+目前的运行状态（我们在 /opt/supabase/.env 里看到的）已经正确应用了 pigsty.yml 里的 pigstyxX ，所以一切正常。
+
+
+
+```
+
+
+
 
 
 
@@ -1230,6 +1260,33 @@ Type "help" for help.
 meta=#
 
 ```
+
+
+
+### 自建论坛
+
+```
+
+node -v && npm -v
+v24.12.0
+11.6.2
+
+npm create svelte@latest . -- --template skeleton --types ts --no-prettier --no-eslint --no-playwright --no-vitest
+
+npx sv create . --template skeleton --types ts --no-prettier --no-eslint --no-playwright --no-vitest
+
+npx sv create . --template minimal --types ts --no-add-ons --no-install
+
+npm install && npm install @supabase/supabase-js
+
+
+
+
+```
+
+
+
+
 
 
 
