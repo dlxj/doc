@@ -915,8 +915,9 @@ cd /opt/supabase && docker compose up -d
 1. 修改配置文件 修改 /opt/supabase/.env 文件中的 STUDIO_DEFAULT_PROJECT 变量。
    
 ```
-   # /opt/supabase/.env
+   /opt/supabase/.env
    STUDIO_DEFAULT_PROJECT=MyNewProject  # 将原来的 Pigsty 修改为你想要的名称
+
    ```
    (我已经帮你执行了这一步，将名称修改为了 MyNewProject )
 2. 重启 Supabase 修改配置后，必须重启 Supabase 服务（主要是 Studio 容器）才能生效。
@@ -1205,6 +1206,14 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 
 ### Cloudflare Turnstile 身份验证
+
+- https://github.com/WonderLand33/prompt-optimizer
+
+1. 访问 [Cloudflare Dashboard](https://dash.cloudflare.com/)
+2. 进入 "Turnstile" 部分
+3. 创建新的站点
+4. 获取 Site Key 和 Secret Key
+5. 将密钥添加到环境变量中
 
 ```
 
