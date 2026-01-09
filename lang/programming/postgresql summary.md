@@ -694,6 +694,22 @@ https://zhuanlan.zhihu.com/p/1969746342847948293
 
 
 
+### Trae 代理连远程主机
+
+```
+
+Host tencent_tokyo
+  HostName xx.xx.xx.xx
+  Port 22
+  User root
+  ProxyCommand "C:\Program Files\Git\mingw64\bin\connect.exe" -H 172.22.112.93:7890 %h %p
+
+```
+
+
+
+
+
 ### 安装前提
 
 ```
