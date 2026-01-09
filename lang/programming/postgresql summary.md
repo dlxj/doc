@@ -1215,6 +1215,105 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 4. 获取 Site Key 和 Secret Key
 5. 将密钥添加到环境变量中
 
+
+
+#### Supabase 配置
+
+```
+
+I have:
+
+1. Modified /opt/supabase/.env to include the Turnstile keys (placeholders).
+2. Modified /opt/supabase/docker-compose.yml to inject these variables into the auth service.
+3. Modified /root/pigsty/pigsty.yml to ensure these settings persist in future Pigsty deployments.
+4. Restarted the auth service.
+
+vi /opt/supabase/.env
+## Captcha Config
+GOTRUE_SECURITY_CAPTCHA_ENABLED=true
+GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
+GOTRUE_SECURITY_CAPTCHA_SECRET=这里填Secret Key
+GOTRUE_SECURITY_CAPTCHA_SITE_KEY=这里填Site Key
+	# 加在最后
+
+
+vi /root/pigsty/pigsty.yml
+              DASHBOARD_USERNAME: supabase
+              DASHBOARD_PASSWORD: pigsty
+
+              # Captcha Config
+              GOTRUE_SECURITY_CAPTCHA_ENABLED: true
+              GOTRUE_SECURITY_CAPTCHA_PROVIDER: turnstile
+              GOTRUE_SECURITY_CAPTCHA_SECRET: 这里填Secret Key
+              GOTRUE_SECURITY_CAPTCHA_SITE_KEY: 这里填Site Key
+              
+
+vi /opt/supabase/docker-compose.yml 
+      # use absolute URLs for mailer URL paths
+      GOTRUE_MAILER_URLPATHS_INVITE: "${SUPABASE_PUBLIC_URL}/${MAILER_URLPATHS_INVITE}"
+      GOTRUE_MAILER_URLPATHS_CONFIRMATION: "${SUPABASE_PUBLIC_URL}/${MAILER_URLPATHS_CONFIRMATION}"
+      GOTRUE_MAILER_URLPATHS_RECOVERY: "${SUPABASE_PUBLIC_URL}/${MAILER_URLPATHS_RECOVERY}"
+      GOTRUE_MAILER_URLPATHS_EMAIL_CHANGE: "${SUPABASE_PUBLIC_URL}/${MAILER_URLPATHS_EMAIL_CHANGE}"
+      GOTRUE_EXTERNAL_PHONE_ENABLED: ${ENABLE_PHONE_SIGNUP}
+      GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}
+      GOTRUE_SECURITY_CAPTCHA_ENABLED: ${GOTRUE_SECURITY_CAPTCHA_ENABLED}
+      GOTRUE_SECURITY_CAPTCHA_PROVIDER: ${GOTRUE_SECURITY_CAPTCHA_PROVIDER}
+      GOTRUE_SECURITY_CAPTCHA_SECRET: ${GOTRUE_SECURITY_CAPTCHA_SECRET}
+      GOTRUE_SECURITY_CAPTCHA_SITE_KEY: ${GOTRUE_SECURITY_CAPTCHA_SITE_KEY}
+		# 注意后面的新增部分
+
+
+sed -i '/GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}/a \      GOTRUE_SECURITY_CAPTCHA_ENABLED: ${GOTRUE_SECURITY_CAPTCHA_ENABLED}\n      GOTRUE_SECURITY_CAPTCHA_PROVIDER: ${GOTRUE_SECURITY_CAPTCHA_PROVIDER}\n      GOTRUE_SECURITY_CAPTCHA_SECRET: ${GOTRUE_SECURITY_CAPTCHA_SECRET}\n      GOTRUE_SECURITY_CAPTCHA_SITE_KEY: ${GOTRUE_SECURITY_CAPTCHA_SITE_KEY}' /opt/supabase/docker-compose.yml 
+ 
+ 
+ cd /opt/supabase && docker compose up -d auth
+ 	# 重启 docker，启用 auth
+ 
+ grep -A 5 "Captcha Config" /opt/supabase/.env
+ 
+ 
+ 我已经为你配置好了 Cloudflare Turnstile。你需要完成最后一步：填入你自己的密钥。
+
+### 1. 修改配置文件
+请打开 /opt/supabase/.env 文件，找到文件末尾我新添加的 Captcha Config 部分，并将 <YOUR_TURNSTILE_...> 替换为你从 Cloudflare 获取的真实密钥：
+
+​```
+# /opt/supabase/.env
+
+## Captcha Config
+GOTRUE_SECURITY_CAPTCHA_ENABLED=true
+GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
+GOTRUE_SECURITY_CAPTCHA_SECRET=your_secret_key_here  # 替换这里
+GOTRUE_SECURITY_CAPTCHA_SITE_KEY=your_site_key_here  # 替换这里
+​```
+### 2. 重启服务
+修改完 .env 后，请在终端执行以下命令使配置生效：
+
+​```
+cd /opt/supabase && docker compose up -d auth
+​```
+### 3. 持久化配置 (可选但推荐)
+我已经同步修改了 pigsty.yml 。如果你未来重新运行 Pigsty 的安装脚本，请确保也在 pigsty.yml 中填入真实的密钥，否则它会覆盖回占位符。
+
+配置详情：
+
+- Provider : Turnstile
+- Enabled : True
+- 涉及文件 :
+  - .env (已添加)
+  - docker-compose.yml (已注入环境变量)
+  - pigsty.yml (已备份配置)
+ 
+ 
+
+```
+
+
+
+
+
+
+
 ```
 
 通过分析你的项目（Svelte + Supabase），我为你制定并实施了集成 Cloudflare Turnstile 的方案。相比传统的图形验证码，Turnstile 用户体验更好（通常只需点击一下或完全无感），且隐私保护更强。
@@ -1255,6 +1354,63 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 
 ```
+
+
+
+#### Supabase 沙盒为什么没看到 Turnstile 选项
+
+```
+
+cd /opt/supabase && docker compose up -d auth   执行这个命令后，Supabase 8000 端口沙盒里的 Authentication 面面为什么没有看到有  Cloudflare Turnstile 选项
+
+这是一个正常的现象， 请不用担心 。
+
+### 原因解释
+Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 Dashboard（控制面板）上有一些区别：
+
+1. UI 不完全同步 ：自托管的 Studio 面板主要用于管理数据和可视化，但对于许多 基础设施级别的配置 （如 Auth 配置、SMTP、Captcha），它往往 不会 在界面上显示配置选项。
+2. 配置即代码 (Config-as-Code) ：在自托管模式下，这些功能完全依赖环境变量（ .env ）控制，而不是通过 UI 点击开关。
+3. 已验证生效 ：我刚刚检查了运行中的容器，确认配置已经生效：
+   ```
+   # 容器内部实际生效的环境变量
+   GOTRUE_SECURITY_CAPTCHA_ENABLED=true
+   GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
+   ```
+### 下一步：前端集成
+既然后端已经开启了验证，你需要在 前端代码 中加入 Cloudflare Turnstile 的组件。
+
+1. 在 HTML/React 中引入 Turnstile Widget ：
+   你需要获取 Turnstile 的 token 。
+2. 调用 Supabase Auth API 时带上 Token ：
+   在使用 supabase-js 注册或登录时，传入 captchaToken 。
+   
+   ```
+   // 注册示例
+   const { data, error } = await supabase.auth.signUp({
+     email: 'example@email.com',
+     password: 'example-password',
+     options: {
+       captchaToken: '这里填入从Turnstile组件获取到的token'
+     }
+   })
+   ```
+   ```
+   // 登录示例 (如果登录也开启了验证)
+   const { data, error } = await supabase.auth.signInWithPassword({
+     email: 'example@email.com',
+     password: 'example-password',
+     options: {
+       captchaToken: '这里填入从Turnstile组件获取到的token'
+     }
+   })
+   ```
+只要前端传了 Token，后端就会自动去 Cloudflare 验证。如果验证失败或没传 Token，后端会返回错误。
+
+```
+
+
+
+
 
 
 
