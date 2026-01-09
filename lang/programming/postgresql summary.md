@@ -454,6 +454,9 @@ https://pigsty.cc/docs/app/supabase/
 
 console.cloud.tencent.com
 	# tencent 海外云控制台
+	
+https://lightsail.aws.amazon.com/
+	# amazon 控制台
 
 http://xx.xx.xx.xx:3000
 	点进去 Dashboards -> PGSQL -> Database
