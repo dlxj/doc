@@ -1240,6 +1240,8 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 https://supabase.com/docs/guides/functions/examples/cloudflare-turnstile
 
+- https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/  cf 文档
+
 
 
 ```
