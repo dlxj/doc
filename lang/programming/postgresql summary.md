@@ -1246,6 +1246,22 @@ Supabase 包含多个服务，通常运行在不同的端口（以标准 Docker 
 - Supabase Studio (Dashboard) : 默认端口 3000 (这是你在浏览器访问的管理界面)。
 
 
+
+############ 
+ # Domain 
+ # YOU MUST CHANGE THESE WHEN ACCESS VIA DOMAIN NAME 
+ ############ 
+ # replace if you intend to use Studio outside of localhost 
+ # 必须指向 Kong API 网关 (端口 8000)
+ SUPABASE_PUBLIC_URL=http://echopxxx.com:8000
+ API_EXTERNAL_URL=http://echoxxx.com:8000
+
+ # SITE_URL 是你的前端网站地址，用于重定向
+ # 如果你的论坛前端也部署在 80 端口（替代了 Pigsty 页面），则填 http://echopxxx.com
+ # 如果还在开发中，可能是 http://localhost:5173 或其他
+ SITE_URL=http://echoxxx.com:5173
+
+
 ```
 
 
@@ -1325,7 +1341,7 @@ GOTRUE_SECURITY_CAPTCHA_SITE_KEY=your_site_key_here  # 替换这里
 修改完 .env 后，请在终端执行以下命令使配置生效：
 
 ​```
-cd /opt/supabase && docker compose up -d auth
+cd /opt/supabase/ && docker compose up -d auth
 ​```
 ### 3. 持久化配置 (可选但推荐)
 我已经同步修改了 pigsty.yml 。如果你未来重新运行 Pigsty 的安装脚本，请确保也在 pigsty.yml 中填入真实的密钥，否则它会覆盖回占位符。
