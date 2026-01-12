@@ -12,6 +12,19 @@ find . -type f | xargs cat |
 
 
 
+# 特定串后的 5 行
+
+```
+ see postgresql summary.md -> supabase -> Supabase 配置
+ 
+ grep -A 5 "Captcha Config" /opt/supabase/.env
+ 
+```
+
+
+
+
+
 # sed 修改文件
 
 ```
