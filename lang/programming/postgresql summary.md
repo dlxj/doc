@@ -1380,6 +1380,8 @@ vi /opt/supabase/docker-compose.yml
 
 docker compose -f /opt/supabase/docker-compose.yml up -d
 	或着 cd /opt/supabase && docker compose up -d
+	
+docker compose -f /opt/supabase/docker-compose.yml stop
 
 ```
 
