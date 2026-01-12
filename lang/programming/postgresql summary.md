@@ -1390,11 +1390,11 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
 1. UI 不完全同步 ：自托管的 Studio 面板主要用于管理数据和可视化，但对于许多 基础设施级别的配置 （如 Auth 配置、SMTP、Captcha），它往往 不会 在界面上显示配置选项。
 2. 配置即代码 (Config-as-Code) ：在自托管模式下，这些功能完全依赖环境变量（ .env ）控制，而不是通过 UI 点击开关。
 3. 已验证生效 ：我刚刚检查了运行中的容器，确认配置已经生效：
-   ```
+
    # 容器内部实际生效的环境变量
    GOTRUE_SECURITY_CAPTCHA_ENABLED=true
    GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
-   ```
+
 ### 下一步：前端集成
 既然后端已经开启了验证，你需要在 前端代码 中加入 Cloudflare Turnstile 的组件。
 
@@ -1403,7 +1403,7 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
 2. 调用 Supabase Auth API 时带上 Token ：
    在使用 supabase-js 注册或登录时，传入 captchaToken 。
    
-   ```
+```
    // 注册示例
    const { data, error } = await supabase.auth.signUp({
      email: 'example@email.com',
@@ -1413,6 +1413,7 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
      }
    })
    ```
+
    ```
    // 登录示例 (如果登录也开启了验证)
    const { data, error } = await supabase.auth.signInWithPassword({
@@ -1425,7 +1426,7 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
    ```
 只要前端传了 Token，后端就会自动去 Cloudflare 验证。如果验证失败或没传 Token，后端会返回错误。
 
-```
+   ```
 
 
 
