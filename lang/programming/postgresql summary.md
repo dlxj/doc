@@ -1236,6 +1236,79 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 
 
+#### Edge function 实现验证
+
+https://supabase.com/docs/guides/functions/examples/cloudflare-turnstile
+
+
+
+```
+
+supabase functions new cloudflare-turnstile
+	# poject 里新建函数
+
+And add the code to the index.ts file:
+
+import { corsHeaders } from '../_shared/cors.ts'
+
+console.log('Hello from Cloudflare Trunstile!')
+
+function ips(req: Request) {
+  return req.headers.get('x-forwarded-for')?.split(/\s*,\s*/)
+}
+
+Deno.serve(async (req) => {
+  // This is needed if you're planning to invoke your function from a browser.
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders })
+  }
+
+  const { token } = await req.json()
+  const clientIps = ips(req) || ['']
+  const ip = clientIps[0]
+
+  // Validate the token by calling the
+  // "/siteverify" API endpoint.
+  let formData = new FormData()
+  formData.append('secret', Deno.env.get('CLOUDFLARE_SECRET_KEY') ?? '')
+  formData.append('response', token)
+  formData.append('remoteip', ip)
+
+  const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify'
+  const result = await fetch(url, {
+    body: formData,
+    method: 'POST',
+  })
+
+  const outcome = await result.json()
+  console.log(outcome)
+  if (outcome.success) {
+    return new Response('success', { headers: corsHeaders })
+  }
+  return new Response('failure', { headers: corsHeaders })
+})
+
+
+Deploy the server-side validation Edge Functions#
+
+supabase functions deploy cloudflare-turnstile
+supabase secrets set CLOUDFLARE_SECRET_KEY=your_secret_key
+
+
+
+
+前端
+const { data, error } = await supabase.functions.invoke('cloudflare-turnstile', {
+  body: { token },
+})
+
+
+```
+
+
+
+
+
 #### 验证关键配置
 
 ```
