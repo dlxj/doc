@@ -1840,6 +1840,22 @@ https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/imple
 
 
 
+
+
+### capjs.js.org 开源方案
+
+https://github.com/tiagozip/cap
+
+```
+
+
+
+```
+
+
+
+
+
 ### 邮箱验证
 
 ```
