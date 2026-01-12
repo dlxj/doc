@@ -1236,6 +1236,40 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 
 
+#### 验证关键配置
+
+```
+
+vi /opt/supabase/.env
+## Captcha Config
+GOTRUE_SECURITY_CAPTCHA_ENABLED=true
+GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
+GOTRUE_SECURITY_CAPTCHA_SECRET=0x4AAAAAACLZlc1yWo0Ukxxxxxxxxxxx
+GOTRUE_SECURITY_CAPTCHA_SITE_KEY=0x4AAAAAACLZxxxxxxxxx
+	# 加在最后
+
+
+vi /opt/supabase/docker-compose.yml
+      GOTRUE_EXTERNAL_PHONE_ENABLED: ${ENABLE_PHONE_SIGNUP}
+      ## Captcha Config
+      GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}
+      GOTRUE_SECURITY_CAPTCHA_ENABLED: ${GOTRUE_SECURITY_CAPTCHA_ENABLED}
+      GOTRUE_SECURITY_CAPTCHA_PROVIDER: ${GOTRUE_SECURITY_CAPTCHA_PROVIDER}
+      GOTRUE_SECURITY_CAPTCHA_SECRET: ${GOTRUE_SECURITY_CAPTCHA_SECRET}
+      GOTRUE_SECURITY_CAPTCHA_SITE_KEY: ${GOTRUE_SECURITY_CAPTCHA_SITE_KEY}
+      	# 加在这里
+      # Uncomment to enable custom access token hook.
+      	
+
+docker compose -f /opt/supabase/docker-compose.yml up -d
+	或着 cd /opt/supabase && docker compose up -d
+
+```
+
+
+
+
+
 #### Supabase 3000 8000 端口
 
 ```
@@ -1444,6 +1478,8 @@ Error: 300010 是最关键的信息。
 如果做完这三步还不行，那 99% 是 Supabase 后端的 Secret Key 配置问题，或者 Supabase 的 Docker 环境变量没生效。
 
 ```
+
+
 
 
 
