@@ -1261,6 +1261,48 @@ vi /opt/supabase/docker-compose.yml
       # Uncomment to enable custom access token hook.
       	
 
+
+
+
+    environment:
+      # Binds nestjs listener to both IPv4 and IPv6 network interfaces
+      HOSTNAME: "::"
+      
+      # 1. 指向内部 meta 服务
+      STUDIO_PG_META_URL: http://meta:8080
+      
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_HOST: ${POSTGRES_HOST}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PG_META_CRYPTO_KEY: ${PG_META_CRYPTO_KEY}
+      DEFAULT_ORGANIZATION_NAME: ${STUDIO_DEFAULT_ORGANIZATION}
+      DEFAULT_PROJECT_NAME: ${STUDIO_DEFAULT_PROJECT}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      
+      # 2. 指向内部 kong 网关
+      SUPABASE_URL: http://kong:8000
+      
+      # 3. 这个保持公网地址不变 (给前端用的)
+      SUPABASE_PUBLIC_URL: ${SUPABASE_PUBLIC_URL}
+      
+      SUPABASE_ANON_KEY: ${ANON_KEY}
+      SUPABASE_SERVICE_KEY: ${SERVICE_ROLE_KEY}
+      AUTH_JWT_SECRET: ${JWT_SECRET}
+      LOGFLARE_PRIVATE_ACCESS_TOKEN: ${LOGFLARE_PRIVATE_ACCESS_TOKEN}
+      
+      # 4. 指向内部 analytics 服务 (假设服务名叫 analytics，请核对 depends_on 里的名字)
+      LOGFLARE_URL: http://analytics:4000
+      
+      NEXT_PUBLIC_ENABLE_LOGS: true
+      NEXT_ANALYTICS_BACKEND_PROVIDER: postgres
+      
+  说明 :
+
+     - SUPABASE_PUBLIC_URL : 这个变量通常用于生成外部可访问的链接（如邮件中的链接），所以它 必须 保持为公网地址 ( http://echoplayer.com:8000 )。
+     - SUPABASE_URL (无 PUBLIC): 这是 Studio 后端去连接 API 的地址，走内部网络更安全。
+
+
 docker compose -f /opt/supabase/docker-compose.yml up -d
 	或着 cd /opt/supabase && docker compose up -d
 
