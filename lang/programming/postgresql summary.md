@@ -1312,6 +1312,137 @@ Cloudflare 可能会校验请求的 Origin。如果你的 echoplayer.com 还没�
 
 
 
+
+
+
+Turnstile 网站上 Challenges unsolved 为什么看不到验证失败的原因
+
+Cloudflare Turnstile 的设计理念是 隐私优先 和 极简主义 ，它确实不像传统的防火墙或 WAF 那样提供详细的“错误日志”。
+
+你无法在仪表盘看到“失败原因”主要有以下几个设计原因：
+
+1. 安全隐患 (Security through Obscurity) :
+   如果 Cloudflare 详细告诉攻击者（或你的调试工具）“失败是因为 IP 信誉低”或者“失败是因为鼠标轨迹异常”，那么攻击者就可以针对性地优化他们的脚本来绕过验证。因此，它只返回一个模糊的“Unsolved”。
+2. 前端验证 vs 后端日志 :
+   
+   - 前端 (Dashboard) : 这里看到的 Challenges Issued vs Challenges Solved 只是一个统计数字。
+   - 客户端 (浏览器) : 真正的错误详情其实在 你浏览器的 Console 里。当验证失败时，Turnstile 的 JS SDK 会在控制台打印错误代码（如 Error 300xxx ）。
+     - 300030 : 域名不匹配 (Hostname Mismatch) —— 这是你之前最可能遇到的问题 。
+     - 600010 : 验证超时。
+   - 后端 (API) : 如果你的后端调用了 siteverify 接口，API 响应里会包含 error-codes 字段（如 invalid-input-response ），这才是查看具体原因的地方。但在你的场景下（纯前端组件未通过），请求还没到后端，所以只能看浏览器控制台。
+### 此时你该如何排查？
+既然 Dashboard 不显示，你唯一的“调试窗口”就是 浏览器开发者工具 ：
+
+1. 把 .env 改回你的真实 Site Key。
+2. 打开 Chrome 开发者工具 (F12) -> Console 标签页。
+3. 刷新页面，触发验证失败。
+4. 仔细看 Console 里的红色报错 。
+   - 如果看到 [Cloudflare Turnstile] Invalid site key -> Key 填错了。
+   - 如果看到 [Cloudflare Turnstile] Hostname mismatch -> 域名白名单没配对。
+总结 ：Cloudflare Dashboard 永远不会 显示具体的失败原因，它只负责统计。具体的“为什么挂了”，必须在发生错误的那个客户端（浏览器控制台）里看。
+
+
+
+
+
+
+Console 里的报错信息表示什么：api.js?render=explicit:1 [Cloudflare Turnstile] Error: 300010.
+b	@	api.js?render=explicit:1
+O	@	api.js?render=explicit:1
+content.js:2 2026-01-12T02:26:36.098Z [KISS-Translator] [INFO] TranslatorManager started.
+normal?lang=auto:1 [[[ERROR]]]: Uncaught TypeError: Q[rq(...)] is not a function
+normal?lang=auto:1 Uncaught TypeError: Q[rq(...)] is not a function
+    at wZ.wy (normal?lang=auto:1:204844)
+    at wZ.wh (normal?lang=auto:1:98371)
+    at wZ.wy (normal?lang=auto:1:204867)
+    at wZ.wh (normal?lang=auto:1:98371)
+    at wZ.wy (normal?lang=auto:1:204844)
+    at wZ.wh (normal?lang=auto:1:98371)
+normal?lang=auto:1 Uncaught Error: Uncaught TypeError: Q[rq(...)] is not a function
+    at wZ.wi (normal?lang=auto:1:208069)
+    at wZ.wh (normal?lang=auto:1:98371)
+
+
+Error: 300010 是最关键的信息。
+
+它的含义是： Invalid Hostname (域名不匹配) 。
+
+### 详细解释
+这个错误明确告诉你，你当前访问的域名（浏览器地址栏里的那个，比如 echoxxx.com:5173 或 localhost ） 不在 你 Cloudflare Turnstile 后台配置的 Hostname 白名单 里。
+
+### 为什么之前一直找不到原因？
+- Cloudflare Dashboard 不显示这个，是为了防止攻击者枚举你的配置。
+- 下方的那些 normal?lang=auto 报错是你的浏览器插件（翻译插件或类似工具）引起的，和 Turnstile 无关，属于噪音。
+### ✅ 解决方案
+请执行以下操作，问题将立即解决：
+
+1. 登录 Cloudflare Dashboard。
+2. 进入你的 Turnstile Site Settings。
+3. 找到 Hostnames (域名管理)。
+4. 添加 你当前正在使用的 所有 访问地址：
+   - echoxxx.com (如果你用这个域名访问)
+   - localhost (如果你在本地调试)
+   - 127.0.0.1 (如果你用 IP 访问)
+5. 保存。等待 1-2 分钟生效。
+6. 刷新你的网页。
+配置正确后， Error: 300010 就会消失，Turnstile 就能正常加载了。
+
+
+
+
+```
+
+
+
+```
+
+这是一个非常典型的 配置陷阱 。虽然看起来你都填对了，但还有一个极其关键的细节可能被忽略了： 端口号 。
+
+虽然 Cloudflare 文档说 Hostname 不需要填端口，但在实际运行中，如果你的应用运行在 非标准端口 （比如 :5173 ）且处于 开发模式 或 IP 直接访问 （即使有域名映射），Cloudflare 的安全机制可能会判定为“来源不匹配”。
+
+### 终极排查清单 (按优先级)
+请依次检查以下 3 点，只要有一点不对就会导致验证失败：
+
+1. Site Key 类型不匹配 (最可能原因)
+   
+   - 请检查你在 Cloudflare 后台申请的 Site Key 类型。
+   - 如果是 "Invisible" (隐形) 模式 : 这种模式对环境要求极高。如果你的前端代码没有完美处理异步加载，或者浏览器有一些插件，它会直接判定失败 (Challenges unsolved)。
+   - 建议 : 一定要先改成 "Managed" (托管) 模式 。Managed 模式会显示那个“我是人类”的复选框，这最容易调试，也最不容易被误杀。
+2. Hostname 的隐形限制
+   
+   - 你填了 echoxxx.com ，但如果你的浏览器实际解析 echoxxx.com 是指向 127.0.0.1 或局域网 IP（通过 hosts 文件），Cloudflare 有时会检测到这一点并拦截。
+   - 关键测试 : 为了彻底排除这个问题，请在 Cloudflare 后台的 Hostname 列表里， 把 127.0.0.1 和 localhost 也加进去 。
+   - 原因 : 即使你用域名访问，如果底层连接是回环地址，某些浏览器行为可能会让 Cloudflare 认为你是从本地发起的攻击。
+3. Secret Key 没配 (后端拦截)
+   
+   - 前端显示“验证失败”有时是因为后端（Supabase）拒绝了。
+   - 前端拿到 Token 后发给 Supabase，如果 Supabase 里的 Turnstile Secret Key 配错了，或者根本没配，Supabase 会告诉前端“验证失败”。
+   - 请确认 : 你是否已经在 Supabase Dashboard (Auth -> Security -> Bot Protection) 里填入了对应的 Secret Key ？
+### 建议操作步骤
+为了立马解决问题，请按这个顺序做：
+
+1. 第一步 (Cloudflare 后台) :
+   
+   - 把 Widget Mode 改为 Managed (如果不是的话)。
+   - 在 Hostnames 里添加一行： 127.0.0.1 。
+   - 在 Hostnames 里添加一行： localhost 。
+   - 保存。
+2. 第二步 (代码) :
+   
+   - 在 Login.svelte 中，给 render 函数添加 action 参数（虽然不是必须，但有助于通过风控）：
+     ```
+     window.turnstile.render('#turnstile-widget', {
+       sitekey: import.meta.env.VITE_TURNSTILE_SITE_KEY,
+       action: 'login', // 添加这一行
+       // ... 其他回调
+     });
+     ```
+3. 第三步 (测试) :
+   
+   - 等待 2 分钟让配置生效。
+   - 强制刷新 浏览器 (Ctrl+F5) 再试。
+如果做完这三步还不行，那 99% 是 Supabase 后端的 Secret Key 配置问题，或者 Supabase 的 Docker 环境变量没生效。
+
 ```
 
 
