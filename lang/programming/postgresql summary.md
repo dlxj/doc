@@ -487,8 +487,8 @@ apt install -y ansible python3-jmespath
 	# 好像不用，一键安装已经有了
 
 
-localedef -i en_US -f UTF-8 en_US.UTF-8
-localectl set-locale LANG=en_US.UTF-8
+localedef -i en_US -f UTF-8 en_US.UTF-8 \
+  && localectl set-locale LANG=en_US.UTF-8
   # 强烈建议 使用全新安装的操作系统环境，并将 en_US 设置为主要语言
   
 
@@ -715,6 +715,9 @@ Host tencent_tokyo
 
 https://github.com/orgs/supabase/discussions/33178
 
+- https://blog.csdn.net/m0_52537869/article/details/153853387 Supabase 自部署完整指南
+- 
+
 ```
 
 git clone --depth 1 https://github.com/supabase/supabase \
@@ -745,6 +748,23 @@ git clone --depth 1 https://github.com/supabase/supabase \
 长话短说：Supabase自称开源，但他们开源的是个半成品项目，目的就是为了让你用他们的付费Supabase平台。
 
 别浪费时间了，换家公司吧。Supabase只在乎钱。
+
+
+
+
+Supabase 是开源的，但它的 Edge Functions 管理后台（FaaS Backend）并未开源。这意味着：
+
+您可以在本地使用 supabase start 运行边缘函数（模拟环境）；
+
+也可以部署一个包含 edge-runtime 的容器；
+
+但您无法通过 Studio 创建、编辑或部署函数；
+
+也无法通过 CLI 将代码推送到自建实例；
+
+许多企业在尝试自建 Supabase 时，发现 Edge Functions 功能“不可用”或“只能靠手动脚本部署”，最终放弃使用这一核心能力。
+
+
 
 ```
 
