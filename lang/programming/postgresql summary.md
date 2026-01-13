@@ -717,16 +717,34 @@ https://github.com/orgs/supabase/discussions/33178
 
 ```
 
-git clone --depth 1 https://github.com/supabase/supabase
-
-cd supabase/docker
-
-snap install docker
-
-docker compose pull
+git clone --depth 1 https://github.com/supabase/supabase \
+  && cd supabase/docker \
+  && snap install docker \
+  && cp .env.example .env \
+  && docker compose pull
 
 
 
+
+```
+
+
+
+```
+
+卡在supabase-selfhost好几个星期了。
+
+总算运行起来了（公司YouTube故意不显示终端命令行，这帮家伙藏得挺巧）。多亏 chatgpt 帮我生成了命令行，谢天谢地，终于成功了。
+
+访问了自托管Supabase的管理区域（Digital Ocean EC2实例）。
+
+然后你猜怎么着——好多功能都缺失，连查询/函数都改不了名，也删不掉（Supabase不是有这个功能吗？）
+
+最基本的API获取完全没法用。一直超时，根本没地方调试。
+
+长话短说：Supabase自称开源，但他们开源的是个半成品项目，目的就是为了让你用他们的付费Supabase平台。
+
+别浪费时间了，换家公司吧。Supabase只在乎钱。
 
 ```
 
