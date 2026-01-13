@@ -711,6 +711,10 @@ Host tencent_tokyo
 
 
 
+### 源码构建
+
+https://github.com/orgs/supabase/discussions/33178
+
 
 
 ### 安装前提
