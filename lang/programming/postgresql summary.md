@@ -1543,11 +1543,7 @@ Error: 300010 是最关键的信息。
 
 
 
-```
 
-
-
-```
 
 这是一个非常典型的 配置陷阱 。虽然看起来你都填对了，但还有一个极其关键的细节可能被忽略了： 端口号 。
 
@@ -1583,7 +1579,7 @@ Error: 300010 是最关键的信息。
 2. 第二步 (代码) :
    
    - 在 Login.svelte 中，给 render 函数添加 action 参数（虽然不是必须，但有助于通过风控）：
-     ```
+```
      window.turnstile.render('#turnstile-widget', {
        sitekey: import.meta.env.VITE_TURNSTILE_SITE_KEY,
        action: 'login', // 添加这一行
@@ -1616,7 +1612,8 @@ I have:
 4. Restarted the auth service.
 
 vi /opt/supabase/.env
-## Captcha Config
+#### Captcha Config
+```
 GOTRUE_SECURITY_CAPTCHA_ENABLED=true
 GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
 GOTRUE_SECURITY_CAPTCHA_SECRET=这里填Secret Key
@@ -1633,7 +1630,7 @@ vi /root/pigsty/pigsty.yml
               GOTRUE_SECURITY_CAPTCHA_PROVIDER: turnstile
               GOTRUE_SECURITY_CAPTCHA_SECRET: 这里填Secret Key
               GOTRUE_SECURITY_CAPTCHA_SITE_KEY: 这里填Site Key
-              
+
 
 vi /opt/supabase/docker-compose.yml 
       # use absolute URLs for mailer URL paths
@@ -1651,35 +1648,51 @@ vi /opt/supabase/docker-compose.yml
 
 
 sed -i '/GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}/a \      GOTRUE_SECURITY_CAPTCHA_ENABLED: ${GOTRUE_SECURITY_CAPTCHA_ENABLED}\n      GOTRUE_SECURITY_CAPTCHA_PROVIDER: ${GOTRUE_SECURITY_CAPTCHA_PROVIDER}\n      GOTRUE_SECURITY_CAPTCHA_SECRET: ${GOTRUE_SECURITY_CAPTCHA_SECRET}\n      GOTRUE_SECURITY_CAPTCHA_SITE_KEY: ${GOTRUE_SECURITY_CAPTCHA_SITE_KEY}' /opt/supabase/docker-compose.yml 
- 
- 
+
+
  cd /opt/supabase && docker compose up -d auth
- 	# 重启 docker，启用 auth
- 
+```
+
+
+ #### 重启 docker，启用 auth
+
+
+
+
+
+```
+
  grep -A 5 "Captcha Config" /opt/supabase/.env
- 
- 
+
  我已经为你配置好了 Cloudflare Turnstile。你需要完成最后一步：填入你自己的密钥。
+ 
 
 ### 1. 修改配置文件
+
 请打开 /opt/supabase/.env 文件，找到文件末尾我新添加的 Captcha Config 部分，并将 <YOUR_TURNSTILE_...> 替换为你从 Cloudflare 获取的真实密钥：
 
-​```
+
 # /opt/supabase/.env
 
 ## Captcha Config
+
 GOTRUE_SECURITY_CAPTCHA_ENABLED=true
 GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
 GOTRUE_SECURITY_CAPTCHA_SECRET=your_secret_key_here  # 替换这里
 GOTRUE_SECURITY_CAPTCHA_SITE_KEY=your_site_key_here  # 替换这里
-​```
+
+
 ### 2. 重启服务
+
 修改完 .env 后，请在终端执行以下命令使配置生效：
 
-​```
+
+
 cd /opt/supabase/ && docker compose up -d auth
-​```
+
+
 ### 3. 持久化配置 (可选但推荐)
+
 我已经同步修改了 pigsty.yml 。如果你未来重新运行 Pigsty 的安装脚本，请确保也在 pigsty.yml 中填入真实的密钥，否则它会覆盖回占位符。
 
 配置详情：
@@ -1690,22 +1703,13 @@ cd /opt/supabase/ && docker compose up -d auth
   - .env (已添加)
   - docker-compose.yml (已注入环境变量)
   - pigsty.yml (已备份配置)
- 
- 
-
-```
 
 
-
-
-
-
-
-```
 
 通过分析你的项目（Svelte + Supabase），我为你制定并实施了集成 Cloudflare Turnstile 的方案。相比传统的图形验证码，Turnstile 用户体验更好（通常只需点击一下或完全无感），且隐私保护更强。
 
 ### 已经完成的前端修改
+
 我修改了两个文件来集成前端验证逻辑：
 
 1. index.html :
@@ -1715,63 +1719,72 @@ cd /opt/supabase/ && docker compose up -d auth
    - 实现了验证码的渲染和 Token 获取逻辑。
    - 在 handleLogin 和 handleSignUp 中，将获取到的 captchaToken 传递给 Supabase。
    - 注意 ：代码中目前使用的是 Cloudflare 的 测试 Site Key ( 1x00000000000000000000AA )，它总是会验证通过。你需要替换为你自己的 Key。
-### 你需要做的配置（关键）
-为了让这套机制真正生效，你需要在 Cloudflare 和 Supabase 后台进行配置：
- 1. Cloudflare 端 (获取 Keys)
-1. 登录 Cloudflare Dashboard 。
-2. 进入 Turnstile 菜单，点击 "Add Site"。
-3. 填写站点名称和你的域名（本地测试填 localhost ）。
-4. 创建后，你会获得 Site Key 和 Secret Key 。
-5. 替换代码 ：打开 src/lib/Login.svelte ，找到第 16 行，将 sitekey 的值替换为你申请到的 Site Key 。 2. Supabase 端 (开启保护)
-这是防止刷接口的关键步骤，开启后 Supabase 会拒绝没有有效 Token 的注册/登录请求。
 
-1. 登录 Supabase Dashboard 。
-2. 进入你的项目，点击左侧菜单的 Authentication -> Security -> Bot Protection (或者叫 Captcha Protection)。
-3. 在 Cloudflare Turnstile 部分开启开关。
-4. 填入你在 Cloudflare 申请到的 Secret Key (注意是 Secret Key，不是 Site Key)。
-5. 保存设置。
+### 你需要做的配置（关键）
+
+为了让这套机制真正生效，你需要在 Cloudflare 和 Supabase 后台进行配置：
+
+  1. Cloudflare 端 (获取 Keys)
+ 2. 登录 Cloudflare Dashboard 。
+ 3. 进入 Turnstile 菜单，点击 "Add Site"。
+ 4. 填写站点名称和你的域名（本地测试填 localhost ）。
+ 5. 创建后，你会获得 Site Key 和 Secret Key 。
+ 6. 替换代码 ：打开 src/lib/Login.svelte ，找到第 16 行，将 sitekey 的值替换为你申请到的 Site Key 。 2. Supabase 端 (开启保护)
+    这是防止刷接口的关键步骤，开启后 Supabase 会拒绝没有有效 Token 的注册/登录请求。
+
+ 7. 登录 Supabase Dashboard 。
+ 8. 进入你的项目，点击左侧菜单的 Authentication -> Security -> Bot Protection (或者叫 Captcha Protection)。
+ 9. 在 Cloudflare Turnstile 部分开启开关。
+ 10. 填入你在 Cloudflare 申请到的 Secret Key (注意是 Secret Key，不是 Site Key)。
+ 11. 保存设置。
+
 ### 它是如何工作的？
+
 1. 用户操作 ：用户在前端点击登录/注册前，必须完成 Turnstile 验证（通常是自动的）。
 2. 获取 Token ：验证通过后，Cloudflare 返回一个临时的 captchaToken 。
 3. 发送请求 ：前端将这个 Token 连同邮箱密码一起发给 Supabase。
 4. 后端验证 ：Supabase 收到请求后，自动拿着 Token 去 Cloudflare 验证。
    - 如果 Token 有效：允许注册/登录。
    - 如果 Token 无效或缺失：直接拒绝请求，返回错误。
-这样就实现了从前端到后端的完整防刷和人机验证。
+     这样就实现了从前端到后端的完整防刷和人机验证。
 
 
-```
-
+​```
 
 
 #### Supabase 沙盒为什么没看到 Turnstile 选项
 
-```
+​```
 
 cd /opt/supabase && docker compose up -d auth   执行这个命令后，Supabase 8000 端口沙盒里的 Authentication 面面为什么没有看到有  Cloudflare Turnstile 选项
 
 这是一个正常的现象， 请不用担心 。
 
 ### 原因解释
+
 Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 Dashboard（控制面板）上有一些区别：
 
 1. UI 不完全同步 ：自托管的 Studio 面板主要用于管理数据和可视化，但对于许多 基础设施级别的配置 （如 Auth 配置、SMTP、Captcha），它往往 不会 在界面上显示配置选项。
+
 2. 配置即代码 (Config-as-Code) ：在自托管模式下，这些功能完全依赖环境变量（ .env ）控制，而不是通过 UI 点击开关。
+
 3. 已验证生效 ：我刚刚检查了运行中的容器，确认配置已经生效：
 
    # 容器内部实际生效的环境变量
+
    GOTRUE_SECURITY_CAPTCHA_ENABLED=true
    GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
 
 ### 下一步：前端集成
+
 既然后端已经开启了验证，你需要在 前端代码 中加入 Cloudflare Turnstile 的组件。
 
 1. 在 HTML/React 中引入 Turnstile Widget ：
    你需要获取 Turnstile 的 token 。
 2. 调用 Supabase Auth API 时带上 Token ：
    在使用 supabase-js 注册或登录时，传入 captchaToken 。
-   
-```
+
+​```
    // 注册示例
    const { data, error } = await supabase.auth.signUp({
      email: 'example@email.com',
@@ -1780,9 +1793,9 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
        captchaToken: '这里填入从Turnstile组件获取到的token'
      }
    })
-   ```
+​```
 
-   ```
+```
    // 登录示例 (如果登录也开启了验证)
    const { data, error } = await supabase.auth.signInWithPassword({
      email: 'example@email.com',
@@ -1792,11 +1805,10 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
      }
    })
    ```
+
 只要前端传了 Token，后端就会自动去 Cloudflare 验证。如果验证失败或没传 Token，后端会返回错误。
 
    ```
-
-
 
 
 
@@ -1808,36 +1820,42 @@ https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/imple
 
 - 基于Supabase实现短信验证登录
 
+
+
 ```
+
 阿里云确实有对应的服务，叫做 阿里云验证码 2.0 (Aliyun Captcha 2.0) 。它在国内的加载速度和稳定性确实优于 Cloudflare，但在 Supabase 项目中集成它会 复杂很多 。
 
 ### 核心差异对比
+
 特性 Cloudflare Turnstile (当前方案) 阿里云验证码 2.0 Supabase 支持 原生支持 (后台直接配置) 不支持 (原生 Auth 接口无法验证) 开发成本 🟢 低 (仅前端修改) 🔴 高 (需要编写后端 Edge Function) 国内体验 🟡 尚可 (可用但稍慢) 🟢 极佳 (国内节点) 原理 Token 直接传给 Supabase 验证 需通过自定义后端中转验证
 
 ### 如果一定要用阿里云，要怎么做？
+
 因为 Supabase 的 supabase.auth.signUp 接口只认 Cloudflare 和 hCaptcha 的 Token，你无法直接把阿里云的 Token 传进去。
 
 如果你决定切换到阿里云，我们需要彻底重构登录流程，架构如下：
 
 1. 前端改造 ( Login.svelte ) :
-   
+
    - 移除 Turnstile 代码，换成阿里云验证码 SDK。
    - 不再调用 supabase.auth.signUp 。
    - 改为调用 一个自定义的 Supabase Edge Function（例如 rpc/login_with_aliyun ）。
 2. 后端开发 (Supabase Edge Function) :
-   
+
    - 你需要创建一个 Edge Function（类似后端 API）。
    - 这个 Function 接收 email , password , 和阿里云的 verify_token 。
    - 第一步 ：服务器端调用阿里云 API 验证 Token 是否有效。
    - 第二步 ：如果验证通过，使用 Supabase Admin 权限 ( service_role key) 帮用户创建账户或登录。
    - 第三步 ：把登录后的 Session 返回给前端。
+
 ### 建议
+
 建议先试用 Cloudflare Turnstile。 Cloudflare Turnstile 在中国大陆通常是可以正常使用的（虽然速度不如阿里云）。鉴于 Supabase 对它的原生支持非常完美，能为你节省大量的后端开发和维护工作。
 
 只有当你发现大量国内用户无法加载验证码时，再考虑切换到阿里云验证码 + Edge Function 的方案。
 
-```
-
+​```
 
 
 
@@ -1857,13 +1875,7 @@ https://www.v2ex.com/t/1149062
   
   无论是什么样的验证码都无法 100%阻止所有机器人，而是增加其操作成本。虽然验证本身无交互，但通过 PoW （工作量证明）机制，可以限制单个用户高频请求；多个不同用户确实可以慢慢通过，但只要你设置足够的难度，就能有效防止批量滥用，比如刷接口、薅羊毛、撞库等。本质上就是一种手段通过提高操作成本（ PoW 计算需要时间）来放慢访问的速度，实现类似于速率限制，防止 DDOS 的效果
   
-  ```
-
-  
-
-```
-
-
+​```
 
 ```
 
