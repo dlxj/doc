@@ -716,7 +716,7 @@ Host tencent_tokyo
 https://github.com/orgs/supabase/discussions/33178
 
 - https://blog.csdn.net/m0_52537869/article/details/153853387 Supabase 自部署完整指南
-- 
+- https://github.com/supabase-community/supabase-mcp  
 
 ```
 
@@ -1296,6 +1296,8 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 
 #### Edge function 实现验证
+
+https://juejin.cn/post/7560879441485217818  Supabase **Edge Functions 开发指南**
 
 https://supabase.com/docs/guides/functions/examples/cloudflare-turnstile
 
