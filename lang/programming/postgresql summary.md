@@ -715,6 +715,23 @@ Host tencent_tokyo
 
 https://github.com/orgs/supabase/discussions/33178
 
+```
+
+git clone --depth 1 https://github.com/supabase/supabase
+
+cd supabase/docker
+
+snap install docker
+
+docker compose pull
+
+
+
+
+```
+
+
+
 
 
 ### 安装前提
