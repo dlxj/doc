@@ -1595,6 +1595,23 @@ const { data, error } = await supabase.functions.invoke('login_with_aliyu
 
 
 
+### edge function 正常登录
+
+```
+
+curl --location 'http://43.153.xx.xx:8000/functions/v1/login_with_aliyun' \
+  --header 'Content-Type: application/json' \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3ODAxNjAwLCJleHAiOjE5MjU1NjgwMDB9.GtkruGMgbxm3kS_1eIHKyz0uaVjhvlWLvqUuS5b-DRc' \
+  --data-raw '{
+    "email": "123456@qq.com",
+    "password": "123456",
+    "captchaVerifyParam": "dummy_token"
+  }'
+
+```
+
+
+
 
 
 ### Cloudflare Turnstile 身份验证
