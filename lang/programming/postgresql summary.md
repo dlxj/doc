@@ -1418,6 +1418,101 @@ Supabase 知道去哪找，是因为您在 docker-compose.yml 里：
 
 
 
+### self-hosted supabase 如何部署函数，效果类似 supabase functions deploy login_with_aliyun --no-verify-jwt 这个命令一样
+
+```
+
+针对 Self-Hosted Supabase (私有化部署) 环境，部署 login_with_aliyun 并实现类似 supabase functions deploy ... --no-verify-jwt 的效果，主要通过修改 docker-compose.yml 来配置 Edge Runtime 容器。
+
+我已经为您完成了相关配置修改，以下是详细操作步骤：
+
+### 1. 核心配置修改
+我已修改了 docker-compose.yml 文件：
+
+- 指定运行函数 : 将启动命令从默认的 hello-world 修改为 login_with_aliyun 。
+- 配置 JWT 验证 : 添加 VERIFY_JWT=false 环境变量，这等同于 --no-verify-jwt 标志，允许未登录用户调用此接口。
+- 预留密钥位置 : 添加了阿里云 Access Key 的环境变量占位符。
+### 2. 您需要执行的操作
+请打开 Supabase/docker_functions/docker-compose.yml 文件，填入您真实的阿里云密钥：
+
+​```
+    environment:
+      # ...
+      # 请填入您的真实密钥
+      - ALIYUN_ACCESS_KEY_ID=您的AccessKeyId
+      - ALIYUN_ACCESS_KEY_SECRET=您的AccessKeySecret
+      # 已设置为 false，无需修改
+      - VERIFY_JWT=false 
+​```
+### 3. 部署/重启服务
+修改完成后，在终端中运行以下命令重启服务：
+
+​```
+cd /root/huggingface_echodict/Supabase/docker_functions
+docker compose up -d
+​```
+### 4. 调用说明
+在自托管模式下，Edge Runtime 直接运行该函数。假设您的 Docker 宿主机 IP 为 YOUR_IP ，调用地址通常为：
+
+http://YOUR_IP:10000/
+
+前端调用代码示例：
+
+​```
+// 注意：自托管直接调用 Edge Runtime 时，URL 需要指向您的 Docker 服务端口
+const response = await fetch('http://YOUR_IP:10000/', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    email: 'user@example.com',
+    password: 'password',
+    captchaVerifyParam: 'aliyun_token'
+  })
+})
+​```
+我已经将上述自托管部署说明添加到了 README.md 的末尾，供您随时参考。
+
+```
+
+
+
+### 如果需要这个配置只针对 login_with_aliyun 这一个函数怎么办
+
+```
+
+针对只需要对 login_with_aliyun 函数禁用 JWT 验证的需求，Supabase Edge Runtime 提供了一个专门的环境变量配置方式。
+
+我已为您更新了 docker-compose.yml 和 README.md ，采用了更精细的配置：
+
+### 1. 使用 Per-Function 配置 (已修改)
+在 docker-compose.yml 中，我移除了全局的 VERIFY_JWT=false ，改为：
+
+​```
+    environment:
+      # ...
+      # 格式: PER_FUNCTION_JWT_VERIFY_<function_name>=<true|false>
+      - PER_FUNCTION_JWT_VERIFY_login_with_aliyun=false
+​```
+这样配置后：
+
+- login_with_aliyun : 任何人都可以调用（公开接口）。
+- 其他函数 : 仍然需要有效的 JWT 才能调用（受保护）。
+### 2. 关于入口配置 (Main Service)
+为了让这个改动更合理，我也顺便调整了 command 。
+此前是将 login_with_aliyun 作为主服务 ( --main-service )，这会导致所有请求都由它处理。
+我现在创建了一个简单的 main 函数作为默认入口，并将 command 指向它：
+
+​```
+    command: start --main-service /usr/services/main
+​```
+这为未来支持多个函数留出了空间。但在 单函数模式 下，您也可以改回直接指向 login_with_aliyun 。
+
+### 总结
+您现在只需确保 docker-compose.yml 中包含： - PER_FUNCTION_JWT_VERIFY_login_with_aliyun=false 即可实现仅针对该函数的免鉴权访问。
+
+
+```
+
 
 
 
