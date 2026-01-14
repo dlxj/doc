@@ -1764,6 +1764,30 @@ vi huggingface_echodict/Supabase/docker_functions/functions/main/index.ts
 curl http://localhost:10000/
 	# 这样能成功触发断点
 
+
+
+# debugger; 能命中，vscdoe 的断点是灰的
+
+debugger; 断下后看它的文件路径，写到 .vsocde 的配置里
+
+太棒了！找到这个路径 /var/tmp/sb-compile-edge-runtime/services/main/index.ts 是解决问题的关键。
+
+这表明 Edge Runtime 并没有直接运行挂载的代码，而是运行了 编译后的版本 ，并且编译后的代码位于容器内的 /var/tmp/sb-compile-edge-runtime/services/ 目录下。这就是为什么之前的映射（针对 /usr/services ）失效的原因。
+
+### 修复方案
+我已经更新了 .vscode/launch.json ，添加了针对该编译路径的映射规则：
+
+​```
+"sourceMapPathOverrides": {
+  // ... 原有规则保持不变 ...
+  "/var/tmp/sb-compile-edge-runtime/services/*": "$
+  {workspaceFolder}/functions/*",
+  "file:///var/tmp/sb-compile-edge-runtime/services/*": "$
+  {workspaceFolder}/functions/*"
+}
+​```
+### 验证步骤
+
 ```
 
 
