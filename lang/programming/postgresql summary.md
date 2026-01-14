@@ -1366,6 +1366,18 @@ const { data, error } = await loginWithAliyun(supabase, {
 
 
 
+### supabase 怎么知道去哪里找 login_with_aliyun 这个函数
+
+```
+
+
+
+```
+
+
+
+
+
 
 
 ### Cloudflare Turnstile 身份验证
