@@ -1283,6 +1283,91 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 
 
+
+
+### 私有化部署 login_with_aliyun 不能以 await supabase.auth.login_with_aliyun 这种方式调用吗
+
+```
+
+私有化部署 login_with_aliyun 不能以 await supabase.auth.login_with_aliyun 这种方式调用吗
+
+不可以。
+
+在 Supabase 的客户端 SDK ( @supabase/supabase-js ) 中， supabase.auth 下的方法（如 signInWithPassword , signUp 等）是 官方固定的原生方法 。
+
+您自己编写的 Edge Function (如 login_with_aliyun ) 属于自定义的后端逻辑，不能自动“挂载”到 supabase.auth 对象上。
+
+### 1. 正确的调用方式
+调用 Edge Function 的标准方式是使用 supabase.functions.invoke ：
+
+​```
+const { data, error } = await supabase.functions.invoke('login_with_aliyun', {
+  body: {
+    email: 'user@example.com',
+    password: 'password',
+    captchaVerifyParam: 'aliyun_token_xxx'
+  }
+})
+​```
+### 2. 为什么不能直接用 auth.login_with_aliyun？
+- 命名空间不同 ： supabase.auth 专门用于与 Supabase 的 GoTrue (Auth) 服务通信。
+- 服务不同 ：您的函数运行在 Edge Functions 服务中，而 auth 方法请求的是 Auth 服务。两者的 API 路径完全不同（ /functions/v1/... vs /auth/v1/... ）。
+### 3. 如果您非常想要这种写法 (封装建议)
+如果您希望在前端代码中保持整洁，或者为了统一调用风格，您可以自己封装一个辅助函数，或者扩展 supabase 实例（虽然不推荐直接修改 SDK 原型，但在应用层封装是很好的实践）。
+
+创建一个 auth_helper.js :
+
+​```
+// utils/auth.js
+
+/**
+ * 封装自定义的阿里云登录逻辑
+ */
+export async function loginWithAliyun(supabase, { email, password, 
+captchaVerifyParam }) {
+  // 调用 Edge Function
+  const { data, error } = await supabase.functions.invoke('login_with_aliyun', {
+    body: { email, password, captchaVerifyParam }
+  })
+
+  if (error) return { data: null, error }
+
+  // 核心步骤：如果函数返回了 session，我们需要手动在客户端设置它
+  // 这样 supabase.auth.getUser() 等方法才能获取到登录状态
+  if (data?.session) {
+    const { error: sessionError } = await supabase.auth.setSession(data.session)
+    if (sessionError) return { data: null, error: sessionError }
+  }
+
+  return { data, error: null }
+}
+​```
+在业务代码中使用:
+
+​```
+import { loginWithAliyun } from './utils/auth'
+
+// 使用起来就像原生的一样方便
+const { data, error } = await loginWithAliyun(supabase, {
+  email: '...',
+  password: '...',
+  captchaVerifyParam: '...'
+})
+​```
+### 总结
+- 原生 SDK 不支持 supabase.auth.login_with_aliyun 这种魔法。
+- 必须使用 supabase.functions.invoke 。
+- 关键点 ：Edge Function 返回 session 后，前端必须调用 supabase.auth.setSession(data.session) 才能真正完成“登录态”的建立。
+
+
+```
+
+
+
+
+
+
+
 ### Cloudflare Turnstile 身份验证
 
 - https://github.com/WonderLand33/prompt-optimizer
@@ -1298,6 +1383,8 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 #### Edge function 实现验证
 
 https://juejin.cn/post/7560879441485217818  Supabase **Edge Functions 开发指南**
+
+- https://juejin.cn/post/7568796644349018112  **Supabase CLI** 本地开发与数据库操作指南
 
 https://supabase.com/docs/guides/functions/examples/cloudflare-turnstile
 
