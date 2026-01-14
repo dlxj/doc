@@ -1755,8 +1755,14 @@ docker logs docker_functions-edge-runtime-1
 docker exec docker_functions-edge-runtime-1 ls -R /usr/services
 
 
+vi huggingface_echodict/Supabase/docker_functions/functions/main/index.ts
+  // Wait for 10 seconds to allow debugger to attach
+  await new Promise(r => setTimeout(r, 10000));
+  debugger; // 强制断点，测试调试连接
+  	# 硬断点能成功命中
+
 curl http://localhost:10000/
-	# 
+	# 这样能成功触发断点
 
 ```
 
