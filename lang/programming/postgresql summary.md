@@ -1614,6 +1614,45 @@ curl --location 'http://43.153.xx.xx:8000/functions/v1/login_with_aliyun' \
 
 
 
+### edge function 能不能用 nodejs 来写，不用 Deno？
+
+```
+
+edge function 能不能用 nodejs 来写，不用 Deno
+
+这是一个关于 Supabase Edge Functions 技术栈选择的问题。
+
+简短回答：不能直接用 Node.js 运行时，但可以使用 Node.js 的 NPM 包。
+
+详细解释：
+
+1. 运行时限制 ：
+   Supabase Edge Functions 强制使用 Deno Runtime 。这是 Supabase 的核心设计决定，旨在利用 Deno 的快速启动（Edge 场景）、安全性以及对 Web 标准（Request/Response API）的原生支持。您无法在 Supabase Edge Functions 容器中将其切换为 Node.js 运行时。
+2. 兼容性 (Good News) ：
+   Deno 已经极大地提高了对 Node.js 的兼容性。
+   
+   - NPM 包支持 ：您可以直接在 Deno 中引入 NPM 包。
+     例如，您现在的代码中已经这样用了： index.ts
+     ```
+     import Client, { VerifyIntelligentCaptchaRequest } from "npm:@alicloud/
+     captcha20230305"
+     import { Config } from "npm:@alicloud/openapi-client"
+     ``` 这种 npm: 前缀的导入方式让您可以直接使用 Node.js 生态的库。
+   - Node内置模块 ：Deno 支持 node:fs , node:path 等大部分 Node.js 内置模块。
+3. 如果您必须用纯 Node.js 环境 ：
+   如果您有遗留代码完全无法迁移到 Deno，或者极其依赖某些 Deno 尚不支持的 Node.js 特性（虽然现在很少了），您有以下替代方案：
+   
+   - Docker 容器 (自托管优势) ：既然您是自托管 (Self-Hosted)，您完全可以编写一个标准的 Node.js Express/Fastify 服务，将其打包成 Docker 镜像，在 docker-compose.yml 中运行，并挂载到 Kong 网关的一个新路由下（例如 /node-api/* ）。
+   - 云函数替代 ：使用 AWS Lambda, Vercel Serverless Functions 等原生支持 Node.js 的平台，然后从 Supabase 调用。
+结论建议 ：
+既然您已经在用 npm: 导入阿里云 SDK 并且代码能跑通， 建议继续使用当前的 Deno 环境 。您其实已经在用 "Node.js 的库" 在写 "Deno 的代码" 了，这是目前最顺滑的路径。
+
+```
+
+
+
+
+
 ### Cloudflare Turnstile 身份验证
 
 - https://github.com/WonderLand33/prompt-optimizer
