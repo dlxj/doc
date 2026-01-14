@@ -1517,6 +1517,86 @@ const response = await fetch('http://YOUR_IP:10000/', {
 
 
 
+### 修改 docker-compose 让它融入 Supabase 网络
+
+```
+
+docker-compose down && docker-compose up -d
+
+docker ps --filter "name=docker_functions-edge-runtime-1"
+
+docker ps --filter "name=supabase-kong"
+
+ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3ODAxNjAwLCJleHAiOjE5MjU1NjgwMDB9.GtkruGMgbxm3kS_1eIHKyz0uaVjhvlWLvqUuS5b-DRc"
+curl -i -X POST http://localhost:8000/functions/v1/login_with_aliyun \
+  -H "Authorization: Bearer $ANON_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com", "password":"password"}'
+  
+  
+ ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3ODAxNjAwLCJleHAiOjE5MjU1NjgwMDB9.GtkruGMgbxm3kS_1eIHKyz0uaVjhvlWLvqUuS5b-DRc"
+
+echo "Testing Direct Access:"
+curl -i -X POST http://localhost:10000/login_with_aliyun \
+  -H "Authorization: Bearer $ANON_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com", "password":"password"}'
+
+echo -e "\n\nTesting via Kong:"
+curl -i -X POST http://localhost:8000/functions/v1/login_with_aliyun \
+  -H "Authorization: Bearer $ANON_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@example.com", "password":"password"}'
+
+
+### 网络集成完成
+我已经修改了您的 docker-compose.yml ，将独立的 Edge Runtime 容器成功加入了 Supabase 的主网络 ( supabase_default )。
+
+主要变更：
+
+1. 加入网络 ：配置容器连接到外部的 supabase_default 网络。
+2. 设置别名 ：给容器设置了网络别名 functions 。这非常关键，因为 Kong 网关默认配置就是转发给 http://functions:9000 。
+3. 无缝集成 ：现在您的容器虽然是独立部署的，但在网络层面表现得就像是 Supabase 官方堆栈的一部分。
+修改后的配置片段： docker-compose.yml
+
+​```
+services:
+  edge-runtime:
+    # ... 其他配置保持不变 ...
+    networks:
+      supabase_default:
+        aliases:
+          - functions  # 让 Kong 认为这就是那个 "functions" 服务
+
+networks:
+  supabase_default:
+    external: true     # 使用 Supabase 主堆栈已创建的网络
+​```
+### 验证结果
+1. 容器状态 ：容器已重启并正常运行。
+2. 直接访问测试 ： curl http://localhost:10000/login_with_aliyun -> 成功 (返回 400 Bad Request，证明服务可达)。
+3. Kong 网关测试 ： curl http://localhost:8000/functions/v1/login_with_aliyun -> 连接建立成功 。
+### 现在您可以：
+直接在前端代码中使用标准调用方式，无需任何额外配置：
+
+​```
+const { data, error } = await supabase.functions.invoke('login_with_aliyun', {
+  body: { 
+    email: 'user@example.com', 
+    password: 'password', 
+    captchaVerifyParam: 'aliyun_token_xxx' 
+  }
+})
+​```
+原理解释 ：
+当您调用 invoke 时，请求发送给 Kong (端口 8000) -> Kong 根据路由规则转发给内部主机名 functions (端口 9000) -> Docker 网络将其解析到您的新容器 -> 您的 main/index.ts 接收请求并路由到 login_with_aliyun 。
+
+```
+
+
+
+
+
 ### Cloudflare Turnstile 身份验证
 
 - https://github.com/WonderLand33/prompt-optimizer
