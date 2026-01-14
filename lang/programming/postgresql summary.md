@@ -1711,12 +1711,11 @@ services:
     volumes:
       - ./functions:/usr/services
       
-    command: start --inspect=0.0.0.0:9229 /usr/services/main
-    	# --main-service 无需调试
+    command: start --inspect=0.0.0.0:9229 --inspect-main --main-service /usr/services/main
+    	# 调试模式
 
 
 vi hugingface_echodict/Supabase/docker_functions/.vscode/launch.json
-
 {
   "version": "0.2.0",
   "configurations": [
@@ -1728,13 +1727,36 @@ vi hugingface_echodict/Supabase/docker_functions/.vscode/launch.json
       "address": "localhost",
       "localRoot": "${workspaceFolder}/functions",
       "remoteRoot": "/usr/services",
+      "sourceMapPathOverrides": {
+        "file:///usr/services/*": "${workspaceFolder}/functions/*"
+      },
       "skipFiles": ["<node_internals>/**"]
     }
   ]
 }
 
+可以的。 edge-runtime 本质上是基于 Deno 的，支持 V8 Inspector 协议，因此完全可以使用 VS Code 进行附加调试。
+
+要开始调试，请执行以下步骤：
+
+1. 重启 Docker 容器 以应用配置更改：
+   ```
+docker compose down \
+  && docker compose up -d
+   ```
+2. 在 VS Code 中，点击左侧的 运行和调试 (Run and Debug) 图标。
+3. 在下拉菜单中选择 "Attach to Edge Runtime" 。
+4. 点击绿色的播放按钮（或按 F5）。
+5. 现在，你可以在 Edge Function 代码（例如 functions/signup_with_aliyun/index.ts ）中打断点，当请求触发该函数时，VS Code 就会断在相应位置。
 
 
+docker logs docker_functions-edge-runtime-1
+
+docker exec docker_functions-edge-runtime-1 ls -R /usr/services
+
+
+curl http://localhost:10000/
+	# 
 
 ```
 
