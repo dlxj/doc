@@ -1696,6 +1696,48 @@ edge function 有没有可能前端通过调用 await supabase.auth.signUp 之�
 
 
 
+### vscode 附加调试 edge function
+
+```
+
+vi huggingface_echodict/Supabase/docker_functions/docker-compose.yml
+
+services:
+  edge-runtime:
+    image: supabase/edge-runtime:v1.70.0
+    ports:
+      - "10000:9000"
+      - "9229:9229"
+    volumes:
+      - ./functions:/usr/services
+      
+    command: start --inspect=0.0.0.0:9229 /usr/services/main
+    	# --main-service 无需调试
+
+
+vi hugingface_echodict/Supabase/docker_functions/.vscode/launch.json
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach to Edge Runtime",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}/functions",
+      "remoteRoot": "/usr/services",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}
+
+
+
+
+```
+
 
 
 
