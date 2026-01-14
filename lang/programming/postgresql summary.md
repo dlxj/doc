@@ -1370,7 +1370,49 @@ const { data, error } = await loginWithAliyun(supabase, {
 
 ```
 
+这是一个非常好的问题。在私有化部署（Docker）环境中，Supabase Edge Runtime 找到您的函数完全依赖于 docker-compose.yml 中的配置 。
 
+它不像 Supabase Cloud 那样有自动的路由注册中心，而是通过以下 3 个关键步骤“物理连接”起来的：
+
+### 1. 挂载目录 (Mapping)
+首先，通过 Docker 的 volumes 配置，把您电脑上的代码目录“映射”到了容器内部。
+
+请看您的 docker-compose.yml ：
+
+​```
+    volumes:
+      # 左边是宿主机路径 (./functions) -> 右边是容器内路径 (/usr/services)
+      - ./functions:/usr/services
+​```
+这意味着：
+
+- 宿主机的 Supabase/docker_functions/functions/ 目录
+- 变成了容器内的 /usr/services/ 目录
+所以容器里现在有了 /usr/services/login_with_aliyun 这个文件夹。
+
+### 2. 指定启动入口 (Command)
+然后，通过 command 指令明确告诉 Edge Runtime 去运行哪个文件夹。
+
+请看您的 docker-compose.yml ：
+
+​```
+    # --main-service 参数指定了具体要运行的函数路径
+    command: start --main-service /usr/services/login_with_aliyun
+​```
+- Edge Runtime 启动时，会去读取 /usr/services/login_with_aliyun 目录。
+- 它默认会在该目录下寻找 index.ts 文件作为入口（这就是为什么您的代码文件名必须是 index.ts ）。
+### 3. 路由匹配 (Routing)
+在您目前的配置中（使用 --main-service ），Edge Runtime 会将这个函数作为 主服务 运行。
+这意味着：
+
+- 根路径 ( / ) 的所有请求都会被转发给这个函数。
+- 您不需要在 URL 里写 /functions/v1/login_with_aliyun 。
+- 直接访问 http://localhost:10000/ 就等于在调用这个函数。
+### 总结
+Supabase 知道去哪找，是因为您在 docker-compose.yml 里：
+
+1. 把代码 放进去了 ( volumes )。
+2. 手指 指过去了 ( command: ... /usr/services/login_with_aliyun )。
 
 ```
 
@@ -2941,6 +2983,10 @@ https://github.com/supabase/pg_graphql
 ```
 
 
+
+## NHost
+
+https://github.com/nhost/nhost  Nhost is 100% open source
 
 
 
