@@ -1651,6 +1651,53 @@ edge function 能不能用 nodejs 来写，不用 Deno
 
 
 
+### supabase.auth.signUp 之类的函数绕过验证
+
+```
+
+edge function 有没有可能前端通过调用 await supabase.auth.signUp 之类的函数绕过验证
+
+是的， 非常有可能 。
+
+默认情况下，Supabase 的 Authentication 服务（GoTrue）是公开暴露的。只要你的 Supabase 项目开启了 "Email Signup"（邮箱注册）或 "Email Login"（邮箱登录），任何拥有 anon_key （匿名公钥，前端必须使用）的用户都可以直接调用 await supabase.auth.signUp() 或 await supabase.auth.signInWithPassword() ，从而 完全绕过 你在 Edge Function 中编写的阿里云验证码逻辑。
+
+我已经检查了你的代码，并为你添加了详细的安全提示注释。以下是针对这两个函数的具体分析和解决方案：
+
+### 1. 注册 (signup_with_aliyun)
+- 风险 ：前端可以直接调用 supabase.auth.signUp 注册用户，跳过验证码。
+- 解决方案 ：
+  1. 在 Supabase 后台禁用公开注册 ：
+     - 进入 Supabase Dashboard -> Authentication -> Providers -> Email。
+     - 取消勾选 "Enable Email Signup" 。
+     - 这样，前端直接调用 signUp 会失败。
+  2. 修改 Edge Function 使用 Admin API ：
+     - 由于你已经使用了 SUPABASE_SERVICE_ROLE_KEY ，你的 Edge Function 拥有管理员权限。
+     - 你应该将代码中的 supabase.auth.signUp 替换为 supabase.auth.admin.createUser 。这样即使公开注册被禁用，Edge Function 仍然可以创建用户。
+我在 signup_with_aliyun/index.ts 中添加了如下注释供你参考：
+
+
+
+### 登录 (login_with_aliyun)
+- 风险 ：前端可以直接调用 supabase.auth.signInWithPassword 登录，跳过验证码。
+- 解决方案（较复杂） ：
+  - 登录接口很难像注册那样简单地“禁用公开访问但保留功能”，因为底层的登录 API 对外和对内是同一个。如果你禁用了 Email Provider，连 Edge Function 也无法通过密码登录。
+  - 建议 ：
+    - 如果主要目的是防止暴力破解，Supabase 自带了 Rate Limiting（速率限制），可以在 Dashboard -> Authentication -> Rate Limits 中配置。
+    - 如果必须强制验证码，通常建议直接使用 Supabase 官方集成的 Captcha（如 hCaptcha, Turnstile），因为它们直接集成在 Auth 流程中，无法绕过。
+    - 如果必须用阿里云验证码，你可能需要接受“登录接口是公开的”这一事实，或者构建一套完全自定义的 Auth 流程（不推荐，复杂度极高）。
+我在 login_with_aliyun/index.ts 中也添加了相应的安全提示。
+
+### 总结建议
+最优先的操作是 保护注册接口 ，因为批量注册垃圾账号的危害通常比暴力破解登录更大。请按照上述第一点的建议，禁用公开注册并改用 admin.createUser 。
+
+
+
+```
+
+
+
+
+
 
 
 ### Cloudflare Turnstile 身份验证
