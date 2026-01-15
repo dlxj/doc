@@ -862,6 +862,14 @@ Supabase 是开源的，但它的 Edge Functions 管理后台（FaaS Backend）�
 
 ```
 
+docker compose restart edge-runtime				# pigsty 的 docker
+	docker compose restart supabase-edge-functions  # 官方代码的 docker
+		docker compose restart
+	# 这个如果不行就用后面的
+	
+docker compose down \
+  && docker compose up -d
+  
 
 http://xxx:8000/functions/v1/login_with_aliyun
 {
