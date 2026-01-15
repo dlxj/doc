@@ -727,6 +727,54 @@ git clone --depth 1 https://github.com/supabase/supabase \
   && docker compose pull
 
 
+vi .env
+# 数据库配置
+POSTGRES_PASSWORD=your-super-secret-and-long-postgres-password
+POSTGRES_DB=postgres
+
+# JWT 密钥（至少 32 个字符）
+JWT_SECRET=your-super-secret-jwt-token-with-at-least-32-characters-long
+
+# API 密钥（使用官方工具生成）
+ANON_KEY=your-anon-key
+SERVICE_ROLE_KEY=your-service-role-key
+
+# 站点 URL（重要！用于认证回调）
+SITE_URL=http://localhost:3000
+
+# 公开访问 URL（Dashboard 访问地址）
+SUPABASE_PUBLIC_URL=http://your-domain.com:8000
+
+# Dashboard 认证
+DASHBOARD_USERNAME=supabase
+DASHBOARD_PASSWORD=this_password_is_insecure_and_should_be_updated
+
+# Supavisor 连接池配置
+POOLER_TENANT_ID=your-tenant-id
+
+# SMTP 邮件配置（用于发送认证邮件）
+SMTP_ADMIN_EMAIL=admin@example.com
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-email-password
+SMTP_SENDER_NAME=Supabase
+
+# 存储配置（可选：使用 S3）
+STORAGE_BACKEND=file
+# 如果使用 S3，设置以下配置：
+# STORAGE_BACKEND=s3
+# GLOBAL_S3_BUCKET=your-bucket-name
+# REGION=us-east-1
+
+
+
+docker compose up -d
+
+docker compose ps
+
+docker compose logs -f
+
 
 
 ```
@@ -1633,7 +1681,7 @@ edge function 能不能用 nodejs 来写，不用 Deno
    
    - NPM 包支持 ：您可以直接在 Deno 中引入 NPM 包。
      例如，您现在的代码中已经这样用了： index.ts
-     ```
+```
      import Client, { VerifyIntelligentCaptchaRequest } from "npm:@alicloud/
      captcha20230305"
      import { Config } from "npm:@alicloud/openapi-client"
@@ -1742,7 +1790,7 @@ vi hugingface_echodict/Supabase/docker_functions/.vscode/launch.json
 1. 重启 Docker 容器 以应用配置更改：
    ```
 docker compose down \
-  && docker compose up -d
+    && docker compose up -d
    ```
 2. 在 VS Code 中，点击左侧的 运行和调试 (Run and Debug) 图标。
 3. 在下拉菜单中选择 "Attach to Edge Runtime" 。
@@ -1777,7 +1825,7 @@ debugger; 断下后看它的文件路径，写到 .vsocde 的配置里
 ### 修复方案
 我已经更新了 .vscode/launch.json ，添加了针对该编译路径的映射规则：
 
-​```
+```
 "sourceMapPathOverrides": {
   // ... 原有规则保持不变 ...
   "/var/tmp/sb-compile-edge-runtime/services/*": "$
@@ -1945,7 +1993,7 @@ vi /opt/supabase/docker-compose.yml
       
       NEXT_PUBLIC_ENABLE_LOGS: true
       NEXT_ANALYTICS_BACKEND_PROVIDER: postgres
-      
+
   说明 :
 
      - SUPABASE_PUBLIC_URL : 这个变量通常用于生成外部可访问的链接（如邮件中的链接），所以它 必须 保持为公网地址 ( http://echoplayer.com:8000 )。
@@ -1994,7 +2042,7 @@ Supabase 包含多个服务，通常运行在不同的端口（以标准 Docker 
 
 我已经将你的 .env 文件中的 VITE_TURNSTILE_SITE_KEY 替换为了测试专用的 "Always Pass" (永远通过) Key：
 
-​```
+```
 VITE_TURNSTILE_SITE_KEY=1x00000000000000000000AA
 ​```
 现在你可以刷新页面重试 ，Turnstile 应该会立即显示绿色的对勾，并且你可以正常进行注册或登录流程。
@@ -2159,7 +2207,7 @@ Error: 300010 是最关键的信息。
        action: 'login', // 添加这一行
        // ... 其他回调
      });
-     ```
+```
 3. 第三步 (测试) :
    
    - 等待 2 分钟让配置生效。
