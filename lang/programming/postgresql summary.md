@@ -868,6 +868,8 @@ supabase-edge-functions  | Visit chrome://inspect to connect to the debugger.
 supabase-edge-functions  | main function started
 	# 用 chrome 来调试
 
+	chrome 里下完断点 curl http://localhost:8000/functions/v1/main 成功断下来了
+	
 
 functions:  # 这个就是服务名称，重启要这样：docker compose restart functions
     container_name: supabase-edge-functions
