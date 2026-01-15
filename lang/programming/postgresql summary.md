@@ -791,7 +791,7 @@ docker save supabase/gotrue:v2.184.0 | gzip > supabase_gotrue.tar.gz
 
 docker save supabase/edge-runtime:v1.69.28 | gzip > supabase_edge-runtime.tar.gz
 
-docker save supabase/supavisor:2.7.4 | gzip > supabase_logflare.tar.gz
+docker save supabase/supavisor:2.7.4 | gzip > supabase_supavisor.tar.gz
 
 docker save postgrest/postgrest:v14.1 | gzip > postgrest_postgrest.tar.gz
 
@@ -4847,6 +4847,21 @@ sudo -u postgres psql -c '\set AUTOCOMMIT on'
 
 
 要想使得配置永久生效，需要在/data/postgresql.conf总添加lc_messages='zh_CN.UTF-8'，保存后，重启服务或者重载。
+
+
+
+## insert into 冲突时什么也不做
+
+```
+
+insert into public.profiles (id, email)
+select id, email from auth.users
+on conflict (id) do nothing;
+	# 冲突时什么也不做
+
+```
+
+
 
 
 
