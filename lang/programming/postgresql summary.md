@@ -863,7 +863,10 @@ Supabase 是开源的，但它的 Edge Functions 管理后台（FaaS Backend）�
 ```
 
 
-`\root\supabase\docker\docker-compose.yml` `\root\supabase\docker\docker-compose.yml#L321-347` `\root\supabase\docker\volumes\functions\main\index.ts` 因为 edge function 更改了，我想只重启这个 container_name: supabase-edge-functions 让更改生效
+supabase-edge-functions  | Debugger listening on ws://0.0.0.0:9229/ws/bf617c21-8443-46fe-bc74-c7eb31bc8932
+supabase-edge-functions  | Visit chrome://inspect to connect to the debugger.
+supabase-edge-functions  | main function started
+	# 用 chrome 来调试
 
 
 functions:  # 这个就是服务名称，重启要这样：docker compose restart functions
