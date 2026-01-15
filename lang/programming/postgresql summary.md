@@ -791,6 +791,8 @@ docker save supabase/gotrue:v2.184.0 | gzip > supabase_gotrue.tar.gz
 
 docker save supabase/edge-runtime:v1.69.28 | gzip > supabase_edge-runtime.tar.gz
 
+docker save supabase/realtime:v2.68.0 | gzip > supabase_realtime.tar.gz
+
 docker save supabase/supavisor:2.7.4 | gzip > supabase_supavisor.tar.gz
 
 docker save postgrest/postgrest:v14.1 | gzip > postgrest_postgrest.tar.gz
@@ -802,6 +804,8 @@ docker save timberio/vector:0.28.1-alpine | gzip > timberio_vector.tar.gz
 docker save darthsim/imgproxy:v3.8.0 | gzip > darthsim_imgproxy.tar.gz
 
 docker save kong:2.8.1 | gzip > kong.tar.gz
+
+
 
 
 docker save -o my_images.tar image1:tag1 image2:tag2
@@ -847,6 +851,59 @@ Supabase 是开源的，但它的 Edge Functions 管理后台（FaaS Backend）�
 许多企业在尝试自建 Supabase 时，发现 Edge Functions 功能“不可用”或“只能靠手动脚本部署”，最终放弃使用这一核心能力。
 
 
+
+```
+
+
+
+
+
+####  edge function 实际调用地址
+
+```
+
+
+http://xxx:8000/functions/v1/login_with_aliyun
+{
+  "email": "123456@qq.com",
+  "password": "123456",
+  "captchaVerifyParam": "eyJjZXJ0aWZ5SWQiOiJYcDBFWUt3VmU1Iiwic2NlbmVJZCI6IjFrODEyeWN4IiwiaXNTaWduIjp0cnVlLCJzZWN1cml0eVRva2VuIjoiNm9PbzdlNzJuQTYxdVZMaVpWS2lMUlVZOXlNNExnV3VNZFZRYUFaZ3laajBKT0NIMWFjS0R0NUxvRzR4UGJXWGNlMHZCZ1J0c00xWDlWK0Vqbk50UWRsa1U2L3pJbGwwUHk3UmZEN1N1blJzZFUzaEp3L2FNR0NyTEpGSkpFRmQifQ=="
+}
+	# raw data POST
+	# edge function 实际调用地址
+
+  const performLogin = async () => {
+    if (!captchaToken) {
+      message = 'Please complete the CAPTCHA verification.';
+      return;
+    }
+    try {
+      loading = true;
+      const { data, error } = await supabase.functions.invoke('login_with_aliyun', {
+        body: {
+          email,
+          password,
+          captchaVerifyParam: captchaToken
+        }
+      });
+
+      if (error) throw error;
+
+      if (data?.session) {
+        const { error: sessionError } = await supabase.auth.setSession(data.session);
+        if (sessionError) throw sessionError;
+        push('/');
+      } else {
+        if (!data.session) throw new Error('No session returned from server');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      message = error.error_description || error.message || 'Login failed';
+      captchaToken = '';
+    } finally {
+      loading = false;
+    }
+  };
 
 ```
 
@@ -4860,6 +4917,14 @@ on conflict (id) do nothing;
 	# 冲突时什么也不做
 
 ```
+
+
+
+
+
+## 级联删除
+
+
 
 
 
