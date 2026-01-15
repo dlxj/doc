@@ -194,7 +194,7 @@ docker run -it -p 8080:8080 -v $(pwd)/mydata:/label-studio/data heartexlabs/labe
 
 
 
-# 导出来恢复镜像
+# 导出恢复镜像
 
 ```
 
@@ -225,6 +225,9 @@ docker save kong:2.8.1 | gzip > kong.tar.gz
 
 docker save -o my_images.tar image1:tag1 image2:tag2
 	# 批量导出
+	
+zcat /path/to/your_image.tar.gz | docker load
+	# 恢复
 
 ```
 
