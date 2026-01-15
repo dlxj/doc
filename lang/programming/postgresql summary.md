@@ -869,7 +869,8 @@ supabase-edge-functions  | main function started
 	# 用 chrome 来调试
 
 	chrome 里下完断点 curl http://localhost:8000/functions/v1/main 成功断下来了
-	
+		# chrome 选本地源码文件夹 functions 要和远程一模一样的文件才行，最好从远程拉下来调
+		
 
 functions:  # 这个就是服务名称，重启要这样：docker compose restart functions
     container_name: supabase-edge-functions
