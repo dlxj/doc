@@ -777,6 +777,40 @@ docker compose logs -f
 
 
 
+导出恢复镜像
+
+docker save supabase/studio:2025.12.17-sha-43f4f7f | gzip > supabase_studio.tar.gz
+
+docker save supabase/logflare:1.27.0 | gzip > supabase_logflare.tar.gz 
+
+docker save supabase/postgres-meta:v0.95.1 | gzip > supabase_postgres_meta.tar.gz
+
+docker save supabase/storage-api:v1.33.0 | gzip > supabase_storage-api.tar.gz
+
+docker save supabase/gotrue:v2.184.0 | gzip > supabase_gotrue.tar.gz
+
+docker save supabase/edge-runtime:v1.69.28 | gzip > supabase_edge-runtime.tar.gz
+
+docker save supabase/supavisor:2.7.4 | gzip > supabase_logflare.tar.gz
+
+docker save postgrest/postgrest:v14.1 | gzip > postgrest_postgrest.tar.gz
+
+docker save supabase/postgres:15.8.1.085 | gzip > supabase_postgres.tar.gz
+
+docker save timberio/vector:0.28.1-alpine | gzip > timberio_vector.tar.gz
+
+docker save darthsim/imgproxy:v3.8.0 | gzip > darthsim_imgproxy.tar.gz
+
+docker save kong:2.8.1 | gzip > kong.tar.gz
+
+
+docker save -o my_images.tar image1:tag1 image2:tag2
+	# 批量导出
+	
+zcat /path/to/your_image.tar.gz | docker load
+	# 恢复
+
+
 ```
 
 
