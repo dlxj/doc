@@ -871,6 +871,13 @@ docker compose down \
   && docker compose up -d
   
 
+docker compose ps
+
+docker compose logs -f
+
+curl http://localhost:8000/functions/v1/main
+
+
 http://xxx:8000/functions/v1/login_with_aliyun
 {
   "email": "123456@qq.com",
