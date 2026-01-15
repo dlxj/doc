@@ -862,6 +862,45 @@ Supabase 是开源的，但它的 Edge Functions 管理后台（FaaS Backend）�
 
 ```
 
+
+`\root\supabase\docker\docker-compose.yml` `\root\supabase\docker\docker-compose.yml#L321-347` `\root\supabase\docker\volumes\functions\main\index.ts` 因为 edge function 更改了，我想只重启这个 container_name: supabase-edge-functions 让更改生效
+
+
+functions:  # 这个就是服务名称，重启要这样：docker compose restart functions
+    container_name: supabase-edge-functions
+    image: supabase/edge-runtime:v1.69.28
+    ports:
+      - "9229:9229"
+    restart: unless-stopped
+    volumes:
+      - ./volumes/functions:/home/deno/functions:Z
+    depends_on:
+      analytics:
+        condition: service_healthy
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      SUPABASE_URL: http://kong:8000
+      SUPABASE_ANON_KEY: ${ANON_KEY}
+      SUPABASE_SERVICE_ROLE_KEY: ${SERVICE_ROLE_KEY}
+      SUPABASE_DB_URL: postgresql://postgres:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+      # TODO: Allow configuring VERIFY_JWT per function. This PR might help: https://github.com/supabase/cli/pull/786
+      VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT}"
+    command:
+      [
+        "start",
+        "--inspect=0.0.0.0:9229",
+        "--inspect-main",
+        "--main-service",
+        "/home/deno/functions/main"
+      ]
+      
+     # docker compose restart functions
+     # docker compose logs functions --tail 20
+      
+      
+      
+
+
 docker compose restart edge-runtime				# pigsty 的 docker
 	docker compose restart supabase-edge-functions  # 官方代码的 docker
 		docker compose restart
