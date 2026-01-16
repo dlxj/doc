@@ -789,7 +789,8 @@ docker save supabase/storage-api:v1.33.0 | gzip > supabase_storage-api.tar.gz
 
 docker save supabase/gotrue:v2.184.0 | gzip > supabase_gotrue.tar.gz
 
-docker save supabase/edge-runtime:v1.69.28 | gzip > supabase_edge-runtime.tar.gz
+docker save supabase/edge-runtime:v1.70.0 | gzip > supabase_edge-runtime.tar.gz
+	// docker save supabase/edge-runtime:v1.69.28 | gzip > supabase_edge-runtime.tar.gz
 
 docker save supabase/realtime:v2.68.0 | gzip > supabase_realtime.tar.gz
 
