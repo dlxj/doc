@@ -1991,6 +1991,31 @@ debugger; 断下后看它的文件路径，写到 .vsocde 的配置里
 
 
 
+### 查看容器里 Deno 的版本
+
+```
+
+`\root\supabase\docker\docker-compose.yml#L321-347` 查看这个容器里 Deno 的版本
+
+docker ps --filter "name=supabase-edge-functions"
+
+docker exec supabase-edge-functions ls -F /usr/local/bin
+
+docker exec supabase-edge-functions edge-runtime --version
+	docker exec supabase-edge-functions deno --version 没有这个
+
+
+该容器内使用的是 edge-runtime （Supabase 的 Deno Runtime 实现），其中包含的 Deno 版本信息如下：
+
+- Edge Runtime Version : 0.1.0
+- Deno Version : 2.1.4 (release, x86_64-unknown-linux-gnu)
+这是通过在容器内执行 edge-runtime --version 获得的。需要注意的是，该容器镜像是专门为 Edge Runtime 构建的，因此它没有直接包含标准的 deno CLI 工具，而是使用了 edge-runtime 二进制文件。
+
+
+```
+
+
+
 
 
 ### Cloudflare Turnstile 身份验证
