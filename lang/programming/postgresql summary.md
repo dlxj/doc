@@ -1862,7 +1862,7 @@ edge function 有没有可能前端通过调用 await supabase.auth.signUp 之�
 
 我已经检查了你的代码，并为你添加了详细的安全提示注释。以下是针对这两个函数的具体分析和解决方案：
 
-### 1. 注册 (signup_with_aliyun)
+1. 注册 (signup_with_aliyun)
 - 风险 ：前端可以直接调用 supabase.auth.signUp 注册用户，跳过验证码。
 - 解决方案 ：
   1. 在 Supabase 后台禁用公开注册 ：
@@ -1876,7 +1876,7 @@ edge function 有没有可能前端通过调用 await supabase.auth.signUp 之�
 
 
 
-### 登录 (login_with_aliyun)
+登录 (login_with_aliyun)
 - 风险 ：前端可以直接调用 supabase.auth.signInWithPassword 登录，跳过验证码。
 - 解决方案（较复杂） ：
   - 登录接口很难像注册那样简单地“禁用公开访问但保留功能”，因为底层的登录 API 对外和对内是同一个。如果你禁用了 Email Provider，连 Edge Function 也无法通过密码登录。
@@ -1886,7 +1886,7 @@ edge function 有没有可能前端通过调用 await supabase.auth.signUp 之�
     - 如果必须用阿里云验证码，你可能需要接受“登录接口是公开的”这一事实，或者构建一套完全自定义的 Auth 流程（不推荐，复杂度极高）。
 我在 login_with_aliyun/index.ts 中也添加了相应的安全提示。
 
-### 总结建议
+总结建议
 最优先的操作是 保护注册接口 ，因为批量注册垃圾账号的危害通常比暴力破解登录更大。请按照上述第一点的建议，禁用公开注册并改用 admin.createUser 。
 
 
@@ -1958,14 +1958,14 @@ vi huggingface_echodict/Supabase/docker_functions/functions/main/index.ts
   // Wait for 10 seconds to allow debugger to attach
   await new Promise(r => setTimeout(r, 10000));
   debugger; // 强制断点，测试调试连接
-  	# 硬断点能成功命中
+  	 硬断点能成功命中
 
 curl http://localhost:10000/
-	# 这样能成功触发断点
+	 这样能成功触发断点
 
 
 
-# debugger; 能命中，vscdoe 的断点是灰的
+ debugger; 能命中，vscdoe 的断点是灰的
 
 debugger; 断下后看它的文件路径，写到 .vsocde 的配置里
 
