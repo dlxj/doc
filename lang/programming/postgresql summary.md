@@ -1005,6 +1005,7 @@ https://github.com/supabase/edge-runtime
 
 ```
 
+我们传统的 nodejs 后端整个作为边缘函数来运行
 
 
 ```
