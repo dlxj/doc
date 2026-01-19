@@ -1028,6 +1028,65 @@ https://github.com/supabase-community/supabase-mcp
 
 
 
+#### ubuntu 24.04 怎么安装 rust:1.79.0
+
+```
+      
+在 Ubuntu 24.04 上安装特定版本 Rust (1.79.0) 最推荐的方法是使用官方的版本管理工具 `rustup`。
+
+以下是具体步骤：
+
+1. 安装基础依赖
+在安装 Rust 之前，通常需要安装 `build-essential`（包含 gcc 等编译器）和 `curl`：
+
+​```bash
+sudo apt update
+sudo apt install -y build-essential curl
+​```
+
+2. 安装 rustup
+运行官方安装脚本：
+
+​```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+​```
+*   安装过程中会提示选择安装选项，直接按 **Enter** 选择默认安装即可。
+*   安装完成后，你需要配置环境变量（脚本最后会提示），或者直接**重启终端**，或者运行：
+    ```bash
+    source "$HOME/.cargo/env"
+    ```
+
+3. 安装 Rust 1.79.0
+使用 `rustup` 安装指定版本：
+
+​```bash
+rustup install 1.79.0
+​```
+
+4. 设置为默认版本（可选）
+如果你希望 `cargo` 和 `rustc` 命令默认使用 1.79.0 版本：
+
+​```bash
+rustup default 1.79.0
+​```
+
+5. 验证安装
+检查版本是否正确：
+
+​```bash
+rustc --version
+ 输出应包含: rustc 1.79.0 (...)
+​```
+
+---
+
+💡 为什么不用 `apt install rustc`？
+Ubuntu 的 apt 源里的 Rust 版本通常比较旧，且无法灵活切换版本。使用 `rustup` 可以让你轻松地在不同版本（如 stable, nightly, 1.79.0）之间切换，这对于开发依赖特定 Rust 版本的项目非常重要。
+
+```
+
+
+
 
 
 ### 安装前提
@@ -1193,6 +1252,7 @@ Once you have access to the dashboard, you will need API keys to connect your ap
   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
   eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3ODAxNjAwLCJleHAiOjE5MjU1
   NjgwMDB9.GtkruGMgbxm3kS_1eIHKyz0uaVjhvlWLvqUuS5b-DRc
+
   ```
 - service_role key (private, for backend admin use - keep secret ):
   
@@ -1200,6 +1260,7 @@ Once you have access to the dashboard, you will need API keys to connect your ap
   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
   eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaXNzIjoic3VwYWJhc2UiLCJpYXQiOjE3Njc4MDE2MDAsImV4
   cCI6MTkyNTU2ODAwMH0.JHimTs0hXELAEp1FtwPp2SXq-l8Dzfv8oHoGJ9oWvF8
+
   ```
 ### 3. Next Steps
 1. Log in to the dashboard using the credentials above.
