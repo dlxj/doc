@@ -1005,8 +1005,19 @@ https://github.com/supabase/edge-runtime
 
 ```
 
-我们传统的 nodejs 后端整个作为边缘函数来运行
+把我们传统的 nodejs 后端整个作为边缘函数来运行
 
+```
+
+
+
+#### 接入 AI 开发
+
+https://github.com/supabase-community/supabase-mcp
+
+```
+
+代码主要由 AI 来写，我们只要提供需求和设计文档
 
 ```
 
