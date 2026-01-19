@@ -1003,6 +1003,9 @@ http://xxx:8000/functions/v1/login_with_aliyun
 
 https://github.com/supabase/edge-runtime
 
+1. 怎样从源码编译
+2. 在魔改 Deno 上移值我们的后端代码 
+
 ```
 
 把我们传统的 nodejs 后端整个作为边缘函数来运行
@@ -1014,6 +1017,8 @@ https://github.com/supabase/edge-runtime
 #### 接入 AI 开发
 
 https://github.com/supabase-community/supabase-mcp
+
+1. 它只支持官方 Supabase ，怎样让自建 Supabase 也能用上 mcp
 
 ```
 
