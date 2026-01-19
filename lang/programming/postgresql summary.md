@@ -1087,6 +1087,20 @@ Ubuntu 的 apt 源里的 Rust 版本通常比较旧，且无法灵活切换版�
 
 
 
+#### 编译 edge-runtime
+
+```
+
+see huggingface_echodict/Supabase/source/supabase/edge-runtime/Dockerfile
+
+GIT_V_TAG=2.43.0 cargo build --profile release 
+
+
+
+```
+
+
+
 
 
 ### 安装前提
