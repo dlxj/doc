@@ -903,6 +903,80 @@ curl -Lso- bench.sh | bash
 
 
 
+# ubuntu24.04 换源
+
+```
+cp /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources.bak  \
+  && vi  /etc/apt/sources.list.d/ubuntu.sources
+
+阿里云镜像源配置示例
+Types: deb
+URIs: https://mirrors.aliyun.com/ubuntu/
+Suites: noble noble-updates noble-backports
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+Types: deb
+URIs: https://mirrors.aliyun.com/ubuntu/
+Suites: noble-security
+Components: main restricted universe multiverse
+Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+curl -fsSL https://repo.pigsty.cc/get | bash; cd ~/pigsty  # 国内
+./configure -c supabase    # 使用 supabase 配置（请在 pigsty.yml 中更改凭据）
+vi pigsty.yml              # 编辑域名、密码、密钥...
+./install.yml              # 安装 pigsty
+./docker.yml               # 安装 docker compose 组件
+./app.yml                   # 使用 docker 启动 supabase 无状态部分（可能较慢）
+vi pigsty.yml
+	自已先手动设置密码！除非内网环境
+
+IMPORTANT: CHANGE JWT_SECRET AND REGENERATE CREDENTIAL ACCORDING!!!!!!!!!!!
+              https://supabase.com/docs/guides/self-hosting/docker#securing-your-services
+
+Generate and configure API keys#
+
+JWT_SECRET: Used by PostgREST and GoTrue to sign and verify JWTs.
+9wvi0AlFWkvZKsdBsUxcMHbAlRk04SsIWbUcDClx
+
+ANON_KEY: Client-side API key with limited permissions (anon role). Use this in your frontend applications.
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3NzE1MjAwLCJleHAiOjE5MjU0ODE2MDB9.nJblK0q4I3djqRSk0qwkr3XKwVplqO-lqk6MIeww7DM
+
+SERVICE_ROLE_KEY: Server-side API key with full database access (service_role role). Never expose this in client code.
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaXNzIjoic3VwYWJhc2UiLCJpYXQiOjE3Njc3MTUyMDAsImV4cCI6MTkyNTQ4MTYwMH0.dzJyYBEJhWIm2h6SgK7gfYhE8PkJDGqxi3kiUC5AAPU
+
+
+postgres connection string (use the correct ip and port)
+              POSTGRES_HOST: 192.168.1.7      # point to the local postgres node
+              POSTGRES_PORT: 5436             # access via the 'default' service, which always route to the primary postgres
+              POSTGRES_DB: postgres           # the supabase underlying database
+              POSTGRES_PASSWORD: DBUser.SupaxX  # password for supabase_admin and multiple supabase users
+这个是 supabaser 专用的 db 连接方法
+
+
+安装前提：
+  具有免密 ssh 和 sudo 权限的 管理用户
+
+要求：ssh root@127.0.0.1  这个命令能登录本机
+
+
+apt update && sudo apt install openssh-server -y
+
+vi /etc/ssh/sshd_config
+PermitRootLogin yes
+PasswordAuthentication yes
+
+systemctl restart ssh \
+  && systemctl status ssh
+
+
+
+```
+
+
+
+
+
 # Ubuntu 14.04 安装 Docker
 
 ```

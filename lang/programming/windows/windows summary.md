@@ -636,6 +636,18 @@ wsl --list --online
 	-> Debian
 	-> Ubuntu-20.04    Ubuntu 20.04 LTS
 
+netsh winhttp set proxy 172.22.112.93:7890
+	netsh winhttp reset proxy 用完还原
+wsl --install -d Ubuntu-24.04
+
+
+Current WinHTTP proxy settings:
+
+    Direct access (no proxy server).
+
+PS C:\Users\echod> wsl --install -d Ubuntu-24.04
+
+
 wsl --install -d Ubuntu-20.04
 
     $env:http_proxy="http://127.0.0.1:7890"

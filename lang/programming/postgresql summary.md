@@ -791,6 +791,7 @@ docker save supabase/gotrue:v2.184.0 | gzip > supabase_gotrue.tar.gz
 
 docker save supabase/edge-runtime:v1.70.0 | gzip > supabase_edge-runtime.tar.gz
 	// docker save supabase/edge-runtime:v1.69.28 | gzip > supabase_edge-runtime.tar.gz
+		// 低版本有问题？
 
 docker save supabase/realtime:v2.68.0 | gzip > supabase_realtime.tar.gz
 
@@ -817,6 +818,32 @@ zcat /path/to/your_image.tar.gz | docker load
 
 
 ```
+
+
+
+
+
+```
+
+pigsty 镜像导出恢复
+
+docker save supabase/studio:2025.11.10-sha-5291fe3 | gzip > supabase_studio.tar.gz \
+  && docker save supabase/logflare:1.22.6 | gzip > supabase_logflare.tar.gz \
+  && docker save supabase/postgres-meta:v0.93.1 | gzip > supabase_postgres_meta.tar.gz \
+  && docker save supabase/storage-api:v1.29.0 | gzip > supabase_storage-api.tar.gz \
+  && docker save supabase/gotrue:v2.182.1 | gzip > supabase_gotrue.tar.gz \
+  && docker save supabase/edge-runtime:v1.70.0 | gzip > supabase_edge-runtime.tar.gz \
+  && docker save supabase/realtime:v2.63.0 | gzip > supabase_realtime.tar.gz \
+  && docker save postgrest/postgrest:v13.0.7 | gzip > postgrest_postgrest.tar.gz \
+  && docker save darthsim/imgproxy:v3.8.0 | gzip > darthsim_imgproxy.tar.gz \
+  && docker save timberio/vector:0.28.1-alpine | gzip > timberio_vector.tar.gz \
+  && docker save kong:2.8.1 | gzip > kong.tar.gz
+  
+```
+
+
+
+
 
 
 
@@ -965,6 +992,20 @@ http://xxx:8000/functions/v1/login_with_aliyun
       loading = false;
     }
   };
+
+```
+
+
+
+
+
+#### 它用的是魔改版的 Deno
+
+https://github.com/supabase/edge-runtime
+
+```
+
+
 
 ```
 
