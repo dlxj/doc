@@ -1093,6 +1093,11 @@ Ubuntu 的 apt 源里的 Rust 版本通常比较旧，且无法灵活切换版�
 
 see huggingface_echodict/Supabase/source/supabase/edge-runtime/Dockerfile
 
+apt update \
+&& apt-get install -y llvm-dev libclang-dev clang cmake binutils libblas-dev \
+  liblapack-dev libopenblas-dev
+
+
 GIT_V_TAG=2.43.0 cargo build --profile release 
 
 

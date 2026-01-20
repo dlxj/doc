@@ -1,3 +1,14 @@
+# Syncthing
+
+https://github.com/pixelspark/sushitrain 
+
+```
+
+
+```
+
+
+
 
 
 # ish postresql
