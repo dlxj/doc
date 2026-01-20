@@ -892,6 +892,11 @@ Supabase 是开源的，但它的 Edge Functions 管理后台（FaaS Backend）�
 
 curl http://localhost:8000/functions/v1/hello
 	# 官方的要这样, 直接调 main 入口点会出错，它只是一个路由转发
+	
+	docker compose stop functions
+	
+	/root/edge-runtime start --inspect=0.0.0.0:9229 --inspect-main --main-service /root/Supabase_official/docker/volumes/functions/main
+		成功启动
 
 
 supabase-edge-functions  | Debugger listening on ws://0.0.0.0:9229/ws/bf617c21-8443-46fe-bc74-c7eb31bc8932
