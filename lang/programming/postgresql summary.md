@@ -1097,6 +1097,7 @@ apt update \
 && apt-get install -y llvm-dev libclang-dev clang cmake binutils libblas-dev \
   liblapack-dev libopenblas-dev
 
+apt install pkg-config libssl-dev
 
 GIT_V_TAG=2.43.0 cargo build --profile release 
 
