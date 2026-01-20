@@ -1010,6 +1010,13 @@ https://github.com/supabase/edge-runtime
 
 把我们传统的 nodejs 后端整个作为边缘函数来运行
 
+
+irm https://deno.land/install.ps1 | iex
+	--> to C:\Users\Administrator\.deno\bin\deno.exe
+	deno --help
+	
+
+
 ```
 
 

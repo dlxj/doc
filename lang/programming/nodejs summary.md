@@ -5855,7 +5855,7 @@ git clone -c http.proxy="socks5h://192.168.1.8:57882"  https://huggingface.co/da
 
 dlxjj pwd email same as github's dlxj
 
-git config --global user.name "dlxjj" && 
+git config --global user.name "cdef68935" && 
 git config --global user.email "12345@qq.com"
 git config --global push.default matching
 
@@ -9603,6 +9603,93 @@ node-tick-processor xxxx-v8.log
 ## v8 source map
 
 - https://github.com/evanw/node-source-map-support
+
+
+
+
+
+# Deno 迁移
+
+```
+
+将现有的 Node.js 项目切换到 Deno， 通常不需要大幅修改源码 ，特别是随着 Deno 2.x 的发布，对 Node.js 的兼容性已经非常完善。
+
+以下是关于如何切换以及源码修改的详细分析。
+
+1. 是否需要改源码？
+简短回答：大部分情况不需要，可以直接运行。
+
+Deno 现在原生支持：
+
+- package.json ：自动读取依赖和脚本。
+- node_modules ：可以直接加载已安装的 npm 包。
+- CommonJS ( require ) ：虽然 Deno 推荐 ESM ( import )，但也兼容旧的 require 语法。
+- Node 内置模块 ：如 fs , path , http 等都可以直接使用（或通过 node:fs 引用）。
+需要修改源码的情况：
+
+- 使用了 Node.js 特有的全局变量 （如 __dirname , __filename ），如果你的项目转为 ESM 模块，这些变量需要替换为 import.meta.dirname 等。
+- 使用了 C++ 原生插件 （ .node 文件），Deno 的支持有限，可能需要寻找替代品。
+- 使用了 非常老旧或非标准的 npm 包 。
+2. 如何切换（迁移步骤）
+我在当前目录下创建了一个典型的 Node.js 项目示例，以此演示迁移过程。
+ 第一步：尝试直接运行
+假设你有一个入口文件 index.js 和 package.json 。在安装了 Deno 后，你可以尝试直接运行：
+
+​```
+-A 表示允许所有权限 (Allow All)，因为 Deno 默认是沙箱模式
+deno run -A index.js
+​```
+或者运行 package.json 中的脚本：
+
+​```
+相当于 npm start
+deno task start
+​```
+Deno 会自动识别 node_modules 目录和 package.json 中的依赖，通常这样就能跑通。
+ 第二步：代码风格迁移（可选但推荐）
+虽然 Deno 兼容 Node.js 写法，但为了利用 Deno 的优势（如 TypeScript 支持、更好的模块系统），建议逐步进行以下现代化改造。
+
+示例对比：
+
+我为你创建了两个文件作为对比：
+
+1. 原始 Node.js 代码 ( index.js ) 这是传统的 CommonJS 写法：
+
+​```
+const fs = require('fs');
+const path = require('path');
+require('colors'); // 依赖 npm 包
+
+const filePath = path.join(__dirname, 'hello.txt');
+fs.writeFileSync(filePath, 'Hello from Node.js!');
+​```
+2. 迁移后的现代 Deno/ESM 代码 ( index_migrated.mjs ) 这是推荐的写法：
+
+​```
+// 使用 ESM import，推荐加上 node: 前缀明确来源
+import fs from 'node:fs';
+import path from 'node:path';
+// Deno 也可以直接 import npm 包
+import 'colors'; 
+
+// 在 ESM 中，__dirname 不存在，使用 import.meta.dirname (Node 20+ / Deno 支持)
+// 或者 path.dirname(new URL(import.meta.url).pathname)
+const currentDir = import.meta.dirname; 
+const filePath = path.join(currentDir, 'hello_deno.txt');
+
+fs.writeFileSync(filePath, 'Hello from Deno!');
+​```
+总结建议
+1. 先跑起来 ：不要急着改代码，先用 deno run -A <入口文件> 试跑。
+2. 处理配置 ：Deno 支持 deno.json 配置文件，可以用来替代部分 package.json 的功能（如 format, lint, task）。
+3. 渐进式重构 ：
+   - 将 require 改为 import 。
+   - 将 .js 改为 .ts 并添加类型定义（Deno 原生支持 TypeScript，无需配置 webpack/babel）。
+你可以随时在当前目录下查看我生成的 index.js 和 index_migrated.mjs 来体会差异。
+
+```
+
+
 
 
 
