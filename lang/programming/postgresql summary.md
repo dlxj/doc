@@ -900,6 +900,34 @@ curl http://localhost:8000/functions/v1/hello
 
 	huggingface_echodict\Supabase\source\supabase\edge-runtime
 		edge-runtime 源码在这
+		
+		
+1. 设置必要的环境变量 (参考自 .env 和 docker-compose.yml)
+export JWT_SECRET="266fIWY3QlBdg0D1Juj6WUYlNQXqHoMHYT8Z4gpJ"
+export SUPABASE_URL="http://localhost:8000"
+export SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE"
+export SUPABASE_SERVICE_ROLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJzZXJ2aWNlX3JvbGUiLAogICAgImlzcyI6ICJzdXBhYmFzZS1kZW1vIiwKICAgICJpYXQiOiAxNjQxNzY5MjAwLAogICAgImV4cCI6IDE3OTk1MzU2MDAKfQ.DaYlNEoUrrEn2Ig7tqibS-PHK5vgusbcbo7X36XVt4Q"
+export SUPABASE_DB_URL="postgresql://postgres:DBUser.SupaxX@localhost:5432/postgres"
+export FUNCTIONS_DIR="/root/Supabase_official/docker/volumes/functions"
+/root/edge-runtime start \
+  --inspect=0.0.0.0:9229 \
+  --inspect-main \
+  --main-service /root/Supabase_official/docker/volumes/functions/main
+
+
+启动成功后，请直接访问 edge-runtime 的默认端口 9000 ，并且 不要 带 /functions/v1 前缀（因为在该架构中，Kong 网关负责剥离这个前缀，直连时不需要）：
+
+curl http://localhost:9000/hello
+
+
+curl http://localhost:8000/functions/v1/hello
+  为了让 Kong 能够访问到宿主机上的服务，修改了 docker-compose.yml 中的 Kong 配置，添加了 extra_hosts 字段，将 functions 域名指向了宿主机网关（ host-gateway ）。
+
+  - 之前的问题 ：Kong 容器内解析 http://functions:9000 时，DNS 查找失败，因为它试图找同名的 Docker 容器，但那个容器没有运行（或你希望它连宿主机）。
+  - 修复方案 ：通过添加 extra_hosts: - "functions:host-gateway" ，告诉 Docker 容器：“当有人访问 functions 时，请把它转发到宿主机的 IP 地址”。
+  - 结果 ：请求路径变为： curl (主机) -> Kong (容器:8000) -> edge-runtime (主机:9000) 。
+
+
 	
 
 supabase-edge-functions  | Debugger listening on ws://0.0.0.0:9229/ws/bf617c21-8443-46fe-bc74-c7eb31bc8932
