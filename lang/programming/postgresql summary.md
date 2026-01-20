@@ -898,6 +898,9 @@ curl http://localhost:8000/functions/v1/hello
 	/root/edge-runtime start --inspect=0.0.0.0:9229 --inspect-main --main-service /root/Supabase_official/docker/volumes/functions/main
 		成功启动
 
+	huggingface_echodict\Supabase\source\supabase\edge-runtime
+		edge-runtime 源码在这
+	
 
 supabase-edge-functions  | Debugger listening on ws://0.0.0.0:9229/ws/bf617c21-8443-46fe-bc74-c7eb31bc8932
 supabase-edge-functions  | Visit chrome://inspect to connect to the debugger.
