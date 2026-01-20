@@ -1105,13 +1105,12 @@ see huggingface_echodict/Supabase/source/supabase/edge-runtime/Dockerfile
 
 apt update \
 && apt-get install -y llvm-dev libclang-dev clang cmake binutils libblas-dev \
-  liblapack-dev libopenblas-dev
+  liblapack-dev libopenblas-dev pkg-config libssl-dev
 
-apt install pkg-config libssl-dev
 
 GIT_V_TAG=2.43.0 cargo build --profile release 
-
-
+	cli v0.1.0 (/root/Supabase/source/supabase/edge-runtime/cli)
+	ext_ai v0.1.0 (/root/Supabase/source/supabase/edge-runtime/ext/ai)
 
 ```
 
