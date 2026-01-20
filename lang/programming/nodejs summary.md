@@ -9691,6 +9691,25 @@ fs.writeFileSync(filePath, 'Hello from Deno!');
 
 
 
+```
+
+方案二：如果必须保留 CommonJS (require)
+如果你的项目必须使用 require ，你需要注意： require() 不能直接加载 .ts 文件 。你必须使用动态导入 import() 。
+
+const fs = require('fs');
+
+async function run() {
+  // 动态导入 TS 模块
+  const { add } = await import('./math.ts');
+  console.log(add(5, 5));
+}
+
+run();
+
+```
+
+
+
 
 
 # gpt api

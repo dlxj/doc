@@ -1016,6 +1016,9 @@ irm https://deno.land/install.ps1 | iex
 	deno --help
 	
 
+deno run -A .\server.js
+	能无缝运行
+
 
 ```
 
