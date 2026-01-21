@@ -1521,10 +1521,18 @@ https://mephisto.cc/tech/hysteria/
 ```
 
 
-echo "nameserver 8.8.8.8" > /etc/resolv.conf
+vi /run/systemd/resolve/resolv.conf
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+nameserver 1.1.1.1
+search .
+
+rm -f /etc/resolv.conf && 
+ln -sv /run/systemd/resolve/resolv.conf /etc/resolv.conf && 
+service systemd-resolved restart
 
 
-
+	# ubuntu 24.04 这样
 
 
 
