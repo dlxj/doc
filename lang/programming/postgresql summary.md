@@ -893,6 +893,12 @@ Supabase 是开源的，但它的 Edge Functions 管理后台（FaaS Backend）�
 curl http://localhost:8000/functions/v1/hello
 	# 官方的要这样, 直接调 main 入口点会出错，它只是一个路由转发
 	
+	.env 开启授权后 FUNCTIONS_VERIFY_JWT=true
+	{"msg":"Error: Missing authorization header"}
+	
+curl http://localhost:8000/functions/v1/hello \
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE'
+	
 	docker compose stop functions
 	
 	/root/edge-runtime start --inspect=0.0.0.0:9229 --inspect-main --main-service /root/Supabase_official/docker/volumes/functions/main
