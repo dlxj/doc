@@ -1298,6 +1298,38 @@ vi /root/pigsty/pigsty.yml
 
 
 
+### AUTH_JWT_SECRET  SUPABASE_ANON_KEY 分别什么用
+
+```
+
+`\root\Supabase_official\docker\docker-compose.yml#L45-49`  AUTH_JWT_SECRET  SUPABASE_ANON_KEY 分别作什么用
+
+
+这两者是 Supabase 安全机制中的核心配置，它们在 docker-compose.yml 中被传递给各个服务（如 Studio、Kong、GoTrue 等），其具体作用如下：
+
+1. AUTH_JWT_SECRET (JWT 密钥)
+- 对应变量 : 通常对应 .env 文件中的 JWT_SECRET 。
+- 作用 : 这是 最核心的安全密钥 ，用于生成和验证 JSON Web Tokens (JWT)。
+  - 签名 (Signing) : 当用户登录时，Auth 服务 (GoTrue) 会使用这个密钥对用户的 Access Token 进行加密签名。
+  - 验证 (Verification) : PostgREST（数据库接口）、Realtime、Storage 等服务使用同一个密钥来解密和验证用户请求中携带的 Token 是否合法，以及解析其中的用户信息（如 user_id , role ）。
+- 安全性 : 绝对保密 。如果此密钥泄露，攻击者可以伪造任意用户的身份令牌（包括管理员），从而完全控制你的系统。
+2. SUPABASE_ANON_KEY (匿名/公钥)
+- 对应变量 : 通常对应 .env 文件中的 ANON_KEY 。
+- 作用 : 这是 公开的 API 密钥 ，主要用于前端客户端。
+  - 客户端初始化 : 前端应用（Web、App）初始化 Supabase Client 时必须提供此 Key。
+  - 网关通过 : 它允许未登录的用户（或刚初始化的客户端）通过 API 网关（Kong）。
+  - 权限控制 : 这个 Key 本质上也是一个由 AUTH_JWT_SECRET 签名的 JWT，但它的角色 (Role) 被硬编码为 anon 。使用此 Key 发起的请求 受限于数据库的行级安全策略 (RLS) 。这意味着，除非你在数据库中配置了允许 anon 角色访问的 RLS 策略，否则它无法读取或修改敏感数据。
+- 安全性 : 可以公开 。它设计用于在浏览器或移动端代码中暴露。只要你正确配置了数据库的 RLS，暴露这个 Key 是安全的。
+总结对比
+变量名 作用域 安全级别 用途 AUTH_JWT_SECRET 后端内部 极度敏感 (Secret) 签发和验证所有 Token，系统的信任基石。 SUPABASE_ANON_KEY 前端/客户端 公开 (Public) 允许客户端连接 API，受 RLS 策略限制。
+
+
+```
+
+
+
+
+
 ### 能登录 supabase 下一步怎么做
 
 ```
@@ -4041,7 +4073,7 @@ select version();
 
 Added the line as below in `pg_hba.conf`:
 
-​```sql
+```sql
 # vi /etc/postgresql/13/main/pg_hba.conf
 # 加在最后面
 hostnossl    all          all            0.0.0.0/0  md5        
@@ -4049,7 +4081,7 @@ hostnossl    all          all            0.0.0.0/0  md5
 
 and this was modified in `postgresql.conf`, as shown:
 
-```sql
+​```sql
 # vi /etc/postgresql/13/main/postgresql.conf
 listen_addresses = '*'  
 ```
