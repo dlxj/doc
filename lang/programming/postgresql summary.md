@@ -896,7 +896,7 @@ curl http://localhost:8000/functions/v1/hello
 	.env 开启授权后 FUNCTIONS_VERIFY_JWT=true
 	{"msg":"Error: Missing authorization header"}
 	
-curl http://localhost:8000/functions/v1/hello \
+curl -i http://localhost:8000/functions/v1/hello \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyAgCiAgICAicm9sZSI6ICJhbm9uIiwKICAgICJpc3MiOiAic3VwYWJhc2UtZGVtbyIsCiAgICAiaWF0IjogMTY0MTc2OTIwMCwKICAgICJleHAiOiAxNzk5NTM1NjAwCn0.dc_X5iR_VP_qT0zsiyj_I_OZ2T9FtRU2BBNWN8Bu4GE'
 	
 	docker compose stop functions
