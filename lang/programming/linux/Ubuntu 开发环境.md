@@ -1519,6 +1519,16 @@ https://mephisto.cc/tech/hysteria/
 # DNS
 
 ```
+
+
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
+
+
+
+
+
+
 vi /etc/systemd/resolved.conf
 [Resolve]
 DNS=1.1.1.1
