@@ -1695,7 +1695,7 @@ const { data, error } = await supabase.functions.invoke('login_with_aliyu
 2. 为什么不能直接用 auth.login_with_aliyun？
 - 命名空间不同 ： supabase.auth 专门用于与 Supabase 的 GoTrue (Auth) 服务通信。
 - 服务不同 ：您的函数运行在 Edge Functions 服务中，而 auth 方法请求的是 Auth 服务。两者的 API 路径完全不同（ /functions/v1/... vs /auth/v1/... ）。
-### 3. 如果您非常想要这种写法 (封装建议)
+3. 如果您非常想要这种写法 (封装建议)
 如果您希望在前端代码中保持整洁，或者为了统一调用风格，您可以自己封装一个辅助函数，或者扩展 supabase 实例（虽然不推荐直接修改 SDK 原型，但在应用层封装是很好的实践）。
 
 创建一个 auth_helper.js :
@@ -1816,11 +1816,11 @@ Supabase 知道去哪找，是因为您在 docker-compose.yml 里：
 请打开 Supabase/docker_functions/docker-compose.yml 文件，填入您真实的阿里云密钥：
 
     environment:
-      # ...
-      # 请填入您的真实密钥
+       ...
+       请填入您的真实密钥
       - ALIYUN_ACCESS_KEY_ID=您的AccessKeyId
       - ALIYUN_ACCESS_KEY_SECRET=您的AccessKeySecret
-      # 已设置为 false，无需修改
+       已设置为 false，无需修改
       - VERIFY_JWT=false 
 
 3. 部署/重启服务
@@ -2641,14 +2641,14 @@ sed -i '/GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}/a \      GOTRUE_SEC
  我已经为你配置好了 Cloudflare Turnstile。你需要完成最后一步：填入你自己的密钥。
 
 
-### 1. 修改配置文件
+1. 修改配置文件
 
 请打开 /opt/supabase/.env 文件，找到文件末尾我新添加的 Captcha Config 部分，并将 <YOUR_TURNSTILE_...> 替换为你从 Cloudflare 获取的真实密钥：
 
 
-# /opt/supabase/.env
+/opt/supabase/.env
 
-## Captcha Config
+Captcha Config
 
 GOTRUE_SECURITY_CAPTCHA_ENABLED=true
 GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
@@ -2656,7 +2656,7 @@ GOTRUE_SECURITY_CAPTCHA_SECRET=your_secret_key_here  # 替换这里
 GOTRUE_SECURITY_CAPTCHA_SITE_KEY=your_site_key_here  # 替换这里
 
 
-### 2. 重启服务
+2. 重启服务
 
 修改完 .env 后，请在终端执行以下命令使配置生效：
 
@@ -2665,7 +2665,7 @@ GOTRUE_SECURITY_CAPTCHA_SITE_KEY=your_site_key_here  # 替换这里
 cd /opt/supabase/ && docker compose up -d auth
 
 
-### 3. 持久化配置 (可选但推荐)
+3. 持久化配置 (可选但推荐)
 
 我已经同步修改了 pigsty.yml 。如果你未来重新运行 Pigsty 的安装脚本，请确保也在 pigsty.yml 中填入真实的密钥，否则它会覆盖回占位符。
 
@@ -2682,7 +2682,7 @@ cd /opt/supabase/ && docker compose up -d auth
 
 通过分析你的项目（Svelte + Supabase），我为你制定并实施了集成 Cloudflare Turnstile 的方案。相比传统的图形验证码，Turnstile 用户体验更好（通常只需点击一下或完全无感），且隐私保护更强。
 
-### 已经完成的前端修改
+已经完成的前端修改
 
 我修改了两个文件来集成前端验证逻辑：
 
@@ -2694,7 +2694,7 @@ cd /opt/supabase/ && docker compose up -d auth
    - 在 handleLogin 和 handleSignUp 中，将获取到的 captchaToken 传递给 Supabase。
    - 注意 ：代码中目前使用的是 Cloudflare 的 测试 Site Key ( 1x00000000000000000000AA )，它总是会验证通过。你需要替换为你自己的 Key。
 
-### 你需要做的配置（关键）
+你需要做的配置（关键）
 
 为了让这套机制真正生效，你需要在 Cloudflare 和 Supabase 后台进行配置：
 
@@ -2712,7 +2712,7 @@ cd /opt/supabase/ && docker compose up -d auth
  10. 填入你在 Cloudflare 申请到的 Secret Key (注意是 Secret Key，不是 Site Key)。
  11. 保存设置。
 
-### 它是如何工作的？
+它是如何工作的？
 
 1. 用户操作 ：用户在前端点击登录/注册前，必须完成 Turnstile 验证（通常是自动的）。
 2. 获取 Token ：验证通过后，Cloudflare 返回一个临时的 captchaToken 。
@@ -2734,7 +2734,7 @@ cd /opt/supabase && docker compose up -d auth   执行这个命令后，Supabase
 
 这是一个正常的现象， 请不用担心 。
 
-### 原因解释
+原因解释
 
 Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 Dashboard（控制面板）上有一些区别：
 
@@ -2744,12 +2744,12 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
 
 3. 已验证生效 ：我刚刚检查了运行中的容器，确认配置已经生效：
 
-   # 容器内部实际生效的环境变量
+    容器内部实际生效的环境变量
 
    GOTRUE_SECURITY_CAPTCHA_ENABLED=true
    GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
 
-### 下一步：前端集成
+下一步：前端集成
 
 既然后端已经开启了验证，你需要在 前端代码 中加入 Cloudflare Turnstile 的组件。
 
@@ -2758,7 +2758,7 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
 2. 调用 Supabase Auth API 时带上 Token ：
    在使用 supabase-js 注册或登录时，传入 captchaToken 。
 
-```
+
    // 注册示例
    const { data, error } = await supabase.auth.signUp({
      email: 'example@email.com',
@@ -2767,9 +2767,9 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
        captchaToken: '这里填入从Turnstile组件获取到的token'
      }
    })
-​```
 
-```
+
+
    // 登录示例 (如果登录也开启了验证)
    const { data, error } = await supabase.auth.signInWithPassword({
      email: 'example@email.com',
@@ -2778,7 +2778,7 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
        captchaToken: '这里填入从Turnstile组件获取到的token'
      }
    })
-```
+
 
 只要前端传了 Token，后端就会自动去 Cloudflare 验证。如果验证失败或没传 Token，后端会返回错误。
 
@@ -2800,11 +2800,11 @@ https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/imple
 
 阿里云确实有对应的服务，叫做 阿里云验证码 2.0 (Aliyun Captcha 2.0) 。它在国内的加载速度和稳定性确实优于 Cloudflare，但在 Supabase 项目中集成它会 复杂很多 。
 
-### 核心差异对比
+核心差异对比
 
 特性 Cloudflare Turnstile (当前方案) 阿里云验证码 2.0 Supabase 支持 原生支持 (后台直接配置) 不支持 (原生 Auth 接口无法验证) 开发成本 🟢 低 (仅前端修改) 🔴 高 (需要编写后端 Edge Function) 国内体验 🟡 尚可 (可用但稍慢) 🟢 极佳 (国内节点) 原理 Token 直接传给 Supabase 验证 需通过自定义后端中转验证
 
-### 如果一定要用阿里云，要怎么做？
+如果一定要用阿里云，要怎么做？
 
 因为 Supabase 的 supabase.auth.signUp 接口只认 Cloudflare 和 hCaptcha 的 Token，你无法直接把阿里云的 Token 传进去。
 
@@ -2823,7 +2823,7 @@ https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/imple
    - 第二步 ：如果验证通过，使用 Supabase Admin 权限 ( service_role key) 帮用户创建账户或登录。
    - 第三步 ：把登录后的 Session 返回给前端。
 
-### 建议
+建议
 
 建议先试用 Cloudflare Turnstile。 Cloudflare Turnstile 在中国大陆通常是可以正常使用的（虽然速度不如阿里云）。鉴于 Supabase 对它的原生支持非常完美，能为你节省大量的后端开发和维护工作。
 
@@ -2849,7 +2849,9 @@ https://www.v2ex.com/t/1149062
   
   无论是什么样的验证码都无法 100%阻止所有机器人，而是增加其操作成本。虽然验证本身无交互，但通过 PoW （工作量证明）机制，可以限制单个用户高频请求；多个不同用户确实可以慢慢通过，但只要你设置足够的难度，就能有效防止批量滥用，比如刷接口、薅羊毛、撞库等。本质上就是一种手段通过提高操作成本（ PoW 计算需要时间）来放慢访问的速度，实现类似于速率限制，防止 DDOS 的效果
   
+  ```
 ```
+
 ```
 
 ```
@@ -3728,7 +3730,7 @@ https://shell.aliyun.com/
 
 
 
-```shell
+​```shell
 
 terraform version
 	# 查看 Terrafrom版本
@@ -3989,7 +3991,7 @@ to_tsvector('Chinese', content);
 - HeidiSQL 有点问题
 
 
-​```bash
+```bash
 apt install postgresql-server-dev-13
 find / -name "postgres.h" -print  # 后面编译pg_jieba 要用
 ```
@@ -4039,7 +4041,7 @@ select version();
 
 Added the line as below in `pg_hba.conf`:
 
-```sql
+​```sql
 # vi /etc/postgresql/13/main/pg_hba.conf
 # 加在最后面
 hostnossl    all          all            0.0.0.0/0  md5        
