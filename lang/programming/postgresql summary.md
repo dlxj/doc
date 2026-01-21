@@ -1379,24 +1379,19 @@ cd /opt/supabase && docker compose up -d
 
 1. 修改配置文件 修改 /opt/supabase/.env 文件中的 STUDIO_DEFAULT_PROJECT 变量。
    
-```
    /opt/supabase/.env
    STUDIO_DEFAULT_PROJECT=MyNewProject  # 将原来的 Pigsty 修改为你想要的名称
 
-```
    (我已经帮你执行了这一步，将名称修改为了 MyNewProject )
 2. 重启 Supabase 修改配置后，必须重启 Supabase 服务（主要是 Studio 容器）才能生效。
    
-```
    cd /opt/supabase
    docker compose up -d
-   ```
    (我已经帮你执行了这一步， supabase-studio 容器已重建)
 现在你可以刷新浏览器访问 Dashboard，应该能看到 Project 名称已经变成了 MyNewProject 。
 
-   ```
 
-   ```
+```
 
 
 
@@ -1434,7 +1429,7 @@ cd /opt/supabase && docker compose up -d
 
 
 
-```
+   ```
 
 
 
@@ -1466,15 +1461,14 @@ WHERE email = 'your_email@example.com';
    - 这是一个非常关键的配置。因为你的 SMTP 邮件服务配置的是假的 ( fake_mail_user )，如果关闭自动确认，Supabase 会尝试发送验证邮件但失败，导致用户无法激活。
    - 现状 ：用户注册后 立即激活 ，无需点击邮件验证链接。
 3. SMTP 配置 ：目前是默认的假配置 ( fake_sender 等)。由于开启了自动确认，这暂时不会影响注册流程。
-### 前端注册实现
+前端注册实现
 由于配置了自动确认，前端注册流程非常简单。你只需要使用 supabase-js 客户端库。
  1. 安装依赖
-​```
+
 npm install @supabase/supabase-js
-​``` 2. 注册代码示例
+2. 注册代码示例
 你需要用到之前获取的 SUPABASE_URL (你的公网 IP + 端口) 和 ANON_KEY 。
 
-```
 import { createClient } from '@supabase/supabase-js'
 
 // 1. 初始化客户端
@@ -1504,7 +1498,7 @@ async function signUpNewUser() {
 }
 
 signUpNewUser()
-​```
+
 总结
 目前的配置非常适合开发环境： 注册即登录，无需邮件验证 。如果你将来要上线生产环境并要求真实的邮件验证，你需要：
 
@@ -1686,10 +1680,10 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 
 您自己编写的 Edge Function (如 login_with_aliyun ) 属于自定义的后端逻辑，不能自动“挂载”到 supabase.auth 对象上。
 
-### 1. 正确的调用方式
+1. 正确的调用方式
 调用 Edge Function 的标准方式是使用 supabase.functions.invoke ：
 
-```
+
 const { data, error } = await supabase.functions.invoke('login_with_aliyun', {
   body: {
     email: 'user@example.com',
@@ -1697,8 +1691,8 @@ const { data, error } = await supabase.functions.invoke('login_with_aliyu
     captchaVerifyParam: 'aliyun_token_xxx'
   }
 })
-​```
-### 2. 为什么不能直接用 auth.login_with_aliyun？
+
+2. 为什么不能直接用 auth.login_with_aliyun？
 - 命名空间不同 ： supabase.auth 专门用于与 Supabase 的 GoTrue (Auth) 服务通信。
 - 服务不同 ：您的函数运行在 Edge Functions 服务中，而 auth 方法请求的是 Auth 服务。两者的 API 路径完全不同（ /functions/v1/... vs /auth/v1/... ）。
 ### 3. 如果您非常想要这种写法 (封装建议)
@@ -1706,7 +1700,6 @@ const { data, error } = await supabase.functions.invoke('login_with_aliyu
 
 创建一个 auth_helper.js :
 
-```
 // utils/auth.js
 
 /**
@@ -1730,10 +1723,9 @@ captchaVerifyParam }) {
 
   return { data, error: null }
 }
-​```
+
 在业务代码中使用:
 
-```
 import { loginWithAliyun } from './utils/auth'
 
 // 使用起来就像原生的一样方便
@@ -1742,8 +1734,8 @@ const { data, error } = await loginWithAliyun(supabase, {
   password: '...',
   captchaVerifyParam: '...'
 })
-​```
-### 总结
+
+总结
 - 原生 SDK 不支持 supabase.auth.login_with_aliyun 这种魔法。
 - 必须使用 supabase.functions.invoke 。
 - 关键点 ：Edge Function 返回 session 后，前端必须调用 supabase.auth.setSession(data.session) 才能真正完成“登录态”的建立。
@@ -1763,41 +1755,40 @@ const { data, error } = await loginWithAliyun(supabase, {
 
 它不像 Supabase Cloud 那样有自动的路由注册中心，而是通过以下 3 个关键步骤“物理连接”起来的：
 
-### 1. 挂载目录 (Mapping)
+1. 挂载目录 (Mapping)
 首先，通过 Docker 的 volumes 配置，把您电脑上的代码目录“映射”到了容器内部。
 
 请看您的 docker-compose.yml ：
 
-```
     volumes:
-      # 左边是宿主机路径 (./functions) -> 右边是容器内路径 (/usr/services)
+       左边是宿主机路径 (./functions) -> 右边是容器内路径 (/usr/services)
       - ./functions:/usr/services
-​```
+
 这意味着：
 
 - 宿主机的 Supabase/docker_functions/functions/ 目录
 - 变成了容器内的 /usr/services/ 目录
 所以容器里现在有了 /usr/services/login_with_aliyun 这个文件夹。
 
-### 2. 指定启动入口 (Command)
+2. 指定启动入口 (Command)
 然后，通过 command 指令明确告诉 Edge Runtime 去运行哪个文件夹。
 
 请看您的 docker-compose.yml ：
 
-```
-    # --main-service 参数指定了具体要运行的函数路径
+
+    --main-service 参数指定了具体要运行的函数路径
     command: start --main-service /usr/services/login_with_aliyun
-​```
+
 - Edge Runtime 启动时，会去读取 /usr/services/login_with_aliyun 目录。
 - 它默认会在该目录下寻找 index.ts 文件作为入口（这就是为什么您的代码文件名必须是 index.ts ）。
-### 3. 路由匹配 (Routing)
+3. 路由匹配 (Routing)
 在您目前的配置中（使用 --main-service ），Edge Runtime 会将这个函数作为 主服务 运行。
 这意味着：
 
 - 根路径 ( / ) 的所有请求都会被转发给这个函数。
 - 您不需要在 URL 里写 /functions/v1/login_with_aliyun 。
 - 直接访问 http://localhost:10000/ 就等于在调用这个函数。
-### 总结
+总结
 Supabase 知道去哪找，是因为您在 docker-compose.yml 里：
 
 1. 把代码 放进去了 ( volumes )。
@@ -1815,16 +1806,15 @@ Supabase 知道去哪找，是因为您在 docker-compose.yml 里：
 
 我已经为您完成了相关配置修改，以下是详细操作步骤：
 
-### 1. 核心配置修改
+1. 核心配置修改
 我已修改了 docker-compose.yml 文件：
 
 - 指定运行函数 : 将启动命令从默认的 hello-world 修改为 login_with_aliyun 。
 - 配置 JWT 验证 : 添加 VERIFY_JWT=false 环境变量，这等同于 --no-verify-jwt 标志，允许未登录用户调用此接口。
 - 预留密钥位置 : 添加了阿里云 Access Key 的环境变量占位符。
-### 2. 您需要执行的操作
+2. 您需要执行的操作
 请打开 Supabase/docker_functions/docker-compose.yml 文件，填入您真实的阿里云密钥：
 
-```
     environment:
       # ...
       # 请填入您的真实密钥
@@ -1832,22 +1822,21 @@ Supabase 知道去哪找，是因为您在 docker-compose.yml 里：
       - ALIYUN_ACCESS_KEY_SECRET=您的AccessKeySecret
       # 已设置为 false，无需修改
       - VERIFY_JWT=false 
-​```
-### 3. 部署/重启服务
+
+3. 部署/重启服务
 修改完成后，在终端中运行以下命令重启服务：
 
-```
 cd /root/huggingface_echodict/Supabase/docker_functions
 docker compose up -d
-​```
-### 4. 调用说明
+
+4. 调用说明
 在自托管模式下，Edge Runtime 直接运行该函数。假设您的 Docker 宿主机 IP 为 YOUR_IP ，调用地址通常为：
 
 http://YOUR_IP:10000/
 
 前端调用代码示例：
 
-```
+
 // 注意：自托管直接调用 Edge Runtime 时，URL 需要指向您的 Docker 服务端口
 const response = await fetch('http://YOUR_IP:10000/', {
   method: 'POST',
@@ -1858,7 +1847,7 @@ const response = await fetch('http://YOUR_IP:10000/', {
     captchaVerifyParam: 'aliyun_token'
   })
 })
-​```
+
 我已经将上述自托管部署说明添加到了 README.md 的末尾，供您随时参考。
 
 ```
@@ -1873,30 +1862,28 @@ const response = await fetch('http://YOUR_IP:10000/', {
 
 我已为您更新了 docker-compose.yml 和 README.md ，采用了更精细的配置：
 
-### 1. 使用 Per-Function 配置 (已修改)
+1. 使用 Per-Function 配置 (已修改)
 在 docker-compose.yml 中，我移除了全局的 VERIFY_JWT=false ，改为：
 
-```
     environment:
-      # ...
-      # 格式: PER_FUNCTION_JWT_VERIFY_<function_name>=<true|false>
+      ...
+      格式: PER_FUNCTION_JWT_VERIFY_<function_name>=<true|false>
       - PER_FUNCTION_JWT_VERIFY_login_with_aliyun=false
-​```
+
 这样配置后：
 
 - login_with_aliyun : 任何人都可以调用（公开接口）。
 - 其他函数 : 仍然需要有效的 JWT 才能调用（受保护）。
-### 2. 关于入口配置 (Main Service)
+2. 关于入口配置 (Main Service)
 为了让这个改动更合理，我也顺便调整了 command 。
 此前是将 login_with_aliyun 作为主服务 ( --main-service )，这会导致所有请求都由它处理。
 我现在创建了一个简单的 main 函数作为默认入口，并将 command 指向它：
 
-```
     command: start --main-service /usr/services/main
-​```
+
 这为未来支持多个函数留出了空间。但在 单函数模式 下，您也可以改回直接指向 login_with_aliyun 。
 
-### 总结
+总结
 您现在只需确保 docker-compose.yml 中包含： - PER_FUNCTION_JWT_VERIFY_login_with_aliyun=false 即可实现仅针对该函数的免鉴权访问。
 
 
@@ -1938,7 +1925,7 @@ curl -i -X POST http://localhost:8000/functions/v1/login_with_aliyun \
   -d '{"email":"test@example.com", "password":"password"}'
 
 
-### 网络集成完成
+网络集成完成
 我已经修改了您的 docker-compose.yml ，将独立的 Edge Runtime 容器成功加入了 Supabase 的主网络 ( supabase_default )。
 
 主要变更：
@@ -1948,27 +1935,27 @@ curl -i -X POST http://localhost:8000/functions/v1/login_with_aliyun \
 3. 无缝集成 ：现在您的容器虽然是独立部署的，但在网络层面表现得就像是 Supabase 官方堆栈的一部分。
 修改后的配置片段： docker-compose.yml
 
-```
+
 services:
   edge-runtime:
-    # ... 其他配置保持不变 ...
+     ... 其他配置保持不变 ...
     networks:
       supabase_default:
         aliases:
-          - functions  # 让 Kong 认为这就是那个 "functions" 服务
+          - functions   让 Kong 认为这就是那个 "functions" 服务
 
 networks:
   supabase_default:
-    external: true     # 使用 Supabase 主堆栈已创建的网络
-​```
-### 验证结果
+    external: true      使用 Supabase 主堆栈已创建的网络
+
+验证结果
 1. 容器状态 ：容器已重启并正常运行。
 2. 直接访问测试 ： curl http://localhost:10000/login_with_aliyun -> 成功 (返回 400 Bad Request，证明服务可达)。
 3. Kong 网关测试 ： curl http://localhost:8000/functions/v1/login_with_aliyun -> 连接建立成功 。
-### 现在您可以：
+现在您可以：
 直接在前端代码中使用标准调用方式，无需任何额外配置：
 
-```
+
 const { data, error } = await supabase.functions.invoke('login_with_aliyun', {
   body: { 
     email: 'user@example.com', 
@@ -1976,7 +1963,7 @@ const { data, error } = await supabase.functions.invoke('login_with_aliyu
     captchaVerifyParam: 'aliyun_token_xxx' 
   }
 })
-​```
+
 原理解释 ：
 当您调用 invoke 时，请求发送给 Kong (端口 8000) -> Kong 根据路由规则转发给内部主机名 functions (端口 9000) -> Docker 网络将其解析到您的新容器 -> 您的 main/index.ts 接收请求并路由到 login_with_aliyun 。
 
@@ -2022,7 +2009,7 @@ edge function 能不能用 nodejs 来写，不用 Deno
    
    - NPM 包支持 ：您可以直接在 Deno 中引入 NPM 包。
      例如，您现在的代码中已经这样用了： index.ts
-```
+
      import Client, { VerifyIntelligentCaptchaRequest } from "npm:@alicloud/
      captcha20230305"
      import { Config } from "npm:@alicloud/openapi-client"
@@ -2101,7 +2088,7 @@ services:
       - ./functions:/usr/services
       
     command: start --inspect=0.0.0.0:9229 --inspect-main --main-service /usr/services/main
-    	# 调试模式
+    	调试模式
 
 
 vi hugingface_echodict/Supabase/docker_functions/.vscode/launch.json
@@ -2129,10 +2116,10 @@ vi hugingface_echodict/Supabase/docker_functions/.vscode/launch.json
 要开始调试，请执行以下步骤：
 
 1. 重启 Docker 容器 以应用配置更改：
-```
+
 docker compose down \
     && docker compose up -d
-```
+
 2. 在 VS Code 中，点击左侧的 运行和调试 (Run and Debug) 图标。
 3. 在下拉菜单中选择 "Attach to Edge Runtime" 。
 4. 点击绿色的播放按钮（或按 F5）。
@@ -2163,10 +2150,10 @@ debugger; 断下后看它的文件路径，写到 .vsocde 的配置里
 
 这表明 Edge Runtime 并没有直接运行挂载的代码，而是运行了 编译后的版本 ，并且编译后的代码位于容器内的 /var/tmp/sb-compile-edge-runtime/services/ 目录下。这就是为什么之前的映射（针对 /usr/services ）失效的原因。
 
-### 修复方案
+修复方案
 我已经更新了 .vscode/launch.json ，添加了针对该编译路径的映射规则：
 
-   ```
+
 "sourceMapPathOverrides": {
   // ... 原有规则保持不变 ...
   "/var/tmp/sb-compile-edge-runtime/services/*": "$
@@ -2174,10 +2161,9 @@ debugger; 断下后看它的文件路径，写到 .vsocde 的配置里
   "file:///var/tmp/sb-compile-edge-runtime/services/*": "$
   {workspaceFolder}/functions/*"
 }
-​```
-### 验证步骤
+验证步骤
 
-   ```
+```
 
 
 
@@ -2235,7 +2221,7 @@ https://supabase.com/docs/guides/functions/examples/cloudflare-turnstile
 ```
 
 supabase functions new cloudflare-turnstile
-	# poject 里新建函数
+	poject 里新建函数
 
 And add the code to the index.ts file:
 
@@ -2304,12 +2290,12 @@ const { data, error } = await supabase.functions.invoke('cloudflare-turnstile', 
 ```
 
 vi /opt/supabase/.env
-## Captcha Config
+Captcha Config
 GOTRUE_SECURITY_CAPTCHA_ENABLED=true
 GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
 GOTRUE_SECURITY_CAPTCHA_SECRET=0x4AAAAAACLZlc1yWo0Ukxxxxxxxxxxx
 GOTRUE_SECURITY_CAPTCHA_SITE_KEY=0x4AAAAAACLZxxxxxxxxx
-	# 加在最后
+	 加在最后
 
 
 vi /opt/supabase/docker-compose.yml
@@ -2320,18 +2306,18 @@ vi /opt/supabase/docker-compose.yml
       GOTRUE_SECURITY_CAPTCHA_PROVIDER: ${GOTRUE_SECURITY_CAPTCHA_PROVIDER}
       GOTRUE_SECURITY_CAPTCHA_SECRET: ${GOTRUE_SECURITY_CAPTCHA_SECRET}
       GOTRUE_SECURITY_CAPTCHA_SITE_KEY: ${GOTRUE_SECURITY_CAPTCHA_SITE_KEY}
-      	# 加在这里
-      # Uncomment to enable custom access token hook.
+      	 加在这里
+       Uncomment to enable custom access token hook.
       	
 
 
 
 
     environment:
-      # Binds nestjs listener to both IPv4 and IPv6 network interfaces
+       Binds nestjs listener to both IPv4 and IPv6 network interfaces
       HOSTNAME: "::"
       
-      # 1. 指向内部 meta 服务
+       1. 指向内部 meta 服务
       STUDIO_PG_META_URL: http://meta:8080
       
       POSTGRES_PORT: ${POSTGRES_PORT}
@@ -2343,10 +2329,10 @@ vi /opt/supabase/docker-compose.yml
       DEFAULT_PROJECT_NAME: ${STUDIO_DEFAULT_PROJECT}
       OPENAI_API_KEY: ${OPENAI_API_KEY:-}
       
-      # 2. 指向内部 kong 网关
+       2. 指向内部 kong 网关
       SUPABASE_URL: http://kong:8000
       
-      # 3. 这个保持公网地址不变 (给前端用的)
+       3. 这个保持公网地址不变 (给前端用的)
       SUPABASE_PUBLIC_URL: ${SUPABASE_PUBLIC_URL}
       
       SUPABASE_ANON_KEY: ${ANON_KEY}
@@ -2354,7 +2340,7 @@ vi /opt/supabase/docker-compose.yml
       AUTH_JWT_SECRET: ${JWT_SECRET}
       LOGFLARE_PRIVATE_ACCESS_TOKEN: ${LOGFLARE_PRIVATE_ACCESS_TOKEN}
       
-      # 4. 指向内部 analytics 服务 (假设服务名叫 analytics，请核对 depends_on 里的名字)
+       4. 指向内部 analytics 服务 (假设服务名叫 analytics，请核对 depends_on 里的名字)
       LOGFLARE_URL: http://analytics:4000
       
       NEXT_PUBLIC_ENABLE_LOGS: true
@@ -2408,18 +2394,18 @@ Supabase 包含多个服务，通常运行在不同的端口（以标准 Docker 
 
 我已经将你的 .env 文件中的 VITE_TURNSTILE_SITE_KEY 替换为了测试专用的 "Always Pass" (永远通过) Key：
 
-```
+
 VITE_TURNSTILE_SITE_KEY=1x00000000000000000000AA
-​```
+
 现在你可以刷新页面重试 ，Turnstile 应该会立即显示绿色的对勾，并且你可以正常进行注册或登录流程。
 
-### 💡 为什么之前的 Key 无法通过？
+💡 为什么之前的 Key 无法通过？
 既然你是在 http://echopxxxx.com:5173 访问，而之前的 Key 一直失败，可能有以下原因：
 
 1. Hostname 限制 : 你的 Cloudflare 后台可能只配置了 echoxxxx.com ，但 Turnstile 在某些环境下可能会校验端口或具体的子环境。
 2. 环境风控 : 浏览器环境（如无头模式、频繁刷新、开发者工具打开）可能被 Cloudflare 判定为机器人。
 3. 配置生效延迟 : Cloudflare 的配置修改有时需要几分钟生效。
-### ⚠️ 上线前必做
+⚠️ 上线前必做
 目前的测试 Key 仅用于开发调试，任何人都可以通过验证。 在正式上线前，请务必换回你的真实 Site Key ( 0x4AAAAAAxxxxxx )，并确保 Cloudflare 后台的 Hostname 配置正确包含了你的所有访问域名。
 
 
@@ -2432,7 +2418,7 @@ VITE_TURNSTILE_SITE_KEY=1x00000000000000000000AA 换这个就通过了，说明�
 
 问题 100% 出在 Cloudflare 后台的配置或环境校验上。 具体来说，最可能是以下原因之一：
 
-### 1. Hostname 白名单不匹配 (最常见)
+1. Hostname 白名单不匹配 (最常见)
 你之前填的 Hostname 是 echoxxx.com ，但你访问的地址可能是：
 
 - IP 访问 : http://123.123.123.123:5173
@@ -2441,14 +2427,14 @@ VITE_TURNSTILE_SITE_KEY=1x00000000000000000000AA 换这个就通过了，说明�
 如果访问地址和后台配置的 Hostname 不完全一致（或者是其子域名），Turnstile 就会直接拦截。
 
 - 解决方法 : 在 Cloudflare 后台 Hostname 列表里把 localhost , 127.0.0.1 以及你所有可能用到的域名都加进去。
-### 2. Widget Mode 设置过严
+2. Widget Mode 设置过严
 如果你的模式选了 Invisible (隐形模式)，但它判定你的浏览器环境（可能是因为开了开发者工具、插件干扰、或者是刚注册的域名）“可疑”，它会尝试弹出一个交互验证。但如果你的代码或 UI 容器 ( #turnstile-widget ) 没留够空间显示这个交互框，验证就会卡死在 "Unsolved"。
 
 - 解决方法 : 建议先选 Managed (智能模式)，让它自动决定是否显示复选框。
-### 3. 域名解析/SSL 问题
+3. 域名解析/SSL 问题
 Cloudflare 可能会校验请求的 Origin。如果你的 echoplayer.com 还没有正确解析，或者你在本地用 hosts 强行指向但 SSL 证书不对，也可能导致校验失败。
 
-### 结论
+结论
 既然测试 Key 能过，你可以放心地继续开发后续功能。 等到要正式上线时 ，再换回正式 Key，并确保那时的域名（如 echoxxx.com ）是真实可访问的，且在 Cloudflare 后台配置无误即可。
 
 
@@ -2508,13 +2494,13 @@ Error: 300010 是最关键的信息。
 
 它的含义是： Invalid Hostname (域名不匹配) 。
 
-### 详细解释
+详细解释
 这个错误明确告诉你，你当前访问的域名（浏览器地址栏里的那个，比如 echoxxx.com:5173 或 localhost ） 不在 你 Cloudflare Turnstile 后台配置的 Hostname 白名单 里。
 
-### 为什么之前一直找不到原因？
+为什么之前一直找不到原因？
 - Cloudflare Dashboard 不显示这个，是为了防止攻击者枚举你的配置。
 - 下方的那些 normal?lang=auto 报错是你的浏览器插件（翻译插件或类似工具）引起的，和 Turnstile 无关，属于噪音。
-### ✅ 解决方案
+✅ 解决方案
 请执行以下操作，问题将立即解决：
 
 1. 登录 Cloudflare Dashboard。
@@ -2537,7 +2523,7 @@ Error: 300010 是最关键的信息。
 
 虽然 Cloudflare 文档说 Hostname 不需要填端口，但在实际运行中，如果你的应用运行在 非标准端口 （比如 :5173 ）且处于 开发模式 或 IP 直接访问 （即使有域名映射），Cloudflare 的安全机制可能会判定为“来源不匹配”。
 
-### 终极排查清单 (按优先级)
+终极排查清单 (按优先级)
 请依次检查以下 3 点，只要有一点不对就会导致验证失败：
 
 1. Site Key 类型不匹配 (最可能原因)
@@ -2555,7 +2541,7 @@ Error: 300010 是最关键的信息。
    - 前端显示“验证失败”有时是因为后端（Supabase）拒绝了。
    - 前端拿到 Token 后发给 Supabase，如果 Supabase 里的 Turnstile Secret Key 配错了，或者根本没配，Supabase 会告诉前端“验证失败”。
    - 请确认 : 你是否已经在 Supabase Dashboard (Auth -> Security -> Bot Protection) 里填入了对应的 Secret Key ？
-### 建议操作步骤
+建议操作步骤
 为了立马解决问题，请按这个顺序做：
 
 1. 第一步 (Cloudflare 后台) :
@@ -2567,13 +2553,13 @@ Error: 300010 是最关键的信息。
 2. 第二步 (代码) :
    
    - 在 Login.svelte 中，给 render 函数添加 action 参数（虽然不是必须，但有助于通过风控）：
-```
+
      window.turnstile.render('#turnstile-widget', {
        sitekey: import.meta.env.VITE_TURNSTILE_SITE_KEY,
        action: 'login', // 添加这一行
        // ... 其他回调
      });
-```
+
 3. 第三步 (测试) :
    
    - 等待 2 分钟让配置生效。
@@ -2600,8 +2586,8 @@ I have:
 4. Restarted the auth service.
 
 vi /opt/supabase/.env
-#### Captcha Config
-```
+Captcha Config
+
 GOTRUE_SECURITY_CAPTCHA_ENABLED=true
 GOTRUE_SECURITY_CAPTCHA_PROVIDER=turnstile
 GOTRUE_SECURITY_CAPTCHA_SECRET=这里填Secret Key
@@ -2632,7 +2618,7 @@ vi /opt/supabase/docker-compose.yml
       GOTRUE_SECURITY_CAPTCHA_PROVIDER: ${GOTRUE_SECURITY_CAPTCHA_PROVIDER}
       GOTRUE_SECURITY_CAPTCHA_SECRET: ${GOTRUE_SECURITY_CAPTCHA_SECRET}
       GOTRUE_SECURITY_CAPTCHA_SITE_KEY: ${GOTRUE_SECURITY_CAPTCHA_SITE_KEY}
-		# 注意后面的新增部分
+		 注意后面的新增部分
 
 
 sed -i '/GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}/a \      GOTRUE_SECURITY_CAPTCHA_ENABLED: ${GOTRUE_SECURITY_CAPTCHA_ENABLED}\n      GOTRUE_SECURITY_CAPTCHA_PROVIDER: ${GOTRUE_SECURITY_CAPTCHA_PROVIDER}\n      GOTRUE_SECURITY_CAPTCHA_SECRET: ${GOTRUE_SECURITY_CAPTCHA_SECRET}\n      GOTRUE_SECURITY_CAPTCHA_SITE_KEY: ${GOTRUE_SECURITY_CAPTCHA_SITE_KEY}' /opt/supabase/docker-compose.yml 
@@ -2796,7 +2782,7 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
 
 只要前端传了 Token，后端就会自动去 Cloudflare 验证。如果验证失败或没传 Token，后端会返回错误。
 
-   ```
+```
 
 
 
@@ -2810,7 +2796,7 @@ https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/imple
 
 
 
-   ```
+```
 
 阿里云确实有对应的服务，叫做 阿里云验证码 2.0 (Aliyun Captcha 2.0) 。它在国内的加载速度和稳定性确实优于 Cloudflare，但在 Supabase 项目中集成它会 复杂很多 。
 
@@ -2863,6 +2849,11 @@ https://www.v2ex.com/t/1149062
   
   无论是什么样的验证码都无法 100%阻止所有机器人，而是增加其操作成本。虽然验证本身无交互，但通过 PoW （工作量证明）机制，可以限制单个用户高频请求；多个不同用户确实可以慢慢通过，但只要你设置足够的难度，就能有效防止批量滥用，比如刷接口、薅羊毛、撞库等。本质上就是一种手段通过提高操作成本（ PoW 计算需要时间）来放慢访问的速度，实现类似于速率限制，防止 DDOS 的效果
   
+```
+```
+
+```
+
 ```
 
 ```
@@ -3737,7 +3728,7 @@ https://shell.aliyun.com/
 
 
 
-​```shell
+```shell
 
 terraform version
 	# 查看 Terrafrom版本
@@ -3910,9 +3901,9 @@ def createDatabase_anime( host = 'xxxxx.166'):
                 TABLESPACE = pg_default \
                 CONNECTION LIMIT = -1 \
                 TEMPLATE template0;")
-
+    
     with psycopg2.connect(database='anime', user='postgres', password='postgres',host=host, port='5432') as conn:
-
+    
         with conn.cursor() as cur:
         
             cur.execute("DROP TABLE IF EXISTS anime;")
@@ -3927,12 +3918,12 @@ def createDatabase_anime( host = 'xxxxx.166'):
                 v_zh  tsvector, \
                 v_en  tsvector \
             );")
-
+    
             cur.execute("create extension pgroonga;")
             cur.execute("CREATE INDEX pgroonga_jp_index ON anime USING pgroonga (jp);")
             # cur.execute("create extension rum;")
             # cur.execute("CREATE INDEX fts_rum_anime ON anime USING rum (v_jp rum_tsvector_ops);")
-
+    
             cur.execute('BEGIN;')
             jp = '今日は学校に遅刻した。'
             sql = f"""insert into anime(jp) values('{jp}');"""
@@ -3998,7 +3989,7 @@ to_tsvector('Chinese', content);
 - HeidiSQL 有点问题
 
 
-```bash
+​```bash
 apt install postgresql-server-dev-13
 find / -name "postgres.h" -print  # 后面编译pg_jieba 要用
 ```
@@ -4091,7 +4082,7 @@ select pg_size_pretty(pg_relation_size('nlpp_vector')) as size;
  	# 单个表
 select pg_size_pretty(pg_total_relation_size('nlpp_vector')) as size;
   	# 单个表包含索引大小
-  	
+
 select pg_size_pretty(pg_database_size('nlppvector')) as size;
 	# 单个库大小
 
@@ -4191,7 +4182,7 @@ CREATE TABLE IF NOT EXISTS japanese (
       CREATE INDEX IF NOT EXISTS index_rum_kr ON japanese USING rum (v_kr rum_tsvector_ops);
       CREATE INDEX IF NOT EXISTS index_rum_ch ON japanese USING rum (v_ch rum_tsvector_ops);
       CREATE INDEX IF NOT EXISTS index_rum_en ON japanese USING rum (v_en rum_tsvector_ops);
-      
+
 
       CREATE INDEX IF NOT EXISTS japanese_gid_index ON japanese (gid);
       CREATE INDEX IF NOT EXISTS japanese_pid_index ON japanese (pid);
@@ -4225,7 +4216,7 @@ PGPASSWORD="post4321" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d nlppvector -t 
 PGPASSWORD="postgres" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d touch -t public.anime --inserts | gzip -9 > ./touch_$(date +%Y-%m-%d).psql.gz
 
 	# PGPASSWORD="xxx" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d anime -t public.anime --inserts | gzip -9 > ./anime_$(date +%Y-%m-%d).psql.gz
-
+	
 	# sudo -u postgres psql
 	# SHOW data_directory;
 	ls -al 
@@ -4238,7 +4229,7 @@ PGPASSWORD="postgres" pg_dump -h 127.0.0.1 -U postgres -p 5432 -d touch -t publi
 	PGPASSWORD="xxx" pg_dump -U postgres -h localhost anime | gzip -9 > ./anime_$(date +%Y-%m-%d).psql.gz
 	
 	psql -h 127.0.0.1 -p 5432 -U postgres # 提示输入密码
-	
+
 
 
 # 恢复数据库
@@ -4248,7 +4239,7 @@ CREATE DATABASE anime WITH OWNER = postgres ENCODING = 'UTF8' TABLESPACE = pg_de
 
 PGPASSWORD="xxx" psql -h 127.0.0.1 -p 5432 -U postgres -d anime -f anime_2021-07-11.psql
 
-	
+
 ```
 
 
@@ -4259,17 +4250,17 @@ PGPASSWORD="xxx" psql -h 127.0.0.1 -p 5432 -U postgres -d anime -f anime_2021-07
 一、备份表
 
     1. 这里使用的是Linux服务器，首先进入安装当前数据库的服务器，可以在home目录下新建一个文件夹。
-
+    
     2.输入命令：  pg_dump -t 表名 -U postgres 数据库名 > 备份文件名.dump
-
+    
         例如：pg_dump -t user -t dept -t employee -U postgres test_table > test_copy.dump
-
+    
        这样就可以实现多表同时备份。
 
 二、还原表
 
      输入命令：psql -d 数据库名 -U postgres -f 备份文件名.dump
-
+    
     例如：psql -d test_table -U postgres -f test_copy.dump
 
 ```
@@ -4444,7 +4435,7 @@ CREATE INDEX ON test_vector USING hnsw (V_Test vector_cosine_ops);
 (async () => {
   let bent = require('bent')
   let post = bent("http://xxxx:xxx", 'POST', 'json', 200)
-  
+
   let response = await post('/embeddings', JSON.stringify({"sentence":"什么什么向量"}), { 'Content-Type': "application/json;chart-set:utf-8" })
 
   if (response.status == 0) {
@@ -4491,15 +4482,15 @@ def db_select_by_embedding(embedding: np.array):
 
 - https://cloud.tencent.com/document/product/409/67298
 
-  ```
+```
   yum install postgresql13-contrib
-  
+
   create extension postgres_fdw;
-  
+
   create server server_danganronpa2 foreign data wrapper postgres_fdw options (dbname 'danganronpa2'); 
   	# 不跨主机，仅跨数据库，指定 dbname 既可
-  
-  
+
+
   create foreign table remote_danganronpa2
   (
     "id" int4 NOT NULL GENERATED ALWAYS AS IDENTITY (
@@ -4528,14 +4519,14 @@ def db_select_by_embedding(embedding: np.array):
     "videoname" text COLLATE "pg_catalog"."default"
   ) server server_danganronpa2 options(table_name 'danganronpa');
   	# 创建外部表
-  
+
   create user mapping for postgres server server_danganronpa2 options (user 'postgres',password 'password2');
   	# 
   	
   SELECT * FROM remote_danganronpa2 LIMIT 1;
+
   
-  
-  
+
   INSERT INTO anime ("name",
   jp,
   zh,
@@ -4554,7 +4545,7 @@ def db_select_by_embedding(embedding: np.array):
   audio,
   video,
   videoname)
-  
+
   SELECT 
   "name",
   jp,
@@ -4575,8 +4566,8 @@ def db_select_by_embedding(embedding: np.array):
   video,
   videoname
   FROM remote_danganronpa2;
-  
-  ```
+
+```
 
   
 
@@ -4634,11 +4625,11 @@ def db_select_by_embedding(embedding: np.array):
 
   1. 在本实例中创建测试数据。
 
-     ```
+  ```
      postgres=>create role user1 with LOGIN  CREATEDB PASSWORD 'password1';
      postgres=>create database testdb1;
      CREATE DATABASE
-     ```
+  ```
 
      > 注意：
      >
