@@ -1103,12 +1103,12 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 *   安装完成后，你需要配置环境变量（脚本最后会提示），或者直接**重启终端**，或者运行：
     ```bash
     source "$HOME/.cargo/env"
-    ```
+```
 
 3. 安装 Rust 1.79.0
 使用 `rustup` 安装指定版本：
 
-​```bash
+```bash
 rustup install 1.79.0
 ​```
 
@@ -1191,7 +1191,7 @@ ssh root@127.0.0.1
 cp /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources.bak  \
   && vi  /etc/apt/sources.list.d/ubuntu.sources
 
-# 阿里云镜像源配置示例
+阿里云镜像源配置示例
 Types: deb
 URIs: https://mirrors.aliyun.com/ubuntu/
 Suites: noble noble-updates noble-backports
@@ -1213,7 +1213,7 @@ vi pigsty.yml              # 编辑域名、密码、密钥...
 vi pigsty.yml
 	# 自已先手动设置密码！除非内网环境
 
-# IMPORTANT: CHANGE JWT_SECRET AND REGENERATE CREDENTIAL ACCORDING!!!!!!!!!!!
+IMPORTANT: CHANGE JWT_SECRET AND REGENERATE CREDENTIAL ACCORDING!!!!!!!!!!!
               # https://supabase.com/docs/guides/self-hosting/docker#securing-your-services
 
 Generate and configure API keys#
@@ -1228,7 +1228,7 @@ SERVICE_ROLE_KEY: Server-side API key with full database access (service_role ro
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaXNzIjoic3VwYWJhc2UiLCJpYXQiOjE3Njc3MTUyMDAsImV4cCI6MTkyNTQ4MTYwMH0.dzJyYBEJhWIm2h6SgK7gfYhE8PkJDGqxi3kiUC5AAPU
 
 
-# postgres connection string (use the correct ip and port)
+postgres connection string (use the correct ip and port)
               POSTGRES_HOST: 192.168.1.7      # point to the local postgres node
               POSTGRES_PORT: 5436             # access via the 'default' service, which always route to the primary postgres
               POSTGRES_DB: postgres           # the supabase underlying database
@@ -1257,7 +1257,7 @@ systemctl restart ssh \
 
 
 
-### 配置修改
+配置修改
 
 ```
 
@@ -1284,13 +1284,13 @@ vi /root/pigsty/pigsty.yml
         apps:                                             # define all applications
           supabase:                                       # the definition of supabase app
             conf:                                         # override /opt/supabase/.env
-
-              # postgres connection string (use the correct ip and port)
+    
+              postgres connection string (use the correct ip and port)
               POSTGRES_HOST: 172.17.0.1      # point to the local postgres node
               	# ip 从 127.0.0.1 改成这个了
               POSTGRES_PORT: 5436             # access via the 'default' service, which 
-
-	# ./app.yml 运行出错才这样改的
+    
+    ./app.yml 运行出错才这样改的
 
 
 
@@ -1321,10 +1321,10 @@ Once you have access to the dashboard, you will need API keys to connect your ap
   eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3ODAxNjAwLCJleHAiOjE5MjU1
   NjgwMDB9.GtkruGMgbxm3kS_1eIHKyz0uaVjhvlWLvqUuS5b-DRc
 
-  ```
+```
 - service_role key (private, for backend admin use - keep secret ):
   
-  ```
+```
   eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
   eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaXNzIjoic3VwYWJhc2UiLCJpYXQiOjE3Njc4MDE2MDAsImV4
   cCI6MTkyNTU2ODAwMH0.JHimTs0hXELAEp1FtwPp2SXq-l8Dzfv8oHoGJ9oWvF8
@@ -1344,7 +1344,7 @@ Once you have access to the dashboard, you will need API keys to connect your ap
 
 ### Dashboard 是什么还可以新建 project 吗？
 
-```
+  ```
 
 Dashboard 是什么 Supabase Dashboard (Supabase Studio) 是 Supabase 的可视化管理界面。你可以通过它来：
 
@@ -1360,7 +1360,7 @@ Dashboard 是什么 Supabase Dashboard (Supabase Studio) 是 Supabase 的可视�
 - Studio 界面上显示的 "Default Project" 只是一个通过环境变量配置的名称 ( STUDIO_DEFAULT_PROJECT=Pigsty )。
 - 如果你需要另一个 "Project"（即另一套完全隔离的 Supabase 环境），你需要部署另一套 Supabase Docker 容器栈，并监听不同的端口。
 
-```
+  ```
 
 
 
@@ -1383,16 +1383,18 @@ cd /opt/supabase && docker compose up -d
    /opt/supabase/.env
    STUDIO_DEFAULT_PROJECT=MyNewProject  # 将原来的 Pigsty 修改为你想要的名称
 
-   ```
+```
    (我已经帮你执行了这一步，将名称修改为了 MyNewProject )
 2. 重启 Supabase 修改配置后，必须重启 Supabase 服务（主要是 Studio 容器）才能生效。
    
-   ```
+```
    cd /opt/supabase
    docker compose up -d
    ```
    (我已经帮你执行了这一步， supabase-studio 容器已重建)
 现在你可以刷新浏览器访问 Dashboard，应该能看到 Project 名称已经变成了 MyNewProject 。
+
+   ```
 
    ```
 
@@ -1402,7 +1404,7 @@ cd /opt/supabase && docker compose up -d
 
 ### 新建的用户可以有自已的各种 key 吗
 
-```
+   ```
 
 `http://xx.xx.xx.xx:8000/project/default/auth/users`  我在这里新建了一个 user ，这个用户可以有自已的各种 key 吗
 
@@ -1410,18 +1412,18 @@ cd /opt/supabase && docker compose up -d
 
 简单来说： 你在 Auth 页面新建的用户，不会拥有类似 anon 或 service_role 那样的永久 API Key。
 
-### 1. 项目级 Key (Project Keys)
+1. 项目级 Key (Project Keys)
 这是你之前在 .env 文件里看到的，属于整个项目的“大门钥匙”。
 
 - anon key : 公钥。给前端用的，权限很低，必须配合 Row Level Security (RLS) 使用。
 - service_role key : 私钥。拥有上帝权限，可以绕过所有 RLS 规则。 绝对不能给普通用户 。
-### 2. 用户级 Token (User Access Token / JWT)
+2. 用户级 Token (User Access Token / JWT)
 当你在 http://xx.xx.xx.xx:8000/project/default/auth/users 创建一个用户后，这个用户是用来 登录你的应用 的。
 
 - 用户没有永久 Key ：用户登录（通过 Email/密码, OAuth 等）成功后，Supabase 会发给前端一个临时的 Access Token (JWT) 。
 - Token 代表身份 ：前端在请求 Supabase 数据库或 API 时，会在 Header 里带上这个 Token。
 - RLS 决定权限 ：Postgres 数据库会解析这个 Token，知道“这是 User A”，然后根据你设置的 RLS (Row Level Security) 规则，决定 User A 能查哪些数据，能改哪些数据。
-### 总结
+总结
 - Project Keys ( anon / service_role ) ：是给 开发者 用来连接 Supabase 服务的。
 - User Users ：是你的 App 的最终用户 。他们通过登录获取 临时 Token 来证明身份，而不是拥有永久 Key。
 如果你需要给某个程序（而不是人）分配一个长期有效的凭证，通常的做法是：
@@ -1456,7 +1458,7 @@ WHERE email = 'your_email@example.com';
 
 `\root\pigsty\pigsty.yml` 分析 Supabase 新用户注册方面的配置，配好后在前端用户如何完成注册
 
-### 配置分析
+配置分析
 查看 /opt/supabase/.env 文件，当前的注册配置如下：
 
 1. 允许邮箱注册 ( ENABLE_EMAIL_SIGNUP=true )：开启。
@@ -1472,7 +1474,7 @@ npm install @supabase/supabase-js
 ​``` 2. 注册代码示例
 你需要用到之前获取的 SUPABASE_URL (你的公网 IP + 端口) 和 ANON_KEY 。
 
-​```
+```
 import { createClient } from '@supabase/supabase-js'
 
 // 1. 初始化客户端
@@ -1503,7 +1505,7 @@ async function signUpNewUser() {
 
 signUpNewUser()
 ​```
-### 总结
+总结
 目前的配置非常适合开发环境： 注册即登录，无需邮件验证 。如果你将来要上线生产环境并要求真实的邮件验证，你需要：
 
 1. 在 .env 中配置真实的 SMTP 服务（如 SendGrid, AWS SES 等）。
@@ -1518,11 +1520,10 @@ signUpNewUser()
 ### 前端用户如何完成登录
 
 ```
-
 前端用户登录同样非常简单，使用 supabase.auth.signInWithPassword 方法即可。
 
-### 前端登录代码示例
-​```
+前端登录代码示例
+
 import { createClient } from '@supabase/supabase-js'
 
 // 1. 初始化客户端 (与注册时相同)
@@ -1547,14 +1548,15 @@ async function signInUser() {
   // 登录成功
   console.log('登录成功，Session 信息:', data.session)
   console.log('Access Token (JWT):', data.session.access_token)
-  
+
   // 你可以将 access_token 存储起来，或者由 supabase-js 自动管理（默认存储在 
   localStorage）
 }
 
 signInUser()
-​```
-### 关键点说明
+
+关键点说明
+
 1. Session 管理 ： supabase-js 默认会自动将 Session 信息（包括 Token）保存在浏览器的 localStorage 中。这意味着用户刷新页面后，依然保持登录状态。
 2. 获取当前用户 ：在应用的任何地方，你可以通过 supabase.auth.getUser() 来检查当前是否已登录以及获取用户信息。
 3. 登出 ：使用 supabase.auth.signOut() 即可登出，这会清除本地的 Session。
@@ -1572,12 +1574,12 @@ signInUser()
 
 你可以根据业务复杂度选择以下三种方案：
 
-### 方案一：Postgres 数据库函数 (Database Functions) —— 适合“数据密集型”逻辑
+方案一：Postgres 数据库函数 (Database Functions) —— 适合“数据密集型”逻辑
 如果你的逻辑主要是对数据的增删改查组合，或者需要强事务保证（例如：转账，A扣钱B必须加钱），直接在数据库里写 SQL 函数（PL/pgSQL）是最高效的。
 
 - 优点 ：速度极快（数据不出数据库），强一致性，可以直接通过 API ( rpc ) 调用。
 - 缺点 ：SQL 语言编写复杂逻辑（如调用第三方 API、复杂的字符串处理）体验较差，调试困难。
-### 方案二：Supabase Edge Functions —— 适合“现代全栈”逻辑 (推荐)
+方案二：Supabase Edge Functions —— 适合“现代全栈”逻辑 (推荐)
 这是 Supabase 提供的 Serverless 函数服务（基于 Deno）。你可以用 TypeScript/JavaScript 编写逻辑。
 
 - 场景 ：
@@ -1587,21 +1589,21 @@ signInUser()
   - Webhooks 处理。
 - 优点 ：使用熟悉的 TS/JS，开发体验好，易于扩展，与 Supabase Auth 无缝集成。
 - 缺点 ：有冷启动时间（虽然 Deno 很快），比数据库内部函数慢一点点。
-### 方案三：独立的后端服务 —— 适合“极度复杂/遗留”系统
+方案三：独立的后端服务 —— 适合“极度复杂/遗留”系统
 只有在以下情况你才需要单独起一个后端服务（Go/Java/Node等）：
 
 1. 你有现成的遗留系统需要集成。
 2. 你需要长时间运行的任务（Edge Functions 通常有执行时间限制）。
 3. 逻辑极度复杂，依赖大量特殊的系统库。
-### 总结建议
+总结建议
 对于 90% 的新项目，推荐的组合是：
 
 1. 简单的 CRUD ：直接在前端用 supabase-js 调用，配合 RLS 保证安全。
 2. 复杂业务/第三方集成 ：使用 Edge Functions 。
 3. 高性能数据处理 ：使用 Database Functions 。
 不需要 专门写一个传统的后端服务。
-
 ```
+
 
 
 
@@ -1611,18 +1613,18 @@ signInUser()
 
 Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 部署到云端 。
 
-### 1. 本地开发环境 (推荐)
+1. 本地开发环境 (推荐)
 这是唯一支持类似“单步调试”体验的方式。你需要使用 Supabase CLI 在本地运行函数。
 
 - 运行函数 ：
-```
+
   supabase functions serve --debug
-  ``` 加上 --debug 参数后，你可以通过 Chrome DevTools 或 VS Code 进行调试。
+ 加上 --debug 参数后，你可以通过 Chrome DevTools 或 VS Code 进行调试。
 - VS Code 调试 ：
   你可以配置 VS Code 的 launch.json 来连接到本地运行的 Deno 进程，从而设置断点、查看变量和单步执行。
   - Supabase 底层使用 Deno，所以本质上是调试 Deno 程序。
   - 你需要在 VS Code 中安装 "Deno" 插件。
-### 2. 部署后 (生产/预览环境)
+2. 部署后 (生产/预览环境)
 一旦函数部署到服务器（无论是官方云还是你的自托管环境）， 不支持 传统的断点单步调试。你主要依赖以下方式排查问题：
 
 - 日志 (Logs) ：
@@ -1631,12 +1633,12 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
   - 在代码中打印关键变量的值和执行路径。
 - 本地重现 ：
   如果线上报错，尝试提取线上的输入参数（Request Body/Headers），在本地用 curl 或 Postman 调用本地运行的函数 ( localhost:54321/functions/v1/xxx ) 来复现并单步调试。
-### 总结
+总结
 - 单步调试 ： 仅限本地开发环境 (通过 Supabase CLI + VS Code/Chrome)。
 - 线上排查 ：依赖 日志 和 错误监控 (Sentry 等)。
 建议的开发流程是：先在本地编写并充分调试（利用断点），确认无误后再部署。
 
-  ```
+```
 
 
 
@@ -1687,7 +1689,7 @@ Supabase Edge Functions 的调试体验取决于你是在 本地开发 还是 �
 ### 1. 正确的调用方式
 调用 Edge Function 的标准方式是使用 supabase.functions.invoke ：
 
-​```
+```
 const { data, error } = await supabase.functions.invoke('login_with_aliyun', {
   body: {
     email: 'user@example.com',
@@ -1704,7 +1706,7 @@ const { data, error } = await supabase.functions.invoke('login_with_aliyu
 
 创建一个 auth_helper.js :
 
-​```
+```
 // utils/auth.js
 
 /**
@@ -1731,7 +1733,7 @@ captchaVerifyParam }) {
 ​```
 在业务代码中使用:
 
-​```
+```
 import { loginWithAliyun } from './utils/auth'
 
 // 使用起来就像原生的一样方便
@@ -1766,7 +1768,7 @@ const { data, error } = await loginWithAliyun(supabase, {
 
 请看您的 docker-compose.yml ：
 
-​```
+```
     volumes:
       # 左边是宿主机路径 (./functions) -> 右边是容器内路径 (/usr/services)
       - ./functions:/usr/services
@@ -1782,7 +1784,7 @@ const { data, error } = await loginWithAliyun(supabase, {
 
 请看您的 docker-compose.yml ：
 
-​```
+```
     # --main-service 参数指定了具体要运行的函数路径
     command: start --main-service /usr/services/login_with_aliyun
 ​```
@@ -1822,7 +1824,7 @@ Supabase 知道去哪找，是因为您在 docker-compose.yml 里：
 ### 2. 您需要执行的操作
 请打开 Supabase/docker_functions/docker-compose.yml 文件，填入您真实的阿里云密钥：
 
-​```
+```
     environment:
       # ...
       # 请填入您的真实密钥
@@ -1834,7 +1836,7 @@ Supabase 知道去哪找，是因为您在 docker-compose.yml 里：
 ### 3. 部署/重启服务
 修改完成后，在终端中运行以下命令重启服务：
 
-​```
+```
 cd /root/huggingface_echodict/Supabase/docker_functions
 docker compose up -d
 ​```
@@ -1845,7 +1847,7 @@ http://YOUR_IP:10000/
 
 前端调用代码示例：
 
-​```
+```
 // 注意：自托管直接调用 Edge Runtime 时，URL 需要指向您的 Docker 服务端口
 const response = await fetch('http://YOUR_IP:10000/', {
   method: 'POST',
@@ -1874,7 +1876,7 @@ const response = await fetch('http://YOUR_IP:10000/', {
 ### 1. 使用 Per-Function 配置 (已修改)
 在 docker-compose.yml 中，我移除了全局的 VERIFY_JWT=false ，改为：
 
-​```
+```
     environment:
       # ...
       # 格式: PER_FUNCTION_JWT_VERIFY_<function_name>=<true|false>
@@ -1889,7 +1891,7 @@ const response = await fetch('http://YOUR_IP:10000/', {
 此前是将 login_with_aliyun 作为主服务 ( --main-service )，这会导致所有请求都由它处理。
 我现在创建了一个简单的 main 函数作为默认入口，并将 command 指向它：
 
-​```
+```
     command: start --main-service /usr/services/main
 ​```
 这为未来支持多个函数留出了空间。但在 单函数模式 下，您也可以改回直接指向 login_with_aliyun 。
@@ -1919,8 +1921,8 @@ curl -i -X POST http://localhost:8000/functions/v1/login_with_aliyun \
   -H "Authorization: Bearer $ANON_KEY" \
   -H "Content-Type: application/json" \
   -d '{"email":"test@example.com", "password":"password"}'
-  
-  
+
+
  ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzY3ODAxNjAwLCJleHAiOjE5MjU1NjgwMDB9.GtkruGMgbxm3kS_1eIHKyz0uaVjhvlWLvqUuS5b-DRc"
 
 echo "Testing Direct Access:"
@@ -1946,7 +1948,7 @@ curl -i -X POST http://localhost:8000/functions/v1/login_with_aliyun \
 3. 无缝集成 ：现在您的容器虽然是独立部署的，但在网络层面表现得就像是 Supabase 官方堆栈的一部分。
 修改后的配置片段： docker-compose.yml
 
-​```
+```
 services:
   edge-runtime:
     # ... 其他配置保持不变 ...
@@ -1966,7 +1968,7 @@ networks:
 ### 现在您可以：
 直接在前端代码中使用标准调用方式，无需任何额外配置：
 
-​```
+```
 const { data, error } = await supabase.functions.invoke('login_with_aliyun', {
   body: { 
     email: 'user@example.com', 
@@ -2127,10 +2129,10 @@ vi hugingface_echodict/Supabase/docker_functions/.vscode/launch.json
 要开始调试，请执行以下步骤：
 
 1. 重启 Docker 容器 以应用配置更改：
-   ```
+```
 docker compose down \
     && docker compose up -d
-   ```
+```
 2. 在 VS Code 中，点击左侧的 运行和调试 (Run and Debug) 图标。
 3. 在下拉菜单中选择 "Attach to Edge Runtime" 。
 4. 点击绿色的播放按钮（或按 F5）。
@@ -2164,7 +2166,7 @@ debugger; 断下后看它的文件路径，写到 .vsocde 的配置里
 ### 修复方案
 我已经更新了 .vscode/launch.json ，添加了针对该编译路径的映射规则：
 
-```
+   ```
 "sourceMapPathOverrides": {
   // ... 原有规则保持不变 ...
   "/var/tmp/sb-compile-edge-runtime/services/*": "$
@@ -2175,7 +2177,7 @@ debugger; 断下后看它的文件路径，写到 .vsocde 的配置里
 ​```
 ### 验证步骤
 
-```
+   ```
 
 
 
@@ -2651,7 +2653,7 @@ sed -i '/GOTRUE_SMS_AUTOCONFIRM: ${ENABLE_PHONE_AUTOCONFIRM}/a \      GOTRUE_SEC
  grep -A 5 "Captcha Config" /opt/supabase/.env
 
  我已经为你配置好了 Cloudflare Turnstile。你需要完成最后一步：填入你自己的密钥。
- 
+
 
 ### 1. 修改配置文件
 
@@ -2735,12 +2737,12 @@ cd /opt/supabase/ && docker compose up -d auth
      这样就实现了从前端到后端的完整防刷和人机验证。
 
 
-​```
+```
 
 
 #### Supabase 沙盒为什么没看到 Turnstile 选项
 
-​```
+```
 
 cd /opt/supabase && docker compose up -d auth   执行这个命令后，Supabase 8000 端口沙盒里的 Authentication 面面为什么没有看到有  Cloudflare Turnstile 选项
 
@@ -2770,7 +2772,7 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
 2. 调用 Supabase Auth API 时带上 Token ：
    在使用 supabase-js 注册或登录时，传入 captchaToken 。
 
-​```
+```
    // 注册示例
    const { data, error } = await supabase.auth.signUp({
      email: 'example@email.com',
@@ -2790,7 +2792,7 @@ Supabase 的自托管版本（Self-Hosted）与官方云端版本（Cloud）在 
        captchaToken: '这里填入从Turnstile组件获取到的token'
      }
    })
-   ```
+```
 
 只要前端传了 Token，后端就会自动去 Cloudflare 验证。如果验证失败或没传 Token，后端会返回错误。
 
@@ -2808,7 +2810,7 @@ https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/imple
 
 
 
-```
+   ```
 
 阿里云确实有对应的服务，叫做 阿里云验证码 2.0 (Aliyun Captcha 2.0) 。它在国内的加载速度和稳定性确实优于 Cloudflare，但在 Supabase 项目中集成它会 复杂很多 。
 
@@ -2841,7 +2843,7 @@ https://help.aliyun.com/zh/analyticdb/analyticdb-for-postgresql/user-guide/imple
 
 只有当你发现大量国内用户无法加载验证码时，再考虑切换到阿里云验证码 + Edge Function 的方案。
 
-​```
+```
 
 
 
@@ -2861,7 +2863,9 @@ https://www.v2ex.com/t/1149062
   
   无论是什么样的验证码都无法 100%阻止所有机器人，而是增加其操作成本。虽然验证本身无交互，但通过 PoW （工作量证明）机制，可以限制单个用户高频请求；多个不同用户确实可以慢慢通过，但只要你设置足够的难度，就能有效防止批量滥用，比如刷接口、薅羊毛、撞库等。本质上就是一种手段通过提高操作成本（ PoW 计算需要时间）来放慢访问的速度，实现类似于速率限制，防止 DDOS 的效果
   
-​```
+```
+
+```
 
 ```
 
@@ -2969,7 +2973,7 @@ create or replace function get_category_tree()returns jsonlanguage sqlas $$with 
 
 文件: supabase/functions/get-categories-tree/index.ts
 
-​```
+```
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2"
 
@@ -3224,8 +3228,8 @@ pg-meta:
   register_datasource: true       # 可选，是否将此数据库注册到 grafana 数据源？默认为 true，显式设置为 false 会跳过注册
   connlimit: -1                   # 可选，数据库连接限制，默认为 -1 ，不限制，设置为正整数则会限制连接数。
   parameters:                     # 可选，数据库级参数，通过 ALTER DATABASE SET 设置
-    work_mem: '64MB'
-    statement_timeout: '30s'
+      work_mem: '64MB'
+      statement_timeout: '30s'
   pool_auth_user: dbuser_meta     # 可选，连接到此 pgbouncer 数据库的所有连接都将使用此用户进行验证（启用 pgbouncer_auth_query 才有用）
   pool_mode: transaction          # 可选，数据库级别的 pgbouncer 池化模式，默认为 transaction
   pool_size: 64                   # 可选，数据库级别的 pgbouncer 默认池子大小，默认为 64
@@ -3234,7 +3238,7 @@ pg-meta:
   pool_connlimit: 100             # 可选，数据库级别的最大数据库连接数，默认为 100
 唯一必选的字段是 name，它应该是当前 PostgreSQL 集群中有效且唯一的数据库名称，其他参数都有合理的默认值。      
       
-    
+  
 
 ```
 
@@ -3383,7 +3387,7 @@ del-test:
 
 apt install qemu-system qemu-utils -y \
   && apt install libvirt-daemon-system libvirt-clients bridge-utils virt-manager -y
-  
+
 # kvm-ok
 INFO: Your CPU does not support KVM extensions
 KVM acceleration can NOT be used
@@ -3399,7 +3403,7 @@ cat /proc/cpuinfo
 	# 这台 tencent 轻量主机不支持CPU硬件虚拟化
 	# 1. 改用支持嵌套虚拟化的 CVM 实例（如标准型 S5、计算型 C5 等），并在控制台提交工单申请开启嵌套虚拟化。
       2.直接使用容器方案（Docker/LXD）替代传统虚拟机，轻量应用服务器已预装 Docker 环境，可运行容器实现隔离。
-  
+
 
 
 vi pigsty/vagrant/Vagrantfile.libvirt
@@ -3427,7 +3431,7 @@ make ssh
         vagrant/ssh
 
         Vagrant nodes:
-
+    
         10.10.10.10      meta
 
 
@@ -3456,7 +3460,7 @@ make ssh
 
 
         # SSH Access via IP address
-
+    
         Host 10.10.10.10
           HostName 192.168.121.114
           User vagrant
@@ -3591,7 +3595,7 @@ setup-alpine
 setup-disk /mnt
 
   	# 实测这个 vhd 上传阿里自定义镜像后，正常开机使用
-  	
+
 
 ```
 
@@ -3733,7 +3737,7 @@ https://shell.aliyun.com/
 
 
 
-```shell
+​```shell
 
 terraform version
 	# 查看 Terrafrom版本
