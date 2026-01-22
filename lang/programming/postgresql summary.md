@@ -907,6 +907,7 @@ curl -i http://localhost:8000/functions/v1/signup_with_aliyun \
 
 
 /root/edge-runtime start --main-service /root/t --inspect-wait=127.0.0.1:9229 --inspect-main --verbose
+	pkill -9 -f edge-runtime
 	edge-runtime vscode 能正常 attach 的启动参数
 	注意：必须是文件夹，里面是 index.ts
 
