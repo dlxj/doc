@@ -905,7 +905,27 @@ curl -i http://localhost:8000/functions/v1/hello \
 curl -i http://localhost:8000/functions/v1/signup_with_aliyun \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlLWRlbW8iLCJpYXQiOjE2NDE3NjkyMDAsImV4cCI6MTc5OTUzNTYwMH0.Et5MZhbLvGeJirNGOBskr-gcBAfSLmsoa3bSuO9XLpE'
 
-curl http://localhost:9000/hello
+
+/root/edge-runtime start --main-service /root/t --inspect-wait=127.0.0.1:9229 --inspect-main --verbose
+	edge-runtime vscode 能正常 attach 的启动参数
+	注意：必须是文件夹，里面是 index.ts
+
+	curl http://localhost:9000
+		然后触发主入口路由
+		
+	/root/t/index.ts
+	export default {
+      async fetch(req: Request) {
+
+        debugger;
+
+        return new Response(JSON.stringify({ message: 'hello world..' }), {
+          headers: { 'Content-Type': 'application/json' },
+          status: 200,
+        })
+      },
+    }
+		
 
 docker compose up -d functions
 	docker compose logs functions
