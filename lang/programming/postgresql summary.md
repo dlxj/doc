@@ -915,6 +915,7 @@ curl -i http://localhost:8000/functions/v1/signup_with_aliyun \
 		奇怪的是它要打两次才进入，而且必须要有 debugger; 这一句它才停？
 		ls /var/tmp/sb-compile-edge-runtime/t/index.ts
 			断在这
+		.vscode 按下面配置就能断在正主上了, 已经不用下 Debugger; 完美！！！
 		然后触发主入口路由
 		
 	/root/t/index.ts
@@ -929,6 +930,64 @@ curl -i http://localhost:8000/functions/v1/signup_with_aliyun \
         })
       },
     }
+		
+		
+
+vi /root/t/.vscode/launch.json
+{
+  "configurations": [
+    {
+      "name": "Debug Edge Runtime",
+      "request": "attach",
+      "type": "pwa-node",
+      "port": 9229,
+      "address": "127.0.0.1",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "${workspaceFolder}",
+      "preLaunchTask": "start-edge-runtime",
+      "sourceMapPathOverrides": {
+        "file:///var/tmp/sb-compile-edge-runtime/t/*": "${workspaceFolder}/*",
+        "/var/tmp/sb-compile-edge-runtime/t/*": "${workspaceFolder}/*",
+        "t/*": "${workspaceFolder}/*",
+        "webpack:///t/*": "${workspaceFolder}/*"
+      }
+    }
+  ]
+}
+
+vi /root/t/.vscode/launch.json
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "start-edge-runtime",
+      "type": "shell",
+      "command": "/root/edge-runtime start --main-service ${workspaceFolder} --inspect-wait=127.0.0.1:9229 --inspect-main --verbose",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": [
+          {
+            "regexp": ".",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "DEBUG Finished config loading",
+          "endsPattern": "Debugger listening on"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}
+
+		
 		
 
 docker compose up -d functions
