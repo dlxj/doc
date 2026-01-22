@@ -906,7 +906,11 @@ curl -i http://localhost:8000/functions/v1/signup_with_aliyun \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlLWRlbW8iLCJpYXQiOjE2NDE3NjkyMDAsImV4cCI6MTc5OTUzNTYwMH0.Et5MZhbLvGeJirNGOBskr-gcBAfSLmsoa3bSuO9XLpE'
 
 
-docker compose up -d auth
+docker compose up -d functions
+	docker compose logs functions
+	docker compose logs -f functions 持续观察
+	docker compose logs -f --tail 50 functions
+		docker compose up -d auth
 	标准做法应该是这样
 
         
@@ -4121,14 +4125,14 @@ hostnossl    all          all            0.0.0.0/0  md5
 
 and this was modified in `postgresql.conf`, as shown:
 
-​```sql
+```sql
 # vi /etc/postgresql/13/main/postgresql.conf
 listen_addresses = '*'  
 ```
 
 
 
-```nodejs
+​```nodejs
 npm install pg
 ```
 
