@@ -912,6 +912,9 @@ curl -i http://localhost:8000/functions/v1/signup_with_aliyun \
 	注意：必须是文件夹，里面是 index.ts
 
 	curl http://localhost:9000
+		奇怪的是它要打两次才进入，而且必须要有 debugger; 这一句它才停？
+		ls /var/tmp/sb-compile-edge-runtime/t/index.ts
+			断在这
 		然后触发主入口路由
 		
 	/root/t/index.ts
