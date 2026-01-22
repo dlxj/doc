@@ -905,6 +905,7 @@ curl -i http://localhost:8000/functions/v1/hello \
 curl -i http://localhost:8000/functions/v1/signup_with_aliyun \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlLWRlbW8iLCJpYXQiOjE2NDE3NjkyMDAsImV4cCI6MTc5OTUzNTYwMH0.Et5MZhbLvGeJirNGOBskr-gcBAfSLmsoa3bSuO9XLpE'
 
+curl http://localhost:9000/hello
 
 docker compose up -d functions
 	docker compose logs functions
@@ -939,6 +940,9 @@ export FUNCTIONS_DIR="/root/Supabase_official/docker/volumes/functions"
   --inspect-main \
   --main-service /root/Supabase_official/docker/volumes/functions/main
 
+
+	pkill -9 -f edge-runtime
+		这样终止
 
 启动成功后，请直接访问 edge-runtime 的默认端口 9000 ，并且 不要 带 /functions/v1 前缀（因为在该架构中，Kong 网关负责剥离这个前缀，直连时不需要）：
 
@@ -1074,6 +1078,9 @@ https://github.com/supabase/edge-runtime
 
 把我们传统的 nodejs 后端整个作为边缘函数来运行
 
+ curl -fsSL https://deno.land/install.sh | sh
+ 	/root/.deno/bin/deno --help
+
 
 irm https://deno.land/install.ps1 | iex
 	--> to C:\Users\Administrator\.deno\bin\deno.exe
@@ -1085,6 +1092,8 @@ deno run -A .\server.js
 
 
 ```
+
+
 
 
 
