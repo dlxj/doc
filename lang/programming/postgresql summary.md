@@ -910,6 +910,7 @@ docker compose up -d functions
 	docker compose logs functions
 	docker compose logs -f functions 持续观察
 	docker compose logs -f --tail 50 functions
+	docker compose stop functions
 		docker compose up -d auth
 	标准做法应该是这样
 
