@@ -956,7 +956,13 @@ vi /root/t/.vscode/launch.json
 }
 	    "main/*": "${workspaceFolder}/volumes/functions/main/*",
         "webpack:///main/*": "${workspaceFolder}/volumes/functions/main/*"
-        	# 试试这两行，至少能命中 main 的断点
+        	试试这两行，至少能命中 main 的断点
+        	
+        	
+        	
+         "file:///var/tmp/sb-compile-edge-runtime/*": "${workspaceFolder}/volumes/functions/*",
+         	只加这一行能断到 main 上，但不是正主，要在 debug 窗的 Breakpoin 调整断点位置，行数有异
+
 
 vi /root/t/.vscode/launch.json
 {
