@@ -964,7 +964,7 @@ vi /root/t/.vscode/launch.json
          	只加这一行能断到 main 上，但不是正主，要在 debug 窗的 Breakpoin 调整断点位置，行数有异
 
 
-vi /root/t/.vscode/launch.json
+vi /root/t/.vscode/tasks.json
 {
   "version": "2.0.0",
   "tasks": [
