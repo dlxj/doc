@@ -954,6 +954,9 @@ vi /root/t/.vscode/launch.json
     }
   ]
 }
+	    "main/*": "${workspaceFolder}/volumes/functions/main/*",
+        "webpack:///main/*": "${workspaceFolder}/volumes/functions/main/*"
+        	# 试试这两行，至少能命中 main 的断点
 
 vi /root/t/.vscode/launch.json
 {
