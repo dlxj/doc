@@ -5895,8 +5895,9 @@ export HTTP_PROXY="http://127.0.0.1:7897" \
 
 
 hf repo create grammar-club --repo-type dataset
-	# hf auth login
-	# pip install -U "huggingface_hub"
+	hf auth login
+	curl -LsSf https://hf.co/cli/install.sh | bash -
+		pip install -U "huggingface_hub"
 
 huggingface-cli repo create pandora --type dataset
 	# --type {model, dataset, space}
