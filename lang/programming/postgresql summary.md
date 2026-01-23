@@ -1023,6 +1023,8 @@ export FUNCTIONS_DIR="/root/Supabase_official/docker/volumes/functions"
   --inspect-main \
   --main-service /root/Supabase_official/docker/volumes/functions/main
 
+    --inspect-wait=127.0.0.1:9229
+		.vscode 这样它才能正常进入断点
 
 	pkill -9 -f edge-runtime
 		这样终止
@@ -4225,7 +4227,7 @@ listen_addresses = '*'
 
 
 
-​```nodejs
+```nodejs
 npm install pg
 ```
 
@@ -4796,7 +4798,7 @@ def db_select_by_embedding(embedding: np.array):
 
   1. 在本实例中创建测试数据。
 
-  ```
+```
      postgres=>create role user1 with LOGIN  CREATEDB PASSWORD 'password1';
      postgres=>create database testdb1;
      CREATE DATABASE
@@ -4808,7 +4810,7 @@ def db_select_by_embedding(embedding: np.array):
 
   2. 在目标实例中创建测试数据。
 
-     ```
+  ```
      postgres=>create role user2 with LOGIN  CREATEDB PASSWORD 'password2';
      postgres=> create database testdb2;
      CREATE DATABASE
