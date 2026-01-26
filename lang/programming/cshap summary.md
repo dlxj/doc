@@ -4,6 +4,42 @@
 
 ### 复制文件到 bin
 
+
+
+```
+
+
+see E:\huggingface_echodict\Echodict\src\WpfEditor\EchoDict.csproj
+
+整个目录复制，保持文件夹结构
+
+	<ItemGroup>
+		<Content Include="..\WeChatOcrCpp\wco_data\**">
+			<Link>wco_data\%(RecursiveDir)%(Filename)%(Extension)</Link>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<PackageCopyToOutput>true</PackageCopyToOutput>
+		</Content>
+	</ItemGroup>
+	
+	
+	这是真实的文件复制 ，不是软链接。
+
+在 MSBuild 中：
+
+1. CopyToOutputDirectory ：这个属性指示构建系统在编译时将文件物理 复制 到输出目录（如 bin\Debug\net8.0-windows ）。它不会创建快捷方式或符号链接。
+2. Link ：这个标签的作用是告诉 MSBuild 在输出目录中的 目标路径 是什么。
+   - 如果不加 <Link> ，MSBuild 可能会根据源文件的位置决定路径，或者直接扔在根目录下（取决于引入方式）。
+   - 加了 <Link>wco_data\%(RecursiveDir)...</Link> 后，MSBuild 会在复制时，把文件放置在输出目录下的 wco_data 子文件夹中，并保持原有的目录结构。
+总结 ：
+编译后，你的输出目录下会真实存在一个 wco_data 文件夹，里面包含所有的资源文件。你可以把输出目录打包发给别人，别人也能直接使用，因为它包含真实文件。
+
+
+```
+
+
+
+
+
 ```
 
 see huggingface\WeChatOcr\src\WeChatOcr\WeChatOcr.csproj
