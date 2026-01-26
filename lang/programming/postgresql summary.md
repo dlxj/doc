@@ -906,6 +906,21 @@ curl -i http://localhost:8000/functions/v1/signup_with_aliyun \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlLWRlbW8iLCJpYXQiOjE2NDE3NjkyMDAsImV4cCI6MTc5OTUzNTYwMH0.Et5MZhbLvGeJirNGOBskr-gcBAfSLmsoa3bSuO9XLpE'
 
 
+curl -i http://localhost:8000/functions/v1/login_with_aliyun
+  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlLWRlbW8iLCJpYXQiOjE2NDE3NjkyMDAsImV4cCI6MTc5OTUzNTYwMH0.Et5MZhbLvGeJirNGOBskr-gcBAfSLmsoa3bSuO9XLpE' \
+  {
+    "email": "123456@qq.com",
+    "password": "123456",
+    "captchaVerifyParam": "eyJjZXJ0aWZ5SWQiOiJjZlpIdThBN09oIiwic2NlbmVJZCI6IjFrODEyeWN4IiwiaXNTaWduIjp0cnVlLCJzZWN1cml0eVRva2VuIjoiNm9PbzdlNzJuQTYxdVZMaVpWS2lMUlVZOXlNNExnV3VNZFZRYUFaZ3laajBKT0NIMWFjS0R0NUxvRzR4UGJXWExreEg0dU9iTFFsNU1YcmpEVlU1T3Rsa1U2L3pJbGwwUHk3UmZEN1N1blJzZFUzaEp3L2FNR0NyTEpGSkpFRmQifQ=="
+}
+
+
+import { createClient } from "npm:@supabase/supabase-js@2"
+	"NPM_CONFIG_REGISTRY": "https://registry.npmmirror.com",
+		.vscode 加这个环境变量可以加速
+
+
+
 /root/edge-runtime start --main-service /root/t --inspect-wait=127.0.0.1:9229 --inspect-main --verbose
 	pkill -9 -f edge-runtime
 	edge-runtime vscode 能正常 attach 的启动参数
@@ -4811,7 +4826,7 @@ def db_select_by_embedding(embedding: np.array):
      postgres=>create role user1 with LOGIN  CREATEDB PASSWORD 'password1';
      postgres=>create database testdb1;
      CREATE DATABASE
-  ```
+```
 
      > 注意：
      >
@@ -4829,7 +4844,7 @@ def db_select_by_embedding(embedding: np.array):
      CREATE TABLE
      testdb2=> insert into test_table2 values (1);
      INSERT 0 1
-     ```
+  ```
 
   ### 步骤2：创建 postgres_fdw 插件
 
