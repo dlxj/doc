@@ -9615,6 +9615,9 @@ node-tick-processor xxxx-v8.log
 
 ```
 
+$env:DENO_DIR="e:\t\my_vendor"; deno cache deps.ts
+	安装依赖
+
 将现有的 Node.js 项目切换到 Deno， 通常不需要大幅修改源码 ，特别是随着 Deno 2.x 的发布，对 Node.js 的兼容性已经非常完善。
 
 以下是关于如何切换以及源码修改的详细分析。
