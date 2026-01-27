@@ -1461,6 +1461,22 @@ vi /root/pigsty/pigsty.yml
 
 
 
+### pigsty minio 停止方法
+
+```
+
+systemctl status minio
+systemctl stop minio
+	# 这东西占 9000 端口
+
+```
+
+
+
+
+
+
+
 ### AUTH_JWT_SECRET  SUPABASE_ANON_KEY 分别什么用
 
 ```
