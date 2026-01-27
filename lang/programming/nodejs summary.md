@@ -3980,6 +3980,8 @@ https://github.com/nelvko/clash-for-linux-install 一键安装
 
 ```
 
+换 clash party ，tun 模式可以排除自定义网段，把受影响的局域网配上就好了，我前段时间也研究了好久，目前好像就 clash party 改这个方便一些
+
 它默认就是混合代理端口 7890 ，注意看它的日志输出！！！
     port: 7890
         # HTTP(S) 代理服务端口
