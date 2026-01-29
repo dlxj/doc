@@ -87,6 +87,31 @@ U 盘引导注意启动方式:
 
 
 
+# dll 报错
+
+## __svml_cosf8_ha
+
+
+
+```
+
+
+LLVM ERROR: Symbol not found: __svml_cosf8_ha 通常与 Intel 的数学库 SVML（Sparse Vector Math Library）有关。
+
+SVML 是 Intel 提供的一个用于提高浮点数学运算性能的库，它在某些情况下可能会与 LLVM（一个编译器和工具链技术的集合）发生冲突。
+
+
+
+将svml_dispmd.dll文件放入C盘system32文件夹内(C:\Windows\System32)即可解决。
+
+https://pan.quark.cn/s/ec85d5445994
+
+```
+
+
+
+
+
 
 
 # vscdoe + MSVC
