@@ -6255,6 +6255,17 @@ see huggingface\PDFPatcher\.gitattributes
 
 ### 按需下载 lfs
 
+
+
+```
+$env:GIT_LFS_SKIP_SMUDGE=1; git clone -b training_v2 https://github.com/JarodMica/index-tts
+	不下载任何 LFS 内容
+```
+
+
+
+
+
 ```
 
 git clone --filter=blob:none --no-checkout https://huggingface.co/datasets/dlxjj/pdf_ocr \
