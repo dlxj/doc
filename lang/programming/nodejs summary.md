@@ -37679,7 +37679,47 @@ https://github.com/jianchang512/pyvideotrans  必看
 
 # index-tts
 
+https://huggingface.co/dinhthuan/index-tts-2-vietnamese/blob/main/README.md 越南语 **它有说怎么用**
+
 https://github.com/index-tts/index-tts/issues/466 整合包
+
+- ```
+  LLVM ERROR: Symbol not found: __svml_cosf8_ha 通常与 Intel 的数学库 SVML（Sparse Vector Math Library）有关。
+  
+  SVML 是 Intel 提供的一个用于提高浮点数学运算性能的库，它在某些情况下可能会与 LLVM（一个编译器和工具链技术的集合）发生冲突。
+  
+  
+  
+  将svml_dispmd.dll文件放入C盘system32文件夹内(C:\Windows\System32)即可解决。
+  
+  https://pan.quark.cn/s/ec85d5445994
+  
+  
+  
+  X86表示32位系统
+  x64表示64位系统
+  
+  dll控件常规安装方法（仅供参考）：
+  
+  一、如果在运行某软件或编译程序时提示缺少、找不到dll等类似提示，您可将从脚本之家下载来的dll拷贝到指定目录即可(一般是system系统目录或放到软件同级目录里面)，或者重新添加文件引用。 
+  二、直接拷贝该文件到系统目录里：
+  　　 1、Windows 95/98/Me系统，将dll复制到C:\Windows\System目录下。
+  　　 2、Windows NT/2000系统，将dll复制到C:\WINNT\System32目录下。
+  　　 3、Windows XP/WIN7系统，将dll复制到C:\Windows\System32目录下。
+  三、打开"开始-运行-输入regsvr32 dll"，回车即可解决。
+  
+  可将下面的代码保存为“注册.bat“，放到dll目录，就会自动完成dll注册(win98不支持)。
+  
+  
+  
+  @echo 开始注册
+  copy dll %windir%\system32\
+  regsvr32 %windir%\system32\dll /s
+  @echo dll注册成功
+  @pause
+  ```
+
+  
 
 https://github.com/index-tts/index-tts/issues/501
 
