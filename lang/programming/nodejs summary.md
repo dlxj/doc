@@ -37678,6 +37678,10 @@ https://github.com/JarodMica/index-tts/tree/training_v2   bilibili语音合成 �
 
 [tts-vue](https://github.com/LokerL/tts-vue)
 
+https://github.com/niker/EdgeTtsSharp  edge-tts CSharp
+
+
+
 
 
 ## 讯飞方言
