@@ -37666,7 +37666,11 @@ https://github.com/jianchang512/pyvideotrans  必看
 
 
 
-# TTS
+# index-tts
+
+https://github.com/index-tts/index-tts/issues/466 整合包
+
+https://github.com/index-tts/index-tts/issues/501
 
 https://github.com/JarodMica/index-tts/tree/training_v2   bilibili语音合成 非官方训练
 
