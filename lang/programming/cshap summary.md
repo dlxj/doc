@@ -2151,6 +2151,16 @@ var encoding = args.Contains("--utf8") ? new UTF8Encoding(encoderShouldEmitUTF8I
 
 
 
+#### utf8 字节数组
+
+```
+
+        private static readonly byte[] EolSeq = "\r\n"u8.ToArray();
+        private static readonly byte[] EocSeq = [0x00, 0x80];
+        private static readonly byte[] EosSeq = "\0gX"u8.ToArray();
+
+```
+
 
 
 
