@@ -37729,8 +37729,13 @@ https://github.com/JarodMica/index-tts/tree/training_v2   bilibili语音合成 �
   
   hf download Jmica/IndexTTS-2-Japanese
   
+  
+pip install -U uv
+  cd index-tts
+  uv sync --all-extras
+  
   Edit: The Japanese model I'm training can be downloaded and tested here: https://huggingface.co/Jmica/IndexTTS-2-Japanese/tree/main
-
+  
   You just need to put this into the checkpoints/ folder, rename the .pth file -> gpt.pth, and the japanese_bpe.model -> bpe.model
   ```
   
