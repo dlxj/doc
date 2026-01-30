@@ -37741,6 +37741,14 @@ https://github.com/niker/EdgeTtsSharp  **edge-tts** CSharp
 
 
 
+### cosyvoice3
+
+https://funaudiollm.github.io/cosyvoice3/
+
+
+
+
+
 ## 讯飞方言
 
 https://saas.xfyun.cn/help
