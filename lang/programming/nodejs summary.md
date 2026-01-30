@@ -37723,15 +37723,25 @@ https://github.com/index-tts/index-tts/issues/466 整合包
 
 https://github.com/index-tts/index-tts/issues/501
 
+- https://github.com/index-tts/index-tts/pull/134  speaker 优化
+
 https://github.com/JarodMica/index-tts/tree/training_v2   bilibili语音合成 非官方训练
 
 - ```
   
   hf download Jmica/IndexTTS-2-Japanese
-  
-  
-pip install -U uv
+  	自带断点续传的
+  	C:\Users\echod\.cache\huggingface\hub\models--Jmica--IndexTTS-2-Japanese\snapshots\2b8cfb96f746a467d23bd228a4cae0e1073a905a
+
+  pip install -U uv
   cd index-tts
+  
+  conda create -n indextts
+  conda activate indextts
+  
+  pip install accelerate cn2an descript-audiotools einops g2p-en jieba librosa modelscope munch numpy omegaconf safetensors sentencepiece tokenizers torch torchaudio transformers wetext numba
+  
+  
   uv sync --all-extras
   
   Edit: The Japanese model I'm training can be downloaded and tested here: https://huggingface.co/Jmica/IndexTTS-2-Japanese/tree/main
