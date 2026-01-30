@@ -37761,6 +37761,76 @@ https://github.com/niker/EdgeTtsSharp  **edge-tts** CSharp
 
 https://github.com/nazdridoy/kokoro-tts
 
+```
+
+git clone https://github.com/nazdridoy/kokoro-tts.git \
+  && cd kokoro-tts \
+  && conda create -n kokorotts python=3.10 pip \
+  && conda activate kokorotts \
+  && pip install -r requirements.txt
+
+wget https://github.com/nazdridoy/kokoro-tts/releases/download/v1.0.0/voices-v1.0.bin
+wget https://github.com/nazdridoy/kokoro-tts/releases/download/v1.0.0/kokoro-v1.0.onnx
+	两个文件放根目录
+
+```
+
+| **Category** | **Voices**                                                   | **Language Code** |
+| ------------ | ------------------------------------------------------------ | ----------------- |
+| 🇺🇸 👩         | af_alloy, af_aoede, af_bella, af_heart, af_jessica, af_kore, af_nicole, af_nova, af_river, af_sarah, af_sky | **en-us**         |
+| 🇺🇸 👨         | am_adam, am_echo, am_eric, am_fenrir, am_liam, am_michael, am_onyx, am_puck | **en-us**         |
+| 🇬🇧           | bf_alice, bf_emma, bf_isabella, bf_lily, bm_daniel, bm_fable, bm_george, bm_lewis | **en-gb**         |
+| 🇫🇷           | ff_siwis                                                     | **fr-fr**         |
+| 🇮🇹           | if_sara, im_nicola                                           | **it**            |
+| 🇯🇵           | jf_alpha, jf_gongitsune, jf_nezumi, jf_tebukuro, jm_kumo     | **ja**            |
+| 🇨🇳           | zf_xiaobei, zf_xiaoni, zf_xiaoxiao, zf_xiaoyi, zm_yunjian, zm_yunxi, zm_yunxia, zm_yunyang | **cmn**           |
+
+```
+
+# Basic usage with output file
+kokoro-tts input.txt output.wav --speed 1.2 --lang en-us --voice af_sarah
+
+# Read from standard input (stdin)
+echo "Hello World" | kokoro-tts - --stream
+cat input.txt | kokoro-tts - output.wav
+
+# Cross-platform stdin support:
+# Linux/macOS: echo "text" | kokoro-tts - --stream
+# Windows: echo "text" | kokoro-tts - --stream
+# All platforms also support: kokoro-tts /dev/stdin --stream (Linux/macOS) or kokoro-tts CONIN$ --stream (Windows)
+
+# Use voice blending (60-40 mix)
+kokoro-tts input.txt output.wav --voice "af_sarah:60,am_adam:40"
+
+# Use equal voice blend (50-50)
+kokoro-tts input.txt --stream --voice "am_adam,af_sarah"
+
+# Process EPUB and split into chunks
+kokoro-tts input.epub --split-output ./chunks/ --format mp3
+
+# Stream audio directly
+kokoro-tts input.txt --stream --speed 0.8
+
+# Merge existing chunks
+kokoro-tts --merge-chunks --split-output ./chunks/ --format wav
+
+# Process EPUB with detailed debug output
+kokoro-tts input.epub --split-output ./chunks/ --debug
+
+# Process PDF and split into chapters
+kokoro-tts input.pdf --split-output ./chunks/ --format mp3
+
+# List available voices
+kokoro-tts --help-voices
+
+# List supported languages
+kokoro-tts --help-languages
+
+
+```
+
+
+
 
 
 ### cosyvoice3
