@@ -37743,6 +37743,8 @@ https://github.com/niker/EdgeTtsSharp  **edge-tts** CSharp
 
 ### cosyvoice3
 
+https://github.com/FunAudioLLM/CosyVoice/issues/1762  实战代码
+
 https://modelscope.cn/models/iic/CosyVoice-300M-SFT
 
 https://github.com/FunAudioLLM/CosyVoice
