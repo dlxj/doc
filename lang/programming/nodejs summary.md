@@ -37745,6 +37745,11 @@ https://github.com/niker/EdgeTtsSharp  **edge-tts** CSharp
 
 https://github.com/FunAudioLLM/CosyVoice/issues/1762  实战代码
 
+- ```
+  pip install vllm==v0.11.0 transformers==4.57.1 numpy==1.26.4
+  更新：使用了 vllm 就正常了
+  ```
+
 https://modelscope.cn/models/iic/CosyVoice-300M-SFT
 
 https://github.com/FunAudioLLM/CosyVoice
