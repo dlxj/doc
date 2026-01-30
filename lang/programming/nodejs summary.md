@@ -37749,7 +37749,7 @@ https://github.com/FunAudioLLM/CosyVoice
 
 https://funaudiollm.github.io/cosyvoice3/
 
-
+https://github.com/zaigie/FunSpeech  Docker 整合
 
 
 
