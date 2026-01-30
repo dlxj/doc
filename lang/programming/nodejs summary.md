@@ -37726,11 +37726,14 @@ https://github.com/index-tts/index-tts/issues/501
 https://github.com/JarodMica/index-tts/tree/training_v2   bilibili语音合成 非官方训练
 
 - ```
-  Edit: The Japanese model I'm training can be downloaded and tested here: https://huggingface.co/Jmica/IndexTTS-2-Japanese/tree/main
   
+  hf download Jmica/IndexTTS-2-Japanese
+  
+  Edit: The Japanese model I'm training can be downloaded and tested here: https://huggingface.co/Jmica/IndexTTS-2-Japanese/tree/main
+
   You just need to put this into the checkpoints/ folder, rename the .pth file -> gpt.pth, and the japanese_bpe.model -> bpe.model
   ```
-
+  
 - https://github.com/index-tts/index-tts/issues/501
 
 [tts-vue](https://github.com/LokerL/tts-vue)
