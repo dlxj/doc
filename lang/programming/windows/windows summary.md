@@ -411,6 +411,18 @@ netsh winsock reset
 
 
 
+# Cuda 12
+
+```
+
+https://developer.download.nvidia.com/compute/cuda/12.0.0/local_installers/cuda_12.0.0_527.41_windows.exe
+
+```
+
+
+
+
+
 # 调虚拟内存
 
 我的电脑 ->属性 -> 高级系统设置 ->高级 -> 性能 ->设置 -> 高级 ->更改
