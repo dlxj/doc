@@ -37757,6 +37757,10 @@ https://github.com/niker/EdgeTtsSharp  **edge-tts** CSharp
 
 
 
+### kokoro tts
+
+https://github.com/nazdridoy/kokoro-tts
+
 
 
 ### cosyvoice3
