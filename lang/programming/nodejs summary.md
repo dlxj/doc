@@ -37831,6 +37831,12 @@ kokoro-tts --help-languages
 
 
 
+### kotoba-speech
+
+https://huggingface.co/kotoba-tech/kotoba-speech-v0.1
+
+
+
 
 
 ### cosyvoice3
