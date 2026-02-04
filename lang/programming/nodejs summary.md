@@ -37763,8 +37763,26 @@ https://github.com/nazdridoy/kokoro-tts
 
 ```
 
+# conda create -n kokoro python==3.10 pip
+# conda activate kokoro
+# pip install kokoro>=0.9.4 soundfile
+# pip install misaki[ja]
+    # pip install 'fugashi[unidic]'
+    # python -m unidic download
+# pip install misaki[zh]
+# apt-get install espeak-ng  # used for English OOD fallback and some non-English languages
+
 from kokoro import KModel
+from kokoro import KPipeline
+
 model = KModel(config='Kokoro-82M/config.json', model='Kokoro-82M/kokoro-v1_0.pth')
+
+pipeline = KPipeline(lang_code='j', model=model)
+pipeline.load_single_voice(voice='Kokoro-82M/voices/jf_alpha.pt')
+
+pass
+
+
 
 
 git clone https://github.com/nazdridoy/kokoro-tts.git \
