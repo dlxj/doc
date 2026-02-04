@@ -37763,6 +37763,10 @@ https://github.com/nazdridoy/kokoro-tts
 
 ```
 
+from kokoro import KModel
+model = KModel(config='Kokoro-82M/config.json', model='Kokoro-82M/kokoro-v1_0.pth')
+
+
 git clone https://github.com/nazdridoy/kokoro-tts.git \
   && cd kokoro-tts \
   && conda create -n kokorotts python=3.10 pip \
