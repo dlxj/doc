@@ -12231,6 +12231,14 @@ result, elapse = onnx_engine(img_path)
 
 
 
+## Deepseek OCRv2
+https://unsloth.ai/docs/models/deepseek-ocr-2#fine-tuning-deepseek-ocr
+
+
+
+
+
+
 
 
 ## MonkeyOCR
