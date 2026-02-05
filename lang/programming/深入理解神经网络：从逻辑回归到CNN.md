@@ -12202,11 +12202,11 @@ FCN 则一般通过反卷积层对卷积输出作上采样，使它恢复到输�
 
 ## PaddleOCR-VL
 
-https://zhuanlan.zhihu.com/p/1982501937732658141
+https://zhuanlan.zhihu.com/p/1982501937732658141  更好理解 ja manga 气泡？左右顺序？
 
 https://github.com/openvino-book/PaddleOCR-VL-SFT-for-Japanese-Manga-on-RTX-3060
 
-
+https://huggingface.co/datasets/hal-utokyo/Manga109-s  漫画数据集
 
 
 
