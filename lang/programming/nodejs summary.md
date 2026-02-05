@@ -37763,10 +37763,41 @@ https://github.com/nazdridoy/kokoro-tts
 
 ```
 
+
+# kokoro-onnx[gpu]
+# onnxruntime_gpu
+# nvidia-cudnn-cu12
+# sounddevice
+# soundfile
+    # 可选安装
+
+# conda create -n kokoro python==3.10 pip
+# conda activate kokoro
+# pip install kokoro>=0.9.4 soundfile
+# pip uninstall torch
+# pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cu126
+# pip install misaki[ja]
+    # pip install 'fugashi[unidic]'
+    # python -m unidic download
+# pip install misaki[zh]
+# apt-get install espeak-ng  # used for English OOD fallback and some non-English languages
+
+# repo_id='hexgrad/Kokoro-82M'
+# kokoro-v1_0.pth
+# voices/jf_alpha.pt
+    # 会自动下载这两文件，存到这了 C:\Users\Administrator\.cache\huggingface\hub\models--hexgrad--Kokoro-82M
+
+# torch-2.10.0 可能要换 gpu 版
+    # pip install torch==2.10.0 --index-url https://download.pytorch.org/whl/cu126
+
 from kokoro import KModel
 from kokoro import KPipeline
+import soundfile as sf
+import torch
 
-model = KModel(config='Kokoro-82M/config.json', model='Kokoro-82M/kokoro-v1_0.pth')
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+model = KModel(config='Kokoro-82M/config.json', model='Kokoro-82M/kokoro-v1_0.pth').to(device).eval()
 
 pipeline = KPipeline(lang_code='j', model=model)
 pipeline.load_single_voice(voice='Kokoro-82M/voices/jf_alpha.pt')
@@ -37782,6 +37813,7 @@ for i, (gs, ps, audio) in enumerate(generator):
 
 
 pass
+
 
 
 
