@@ -1896,6 +1896,26 @@ print(f"Path.resolve 转换结果: {abs_path}")
 
 
 
+### 家目录
+
+```
+
+# C:\Users\echod\.conda\envs\ppv5\Lib\site-packages\paddlex\utils\cache.py
+
+import os.path as osp
+DEFAULT_CACHE_DIR = osp.abspath(osp.join(os.path.expanduser("~"), ".paddlex"))
+CACHE_DIR = os.environ.get("PADDLE_PDX_CACHE_HOME", DEFAULT_CACHE_DIR)
+FUNC_CACHE_DIR = osp.join(CACHE_DIR, "func_ret")
+FILE_LOCK_DIR = osp.join(CACHE_DIR, "locks")
+TEMP_DIR = osp.join(CACHE_DIR, "temp")
+
+
+```
+
+
+
+
+
 
 
 ### ``__all__``
