@@ -11851,7 +11851,26 @@ character_type: CN
     DetResizeForTest是测试时的输入尺寸，和训练无关
     ```
 
-    
+
+
+
+```
+
+see huggingface_echodict\ppv5\main.py
+# see huggingface/project/flask_auto_selection.py
+
+# C:\Users\echod\.paddlex\official_models\PP-OCRv5_server_det
+# c:\Users\echod\.conda\envs\ppv5\lib\site-packages\paddle\utils\cpp_extension\extension_utils.py 看模型加载的代码在哪
+# PP-OCRv5_server_det PP-OCRv5_server_det.yaml  搜这两个
+#   paddlex/configs/modules/text_detection/PP-OCRv5_server_det.yaml,sha256=_cS2Eaqb1IJdN0jXPqtc8wsC-gHY0BdS3oOzZfVINCI,1100
+#   C:\Users\echod\.conda\envs\ppv5\Lib\site-packages\paddlex\inference\models\text_detection\predictor.py 实际建模好像是这里 
+#   Model files already exist.  搜这个
+
+```
+
+
+
+
 
 ```
 
