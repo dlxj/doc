@@ -1,5 +1,9 @@
 https://github.com/bcml-labs/rosa-plus  python 100% 可以直接跑
 
+https://huggingface.co/spaces/Jellyfish042/ROSA-Visualizer 看看是作什么用的
+
+
+
 
 ```
 
