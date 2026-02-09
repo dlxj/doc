@@ -164,3 +164,93 @@ DuckDB 有一个非常强大的特性： 它不强迫你立刻定义完美的 Sc
 - Parquet 是压缩后的二进制，保留了列式优势。
 - DuckDB 可以秒级查询 Parquet。
 - 如果以后你需要把数据给 Spark、Pandas 或 ClickHouse 用，Parquet 是通用货币，大家都能读，而 DuckDB 的 .db 文件只有 DuckDB 能读。
+
+
+
+
+
+# 存嵌入向量合适吗
+
+
+
+非常合适，尤其是在中小规模（百万级以下）的数据集场景下。
+
+DuckDB 最近在向量存储和检索领域非常火，因为它通过**暴力计算（Brute-force）**实现了惊人的性能，且不需要复杂的索引维护。
+
+以下是 DuckDB 作为向量数据库的详细分析：
+
+
+
+
+1. 核心优势：简单且强大的“精确搜索”
+主流向量数据库（如 Milvus, Pinecone, Faiss）通常使用 ANN（近似最近邻） 算法。为了速度，它们牺牲了一点精度，并且需要构建庞大的 HNSW 索引，这很占内存且维护麻烦。
+
+DuckDB 的策略不同：
+
+- 基于 SIMD 的暴力扫描 ：DuckDB 利用现代 CPU 的指令集（AVX-512 等）并行计算向量距离。
+- 无需索引 ：它不需要预先建立复杂的向量索引。这意味着你可以随时插入数据，随时查询，没有“重建索引”的开销。
+- 精确结果 ：因为是全表扫描，它返回的是数学上 绝对精确 的最近邻（KNN），而不是近似值。
+性能表现 ：
+在 100 万条 768 维（OpenAI Embedding 标准）向量的数据集上，DuckDB 的全表扫描通常能在 0.1秒 ~ 0.5秒 内完成。对于大多数 RAG（检索增强生成）应用来说，这个延迟完全可以接受。
+
+
+
+
+2. 原生支持的数据类型
+DuckDB 有专门的 ARRAY 类型，非常适合存向量：
+
+```
+-- 创建一个存 3 维向量的表
+CREATE TABLE embeddings (
+    id INTEGER,
+    text VARCHAR,
+    vec FLOAT[3]  -- 固定长度的数组，存储效率极高
+);
+
+-- 插入数据
+INSERT INTO embeddings VALUES (1, 'apple', [0.1, 0.5, 0.9]);
+INSERT INTO embeddings VALUES (2, 'banana', [0.2, 0.4, 0.8]);
+
+-- 向量搜索（余弦相似度）
+-- 查找与 [0.1, 0.5, 0.9] 最相似的前 3 个结果
+SELECT text, array_cosine_similarity(vec, [0.1, 0.5, 0.9]::FLOAT[3]) as score
+FROM embeddings
+ORDER BY score DESC
+LIMIT 3;
+```
+
+
+
+3. “混合查询”（Hybrid Search）的王者
+这是 DuckDB 相比专用向量数据库最大的优势。
+
+在实际业务中，你很少只做纯向量搜索，通常需要结合元数据过滤。例如：“ 查找最近 7 天内、分类为‘财经’且与这句话语义相似的新闻 ”。
+
+- 专用向量库 ：元数据过滤通常较弱（Pre-filter 或 Post-filter），性能不稳定。
+- DuckDB ：它本身就是最强的 SQL 分析引擎。
+  ```
+  SELECT text, array_cosine_similarity(vec, query_vec) as score
+  FROM documents
+  WHERE category = 'finance'       -- 极速的列式过滤
+    AND date > '2023-01-01'        -- 标准 SQL 过滤
+  ORDER BY score DESC
+  LIMIT 5;
+  ​``` DuckDB 会先利用列式存储的优势快速过滤掉不满足 WHERE 条件的行，只对剩下的行计算向量距离，速度飞快。
+  ```
+
+
+
+4. 什么时候 不合适？
+尽管 DuckDB 很强，但在以下场景请慎用：
+
+1. 超大规模数据（> 500万向量） ：
+   - 当数据量达到千万级时，暴力扫描会变得太慢（可能需要几秒钟）。这时候必须用 HNSW 索引，而 DuckDB 目前的原生索引支持不如专用库成熟（虽然有 vss 扩展，但还在早期阶段）。
+2. 高并发实时查询 ：
+   - DuckDB 是单机进程内的，不适合每秒几千次（QPS > 1000）的并发查询请求。它更适合分析或低频高吞吐的 RAG。
+3. 频繁的单点更新 ：
+   - 和之前提到的 Parquet 一样，DuckDB 不喜欢频繁修改单行向量。它喜欢批量写入。
+
+
+总结
+- 推荐场景 ：个人知识库（Obsidian/Notion 插件）、本地 RAG 应用、数据分析师的语义搜索工具、离线数据清洗管道。
+- 替代方案 ：如果你的数据量真的很大（千万级），或者需要极高的在线并发，请使用 Qdrant 、 Milvus 或 pgvector （PostgreSQL 插件）。
