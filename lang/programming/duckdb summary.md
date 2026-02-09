@@ -254,3 +254,20 @@ LIMIT 3;
 总结
 - 推荐场景 ：个人知识库（Obsidian/Notion 插件）、本地 RAG 应用、数据分析师的语义搜索工具、离线数据清洗管道。
 - 替代方案 ：如果你的数据量真的很大（千万级），或者需要极高的在线并发，请使用 Qdrant 、 Milvus 或 pgvector （PostgreSQL 插件）。
+
+
+
+# 全文检索
+
+```
+
+fts和vss插件以及vsssentence-transformers
+
+```
+
+
+
+
+
+
+
