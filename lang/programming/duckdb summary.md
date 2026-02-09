@@ -33,3 +33,71 @@ WHERE
 
 ```
 
+
+
+
+
+# parquet 优缺点
+
+
+
+Parquet 是一种列式存储格式，而 DuckDB 是一个进程内 OLAP（联机分析处理）数据库。两者结合通常被认为是数据分析领域的“黄金搭档”。
+
+以下是在 DuckDB 中使用 Parquet 格式的主要优缺点：
+
+**优点 (Pros)**
+
+1. 极高的查询性能 (Columnar Synergy)
+   
+   - 列式对齐 ：DuckDB 的内部执行引擎是向量化（Vectorized）和列式的，这与 Parquet 的物理存储布局完美契合。
+   - 零拷贝/直接读取 ：DuckDB 可以直接在 Parquet 文件上运行查询，而无需先将数据“导入”或复制到数据库内部存储中。
+   - 投影下推 (Projection Pushdown) ：如果你的查询只涉及表中的几列（例如 SELECT col_a FROM table ），DuckDB 只会从 Parquet 文件中读取 col_a 的数据块，极大减少 I/O。
+2. 智能过滤 (Filter Pushdown)
+   
+   - DuckDB 利用 Parquet 文件头中的元数据（如 Row Groups 的 min/max 统计信息）来跳过无关的数据块。
+   - 例如查询 WHERE age > 30 ，如果某个 Row Group 的 max_age 是 25，DuckDB 会完全跳过读取该块。
+3. 存储效率与压缩
+   
+   - Parquet 针对每一列的数据类型使用特定的编码和压缩算法（如 Snappy, Zstd, RLE, Dictionary Encoding）。
+   - 相比 CSV 或 JSON，Parquet 文件通常更小，不仅节省磁盘空间，还能减少读取时的磁盘 I/O 带宽压力。
+4. 生态互操作性
+   
+   - Parquet 是通用的标准格式。你可以在 Python (Pandas/Polars)、Spark、AWS S3 等环境中生成 Parquet 文件，然后直接用 DuckDB 查询，无需转换格式。
+5. 支持复杂数据类型
+   
+   - 相比 CSV，Parquet 原生支持嵌套结构（Lists, Structs, Maps），DuckDB 对这些复杂类型的支持也越来越完善。
+
+
+
+**缺点 (Cons)**
+
+1. 不支持高效的更新/删除 (Immutability)
+   
+   - 最大痛点 ：Parquet 文件设计为“一次写入，多次读取”（Write-Once-Read-Many）。
+   - 如果你需要修改或删除一行数据，通常需要重写整个文件（或至少重写相关的 Row Group）。
+   - 不适合 OLTP ：如果你的场景需要频繁的单行插入、更新或事务处理，原生 Parquet 并不适合（DuckDB 自己的 .db 格式更适合这种混合负载）。
+2. 小文件问题 (Small File Problem)
+   
+   - 如果数据被分割成成千上万个非常小的 Parquet 文件（例如每个文件只有几 KB），读取性能会急剧下降。
+   - 这是因为打开文件、解析元数据的开销超过了读取实际数据的开销。DuckDB 处理单个大文件（或适量的大文件）的效率远高于处理海量小文件。
+3. 写入开销
+   
+   - 生成 Parquet 文件需要 CPU 进行编码和压缩。与简单的追加写入 CSV 相比，写入 Parquet 会消耗更多的 CPU 资源和时间（尽管这通常是值得的，因为读取速度会快得多）。
+4. 不适合流式追加
+   
+   - 由于 Parquet 文件包含尾部元数据（Footer），你不能像写日志一样简单地通过 cat 命令把新数据追加到文件末尾。必须由专门的库来处理文件的合并或生成新文件。
+
+
+
+**总结建议**
+
+- 使用场景 ：历史数据分析、数据湖查询、一次写入多次读取的报表生成、跨工具数据交换。
+- 避免场景 ：需要实时更新用户状态、高频事务交易系统、流式日志的实时追加写入（除非分批次写入）。
+在 DuckDB 中，最常见的模式是：使用 DuckDB 的内部格式（ .db ）处理热数据或需要更新的数据，定期将冷数据或归档数据导出为 Parquet 以节省空间并供其他工具使用。
+
+
+
+
+
+
+
