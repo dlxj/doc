@@ -8,7 +8,7 @@ https://github.com/zyaaa-ux/ROSA-Tuning
 
 https://github.com/wjie98/rosa_soft
 
-https://github.com/Juste-Leo2/ROSA-GPU-RWKV8  
+https://github.com/Juste-Leo2/ROSA-GPU-RWKV8  对比 rosa-plus 看看
 
 
 
