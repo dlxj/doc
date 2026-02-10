@@ -468,3 +468,19 @@ https://github.com/howard-hou/EmbeddingRWKV
 
 
 
+## origin
+
+
+
+<img src="rwkv summary.assets/image-20260210105737901.png" alt="image-20260210105737901"  />
+
+
+
+![image-20260210105901795](rwkv summary.assets/image-20260210105901795.png)
+
+
+
+![image-20260210110530252](rwkv summary.assets/image-20260210110530252.png)
+
+
+
