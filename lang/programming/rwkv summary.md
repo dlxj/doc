@@ -310,3 +310,60 @@ https://github.com/howard-hou/EmbeddingRWKV
 
 
 
+这段 "Related Work"（相关工作） 部分主要将本文的研究置于现有技术背景下进行对比，从三个维度论证了本文方法的创新性和必要性：检索流程、训练策略以及模型架构。
+
+以下是详细解读：
+
+
+1. 文本嵌入的两阶段检索 (Two-Stage Retrieval for Text Embeddings)
+- 现状 ：
+  - 大多数系统（如基于 BERT 或 LLM 的 E5-Mistral, NV-Emb, GTE）都遵循“先检索（Embedding），后重排序（Reranker）”的两阶段模式。
+  - 这些组件在 MTEB 等基准测试上表现强劲。
+- 局限性 ：
+  - 独立性 ：Embedding 模型和 Reranker 通常是作为独立组件训练和部署的。
+  - 冗余 ：每个阶段都对相同的文档进行单独编码，没有任何信息共享，导致重复计算。
+- 本文对比 ：
+  - State-Centric Retrieval 框架允许在两个阶段之间 复用表示（Reuse Representation） ，打破了这种低效的独立性。
+
+2. 多阶段训练配方 (Multi-Stage Training Recipes)
+- 现状 ：
+  - SOTA（State-of-the-Art）模型（如 BGE, Jina, Arctic-Embed）通常依赖复杂的 多阶段训练流程 。
+  - 这些流程包括：大规模预训练 -> 有监督微调 -> 硬负例挖掘（Hard-negative mining）等。
+  - 需要海量数据和复杂的步骤。
+- 本文对比 ：
+  - 提出 领域感知课程策略（Domain-aware Curriculum Strategy） 。
+  - 将训练合并为 单一阶段（Single-stage） 。
+  - 优势 ：显著减少了数据使用量（仅需 5%），训练过程更简单、更数据高效。
+
+3. 从 Transformer 到线性 RNN (From Transformers to Linear RNNs)
+- 现状 ：
+  - 主流模型（Embedding 和 Reranker）几乎全基于 Transformer 架构。
+  - 根本缺陷 ：
+    - 计算复杂度为 [ o bj ec tO bj ec t ] O ( N 2 ) （二次方）。
+    - KV Cache 显存占用随长度线性增长。
+    - 这使得长文本检索和大规模重排序变得极其昂贵。
+- 本文对比 ：
+  - 利用 RWKV （线性 RNN 家族成员）作为骨干。
+  - 优势 ：
+    - 计算复杂度为 [ o bj ec tO bj ec t ] O ( N ) （线性）。
+    - 空间复杂度为 [ o bj ec tO bj ec t ] O ( 1 ) （常数级）。
+    - 在不牺牲语义匹配能力的前提下，提供了更高效的架构基础。
+
+4. 矩阵值状态的线性 RNN (Linear RNNs with Matrix-valued States)
+- 技术演进 ：
+  - 早期的线性 RNN（如 Mamba, RWKV-4）虽然降低了复杂度，但存在 状态容量瓶颈（State Capacity Gap） ，因为它们试图将长上下文压缩成固定大小的向量。
+  - 突破 ：RWKV-5 和 RWKV-6 引入了 矩阵值状态（Matrix-valued States） ，显著增强了保存历史上下文的能力。
+  - 最新进展：RWKV-7 进一步引入了动态状态演化机制。
+- 本文应用 ：
+  - 本文利用了这种架构优势，能够缓存**高容量（High-capacity）**的状态。
+  - 这些状态既 紧凑（Compact） （节省存储），又具有高度的 代表性（Representative） ，非常适合在检索流程中进行复用。
+
+总结
+这部分相关工作清晰地画出了本文的“技术地图”：
+
+1. 打法上 ：从“独立两阶段”变为“共享状态的一体化”。
+2. 训练上 ：从“复杂多阶段海量数据”变为“高效单阶段课程学习”。
+3. 底座上 ：从“笨重的 Transformer”变为“轻量且强大的 RWKV”。
+
+
+
