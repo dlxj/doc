@@ -256,6 +256,10 @@ DeepSeek 已经在 MoE (Mixture-of-Experts) 架构上取得了很大成功（如
 
 
 
+![image-20260210155217681](rwkv summary.assets/image-20260210155217681.png)
+
+
+
 # EmbeddingRWKV
 
 
