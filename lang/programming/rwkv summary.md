@@ -8,6 +8,8 @@ https://github.com/zyaaa-ux/ROSA-Tuning
 
 https://github.com/wjie98/rosa_soft
 
+https://github.com/Juste-Leo2/ROSA-GPU-RWKV8  
+
 
 
 
@@ -217,6 +219,8 @@ ROSA 和 Transformer 在能力谱系上处于两个极端，互补性极强：
 # Deepseek 的 Engram
 
 https://medium.com/@zhouboyang1983/deepseek%E7%9A%84%E6%96%B0%E8%AE%BA%E6%96%87engram-b8e895669111
+
+https://medium.com/@zhouboyang1983/bitnet-b1-58-2b-4t%E5%92%8C%E4%B8%89%E8%BF%9B%E5%88%B6-6f295e36495c  三进制？不用矩阵乘？
 
 
 
