@@ -423,7 +423,48 @@ https://github.com/howard-hou/EmbeddingRWKV
 
 
 
+这段内容详细介绍了**基于状态的重排序（State-Based Reranking）**的具体实现、优势分析，并开始了实验结果的展示。
 
+以下是核心要点解读：
+
+
+1. 基于状态的重排序 (State-Based Reranking) 模型架构 (Model Architecture)
+- 结构 ：如图 2(b) 所示，由 RWKV 块 + Ranking Head（重排序头）组成。
+- 输入 ：矩阵值状态（Matrix-valued state）。
+- 输出 ：相关性得分（Relevance score）。
+- 两种模式 ：
+  1. 离线模式 (Offline mode) - 高效核心 ：
+     - 预计算 ：文档状态 [ o bj ec tO bj ec t ] S d  预先计算并缓存。
+     - 推理 ：用 [ o bj ec tO bj ec t ] S d  初始化 EmbeddingRWKV，然后 仅输入 Query Token 。
+     - 更新 ：Query 处理完后得到更新后的状态 [ o bj ec tO bj ec t ] S ′ ，输入 Reranker 计算得分。
+     - 特点 ：推理时 不需再处理文档内容 。
+  2. 在线模式 (Online mode) ：
+     - 文档和 Query 一起实时处理（类似传统做法），用于无法预计算的场景。
+  - 训练设置 ：通常冻结 EmbeddingRWKV 的参数，仅训练 Reranker 的参数。 重排序训练目标 (Reranking Training Objective)
+- 视为 二分类问题 。
+- 使用 BCE Loss（二元交叉熵损失） 进行优化：
+  - [ o bj ec tO bj ec t ] L rer ankin g  = − [ y lo g s + ( 1 − y ) lo g ( 1 − s )]
+  - [ o bj ec tO bj ec t ] s 是预测的相关性概率， [ o bj ec tO bj ec t ] y 是真实标签。 计算成本分析 (Computational Cost Analysis)
+- Transformer Reranker ：需要计算 Query 和 Document 之间的全注意力（Full Attention），复杂度是二次方 [ o bj ec tO bj ec t ] O (( L q  + L d  ) 2 ) 。文档越长，越慢。
+- State-based Reranker ：利用缓存的文档状态，推理时 只处理 Query Token 。
+  - 实现了推理延迟与文档长度的 完全解耦（Decoupling） 。
+  - 复杂度仅与 Query 长度线性相关 [ o bj ec tO bj ec t ] O ( L q  ) 。 内存占用分析 (Memory Footprint Analysis)
+- 对比对象 ：Transformer 的 KV Cache vs. RWKV 的矩阵状态。
+- 公式推导 ： [ o bj ec tO bj ec t ] RWKV State Transformer KV  = 32 T  （基于 RWKV-7， [ o bj ec tO bj ec t ] S = 64 ）。
+- 结论 ：
+  - Transformer 的 KV Cache 随长度 [ o bj ec tO bj ec t ] T 线性增长 。
+  - RWKV 的状态大小是**恒定（Constant）**的。
+  - 对于长文档， [ o bj ec tO bj ec t ] T 很大，Transformer 需要的内存是 RWKV 的 [ o bj ec tO bj ec t ] T /32 倍。例如 [ o bj ec tO bj ec t ] T = 3200 时，Transformer 内存消耗是 RWKV 的 100 倍。
+
+2. 实验结果 (Experiments - Retrieval) EmbeddingRWKV 表现强劲 (EmbeddingRWKV is competitive)
+- 数据集 ：自建的开源数据集，并在 MTEB 英语基准上测试。
+- 模型规模 ：0.1B, 0.4B, 1.4B 三个量级。
+- 结果 ：
+  - 0.1B (Base) ：在同量级中匹配或超越了主流开源基线。
+  - 0.4B (Medium) ：保持竞争力。
+  - 1.4B (Large) ：在 MTEB 平均分上接近顶尖的大模型和商业 API。
+  - 亮点 ：在**分类（Classification）**任务子集上表现尤为出色，说明学习到的状态具有很强的判别性语义结构。
+- 核心结论 ：RWKV 完全可以替代 Transformer 作为密集检索（Dense Retrieval）的骨干，且不损失质量。
 
 
 
