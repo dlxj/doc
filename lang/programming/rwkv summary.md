@@ -214,6 +214,10 @@ ROSA 和 Transformer 在能力谱系上处于两个极端，互补性极强：
 
 
 
+# Deepseek 的 Engram
+
+https://medium.com/@zhouboyang1983/deepseek%E7%9A%84%E6%96%B0%E8%AE%BA%E6%96%87engram-b8e895669111
+
 
 
 # EmbeddingRWKV
