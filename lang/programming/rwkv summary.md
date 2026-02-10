@@ -367,3 +367,63 @@ https://github.com/howard-hou/EmbeddingRWKV
 
 
 
+这段内容深入讲解了技术实现的理论基础和具体方法，分为两个部分： 3.1 背景知识：矩阵值状态 和 3.2 状态表示学习 。
+
+以下是详细解读：
+
+
+1. 背景：矩阵值状态 (Matrix-valued States)
+这部分解释了为什么 RWKV 能比传统 RNN 更好地保存信息。
+
+- 传统 RNN 的局限 ：
+  - 状态（State）是一个 固定长度的向量（Vector） 。
+  - 这限制了在长序列中能够保存的信息量。
+- 矩阵值状态的优势 ：
+  - 将状态从向量扩展为 矩阵（Matrix） 。
+  - 公式 (1) ： [ o bj ec tO bj ec t ] S t  = S t − 1  W t  + v t  k t ⊤ 
+    - [ o bj ec tO bj ec t ] S t  是 [ o bj ec tO bj ec t ] d × d 的矩阵，充当动态的 联想记忆（Associative Memory） 。
+    - 它通过累加 Key-Value 的外积（ [ o bj ec tO bj ec t ] v t  k t ⊤  ）来存储信息。
+    - 通过 [ o bj ec tO bj ec t ] W t  来选择性地保留或遗忘过去的信息。
+- RWKV-7 的改进 ：
+  - 公式 (2) ： [ o bj ec tO bj ec t ] W t  的计算更加精细，引入了 动态演化机制 。
+  - 使用了快速权重（Fast weights） [ o bj ec tO bj ec t ] κ ^ t  和 [ o bj ec tO bj ec t ] a t  来增强记忆更新的选择性。
+- 核心特性 ：
+  - 增量更新（Incrementally updated） ：不需要存储完整的历史 Token。
+  - 恒定内存（Constant memory） ：无论序列多长，显存占用不变。
+  - 线性计算（Linear-time computation） ：计算速度快。
+
+2. 状态表示学习 (State Representation Learning)
+这部分介绍了如何训练模型，使其既能生成 Embedding，又能生成可复用的 State。
+ 模型架构 (Model Architecture)
+- EmbeddingRWKV （如图 2(a) 所示）：
+  - 基于 RWKV 块。
+  - EOS Token 策略 ：在输入序列中插入多个 EOS Token。
+  - 输出提取 ：提取 EOS Token 对应的输出表示。
+  - 后处理 ：经过池化层（Pooling layer）平均，再通过非线性头（Nonlinear head）投影，得到最终的 Embedding。 训练与数据配方 (Training and Data Recipe)
+- 核心创新：领域感知课程策略 (Domain-Aware Curriculum Strategy)
+  - 原理 ：同一领域的样本在语义空间上相近，天然构成了对比学习中的 困难负例（Hard Negatives） 。而随机混合不同领域的样本，往往只能产生容易区分的“简单负例”，训练信号弱。
+  - 做法 ：
+    - 将数据集 [ o bj ec tO bj ec t ] D 按领域划分为子集 [ o bj ec tO bj ec t ] { D 1  , D 2  , … , D K  } 。
+    - 分布式训练 ：如果有 [ o bj ec tO bj ec t ] N 个 GPU，每个 GPU 在同一步骤中负责处理 一个特定领域 的数据。
+    - 效果 ：每个 GPU 的局部 Batch 内部自然充满了该领域的困难负例。
+  - 优势 ：无需显式的、昂贵的硬负例挖掘（Hard-negative mining）过程，大大简化了训练。 学习目标 (Learning Objective)
+- 采用标准的对比学习损失函数： InfoNCE Loss 。
+- 公式 (3) ：
+  - [ o bj ec tO bj ec t ] L s t a t e  = − B 1  ∑ lo g Z i  e s ( q i  , d i +  ) / τ 
+  - [ o bj ec tO bj ec t ] s ( ⋅ , ⋅ ) ：计算 Query 和 Document Embedding 之间的余弦相似度。
+  - 利用 Batch 内的其他样本作为负例（In-batch negatives）。
+
+总结
+这一节揭示了 EmbeddingRWKV 的两大秘诀：
+
+1. 底座够强 ：利用 RWKV-7 的 矩阵状态 ，容量大且计算快。
+2. 训练够巧 ：利用 领域分片 的分布式训练，自动制造“硬负例”，省去了复杂的挖掘步骤，实现了高效的单阶段训练。
+
+
+
+
+
+
+
+
+
