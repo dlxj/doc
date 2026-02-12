@@ -611,3 +611,179 @@ except Exception as e:
 
 ```
 
+
+
+## GUI
+
+```
+
+import streamlit as st
+import lancedb
+import pandas as pd
+import json
+import os
+
+st.set_page_config(page_title="LanceDB Manager", layout="wide")
+
+st.title("🏹 LanceDB Manager")
+
+# Sidebar: Connection
+st.sidebar.header("Connection")
+db_path = st.sidebar.text_input("Database Path", value="data")
+
+if not os.path.exists(db_path):
+    if st.sidebar.button("Create Database Folder"):
+        os.makedirs(db_path, exist_ok=True)
+        st.sidebar.success(f"Created {db_path}")
+
+try:
+    db = lancedb.connect(db_path)
+    st.sidebar.success(f"Connected to {db_path}")
+except Exception as e:
+    st.sidebar.error(f"Failed to connect: {e}")
+    st.stop()
+
+# List Tables
+try:
+    tables = db.table_names()
+except Exception as e:
+    st.error(f"Error listing tables: {e}")
+    tables = []
+
+st.sidebar.header("Tables")
+selected_table_name = st.sidebar.selectbox("Select Table", [""] + tables)
+
+if st.sidebar.button("Refresh Tables"):
+    st.rerun()
+
+# Create Table
+with st.sidebar.expander("Create New Table"):
+    new_table_name = st.text_input("New Table Name")
+    # Simple JSON input for initial data
+    initial_data_str = st.text_area("Initial Data (JSON List)", value='[{"id": 1, "vector": [0.1, 0.2], "text": "hello"}]')
+    if st.button("Create Table"):
+        try:
+            data = json.loads(initial_data_str)
+            db.create_table(new_table_name, data=data)
+            st.success(f"Table {new_table_name} created!")
+            st.rerun()
+        except Exception as e:
+            st.error(f"Error creating table: {e}")
+
+if selected_table_name:
+    st.header(f"Table: {selected_table_name}")
+    tbl = db.open_table(selected_table_name)
+    
+    # Tabs for operations
+    tab_view, tab_query, tab_add, tab_delete, tab_schema = st.tabs(["View Data", "Search/Query", "Add Data", "Delete", "Schema"])
+    
+    with tab_view:
+        st.subheader("Preview Data")
+        limit = st.number_input("Limit rows", value=10, min_value=1)
+        df = tbl.to_pandas()
+        st.dataframe(df.head(limit), use_container_width=True)
+        st.caption(f"Total rows: {len(df)}")
+
+    with tab_query:
+        st.subheader("Search & Filter")
+        query_type = st.radio("Query Type", ["SQL Filter", "Vector Search"])
+        
+        if query_type == "SQL Filter":
+            sql_filter = st.text_input("Where Clause (SQL)", placeholder="id > 1 AND meta.category = 'A'")
+            if st.button("Run Filter"):
+                try:
+                    if sql_filter:
+                        res = tbl.search().where(sql_filter).to_pandas()
+                    else:
+                        res = tbl.to_pandas()
+                    st.dataframe(res, use_container_width=True)
+                except Exception as e:
+                    st.error(f"Query Error: {e}")
+        
+        elif query_type == "Vector Search":
+            vector_str = st.text_input("Query Vector (comma separated)", placeholder="0.1, 0.2")
+            k = st.number_input("Top K", value=5)
+            if st.button("Run Vector Search"):
+                try:
+                    vec = [float(x.strip()) for x in vector_str.split(",")]
+                    res = tbl.search(vec).limit(k).to_pandas()
+                    st.dataframe(res, use_container_width=True)
+                except Exception as e:
+                    st.error(f"Vector Error: {e}")
+
+    with tab_add:
+        st.subheader("Add Records")
+        add_mode = st.radio("Mode", ["JSON", "Form (Simple)"])
+        
+        if add_mode == "JSON":
+            json_input = st.text_area("JSON Data (List of Dicts)", height=200, value='[{"id": 3, "vector": [0.5, 0.5], "text": "new"}]')
+            if st.button("Insert JSON"):
+                try:
+                    data_to_add = json.loads(json_input)
+                    tbl.add(data_to_add)
+                    st.success(f"Added {len(data_to_add)} rows.")
+                    st.rerun() # Refresh to show new data
+                except Exception as e:
+                    st.error(f"Insert Error: {e}")
+        else:
+            st.info("Form mode supports simple flat schemas. For nested data, use JSON mode.")
+            # Dynamic form based on schema (simplified)
+            # This is hard to do generically perfectly, but let's try for simple fields
+            schema = tbl.schema
+            form_data = {}
+            with st.form("add_row_form"):
+                for name in schema.names:
+                    # Very basic type checking
+                    field = schema.field(name)
+                    st.write(f"**{name}** ({field.type})")
+                    val = st.text_input(f"Value for {name}")
+                    form_data[name] = val
+                
+                submitted = st.form_submit_button("Add Row")
+                if submitted:
+                    try:
+                        # Need to parse values based on type, very rough
+                        # For now, just try to parse JSON for vector/structs, else string/int
+                        parsed_data = {}
+                        for k, v in form_data.items():
+                            try:
+                                parsed_data[k] = json.loads(v)
+                            except:
+                                parsed_data[k] = v # Keep as string if not valid JSON
+                                # Try to convert to int/float if possible
+                                if v.isdigit(): parsed_data[k] = int(v)
+                                else:
+                                    try: parsed_data[k] = float(v)
+                                    except: pass
+                        
+                        tbl.add([parsed_data])
+                        st.success("Added row.")
+                        st.rerun()
+                    except Exception as e:
+                        st.error(f"Error: {e}")
+
+    with tab_delete:
+        st.subheader("Delete Records")
+        delete_filter = st.text_input("Delete Condition (SQL Where)", placeholder="id = 5")
+        if st.button("Delete Rows", type="primary"):
+            if not delete_filter:
+                st.error("Please provide a condition.")
+            else:
+                try:
+                    tbl.delete(delete_filter)
+                    st.success(f"Deleted rows where {delete_filter}")
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Delete Error: {e}")
+
+    with tab_schema:
+        st.text(str(tbl.schema))
+
+else:
+    st.info("Select a table from the sidebar to manage.")
+
+
+```
+
+
+
