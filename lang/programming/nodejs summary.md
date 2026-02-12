@@ -37732,7 +37732,7 @@ https://github.com/JarodMica/index-tts/tree/training_v2   bilibili语音合成 �
   hf download Jmica/IndexTTS-2-Japanese
   	自带断点续传的
   	C:\Users\echod\.cache\huggingface\hub\models--Jmica--IndexTTS-2-Japanese\snapshots\2b8cfb96f746a467d23bd228a4cae0e1073a905a
-
+  
   pip install -U uv
   cd index-tts
   
@@ -39878,6 +39878,8 @@ assert v.pipe(fn, gn) == gn(fn(v))
 [monads](https://github.com/sniptt-official/monads)
 
 https://github.com/xiaolinbaba/Madopic  markdown to pic
+
+https://github.com/weiyunjun/sakidown  bili 下载 javascript
 
 ```javascript
 // 成功运行 vscode .ts 文件
