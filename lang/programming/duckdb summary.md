@@ -148,8 +148,8 @@ DuckDB 有一个非常强大的特性： 它不强迫你立刻定义完美的 Sc
    -- 即使 data 列是复杂的嵌套 JSON，也能极速查询
    SELECT data->>'user_id' FROM my_table;
    ```
-什么时候 不建议 替换 JSON？
-虽然 DuckDB 很强，但如果你的场景是以下几种，保留 JSON 可能更好：
+   什么时候 不建议 替换 JSON？
+   虽然 DuckDB 很强，但如果你的场景是以下几种，保留 JSON 可能更好：
 
 1. 前端直接消费 ：如果数据是直接发给 Web 浏览器或移动端 App 的 API 响应，JSON 是标准，DuckDB 格式浏览器读不懂。
 2. 配置文件 ：如果文件需要人工用记事本打开、阅读和修改（如 config.json ），不要换。
@@ -334,8 +334,8 @@ fts和vss插件以及vsssentence-transformers
 - LanceDB (输) :
   - 虽然支持 SQL（通过 DataFusion 或集成 DuckDB），但主要还是通过 Python/JS API 操作。
   - 相对较新，生态还在快速发展中。
-总结：该怎么选？
-场景 推荐 原因 通用数据分析 DuckDB 需要复杂的 Group By, Join, Window Functions。 小规模向量 (<100k) DuckDB 没必要引入新组件，DuckDB 的暴力计算足够快且精确。 大规模向量 (>1M) LanceDB 必须用索引，否则太慢。且 LanceDB 省内存。 RAG / AI 应用 LanceDB 需要混合搜索（Hybrid Search）和快速随机读取文档内容。 多模态数据 LanceDB 需要管理图片、视频、点云等非结构化数据。
+  总结：该怎么选？
+  场景 推荐 原因 通用数据分析 DuckDB 需要复杂的 Group By, Join, Window Functions。 小规模向量 (<100k) DuckDB 没必要引入新组件，DuckDB 的暴力计算足够快且精确。 大规模向量 (>1M) LanceDB 必须用索引，否则太慢。且 LanceDB 省内存。 RAG / AI 应用 LanceDB 需要混合搜索（Hybrid Search）和快速随机读取文档内容。 多模态数据 LanceDB 需要管理图片、视频、点云等非结构化数据。
 
 终极建议： 其实它们可以 共存 。
 LanceDB 有一个非常酷的特性： 它允许 DuckDB 直接查询 Lance 数据集 。
@@ -384,6 +384,229 @@ query_vector = [0.8, 0.3, 0.8]
 result = table.search(query_vector).limit(2).to_polars()
 print(result)
 
+
+
+```
+
+
+
+
+
+##  json 增删改查好用吗
+
+
+
+````
+
+
+        
+            
+pip install lancedb pandas 
+
+          
+LanceDB 对 JSON（嵌套结构）的支持总体来说是**“查改方便，增删灵活，但局部更新有坑”**。它内部将 JSON 存储为 Arrow 的 `Struct` 类型，因此能够高效地进行列式存储和查询，但在处理“部分字段更新”时不如 MongoDB 那样随意。
+
+以下是针对 JSON 数据的增删改查（CRUD）详细测评：
+
+
+结论速览
+| 操作 | 评价 | 说明 |
+| :--- | :--- | :--- |
+| **增 (Create)** | ⭐⭐⭐⭐⭐ | 直接支持列表嵌套字典、Pydantic 模型，自动推断 Schema。 |
+| **查 (Read)** | ⭐⭐⭐⭐⭐ | 支持点号语法（如 `meta.score > 10`）进行过滤，速度极快。 |
+| **删 (Delete)** | ⭐⭐⭐⭐⭐ | 支持根据嵌套字段条件删除（如 `delete("meta.score < 5")`）。 |
+| **改 (Update)** | ⭐⭐⭐ | **有局限**。不能只更新 JSON 中的某个字段（如只改 `meta.score`），必须**替换整个 JSON 对象**。 |
+
+---
+
+
+详细代码示例
+
+假设我们有如下嵌套 JSON 数据结构：
+```json
+{
+  "id": 1,
+  "vector": [0.1, 0.2],
+  "meta": {
+    "category": "A",
+    "score": 10,
+    "tags": ["x", "y"]
+  }
+}
+```
+
+
+1. 增 (Create) - 非常丝滑
+你可以直接传入 Python 的字典列表，LanceDB 会自动推断嵌套结构。
+
+```python
+import lancedb
+
+db = lancedb.connect("./data")
+data = [
+    {"id": 1, "vector": [0.1, 0.2], "meta": {"category": "A", "score": 10}},
+    {"id": 2, "vector": [0.3, 0.4], "meta": {"category": "B", "score": 20}},
+]
+table = db.create_table("items", data)
+```
+
+
+2. 查 (Read) - 支持点号语法
+你可以像操作对象属性一样过滤嵌套字段，非常直观。
+
+```python
+# 查询 meta.category 为 'A' 的记录
+result = table.search().where("meta.category = 'A'").to_pandas()
+print(result)
+```
+
+
+3. 删 (Delete) - 同样支持嵌套条件
+```python
+
+删除 meta.score 小于 15 的记录
+table.delete("meta.score < 15")
+```
+
+
+4. 改 (Update) - 需要注意！
+这是最容易踩坑的地方。LanceDB **不支持**像 MongoDB 那样 `$set: {"meta.score": 99}` 只更新局部字段。你必须提供**完整的** `meta` 对象。
+
+**推荐使用 `merge_insert` (Upsert) 进行更新：**
+
+```python
+
+❌ 错误做法：试图只传部分字段（会导致报错或数据丢失）
+
+new_data = [{"id": 2, "meta": {"score": 99}}] 
+
+
+✅ 正确做法：提供完整的 meta 对象
+new_data = [
+    {
+        "id": 2, 
+        "meta": {"category": "B", "score": 99} # 必须包含 category，否则需重新读取
+    }
+]
+
+
+执行更新（如果 id 存在则更新，不存在则插入）
+table.merge_insert("id") \
+    .when_matched_update_all() \
+    .when_not_matched_insert_all() \
+    .execute(new_data)
+```
+
+
+总结建议
+- **适合场景**：你的 JSON 结构相对固定（Schema 不经常变），主要用于根据某些字段过滤向量检索结果。
+- **不适合场景**：Schema 极其动态（每一行的 JSON 键都不一样），或者需要频繁高并发地只修改 JSON 中某一个深层字段。
+
+如果你的应用场景需要频繁修改 JSON 内部的深层字段，建议在应用层先读取完整对象，修改后再写回。
+
+````
+
+
+
+```
+
+import lancedb
+import pandas as pd
+import pyarrow as pa
+import shutil
+import os
+
+# Clean up previous run
+if os.path.exists("test_lancedb"):
+    shutil.rmtree("test_lancedb")
+
+# Connect
+db = lancedb.connect("test_lancedb")
+
+# 1. Create with Nested Data
+print("--- 1. Create ---")
+data = [
+    {"id": 1, "vector": [1.0, 2.0], "meta": {"category": "A", "score": 10, "tags": ["x", "y"]}},
+    {"id": 2, "vector": [3.0, 4.0], "meta": {"category": "B", "score": 20, "tags": ["y", "z"]}},
+    {"id": 3, "vector": [5.0, 6.0], "meta": {"category": "A", "score": 5, "tags": ["x"]}},
+]
+table = db.create_table("items", data)
+print(table.schema)
+print(table.to_pandas())
+
+# 2. Query with Nested Filter
+print("\n--- 2. Query Nested ---")
+try:
+    # Try dot notation for nested field
+    result = table.search().where("meta.category = 'A'").to_pandas()
+    print("Filter meta.category = 'A':")
+    print(result)
+except Exception as e:
+    print(f"Query failed: {e}")
+
+# 3. Update Nested (Attempt)
+print("\n--- 3. Update Nested ---")
+try:
+    # Attempt to update a specific nested field (likely to fail or require full struct replacement)
+    # Let's try to update id=1, meta.score = 99
+    # Standard SQL update usually requires replacing the whole column or using struct construction
+    
+    # Method A: Replace whole struct
+    new_meta = {"category": "A", "score": 99, "tags": ["x", "y", "new"]}
+    table.update(where="id = 1", values={"meta": new_meta})
+    print("Updated id=1 with full struct replacement:")
+    print(table.search().where("id = 1").to_pandas())
+    
+except Exception as e:
+    print(f"Update failed: {e}")
+
+# 4. Delete with Nested Filter
+print("\n--- 4. Delete Nested ---")
+try:
+    table.delete("meta.score < 10")
+    print("Deleted where meta.score < 10. Remaining:")
+    print(table.to_pandas())
+except Exception as e:
+    print(f"Delete failed: {e}")
+
+
+```
+
+
+
+```
+
+import lancedb
+import pandas as pd
+import shutil
+import os
+
+# Clean up previous run
+if os.path.exists("test_lancedb_update_struct"):
+    shutil.rmtree("test_lancedb_update_struct")
+
+db = lancedb.connect("test_lancedb_update_struct")
+
+# Create
+data = [
+    {"id": 1, "vector": [1.0, 2.0], "meta": {"category": "A", "score": 10}},
+]
+table = db.create_table("items", data)
+
+print("--- Initial State ---")
+print(table.to_pandas())
+
+# Update with partial struct
+print("\n--- Update with Partial Struct ---")
+new_data = [
+    {"id": 1, "meta": {"score": 99}} # Missing 'category' inside 'meta'
+]
+try:
+    table.merge_insert("id").when_matched_update_all().execute(new_data)
+    print("Merge partial struct successful. Result:")
+    print(table.to_pandas().to_dict(orient="records"))
+except Exception as e:
+    print(f"Merge partial struct failed: {e}")
 
 
 ```
