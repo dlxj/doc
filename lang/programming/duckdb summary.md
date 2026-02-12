@@ -613,6 +613,16 @@ except Exception as e:
 
 
 
+## C++
+
+https://github.com/lancedb/lancedb-c
+
+
+
+
+
+
+
 ## GUI
 
 ```
