@@ -866,6 +866,8 @@ https://huggingface.co/BAAI/bge-reranker-v2-m3
 
 
 
+faiss gpu 对比 lancedb gpu 优化查询的性能
+
 
 
 ## GUI
