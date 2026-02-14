@@ -856,6 +856,18 @@ tbl.optimize(delete_unverified=True)
 
 
 
+### Embedding
+
+https://huggingface.co/BAAI/bge-m3
+
+https://huggingface.co/BAAI/bge-reranker-v2-m3
+
+文言文需要跨语言搜索吗
+
+
+
+
+
 ## GUI
 
 ```
