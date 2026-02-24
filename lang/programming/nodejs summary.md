@@ -41973,6 +41973,8 @@ https://github.com/Dimillian/IceCubesApp  **去中心化社交网络** Mastodon
 
 ## Rust Monads
 
+https://github.com/readest/readest  **全平台阅读器** 比 koreader 好
+
 https://github.com/brianch/offline-chess-puzzles 国际象棋 UI 好看
 
 https://github.com/squidowl/halloy  IRC 窗口可拖
