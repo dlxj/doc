@@ -41967,6 +41967,8 @@ Visual Studio 2022
 
 ## swift
 
+https://github.com/Aidoku/Aidoku  主打漫画但支持其它
+
 https://github.com/Dimillian/IceCubesApp  **去中心化社交网络** Mastodon 
 
 
