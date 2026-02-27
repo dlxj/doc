@@ -292,5 +292,45 @@ public static Window GetFirstNonMainWindow()
 
 
 
+# CefSharp 读本地文件
+
+```
+
+see E:\huggingface_echodict\IPTV-Web-Player
+
+see E:\huggingface_echodict\CefSharpPlayer\CefSharpPlayer\CefSharpPlayer.csproj
+
+	<ItemGroup>
+		<PackageReference Include="CefSharp.Wpf.NETCore" Version="141.0.110" />
+	</ItemGroup>
+
+CefSharp.Wpf.NETCore 是一个将 Chromium 浏览器引擎嵌入到 .NET (WPF) 应用程序中的控件。如果你将这个网页打包成一个使用 CefSharp 的桌面客户端， 是可以实现直接读取本地文件而无需用户确认的 ，但需要进行特定的配置。
+
+以下是详细分析：
+
+
+1. 为什么 CefSharp 可以做到？
+CefSharp 运行在你的桌面应用程序进程中，拥有与你的应用程序相同的本地文件系统访问权限。与运行在沙箱环境中的普通浏览器（如 Chrome/Edge）不同，CefSharp 允许开发者通过配置来 禁用 Web 安全限制 或 注册自定义协议 ，从而赋予网页代码访问本地文件的能力。
+
+
+2. 如何实现（原理分析）
+要实现“不弹窗直接读取文件”，通常有以下几种 CefSharp 配置方案：
+
+- 方案 A：禁用 Web 安全策略（最简单但不推荐用于生产） 通过设置 CefSettings 或 BrowserSettings ：
+  
+  - WebSecurity = CefState.Disabled ：禁用同源策略。
+  - FileAccessFromFileUrls = CefState.Enabled ：允许 file:// 协议访问其他 file:// 资源。
+  - UniversalAccessFromFileUrls = CefState.Enabled ：允许 file:// 协议访问任何来源的资源。 效果 ：你的网页里的 JS 可以直接通过 file:///E:/Videos/movie.ts 这样的路径去加载文件，或者通过 XHR/Fetch 请求本地路径。
+- 方案 B：注册自定义 Scheme（推荐） 你可以注册一个自定义协议（例如 local:// 或 myscheme:// ），并编写一个 C# 的 ISchemeHandlerFactory 。
+  
+  - 原理 ：当网页请求 local://videos/playlist.m3u8 时，CefSharp 会拦截这个请求，调用你的 C# 代码。你的 C# 代码可以直接从硬盘读取对应的文件流并返回给网页。
+  - 优点 ：安全、可控。网页不需要知道绝对路径，只需要请求虚拟路径。
+- 方案 C：对象绑定 (C# <-> JS Binding) 你可以将一个 C# 对象注入到 JavaScript 的 window 对象中。
+  
+  - 原理 ：JS 调用 window.myFileHelper.getFileContent('E:/video.ts') ，C# 端接收到调用后读取文件并返回数据（字符串或 Base64）。
+  - 优点 ：可以实现极其灵活的逻辑。
+
+```
+
 
 
