@@ -39875,6 +39875,8 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 ## Nodejs Monads
 
+https://github.com/binaricat/Netcatty  tty
+
 [monads](https://github.com/sniptt-official/monads)
 
 https://github.com/xiaolinbaba/Madopic  markdown to pic
