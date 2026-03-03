@@ -14283,6 +14283,26 @@ git clone https://github.com/ggerganov/whisper.cpp.git \
 	成功识别
 
 
+
+
+see 深入理解神经网络：从逻辑回归到CNN.md  -> kotoba-whisper-v2.0-ggml
+
+see https://huggingface.co/kotoba-tech/kotoba-whisper-v2.0-ggml
+
+see https://github.com/ggerganov/whisper.cpp
+
+see https://github.com/kotoba-tech/tts_eval/blob/main/tts_eval/metric_asr.py  kotoba-whisper-v2.0 + 语音相似度
+
+cd kotoba-whisper-v2.0-ggml/whisper.cpp \
+  && make -j
+
+
+./whisper-cli.exe -m ggml-kotoba-whisper-v2.0.bin -l ja -f 60s.wav --output-file transcription --output-json
+	成功识别
+
+
+
+
 ```
 
 
@@ -14292,6 +14312,8 @@ git clone https://github.com/ggerganov/whisper.cpp.git \
 https://github.com/kotoba-tech/kotoba-speech-release  这里有用法
 
 https://huggingface.co/kotoba-tech/kotoba-speech-v0.1 这里只有模型
+
+https://github.com/kotoba-tech/tts_eval  kotoba-whisper-v2.0 + 语音相似度 
 
 
 
