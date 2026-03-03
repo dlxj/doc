@@ -14270,6 +14270,35 @@ https://github.com/Picovoice/porcupine
 
 
 
+## kotoba-whisper-v2.0-ggml
+
+```
+
+git clone https://github.com/ggerganov/whisper.cpp.git \
+  && cd whisper.cpp \
+  && make -j
+
+
+./whisper-cli.exe -m ggml-kotoba-whisper-v2.0.bin -l ja -f 60s.wav --output-file transcription --output-json
+	成功识别
+
+
+```
+
+
+
+## kotoba-speech
+
+https://github.com/kotoba-tech/kotoba-speech-release  这里有用法
+
+https://huggingface.co/kotoba-tech/kotoba-speech-v0.1 这里只有模型
+
+
+
+
+
+
+
 ## whisperX 
 
 - https://github.com/openai/whisper
