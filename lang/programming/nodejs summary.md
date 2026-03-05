@@ -40462,6 +40462,14 @@ https://github.com/clsid2/mpc-hc  potplay 替代播放器
 
 
 
+
+
+### MFC
+
+https://github.com/zhongyang219/TrafficMonitor
+
+
+
 ### Winform
 
 [syncfusion 文档](https://help.syncfusion.com/windowsforms/overview) 
