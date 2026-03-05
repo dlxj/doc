@@ -14293,6 +14293,10 @@ see https://github.com/ggerganov/whisper.cpp
 
 see https://github.com/kotoba-tech/tts_eval/blob/main/tts_eval/metric_asr.py  kotoba-whisper-v2.0 + 语音相似度
 
+see huggingface_echodict\CefSharpPlayer\CefSharpPlayer\readme.txt IPTV 输出每个流的信息
+
+see huggingface_echodict\IPTV2\readme.txt 边下载边推流 + 伪推流
+
 cd kotoba-whisper-v2.0-ggml/whisper.cpp \
   && make -j
 
@@ -14301,9 +14305,162 @@ cd kotoba-whisper-v2.0-ggml/whisper.cpp \
 	成功识别
 
 
+ffprobe -print_format json  -show_streams segment_000.ts
+   输出每个流的信息
+   see huggingface_echodict\CefSharpPlayer\CefSharpPlayer\readme.txt
+
 
 
 ```
+
+
+
+### 嵌入字幕
+
+````
+
+**可以，完全支持。**
+
+针对你的需求（TS 视频流 + 顶部一行字幕 + 底部一行字幕），最好的方案是使用 **ASS (Advanced Substation Alpha)** 格式的字幕文件来控制位置，然后将其封装进 TS 文件中。
+
+
+核心思路
+1.  **位置控制**：普通的 SRT 字幕很难同时控制顶部和底部显示，而 ASS 格式可以通过 `Style`（样式）精确控制屏幕坐标。
+2.  **封装格式**：TS 容器标准支持 DVB Subtitles（图形字幕）或 Teletext。虽然 FFmpeg 可以把 ASS 文本流直接压入 TS（作为私有流），但兼容性最好的做法是**将 ASS 特效字幕转换为 DVB 图形字幕流**（dvbsub），或者直接**烧录进视频画面**（硬字幕）。
+
+我为你准备了一个演示方案。
+
+
+步骤 1：创建带定位的字幕文件 (template.ass)
+
+我在当前目录下为你生成了一个 `template.ass` 模板文件。它定义了 `Top`（顶部）和 `Bottom`（底部）两种样式。
+
+你可以直接使用这个模板，或者复制以下内容修改：
+
+```ini
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 960
+PlayResY: 540
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+; Alignment=8 表示顶部居中
+Style: Top,Arial,36,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,8,10,10,10,1
+; Alignment=2 表示底部居中
+Style: Bottom,Arial,36,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,2,0,2,10,10,10,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:05.00,Top,,0,0,0,,这是顶部字幕 / Top Line
+Dialogue: 0,0:00:00.00,0:00:05.00,Bottom,,0,0,0,,这是底部字幕 / Bottom Line
+```
+
+*注意：`PlayResX` 和 `PlayResY` 设置为了你的视频分辨率 960x540，这样位置最精确。*
+
+
+步骤 2：使用 FFmpeg 嵌入字幕
+
+有两种方式，根据你的播放场景选择：
+
+
+方案 A：嵌入为软字幕流（推荐，可开关）
+TS 容器对文本字幕支持不佳，通常需要转为图片格式（dvbsub）才能被机顶盒或播放器完美识别。
+
+```powershell
+ffmpeg -i tbs-38532.ts -i template.ass -c:v copy -c:a copy -c:s dvbsub -metadata:s:s:0 language=chi output.ts
+```
+
+*   `-c:v copy -c:a copy`: 视频和音频直接复制，不重新编码，速度极快。
+*   `-c:s dvbsub`: 将 ASS 文本字幕渲染为 DVB 图形字幕流（保留位置和样式）。
+
+
+方案 B：烧录进视频画面（硬字幕，不可开关）
+如果你希望字幕像水印一样永远在画面上，或者播放器不支持字幕流，可以使用此方法（需要重新编码视频）：
+
+```powershell
+ffmpeg -i tbs-38532.ts -vf "subtitles=template.ass" -c:a copy -c:v libx264 -b:v 1500k output_hardsub.ts
+```
+
+*   `-vf "subtitles=template.ass"`: 使用滤镜将字幕渲染到画面上。
+*   此方法会重新编码视频，画质会有微小损失，但兼容性 100%。
+
+
+总结
+你现在的 `tbs-38532.ts` 文件可以通过上述 FFmpeg 命令，配合我生成的 [template.ass](file:///e:/t2/t/template.ass) 文件，完美实现顶部和底部同时显示字幕的效果。
+
+
+
+
+
+
+
+
+
+
+
+
+**WebView2 无法直接播放这样的 TS 文件。**
+
+
+核心原因
+1.  **容器格式**：WebView2 基于 Chromium 内核，**原生不支持 TS (MPEG-TS) 容器格式**。虽然可以通过 `mpegts.js` 等 JavaScript 库实现播放 TS 视频流，但……
+2.  **字幕格式**：浏览器完全不支持 **DVB Subtitles (dvbsub)** 或 **ASS/SSA** 嵌入在视频流中。即使视频画面能播放，字幕也无法显示。
+    *   **dvbsub** 是图形（位图）格式，解析非常复杂，Web 前端极少支持。
+    *   **ASS** 是高级文本格式，Web 前端虽然有 `libjass` 等库，但通常需要独立的 `.ass` 文件，而不是嵌入在 TS 流中。
+
+---
+
+
+解决方案
+
+要在 WebView2 中完美显示“顶部+底部”的双行字幕，你有两个选择：
+
+
+方案一：硬字幕（推荐，兼容性最好）
+将字幕直接“烧录”进视频画面中。这样字幕就变成了视频的一部分，任何播放器（包括 WebView2）都能显示，且**完美保留你的顶部/底部定位**。
+
+**命令：**
+```powershell
+ffmpeg -i tbs-38532.ts -vf "ass=template.ass" -c:v libx264 -c:a copy output.mp4
+```
+*   **优点**：WebView2 可以直接用 `<video src="output.mp4">` 播放，字幕样式完全受控。
+*   **缺点**：需要重新编码视频，通过 CPU/GPU 计算，速度较慢。
+
+
+方案二：Web 标准方案 (MP4 + WebVTT)
+将 TS 转封装为 MP4（不重编码，速度快），并将字幕转换为 Web 标准的 **WebVTT** 格式。
+
+**步骤：**
+1.  **转换视频**（极快）：
+    ```powershell
+    ffmpeg -i tbs-38532.ts -c:v copy -c:a copy output.mp4
+    ```
+2.  **转换字幕**（ASS 转 VTT）：
+    ```powershell
+    ffmpeg -i template.ass output.vtt
+    ```
+3.  **在 WebView2 中播放**：
+    使用 HTML5 `<track>` 标签加载字幕。
+    ```html
+    <video controls width="960">
+      <source src="output.mp4" type="video/mp4">
+      <track kind="subtitles" src="output.vtt" srclang="zh" label="Chinese" default>
+    </video>
+    ```
+
+*   **注意**：WebVTT 对“顶部+底部”同时显示的支持不如 ASS 完美，可能需要手动调整 VTT 文件中的 `line:0`（顶部）和 `line:-1`（底部）参数。
+
+
+总结
+如果你的应用场景允许重新编码，**方案一（硬字幕）是解决定位需求最稳妥的办法**。如果必须使用原始 TS 流，你需要在 Web 端使用 `mpegts.js` + `canvas` 自行绘制字幕，开发成本极高且效果不稳定。
+
+
+
+
+````
+
+
 
 
 
