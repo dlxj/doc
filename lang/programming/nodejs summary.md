@@ -44250,6 +44250,270 @@ docx.getObjectPart("word/document.xml").text();
 
 
 
+## ElliptiGO椭圆自行车
+
+https://www.elliptigo.com/
+
+https://www.streetstrider.com/
+
+
+
+```
+
+
+System Modeler 
+
+https://masuit.org/2229?kw=mathematica&t=0HNIV93LNATR2
+
+https://1drv.ms/f/s!AkZ0xI-Y1k7kinet8jpKayLK5F2u?e=FmLP69
+
+
+https://www.wolfram.com/system-modeler/pricing/personal/
+
+
+https://ww2.mathworks.cn/help/smlink/ug/installing-and-linking-simmechanics-link-software.html
+
+MATLAB + SolidWorks + Simscape Multibody Link Plugin
+
+简单来说，SolidWorks 是用于“创造产品形状和结构”的顶级设计工具。如果你需要设计一个具体的机械零件、设备或产品，并出生产图纸，SolidWorks 是行业标准选择之一。它和仿真工具（如 System Modeler, Simscape, ANSYS）共同构成了现代产品研发的完整数字化工作流。
+
+
+ElliptiGO
+
+https://www.elliptigo.com/
+
+两轮
+
+
+
+StreetStrider
+
+https://www.streetstrider.com/
+
+三轮（前二后一）
+
+室外、室内两用
+
+
+
+Elliptical Bike，可以翻译成“椭圆机自行车”或“椭圆自行车”吧。
+
+
+
+
+
+
+如果没有 System Modeler，直接用 Mathematica 写代码做仿真可以吗
+
+
+完全可以。事实上，Wolfram System Modeler 的求解核心正是 Mathematica 的 `NDSolve`。直接在 Mathematica 中写代码虽然没有 System Modeler 的图形化拖拽界面直观，但它更灵活，且能让你深入理解底层的运动学方程。
+
+在 Mathematica 中做机械仿真，通常遵循**拉格朗日力学 (Lagrangian Mechanics)** 或 **牛顿-欧拉法 (Newton-Euler)** 的思路。对于 ElliptiGO 这种连杆机构，我们主要处理的是**约束方程 (Constraint Equations)**。
+
+下面我为你提供一个完整的 Mathematica 代码框架，用来模拟一个简化的 **ElliptiGO 单侧驱动机构**（曲柄-连杆-滑块/摇臂）。这个代码将：
+1.  建立连杆机构的闭环几何方程。
+2.  求解运动轨迹。
+3.  生成动态仿真动画。
+
+### Mathematica 代码 (ElliptiGO_Kinematics.nb)
+
+你可以直接将以下代码复制到 Mathematica 的 Notebook 中运行。
+
+​```mathematica
+(* 1. 定义几何参数 (单位: 米) *)
+L_crank = 0.17;    (* 曲柄长度: 170mm *)
+L_coupler = 0.40;  (* 连杆长度: 连接曲柄和长摇臂 *)
+L_rocker = 0.80;   (* 长摇臂长度: 人站立的部分 *)
+H_pivot = 0.30;    (* 摇臂枢轴点高度 *)
+X_pivot = -0.50;   (* 摇臂枢轴点水平位置 (相对于曲柄中心) *)
+
+(* 2. 定义时间变量和驱动函数 *)
+(* 假设曲柄以恒定角速度转动: theta(t) = omega * t *)
+omega = 2 * Pi; (* 1转/秒 *)
+theta[t_] := omega * t;
+
+(* 3. 建立运动学约束方程 (Kinematic Loop Closure) *)
+(* 
+   机构拓扑:
+   Ground(Pivot) -> Rocker -> Coupler -> Crank -> Ground(Origin)
+   
+   我们要找的是摇臂角度 alpha(t) 和 连杆角度 beta(t)
+   
+   闭环向量方程:
+   Pivot + Vector(Rocker) + Vector(Coupler) = Vector(Crank)
+   {X_pivot, H_pivot} + {L_rocker*Cos[alpha], L_rocker*Sin[alpha]} 
+   + {L_coupler*Cos[beta], L_coupler*Sin[beta]} 
+   == {L_crank*Cos[theta], L_crank*Sin[theta]}
+*)
+
+(* 定义位置向量 *)
+posPivot = {X_pivot, H_pivot};
+vecRocker[alpha_] := {L_rocker * Cos[alpha], L_rocker * Sin[alpha]};
+vecCoupler[beta_] := {L_coupler * Cos[beta], L_coupler * Sin[beta]};
+vecCrank[th_] := {L_crank * Cos[th], L_crank * Sin[th]};
+
+(* 约束方程组 *)
+eqs = {
+  posPivot[[1]] + vecRocker[alpha[t]][[1]] + vecCoupler[beta[t]][[1]] == vecCrank[theta[t]][[1]],
+  posPivot[[2]] + vecRocker[alpha[t]][[2]] + vecCoupler[beta[t]][[2]] == vecCrank[theta[t]][[2]]
+};
+
+(* 4. 求解方程 (Solve for alpha and beta) *)
+(* 使用 FindRoot 数值求解每个时间步的角度 *)
+(* 为了生成连续动画，我们构造一个求解函数 *)
+
+solveKinematics[time_] := Module[{sol},
+  sol = FindRoot[
+    eqs /. t -> time, 
+    {{alpha[time], -0.1}, {beta[time], 0.1}} (* 初始猜测值 *)
+  ];
+  sol
+];
+
+(* 5. 生成动画数据 *)
+frames = Table[
+   Module[{sol, a, b, th, pCrank, pCouplerEnd, pRockerEnd},
+    th = theta[t];
+    sol = solveKinematics[t];
+    a = alpha[t] /. sol;
+    b = beta[t] /. sol;
+    
+    (* 计算关键点坐标 *)
+    pCrank = vecCrank[th]; (* 曲柄端点 *)
+    pRockerEnd = posPivot + vecRocker[a]; (* 摇臂末点 *)
+    (* pCouplerEnd 应该等于 pCrank，这是校验 *)
+    
+    (* 绘制这一帧 *)
+    Graphics[{
+      (* 地面 *)
+      {Gray, Line[{{-1, 0}, {1, 0}}]},
+      
+      (* 曲柄 (红色) *)
+      {Red, Thick, Line[{{0, 0}, pCrank}]},
+      {Red, Disk[pCrank, 0.02]},
+      
+      (* 连杆 (绿色) *)
+      {Green, Thick, Line[{pCrank, pRockerEnd}]},
+      
+      (* 长摇臂 (蓝色) - 人站在这里 *)
+      {Blue, Thickness[0.01], Line[{posPivot, pRockerEnd}]},
+      {Blue, Disk[posPivot, 0.03]}, (* 枢轴点 *)
+      
+      (* 脚踏板位置 (假设在摇臂中间某处) *)
+      {Black, PointSize[0.03], Point[posPivot + 0.7 * vecRocker[a]]}
+      
+     }, 
+     PlotRange -> {{-1.2, 0.5}, {-0.2, 0.8}},
+     ImageSize -> 400,
+     Axes -> True,
+     GridLines -> Automatic,
+     PlotLabel -> Style["ElliptiGO Kinematics Simulation", 16, Bold]
+    ]
+   ],
+   {t, 0, 1, 0.02} (* 模拟 1 秒，50 帧 *)
+];
+
+(* 6. 播放动画 *)
+ListAnimate[frames]
+​```
+
+### 代码解析：它是如何工作的？
+
+1.  **闭环矢量法 (Vector Loop Method)**：
+    *   这是机构分析的通用方法。我们将机构看作一个闭合的多边形。
+    *   `posPivot + vecRocker + vecCoupler == vecCrank`
+    *   这意味着：从“摇臂支点”出发，沿着“摇臂”走，再沿着“连杆”走，最终会到达“曲柄”的端点。如果不闭合，机构就散架了。
+
+2.  **非线性方程求解 (`FindRoot`)**：
+    *   由于方程中包含 `Sin` 和 `Cos`，这是非线性的。我们无法直接求出 `alpha(t)` 的解析解（或者解析解非常复杂）。
+    *   `FindRoot` 是 Mathematica 的强项，它能在每一帧快速找到满足约束的角度值。
+
+3.  **参数化设计**：
+    *   试着修改 `L_crank` 或 `L_rocker` 的值，重新运行代码。
+    *   你会发现轨迹形状（椭圆的扁平度）会发生变化。这就是仿真的意义——在制造实物之前优化参数。
+
+### 进阶：如何分析轨迹？
+
+如果你想看到脚踏点的**轨迹曲线**，可以在代码最后添加一段：
+
+​```mathematica
+(* 计算脚踏点轨迹 *)
+trajectory = Table[
+  Module[{sol, a},
+    sol = solveKinematics[t];
+    a = alpha[t] /. sol;
+    posPivot + 0.7 * vecRocker[a] (* 假设脚踩在摇臂 70% 处 *)
+  ],
+  {t, 0, 1, 0.01}
+];
+
+(* 绘制轨迹图 *)
+ListLinePlot[trajectory, 
+ PlotStyle -> {Purple, Thickness[0.005]}, 
+ AspectRatio -> Automatic, 
+ GridLines -> Automatic,
+ PlotLabel -> "Pedal Path (Coupler Curve)",
+ AxesLabel -> {"X (m)", "Y (m)"}
+]
+​```
+
+运行这段代码，你会得到一个封闭的曲线。对于 ElliptiGO 来说，这个曲线应该是一个**长扁形的椭圆**，这样人踩起来才像是在跑步（平滑），而不是在骑车（画圆）。
+
+
+
+
+
+```
+
+
+
+
+
+### wolfram System Modeler 能模似各种零件的组装吗
+
+```
+
+Wolfram System Modeler **可以模拟由各种零件组成的机械系统的“动态行为”和“运作过程”，但它并不是用来模拟“零件组装工艺”或进行“几何公差配合检查”的工具**。
+
+为了更准确地回答你的问题，我们需要区分两种“组装模拟”的概念：
+
+### 1. 如果你的意思是：“能不能把一堆零件拼起来，看它们能不能动，动起来效果怎么样？”
+**答案是：可以，而且非常擅长。**
+
+Wolfram System Modeler 基于 **Modelica** 语言，它非常适合进行 **多体动力学 (Multibody Dynamics)** 仿真。
+*   **功能：** 你可以将各个零件（如连杆、齿轮、电机、弹簧）通过“关节”（Joints，如旋转副、移动副）连接起来。
+*   **目的：** 模拟这个系统在组装好之后，通电或受力时的运动情况。例如：机械臂的轨迹控制、汽车悬挂的震动、飞机的起落架收放等。
+*   **优势：** 它不仅模拟机械运动，还能同时模拟驱动它的电机（电气）、控制算法（逻辑）以及产生的热量（热力学），这是传统 CAD 软件（如 SolidWorks, ProE）做不到的。
+
+### 2. 如果你的意思是：“能不能模拟拧螺丝的过程，或者检查孔和轴配合紧不紧，会不会撞到一起？”
+**答案是：不行，或者说这不是它的强项。**
+
+这通常是 **CAD 软件**（如 SolidWorks, CATIA, Siemens NX）或专门的**工艺仿真软件**（如 Tecnomatix）的工作。
+*   **区别：**
+    *   **CAD 软件**：关注**几何约束**（面与面贴合、同轴心）。它用来检查“这个零件能不能装进去”。
+    *   **System Modeler**：关注**物理和逻辑连接**。它默认假设零件已经装好了，主要关心“装好后它是怎么动的”。
+*   **操作方式：** 在 System Modeler 中，你不是靠“对齐边缘”来组装，而是靠“添加关节模块”来定义零件之间的关系。
+
+---
+
+### 总结：典型的工作流程
+
+通常工程师会这样配合使用：
+
+1.  **在 CAD 中设计和组装：** 使用 SolidWorks 或 AutoCAD 设计零件，检查尺寸干涉，确定能装得上去。
+2.  **导入 System Modeler：** 将 CAD 模型导出（通常为 STL 或 STEP 格式）并导入到 Wolfram System Modeler 中。
+3.  **定义物理属性：** 在 System Modeler 中为这些几何体添加质量、惯量，并用“关节”替换掉 CAD 中的几何配合。
+4.  **添加多物理场：** 加上电机模型、PID 控制器、传感器等。
+5.  **运行仿真：** 观察系统运作时的速度、受力、能耗等曲线，并在 3D 视图中看它动起来。
+
+**一句话总结：** 如果你想看**零件怎么“装”**（工艺/几何），请用 CAD；如果你想看**装好后怎么“动”**（性能/控制），请用 Wolfram System Modeler。
+
+```
+
+
+
+
+
 ## 四旋翼无人机
 
 某宝小为电子有成品
