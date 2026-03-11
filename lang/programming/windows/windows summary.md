@@ -1789,6 +1789,8 @@ net user administrator /active:yes
 
 ```
 
+net user administrator *
+	设置密码
 
 
 ```
