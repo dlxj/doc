@@ -14337,7 +14337,7 @@ ffprobe -print_format json  -show_streams segment_000.ts
 
 你可以直接使用这个模板，或者复制以下内容修改：
 
-```ini
+​```ini
 [Script Info]
 ScriptType: v4.00+
 PlayResX: 960
@@ -14526,7 +14526,7 @@ https://github.com/kotoba-tech/tts_eval  kotoba-whisper-v2.0 + 语音相似度
     > - [medium](https://openaipublic.azureedge.net/main/whisper/models/345ae4da62f9b3d59415adc60127b97c714f32e89e936602e85993674d08dcb1/medium.pt)
     > - [large](https://openaipublic.azureedge.net/main/whisper/models/e4b87e7e0bf463eb8e6956e646f1e277e901512310def2c24bf0e11bd3c28e9a/large.pt)
 
-    ```
+```
     beam_size=5
     best_of=None
     temperature=0.0
@@ -14538,7 +14538,8 @@ https://github.com/kotoba-tech/tts_eval  kotoba-whisper-v2.0 + 语音相似度
     print(transcription["text"])
     ```
 
-    
+
+​    
 
     ```
     It appears that audio is in int16 dtype, whereas Whisper expects float32 or float16. You may try converting it to a float32 array and dividing it by 32768, similar to what's done in audio.py:
@@ -14550,7 +14551,8 @@ https://github.com/kotoba-tech/tts_eval  kotoba-whisper-v2.0 + 语音相似度
     return np.frombuffer(out, np.int16).flatten().astype(np.float32) / 32768.0 
     ```
 
-    
+
+​    
 
 - https://zhuanlan.zhihu.com/p/595691785
 
@@ -14691,6 +14693,14 @@ VAD静音检测
 ### PVE显卡直通
 
 - https://www.labradors.work/2022/05/07/PVE%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/
+
+
+
+
+
+## StreamSpeech 流式语音识别
+
+https://github.com/ictnlp/StreamSpeech 流式语音识别
 
 
 
