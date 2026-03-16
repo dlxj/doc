@@ -1854,6 +1854,8 @@ git config --global core.ignorecase false
 irm https://massgrave.dev/get | iex
   # win11 激活
 
+https://github.com/massgravel/Microsoft-Activation-Scripts
+
 ```
 
 irm https://get.activated.win | iex
