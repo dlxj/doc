@@ -14678,6 +14678,8 @@ https://github.com/openai/whisper/discussions/397   **whisper webui**
 
 https://github.com/snakers4/silero-vad
 
+- https://huggingface.co/ggml-org/whisper-vad
+
 
 
 VAD静音检测
@@ -14693,6 +14695,12 @@ VAD静音检测
 ### PVE显卡直通
 
 - https://www.labradors.work/2022/05/07/PVE%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/
+
+
+
+## RWKV-SpeechChat
+
+https://github.com/AGENDD/RWKV-SpeechChat 必看
 
 
 
