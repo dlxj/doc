@@ -1852,10 +1852,20 @@ git config --global core.ignorecase false
 
 ```
 irm https://massgrave.dev/get | iex
-  # win11 成功
+  # win11 激活
+
+```
+
+irm https://get.activated.win | iex
+	# 成功
+
+```
+
+
 
 slmgr /skms kms.03k.org
 slmgr /ato
+
   # 好像失效了
 
 ```
