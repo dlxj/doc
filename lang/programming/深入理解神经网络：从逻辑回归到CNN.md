@@ -14700,7 +14700,9 @@ VAD静音检测
 
 ## StreamSpeech 流式语音识别
 
-https://github.com/ictnlp/StreamSpeech 流式语音识别
+https://github.com/ictnlp/StreamSpeech 流式语音识别  多合一功能
+
+https://zhuanlan.zhihu.com/p/377983386
 
 
 
