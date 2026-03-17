@@ -14679,6 +14679,7 @@ https://github.com/openai/whisper/discussions/397   **whisper webui**
 https://github.com/snakers4/silero-vad
 
 - https://huggingface.co/ggml-org/whisper-vad
+- https://huggingface.co/yueyulin/rwkv_asr  **完整 silero-vad 示例**
 
 
 
@@ -14701,6 +14702,8 @@ VAD静音检测
 ## RWKV-SpeechChat
 
 https://github.com/AGENDD/RWKV-SpeechChat 必看
+
+https://huggingface.co/yueyulin/rwkv_asr/blob/main/asr_gradio/webgui/recording_app_v5.py  去静音
 
 
 
