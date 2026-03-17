@@ -14656,7 +14656,7 @@ result = model.transcribe(audioFile, task='translate',language='zh',verbose=True
 
 
 
-### spleeter 人声分离
+### silero-vad 人声静音时间 spleeter 人声分离
 
 - https://github.com/deezer/spleeter
 
