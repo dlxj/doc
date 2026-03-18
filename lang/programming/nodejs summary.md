@@ -5857,9 +5857,10 @@ git clone -c http.proxy="socks5h://192.168.1.8:57882"  https://huggingface.co/da
 
 dlxjj pwd email same as github's dlxj
 
-git config --global user.name "cdef68935" && 
-git config --global user.email "12345@qq.com"
-git config --global push.default matching
+git config --global user.name "cdef68935" \
+  && git config --global user.email "12345@qq.com" \
+  && git config --global push.default matching \
+  && git config --global credential.helper store
 
 pip install huggingface_hub && \
 git config --global credential.helper store && \
@@ -5900,6 +5901,8 @@ hf repo create grammar-club --repo-type dataset
 	hf auth login
 	curl -LsSf https://hf.co/cli/install.sh | bash -
 		pip install -U "huggingface_hub"
+			C:\Users\o\AppData\Roaming\Python\Python313\Scripts
+				加入环境变量
 
 huggingface-cli repo create pandora --type dataset
 	# --type {model, dataset, space}

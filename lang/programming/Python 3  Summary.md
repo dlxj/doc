@@ -644,6 +644,9 @@ Miniforge Prompt
 %windir%\system32\cmd.exe "/K" C:\ProgramData\miniforge3\Scripts\activate.bat C:\ProgramData\miniforge3
 	# 它的快捷方式命令行是这个
 
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+	# 报错就这样
+
 conda init
 
 关掉 ps ，再开
