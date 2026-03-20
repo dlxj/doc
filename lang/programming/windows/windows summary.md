@@ -1280,6 +1280,8 @@ scoop update *
 
 # windbg 调试
 
+https://linux.do/t/topic/1788065 **ai 逆向 ai IDE**
+
 ```
 
 see csharp summary.md -> WPF -> RichTextBox 原生命令 ->
