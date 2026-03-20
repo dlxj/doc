@@ -53,6 +53,7 @@ see huggingface\iWeChatOcr\src\WeChatOcrCpp\WeChatOcrCpp.vcxproj
 ```
 
 CMake-gui
+	装 CMake windows 版，得到的就是 cmake gui
 
 choco install pkgconfiglite
 	# 依赖这个

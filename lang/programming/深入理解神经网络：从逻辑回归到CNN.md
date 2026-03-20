@@ -14699,6 +14699,34 @@ VAD静音检测
 
 
 
+## MioTTS-llama
+
+see huggingface_echodict\llama.cpp\readme.txt
+
+https://github.com/espresso3389/MioTTS-llama.cpp
+
+https://huggingface.co/collections/Aratako/miotts
+
+```
+
+
+see huggingface_echodict\SakuraLLM
+    用于运行这个模开型
+    todo: 基于 CUDA 13.0 编译
+
+see huggingface_echodict\whisper.cpp
+    已基于 CUDA 13.0 编译
+    用于运行这个模型 huggingface_echodict\KotobaASRLLM 
+
+see https://github.com/espresso3389/MioTTS-llama.cpp
+    jp tts
+
+```
+
+
+
+
+
 ## RWKV-SpeechChat
 
 https://github.com/AGENDD/RWKV-SpeechChat 必看
