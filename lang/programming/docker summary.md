@@ -239,7 +239,7 @@ zcat /path/to/your_image.tar.gz | docker load
 
 docker save ubuntu:24.04 | gzip > ubuntu_24.04.tar.gz
 
-zcat ubuntu_24.04.tar.gz | docker import - ubuntu:24.04
+zcat ubuntu_24.04.tar.gz | docker load
 
 
 
