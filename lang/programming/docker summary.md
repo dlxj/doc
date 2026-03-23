@@ -233,6 +233,20 @@ zcat /path/to/your_image.tar.gz | docker load
 
 
 
+## 官方镜像导出恢复
+
+```
+
+docker save ubuntu:24.04 | gzip > ubuntu_24.04.tar.gz
+
+zcat ubuntu_24.04.tar.gz | docker import - ubuntu:24.04
+
+
+
+```
+
+
+
 
 
 # 共享目录
