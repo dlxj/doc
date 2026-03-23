@@ -405,6 +405,8 @@ Prettier  ESLint  Dev Containers   CSS Var Complete
 
 ```
 
+vsocde 启动
+launch.json
 {
 
 "version": "0.2.0",
@@ -438,6 +440,25 @@ Prettier  ESLint  Dev Containers   CSS Var Complete
 "PROJECT_ENV":"",
 
 "USER_LOG_KEY":"test",
+
+```
+
+
+
+```
+
+pm2 启动
+ecosystem.config.js
+module.exports = {
+    apps: [
+        {
+            name: "cdp-ubs_7901_7001", // 你的 PM2 应用名称，可自定义
+            script: "./node_modules/.bin/egg-scripts", // 对应 VS Code 的 runtimeExecutable
+            args: "start",                             // 对应 VS Code 的 runtimeArgs
+            cwd: "./",                                 // 对应 VS Code 的 cwd
+            "env": {
+                "PROJECT_ENV": "",
+                "USER_LOG_KEY": "test",
 
 ```
 
