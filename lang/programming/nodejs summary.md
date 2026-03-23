@@ -401,6 +401,50 @@ Prettier  ESLint  Dev Containers   CSS Var Complete
 
 
 
+## vscode + egg-scripts
+
+```
+
+{
+
+"version": "0.2.0",
+
+"configurations": [
+
+{
+
+"type": "node",
+
+"request": "launch",
+
+"name": "Egg Scripts Start",
+
+"runtimeExecutable": "${workspaceFolder}/node_modules/.bin/egg-scripts",
+
+"runtimeArgs": [
+
+"start"
+
+],
+
+"cwd": "${workspaceFolder}",
+
+"console": "integratedTerminal",
+
+"autoAttachChildProcesses": true,
+
+"env": {
+
+"PROJECT_ENV":"",
+
+"USER_LOG_KEY":"test",
+
+```
+
+
+
+
+
 ## vscode C++ 附加调试
 
 [Debugging a Shared Library](https://nilrt-docs.ni.com/cross_compile/call_shared_library.html)
