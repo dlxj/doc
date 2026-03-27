@@ -1,3 +1,13 @@
+# 汉字坚排包
+
+https://typst.app/universe/package/hanzi-calligraphy/
+
+- https://github.com/yuegeao/hanzi-calligraphy
+
+https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb  千问3 VL 能输出单个字符坐标
+
+
+
 
 
 # LuaMetaTeX
