@@ -12229,7 +12229,7 @@ https://huggingface.co/datasets/hal-utokyo/Manga109-s  漫画数据集
 
 
 
-## Qwen3-VL
+## Qwen3-VL OCR
 
 https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb  千问3 VL 能输出单个字符坐标
 
