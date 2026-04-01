@@ -14745,7 +14745,9 @@ https://github.com/jeremy110/3D-Speaker 说话人识别？
 
 https://github.com/Joluck/mod-rwkv/issues/1  语音编码
 
-https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetune.py  大项目 能训练
+https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetune.py 大项目能训练
+
+- https://github.com/jeremy110/Finetune_Nemo_ASR
 
 
 
@@ -14765,7 +14767,9 @@ https://github.com/ictnlp/StreamSpeech 流式语音识别  多合一功能
 
 https://zhuanlan.zhihu.com/p/377983386
 
-https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetune.py  大项目 能训练
+https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetune.py  大项目能训练
+
+- https://github.com/jeremy110/Finetune_Nemo_ASR
 
 
 
