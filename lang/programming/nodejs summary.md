@@ -13842,6 +13842,12 @@ fs.renameSync( oldPath, newPath )
 
 ```
 
+    rd.eachFileFilterSync(dir_work, /\.(jpg|jpeg)$/i, function (fullpath, stats) {
+        let basename = path.basename(fullpath)
+        
+        忽略大小写
+
+
 # docx.js
 
 let rd = require('rd');
@@ -39930,6 +39936,10 @@ https://github.com/fjvallarino/monomer  **纯 haskell 类 Elm gui**
 
 ## Python Monads 
 
+https://github.com/instructkr/claw-code   Claude Code clone
+
+https://github.com/ChinaSiro/claude-code-sourcemap  Claude Code leak code
+
 [bilive](https://github.com/timerring/bilive) 直播录制
 
 [biliup](https://github.com/biliup/biliup) 直播录制 yt, nico 等
@@ -40008,6 +40018,10 @@ assert v.pipe(fn, gn) == gn(fn(v))
 
 
 ## Nodejs Monads
+
+https://github.com/instructkr/claw-code   Claude Code clone
+
+https://github.com/ChinaSiro/claude-code-sourcemap  Claude Code leak code
 
 https://github.com/binaricat/Netcatty  tty
 
