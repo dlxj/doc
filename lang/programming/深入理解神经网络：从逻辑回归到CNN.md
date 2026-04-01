@@ -14741,6 +14741,10 @@ https://github.com/AGENDD/RWKV-SpeechChat 必看
 
 https://huggingface.co/yueyulin/rwkv_asr/blob/main/asr_gradio/webgui/recording_app_v5.py  去静音
 
+https://github.com/jeremy110/3D-Speaker 说话人识别？
+
+https://github.com/Joluck/mod-rwkv/issues/1  语音编码
+
 
 
 
