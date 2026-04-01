@@ -39940,6 +39940,8 @@ https://github.com/instructkr/claw-code   Claude Code clone
 
 https://github.com/ChinaSiro/claude-code-sourcemap  Claude Code leak code
 
+https://github.com/sanbuphy/claude-code-source-code  Claude Code leak code
+
 [bilive](https://github.com/timerring/bilive) 直播录制
 
 [biliup](https://github.com/biliup/biliup) 直播录制 yt, nico 等
@@ -40022,6 +40024,8 @@ assert v.pipe(fn, gn) == gn(fn(v))
 https://github.com/instructkr/claw-code   Claude Code clone
 
 https://github.com/ChinaSiro/claude-code-sourcemap  Claude Code leak code
+
+https://github.com/sanbuphy/claude-code-source-code  Claude Code leak code
 
 https://github.com/binaricat/Netcatty  tty
 
