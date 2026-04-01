@@ -39938,6 +39938,8 @@ https://github.com/fjvallarino/monomer  **纯 haskell 类 Elm gui**
 
 https://github.com/instructkr/claw-code   Claude Code clone
 
+https://github.com/mylxsw/cc-src-learning Claude Code 学习笔记
+
 https://github.com/ChinaSiro/claude-code-sourcemap  Claude Code leak code
 
 https://github.com/sanbuphy/claude-code-source-code  Claude Code leak code
@@ -40022,6 +40024,8 @@ assert v.pipe(fn, gn) == gn(fn(v))
 ## Nodejs Monads
 
 https://github.com/instructkr/claw-code   Claude Code clone
+
+https://github.com/mylxsw/cc-src-learning Claude Code 学习笔记
 
 https://github.com/ChinaSiro/claude-code-sourcemap  Claude Code leak code
 
