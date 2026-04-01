@@ -14747,6 +14747,12 @@ https://huggingface.co/yueyulin/rwkv_asr/blob/main/asr_gradio/webgui/recording_a
 
 ## StreamSpeech 流式语音识别
 
+https://github.com/QwenLM/Qwen3-ASR 
+
+https://zhuanlan.zhihu.com/p/1977136140139141051  whisper 转流式
+
+- https://github.com/tomer9080/WhisperRT-Streaming
+
 https://github.com/ictnlp/StreamSpeech 流式语音识别  多合一功能
 
 - https://arxiv.org/pdf/2406.03049
