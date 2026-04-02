@@ -5678,6 +5678,10 @@ https://huggingface.co/docs/hub/xet/using-xet-storage **xet**
 
 - ```
   
+  hf sync ./data hf://buckets/echodict/revise
+  	Upload a local folder to this bucket
+  
+  
   git lfs install --skip-smudge
   	# 禁用自动下载大文件
   	# git lfs prune && git lfs pull 拉大文件
