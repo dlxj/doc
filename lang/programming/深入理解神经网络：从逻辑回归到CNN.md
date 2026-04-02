@@ -14751,6 +14751,8 @@ https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetu
 
 - https://huggingface.co/nvidia/nemotron-speech-streaming-en-0.6b
 
+  - https://github.com/pipecat-ai/nemotron-january-2026 完整应用
+  
   - ```
     您可以使用 NeMo 提供的快取感知串流推理腳本
     cd NeMo
@@ -14760,9 +14762,9 @@ https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetu
         batch_size=<batch_size> \
         att_context_size="[70,13]" \ #set the second value to the desired right context from {0,1,6,13}
         output_path=<output_folder>
-    
+  
     ```
-
+  
     
 
 
@@ -14789,6 +14791,8 @@ https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetu
 
 - https://huggingface.co/nvidia/nemotron-speech-streaming-en-0.6b
 
+  - https://github.com/pipecat-ai/nemotron-january-2026 完整应用
+  
   ```
   您可以使用 NeMo 提供的快取感知串流推理腳本
   cd NeMo
@@ -14797,9 +14801,9 @@ https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetu
       dataset_manifest=<dataset_manifest> \ 
       batch_size=<batch_size> \
       att_context_size="[70,13]" \ #set the second value to the desired right context from {0,1,6,13}
-      output_path=<output_folder>
+    output_path=<output_folder>
   ```
-
+  
   
 
 
