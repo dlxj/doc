@@ -1964,6 +1964,38 @@ path_wout_extension, _, _ = local_path.rpartition(".")
 
 
 
+### 拆分 fullpath
+
+```
+
+huggingface_echodict\NeMo\scripts\speech_recognition\convert_hf_dataset_to_nemo.py
+
+def infer_dataset_segments(batch):
+    """
+    Helper method to run in batch mode over a mapped Dataset.
+
+    Infers the path of the subdirectories for the dataset, removing {extracted/HASH}.
+
+    Returns:
+        A cleaned list of path segments
+    """
+    segments = []
+    segment, path = os.path.split(batch['audio']['path'])
+    segments.insert(0, path)
+    while segment and segment != os.path.sep and segment != os.path.dirname(segment):
+        segment, path = os.path.split(segment)
+        segments.insert(0, path)
+
+    if 'extracted' in segments:
+        index_of_basedir = segments.index("extracted")
+        segments = segments[(index_of_basedir + 1 + 1) :]  # skip .../extracted/{hash}/
+
+    return segments
+
+```
+
+
+
 
 
 ### which
