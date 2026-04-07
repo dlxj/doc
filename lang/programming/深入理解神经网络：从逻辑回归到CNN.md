@@ -12241,6 +12241,47 @@ https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb  千问3 VL 能
 
 hf download dealignai/Gemma-4-31B-JANG_4M-CRACK
 
+pip install -U transformers
+
+from transformers import pipeline
+pipe = pipeline("any-to-any", model="google/gemma-4-e2b-it")
+
+messages = [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "image",
+                "image": "https://huggingface.co/datasets/merve/vlm_test_images/resolve/main/thailand.jpg",
+            },
+            {"type": "text", "text": "Do you have travel advice going to here?"},
+        ],
+    }
+]
+output = pipe(messages, max_new_tokens=100, return_full_text=False)
+output[0]["generated_text"]
+# Based on the image, which appears to show a magnificent, ornate **Buddhist temple or pagoda**, likely in Southeast Asia (such as Thailand, Myanmar, or Cambodia), here is some general travel advice..
+
+
+messages = [
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "video",
+                "image": "https://huggingface.co/datasets/merve/vlm_test_images/resolve/main/rockets.mp4",
+            },
+            {"type": "text", "text": "What is happening in this video?"},
+        ],
+    }
+]
+pipe(messages, load_audio_from_video=True)
+
+
+
+llama-server -hf ggml-org/gemma-4-E2B-it-GGUF
+
+
 
 
 ```
