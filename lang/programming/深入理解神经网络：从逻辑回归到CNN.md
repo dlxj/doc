@@ -12239,6 +12239,8 @@ https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb  千问3 VL 能
 
 see github\doc\平水韵拟音.md
 
+https://dr.miromind.ai/  **它能访问外网！**
+
 
 
 ```
