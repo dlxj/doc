@@ -12235,6 +12235,18 @@ https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb  千问3 VL 能
 
 
 
+## Gemma-4-31B-JANG_4M-CRACK
+
+```
+
+hf download dealignai/Gemma-4-31B-JANG_4M-CRACK
+
+
+
+```
+
+
+
 
 
 ## OpenOCR
