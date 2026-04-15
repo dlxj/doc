@@ -14888,7 +14888,11 @@ https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetu
   
     
 
+see https://huggingface.co/nvidia/magpie_tts_multilingual_357m
+    tts 每位說話者都能說九種不同的語言（英語、西班牙語、德語、法語、越南語、義大利語、中文、印地語和日語）
 
+see https://huggingface.co/datasets/OpenSpeechHub/Common-Voice-17-Ja
+    日语数据集
 
 
 
