@@ -2271,6 +2271,19 @@ os.rmdir(root) # 只能删除空目录
 
 
 
+### 删除文件
+
+```
+
+mp3_path = out_dir / filename
+mp3_path.unlink()
+
+```
+
+
+
+
+
 ### 移动文件
 
 ```
