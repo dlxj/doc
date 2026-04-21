@@ -12252,6 +12252,7 @@ hf download dealignai/Gemma-4-31B-JANG_4M-CRACK
 hf download douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF
 	./llama-cli -m gemma-4-31b-jang-crack-Q4_K_M.gguf -p "Hello" -n 256
 
+	https://huggingface.co/douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF/resolve/main/gemma-4-31b-jang-crack-Q4_K_M.gguf?download=true
 
 
 pip install -U transformers
