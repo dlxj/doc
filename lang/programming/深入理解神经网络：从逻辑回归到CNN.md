@@ -12241,11 +12241,18 @@ see github\doc\平水韵拟音.md
 
 https://dr.miromind.ai/  **它能访问外网！**
 
+https://huggingface.co/douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF
+
 
 
 ```
 
 hf download dealignai/Gemma-4-31B-JANG_4M-CRACK
+
+hf download douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF
+	./llama-cli -m gemma-4-31b-jang-crack-Q4_K_M.gguf -p "Hello" -n 256
+
+
 
 pip install -U transformers
 
