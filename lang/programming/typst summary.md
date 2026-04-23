@@ -52,6 +52,30 @@ typst watch e:\t\t\hanzi-calligraphy\template\template.typ
 
 
 
+# ∩ sect not cap
+
+```
+
+Typst 语法中，表示“交集（ [ o bj ec tO bj ec t ] ∩ ）”的数学符号应为 sect 而不是 Latex 中常用的 cap
+
+```
+
+
+
+# ≠ != not neq
+
+```
+
+≠ 的符号并不是像 LaTeX 那样使用 neq ，而是直接使用 != 。
+
+```
+
+
+
+
+
+
+
 # LuaMetaTeX
 
 LuaMetaTeX(LMTX， LuaTeX的后继者，ConTeXt当前的实际引擎)
