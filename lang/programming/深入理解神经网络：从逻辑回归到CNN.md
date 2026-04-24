@@ -14838,6 +14838,9 @@ VAD静音检测
 
 see huggingface_echodict\llama.cpp\readme.txt
 
+see https://huggingface.co/nvidia/magpie_tts_multilingual_357m
+    tts 每位說話者都能說九種不同的語言（英語、西班牙語、德語、法語、越南語、義大利語、中文、印地語和日語）
+
 https://github.com/espresso3389/MioTTS-llama.cpp
 
 https://huggingface.co/collections/Aratako/miotts
