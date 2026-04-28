@@ -12249,6 +12249,14 @@ curl --location -g --request POST "https://www.autodl.art/api/v1/chat/completion
     "stream":true
 }'
 
+pip install open-webui
+export HF_HUB_OFFLINE=1
+$env:HF_HUB_OFFLINE=1
+open-webui serve
+	不让它自已下载嵌入模型
+
+http://localhost:8080
+
 ```
 
 
@@ -12277,6 +12285,8 @@ hf download douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF
 	./llama-cli -m gemma-4-31b-jang-crack-Q8/gemma-4-31b-jang-crack-Q8_0-00001-of-00009.gguf -p "Hello" -n 256
 	
 	./llama-server -m "gemma-4-31b-jang-crack-Q8/gemma-4-31b-jang-crack-Q8_0-00001-of-00009.gguf" -t 8 -c 4096 -ngl 999 --repeat-penalty 1.2 --temp 0 --top-k 10 --top-p 0.1 -a "gemma-4-31b-jang-crack-Q8_0" --port 6006
+
+	./llama-server -m /root/autodl-tmp/gemma-4-31b-jang-crack-Q8/gemma-4-31b-jang-crack-Q8_0-00001-of-00009.gguf -t 8 -c 4096 -ngl 999 --repeat-penalty 1.2 --temp 0 --top-k 10 --top-p 0.1 -a "gemma-4-31b-jang-crack-Q8_0" --port 6006
 
 
 vi ~/.bashrc
