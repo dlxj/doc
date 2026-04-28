@@ -12265,6 +12265,15 @@ export LD_LIBRARY_PATH
 
 export PATH=/usr/local/cuda/bin:/root/miniforge3/envs/RWKVTTS/bin:$PATH
 
+source ~/.bashrc 
+
+nvcc --version
+
+update-alternatives --remove cuda /usr/local/cuda-12.2
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-13.0 130
+ln -sfT /usr/local/cuda-13.0 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
 
 
 	https://huggingface.co/douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF/resolve/main/gemma-4-31b-jang-crack-Q4_K_M.gguf?download=true
