@@ -12233,6 +12233,28 @@ https://huggingface.co/datasets/hal-utokyo/Manga109-s  漫画数据集
 
 https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb  千问3 VL 能输出单个字符坐标
 
+```
+
+curl --location -g --request POST "https://www.autodl.art/api/v1/chat/completions" \
+--header "Authorization: Bearer $API_KEY" \
+--header "Content-Type: application/json" \
+--data-raw '{
+    "messages": [
+        {
+            "role": "user",
+            "content": "您好！"
+        }
+    ],
+    "model":"qwen3-vl-plus",
+    "stream":true
+}'
+
+```
+
+
+
+
+
 
 
 ## Gemma-4-31B-JANG_4M-CRACK VL
@@ -12254,6 +12276,8 @@ hf download douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF
 	
 	./llama-cli -m gemma-4-31b-jang-crack-Q8/gemma-4-31b-jang-crack-Q8_0-00001-of-00009.gguf -p "Hello" -n 256
 	
+	./llama-server -m "gemma-4-31b-jang-crack-Q8/gemma-4-31b-jang-crack-Q8_0-00001-of-00009.gguf" -t 8 -c 4096 -ngl 999 --repeat-penalty 1.2 --temp 0 --top-k 10 --top-p 0.1 -a "gemma-4-31b-jang-crack-Q8_0" --port 6006
+
 
 vi ~/.bashrc
 if [ -z $LD_LIBRARY_PATH ]; then
@@ -12274,6 +12298,9 @@ update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-13.0 130
 ln -sfT /usr/local/cuda-13.0 /etc/alternatives/cuda
 ln -sfT /etc/alternatives/cuda /usr/local/cuda
 
+
+cmake -B build -DGGML_CUDA=ON
+cmake --build build --config Release
 
 
 	https://huggingface.co/douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF/resolve/main/gemma-4-31b-jang-crack-Q4_K_M.gguf?download=true
