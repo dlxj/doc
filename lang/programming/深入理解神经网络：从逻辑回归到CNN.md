@@ -12251,6 +12251,21 @@ hf download dealignai/Gemma-4-31B-JANG_4M-CRACK
 
 hf download douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF
 	./llama-cli -m gemma-4-31b-jang-crack-Q4_K_M.gguf -p "Hello" -n 256
+	
+	./llama-cli -m gemma-4-31b-jang-crack-Q8/gemma-4-31b-jang-crack-Q8_0-00001-of-00009.gguf -p "Hello" -n 256
+	
+
+vi ~/.bashrc
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-13.0/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-13.0/lib64
+fi
+export LD_LIBRARY_PATH
+
+export PATH=/usr/local/cuda/bin:/root/miniforge3/envs/RWKVTTS/bin:$PATH
+
+
 
 	https://huggingface.co/douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF/resolve/main/gemma-4-31b-jang-crack-Q4_K_M.gguf?download=true
 
