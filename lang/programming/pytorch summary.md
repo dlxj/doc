@@ -457,6 +457,28 @@ MatrixSlow 手写框架
 
 
 
+
+
+## 降低显存占用
+
+https://github.com/openvino-book/PaddleOCR-VL-SFT-for-Japanese-Manga-on-RTX-3060
+
+
+
+https://zhuanlan.zhihu.com/p/1982501937732658141
+
+
+
+微调 VL 模型通常需要昂贵的 A100 显卡，但本教程的目标是让每个拥有 RTX 3060 (12GB) 的开发者都能跑通。
+
+我们采用了一下技术组合来降低显存占用：
+
+- BF16 混合精度：使用 BF16Trainer 配合 torch.amp.autocast，在保持精度的同时大幅减少显存占用。
+- 梯度累积 (Gradient Accumulation)：将 Batch Size 设为 1，但设置梯度累积步数为 16，从而模拟 Batch Size = 16 的训练效果。
+- 梯度检查点 (Gradient Checkpointing)：以计算换显存，进一步压缩内存需求。
+
+
+
 ## DataLoader
 
 
