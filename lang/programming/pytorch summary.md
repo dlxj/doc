@@ -483,6 +483,10 @@ https://zhuanlan.zhihu.com/p/1982501937732658141
 
 
 
+https://github.com/esun-ai/traditional-chinese-text-recogn-dataset
+
+
+
 ```
 
 漫画数据集申请

@@ -12237,6 +12237,14 @@ duckdb + ducklake + readest + typst see huggingface_echodict\typst_hlm\ocr\readm
 
 
 
+https://aistudio.baidu.com/datasetdetail/165369 真可以下载的 **古籍数据集**
+
+https://huggingface.co/datasets/Teklia/CASIA-HWDB2-line
+
+https://github.com/esun-ai/traditional-chinese-text-recogn-dataset
+
+
+
 ```
 
 
