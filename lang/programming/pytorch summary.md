@@ -461,6 +461,10 @@ MatrixSlow 手写框架
 
 ## 降低显存占用
 
+duckdb + ducklake + readest + typst see huggingface_echodict\typst_hlm\ocr\readme.txt
+
+
+
 https://github.com/openvino-book/PaddleOCR-VL-SFT-for-Japanese-Manga-on-RTX-3060
 
 

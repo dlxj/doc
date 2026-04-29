@@ -12229,6 +12229,14 @@ https://huggingface.co/datasets/hal-utokyo/Manga109-s  漫画数据集
 
 
 
+pytorch summary.md -> 降低显存占用
+
+
+
+duckdb + ducklake + readest + typst see huggingface_echodict\typst_hlm\ocr\readme.txt
+
+
+
 ## Qwen3-VL OCR
 
 https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb  千问3 VL 能输出单个字符坐标
@@ -12266,6 +12274,10 @@ http://localhost:8080
 
 
 ## Gemma-4-31B-JANG_4M-CRACK VL
+
+duckdb + ducklake + readest + typst see huggingface_echodict\typst_hlm\ocr\readme.txt
+
+
 
 see github\doc\平水韵拟音.md
 
