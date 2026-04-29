@@ -12237,6 +12237,12 @@ duckdb + ducklake + readest + typst see huggingface_echodict\typst_hlm\ocr\readm
 
 
 
+https://aistudio.baidu.com/projectdetail/4438534?channelType=0&channel=0 真实项目经验
+
+https://huggingface.co/datasets/ByteDance/AncientDoc 字节的数据集
+
+![img](深入理解神经网络：从逻辑回归到CNN.assets/b5ec48e89a6402434386c3479c641e7b.png)
+
 https://aistudio.baidu.com/datasetdetail/165369 真可以下载的 **古籍数据集**
 
 https://huggingface.co/datasets/Teklia/CASIA-HWDB2-line
