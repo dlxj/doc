@@ -1919,6 +1919,18 @@ TEMP_DIR = osp.join(CACHE_DIR, "temp")
 
 
 
+### 当前目录
+
+```
+
+current_dir = Path(__file__).resolve().parent
+base_dir = current_dir / "common_voice_11_0"
+out_dir = current_dir / "ja_train_1"
+
+```
+
+
+
 
 
 ### ``__all__``
@@ -2256,6 +2268,19 @@ shutil.rmtree(root)
 
 os.rmdir(root) # 只能删除空目录
 ```
+
+
+
+### 删除文件
+
+```
+
+mp3_path = out_dir / filename
+mp3_path.unlink()
+
+```
+
+
 
 
 

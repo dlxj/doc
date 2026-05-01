@@ -1,3 +1,11 @@
+
+
+pip install -U "jax[cuda13]"
+
+
+
+
+
 # rwkv_jax
 
 ```python

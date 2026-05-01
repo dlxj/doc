@@ -52,6 +52,44 @@ typst watch e:\t\t\hanzi-calligraphy\template\template.typ
 
 
 
+# ∩ sect not cap
+
+```
+
+Typst 语法中，表示“交集（ [ o bj ec tO bj ec t ] ∩ ）”的数学符号应为 sect 而不是 Latex 中常用的 cap
+
+```
+
+
+
+# ≠ != not neq
+
+```
+
+≠ 的符号并不是像 LaTeX 那样使用 neq ，而是直接使用 != 。
+
+```
+
+
+
+
+# $null_sym$ 下划线变量
+
+```
+
+see huggingface_echodict\asr_rnnt_eou_from_scratch\papers\arXiv-1211.3711v1\概率建模.typ
+
+下划线 _ 被当作下标操作符使用。因此，当遇到 $null_sym$ 时，Typst 会将其解析为名为 null 的变量加上下标 sym 。但是 null 并不是一个我们已定义的变量，于是就报了 unknown variable: null 的错误。
+
+修复方法 ：
+我已将文件 概率建模.typ 中定义的变量 #let null_sym 以及后续所有引用的 $null_sym$ 全部替换为了不包含下划线的变量名 nullsym ，从而避免了触发下标语法和未定义变量报错。
+
+```
+
+
+
+
+
 # LuaMetaTeX
 
 LuaMetaTeX(LMTX， LuaTeX的后继者，ConTeXt当前的实际引擎)

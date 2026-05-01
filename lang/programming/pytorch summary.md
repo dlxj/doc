@@ -457,6 +457,80 @@ MatrixSlow 手写框架
 
 
 
+
+
+## 降低显存占用
+
+duckdb + ducklake + readest + typst see huggingface_echodict\typst_hlm\ocr\readme.txt
+
+
+
+https://github.com/openvino-book/PaddleOCR-VL-SFT-for-Japanese-Manga-on-RTX-3060
+
+
+
+https://zhuanlan.zhihu.com/p/1982501937732658141
+
+
+
+微调 VL 模型通常需要昂贵的 A100 显卡，但本教程的目标是让每个拥有 RTX 3060 (12GB) 的开发者都能跑通。
+
+我们采用了一下技术组合来降低显存占用：
+
+- BF16 混合精度：使用 BF16Trainer 配合 torch.amp.autocast，在保持精度的同时大幅减少显存占用。
+- 梯度累积 (Gradient Accumulation)：将 Batch Size 设为 1，但设置梯度累积步数为 16，从而模拟 Batch Size = 16 的训练效果。
+- 梯度检查点 (Gradient Checkpointing)：以计算换显存，进一步压缩内存需求。
+
+
+
+https://github.com/esun-ai/traditional-chinese-text-recogn-dataset
+
+
+
+```
+
+漫画数据集申请
+
+建议填写内容（中文说明 + 英文正文）
+下面是正文，建议直接用英文填写，更符合对方习惯、也与页面语言一致。你如果是学校/研究机构，可以在 Institution 那里写自己单位名称；如果是个人或公司研究，也可以照抄，只把括号里的身份信息替换掉。
+
+Outline of the intended use of the dataset
+
+I am applying for access to the Manga109-s dataset to use it for non‑redistributive research on manga image understanding and machine learning.
+
+Specifically, I plan to use the 87 commercially usable books in Manga109-s for the following purposes:
+
+Manga image analysis and representation learning
+Train and evaluate deep learning models for low‑level and mid‑level vision tasks on manga images, such as denoising, super‑resolution, panel and frame enhancement, and image-to-image translation tailored to black‑and‑white comics.
+Learn feature representations of manga pages to analyze style and layout, but only for research and visualization, without redistributing any dataset images.
+High-level understanding and downstream tasks
+Explore tasks such as panel segmentation, speech balloon / text area detection, character detection, and page layout understanding, using only the images within the dataset and, if applicable, official annotation subsets (e.g., COO or Manga109Dialog), while strictly following their additional citation requirements.
+Use the learned models to study how to improve automatic typesetting, reading experience support, and assistive tools for manga creation and analysis.
+Academic publications and presentations
+Use a small number of manga images from the dataset as figures in academic papers, technical reports, and presentation slides or academic demo videos, strictly within the limitations described in the Manga109-s license (i.e., for each book/volume, the total number of whole pages or modified whole pages published will not exceed 20% of that book).
+In all publications and videos, I will clearly acknowledge the authors by including notices such as “courtesy of [Author’s Name]” or “©[Author’s Name]” and explicitly state that the images are from the Manga109-s dataset.
+I will also properly cite the relevant Manga109 papers (e.g., “Building a Manga Dataset ‘Manga109’ with Annotations for Multimedia Applications” and “Sketch-based Manga Retrieval using Manga109 Dataset”), and, if I use COO or Manga109Dialog annotations, I will additionally cite the corresponding COO and Manga109Dialog papers as required.
+Possible future use of results (not the raw data) in practical/industrial settings
+In the future, I may use only the trained models or partial results obtained from experiments on Manga109-s in academic–industrial collaborations or practical applications.
+I confirm that I will never redistribute the Manga109-s dataset itself or any of its images, and I will not sell direct copies or simple modifications of the manga images in the dataset as products, whether free or paid.
+I will also not sell products that bundle the original Manga109-s images together with experiment results; only model parameters or learned features may be used, in compliance with the license.
+I fully understand and agree to the Manga109-s dataset license and usage conditions, including but not limited to:
+
+No redistribution of the Manga109-s dataset to third parties.
+Clear indication of the use of Manga109-s in any published results, including pre‑trained models.
+No selling of dataset manga images together with experiment results.
+No treating direct copies or modifications of manga images as products, whether free or sold.
+Respecting the 20% per‑book limit for publishing whole pages or modified whole pages when presenting research results.
+Carefully handling potentially inappropriate images contained in older manga works, considering modern global ethical standards.
+My use of Manga109-s is purely for research and development in manga‑related machine learning and image processing. I will carefully comply with all license terms and ethical considerations described on the Manga109-s page.
+
+
+```
+
+
+
+
+
 ## DataLoader
 
 

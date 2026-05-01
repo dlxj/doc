@@ -12229,23 +12229,164 @@ https://huggingface.co/datasets/hal-utokyo/Manga109-s  漫画数据集
 
 
 
+pytorch summary.md -> 降低显存占用
+
+
+
+duckdb + ducklake + readest + typst see huggingface_echodict\typst_hlm\ocr\readme.txt
+
+
+
+https://aistudio.baidu.com/projectdetail/4438534?channelType=0&channel=0 真实项目经验
+
+https://huggingface.co/datasets/ByteDance/AncientDoc 字节的数据集
+
+![img](深入理解神经网络：从逻辑回归到CNN.assets/b5ec48e89a6402434386c3479c641e7b.png)
+
+https://aistudio.baidu.com/datasetdetail/165369 真可以下载的 **古籍数据集**
+
+https://huggingface.co/datasets/Teklia/CASIA-HWDB2-line
+
+https://github.com/esun-ai/traditional-chinese-text-recogn-dataset
+
+
+
+```
+
+
+漫画数据集申请
+
+建议填写内容（中文说明 + 英文正文）
+下面是正文，建议直接用英文填写，更符合对方习惯、也与页面语言一致。你如果是学校/研究机构，可以在 Institution 那里写自己单位名称；如果是个人或公司研究，也可以照抄，只把括号里的身份信息替换掉。
+
+Outline of the intended use of the dataset
+
+I am applying for access to the Manga109-s dataset to use it for non‑redistributive research on manga image understanding and machine learning.
+
+Specifically, I plan to use the 87 commercially usable books in Manga109-s for the following purposes:
+
+Manga image analysis and representation learning
+Train and evaluate deep learning models for low‑level and mid‑level vision tasks on manga images, such as denoising, super‑resolution, panel and frame enhancement, and image-to-image translation tailored to black‑and‑white comics.
+Learn feature representations of manga pages to analyze style and layout, but only for research and visualization, without redistributing any dataset images.
+High-level understanding and downstream tasks
+Explore tasks such as panel segmentation, speech balloon / text area detection, character detection, and page layout understanding, using only the images within the dataset and, if applicable, official annotation subsets (e.g., COO or Manga109Dialog), while strictly following their additional citation requirements.
+Use the learned models to study how to improve automatic typesetting, reading experience support, and assistive tools for manga creation and analysis.
+Academic publications and presentations
+Use a small number of manga images from the dataset as figures in academic papers, technical reports, and presentation slides or academic demo videos, strictly within the limitations described in the Manga109-s license (i.e., for each book/volume, the total number of whole pages or modified whole pages published will not exceed 20% of that book).
+In all publications and videos, I will clearly acknowledge the authors by including notices such as “courtesy of [Author’s Name]” or “©[Author’s Name]” and explicitly state that the images are from the Manga109-s dataset.
+I will also properly cite the relevant Manga109 papers (e.g., “Building a Manga Dataset ‘Manga109’ with Annotations for Multimedia Applications” and “Sketch-based Manga Retrieval using Manga109 Dataset”), and, if I use COO or Manga109Dialog annotations, I will additionally cite the corresponding COO and Manga109Dialog papers as required.
+Possible future use of results (not the raw data) in practical/industrial settings
+In the future, I may use only the trained models or partial results obtained from experiments on Manga109-s in academic–industrial collaborations or practical applications.
+I confirm that I will never redistribute the Manga109-s dataset itself or any of its images, and I will not sell direct copies or simple modifications of the manga images in the dataset as products, whether free or paid.
+I will also not sell products that bundle the original Manga109-s images together with experiment results; only model parameters or learned features may be used, in compliance with the license.
+I fully understand and agree to the Manga109-s dataset license and usage conditions, including but not limited to:
+
+No redistribution of the Manga109-s dataset to third parties.
+Clear indication of the use of Manga109-s in any published results, including pre‑trained models.
+No selling of dataset manga images together with experiment results.
+No treating direct copies or modifications of manga images as products, whether free or sold.
+Respecting the 20% per‑book limit for publishing whole pages or modified whole pages when presenting research results.
+Carefully handling potentially inappropriate images contained in older manga works, considering modern global ethical standards.
+My use of Manga109-s is purely for research and development in manga‑related machine learning and image processing. I will carefully comply with all license terms and ethical considerations described on the Manga109-s page.
+
+
+
+```
+
+
+
+
+
 ## Qwen3-VL OCR
 
 https://github.com/QwenLM/Qwen3-VL/blob/main/cookbooks/ocr.ipynb  千问3 VL 能输出单个字符坐标
+
+```
+
+curl --location -g --request POST "https://www.autodl.art/api/v1/chat/completions" \
+--header "Authorization: Bearer $API_KEY" \
+--header "Content-Type: application/json" \
+--data-raw '{
+    "messages": [
+        {
+            "role": "user",
+            "content": "您好！"
+        }
+    ],
+    "model":"qwen3-vl-plus",
+    "stream":true
+}'
+
+pip install open-webui
+export HF_HUB_OFFLINE=1
+$env:HF_HUB_OFFLINE=1
+open-webui serve
+	不让它自已下载嵌入模型
+
+http://localhost:8080
+
+```
+
+
+
+
 
 
 
 ## Gemma-4-31B-JANG_4M-CRACK VL
 
+duckdb + ducklake + readest + typst see huggingface_echodict\typst_hlm\ocr\readme.txt
+
+
+
 see github\doc\平水韵拟音.md
 
 https://dr.miromind.ai/  **它能访问外网！**
+
+https://huggingface.co/douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF
 
 
 
 ```
 
 hf download dealignai/Gemma-4-31B-JANG_4M-CRACK
+
+hf download douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF
+	./llama-cli -m gemma-4-31b-jang-crack-Q4_K_M.gguf -p "Hello" -n 256
+	
+	./llama-cli -m gemma-4-31b-jang-crack-Q8/gemma-4-31b-jang-crack-Q8_0-00001-of-00009.gguf -p "Hello" -n 256
+	
+	./llama-server -m "gemma-4-31b-jang-crack-Q8/gemma-4-31b-jang-crack-Q8_0-00001-of-00009.gguf" -t 8 -c 4096 -ngl 999 --repeat-penalty 1.2 --temp 0 --top-k 10 --top-p 0.1 -a "gemma-4-31b-jang-crack-Q8_0" --port 6006
+
+	./llama-server -m /root/autodl-tmp/gemma-4-31b-jang-crack-Q8/gemma-4-31b-jang-crack-Q8_0-00001-of-00009.gguf -t 8 -c 4096 -ngl 999 --repeat-penalty 1.2 --temp 0 --top-k 10 --top-p 0.1 -a "gemma-4-31b-jang-crack-Q8_0" --port 6006
+
+
+vi ~/.bashrc
+if [ -z $LD_LIBRARY_PATH ]; then
+  LD_LIBRARY_PATH=/usr/local/cuda-13.0/lib64
+else
+  LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-13.0/lib64
+fi
+export LD_LIBRARY_PATH
+
+export PATH=/usr/local/cuda/bin:/root/miniforge3/envs/RWKVTTS/bin:$PATH
+
+source ~/.bashrc 
+
+nvcc --version
+
+update-alternatives --remove cuda /usr/local/cuda-12.2
+update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-13.0 130
+ln -sfT /usr/local/cuda-13.0 /etc/alternatives/cuda
+ln -sfT /etc/alternatives/cuda /usr/local/cuda
+
+
+cmake -B build -DGGML_CUDA=ON
+cmake --build build --config Release
+
+
+	https://huggingface.co/douyamv/Gemma-4-31B-JANG_4M-CRACK-GGUF/resolve/main/gemma-4-31b-jang-crack-Q4_K_M.gguf?download=true
+
 
 pip install -U transformers
 
@@ -14830,6 +14971,9 @@ VAD静音检测
 
 see huggingface_echodict\llama.cpp\readme.txt
 
+see https://huggingface.co/nvidia/magpie_tts_multilingual_357m
+    tts 每位說話者都能說九種不同的語言（英語、西班牙語、德語、法語、越南語、義大利語、中文、印地語和日語）
+
 https://github.com/espresso3389/MioTTS-llama.cpp
 
 https://huggingface.co/collections/Aratako/miotts
@@ -14888,7 +15032,11 @@ https://github.com/NVIDIA-NeMo/NeMo/blob/main/examples/asr/speech_to_text_finetu
   
     
 
+see https://huggingface.co/nvidia/magpie_tts_multilingual_357m
+    tts 每位說話者都能說九種不同的語言（英語、西班牙語、德語、法語、越南語、義大利語、中文、印地語和日語）
 
+see https://huggingface.co/datasets/OpenSpeechHub/Common-Voice-17-Ja
+    日语数据集
 
 
 
