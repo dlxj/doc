@@ -12497,7 +12497,7 @@ Talk Vietnam
 
 
 
-## Qwen3-ASR
+## Qwen3-ASR streaming
 
 https://k2-fsa.github.io/sherpa/onnx/qwen3-asr/pretrained.html#real-time-streaming-speech-recognition-from-a-microphone-with-vad
 
