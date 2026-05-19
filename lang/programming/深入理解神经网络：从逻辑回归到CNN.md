@@ -12497,6 +12497,16 @@ Talk Vietnam
 
 
 
+## Qwen3-ASR
+
+https://k2-fsa.github.io/sherpa/onnx/qwen3-asr/pretrained.html#real-time-streaming-speech-recognition-from-a-microphone-with-vad
+
+- https://github.com/k2-fsa/sherpa-onnx
+
+https://github.com/QwenLM/Qwen3-ASR/blob/main/examples/example_qwen3_asr_vllm_streaming.py
+
+
+
 ## OpenOCR
 
 https://github.com/Topdu/OpenOCR/blob/main/README_ch.md
