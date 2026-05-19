@@ -12507,6 +12507,10 @@ https://github.com/QwenLM/Qwen3-ASR/blob/main/examples/example_qwen3_asr_vllm_st
 
 
 
+https://github.com/QwenLM/Qwen3-ASR/tree/main/finetuning  finetune
+
+
+
 ## OpenOCR
 
 https://github.com/Topdu/OpenOCR/blob/main/README_ch.md
