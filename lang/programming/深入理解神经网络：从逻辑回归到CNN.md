@@ -12511,6 +12511,18 @@ https://github.com/QwenLM/Qwen3-ASR/tree/main/finetuning  finetune
 
 
 
+https://huggingface.co/Qwen/Qwen3-ASR-1.7B
+
+```
+
+huggingface-cli download Qwen/Qwen3-ASR-1.7B --local-dir ./Qwen3-ASR-1.7B
+
+```
+
+
+
+
+
 ## OpenOCR
 
 https://github.com/Topdu/OpenOCR/blob/main/README_ch.md
