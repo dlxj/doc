@@ -12515,7 +12515,7 @@ https://huggingface.co/Qwen/Qwen3-ASR-1.7B
 
 ```
 
-huggingface-cli download Qwen/Qwen3-ASR-1.7B --local-dir ./Qwen3-ASR-1.7B
+hf download Qwen/Qwen3-ASR-1.7B --local-dir ./Qwen3-ASR-1.7B
 
 ```
 

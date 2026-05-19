@@ -5678,6 +5678,9 @@ https://huggingface.co/docs/hub/xet/using-xet-storage **xet**
 
 - ```
   
+  hf download Qwen/Qwen3-ASR-1.7B --local-dir ./Qwen3-ASR-1.7B
+  
+  
   hf sync ./data hf://buckets/echodict/revise
   	Upload a local folder to this bucket
   
