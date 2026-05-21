@@ -1976,6 +1976,17 @@ path_wout_extension, _, _ = local_path.rpartition(".")
 
 
 
+```
+
+base, _ = os.path.splitext(src)
+dst = base + "_16k_mono.wav"
+
+```
+
+
+
+
+
 ### 拆分 fullpath
 
 ```
