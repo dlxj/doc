@@ -117,6 +117,22 @@ I guess that vm.max_map_count should be twice of kernel.threads-max, thus, I set
 
 ```
 
+npm install dotenv
+
+.env
+MYSQL_HOST=192.168.xx.xx
+MYSQL_PORT=3306
+MYSQL_USER=temp_onlyread
+MYSQL_PASSWORD=xxx
+MYSQL_DATABASE=xxx
+
+
+
+import 'dotenv/config';
+process.env.MYSQL_HOST
+	这样就能读到
+
+
 const fs = require('fs');
 const { spawn } = require('child_process');
 
