@@ -470,6 +470,33 @@ __pycache__/
 
 
 
+# uv
+
+```
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+
+git clone https://github.com/NVIDIA-NeMo/NeMo.git
+cd NeMo
+uv sync --extra all --extra cu13 -i https://pypi.tuna.tsinghua.edu.cn/simple 
+    速度可以有惊喜 多试几次
+
+source .venv/bin/activate
+    虚拟环境，包都安装好了，不要用 conda 了
+
+NeMo/.venv/bin/python -m ensurepip --upgrade
+    虚拟环境里安装 pip
+
+NeMo/.venv/bin/python -m pip install -r requirements.txt
+    虚拟环境里安装其他必要的包
+
+```
+
+
+
+
+
 ## Anaconda [u](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 
 ```
@@ -532,6 +559,9 @@ ln -s ~/miniconda3/bin/conda /usr/local/bin && \
 ln -s ~/miniconda3/bin/activate /usr/local/bin && \
 ln -s ~/miniconda3/bin/deactivate /usr/local/bin && \
 source ~/miniconda3/etc/profile.d/conda.sh
+
+source activate nemotron-3.5-asr-streaming-0.6b
+	# 实在不行这样也可以激活
 
 miniconda pkgs
 不论base环境还是虚拟环境都是放在pkgs文件夹下。如果虚拟环境需要安装的包与pkgs中已有的包版本完全一样，则不会再下载，而是通过硬盘链接直接找到该包，反之当一个包被多个环境使用时，从某一个环境卸载该包也不会将其从pkgs文件夹删除
