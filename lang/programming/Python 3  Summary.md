@@ -475,6 +475,8 @@ __pycache__/
 ```
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
+	# On Windows.
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
 
 git clone https://github.com/NVIDIA-NeMo/NeMo.git
