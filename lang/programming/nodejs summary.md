@@ -6202,6 +6202,20 @@ git config --global --unset http.https://github.com.proxy
 
 
 
+### 上传大文件
+
+```
+
+hf upload-large-folder dlxjj/books2 . --repo-type dataset
+
+git pull origin main
+
+```
+
+
+
+
+
 ### Xet
 
 ```
