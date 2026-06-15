@@ -6206,7 +6206,7 @@ git config --global --unset http.https://github.com.proxy
 
 ```
 
-hf upload-large-folder dlxjj/books2 . --repo-type dataset
+hf upload dlxjj/books2 "小说/新刻金瓶梅词话.第001回至057回.总一百回.明.兰陵笑笑生撰.明万历四十五年刊本.台北故宫博物院藏.pdf" --repo-type dataset
 
 git pull origin main
 
