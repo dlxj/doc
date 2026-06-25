@@ -4043,6 +4043,18 @@ list( range(5, 0, -1) )  # begin, stop, step
 
 ### group
 
+```
+
+from collections import defaultdict
+
+grouped = defaultdict(list)
+for item in pages_all:
+    grouped[item.get("chapter")].append(item)
+
+```
+
+
+
 
 
 ```python
@@ -5574,6 +5586,21 @@ if "cc" in {"cc", "component"}:
     # 这个其实是集合 set
 
 ```
+
+
+
+### copy
+
+```
+
+import copy
+
+original = {"a": 1, "b": [2, 3]}
+deep = copy.deepcopy(original)
+
+```
+
+
 
 
 

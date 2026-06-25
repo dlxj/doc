@@ -427,6 +427,22 @@ pg_ctl register -N PostgreSQL -D D:\tools\postgres\pgsql\data
 
 ## supabase
 
+
+
+### MCP
+
+```
+
+see huggingface_echodict\MiniClaude\MCPS\pg-supabase\server.js
+
+
+
+```
+
+
+
+
+
 https://supabase.com/docs/guides/self-hosting/docker#securing-your-services  配置重要的 key
 
 https://console.cloud.tencent.com/lighthouse/instance
