@@ -484,6 +484,15 @@ cd NeMo
 uv sync --extra all --extra cu13 -i https://pypi.tuna.tsinghua.edu.cn/simple 
     速度可以有惊喜 多试几次
 
+
+uv venv --python 3.13.12 --seed --clear
+
+.venv/Scripts/pip.exe install -r requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org
+
+.venv/Scripts/python.exe
+
+
+
 source .venv/bin/activate
     虚拟环境，包都安装好了，不要用 conda 了
 
@@ -4041,15 +4050,27 @@ list( range(5, 0, -1) )  # begin, stop, step
 
 
 
-### group
+### group by
 
 ```
 
+# py3.7+ 字典默认就是有序的
 from collections import defaultdict
 
 grouped = defaultdict(list)
 for item in pages_all:
     grouped[item.get("chapter")].append(item)
+
+```
+
+
+
+```
+
+# py3.6 以下可以这样
+    grouped = OrderedDict()
+    for item in pages_all:
+        grouped.setdefault(item.get("chapter"), []).append(item)
 
 ```
 

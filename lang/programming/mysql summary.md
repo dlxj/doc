@@ -281,6 +281,42 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 
 
 
+# 排序
+
+```
+
+在 MySQL 中，NULL值在排序时的默认行为是：
+
+升序（ASC）：NULL值排在最前面（被视为最小值）。
+
+降序（DESC）：NULL值排在最后面（被视为最大值）。
+
+
+-- 升序，但让 NULL 排在最后
+SELECT * FROM test 
+ORDER BY IFNULL(val, 99999999) ASC;
+
+-- 降序，但让 NULL 排在最前
+SELECT * FROM test 
+ORDER BY IFNULL(val, -99999999) DESC;
+
+
+
+-- 升序，NULL 排在最后
+SELECT * FROM test 
+ORDER BY val IS NULL ASC, val ASC;
+
+-- 降序，NULL 排在最前
+SELECT * FROM test 
+ORDER BY val IS NULL DESC, val DESC;
+
+
+```
+
+
+
+
+
 
 
 # Gram
