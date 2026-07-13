@@ -2193,6 +2193,18 @@ print(valid_by_case)  # 输出：False
 
 
 
+### curr_dir
+
+```
+
+curr_dir = os.path.dirname(os.path.abspath(__file__))
+
+```
+
+
+
+
+
 ### exists
 
 ```
@@ -6038,6 +6050,9 @@ __public_key = b'-----BEGIN PUBLIC KEY-----\n' \
 For Python 3.+, the same behavior can also be achieved with [`format`](https://docs.python.org/3/library/stdtypes.html#str.format):
 
 ```py
+
+f'{1:03d}'
+
 number = 1
 print("{:02d}".format(number))
 ```
