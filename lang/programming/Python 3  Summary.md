@@ -4023,6 +4023,18 @@ print( in_axes )
 
 
 
+### 逆序
+
+```
+
+reversed_arr = arr[::-1]
+
+```
+
+
+
+
+
 ### Select
 
 #### 随机选择元素
