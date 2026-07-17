@@ -6202,6 +6202,67 @@ git config --global --unset http.https://github.com.proxy
 
 
 
+
+
+### HF token 权限
+
+```
+
+可以，**但必须用 Fine-grained token**，老式的 `read` / `write` 角色做不到单仓库限制——它们是"你能访问的所有仓库"一把梭。
+
+两种 token 的差异
+
+| 类型 | 作用域 | 能否限定到单 repo |
+|---|---|---|
+| **Classic – read** | 你能读的所有仓库（含私有） | ❌ |
+| **Classic – write** | 你能写的所有仓库 | ❌ |
+| **Fine-grained** | 可按 org / 按指定 repo / 按资源类型（content / settings）细粒度绑定 | ✅ |
+
+Classic token 的 `write` 一旦泄露，攻击者能往你名下所有仓库推代码；Fine-grained 是 HF 官方推荐给生产环境用的，泄漏面只限于你绑的那一两个 repo。
+
+Fine-grained 怎么配到"只允许读写某个仓库"
+
+Settings → **Access Tokens** → **New token** → 选 **Fine-grained**：
+
+1. **Subject type**：选 `Personal` 还是 `Organization`（repo 在哪个 namespace 就选哪个）
+2. **Repositories**：选 **Only select repositories** → 勾你要的那个 repo（比如 `org/my-model`）
+3. **Permissions**：
+   - `Repositories → Contents` → 勾 **Read** 或 **Write**（想只读就只勾 Read，想 push 就勾 Write）
+   - `Settings` 同理可单独控，不需要就不勾
+4. 创建完把 token 扔到 `HF_TOKEN` 环境变量或 `huggingface-cli login` 里用
+
+如果是 **Organization** 下的 repo，还有几个细节：
+
+- 你是 org admin 的话，fine-grained token 自动批准，不需审核
+- 部分 Team / Enterprise org 会强制**只允许 fine-grained token**，classic `read/write` 打过来直接 403
+- org 管理员还可以 deny / revoke 某个 fine-grained token，只影响该 org，不影响你个人其他资源
+
+最佳实践（HF 官方也这么建议）
+
+> 一个应用 / 一台机器 / 一条 CI workflow 一个 token，而不是全平台共用同一个 `write` 大 token。
+
+比如 CI 里要 push 模型：
+
+​```bash
+Job A：只允许 push 到 dataset-a
+export HF_TOKEN=hf_xxx_fine_grained_for_dataset_a
+
+Job B：只允许 push 到 dataset-b  
+export HF_TOKEN=hf_xxx_fine_grained_for_dataset_b
+​```
+
+哪一边的 token 漏了，另一边不受影响。
+
+如果你是要给**别人**（比如协作者）开某个 repo 的写权限，那是另一条路：在 repo 页面 Settings → Collaborators 里加对方账号并给 `write` 角色，对方用自己的 token 就行，不用共享你的。要不要顺这个也展开？
+
+```
+
+
+
+
+
+
+
 ### 上传大文件
 
 ```
