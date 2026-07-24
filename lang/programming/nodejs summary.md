@@ -7037,6 +7037,39 @@ conda clean -a
 
 
 
+## code.tencent
+
+
+
+```
+
+ssh-keygen -t ed25519 -C "12345@qq.com" -f ~/.ssh/id_codetencent
+
+vi ~/.ssh/config
+Host tencent.com
+    HostName tencent.com
+    User git
+    IdentityFile ~/.ssh/id_codetencent
+    IdentitiesOnly yes
+
+
+
+```
+
+
+
+
+
+```
+
+git clone https://git.code.tencent.com/cdef68935/typst-app-clone.git
+
+
+
+```
+
+
+
 
 
 
