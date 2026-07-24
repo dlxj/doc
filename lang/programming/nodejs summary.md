@@ -7137,23 +7137,31 @@ conda clean -a
 
 ```
 
-ssh-keygen -t ed25519 -C "12345@qq.com" -f ~/.ssh/id_codetencent
+cd .ssh \
+  && ls
+
+ssh-keygen -t rsa -C  "12346895@qq.com"
+	之后直接回车，不用填写东西。之后会让你输入密码。然后就生成一个目录.ssh，里面有两个文件：id_rsa , id_rsa.pub
+
+cat id_rsa.pub
+	把显示出来的邮箱之前的内容复制到网页端的ssh密钥
+
+
 
 vi ~/.ssh/config
-Host tencent.com
-    HostName tencent.com
-    User git
-    IdentityFile ~/.ssh/id_codetencent
-    IdentitiesOnly yes
 
 
+cd C:\Users\o\.ssh\config
+ssh-keygen -t rsa -C  "12346895@qq.com"
+	之后直接回车，不用填写东西。之后会让你输入密码。然后就生成一个目录.ssh，里面有两个文件：id_rsa , id_rsa.pub
 
-ssh-keygen -t ed25519 -C "12345@qq.com" -f "$env:USERPROFILE\.ssh\id_codetencent" -N '""'
-vi C:\Users\o\.ssh\config
+cat id_rsa.pub
+	把显示出来的邮箱之前的内容复制到网页端的ssh密钥
+
 Host git.code.tencent.com
     HostName git.code.tencent.com
     User git
-    IdentityFile  C:\Users\o\.ssh\id_codetencent
+    IdentityFile  C:\Users\o\.ssh\id_rsa
     IdentitiesOnly yes
     HostKeyAlgorithms +ssh-rsa
 
@@ -7162,6 +7170,12 @@ Host git.code.tencent.com
 	私钥（无后缀的那个文件）：永远留在你本地，权限设为 600
 
 ssh -T git@git.code.tencent.com
+	# 全部都配对了，就是没权限
+	
+
+git clone https://git.code.tencent.com/cdef68935/<仓库名>.git
+
+git@git.code.tencent.com:cdef68935/typst-app-clone.git
 
 
 ```
