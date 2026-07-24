@@ -7148,6 +7148,15 @@ Host tencent.com
 
 
 
+ssh-keygen -t ed25519 -C "12345@qq.com" -f "$env:USERPROFILE\.ssh\id_codetencent" -N '""'
+vi C:\Users\o\.ssh\config
+Host tencent.com
+    HostName tencent.com
+    User git
+    IdentityFile ~/.ssh/id_codetencent
+    IdentitiesOnly yes
+
+
 ```
 
 
