@@ -7150,11 +7150,18 @@ Host tencent.com
 
 ssh-keygen -t ed25519 -C "12345@qq.com" -f "$env:USERPROFILE\.ssh\id_codetencent" -N '""'
 vi C:\Users\o\.ssh\config
-Host tencent.com
-    HostName tencent.com
+Host git.code.tencent.com
+    HostName git.code.tencent.com
     User git
-    IdentityFile ~/.ssh/id_codetencent
+    IdentityFile  C:\Users\o\.ssh\id_codetencent
     IdentitiesOnly yes
+    HostKeyAlgorithms +ssh-rsa
+
+
+公钥（.pub 文件）：上传到 GitHub / GitLab / Gitee 等网站
+	私钥（无后缀的那个文件）：永远留在你本地，权限设为 600
+
+ssh -T git@git.code.tencent.com
 
 
 ```
@@ -7167,7 +7174,7 @@ Host tencent.com
 
 git clone https://git.code.tencent.com/cdef68935/typst-app-clone.git
 
-
+git@git.code.tencent.com:cdef68935/typst-app-clone.git
 
 ```
 
