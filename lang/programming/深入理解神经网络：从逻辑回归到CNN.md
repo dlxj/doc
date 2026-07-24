@@ -12497,6 +12497,33 @@ Talk Vietnam
 
 
 
+## Qwen3-ASR streaming
+
+https://k2-fsa.github.io/sherpa/onnx/qwen3-asr/pretrained.html#real-time-streaming-speech-recognition-from-a-microphone-with-vad
+
+- https://github.com/k2-fsa/sherpa-onnx
+
+https://github.com/QwenLM/Qwen3-ASR/blob/main/examples/example_qwen3_asr_vllm_streaming.py
+
+
+
+https://github.com/QwenLM/Qwen3-ASR/tree/main/finetuning  finetune
+
+
+
+https://huggingface.co/Qwen/Qwen3-ASR-1.7B
+
+```
+
+hf download Qwen/Qwen3-ASR-1.7B --local-dir ./Qwen3-ASR-1.7B
+hf download Qwen/Qwen3-ForcedAligner-0.6B --local-dir ./Qwen3-ForcedAligner-0.6B
+
+```
+
+
+
+
+
 ## OpenOCR
 
 https://github.com/Topdu/OpenOCR/blob/main/README_ch.md

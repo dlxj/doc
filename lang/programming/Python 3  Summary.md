@@ -470,6 +470,44 @@ __pycache__/
 
 
 
+# uv
+
+```
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+	# On Windows.
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+
+git clone https://github.com/NVIDIA-NeMo/NeMo.git
+cd NeMo
+uv sync --extra all --extra cu13 -i https://pypi.tuna.tsinghua.edu.cn/simple 
+    速度可以有惊喜 多试几次
+
+
+uv venv --python 3.13.12 --seed --clear
+
+.venv/Scripts/pip.exe install -r requirements.txt --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org
+
+.venv/Scripts/python.exe
+
+
+
+source .venv/bin/activate
+    虚拟环境，包都安装好了，不要用 conda 了
+
+NeMo/.venv/bin/python -m ensurepip --upgrade
+    虚拟环境里安装 pip
+
+NeMo/.venv/bin/python -m pip install -r requirements.txt
+    虚拟环境里安装其他必要的包
+
+```
+
+
+
+
+
 ## Anaconda [u](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)
 
 ```
@@ -532,6 +570,9 @@ ln -s ~/miniconda3/bin/conda /usr/local/bin && \
 ln -s ~/miniconda3/bin/activate /usr/local/bin && \
 ln -s ~/miniconda3/bin/deactivate /usr/local/bin && \
 source ~/miniconda3/etc/profile.d/conda.sh
+
+source activate nemotron-3.5-asr-streaming-0.6b
+	# 实在不行这样也可以激活
 
 miniconda pkgs
 不论base环境还是虚拟环境都是放在pkgs文件夹下。如果虚拟环境需要安装的包与pkgs中已有的包版本完全一样，则不会再下载，而是通过硬盘链接直接找到该包，反之当一个包被多个环境使用时，从某一个环境卸载该包也不会将其从pkgs文件夹删除
@@ -1976,6 +2017,17 @@ path_wout_extension, _, _ = local_path.rpartition(".")
 
 
 
+```
+
+base, _ = os.path.splitext(src)
+dst = base + "_16k_mono.wav"
+
+```
+
+
+
+
+
 ### 拆分 fullpath
 
 ```
@@ -2138,6 +2190,18 @@ print(valid_by_case)  # 输出：False
 3. Right-click the value “LongPathsEnabled” and select Modify.
 4. Change “Value data” from 0 to 1.
 5. Click OK.
+
+
+
+### curr_dir
+
+```
+
+curr_dir = os.path.dirname(os.path.abspath(__file__))
+
+```
+
+
 
 
 
@@ -3959,6 +4023,18 @@ print( in_axes )
 
 
 
+### 逆序
+
+```
+
+reversed_arr = arr[::-1]
+
+```
+
+
+
+
+
 ### Select
 
 #### 随机选择元素
@@ -3998,7 +4074,31 @@ list( range(5, 0, -1) )  # begin, stop, step
 
 
 
-### group
+### group by
+
+```
+
+# py3.7+ 字典默认就是有序的
+from collections import defaultdict
+
+grouped = defaultdict(list)
+for item in pages_all:
+    grouped[item.get("chapter")].append(item)
+
+```
+
+
+
+```
+
+# py3.6 以下可以这样
+    grouped = OrderedDict()
+    for item in pages_all:
+        grouped.setdefault(item.get("chapter"), []).append(item)
+
+```
+
+
 
 
 
@@ -5534,6 +5634,21 @@ if "cc" in {"cc", "component"}:
 
 
 
+### copy
+
+```
+
+import copy
+
+original = {"a": 1, "b": [2, 3]}
+deep = copy.deepcopy(original)
+
+```
+
+
+
+
+
 ### for k, v 
 
 
@@ -5947,6 +6062,9 @@ __public_key = b'-----BEGIN PUBLIC KEY-----\n' \
 For Python 3.+, the same behavior can also be achieved with [`format`](https://docs.python.org/3/library/stdtypes.html#str.format):
 
 ```py
+
+f'{1:03d}'
+
 number = 1
 print("{:02d}".format(number))
 ```
