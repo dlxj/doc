@@ -7171,6 +7171,7 @@ Host git.code.tencent.com
 
 ssh -T git@git.code.tencent.com
 	# 全部都配对了，就是没权限
+	# 用户名 + 密码就得了。存在 win11 的凭据里
 	
 
 git clone https://git.code.tencent.com/cdef68935/<仓库名>.git
