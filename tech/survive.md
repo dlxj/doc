@@ -331,7 +331,7 @@ https://zh.howtopronounce.com/vietnamese/index.php
 >
 > 　　- https://www.books.com.tw/
 > 　　  - siluplsy 
-> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
+> 　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　  - https://github.com/hanmin0822/MisakaTranslator  翻译器
 >
 > > [用法](https://www.bilibili.com/video/BV1Z5411s7Ro)
 > >
@@ -793,6 +793,14 @@ mac mount Android as drive
 
 
 # 建站
+
+https://console.cloud.tencent.com/domain/all-domain/all
+    jaoshulang.com
+    vvw 微信登录
+    校书郎域名
+    see E:\code.tencent\typst-app-clone\com.md
+
+​     code.tencent.com  cdef68935 12345@qq.com
 
 - echodict.com
 
